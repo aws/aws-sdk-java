@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,15 @@ public enum ResourceType {
     AWSAutoScalingLaunchConfiguration("AWS::AutoScaling::LaunchConfiguration"),
     AWSAutoScalingScalingPolicy("AWS::AutoScaling::ScalingPolicy"),
     AWSAutoScalingScheduledAction("AWS::AutoScaling::ScheduledAction"),
-    AWSCodeBuildProject("AWS::CodeBuild::Project");
+    AWSCodeBuildProject("AWS::CodeBuild::Project"),
+    AWSWAFRateBasedRule("AWS::WAF::RateBasedRule"),
+    AWSWAFRule("AWS::WAF::Rule"),
+    AWSWAFWebACL("AWS::WAF::WebACL"),
+    AWSWAFRegionalRateBasedRule("AWS::WAFRegional::RateBasedRule"),
+    AWSWAFRegionalRule("AWS::WAFRegional::Rule"),
+    AWSWAFRegionalWebACL("AWS::WAFRegional::WebACL"),
+    AWSCloudFrontDistribution("AWS::CloudFront::Distribution"),
+    AWSCloudFrontStreamingDistribution("AWS::CloudFront::StreamingDistribution");
 
     private String value;
 

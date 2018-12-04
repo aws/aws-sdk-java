@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a WorkSpace.
+ * Information about a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Workspace" target="_top">AWS API
@@ -36,13 +36,13 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     private String workspaceId;
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+     * The identifier of the AWS Directory Service directory for the WorkSpace.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * The user that the WorkSpace is assigned to.
+     * The user for the WorkSpace.
      * </p>
      */
     private String userName;
@@ -60,31 +60,31 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * The identifier of the bundle that the WorkSpace was created from.
+     * The identifier of the bundle used to create the WorkSpace.
      * </p>
      */
     private String bundleId;
     /**
      * <p>
-     * The identifier of the subnet that the WorkSpace is in.
+     * The identifier of the subnet for the WorkSpace.
      * </p>
      */
     private String subnetId;
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains a textual error message that describes the failure.
+     * If the WorkSpace could not be created, contains a textual error message that describes the failure.
      * </p>
      */
     private String errorMessage;
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains the error code.
+     * If the WorkSpace could not be created, contains the error code.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The name of the WorkSpace as seen by the operating system.
+     * The name of the WorkSpace, as seen by the operating system.
      * </p>
      */
     private String computerName;
@@ -96,18 +96,28 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     private String volumeEncryptionKey;
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      */
     private Boolean userVolumeEncryptionEnabled;
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      */
     private Boolean rootVolumeEncryptionEnabled;
-
+    /**
+     * <p>
+     * The properties of the WorkSpace.
+     * </p>
+     */
     private WorkspaceProperties workspaceProperties;
+    /**
+     * <p>
+     * The modification states of the WorkSpace.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ModificationState> modificationStates;
 
     /**
      * <p>
@@ -151,11 +161,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+     * The identifier of the AWS Directory Service directory for the WorkSpace.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+     *        The identifier of the AWS Directory Service directory for the WorkSpace.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -164,10 +174,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+     * The identifier of the AWS Directory Service directory for the WorkSpace.
      * </p>
      * 
-     * @return The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+     * @return The identifier of the AWS Directory Service directory for the WorkSpace.
      */
 
     public String getDirectoryId() {
@@ -176,11 +186,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+     * The identifier of the AWS Directory Service directory for the WorkSpace.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+     *        The identifier of the AWS Directory Service directory for the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +201,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user that the WorkSpace is assigned to.
+     * The user for the WorkSpace.
      * </p>
      * 
      * @param userName
-     *        The user that the WorkSpace is assigned to.
+     *        The user for the WorkSpace.
      */
 
     public void setUserName(String userName) {
@@ -204,10 +214,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user that the WorkSpace is assigned to.
+     * The user for the WorkSpace.
      * </p>
      * 
-     * @return The user that the WorkSpace is assigned to.
+     * @return The user for the WorkSpace.
      */
 
     public String getUserName() {
@@ -216,11 +226,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user that the WorkSpace is assigned to.
+     * The user for the WorkSpace.
      * </p>
      * 
      * @param userName
-     *        The user that the WorkSpace is assigned to.
+     *        The user for the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,11 +354,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the bundle that the WorkSpace was created from.
+     * The identifier of the bundle used to create the WorkSpace.
      * </p>
      * 
      * @param bundleId
-     *        The identifier of the bundle that the WorkSpace was created from.
+     *        The identifier of the bundle used to create the WorkSpace.
      */
 
     public void setBundleId(String bundleId) {
@@ -357,10 +367,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the bundle that the WorkSpace was created from.
+     * The identifier of the bundle used to create the WorkSpace.
      * </p>
      * 
-     * @return The identifier of the bundle that the WorkSpace was created from.
+     * @return The identifier of the bundle used to create the WorkSpace.
      */
 
     public String getBundleId() {
@@ -369,11 +379,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the bundle that the WorkSpace was created from.
+     * The identifier of the bundle used to create the WorkSpace.
      * </p>
      * 
      * @param bundleId
-     *        The identifier of the bundle that the WorkSpace was created from.
+     *        The identifier of the bundle used to create the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,11 +394,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the subnet that the WorkSpace is in.
+     * The identifier of the subnet for the WorkSpace.
      * </p>
      * 
      * @param subnetId
-     *        The identifier of the subnet that the WorkSpace is in.
+     *        The identifier of the subnet for the WorkSpace.
      */
 
     public void setSubnetId(String subnetId) {
@@ -397,10 +407,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the subnet that the WorkSpace is in.
+     * The identifier of the subnet for the WorkSpace.
      * </p>
      * 
-     * @return The identifier of the subnet that the WorkSpace is in.
+     * @return The identifier of the subnet for the WorkSpace.
      */
 
     public String getSubnetId() {
@@ -409,11 +419,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the subnet that the WorkSpace is in.
+     * The identifier of the subnet for the WorkSpace.
      * </p>
      * 
      * @param subnetId
-     *        The identifier of the subnet that the WorkSpace is in.
+     *        The identifier of the subnet for the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,11 +434,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains a textual error message that describes the failure.
+     * If the WorkSpace could not be created, contains a textual error message that describes the failure.
      * </p>
      * 
      * @param errorMessage
-     *        If the WorkSpace could not be created, this contains a textual error message that describes the failure.
+     *        If the WorkSpace could not be created, contains a textual error message that describes the failure.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -437,10 +447,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains a textual error message that describes the failure.
+     * If the WorkSpace could not be created, contains a textual error message that describes the failure.
      * </p>
      * 
-     * @return If the WorkSpace could not be created, this contains a textual error message that describes the failure.
+     * @return If the WorkSpace could not be created, contains a textual error message that describes the failure.
      */
 
     public String getErrorMessage() {
@@ -449,11 +459,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains a textual error message that describes the failure.
+     * If the WorkSpace could not be created, contains a textual error message that describes the failure.
      * </p>
      * 
      * @param errorMessage
-     *        If the WorkSpace could not be created, this contains a textual error message that describes the failure.
+     *        If the WorkSpace could not be created, contains a textual error message that describes the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,11 +474,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains the error code.
+     * If the WorkSpace could not be created, contains the error code.
      * </p>
      * 
      * @param errorCode
-     *        If the WorkSpace could not be created, this contains the error code.
+     *        If the WorkSpace could not be created, contains the error code.
      */
 
     public void setErrorCode(String errorCode) {
@@ -477,10 +487,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains the error code.
+     * If the WorkSpace could not be created, contains the error code.
      * </p>
      * 
-     * @return If the WorkSpace could not be created, this contains the error code.
+     * @return If the WorkSpace could not be created, contains the error code.
      */
 
     public String getErrorCode() {
@@ -489,11 +499,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, this contains the error code.
+     * If the WorkSpace could not be created, contains the error code.
      * </p>
      * 
      * @param errorCode
-     *        If the WorkSpace could not be created, this contains the error code.
+     *        If the WorkSpace could not be created, contains the error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,11 +514,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the WorkSpace as seen by the operating system.
+     * The name of the WorkSpace, as seen by the operating system.
      * </p>
      * 
      * @param computerName
-     *        The name of the WorkSpace as seen by the operating system.
+     *        The name of the WorkSpace, as seen by the operating system.
      */
 
     public void setComputerName(String computerName) {
@@ -517,10 +527,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the WorkSpace as seen by the operating system.
+     * The name of the WorkSpace, as seen by the operating system.
      * </p>
      * 
-     * @return The name of the WorkSpace as seen by the operating system.
+     * @return The name of the WorkSpace, as seen by the operating system.
      */
 
     public String getComputerName() {
@@ -529,11 +539,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the WorkSpace as seen by the operating system.
+     * The name of the WorkSpace, as seen by the operating system.
      * </p>
      * 
      * @param computerName
-     *        The name of the WorkSpace as seen by the operating system.
+     *        The name of the WorkSpace, as seen by the operating system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -584,11 +594,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      * 
      * @param userVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     *        Indicates whether the data stored on the user volume is encrypted.
      */
 
     public void setUserVolumeEncryptionEnabled(Boolean userVolumeEncryptionEnabled) {
@@ -597,10 +607,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * @return Indicates whether the data stored on the user volume is encrypted.
      */
 
     public Boolean getUserVolumeEncryptionEnabled() {
@@ -609,11 +619,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      * 
      * @param userVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     *        Indicates whether the data stored on the user volume is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -624,10 +634,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * @return Indicates whether the data stored on the user volume is encrypted.
      */
 
     public Boolean isUserVolumeEncryptionEnabled() {
@@ -636,11 +646,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      * 
      * @param rootVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     *        Indicates whether the data stored on the root volume is encrypted.
      */
 
     public void setRootVolumeEncryptionEnabled(Boolean rootVolumeEncryptionEnabled) {
@@ -649,10 +659,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * @return Indicates whether the data stored on the root volume is encrypted.
      */
 
     public Boolean getRootVolumeEncryptionEnabled() {
@@ -661,11 +671,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      * 
      * @param rootVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     *        Indicates whether the data stored on the root volume is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -676,10 +686,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * @return Indicates whether the data stored on the root volume is encrypted.
      */
 
     public Boolean isRootVolumeEncryptionEnabled() {
@@ -687,7 +697,12 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The properties of the WorkSpace.
+     * </p>
+     * 
      * @param workspaceProperties
+     *        The properties of the WorkSpace.
      */
 
     public void setWorkspaceProperties(WorkspaceProperties workspaceProperties) {
@@ -695,7 +710,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The properties of the WorkSpace.
+     * </p>
+     * 
+     * @return The properties of the WorkSpace.
      */
 
     public WorkspaceProperties getWorkspaceProperties() {
@@ -703,12 +722,90 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The properties of the WorkSpace.
+     * </p>
+     * 
      * @param workspaceProperties
+     *        The properties of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workspace withWorkspaceProperties(WorkspaceProperties workspaceProperties) {
         setWorkspaceProperties(workspaceProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The modification states of the WorkSpace.
+     * </p>
+     * 
+     * @return The modification states of the WorkSpace.
+     */
+
+    public java.util.List<ModificationState> getModificationStates() {
+        if (modificationStates == null) {
+            modificationStates = new com.amazonaws.internal.SdkInternalList<ModificationState>();
+        }
+        return modificationStates;
+    }
+
+    /**
+     * <p>
+     * The modification states of the WorkSpace.
+     * </p>
+     * 
+     * @param modificationStates
+     *        The modification states of the WorkSpace.
+     */
+
+    public void setModificationStates(java.util.Collection<ModificationState> modificationStates) {
+        if (modificationStates == null) {
+            this.modificationStates = null;
+            return;
+        }
+
+        this.modificationStates = new com.amazonaws.internal.SdkInternalList<ModificationState>(modificationStates);
+    }
+
+    /**
+     * <p>
+     * The modification states of the WorkSpace.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setModificationStates(java.util.Collection)} or {@link #withModificationStates(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param modificationStates
+     *        The modification states of the WorkSpace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workspace withModificationStates(ModificationState... modificationStates) {
+        if (this.modificationStates == null) {
+            setModificationStates(new com.amazonaws.internal.SdkInternalList<ModificationState>(modificationStates.length));
+        }
+        for (ModificationState ele : modificationStates) {
+            this.modificationStates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The modification states of the WorkSpace.
+     * </p>
+     * 
+     * @param modificationStates
+     *        The modification states of the WorkSpace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workspace withModificationStates(java.util.Collection<ModificationState> modificationStates) {
+        setModificationStates(modificationStates);
         return this;
     }
 
@@ -750,7 +847,9 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
         if (getRootVolumeEncryptionEnabled() != null)
             sb.append("RootVolumeEncryptionEnabled: ").append(getRootVolumeEncryptionEnabled()).append(",");
         if (getWorkspaceProperties() != null)
-            sb.append("WorkspaceProperties: ").append(getWorkspaceProperties());
+            sb.append("WorkspaceProperties: ").append(getWorkspaceProperties()).append(",");
+        if (getModificationStates() != null)
+            sb.append("ModificationStates: ").append(getModificationStates());
         sb.append("}");
         return sb.toString();
     }
@@ -821,6 +920,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWorkspaceProperties() != null && other.getWorkspaceProperties().equals(this.getWorkspaceProperties()) == false)
             return false;
+        if (other.getModificationStates() == null ^ this.getModificationStates() == null)
+            return false;
+        if (other.getModificationStates() != null && other.getModificationStates().equals(this.getModificationStates()) == false)
+            return false;
         return true;
     }
 
@@ -843,6 +946,7 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUserVolumeEncryptionEnabled() == null) ? 0 : getUserVolumeEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getRootVolumeEncryptionEnabled() == null) ? 0 : getRootVolumeEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceProperties() == null) ? 0 : getWorkspaceProperties().hashCode());
+        hashCode = prime * hashCode + ((getModificationStates() == null) ? 0 : getModificationStates().hashCode());
         return hashCode;
     }
 

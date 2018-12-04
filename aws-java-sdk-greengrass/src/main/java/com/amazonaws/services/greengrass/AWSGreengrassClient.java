@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -148,6 +148,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new AssociateRoleToGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateRoleToGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -201,6 +202,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(associateServiceRoleToAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -253,6 +255,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateCoreDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCoreDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -303,6 +306,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createCoreDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -352,6 +356,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -401,6 +406,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateDeviceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeviceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -451,6 +457,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createDeviceDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -503,6 +510,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createFunctionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -555,6 +563,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createFunctionDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -605,6 +614,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -657,6 +667,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createGroupCertificateAuthorityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -706,6 +717,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateGroupVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -755,6 +767,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateLoggerDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLoggerDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -805,6 +818,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createLoggerDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -812,6 +826,163 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             HttpResponseHandler<AmazonWebServiceResponse<CreateLoggerDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateLoggerDefinitionVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Creates a resource definition which contains a list of resources to be used in a group. You can create an initial
+     * version of the definition by providing a list of resources now, or use ``CreateResourceDefinitionVersion`` later.
+     * 
+     * @param createResourceDefinitionRequest
+     * @return Result of the CreateResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.CreateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateResourceDefinitionResult createResourceDefinition(CreateResourceDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateResourceDefinition(request);
+    }
+
+    @SdkInternalApi
+    final CreateResourceDefinitionResult executeCreateResourceDefinition(CreateResourceDefinitionRequest createResourceDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createResourceDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateResourceDefinitionRequest> request = null;
+        Response<CreateResourceDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createResourceDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateResourceDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Create a version of a resource definition that has already been defined.
+     * 
+     * @param createResourceDefinitionVersionRequest
+     * @return Result of the CreateResourceDefinitionVersion operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.CreateResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateResourceDefinitionVersionResult createResourceDefinitionVersion(CreateResourceDefinitionVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateResourceDefinitionVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateResourceDefinitionVersionResult executeCreateResourceDefinitionVersion(
+            CreateResourceDefinitionVersionRequest createResourceDefinitionVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createResourceDefinitionVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateResourceDefinitionVersionRequest> request = null;
+        Response<CreateResourceDefinitionVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateResourceDefinitionVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createResourceDefinitionVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateResourceDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateResourceDefinitionVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Creates an Iot Job that will trigger your Greengrass Cores to update the software they are running.
+     * 
+     * @param createSoftwareUpdateJobRequest
+     * @return Result of the CreateSoftwareUpdateJob operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @sample AWSGreengrass.CreateSoftwareUpdateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSoftwareUpdateJobResult createSoftwareUpdateJob(CreateSoftwareUpdateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSoftwareUpdateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateSoftwareUpdateJobResult executeCreateSoftwareUpdateJob(CreateSoftwareUpdateJobRequest createSoftwareUpdateJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSoftwareUpdateJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSoftwareUpdateJobRequest> request = null;
+        Response<CreateSoftwareUpdateJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSoftwareUpdateJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSoftwareUpdateJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSoftwareUpdateJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSoftwareUpdateJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -856,6 +1027,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createSubscriptionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -907,6 +1079,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createSubscriptionDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -956,6 +1129,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new DeleteCoreDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCoreDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1004,6 +1178,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new DeleteDeviceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeviceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1054,6 +1229,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(deleteFunctionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1103,6 +1279,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1151,6 +1328,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new DeleteLoggerDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLoggerDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1158,6 +1336,57 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLoggerDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteLoggerDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deletes a resource definition.
+     * 
+     * @param deleteResourceDefinitionRequest
+     * @return Result of the DeleteResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.DeleteResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteResourceDefinitionResult deleteResourceDefinition(DeleteResourceDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourceDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourceDefinitionResult executeDeleteResourceDefinition(DeleteResourceDefinitionRequest deleteResourceDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourceDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourceDefinitionRequest> request = null;
+        Response<DeleteResourceDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteResourceDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteResourceDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1201,6 +1430,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(deleteSubscriptionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1253,6 +1483,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(disassociateRoleFromGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1304,6 +1535,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(disassociateServiceRoleFromAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1355,6 +1587,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetAssociatedRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAssociatedRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1405,6 +1638,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetConnectivityInfoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectivityInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1453,6 +1687,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetCoreDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCoreDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1502,6 +1737,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getCoreDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1551,6 +1787,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetDeploymentStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1599,6 +1836,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetDeviceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1648,6 +1886,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getDeviceDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1697,6 +1936,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetFunctionDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1748,6 +1988,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getFunctionDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1797,6 +2038,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1848,6 +2090,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getGroupCertificateAuthorityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1901,6 +2144,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getGroupCertificateConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1950,6 +2194,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetGroupVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1998,6 +2243,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetLoggerDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLoggerDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2047,6 +2293,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getLoggerDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2054,6 +2301,107 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             HttpResponseHandler<AmazonWebServiceResponse<GetLoggerDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetLoggerDefinitionVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves information about a resource definition, such as its creation time and latest version.
+     * 
+     * @param getResourceDefinitionRequest
+     * @return Result of the GetResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.GetResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourceDefinitionResult getResourceDefinition(GetResourceDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceDefinition(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceDefinitionResult executeGetResourceDefinition(GetResourceDefinitionRequest getResourceDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourceDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourceDefinitionRequest> request = null;
+        Response<GetResourceDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetResourceDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves information about a resource definition version, such as which resources are included in the version.
+     * 
+     * @param getResourceDefinitionVersionRequest
+     * @return Result of the GetResourceDefinitionVersion operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.GetResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourceDefinitionVersionResult getResourceDefinitionVersion(GetResourceDefinitionVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceDefinitionVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceDefinitionVersionResult executeGetResourceDefinitionVersion(GetResourceDefinitionVersionRequest getResourceDefinitionVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourceDefinitionVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourceDefinitionVersionRequest> request = null;
+        Response<GetResourceDefinitionVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourceDefinitionVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getResourceDefinitionVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetResourceDefinitionVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2097,6 +2445,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getServiceRoleForAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2147,6 +2496,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getSubscriptionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2198,6 +2548,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getSubscriptionDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2248,6 +2599,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listCoreDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2295,6 +2647,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListCoreDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCoreDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2343,6 +2696,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2392,6 +2746,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listDeviceDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2439,6 +2794,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListDeviceDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeviceDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2489,6 +2845,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listFunctionDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2537,6 +2894,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listFunctionDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2590,6 +2948,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listGroupCertificateAuthoritiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2639,6 +2998,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListGroupVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2685,6 +3045,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2734,6 +3095,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listLoggerDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2781,6 +3143,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListLoggerDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLoggerDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2788,6 +3151,106 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             HttpResponseHandler<AmazonWebServiceResponse<ListLoggerDefinitionsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListLoggerDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Lists the versions of a resource definition.
+     * 
+     * @param listResourceDefinitionVersionsRequest
+     * @return Result of the ListResourceDefinitionVersions operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.ListResourceDefinitionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceDefinitionVersionsResult listResourceDefinitionVersions(ListResourceDefinitionVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceDefinitionVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceDefinitionVersionsResult executeListResourceDefinitionVersions(ListResourceDefinitionVersionsRequest listResourceDefinitionVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceDefinitionVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceDefinitionVersionsRequest> request = null;
+        Response<ListResourceDefinitionVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceDefinitionVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResourceDefinitionVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourceDefinitionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResourceDefinitionVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves a list of resource definitions.
+     * 
+     * @param listResourceDefinitionsRequest
+     * @return Result of the ListResourceDefinitions operation returned by the service.
+     * @sample AWSGreengrass.ListResourceDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceDefinitionsResult listResourceDefinitions(ListResourceDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceDefinitionsResult executeListResourceDefinitions(ListResourceDefinitionsRequest listResourceDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceDefinitionsRequest> request = null;
+        Response<ListResourceDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResourceDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourceDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResourceDefinitionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2832,6 +3295,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listSubscriptionDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2880,6 +3344,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listSubscriptionDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2930,6 +3395,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ResetDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2982,6 +3448,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateConnectivityInfoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConnectivityInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3031,6 +3498,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateCoreDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCoreDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3079,6 +3547,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateDeviceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3129,6 +3598,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateFunctionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3178,6 +3648,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3230,6 +3701,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateGroupCertificateConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3279,6 +3751,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateLoggerDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLoggerDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3286,6 +3759,57 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLoggerDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateLoggerDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates a resource definition.
+     * 
+     * @param updateResourceDefinitionRequest
+     * @return Result of the UpdateResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.UpdateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateResourceDefinitionResult updateResourceDefinition(UpdateResourceDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateResourceDefinition(request);
+    }
+
+    @SdkInternalApi
+    final UpdateResourceDefinitionResult executeUpdateResourceDefinition(UpdateResourceDefinitionRequest updateResourceDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateResourceDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateResourceDefinitionRequest> request = null;
+        Response<UpdateResourceDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateResourceDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateResourceDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3329,6 +3853,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateSubscriptionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

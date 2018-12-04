@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,24 +31,46 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type.
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests and
+     * ECS services.
      * </p>
      */
     private String predefinedMetricType;
     /**
      * <p>
-     * Reserved for future use.
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request or
+     * ECS service.
      * </p>
+     * <p>
+     * The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
+     * -group-id&gt;, where:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceLabel;
 
     /**
      * <p>
-     * The metric type.
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests and
+     * ECS services.
      * </p>
      * 
      * @param predefinedMetricType
-     *        The metric type.
+     *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests
+     *        and ECS services.
      * @see MetricType
      */
 
@@ -58,10 +80,12 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type.
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests and
+     * ECS services.
      * </p>
      * 
-     * @return The metric type.
+     * @return The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet
+     *         requests and ECS services.
      * @see MetricType
      */
 
@@ -71,11 +95,13 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type.
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests and
+     * ECS services.
      * </p>
      * 
      * @param predefinedMetricType
-     *        The metric type.
+     *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests
+     *        and ECS services.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricType
      */
@@ -87,11 +113,13 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type.
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests and
+     * ECS services.
      * </p>
      * 
      * @param predefinedMetricType
-     *        The metric type.
+     *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests
+     *        and ECS services.
      * @see MetricType
      */
 
@@ -101,11 +129,13 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type.
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests and
+     * ECS services.
      * </p>
      * 
      * @param predefinedMetricType
-     *        The metric type.
+     *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests
+     *        and ECS services.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricType
      */
@@ -117,11 +147,49 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request or
+     * ECS service.
      * </p>
+     * <p>
+     * The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
+     * -group-id&gt;, where:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceLabel
-     *        Reserved for future use.
+     *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot
+     *        fleet request or ECS service.</p>
+     *        <p>
+     *        The format is
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;
+     *        /&lt;target-group-id&gt;, where:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group
+     *        ARN.
+     *        </p>
+     *        </li>
      */
 
     public void setResourceLabel(String resourceLabel) {
@@ -130,10 +198,48 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request or
+     * ECS service.
      * </p>
+     * <p>
+     * The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
+     * -group-id&gt;, where:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Reserved for future use.
+     * @return Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *         metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot
+     *         fleet request or ECS service.</p>
+     *         <p>
+     *         The format is
+     *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt
+     *         ;/&lt;target-group-id&gt;, where:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group
+     *         ARN.
+     *         </p>
+     *         </li>
      */
 
     public String getResourceLabel() {
@@ -142,11 +248,49 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Reserved for future use.
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request or
+     * ECS service.
      * </p>
+     * <p>
+     * The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
+     * -group-id&gt;, where:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceLabel
-     *        Reserved for future use.
+     *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot
+     *        fleet request or ECS service.</p>
+     *        <p>
+     *        The format is
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;
+     *        /&lt;target-group-id&gt;, where:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group
+     *        ARN.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

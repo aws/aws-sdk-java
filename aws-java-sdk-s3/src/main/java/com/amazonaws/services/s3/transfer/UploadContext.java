@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,13 +22,13 @@ import java.io.File;
  * Context object provided to {@link ObjectTaggingProvider} to provide extra information about the
  * object being uploaded.
  */
-@SdkInternalApi
-class UploadContext {
+public final class UploadContext {
     private final File file;
     private final String bucket;
     private final String key;
 
-    public UploadContext(File file, String bucket, String key) {
+    @SdkInternalApi
+    UploadContext(File file, String bucket, String key) {
         this.file = file;
         this.bucket = bucket;
         this.key = key;

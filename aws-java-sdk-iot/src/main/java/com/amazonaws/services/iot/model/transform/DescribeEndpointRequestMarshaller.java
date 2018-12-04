@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeEndpointRequestMarshaller {
 
+    private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("endpointType").build();
+
     private static final DescribeEndpointRequestMarshaller instance = new DescribeEndpointRequestMarshaller();
 
     public static DescribeEndpointRequestMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class DescribeEndpointRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeEndpointRequest.getEndpointType(), ENDPOINTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

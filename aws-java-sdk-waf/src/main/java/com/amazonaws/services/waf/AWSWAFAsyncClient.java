@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -480,6 +480,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRuleGroupResult> createRuleGroupAsync(CreateRuleGroupRequest request) {
+
+        return createRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRuleGroupResult> createRuleGroupAsync(final CreateRuleGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRuleGroupRequest, CreateRuleGroupResult> asyncHandler) {
+        final CreateRuleGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRuleGroupResult>() {
+            @Override
+            public CreateRuleGroupResult call() throws Exception {
+                CreateRuleGroupResult result = null;
+
+                try {
+                    result = executeCreateRuleGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(CreateSizeConstraintSetRequest request) {
 
         return createSizeConstraintSetAsync(request, null);
@@ -711,6 +744,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest request) {
+
+        return deletePermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(final DeletePermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler) {
+        final DeletePermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePermissionPolicyResult>() {
+            @Override
+            public DeletePermissionPolicyResult call() throws Exception {
+                DeletePermissionPolicyResult result = null;
+
+                try {
+                    result = executeDeletePermissionPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request) {
 
         return deleteRateBasedRuleAsync(request, null);
@@ -827,6 +893,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeDeleteRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(DeleteRuleGroupRequest request) {
+
+        return deleteRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(final DeleteRuleGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRuleGroupRequest, DeleteRuleGroupResult> asyncHandler) {
+        final DeleteRuleGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRuleGroupResult>() {
+            @Override
+            public DeleteRuleGroupResult call() throws Exception {
+                DeleteRuleGroupResult result = null;
+
+                try {
+                    result = executeDeleteRuleGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1140,6 +1239,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest request) {
+
+        return getPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(final GetPermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler) {
+        final GetPermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPermissionPolicyResult>() {
+            @Override
+            public GetPermissionPolicyResult call() throws Exception {
+                GetPermissionPolicyResult result = null;
+
+                try {
+                    result = executeGetPermissionPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRateBasedRuleResult> getRateBasedRuleAsync(GetRateBasedRuleRequest request) {
 
         return getRateBasedRuleAsync(request, null);
@@ -1305,6 +1437,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetRuleGroupResult> getRuleGroupAsync(GetRuleGroupRequest request) {
+
+        return getRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRuleGroupResult> getRuleGroupAsync(final GetRuleGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRuleGroupRequest, GetRuleGroupResult> asyncHandler) {
+        final GetRuleGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRuleGroupResult>() {
+            @Override
+            public GetRuleGroupResult call() throws Exception {
+                GetRuleGroupResult result = null;
+
+                try {
+                    result = executeGetRuleGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSampledRequestsResult> getSampledRequestsAsync(GetSampledRequestsRequest request) {
 
         return getSampledRequestsAsync(request, null);
@@ -1454,6 +1619,40 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeGetXssMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActivatedRulesInRuleGroupResult> listActivatedRulesInRuleGroupAsync(ListActivatedRulesInRuleGroupRequest request) {
+
+        return listActivatedRulesInRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActivatedRulesInRuleGroupResult> listActivatedRulesInRuleGroupAsync(
+            final ListActivatedRulesInRuleGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListActivatedRulesInRuleGroupRequest, ListActivatedRulesInRuleGroupResult> asyncHandler) {
+        final ListActivatedRulesInRuleGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListActivatedRulesInRuleGroupResult>() {
+            @Override
+            public ListActivatedRulesInRuleGroupResult call() throws Exception {
+                ListActivatedRulesInRuleGroupResult result = null;
+
+                try {
+                    result = executeListActivatedRulesInRuleGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1668,6 +1867,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(ListRuleGroupsRequest request) {
+
+        return listRuleGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(final ListRuleGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRuleGroupsRequest, ListRuleGroupsResult> asyncHandler) {
+        final ListRuleGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRuleGroupsResult>() {
+            @Override
+            public ListRuleGroupsResult call() throws Exception {
+                ListRuleGroupsResult result = null;
+
+                try {
+                    result = executeListRuleGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest request) {
 
         return listRulesAsync(request, null);
@@ -1767,6 +1999,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSubscribedRuleGroupsResult> listSubscribedRuleGroupsAsync(ListSubscribedRuleGroupsRequest request) {
+
+        return listSubscribedRuleGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubscribedRuleGroupsResult> listSubscribedRuleGroupsAsync(final ListSubscribedRuleGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSubscribedRuleGroupsRequest, ListSubscribedRuleGroupsResult> asyncHandler) {
+        final ListSubscribedRuleGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSubscribedRuleGroupsResult>() {
+            @Override
+            public ListSubscribedRuleGroupsResult call() throws Exception {
+                ListSubscribedRuleGroupsResult result = null;
+
+                try {
+                    result = executeListSubscribedRuleGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(ListWebACLsRequest request) {
 
         return listWebACLsAsync(request, null);
@@ -1817,6 +2082,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeListXssMatchSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest request) {
+
+        return putPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(final PutPermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler) {
+        final PutPermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPermissionPolicyResult>() {
+            @Override
+            public PutPermissionPolicyResult call() throws Exception {
+                PutPermissionPolicyResult result = null;
+
+                try {
+                    result = executePutPermissionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2048,6 +2346,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeUpdateRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuleGroupResult> updateRuleGroupAsync(UpdateRuleGroupRequest request) {
+
+        return updateRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuleGroupResult> updateRuleGroupAsync(final UpdateRuleGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRuleGroupRequest, UpdateRuleGroupResult> asyncHandler) {
+        final UpdateRuleGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRuleGroupResult>() {
+            @Override
+            public UpdateRuleGroupResult call() throws Exception {
+                UpdateRuleGroupResult result = null;
+
+                try {
+                    result = executeUpdateRuleGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

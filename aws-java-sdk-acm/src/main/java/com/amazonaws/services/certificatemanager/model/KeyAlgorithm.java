@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,10 @@ public enum KeyAlgorithm {
 
     RSA_2048("RSA_2048"),
     RSA_1024("RSA_1024"),
-    EC_prime256v1("EC_prime256v1");
+    RSA_4096("RSA_4096"),
+    EC_prime256v1("EC_prime256v1"),
+    EC_secp384r1("EC_secp384r1"),
+    EC_secp521r1("EC_secp521r1");
 
     private String value;
 

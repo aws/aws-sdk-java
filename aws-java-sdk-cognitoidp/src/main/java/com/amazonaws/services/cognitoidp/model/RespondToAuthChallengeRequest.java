@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
     private String clientId;
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
@@ -79,6 +79,19 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      */
     private java.util.Map<String, String> challengeResponses;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private UserContextDataType userContextData;
 
     /**
      * <p>
@@ -122,14 +135,14 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.</p>
+     *        The challenge name. For more information, see .</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -141,13 +154,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
-     * @return The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.</p>
+     * @return The challenge name. For more information, see .</p>
      *         <p>
      *         <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -159,14 +172,14 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.</p>
+     *        The challenge name. For more information, see .</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -180,14 +193,14 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.</p>
+     *        The challenge name. For more information, see .</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -199,14 +212,14 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see <a href="API_InitiateAuth.html">InitiateAuth</a>.</p>
+     *        The challenge name. For more information, see .</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -464,6 +477,95 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code>
+     *        calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code>
+     *         calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code>
+     *        calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RespondToAuthChallengeRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setUserContextData(UserContextDataType userContextData) {
+        this.userContextData = userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public UserContextDataType getUserContextData() {
+        return this.userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RespondToAuthChallengeRequest withUserContextData(UserContextDataType userContextData) {
+        setUserContextData(userContextData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -481,7 +583,11 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
         if (getSession() != null)
             sb.append("Session: ").append(getSession()).append(",");
         if (getChallengeResponses() != null)
-            sb.append("ChallengeResponses: ").append(getChallengeResponses());
+            sb.append("ChallengeResponses: ").append(getChallengeResponses()).append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
+        if (getUserContextData() != null)
+            sb.append("UserContextData: ").append(getUserContextData());
         sb.append("}");
         return sb.toString();
     }
@@ -512,6 +618,14 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getChallengeResponses() != null && other.getChallengeResponses().equals(this.getChallengeResponses()) == false)
             return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
+            return false;
+        if (other.getUserContextData() == null ^ this.getUserContextData() == null)
+            return false;
+        if (other.getUserContextData() != null && other.getUserContextData().equals(this.getUserContextData()) == false)
+            return false;
         return true;
     }
 
@@ -524,6 +638,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getChallengeName() == null) ? 0 : getChallengeName().hashCode());
         hashCode = prime * hashCode + ((getSession() == null) ? 0 : getSession().hashCode());
         hashCode = prime * hashCode + ((getChallengeResponses() == null) ? 0 : getChallengeResponses().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
+        hashCode = prime * hashCode + ((getUserContextData() == null) ? 0 : getUserContextData().hashCode());
         return hashCode;
     }
 

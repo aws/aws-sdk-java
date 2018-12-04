@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,8 +89,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * <p>
      * In a managed compute environment, AWS Batch manages the compute resources within the environment, based on the
      * compute resources that you specify. Instances launched into a managed compute environment use a recent, approved
-     * version of the Amazon ECS-optimized AMI. You can choose to use Amazon EC2 On-Demand instances in your managed
-     * compute environment, or you can use Amazon EC2 Spot instances that only launch when the Spot bid price is below a
+     * version of the Amazon ECS-optimized AMI. You can choose to use Amazon EC2 On-Demand Instances in your managed
+     * compute environment, or you can use Amazon EC2 Spot Instances that only launch when the Spot bid price is below a
      * specified percentage of the On-Demand price.
      * </p>
      * <p>
@@ -98,12 +98,12 @@ public interface AWSBatchAsync extends AWSBatch {
      * resource configuration options, such as using a custom AMI, but you must ensure that your AMI meets the Amazon
      * ECS container instance AMI specification. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container Instance
-     * AMIs</a> in the <i>Amazon EC2 Container Service Developer Guide</i>. After you have created your unmanaged
+     * AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your unmanaged
      * compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS cluster
      * that is associated with it and then manually launch your container instances into that Amazon ECS cluster. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
-     * Amazon ECS Container Instance</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param createComputeEnvironmentRequest
@@ -122,8 +122,8 @@ public interface AWSBatchAsync extends AWSBatch {
      * <p>
      * In a managed compute environment, AWS Batch manages the compute resources within the environment, based on the
      * compute resources that you specify. Instances launched into a managed compute environment use a recent, approved
-     * version of the Amazon ECS-optimized AMI. You can choose to use Amazon EC2 On-Demand instances in your managed
-     * compute environment, or you can use Amazon EC2 Spot instances that only launch when the Spot bid price is below a
+     * version of the Amazon ECS-optimized AMI. You can choose to use Amazon EC2 On-Demand Instances in your managed
+     * compute environment, or you can use Amazon EC2 Spot Instances that only launch when the Spot bid price is below a
      * specified percentage of the On-Demand price.
      * </p>
      * <p>
@@ -131,12 +131,12 @@ public interface AWSBatchAsync extends AWSBatch {
      * resource configuration options, such as using a custom AMI, but you must ensure that your AMI meets the Amazon
      * ECS container instance AMI specification. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container Instance
-     * AMIs</a> in the <i>Amazon EC2 Container Service Developer Guide</i>. After you have created your unmanaged
+     * AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your unmanaged
      * compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS cluster
      * that is associated with it and then manually launch your container instances into that Amazon ECS cluster. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
-     * Amazon ECS Container Instance</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param createComputeEnvironmentRequest

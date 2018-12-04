@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The limits specified for a resource have been exceeded.
+ * This operation can't be completed either because the current account has reached the limit on reusable delegation
+ * sets that it can create or because you've reached the limit on the number of Amazon VPCs that you can associate with
+ * a private hosted zone. To get the current limit on the number of reusable delegation sets, see
+ * <a>GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that you can associate with a private
+ * hosted zone, see <a>GetHostedZoneLimit</a>. To request a higher limit, <a
+ * href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

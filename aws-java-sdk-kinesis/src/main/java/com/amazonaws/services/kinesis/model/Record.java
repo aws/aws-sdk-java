@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The unit of data of the Amazon Kinesis stream, which is composed of a sequence number, a partition key, and a data
+ * The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data
  * blob.
  * </p>
  * 
@@ -43,10 +43,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date approximateArrivalTimestamp;
     /**
      * <p>
-     * The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not
-     * inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1
-     * MB).
+     * The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect,
+     * interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum record size (1 MB).
      * </p>
      */
     private java.nio.ByteBuffer data;
@@ -68,7 +67,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -157,10 +156,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not
-     * inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1
-     * MB).
+     * The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect,
+     * interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum record size (1 MB).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -174,8 +172,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param data
-     *        The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does
-     *        not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
+     *        The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not
+     *        inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
      *        base64-encoding) is added to the partition key size, the total size must not exceed the maximum record
      *        size (1 MB).
      */
@@ -186,10 +184,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not
-     * inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1
-     * MB).
+     * The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect,
+     * interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum record size (1 MB).
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -199,10 +196,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which
-     *         does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload
-     *         before base64-encoding) is added to the partition key size, the total size must not exceed the maximum
-     *         record size (1 MB).
+     * @return The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not
+     *         inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
+     *         base64-encoding) is added to the partition key size, the total size must not exceed the maximum record
+     *         size (1 MB).
      */
 
     public java.nio.ByteBuffer getData() {
@@ -211,10 +208,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not
-     * inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1
-     * MB).
+     * The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect,
+     * interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum record size (1 MB).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -228,8 +224,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param data
-     *        The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does
-     *        not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
+     *        The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not
+     *        inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
      *        base64-encoding) is added to the partition key size, the total size must not exceed the maximum record
      *        size (1 MB).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -292,7 +288,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -307,7 +303,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
      *        key.
      *        </p>
      *        </li>
@@ -330,7 +326,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -344,8 +340,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
-     *         key.
+     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS
+     *         KMS key.
      *         </p>
      *         </li>
      * @see EncryptionType
@@ -367,7 +363,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -382,7 +378,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
      *        key.
      *        </p>
      *        </li>
@@ -407,7 +403,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -422,7 +418,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
      *        key.
      *        </p>
      *        </li>

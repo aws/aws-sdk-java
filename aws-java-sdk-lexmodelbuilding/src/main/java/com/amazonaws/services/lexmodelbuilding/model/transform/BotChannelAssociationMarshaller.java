@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,10 @@ public class BotChannelAssociationMarshaller {
             .marshallLocationName("type").build();
     private static final MarshallingInfo<Map> BOTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("botConfiguration").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReason").build();
 
     private static final BotChannelAssociationMarshaller instance = new BotChannelAssociationMarshaller();
 
@@ -67,6 +71,8 @@ public class BotChannelAssociationMarshaller {
             protocolMarshaller.marshall(botChannelAssociation.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(botChannelAssociation.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(botChannelAssociation.getBotConfiguration(), BOTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(botChannelAssociation.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(botChannelAssociation.getFailureReason(), FAILUREREASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

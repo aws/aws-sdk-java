@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,8 +135,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      */
     private java.util.List<String> metricGroups;
@@ -155,6 +156,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String peerVpcId;
+    /**
+     * <p>
+     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
+     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
+     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
+     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
+     * Resources</a>.
+     * </p>
+     */
+    private String fleetType;
 
     /**
      * <p>
@@ -1045,13 +1058,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      * 
-     * @return Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *         group. Or use a new name to create a new metric group. A fleet can only be included in one metric group
-     *         at a time.
+     * @return Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the
+     *         group. Use an existing metric group name to add this fleet to the group, or use a new name to create a
+     *         new metric group. A fleet can only be included in one metric group at a time.
      */
 
     public java.util.List<String> getMetricGroups() {
@@ -1060,14 +1074,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
-     *        a time.
+     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
+     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
+     *        group. A fleet can only be included in one metric group at a time.
      */
 
     public void setMetricGroups(java.util.Collection<String> metricGroups) {
@@ -1081,8 +1096,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1091,9 +1107,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
-     *        a time.
+     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
+     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
+     *        group. A fleet can only be included in one metric group at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1109,14 +1125,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
-     *        a time.
+     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
+     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
+     *        group. A fleet can only be included in one metric group at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1224,6 +1241,144 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
+     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
+     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
+     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
+     * Resources</a>.
+     * </p>
+     * 
+     * @param fleetType
+     *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     *        ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
+     *        type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
+     *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
+     *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
+     *        instances with at <a
+     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
+     *        Computing Resources</a>.
+     * @see FleetType
+     */
+
+    public void setFleetType(String fleetType) {
+        this.fleetType = fleetType;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
+     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
+     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
+     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
+     * Resources</a>.
+     * </p>
+     * 
+     * @return Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     *         ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
+     *         type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
+     *         them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
+     *         in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
+     *         instances with at <a
+     *         href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
+     *         Computing Resources</a>.
+     * @see FleetType
+     */
+
+    public String getFleetType() {
+        return this.fleetType;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
+     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
+     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
+     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
+     * Resources</a>.
+     * </p>
+     * 
+     * @param fleetType
+     *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     *        ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
+     *        type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
+     *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
+     *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
+     *        instances with at <a
+     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
+     *        Computing Resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetType
+     */
+
+    public CreateFleetRequest withFleetType(String fleetType) {
+        setFleetType(fleetType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
+     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
+     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
+     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
+     * Resources</a>.
+     * </p>
+     * 
+     * @param fleetType
+     *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     *        ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
+     *        type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
+     *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
+     *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
+     *        instances with at <a
+     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
+     *        Computing Resources</a>.
+     * @see FleetType
+     */
+
+    public void setFleetType(FleetType fleetType) {
+        withFleetType(fleetType);
+    }
+
+    /**
+     * <p>
+     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     * ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance type
+     * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
+     * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
+     * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
+     * Resources</a>.
+     * </p>
+     * 
+     * @param fleetType
+     *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
+     *        ON_DEMAND. Both categories of instances use identical hardware and configurations, based on the instance
+     *        type selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep
+     *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
+     *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
+     *        instances with at <a
+     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
+     *        Computing Resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetType
+     */
+
+    public CreateFleetRequest withFleetType(FleetType fleetType) {
+        this.fleetType = fleetType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1261,7 +1416,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getPeerVpcAwsAccountId() != null)
             sb.append("PeerVpcAwsAccountId: ").append(getPeerVpcAwsAccountId()).append(",");
         if (getPeerVpcId() != null)
-            sb.append("PeerVpcId: ").append(getPeerVpcId());
+            sb.append("PeerVpcId: ").append(getPeerVpcId()).append(",");
+        if (getFleetType() != null)
+            sb.append("FleetType: ").append(getFleetType());
         sb.append("}");
         return sb.toString();
     }
@@ -1333,6 +1490,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getPeerVpcId() != null && other.getPeerVpcId().equals(this.getPeerVpcId()) == false)
             return false;
+        if (other.getFleetType() == null ^ this.getFleetType() == null)
+            return false;
+        if (other.getFleetType() != null && other.getFleetType().equals(this.getFleetType()) == false)
+            return false;
         return true;
     }
 
@@ -1355,6 +1516,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getMetricGroups() == null) ? 0 : getMetricGroups().hashCode());
         hashCode = prime * hashCode + ((getPeerVpcAwsAccountId() == null) ? 0 : getPeerVpcAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
+        hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         return hashCode;
     }
 

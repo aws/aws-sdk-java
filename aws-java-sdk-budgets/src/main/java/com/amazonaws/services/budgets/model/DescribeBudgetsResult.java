@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,17 +16,32 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Response of DescribeBudgets
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of budgets.
+     * </p>
+     */
     private java.util.List<Budget> budgets;
-
+    /**
+     * <p>
+     * The pagination token that indicates the next set of results that you can retrieve.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of budgets.
+     * </p>
+     * 
+     * @return A list of budgets.
      */
 
     public java.util.List<Budget> getBudgets() {
@@ -34,7 +49,12 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * A list of budgets.
+     * </p>
+     * 
      * @param budgets
+     *        A list of budgets.
      */
 
     public void setBudgets(java.util.Collection<Budget> budgets) {
@@ -48,12 +68,16 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * A list of budgets.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBudgets(java.util.Collection)} or {@link #withBudgets(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param budgets
+     *        A list of budgets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +92,12 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * A list of budgets.
+     * </p>
+     * 
      * @param budgets
+     *        A list of budgets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +107,12 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The pagination token that indicates the next set of results that you can retrieve.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token that indicates the next set of results that you can retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -86,7 +120,11 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token that indicates the next set of results that you can retrieve.
+     * </p>
+     * 
+     * @return The pagination token that indicates the next set of results that you can retrieve.
      */
 
     public String getNextToken() {
@@ -94,7 +132,12 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The pagination token that indicates the next set of results that you can retrieve.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token that indicates the next set of results that you can retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

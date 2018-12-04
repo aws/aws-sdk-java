@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the inputs for the <a>CreateWorkspaces</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces" target="_top">AWS API
  *      Documentation</a>
@@ -30,17 +27,17 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to create.
+     * Information about the WorkSpaces to create.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<WorkspaceRequest> workspaces;
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to create.
+     * Information about the WorkSpaces to create.
      * </p>
      * 
-     * @return An array of structures that specify the WorkSpaces to create.
+     * @return Information about the WorkSpaces to create.
      */
 
     public java.util.List<WorkspaceRequest> getWorkspaces() {
@@ -52,11 +49,11 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to create.
+     * Information about the WorkSpaces to create.
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that specify the WorkSpaces to create.
+     *        Information about the WorkSpaces to create.
      */
 
     public void setWorkspaces(java.util.Collection<WorkspaceRequest> workspaces) {
@@ -70,7 +67,7 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to create.
+     * Information about the WorkSpaces to create.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +76,7 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that specify the WorkSpaces to create.
+     *        Information about the WorkSpaces to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +92,11 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to create.
+     * Information about the WorkSpaces to create.
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that specify the WorkSpaces to create.
+     *        Information about the WorkSpaces to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

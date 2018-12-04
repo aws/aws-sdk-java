@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
     private String registryId;
     /**
      * <p>
-     * The name of the repository with the policy to retrieve.
+     * The name of the repository.
      * </p>
      */
     private String repositoryName;
@@ -46,24 +46,24 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<ImageIdentifier> imageIds;
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated&#8232;
-     * <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the&#8232;
-     * results exceeded the value of that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code> when there are no more
-     * results to return.
+     * The <code>nextToken</code> value returned from a previous paginated&#x2028;
+     * <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the&#x2028;
+     * results exceeded the value of that parameter. Pagination continues from the end of the&#x2028; previous results
+     * that returned the <code>nextToken</code> value. This value is&#x2028; <code>null</code> when there are no more
+     * results to return. This option cannot be used when you specify images with <code>imageIds</code>.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in&#8232;
-     * paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns&#8232;
-     * <code>maxResults</code> results in a single page along with a <code>nextToken</code>&#8232; response element. The
-     * remaining results of the initial request can be seen by sending&#8232; another
-     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>&#8232; value. This
-     * value can be between 1 and 100. If this&#8232; parameter is not used, then
-     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results and a <code>nextToken</code>
-     * value, if&#8232; applicable.
+     * The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in&#x2028;
+     * paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns&#x2028;
+     * <code>maxResults</code> results in a single page along with a <code>nextToken</code>&#x2028; response element.
+     * The remaining results of the initial request can be seen by sending&#x2028; another
+     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>&#x2028; value.
+     * This value can be between 1 and 100. If this&#x2028; parameter is not used, then
+     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results and a <code>nextToken</code>
+     * value, if&#x2028; applicable. This option cannot be used when you specify images with <code>imageIds</code>.
      * </p>
      */
     private Integer maxResults;
@@ -122,11 +122,11 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the repository with the policy to retrieve.
+     * The name of the repository.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository with the policy to retrieve.
+     *        The name of the repository.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -135,10 +135,10 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the repository with the policy to retrieve.
+     * The name of the repository.
      * </p>
      * 
-     * @return The name of the repository with the policy to retrieve.
+     * @return The name of the repository.
      */
 
     public String getRepositoryName() {
@@ -147,11 +147,11 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the repository with the policy to retrieve.
+     * The name of the repository.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository with the policy to retrieve.
+     *        The name of the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,19 +232,20 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated&#8232;
-     * <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the&#8232;
-     * results exceeded the value of that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code> when there are no more
-     * results to return.
+     * The <code>nextToken</code> value returned from a previous paginated&#x2028;
+     * <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the&#x2028;
+     * results exceeded the value of that parameter. Pagination continues from the end of the&#x2028; previous results
+     * that returned the <code>nextToken</code> value. This value is&#x2028; <code>null</code> when there are no more
+     * results to return. This option cannot be used when you specify images with <code>imageIds</code>.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated&#8232;
+     *        The <code>nextToken</code> value returned from a previous paginated&#x2028;
      *        <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and
-     *        the&#8232; results exceeded the value of that parameter. Pagination continues from the end of the&#8232;
-     *        previous results that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code>
-     *        when there are no more results to return.
+     *        the&#x2028; results exceeded the value of that parameter. Pagination continues from the end of the&#x2028;
+     *        previous results that returned the <code>nextToken</code> value. This value is&#x2028; <code>null</code>
+     *        when there are no more results to return. This option cannot be used when you specify images with
+     *        <code>imageIds</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -253,18 +254,19 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated&#8232;
-     * <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the&#8232;
-     * results exceeded the value of that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code> when there are no more
-     * results to return.
+     * The <code>nextToken</code> value returned from a previous paginated&#x2028;
+     * <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the&#x2028;
+     * results exceeded the value of that parameter. Pagination continues from the end of the&#x2028; previous results
+     * that returned the <code>nextToken</code> value. This value is&#x2028; <code>null</code> when there are no more
+     * results to return. This option cannot be used when you specify images with <code>imageIds</code>.
      * </p>
      * 
-     * @return The <code>nextToken</code> value returned from a previous paginated&#8232;
+     * @return The <code>nextToken</code> value returned from a previous paginated&#x2028;
      *         <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and
-     *         the&#8232; results exceeded the value of that parameter. Pagination continues from the end of the&#8232;
-     *         previous results that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code>
-     *         when there are no more results to return.
+     *         the&#x2028; results exceeded the value of that parameter. Pagination continues from the end of
+     *         the&#x2028; previous results that returned the <code>nextToken</code> value. This value is&#x2028;
+     *         <code>null</code> when there are no more results to return. This option cannot be used when you specify
+     *         images with <code>imageIds</code>.
      */
 
     public String getNextToken() {
@@ -273,19 +275,20 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated&#8232;
-     * <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the&#8232;
-     * results exceeded the value of that parameter. Pagination continues from the end of the&#8232; previous results
-     * that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code> when there are no more
-     * results to return.
+     * The <code>nextToken</code> value returned from a previous paginated&#x2028;
+     * <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the&#x2028;
+     * results exceeded the value of that parameter. Pagination continues from the end of the&#x2028; previous results
+     * that returned the <code>nextToken</code> value. This value is&#x2028; <code>null</code> when there are no more
+     * results to return. This option cannot be used when you specify images with <code>imageIds</code>.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated&#8232;
+     *        The <code>nextToken</code> value returned from a previous paginated&#x2028;
      *        <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and
-     *        the&#8232; results exceeded the value of that parameter. Pagination continues from the end of the&#8232;
-     *        previous results that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code>
-     *        when there are no more results to return.
+     *        the&#x2028; results exceeded the value of that parameter. Pagination continues from the end of the&#x2028;
+     *        previous results that returned the <code>nextToken</code> value. This value is&#x2028; <code>null</code>
+     *        when there are no more results to return. This option cannot be used when you specify images with
+     *        <code>imageIds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,25 +299,26 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in&#8232;
-     * paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns&#8232;
-     * <code>maxResults</code> results in a single page along with a <code>nextToken</code>&#8232; response element. The
-     * remaining results of the initial request can be seen by sending&#8232; another
-     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>&#8232; value. This
-     * value can be between 1 and 100. If this&#8232; parameter is not used, then
-     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results and a <code>nextToken</code>
-     * value, if&#8232; applicable.
+     * The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in&#x2028;
+     * paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns&#x2028;
+     * <code>maxResults</code> results in a single page along with a <code>nextToken</code>&#x2028; response element.
+     * The remaining results of the initial request can be seen by sending&#x2028; another
+     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>&#x2028; value.
+     * This value can be between 1 and 100. If this&#x2028; parameter is not used, then
+     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results and a <code>nextToken</code>
+     * value, if&#x2028; applicable. This option cannot be used when you specify images with <code>imageIds</code>.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code>
-     *        in&#8232; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
-     *        only returns&#8232; <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-     *        &#8232; response element. The remaining results of the initial request can be seen by sending&#8232;
+     *        in&#x2028; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
+     *        only returns&#x2028; <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+     *        &#x2028; response element. The remaining results of the initial request can be seen by sending&#x2028;
      *        another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>
-     *        &#8232; value. This value can be between 1 and 100. If this&#8232; parameter is not used, then
-     *        <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results and a
-     *        <code>nextToken</code> value, if&#8232; applicable.
+     *        &#x2028; value. This value can be between 1 and 100. If this&#x2028; parameter is not used, then
+     *        <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results and a
+     *        <code>nextToken</code> value, if&#x2028; applicable. This option cannot be used when you specify images
+     *        with <code>imageIds</code>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -323,24 +327,25 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in&#8232;
-     * paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns&#8232;
-     * <code>maxResults</code> results in a single page along with a <code>nextToken</code>&#8232; response element. The
-     * remaining results of the initial request can be seen by sending&#8232; another
-     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>&#8232; value. This
-     * value can be between 1 and 100. If this&#8232; parameter is not used, then
-     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results and a <code>nextToken</code>
-     * value, if&#8232; applicable.
+     * The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in&#x2028;
+     * paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns&#x2028;
+     * <code>maxResults</code> results in a single page along with a <code>nextToken</code>&#x2028; response element.
+     * The remaining results of the initial request can be seen by sending&#x2028; another
+     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>&#x2028; value.
+     * This value can be between 1 and 100. If this&#x2028; parameter is not used, then
+     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results and a <code>nextToken</code>
+     * value, if&#x2028; applicable. This option cannot be used when you specify images with <code>imageIds</code>.
      * </p>
      * 
      * @return The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code>
-     *         in&#8232; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
-     *         only returns&#8232; <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-     *         &#8232; response element. The remaining results of the initial request can be seen by sending&#8232;
+     *         in&#x2028; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
+     *         only returns&#x2028; <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+     *         &#x2028; response element. The remaining results of the initial request can be seen by sending&#x2028;
      *         another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>
-     *         &#8232; value. This value can be between 1 and 100. If this&#8232; parameter is not used, then
-     *         <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results and a
-     *         <code>nextToken</code> value, if&#8232; applicable.
+     *         &#x2028; value. This value can be between 1 and 100. If this&#x2028; parameter is not used, then
+     *         <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results and a
+     *         <code>nextToken</code> value, if&#x2028; applicable. This option cannot be used when you specify images
+     *         with <code>imageIds</code>.
      */
 
     public Integer getMaxResults() {
@@ -349,25 +354,26 @@ public class GetLifecyclePolicyPreviewRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in&#8232;
-     * paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns&#8232;
-     * <code>maxResults</code> results in a single page along with a <code>nextToken</code>&#8232; response element. The
-     * remaining results of the initial request can be seen by sending&#8232; another
-     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>&#8232; value. This
-     * value can be between 1 and 100. If this&#8232; parameter is not used, then
-     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results and a <code>nextToken</code>
-     * value, if&#8232; applicable.
+     * The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in&#x2028;
+     * paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns&#x2028;
+     * <code>maxResults</code> results in a single page along with a <code>nextToken</code>&#x2028; response element.
+     * The remaining results of the initial request can be seen by sending&#x2028; another
+     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>&#x2028; value.
+     * This value can be between 1 and 100. If this&#x2028; parameter is not used, then
+     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results and a <code>nextToken</code>
+     * value, if&#x2028; applicable. This option cannot be used when you specify images with <code>imageIds</code>.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code>
-     *        in&#8232; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
-     *        only returns&#8232; <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-     *        &#8232; response element. The remaining results of the initial request can be seen by sending&#8232;
+     *        in&#x2028; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
+     *        only returns&#x2028; <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+     *        &#x2028; response element. The remaining results of the initial request can be seen by sending&#x2028;
      *        another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>
-     *        &#8232; value. This value can be between 1 and 100. If this&#8232; parameter is not used, then
-     *        <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#8232; 100 results and a
-     *        <code>nextToken</code> value, if&#8232; applicable.
+     *        &#x2028; value. This value can be between 1 and 100. If this&#x2028; parameter is not used, then
+     *        <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results and a
+     *        <code>nextToken</code> value, if&#x2028; applicable. This option cannot be used when you specify images
+     *        with <code>imageIds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

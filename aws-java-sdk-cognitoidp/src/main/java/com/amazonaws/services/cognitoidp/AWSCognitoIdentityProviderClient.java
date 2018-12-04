@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,8 +130,14 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("UserNotConfirmedException").withModeledClass(
                                     com.amazonaws.services.cognitoidp.model.UserNotConfirmedException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SoftwareTokenMFANotFoundException").withModeledClass(
+                                    com.amazonaws.services.cognitoidp.model.SoftwareTokenMFANotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PasswordResetRequiredException").withModeledClass(
                                     com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EnableSoftwareTokenMFAException").withModeledClass(
+                                    com.amazonaws.services.cognitoidp.model.EnableSoftwareTokenMFAException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnexpectedLambdaException").withModeledClass(
                                     com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException.class))
@@ -171,6 +177,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UserPoolTaggingException").withModeledClass(
                                     com.amazonaws.services.cognitoidp.model.UserPoolTaggingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UserPoolAddOnNotEnabledException").withModeledClass(
+                                    com.amazonaws.services.cognitoidp.model.UserPoolAddOnNotEnabledException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidUserPoolConfigurationException").withModeledClass(
                                     com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException.class))
@@ -413,6 +422,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AddCustomAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCustomAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -476,6 +486,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminAddUserToGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminAddUserToGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -553,6 +564,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminConfirmSignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminConfirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -571,13 +583,27 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
-     * is based on a template that you configured in your call to <a href="API_CreateUserPool.html">CreateUserPool</a>
-     * or <a href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your custom sign-up instructions
-     * and placeholders for user name and temporary password.
+     * Creates a new user in the specified user pool.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * If <code>MessageAction</code> is not set, the default is to send a welcome message via email or phone (SMS).
+     * </p>
+     * <note>
+     * <p>
+     * This message is based on a template that you configured in your call to or . This template includes your custom
+     * sign-up instructions and placeholders for user name and temporary password.
+     * </p>
+     * </note>
+     * <p>
+     * Alternatively, you can call AdminCreateUser with “SUPPRESS” for the <code>MessageAction</code> parameter, and
+     * Amazon Cognito will not send any email.
+     * </p>
+     * <p>
+     * In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change
+     * their password.
+     * </p>
+     * <p>
+     * AdminCreateUser requires developer credentials.
      * </p>
      * 
      * @param adminCreateUserRequest
@@ -645,6 +671,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminCreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminCreateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -709,6 +736,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminDeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDeleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -774,6 +802,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminDeleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -797,8 +826,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
      * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
      * removed. The next time the external user (no longer attached to the previously linked
-     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a
-     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See .
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -819,11 +847,10 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
      * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
-     * used for the <code>SourceUser</code> when the identities were originally linked in the <a
-     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If the linking was done with
-     * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here). However, if the
-     * user has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
-     * <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * used for the <code>SourceUser</code> when the identities were originally linked in the call. (If the linking was
+     * done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here).
+     * However, if the user has already signed in, the <code>ProviderAttributeName</code> must be
+     * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
      * </p>
      * 
      * @param adminDisableProviderForUserRequest
@@ -870,6 +897,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminDisableProviderForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -935,6 +963,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminDisableUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDisableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -999,6 +1028,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminEnableUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminEnableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1065,6 +1095,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminForgetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminForgetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1129,6 +1160,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminGetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1193,6 +1225,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminGetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1280,6 +1313,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminInitiateAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminInitiateAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1316,7 +1350,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * </p>
      * </important>
      * <p>
-     * See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+     * See also .
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -1366,6 +1400,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminLinkProviderForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1431,6 +1466,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1494,6 +1530,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminListGroupsForUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListGroupsForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1501,6 +1538,71 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<AdminListGroupsForUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminListGroupsForUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists a history of user activity and any risks detected as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param adminListUserAuthEventsRequest
+     * @return Result of the AdminListUserAuthEvents operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminListUserAuthEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AdminListUserAuthEventsResult adminListUserAuthEvents(AdminListUserAuthEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminListUserAuthEvents(request);
+    }
+
+    @SdkInternalApi
+    final AdminListUserAuthEventsResult executeAdminListUserAuthEvents(AdminListUserAuthEventsRequest adminListUserAuthEventsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(adminListUserAuthEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminListUserAuthEventsRequest> request = null;
+        Response<AdminListUserAuthEventsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminListUserAuthEventsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(adminListUserAuthEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminListUserAuthEventsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AdminListUserAuthEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1559,6 +1661,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminRemoveUserFromGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1652,6 +1755,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminResetUserPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminResetUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1725,6 +1829,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         This exception is thrown when a user is not found.
      * @throws UserNotConfirmedException
      *         This exception is thrown when a user is not confirmed successfully.
+     * @throws SoftwareTokenMFANotFoundException
+     *         This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled
+     *         for the user pool.
      * @sample AWSCognitoIdentityProvider.AdminRespondToAuthChallenge
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge"
      *      target="_top">AWS API Documentation</a>
@@ -1751,6 +1858,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminRespondToAuthChallengeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1758,6 +1866,71 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<AdminRespondToAuthChallengeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminRespondToAuthChallengeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the user's multi-factor authentication (MFA) preference.
+     * </p>
+     * 
+     * @param adminSetUserMFAPreferenceRequest
+     * @return Result of the AdminSetUserMFAPreference operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminSetUserMFAPreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AdminSetUserMFAPreferenceResult adminSetUserMFAPreference(AdminSetUserMFAPreferenceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminSetUserMFAPreference(request);
+    }
+
+    @SdkInternalApi
+    final AdminSetUserMFAPreferenceResult executeAdminSetUserMFAPreference(AdminSetUserMFAPreferenceRequest adminSetUserMFAPreferenceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(adminSetUserMFAPreferenceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminSetUserMFAPreferenceRequest> request = null;
+        Response<AdminSetUserMFAPreferenceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminSetUserMFAPreferenceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(adminSetUserMFAPreferenceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminSetUserMFAPreferenceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AdminSetUserMFAPreferenceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1814,12 +1987,79 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminSetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminSetUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminSetUserSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminSetUserSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides feedback for an authentication event as to whether it was from a valid user. This feedback is used for
+     * improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param adminUpdateAuthEventFeedbackRequest
+     * @return Result of the AdminUpdateAuthEventFeedback operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminUpdateAuthEventFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AdminUpdateAuthEventFeedbackResult adminUpdateAuthEventFeedback(AdminUpdateAuthEventFeedbackRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminUpdateAuthEventFeedback(request);
+    }
+
+    @SdkInternalApi
+    final AdminUpdateAuthEventFeedbackResult executeAdminUpdateAuthEventFeedback(AdminUpdateAuthEventFeedbackRequest adminUpdateAuthEventFeedbackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(adminUpdateAuthEventFeedbackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminUpdateAuthEventFeedbackRequest> request = null;
+        Response<AdminUpdateAuthEventFeedbackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminUpdateAuthEventFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(adminUpdateAuthEventFeedbackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminUpdateAuthEventFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AdminUpdateAuthEventFeedbackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1881,6 +2121,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminUpdateDeviceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1965,6 +2206,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminUpdateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2030,6 +2272,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminUserGlobalSignOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminUserGlobalSignOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2037,6 +2280,68 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<AdminUserGlobalSignOutResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminUserGlobalSignOutResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a unique generated shared secret key code for the user account. The request takes an access token or a
+     * session string, but not both.
+     * </p>
+     * 
+     * @param associateSoftwareTokenRequest
+     * @return Result of the AssociateSoftwareToken operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws SoftwareTokenMFANotFoundException
+     *         This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled
+     *         for the user pool.
+     * @sample AWSCognitoIdentityProvider.AssociateSoftwareToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateSoftwareTokenResult associateSoftwareToken(AssociateSoftwareTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateSoftwareToken(request);
+    }
+
+    @SdkInternalApi
+    final AssociateSoftwareTokenResult executeAssociateSoftwareToken(AssociateSoftwareTokenRequest associateSoftwareTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateSoftwareTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateSoftwareTokenRequest> request = null;
+        Response<AssociateSoftwareTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateSoftwareTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateSoftwareTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateSoftwareTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateSoftwareTokenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2100,6 +2405,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ChangePasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(changePasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2173,6 +2479,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2255,6 +2562,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmForgotPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmForgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2338,6 +2646,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmSignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2403,6 +2712,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2465,6 +2775,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2526,6 +2837,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2589,6 +2901,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2660,6 +2973,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2725,6 +3039,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2781,6 +3096,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2842,6 +3158,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2902,6 +3219,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2961,6 +3279,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3026,6 +3345,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3091,6 +3411,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3153,6 +3474,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3212,6 +3534,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3268,6 +3591,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3327,6 +3651,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3386,6 +3711,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3393,6 +3719,69 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DescribeResourceServerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeResourceServerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the risk configuration.
+     * </p>
+     * 
+     * @param describeRiskConfigurationRequest
+     * @return Result of the DescribeRiskConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DescribeRiskConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRiskConfigurationResult describeRiskConfiguration(DescribeRiskConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRiskConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRiskConfigurationResult executeDescribeRiskConfiguration(DescribeRiskConfigurationRequest describeRiskConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRiskConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRiskConfigurationRequest> request = null;
+        Response<DescribeRiskConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRiskConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRiskConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRiskConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRiskConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3446,6 +3835,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3508,6 +3898,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3567,6 +3958,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3624,6 +4016,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3692,6 +4085,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ForgetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3715,7 +4109,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
      * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
      * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
-     * resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
+     * resetting the password, call .
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -3782,6 +4176,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ForgotPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3841,6 +4236,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetCSVHeaderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCSVHeaderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3908,6 +4304,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3969,6 +4366,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4029,6 +4427,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getIdentityProviderByIdentifierRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4036,6 +4435,61 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<GetIdentityProviderByIdentifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetIdentityProviderByIdentifierResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This method takes a user pool ID, and returns the signing certificate.
+     * </p>
+     * 
+     * @param getSigningCertificateRequest
+     *        Request to get a signing certificate from Cognito.
+     * @return Result of the GetSigningCertificate operation returned by the service.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @sample AWSCognitoIdentityProvider.GetSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSigningCertificateResult getSigningCertificate(GetSigningCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSigningCertificate(request);
+    }
+
+    @SdkInternalApi
+    final GetSigningCertificateResult executeGetSigningCertificate(GetSigningCertificateRequest getSigningCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSigningCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSigningCertificateRequest> request = null;
+        Response<GetSigningCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSigningCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSigningCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSigningCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetSigningCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4090,6 +4544,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetUICustomizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUICustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4155,6 +4610,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4244,6 +4700,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getUserAttributeVerificationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4252,6 +4709,65 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetUserAttributeVerificationCodeResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the user pool multi-factor authentication (MFA) configuration.
+     * </p>
+     * 
+     * @param getUserPoolMfaConfigRequest
+     * @return Result of the GetUserPoolMfaConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.GetUserPoolMfaConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetUserPoolMfaConfigResult getUserPoolMfaConfig(GetUserPoolMfaConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUserPoolMfaConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetUserPoolMfaConfigResult executeGetUserPoolMfaConfig(GetUserPoolMfaConfigRequest getUserPoolMfaConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getUserPoolMfaConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUserPoolMfaConfigRequest> request = null;
+        Response<GetUserPoolMfaConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUserPoolMfaConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserPoolMfaConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUserPoolMfaConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUserPoolMfaConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -4308,6 +4824,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GlobalSignOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(globalSignOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4383,6 +4900,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new InitiateAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4450,6 +4968,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4511,6 +5030,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4569,6 +5089,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListIdentityProvidersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityProvidersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4628,6 +5149,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListResourceServersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceServersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4687,6 +5209,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4746,6 +5269,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserPoolClientsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolClientsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4803,6 +5327,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserPoolsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4862,6 +5387,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4923,6 +5449,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUsersInGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersInGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5006,6 +5533,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ResendConfirmationCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendConfirmationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5076,6 +5604,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         with this email or phone already exists.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws SoftwareTokenMFANotFoundException
+     *         This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled
+     *         for the user pool.
      * @sample AWSCognitoIdentityProvider.RespondToAuthChallenge
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge"
      *      target="_top">AWS API Documentation</a>
@@ -5101,6 +5632,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new RespondToAuthChallengeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(respondToAuthChallengeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5108,6 +5640,80 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<RespondToAuthChallengeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RespondToAuthChallengeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code> or
+     * <code>ClientId</code>, pass null values for all four configuration types.
+     * </p>
+     * <p>
+     * To enable Amazon Cognito advanced security features, update the user pool to include the
+     * <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
+     * </p>
+     * <p>
+     * See .
+     * </p>
+     * 
+     * @param setRiskConfigurationRequest
+     * @return Result of the SetRiskConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws CodeDeliveryFailureException
+     *         This exception is thrown when a verification code fails to deliver successfully.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code:
+     *         400.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.SetRiskConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetRiskConfigurationResult setRiskConfiguration(SetRiskConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetRiskConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final SetRiskConfigurationResult executeSetRiskConfiguration(SetRiskConfigurationRequest setRiskConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setRiskConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetRiskConfigurationRequest> request = null;
+        Response<SetRiskConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetRiskConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setRiskConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetRiskConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetRiskConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5173,12 +5779,142 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUICustomizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUICustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<SetUICustomizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetUICustomizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Set the user's multi-factor authentication (MFA) method preference.
+     * </p>
+     * 
+     * @param setUserMFAPreferenceRequest
+     * @return Result of the SetUserMFAPreference operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.SetUserMFAPreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetUserMFAPreferenceResult setUserMFAPreference(SetUserMFAPreferenceRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetUserMFAPreference(request);
+    }
+
+    @SdkInternalApi
+    final SetUserMFAPreferenceResult executeSetUserMFAPreference(SetUserMFAPreferenceRequest setUserMFAPreferenceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setUserMFAPreferenceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetUserMFAPreferenceRequest> request = null;
+        Response<SetUserMFAPreferenceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetUserMFAPreferenceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserMFAPreferenceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetUserMFAPreferenceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetUserMFAPreferenceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Set the user pool MFA configuration.
+     * </p>
+     * 
+     * @param setUserPoolMfaConfigRequest
+     * @return Result of the SetUserPoolMfaConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS configuration does not have permission to
+     *         publish using Amazon SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid for the role provided for SMS
+     *         configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID
+     *         provided in the role does not match what is provided in the SMS configuration for the user pool.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.SetUserPoolMfaConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetUserPoolMfaConfigResult setUserPoolMfaConfig(SetUserPoolMfaConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetUserPoolMfaConfig(request);
+    }
+
+    @SdkInternalApi
+    final SetUserPoolMfaConfigResult executeSetUserPoolMfaConfig(SetUserPoolMfaConfigRequest setUserPoolMfaConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setUserPoolMfaConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetUserPoolMfaConfigRequest> request = null;
+        Response<SetUserPoolMfaConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetUserPoolMfaConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserPoolMfaConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetUserPoolMfaConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetUserPoolMfaConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5237,6 +5973,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5320,6 +6057,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(signUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5381,6 +6119,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new StartUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5442,12 +6181,79 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new StopUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<StopUserImportJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopUserImportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides the feedback for an authentication event whether it was from a valid user or not. This feedback is used
+     * for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param updateAuthEventFeedbackRequest
+     * @return Result of the UpdateAuthEventFeedback operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.UpdateAuthEventFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAuthEventFeedbackResult updateAuthEventFeedback(UpdateAuthEventFeedbackRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAuthEventFeedback(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAuthEventFeedbackResult executeUpdateAuthEventFeedback(UpdateAuthEventFeedbackRequest updateAuthEventFeedbackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAuthEventFeedbackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAuthEventFeedbackRequest> request = null;
+        Response<UpdateAuthEventFeedbackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAuthEventFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAuthEventFeedbackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAuthEventFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAuthEventFeedbackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5509,6 +6315,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateDeviceStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5570,6 +6377,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5630,6 +6438,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5689,6 +6498,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5782,6 +6592,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5858,6 +6669,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5886,6 +6698,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ConcurrentModificationException
+     *         This exception is thrown if two or more modifications are happening concurrently.
      * @throws TooManyRequestsException
      *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
@@ -5921,12 +6735,91 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateUserPoolClientResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUserPoolClientResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this API to register a user's entered TOTP code and mark the user's software token MFA status as "verified"
+     * if successful,
+     * </p>
+     * 
+     * @param verifySoftwareTokenRequest
+     * @return Result of the VerifySoftwareToken operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is invalid.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws EnableSoftwareTokenMFAException
+     *         This exception is thrown when there is a code mismatch and the service fails to configure the software
+     *         token TOTP multi-factor authentication (MFA).
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws SoftwareTokenMFANotFoundException
+     *         This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled
+     *         for the user pool.
+     * @throws CodeMismatchException
+     *         This exception is thrown if the provided code does not match what the server was expecting.
+     * @sample AWSCognitoIdentityProvider.VerifySoftwareToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public VerifySoftwareTokenResult verifySoftwareToken(VerifySoftwareTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifySoftwareToken(request);
+    }
+
+    @SdkInternalApi
+    final VerifySoftwareTokenResult executeVerifySoftwareToken(VerifySoftwareTokenRequest verifySoftwareTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(verifySoftwareTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<VerifySoftwareTokenRequest> request = null;
+        Response<VerifySoftwareTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new VerifySoftwareTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifySoftwareTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<VerifySoftwareTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new VerifySoftwareTokenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5992,6 +6885,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new VerifyUserAttributeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyUserAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

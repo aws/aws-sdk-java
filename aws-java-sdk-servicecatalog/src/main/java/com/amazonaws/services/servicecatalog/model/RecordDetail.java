@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The full details of a specific ProvisionedProduct object.
+ * Information about a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordDetail" target="_top">AWS API
@@ -30,66 +30,95 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object record.
+     * The identifier of the record.
      * </p>
      */
     private String recordId;
     /**
      * <p>
-     * The user-friendly name of the ProvisionedProduct object.
+     * The user-friendly name of the provisioned product.
      * </p>
      */
     private String provisionedProductName;
     /**
      * <p>
-     * The status of the ProvisionedProduct object.
+     * The status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>CREATED</code> - Request created but the operation has not yet started.
+     * <code>CREATED</code> - The request was created but the operation has not started.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     * <code>IN_PROGRESS</code> - The requested operation is in progress.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
      * and some remediation is occurring. For example, a rollback.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error messages
+     * <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages
      * returned.
      * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was last updated.
+     * The time when the record was last updated.
      * </p>
      */
     private java.util.Date updatedTime;
     /**
      * <p>
-     * The type of the ProvisionedProduct object.
+     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
      * </p>
      */
     private String provisionedProductType;
     /**
      * <p>
-     * The record type for this record.
+     * The record type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISION_PRODUCT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_PROVISIONED_PRODUCT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERMINATE_PROVISIONED_PRODUCT</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String recordType;
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      */
     private String provisionedProductId;
@@ -101,36 +130,36 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     private String productId;
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      */
     private String provisioningArtifactId;
     /**
      * <p>
-     * The identifier of the path for this product's provisioning.
+     * The path identifier.
      * </p>
      */
     private String pathId;
     /**
      * <p>
-     * A list of errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      */
     private java.util.List<RecordError> recordErrors;
     /**
      * <p>
-     * List of tags associated with this record.
+     * One or more tags.
      * </p>
      */
     private java.util.List<RecordTag> recordTags;
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object record.
+     * The identifier of the record.
      * </p>
      * 
      * @param recordId
-     *        The identifier of the ProvisionedProduct object record.
+     *        The identifier of the record.
      */
 
     public void setRecordId(String recordId) {
@@ -139,10 +168,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object record.
+     * The identifier of the record.
      * </p>
      * 
-     * @return The identifier of the ProvisionedProduct object record.
+     * @return The identifier of the record.
      */
 
     public String getRecordId() {
@@ -151,11 +180,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object record.
+     * The identifier of the record.
      * </p>
      * 
      * @param recordId
-     *        The identifier of the ProvisionedProduct object record.
+     *        The identifier of the record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +195,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-friendly name of the ProvisionedProduct object.
+     * The user-friendly name of the provisioned product.
      * </p>
      * 
      * @param provisionedProductName
-     *        The user-friendly name of the ProvisionedProduct object.
+     *        The user-friendly name of the provisioned product.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -179,10 +208,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-friendly name of the ProvisionedProduct object.
+     * The user-friendly name of the provisioned product.
      * </p>
      * 
-     * @return The user-friendly name of the ProvisionedProduct object.
+     * @return The user-friendly name of the provisioned product.
      */
 
     public String getProvisionedProductName() {
@@ -191,11 +220,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-friendly name of the ProvisionedProduct object.
+     * The user-friendly name of the provisioned product.
      * </p>
      * 
      * @param provisionedProductName
-     *        The user-friendly name of the ProvisionedProduct object.
+     *        The user-friendly name of the provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,44 +235,68 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the ProvisionedProduct object.
+     * The status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>CREATED</code> - Request created but the operation has not yet started.
+     * <code>CREATED</code> - The request was created but the operation has not started.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     * <code>IN_PROGRESS</code> - The requested operation is in progress.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
      * and some remediation is occurring. For example, a rollback.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error messages
+     * <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages
      * returned.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the ProvisionedProduct object.</p>
+     *        The status of the provisioned product.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>CREATED</code> - Request created but the operation has not yet started.
+     *        <code>CREATED</code> - The request was created but the operation has not started.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     *        <code>IN_PROGRESS</code> - The requested operation is in progress.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
      *        failed and some remediation is occurring. For example, a rollback.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        <code>SUCCEEDED</code> - The requested operation has successfully completed.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error
+     *        <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error
      *        messages returned.
+     *        </p>
+     *        </li>
      * @see RecordStatus
      */
 
@@ -253,43 +306,67 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the ProvisionedProduct object.
+     * The status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>CREATED</code> - Request created but the operation has not yet started.
+     * <code>CREATED</code> - The request was created but the operation has not started.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     * <code>IN_PROGRESS</code> - The requested operation is in progress.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
      * and some remediation is occurring. For example, a rollback.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error messages
+     * <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages
      * returned.
      * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the ProvisionedProduct object.</p>
+     * @return The status of the provisioned product.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         <code>CREATED</code> - Request created but the operation has not yet started.
+     *         <code>CREATED</code> - The request was created but the operation has not started.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     *         <code>IN_PROGRESS</code> - The requested operation is in progress.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
      *         failed and some remediation is occurring. For example, a rollback.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         <code>SUCCEEDED</code> - The requested operation has successfully completed.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error
+     *         <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error
      *         messages returned.
+     *         </p>
+     *         </li>
      * @see RecordStatus
      */
 
@@ -299,44 +376,68 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the ProvisionedProduct object.
+     * The status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>CREATED</code> - Request created but the operation has not yet started.
+     * <code>CREATED</code> - The request was created but the operation has not started.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     * <code>IN_PROGRESS</code> - The requested operation is in progress.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
      * and some remediation is occurring. For example, a rollback.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error messages
+     * <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages
      * returned.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the ProvisionedProduct object.</p>
+     *        The status of the provisioned product.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>CREATED</code> - Request created but the operation has not yet started.
+     *        <code>CREATED</code> - The request was created but the operation has not started.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     *        <code>IN_PROGRESS</code> - The requested operation is in progress.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
      *        failed and some remediation is occurring. For example, a rollback.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        <code>SUCCEEDED</code> - The requested operation has successfully completed.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error
+     *        <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error
      *        messages returned.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordStatus
      */
@@ -348,44 +449,68 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the ProvisionedProduct object.
+     * The status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>CREATED</code> - Request created but the operation has not yet started.
+     * <code>CREATED</code> - The request was created but the operation has not started.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     * <code>IN_PROGRESS</code> - The requested operation is in progress.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
      * and some remediation is occurring. For example, a rollback.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error messages
+     * <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages
      * returned.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the ProvisionedProduct object.</p>
+     *        The status of the provisioned product.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>CREATED</code> - Request created but the operation has not yet started.
+     *        <code>CREATED</code> - The request was created but the operation has not started.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     *        <code>IN_PROGRESS</code> - The requested operation is in progress.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
      *        failed and some remediation is occurring. For example, a rollback.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        <code>SUCCEEDED</code> - The requested operation has successfully completed.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error
+     *        <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error
      *        messages returned.
+     *        </p>
+     *        </li>
      * @see RecordStatus
      */
 
@@ -395,44 +520,68 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the ProvisionedProduct object.
+     * The status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>CREATED</code> - Request created but the operation has not yet started.
+     * <code>CREATED</code> - The request was created but the operation has not started.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     * <code>IN_PROGRESS</code> - The requested operation is in progress.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
      * and some remediation is occurring. For example, a rollback.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error messages
+     * <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages
      * returned.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the ProvisionedProduct object.</p>
+     *        The status of the provisioned product.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>CREATED</code> - Request created but the operation has not yet started.
+     *        <code>CREATED</code> - The request was created but the operation has not started.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>IN_PROGRESS</code> - The requested operation is in-progress.
+     *        <code>IN_PROGRESS</code> - The requested operation is in progress.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
      *        failed and some remediation is occurring. For example, a rollback.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        <code>SUCCEEDED</code> - The requested operation has successfully completed.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error
+     *        <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error
      *        messages returned.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordStatus
      */
@@ -444,11 +593,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -457,10 +606,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -469,11 +618,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,11 +633,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was last updated.
+     * The time when the record was last updated.
      * </p>
      * 
      * @param updatedTime
-     *        The time when the record for the ProvisionedProduct object was last updated.
+     *        The time when the record was last updated.
      */
 
     public void setUpdatedTime(java.util.Date updatedTime) {
@@ -497,10 +646,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was last updated.
+     * The time when the record was last updated.
      * </p>
      * 
-     * @return The time when the record for the ProvisionedProduct object was last updated.
+     * @return The time when the record was last updated.
      */
 
     public java.util.Date getUpdatedTime() {
@@ -509,11 +658,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was last updated.
+     * The time when the record was last updated.
      * </p>
      * 
      * @param updatedTime
-     *        The time when the record for the ProvisionedProduct object was last updated.
+     *        The time when the record was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,11 +673,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the ProvisionedProduct object.
+     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
      * </p>
      * 
      * @param provisionedProductType
-     *        The type of the ProvisionedProduct object.
+     *        The type of provisioned product. The supported value is <code>CFN_STACK</code>.
      */
 
     public void setProvisionedProductType(String provisionedProductType) {
@@ -537,10 +686,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the ProvisionedProduct object.
+     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
      * </p>
      * 
-     * @return The type of the ProvisionedProduct object.
+     * @return The type of provisioned product. The supported value is <code>CFN_STACK</code>.
      */
 
     public String getProvisionedProductType() {
@@ -549,11 +698,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the ProvisionedProduct object.
+     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
      * </p>
      * 
      * @param provisionedProductType
-     *        The type of the ProvisionedProduct object.
+     *        The type of provisioned product. The supported value is <code>CFN_STACK</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,11 +713,44 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The record type for this record.
+     * The record type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISION_PRODUCT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_PROVISIONED_PRODUCT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERMINATE_PROVISIONED_PRODUCT</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param recordType
-     *        The record type for this record.
+     *        The record type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISION_PRODUCT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_PROVISIONED_PRODUCT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE_PROVISIONED_PRODUCT</code>
+     *        </p>
+     *        </li>
      */
 
     public void setRecordType(String recordType) {
@@ -577,10 +759,43 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The record type for this record.
+     * The record type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISION_PRODUCT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_PROVISIONED_PRODUCT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERMINATE_PROVISIONED_PRODUCT</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The record type for this record.
+     * @return The record type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PROVISION_PRODUCT</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_PROVISIONED_PRODUCT</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TERMINATE_PROVISIONED_PRODUCT</code>
+     *         </p>
+     *         </li>
      */
 
     public String getRecordType() {
@@ -589,11 +804,44 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The record type for this record.
+     * The record type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISION_PRODUCT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_PROVISIONED_PRODUCT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERMINATE_PROVISIONED_PRODUCT</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param recordType
-     *        The record type for this record.
+     *        The record type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISION_PRODUCT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_PROVISIONED_PRODUCT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE_PROVISIONED_PRODUCT</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -604,11 +852,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object.
+     *        The identifier of the provisioned product.
      */
 
     public void setProvisionedProductId(String provisionedProductId) {
@@ -617,10 +865,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
-     * @return The identifier of the ProvisionedProduct object.
+     * @return The identifier of the provisioned product.
      */
 
     public String getProvisionedProductId() {
@@ -629,11 +877,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object.
+     *        The identifier of the provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,12 +932,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *        version.
+     *        The identifier of the provisioning artifact.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -698,11 +945,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
-     * @return The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *         version.
+     * @return The identifier of the provisioning artifact.
      */
 
     public String getProvisioningArtifactId() {
@@ -711,12 +957,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *        version.
+     *        The identifier of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -727,11 +972,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning.
+     * The path identifier.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path for this product's provisioning.
+     *        The path identifier.
      */
 
     public void setPathId(String pathId) {
@@ -740,10 +985,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning.
+     * The path identifier.
      * </p>
      * 
-     * @return The identifier of the path for this product's provisioning.
+     * @return The path identifier.
      */
 
     public String getPathId() {
@@ -752,11 +997,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning.
+     * The path identifier.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path for this product's provisioning.
+     *        The path identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -767,10 +1012,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      * 
-     * @return A list of errors that occurred while processing the request.
+     * @return The errors that occurred.
      */
 
     public java.util.List<RecordError> getRecordErrors() {
@@ -779,11 +1024,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      * 
      * @param recordErrors
-     *        A list of errors that occurred while processing the request.
+     *        The errors that occurred.
      */
 
     public void setRecordErrors(java.util.Collection<RecordError> recordErrors) {
@@ -797,7 +1042,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -806,7 +1051,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param recordErrors
-     *        A list of errors that occurred while processing the request.
+     *        The errors that occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -822,11 +1067,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      * 
      * @param recordErrors
-     *        A list of errors that occurred while processing the request.
+     *        The errors that occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -837,10 +1082,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of tags associated with this record.
+     * One or more tags.
      * </p>
      * 
-     * @return List of tags associated with this record.
+     * @return One or more tags.
      */
 
     public java.util.List<RecordTag> getRecordTags() {
@@ -849,11 +1094,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of tags associated with this record.
+     * One or more tags.
      * </p>
      * 
      * @param recordTags
-     *        List of tags associated with this record.
+     *        One or more tags.
      */
 
     public void setRecordTags(java.util.Collection<RecordTag> recordTags) {
@@ -867,7 +1112,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of tags associated with this record.
+     * One or more tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -876,7 +1121,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param recordTags
-     *        List of tags associated with this record.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -892,11 +1137,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of tags associated with this record.
+     * One or more tags.
      * </p>
      * 
      * @param recordTags
-     *        List of tags associated with this record.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

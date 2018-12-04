@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,9 +48,10 @@ public class PutAttributesRequestMarshaller implements Marshaller<Request<PutAtt
             request.addParameter("ItemName", StringUtils.fromString(putAttributesRequest.getItemName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) putAttributesRequest
-                .getAttributes();
-        if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
+        if (!putAttributesRequest.getAttributes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) putAttributesRequest.getAttributes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) putAttributesRequest
+                    .getAttributes();
             int attributesListIndex = 1;
 
             for (ReplaceableAttribute attributesListValue : attributesList) {

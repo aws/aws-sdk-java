@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,13 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<StepExecution> stepExecutions;
     /**
      * <p>
+     * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
+     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * </p>
+     */
+    private Boolean stepExecutionsTruncated;
+    /**
+     * <p>
      * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      * </p>
      */
@@ -89,6 +96,72 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String failureMessage;
+    /**
+     * <p>
+     * The automation execution mode.
+     * </p>
+     */
+    private String mode;
+    /**
+     * <p>
+     * The AutomationExecutionId of the parent automation.
+     * </p>
+     */
+    private String parentAutomationExecutionId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * </p>
+     */
+    private String executedBy;
+    /**
+     * <p>
+     * The name of the currently executing step.
+     * </p>
+     */
+    private String currentStepName;
+    /**
+     * <p>
+     * The action of the currently executing step.
+     * </p>
+     */
+    private String currentAction;
+    /**
+     * <p>
+     * The parameter name.
+     * </p>
+     */
+    private String targetParameterName;
+    /**
+     * <p>
+     * The specified targets.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Target> targets;
+    /**
+     * <p>
+     * A list of resolved targets in the rate control execution.
+     * </p>
+     */
+    private ResolvedTargets resolvedTargets;
+    /**
+     * <p>
+     * The MaxConcurrency value specified by the user when the execution started.
+     * </p>
+     */
+    private String maxConcurrency;
+    /**
+     * <p>
+     * The MaxErrors value specified by the user when the execution started.
+     * </p>
+     */
+    private String maxErrors;
+    /**
+     * <p>
+     * The target of the execution.
+     * </p>
+     */
+    private String target;
 
     /**
      * <p>
@@ -446,6 +519,66 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
+     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * </p>
+     * 
+     * @param stepExecutionsTruncated
+     *        A boolean value that indicates if the response contains the full list of the Automation step executions.
+     *        If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     */
+
+    public void setStepExecutionsTruncated(Boolean stepExecutionsTruncated) {
+        this.stepExecutionsTruncated = stepExecutionsTruncated;
+    }
+
+    /**
+     * <p>
+     * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
+     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * </p>
+     * 
+     * @return A boolean value that indicates if the response contains the full list of the Automation step executions.
+     *         If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     */
+
+    public Boolean getStepExecutionsTruncated() {
+        return this.stepExecutionsTruncated;
+    }
+
+    /**
+     * <p>
+     * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
+     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * </p>
+     * 
+     * @param stepExecutionsTruncated
+     *        A boolean value that indicates if the response contains the full list of the Automation step executions.
+     *        If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withStepExecutionsTruncated(Boolean stepExecutionsTruncated) {
+        setStepExecutionsTruncated(stepExecutionsTruncated);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
+     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * </p>
+     * 
+     * @return A boolean value that indicates if the response contains the full list of the Automation step executions.
+     *         If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     */
+
+    public Boolean isStepExecutionsTruncated() {
+        return this.stepExecutionsTruncated;
+    }
+
+    /**
+     * <p>
      * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      * </p>
      * 
@@ -607,6 +740,512 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The automation execution mode.
+     * </p>
+     * 
+     * @param mode
+     *        The automation execution mode.
+     * @see ExecutionMode
+     */
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    /**
+     * <p>
+     * The automation execution mode.
+     * </p>
+     * 
+     * @return The automation execution mode.
+     * @see ExecutionMode
+     */
+
+    public String getMode() {
+        return this.mode;
+    }
+
+    /**
+     * <p>
+     * The automation execution mode.
+     * </p>
+     * 
+     * @param mode
+     *        The automation execution mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionMode
+     */
+
+    public AutomationExecution withMode(String mode) {
+        setMode(mode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The automation execution mode.
+     * </p>
+     * 
+     * @param mode
+     *        The automation execution mode.
+     * @see ExecutionMode
+     */
+
+    public void setMode(ExecutionMode mode) {
+        withMode(mode);
+    }
+
+    /**
+     * <p>
+     * The automation execution mode.
+     * </p>
+     * 
+     * @param mode
+     *        The automation execution mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionMode
+     */
+
+    public AutomationExecution withMode(ExecutionMode mode) {
+        this.mode = mode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AutomationExecutionId of the parent automation.
+     * </p>
+     * 
+     * @param parentAutomationExecutionId
+     *        The AutomationExecutionId of the parent automation.
+     */
+
+    public void setParentAutomationExecutionId(String parentAutomationExecutionId) {
+        this.parentAutomationExecutionId = parentAutomationExecutionId;
+    }
+
+    /**
+     * <p>
+     * The AutomationExecutionId of the parent automation.
+     * </p>
+     * 
+     * @return The AutomationExecutionId of the parent automation.
+     */
+
+    public String getParentAutomationExecutionId() {
+        return this.parentAutomationExecutionId;
+    }
+
+    /**
+     * <p>
+     * The AutomationExecutionId of the parent automation.
+     * </p>
+     * 
+     * @param parentAutomationExecutionId
+     *        The AutomationExecutionId of the parent automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withParentAutomationExecutionId(String parentAutomationExecutionId) {
+        setParentAutomationExecutionId(parentAutomationExecutionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * </p>
+     * 
+     * @param executedBy
+     *        The Amazon Resource Name (ARN) of the user who executed the automation.
+     */
+
+    public void setExecutedBy(String executedBy) {
+        this.executedBy = executedBy;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the user who executed the automation.
+     */
+
+    public String getExecutedBy() {
+        return this.executedBy;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * </p>
+     * 
+     * @param executedBy
+     *        The Amazon Resource Name (ARN) of the user who executed the automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withExecutedBy(String executedBy) {
+        setExecutedBy(executedBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the currently executing step.
+     * </p>
+     * 
+     * @param currentStepName
+     *        The name of the currently executing step.
+     */
+
+    public void setCurrentStepName(String currentStepName) {
+        this.currentStepName = currentStepName;
+    }
+
+    /**
+     * <p>
+     * The name of the currently executing step.
+     * </p>
+     * 
+     * @return The name of the currently executing step.
+     */
+
+    public String getCurrentStepName() {
+        return this.currentStepName;
+    }
+
+    /**
+     * <p>
+     * The name of the currently executing step.
+     * </p>
+     * 
+     * @param currentStepName
+     *        The name of the currently executing step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withCurrentStepName(String currentStepName) {
+        setCurrentStepName(currentStepName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action of the currently executing step.
+     * </p>
+     * 
+     * @param currentAction
+     *        The action of the currently executing step.
+     */
+
+    public void setCurrentAction(String currentAction) {
+        this.currentAction = currentAction;
+    }
+
+    /**
+     * <p>
+     * The action of the currently executing step.
+     * </p>
+     * 
+     * @return The action of the currently executing step.
+     */
+
+    public String getCurrentAction() {
+        return this.currentAction;
+    }
+
+    /**
+     * <p>
+     * The action of the currently executing step.
+     * </p>
+     * 
+     * @param currentAction
+     *        The action of the currently executing step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withCurrentAction(String currentAction) {
+        setCurrentAction(currentAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameter name.
+     * </p>
+     * 
+     * @param targetParameterName
+     *        The parameter name.
+     */
+
+    public void setTargetParameterName(String targetParameterName) {
+        this.targetParameterName = targetParameterName;
+    }
+
+    /**
+     * <p>
+     * The parameter name.
+     * </p>
+     * 
+     * @return The parameter name.
+     */
+
+    public String getTargetParameterName() {
+        return this.targetParameterName;
+    }
+
+    /**
+     * <p>
+     * The parameter name.
+     * </p>
+     * 
+     * @param targetParameterName
+     *        The parameter name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargetParameterName(String targetParameterName) {
+        setTargetParameterName(targetParameterName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The specified targets.
+     * </p>
+     * 
+     * @return The specified targets.
+     */
+
+    public java.util.List<Target> getTargets() {
+        if (targets == null) {
+            targets = new com.amazonaws.internal.SdkInternalList<Target>();
+        }
+        return targets;
+    }
+
+    /**
+     * <p>
+     * The specified targets.
+     * </p>
+     * 
+     * @param targets
+     *        The specified targets.
+     */
+
+    public void setTargets(java.util.Collection<Target> targets) {
+        if (targets == null) {
+            this.targets = null;
+            return;
+        }
+
+        this.targets = new com.amazonaws.internal.SdkInternalList<Target>(targets);
+    }
+
+    /**
+     * <p>
+     * The specified targets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param targets
+     *        The specified targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargets(Target... targets) {
+        if (this.targets == null) {
+            setTargets(new com.amazonaws.internal.SdkInternalList<Target>(targets.length));
+        }
+        for (Target ele : targets) {
+            this.targets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The specified targets.
+     * </p>
+     * 
+     * @param targets
+     *        The specified targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargets(java.util.Collection<Target> targets) {
+        setTargets(targets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of resolved targets in the rate control execution.
+     * </p>
+     * 
+     * @param resolvedTargets
+     *        A list of resolved targets in the rate control execution.
+     */
+
+    public void setResolvedTargets(ResolvedTargets resolvedTargets) {
+        this.resolvedTargets = resolvedTargets;
+    }
+
+    /**
+     * <p>
+     * A list of resolved targets in the rate control execution.
+     * </p>
+     * 
+     * @return A list of resolved targets in the rate control execution.
+     */
+
+    public ResolvedTargets getResolvedTargets() {
+        return this.resolvedTargets;
+    }
+
+    /**
+     * <p>
+     * A list of resolved targets in the rate control execution.
+     * </p>
+     * 
+     * @param resolvedTargets
+     *        A list of resolved targets in the rate control execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withResolvedTargets(ResolvedTargets resolvedTargets) {
+        setResolvedTargets(resolvedTargets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The MaxConcurrency value specified by the user when the execution started.
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The MaxConcurrency value specified by the user when the execution started.
+     */
+
+    public void setMaxConcurrency(String maxConcurrency) {
+        this.maxConcurrency = maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The MaxConcurrency value specified by the user when the execution started.
+     * </p>
+     * 
+     * @return The MaxConcurrency value specified by the user when the execution started.
+     */
+
+    public String getMaxConcurrency() {
+        return this.maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The MaxConcurrency value specified by the user when the execution started.
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The MaxConcurrency value specified by the user when the execution started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withMaxConcurrency(String maxConcurrency) {
+        setMaxConcurrency(maxConcurrency);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The MaxErrors value specified by the user when the execution started.
+     * </p>
+     * 
+     * @param maxErrors
+     *        The MaxErrors value specified by the user when the execution started.
+     */
+
+    public void setMaxErrors(String maxErrors) {
+        this.maxErrors = maxErrors;
+    }
+
+    /**
+     * <p>
+     * The MaxErrors value specified by the user when the execution started.
+     * </p>
+     * 
+     * @return The MaxErrors value specified by the user when the execution started.
+     */
+
+    public String getMaxErrors() {
+        return this.maxErrors;
+    }
+
+    /**
+     * <p>
+     * The MaxErrors value specified by the user when the execution started.
+     * </p>
+     * 
+     * @param maxErrors
+     *        The MaxErrors value specified by the user when the execution started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withMaxErrors(String maxErrors) {
+        setMaxErrors(maxErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target of the execution.
+     * </p>
+     * 
+     * @param target
+     *        The target of the execution.
+     */
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
+    /**
+     * <p>
+     * The target of the execution.
+     * </p>
+     * 
+     * @return The target of the execution.
+     */
+
+    public String getTarget() {
+        return this.target;
+    }
+
+    /**
+     * <p>
+     * The target of the execution.
+     * </p>
+     * 
+     * @param target
+     *        The target of the execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTarget(String target) {
+        setTarget(target);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -631,12 +1270,36 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
             sb.append("AutomationExecutionStatus: ").append(getAutomationExecutionStatus()).append(",");
         if (getStepExecutions() != null)
             sb.append("StepExecutions: ").append(getStepExecutions()).append(",");
+        if (getStepExecutionsTruncated() != null)
+            sb.append("StepExecutionsTruncated: ").append(getStepExecutionsTruncated()).append(",");
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getOutputs() != null)
             sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: ").append(getFailureMessage());
+            sb.append("FailureMessage: ").append(getFailureMessage()).append(",");
+        if (getMode() != null)
+            sb.append("Mode: ").append(getMode()).append(",");
+        if (getParentAutomationExecutionId() != null)
+            sb.append("ParentAutomationExecutionId: ").append(getParentAutomationExecutionId()).append(",");
+        if (getExecutedBy() != null)
+            sb.append("ExecutedBy: ").append(getExecutedBy()).append(",");
+        if (getCurrentStepName() != null)
+            sb.append("CurrentStepName: ").append(getCurrentStepName()).append(",");
+        if (getCurrentAction() != null)
+            sb.append("CurrentAction: ").append(getCurrentAction()).append(",");
+        if (getTargetParameterName() != null)
+            sb.append("TargetParameterName: ").append(getTargetParameterName()).append(",");
+        if (getTargets() != null)
+            sb.append("Targets: ").append(getTargets()).append(",");
+        if (getResolvedTargets() != null)
+            sb.append("ResolvedTargets: ").append(getResolvedTargets()).append(",");
+        if (getMaxConcurrency() != null)
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
+        if (getMaxErrors() != null)
+            sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
+        if (getTarget() != null)
+            sb.append("Target: ").append(getTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -679,6 +1342,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getStepExecutions() != null && other.getStepExecutions().equals(this.getStepExecutions()) == false)
             return false;
+        if (other.getStepExecutionsTruncated() == null ^ this.getStepExecutionsTruncated() == null)
+            return false;
+        if (other.getStepExecutionsTruncated() != null && other.getStepExecutionsTruncated().equals(this.getStepExecutionsTruncated()) == false)
+            return false;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
@@ -690,6 +1357,50 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         if (other.getFailureMessage() == null ^ this.getFailureMessage() == null)
             return false;
         if (other.getFailureMessage() != null && other.getFailureMessage().equals(this.getFailureMessage()) == false)
+            return false;
+        if (other.getMode() == null ^ this.getMode() == null)
+            return false;
+        if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
+            return false;
+        if (other.getParentAutomationExecutionId() == null ^ this.getParentAutomationExecutionId() == null)
+            return false;
+        if (other.getParentAutomationExecutionId() != null && other.getParentAutomationExecutionId().equals(this.getParentAutomationExecutionId()) == false)
+            return false;
+        if (other.getExecutedBy() == null ^ this.getExecutedBy() == null)
+            return false;
+        if (other.getExecutedBy() != null && other.getExecutedBy().equals(this.getExecutedBy()) == false)
+            return false;
+        if (other.getCurrentStepName() == null ^ this.getCurrentStepName() == null)
+            return false;
+        if (other.getCurrentStepName() != null && other.getCurrentStepName().equals(this.getCurrentStepName()) == false)
+            return false;
+        if (other.getCurrentAction() == null ^ this.getCurrentAction() == null)
+            return false;
+        if (other.getCurrentAction() != null && other.getCurrentAction().equals(this.getCurrentAction()) == false)
+            return false;
+        if (other.getTargetParameterName() == null ^ this.getTargetParameterName() == null)
+            return false;
+        if (other.getTargetParameterName() != null && other.getTargetParameterName().equals(this.getTargetParameterName()) == false)
+            return false;
+        if (other.getTargets() == null ^ this.getTargets() == null)
+            return false;
+        if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
+            return false;
+        if (other.getResolvedTargets() == null ^ this.getResolvedTargets() == null)
+            return false;
+        if (other.getResolvedTargets() != null && other.getResolvedTargets().equals(this.getResolvedTargets()) == false)
+            return false;
+        if (other.getMaxConcurrency() == null ^ this.getMaxConcurrency() == null)
+            return false;
+        if (other.getMaxConcurrency() != null && other.getMaxConcurrency().equals(this.getMaxConcurrency()) == false)
+            return false;
+        if (other.getMaxErrors() == null ^ this.getMaxErrors() == null)
+            return false;
+        if (other.getMaxErrors() != null && other.getMaxErrors().equals(this.getMaxErrors()) == false)
+            return false;
+        if (other.getTarget() == null ^ this.getTarget() == null)
+            return false;
+        if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
             return false;
         return true;
     }
@@ -706,9 +1417,21 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getExecutionEndTime() == null) ? 0 : getExecutionEndTime().hashCode());
         hashCode = prime * hashCode + ((getAutomationExecutionStatus() == null) ? 0 : getAutomationExecutionStatus().hashCode());
         hashCode = prime * hashCode + ((getStepExecutions() == null) ? 0 : getStepExecutions().hashCode());
+        hashCode = prime * hashCode + ((getStepExecutionsTruncated() == null) ? 0 : getStepExecutionsTruncated().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getFailureMessage() == null) ? 0 : getFailureMessage().hashCode());
+        hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
+        hashCode = prime * hashCode + ((getParentAutomationExecutionId() == null) ? 0 : getParentAutomationExecutionId().hashCode());
+        hashCode = prime * hashCode + ((getExecutedBy() == null) ? 0 : getExecutedBy().hashCode());
+        hashCode = prime * hashCode + ((getCurrentStepName() == null) ? 0 : getCurrentStepName().hashCode());
+        hashCode = prime * hashCode + ((getCurrentAction() == null) ? 0 : getCurrentAction().hashCode());
+        hashCode = prime * hashCode + ((getTargetParameterName() == null) ? 0 : getTargetParameterName().hashCode());
+        hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getResolvedTargets() == null) ? 0 : getResolvedTargets().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
+        hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
+        hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         return hashCode;
     }
 

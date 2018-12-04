@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StopImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     */
     private String name;
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      */
 
     public void setName(String name) {
@@ -36,7 +46,11 @@ public class StopImageBuilderRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
+     * @return The name of the image builder.
      */
 
     public String getName() {
@@ -44,7 +58,12 @@ public class StopImageBuilderRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,10 +29,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the service, the AWS account ID of the service owner, the
-     * <code>service</code> namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
+     * region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
+     * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * </p>
      */
     private String serviceArn;
@@ -86,6 +85,20 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private Integer pendingCount;
     /**
      * <p>
+     * The launch type on which your service is running.
+     * </p>
+     */
+    private String launchType;
+    /**
+     * <p>
+     * The platform version on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private String platformVersion;
+    /**
+     * <p>
      * The task definition to use for tasks in the service. This value is specified when the service is created with
      * <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.
      * </p>
@@ -106,8 +119,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<Deployment> deployments;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS container
-     * agent to register container instances with an Elastic Load Balancing load balancer.
+     * The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     * container instances with an Elastic Load Balancing load balancer.
      * </p>
      */
     private String roleArn;
@@ -119,7 +132,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<ServiceEvent> events;
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix time stamp for when the service was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -142,19 +155,25 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started.
+     * </p>
+     */
+    private Integer healthCheckGracePeriodSeconds;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the service, the AWS account ID of the service owner, the
-     * <code>service</code> namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
+     * region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
+     * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * </p>
      * 
      * @param serviceArn
-     *        The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the region of the service, the AWS account ID of the service owner, the
-     *        <code>service</code> namespace, and then the service name. For example,
+     *        The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
+     *        the region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
+     *        and then the service name. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      */
 
@@ -164,15 +183,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the service, the AWS account ID of the service owner, the
-     * <code>service</code> namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
+     * region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
+     * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-     *         namespace, followed by the region of the service, the AWS account ID of the service owner, the
-     *         <code>service</code> namespace, and then the service name. For example,
+     * @return The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
+     *         the region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
+     *         and then the service name. For example,
      *         <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      */
 
@@ -182,16 +200,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the service, the AWS account ID of the service owner, the
-     * <code>service</code> namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
+     * region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
+     * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * </p>
      * 
      * @param serviceArn
-     *        The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the region of the service, the AWS account ID of the service owner, the
-     *        <code>service</code> namespace, and then the service name. For example,
+     *        The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
+     *        the region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
+     *        and then the service name. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -554,6 +571,117 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The launch type on which your service is running.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which your service is running.
+     * @see LaunchType
+     */
+
+    public void setLaunchType(String launchType) {
+        this.launchType = launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type on which your service is running.
+     * </p>
+     * 
+     * @return The launch type on which your service is running.
+     * @see LaunchType
+     */
+
+    public String getLaunchType() {
+        return this.launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type on which your service is running.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which your service is running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public Service withLaunchType(String launchType) {
+        setLaunchType(launchType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type on which your service is running.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which your service is running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public Service withLaunchType(LaunchType launchType) {
+        this.launchType = launchType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform version on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version on which your task is running. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The platform version on which your task is running. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public String getPlatformVersion() {
+        return this.platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version on which your task is running. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withPlatformVersion(String platformVersion) {
+        setPlatformVersion(platformVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The task definition to use for tasks in the service. This value is specified when the service is created with
      * <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.
      * </p>
@@ -719,13 +847,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS container
-     * agent to register container instances with an Elastic Load Balancing load balancer.
+     * The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     * container instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS
-     *        container agent to register container instances with an Elastic Load Balancing load balancer.
+     *        The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     *        container instances with an Elastic Load Balancing load balancer.
      */
 
     public void setRoleArn(String roleArn) {
@@ -734,12 +862,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS container
-     * agent to register container instances with an Elastic Load Balancing load balancer.
+     * The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     * container instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS
-     *         container agent to register container instances with an Elastic Load Balancing load balancer.
+     * @return The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to
+     *         register container instances with an Elastic Load Balancing load balancer.
      */
 
     public String getRoleArn() {
@@ -748,13 +876,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS container
-     * agent to register container instances with an Elastic Load Balancing load balancer.
+     * The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     * container instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS
-     *        container agent to register container instances with an Elastic Load Balancing load balancer.
+     *        The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register
+     *        container instances with an Elastic Load Balancing load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -838,11 +966,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix time stamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the service was created.
+     *        The Unix time stamp for when the service was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -851,10 +979,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix time stamp for when the service was created.
      * </p>
      * 
-     * @return The Unix timestamp for when the service was created.
+     * @return The Unix time stamp for when the service was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -863,11 +991,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix time stamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the service was created.
+     *        The Unix time stamp for when the service was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1069,6 +1197,52 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started.
+     * </p>
+     * 
+     * @param healthCheckGracePeriodSeconds
+     *        The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
+     *        Balancing target health checks after a task has first started.
+     */
+
+    public void setHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
+        this.healthCheckGracePeriodSeconds = healthCheckGracePeriodSeconds;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started.
+     * </p>
+     * 
+     * @return The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
+     *         Balancing target health checks after a task has first started.
+     */
+
+    public Integer getHealthCheckGracePeriodSeconds() {
+        return this.healthCheckGracePeriodSeconds;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started.
+     * </p>
+     * 
+     * @param healthCheckGracePeriodSeconds
+     *        The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
+     *        Balancing target health checks after a task has first started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
+        setHealthCheckGracePeriodSeconds(healthCheckGracePeriodSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1095,6 +1269,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("RunningCount: ").append(getRunningCount()).append(",");
         if (getPendingCount() != null)
             sb.append("PendingCount: ").append(getPendingCount()).append(",");
+        if (getLaunchType() != null)
+            sb.append("LaunchType: ").append(getLaunchType()).append(",");
+        if (getPlatformVersion() != null)
+            sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getTaskDefinition() != null)
             sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getDeploymentConfiguration() != null)
@@ -1112,7 +1290,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getPlacementStrategy() != null)
             sb.append("PlacementStrategy: ").append(getPlacementStrategy()).append(",");
         if (getNetworkConfiguration() != null)
-            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getHealthCheckGracePeriodSeconds() != null)
+            sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -1159,6 +1339,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPendingCount() != null && other.getPendingCount().equals(this.getPendingCount()) == false)
             return false;
+        if (other.getLaunchType() == null ^ this.getLaunchType() == null)
+            return false;
+        if (other.getLaunchType() != null && other.getLaunchType().equals(this.getLaunchType()) == false)
+            return false;
+        if (other.getPlatformVersion() == null ^ this.getPlatformVersion() == null)
+            return false;
+        if (other.getPlatformVersion() != null && other.getPlatformVersion().equals(this.getPlatformVersion()) == false)
+            return false;
         if (other.getTaskDefinition() == null ^ this.getTaskDefinition() == null)
             return false;
         if (other.getTaskDefinition() != null && other.getTaskDefinition().equals(this.getTaskDefinition()) == false)
@@ -1195,6 +1383,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
+        if (other.getHealthCheckGracePeriodSeconds() == null ^ this.getHealthCheckGracePeriodSeconds() == null)
+            return false;
+        if (other.getHealthCheckGracePeriodSeconds() != null
+                && other.getHealthCheckGracePeriodSeconds().equals(this.getHealthCheckGracePeriodSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -1211,6 +1404,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDesiredCount() == null) ? 0 : getDesiredCount().hashCode());
         hashCode = prime * hashCode + ((getRunningCount() == null) ? 0 : getRunningCount().hashCode());
         hashCode = prime * hashCode + ((getPendingCount() == null) ? 0 : getPendingCount().hashCode());
+        hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
+        hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeployments() == null) ? 0 : getDeployments().hashCode());
@@ -1220,6 +1415,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
         hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,8 +47,8 @@ public class SendTemplatedEmailRequestMarshaller implements Marshaller<Request<S
         Destination destination = sendTemplatedEmailRequest.getDestination();
         if (destination != null) {
 
-            com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses();
-            if (!toAddressesList.isEmpty() || !toAddressesList.isAutoConstruct()) {
+            if (!destination.getToAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses();
                 int toAddressesListIndex = 1;
 
                 for (String toAddressesListValue : toAddressesList) {
@@ -59,8 +59,8 @@ public class SendTemplatedEmailRequestMarshaller implements Marshaller<Request<S
                 }
             }
 
-            com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses();
-            if (!ccAddressesList.isEmpty() || !ccAddressesList.isAutoConstruct()) {
+            if (!destination.getCcAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses();
                 int ccAddressesListIndex = 1;
 
                 for (String ccAddressesListValue : ccAddressesList) {
@@ -71,8 +71,9 @@ public class SendTemplatedEmailRequestMarshaller implements Marshaller<Request<S
                 }
             }
 
-            com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses();
-            if (!bccAddressesList.isEmpty() || !bccAddressesList.isAutoConstruct()) {
+            if (!destination.getBccAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                        .getBccAddresses();
                 int bccAddressesListIndex = 1;
 
                 for (String bccAddressesListValue : bccAddressesList) {
@@ -84,9 +85,10 @@ public class SendTemplatedEmailRequestMarshaller implements Marshaller<Request<S
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> replyToAddressesList = (com.amazonaws.internal.SdkInternalList<String>) sendTemplatedEmailRequest
-                .getReplyToAddresses();
-        if (!replyToAddressesList.isEmpty() || !replyToAddressesList.isAutoConstruct()) {
+        if (!sendTemplatedEmailRequest.getReplyToAddresses().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) sendTemplatedEmailRequest.getReplyToAddresses()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> replyToAddressesList = (com.amazonaws.internal.SdkInternalList<String>) sendTemplatedEmailRequest
+                    .getReplyToAddresses();
             int replyToAddressesListIndex = 1;
 
             for (String replyToAddressesListValue : replyToAddressesList) {
@@ -109,8 +111,10 @@ public class SendTemplatedEmailRequestMarshaller implements Marshaller<Request<S
             request.addParameter("ReturnPathArn", StringUtils.fromString(sendTemplatedEmailRequest.getReturnPathArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendTemplatedEmailRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!sendTemplatedEmailRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<MessageTag>) sendTemplatedEmailRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendTemplatedEmailRequest
+                    .getTags();
             int tagsListIndex = 1;
 
             for (MessageTag tagsListValue : tagsList) {

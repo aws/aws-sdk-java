@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * You cannot delete default option groups.
+     * You can't delete default option groups.
      * </p>
      * </note>
      */
@@ -44,14 +44,14 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * You cannot delete default option groups.
+     * You can't delete default option groups.
      * </p>
      * </note>
      * 
      * @param optionGroupName
      *        The name of the option group to be deleted.</p> <note>
      *        <p>
-     *        You cannot delete default option groups.
+     *        You can't delete default option groups.
      *        </p>
      */
 
@@ -65,13 +65,13 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * You cannot delete default option groups.
+     * You can't delete default option groups.
      * </p>
      * </note>
      * 
      * @return The name of the option group to be deleted.</p> <note>
      *         <p>
-     *         You cannot delete default option groups.
+     *         You can't delete default option groups.
      *         </p>
      */
 
@@ -85,14 +85,14 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * You cannot delete default option groups.
+     * You can't delete default option groups.
      * </p>
      * </note>
      * 
      * @param optionGroupName
      *        The name of the option group to be deleted.</p> <note>
      *        <p>
-     *        You cannot delete default option groups.
+     *        You can't delete default option groups.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

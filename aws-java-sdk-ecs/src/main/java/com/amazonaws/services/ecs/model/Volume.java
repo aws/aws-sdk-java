@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * </p>
+     * <p>
+     * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
+     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * </p>
      */
     private HostVolumeProperties host;
@@ -102,12 +108,23 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
+     * <p>
+     * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
+     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+     * </p>
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
      *        a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *        associated with it stop running.
+     *        associated with it stop running.</p>
+     *        <p>
+     *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
+     *        example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     *        <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      */
 
     public void setHost(HostVolumeProperties host) {
@@ -120,11 +137,22 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
+     * <p>
+     * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
+     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+     * </p>
      * 
      * @return The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *         container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
      *         a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *         associated with it stop running.
+     *         associated with it stop running.</p>
+     *         <p>
+     *         Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
+     *         Windows containers cannot mount directories on a different drive, and mount point cannot be across
+     *         drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     *         <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      */
 
     public HostVolumeProperties getHost() {
@@ -137,12 +165,23 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
+     * <p>
+     * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
+     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+     * </p>
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
      *        a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *        associated with it stop running.
+     *        associated with it stop running.</p>
+     *        <p>
+     *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
+     *        example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     *        <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

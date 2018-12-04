@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,10 @@ public class PutIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpMethod").build();
     private static final MarshallingInfo<String> URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("uri").build();
+    private static final MarshallingInfo<String> CONNECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionType").build();
+    private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
     private static final MarshallingInfo<String> CREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("credentials").build();
     private static final MarshallingInfo<Map> REQUESTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -55,6 +59,8 @@ public class PutIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheKeyParameters").build();
     private static final MarshallingInfo<String> CONTENTHANDLING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentHandling").build();
+    private static final MarshallingInfo<Integer> TIMEOUTINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMillis").build();
 
     private static final PutIntegrationRequestMarshaller instance = new PutIntegrationRequestMarshaller();
 
@@ -78,6 +84,8 @@ public class PutIntegrationRequestMarshaller {
             protocolMarshaller.marshall(putIntegrationRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getIntegrationHttpMethod(), INTEGRATIONHTTPMETHOD_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getUri(), URI_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getConnectionType(), CONNECTIONTYPE_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getConnectionId(), CONNECTIONID_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getCredentials(), CREDENTIALS_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getRequestTemplates(), REQUESTTEMPLATES_BINDING);
@@ -85,6 +93,7 @@ public class PutIntegrationRequestMarshaller {
             protocolMarshaller.marshall(putIntegrationRequest.getCacheNamespace(), CACHENAMESPACE_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getCacheKeyParameters(), CACHEKEYPARAMETERS_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getContentHandling(), CONTENTHANDLING_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getTimeoutInMillis(), TIMEOUTINMILLIS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

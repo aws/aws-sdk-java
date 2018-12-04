@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,8 +63,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>DescribeResize</a> to track the progress of the resize request.
      * </p>
      * <p>
-     * Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * </p>
      */
     private String nodeType;
@@ -500,8 +500,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>DescribeResize</a> to track the progress of the resize request.
      * </p>
      * <p>
-     * Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -515,8 +515,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        restored. You can use <a>DescribeResize</a> to track the progress of the resize request.
      *        </p>
      *        <p>
-     *        Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     *        <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      */
 
     public void setNodeType(String nodeType) {
@@ -536,8 +536,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>DescribeResize</a> to track the progress of the resize request.
      * </p>
      * <p>
-     * Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * </p>
      * 
      * @return The new node type of the cluster. If you specify a new node type, you must also specify the number of
@@ -550,8 +550,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         restored. You can use <a>DescribeResize</a> to track the progress of the resize request.
      *         </p>
      *         <p>
-     *         Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     *         Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      */
 
     public String getNodeType() {
@@ -571,8 +571,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>DescribeResize</a> to track the progress of the resize request.
      * </p>
      * <p>
-     * Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -586,8 +586,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        restored. You can use <a>DescribeResize</a> to track the progress of the resize request.
      *        </p>
      *        <p>
-     *        Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     *        <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

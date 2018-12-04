@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The TagOption details.
+ * Information about a TagOption.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TagOptionDetail" target="_top">AWS API
@@ -30,36 +30,36 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail key.
+     * The TagOption key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The TagOptionDetail value.
+     * The TagOption value.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The TagOptionDetail active state.
+     * The TagOption active state.
      * </p>
      */
     private Boolean active;
     /**
      * <p>
-     * The TagOptionDetail identifier.
+     * The TagOption identifier.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The TagOptionDetail key.
+     * The TagOption key.
      * </p>
      * 
      * @param key
-     *        The TagOptionDetail key.
+     *        The TagOption key.
      */
 
     public void setKey(String key) {
@@ -68,10 +68,10 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail key.
+     * The TagOption key.
      * </p>
      * 
-     * @return The TagOptionDetail key.
+     * @return The TagOption key.
      */
 
     public String getKey() {
@@ -80,11 +80,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail key.
+     * The TagOption key.
      * </p>
      * 
      * @param key
-     *        The TagOptionDetail key.
+     *        The TagOption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail value.
+     * The TagOption value.
      * </p>
      * 
      * @param value
-     *        The TagOptionDetail value.
+     *        The TagOption value.
      */
 
     public void setValue(String value) {
@@ -108,10 +108,10 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail value.
+     * The TagOption value.
      * </p>
      * 
-     * @return The TagOptionDetail value.
+     * @return The TagOption value.
      */
 
     public String getValue() {
@@ -120,11 +120,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail value.
+     * The TagOption value.
      * </p>
      * 
      * @param value
-     *        The TagOptionDetail value.
+     *        The TagOption value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail active state.
+     * The TagOption active state.
      * </p>
      * 
      * @param active
-     *        The TagOptionDetail active state.
+     *        The TagOption active state.
      */
 
     public void setActive(Boolean active) {
@@ -148,10 +148,10 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail active state.
+     * The TagOption active state.
      * </p>
      * 
-     * @return The TagOptionDetail active state.
+     * @return The TagOption active state.
      */
 
     public Boolean getActive() {
@@ -160,11 +160,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail active state.
+     * The TagOption active state.
      * </p>
      * 
      * @param active
-     *        The TagOptionDetail active state.
+     *        The TagOption active state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,10 +175,10 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail active state.
+     * The TagOption active state.
      * </p>
      * 
-     * @return The TagOptionDetail active state.
+     * @return The TagOption active state.
      */
 
     public Boolean isActive() {
@@ -187,11 +187,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail identifier.
+     * The TagOption identifier.
      * </p>
      * 
      * @param id
-     *        The TagOptionDetail identifier.
+     *        The TagOption identifier.
      */
 
     public void setId(String id) {
@@ -200,10 +200,10 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail identifier.
+     * The TagOption identifier.
      * </p>
      * 
-     * @return The TagOptionDetail identifier.
+     * @return The TagOption identifier.
      */
 
     public String getId() {
@@ -212,11 +212,11 @@ public class TagOptionDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The TagOptionDetail identifier.
+     * The TagOption identifier.
      * </p>
      * 
      * @param id
-     *        The TagOptionDetail identifier.
+     *        The TagOption identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

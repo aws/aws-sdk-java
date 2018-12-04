@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,7 +98,7 @@ public interface AWSShield {
     /**
      * <p>
      * Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution,
-     * Elastic Load Balancing load balancer, or an Amazon Route 53 hosted zone.
+     * Elastic Load Balancing load balancer, Elastic IP Address, or an Amazon Route 53 hosted zone.
      * </p>
      * 
      * @param createProtectionRequest
@@ -112,7 +112,12 @@ public interface AWSShield {
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws LimitsExceededException
-     *         Exception that indicates that the operation would exceed a limit.
+     *         Exception that indicates that the operation would exceed a limit.</p>
+     *         <p>
+     *         <code>Type</code> is the type of limit that would be exceeded.
+     *         </p>
+     *         <p>
+     *         <code>Limit</code> is the threshold that would be exceeded.
      * @throws ResourceAlreadyExistsException
      *         Exception indicating the specified resource already exists.
      * @throws OptimisticLockException
@@ -167,7 +172,8 @@ public interface AWSShield {
 
     /**
      * <p>
-     * Removes AWS Shield Advanced from an account.
+     * Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year subscription commitment. You
+     * cannot delete a subscription prior to the completion of that commitment.
      * </p>
      * 
      * @param deleteSubscriptionRequest
@@ -176,8 +182,8 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws LockedSubscriptionException
-     *         Exception that indicates that the subscription has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the subscription you are trying to delete has not yet completed the 1-year
+     *         commitment. You cannot delete this subscription.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DeleteSubscription
@@ -239,6 +245,22 @@ public interface AWSShield {
      *      API Documentation</a>
      */
     DescribeSubscriptionResult describeSubscription(DescribeSubscriptionRequest describeSubscriptionRequest);
+
+    /**
+     * <p>
+     * Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.
+     * </p>
+     * 
+     * @param getSubscriptionStateRequest
+     * @return Result of the GetSubscriptionState operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @sample AWSShield.GetSubscriptionState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetSubscriptionStateResult getSubscriptionState(GetSubscriptionStateRequest getSubscriptionStateRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that contains the ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function
- * that is used to preprocess records in the stream, and the ARN of the IAM role used to access the AWS Lambda function.
+ * An object that contains the Amazon Resource Name (ARN) of the <a
+ * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to preprocess records in the
+ * stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputLambdaProcessor"
@@ -38,7 +39,7 @@ public class InputLambdaProcessor implements Serializable, Cloneable, Structured
     private String resourceARN;
     /**
      * <p>
-     * The ARN of the IAM role used to access the AWS Lambda function.
+     * The ARN of the IAM role that is used to access the AWS Lambda function.
      * </p>
      */
     private String roleARN;
@@ -91,11 +92,11 @@ public class InputLambdaProcessor implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ARN of the IAM role used to access the AWS Lambda function.
+     * The ARN of the IAM role that is used to access the AWS Lambda function.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role used to access the AWS Lambda function.
+     *        The ARN of the IAM role that is used to access the AWS Lambda function.
      */
 
     public void setRoleARN(String roleARN) {
@@ -104,10 +105,10 @@ public class InputLambdaProcessor implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ARN of the IAM role used to access the AWS Lambda function.
+     * The ARN of the IAM role that is used to access the AWS Lambda function.
      * </p>
      * 
-     * @return The ARN of the IAM role used to access the AWS Lambda function.
+     * @return The ARN of the IAM role that is used to access the AWS Lambda function.
      */
 
     public String getRoleARN() {
@@ -116,11 +117,11 @@ public class InputLambdaProcessor implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ARN of the IAM role used to access the AWS Lambda function.
+     * The ARN of the IAM role that is used to access the AWS Lambda function.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role used to access the AWS Lambda function.
+     *        The ARN of the IAM role that is used to access the AWS Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

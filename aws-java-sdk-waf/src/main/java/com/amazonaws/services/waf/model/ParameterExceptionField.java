@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ public enum ParameterExceptionField {
 
     CHANGE_ACTION("CHANGE_ACTION"),
     WAF_ACTION("WAF_ACTION"),
+    WAF_OVERRIDE_ACTION("WAF_OVERRIDE_ACTION"),
     PREDICATE_TYPE("PREDICATE_TYPE"),
     IPSET_TYPE("IPSET_TYPE"),
     BYTE_MATCH_FIELD_TYPE("BYTE_MATCH_FIELD_TYPE"),

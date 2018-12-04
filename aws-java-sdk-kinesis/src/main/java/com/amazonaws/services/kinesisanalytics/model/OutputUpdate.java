@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,11 +49,23 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
     private KinesisStreamsOutputUpdate kinesisStreamsOutputUpdate;
     /**
      * <p>
-     * Describes a Amazon Kinesis Firehose delivery stream as the destination for the output.
+     * Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.
      * </p>
      */
     private KinesisFirehoseOutputUpdate kinesisFirehoseOutputUpdate;
-
+    /**
+     * <p>
+     * Describes an AWS Lambda function as the destination for the output.
+     * </p>
+     */
+    private LambdaOutputUpdate lambdaOutputUpdate;
+    /**
+     * <p>
+     * Describes the data format when records are written to the destination. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * Output</a>.
+     * </p>
+     */
     private DestinationSchema destinationSchemaUpdate;
 
     /**
@@ -184,11 +196,11 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes a Amazon Kinesis Firehose delivery stream as the destination for the output.
+     * Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.
      * </p>
      * 
      * @param kinesisFirehoseOutputUpdate
-     *        Describes a Amazon Kinesis Firehose delivery stream as the destination for the output.
+     *        Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.
      */
 
     public void setKinesisFirehoseOutputUpdate(KinesisFirehoseOutputUpdate kinesisFirehoseOutputUpdate) {
@@ -197,10 +209,10 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes a Amazon Kinesis Firehose delivery stream as the destination for the output.
+     * Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.
      * </p>
      * 
-     * @return Describes a Amazon Kinesis Firehose delivery stream as the destination for the output.
+     * @return Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.
      */
 
     public KinesisFirehoseOutputUpdate getKinesisFirehoseOutputUpdate() {
@@ -209,11 +221,11 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes a Amazon Kinesis Firehose delivery stream as the destination for the output.
+     * Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.
      * </p>
      * 
      * @param kinesisFirehoseOutputUpdate
-     *        Describes a Amazon Kinesis Firehose delivery stream as the destination for the output.
+     *        Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,7 +235,56 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes an AWS Lambda function as the destination for the output.
+     * </p>
+     * 
+     * @param lambdaOutputUpdate
+     *        Describes an AWS Lambda function as the destination for the output.
+     */
+
+    public void setLambdaOutputUpdate(LambdaOutputUpdate lambdaOutputUpdate) {
+        this.lambdaOutputUpdate = lambdaOutputUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes an AWS Lambda function as the destination for the output.
+     * </p>
+     * 
+     * @return Describes an AWS Lambda function as the destination for the output.
+     */
+
+    public LambdaOutputUpdate getLambdaOutputUpdate() {
+        return this.lambdaOutputUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes an AWS Lambda function as the destination for the output.
+     * </p>
+     * 
+     * @param lambdaOutputUpdate
+     *        Describes an AWS Lambda function as the destination for the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputUpdate withLambdaOutputUpdate(LambdaOutputUpdate lambdaOutputUpdate) {
+        setLambdaOutputUpdate(lambdaOutputUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the data format when records are written to the destination. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * Output</a>.
+     * </p>
+     * 
      * @param destinationSchemaUpdate
+     *        Describes the data format when records are written to the destination. For more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        Application Output</a>.
      */
 
     public void setDestinationSchemaUpdate(DestinationSchema destinationSchemaUpdate) {
@@ -231,7 +292,15 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the data format when records are written to the destination. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * Output</a>.
+     * </p>
+     * 
+     * @return Describes the data format when records are written to the destination. For more information, see <a
+     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *         Application Output</a>.
      */
 
     public DestinationSchema getDestinationSchemaUpdate() {
@@ -239,7 +308,16 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the data format when records are written to the destination. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * Output</a>.
+     * </p>
+     * 
      * @param destinationSchemaUpdate
+     *        Describes the data format when records are written to the destination. For more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,6 +345,8 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
             sb.append("KinesisStreamsOutputUpdate: ").append(getKinesisStreamsOutputUpdate()).append(",");
         if (getKinesisFirehoseOutputUpdate() != null)
             sb.append("KinesisFirehoseOutputUpdate: ").append(getKinesisFirehoseOutputUpdate()).append(",");
+        if (getLambdaOutputUpdate() != null)
+            sb.append("LambdaOutputUpdate: ").append(getLambdaOutputUpdate()).append(",");
         if (getDestinationSchemaUpdate() != null)
             sb.append("DestinationSchemaUpdate: ").append(getDestinationSchemaUpdate());
         sb.append("}");
@@ -299,6 +379,10 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKinesisFirehoseOutputUpdate() != null && other.getKinesisFirehoseOutputUpdate().equals(this.getKinesisFirehoseOutputUpdate()) == false)
             return false;
+        if (other.getLambdaOutputUpdate() == null ^ this.getLambdaOutputUpdate() == null)
+            return false;
+        if (other.getLambdaOutputUpdate() != null && other.getLambdaOutputUpdate().equals(this.getLambdaOutputUpdate()) == false)
+            return false;
         if (other.getDestinationSchemaUpdate() == null ^ this.getDestinationSchemaUpdate() == null)
             return false;
         if (other.getDestinationSchemaUpdate() != null && other.getDestinationSchemaUpdate().equals(this.getDestinationSchemaUpdate()) == false)
@@ -315,6 +399,7 @@ public class OutputUpdate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNameUpdate() == null) ? 0 : getNameUpdate().hashCode());
         hashCode = prime * hashCode + ((getKinesisStreamsOutputUpdate() == null) ? 0 : getKinesisStreamsOutputUpdate().hashCode());
         hashCode = prime * hashCode + ((getKinesisFirehoseOutputUpdate() == null) ? 0 : getKinesisFirehoseOutputUpdate().hashCode());
+        hashCode = prime * hashCode + ((getLambdaOutputUpdate() == null) ? 0 : getLambdaOutputUpdate().hashCode());
         hashCode = prime * hashCode + ((getDestinationSchemaUpdate() == null) ? 0 : getDestinationSchemaUpdate().hashCode());
         return hashCode;
     }

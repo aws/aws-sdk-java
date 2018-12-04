@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is empty, all attributes are returned.
+     * results. If the array is null, all attributes are returned.
      * </p>
      */
     private java.util.List<String> attributesToGet;
@@ -130,6 +130,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <code>status</code> (case-insensitive)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sub</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Custom attributes are not searchable.
@@ -187,11 +192,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is empty, all attributes are returned.
+     * results. If the array is null, all attributes are returned.
      * </p>
      * 
      * @return An array of strings, where each string is the name of a user attribute to be returned for each user in
-     *         the search results. If the array is empty, all attributes are returned.
+     *         the search results. If the array is null, all attributes are returned.
      */
 
     public java.util.List<String> getAttributesToGet() {
@@ -201,12 +206,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is empty, all attributes are returned.
+     * results. If the array is null, all attributes are returned.
      * </p>
      * 
      * @param attributesToGet
      *        An array of strings, where each string is the name of a user attribute to be returned for each user in the
-     *        search results. If the array is empty, all attributes are returned.
+     *        search results. If the array is null, all attributes are returned.
      */
 
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -221,7 +226,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is empty, all attributes are returned.
+     * results. If the array is null, all attributes are returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -231,7 +236,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param attributesToGet
      *        An array of strings, where each string is the name of a user attribute to be returned for each user in the
-     *        search results. If the array is empty, all attributes are returned.
+     *        search results. If the array is null, all attributes are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,12 +253,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is empty, all attributes are returned.
+     * results. If the array is null, all attributes are returned.
      * </p>
      * 
      * @param attributesToGet
      *        An array of strings, where each string is the name of a user attribute to be returned for each user in the
-     *        search results. If the array is empty, all attributes are returned.
+     *        search results. If the array is null, all attributes are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,6 +429,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <code>status</code> (case-insensitive)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sub</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Custom attributes are not searchable.
@@ -509,6 +519,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>status</code> (case-insensitive)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sub</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -603,6 +618,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <code>status</code> (case-insensitive)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sub</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Custom attributes are not searchable.
@@ -687,6 +707,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <li>
      *         <p>
      *         <code>status</code> (case-insensitive)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sub</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -781,6 +806,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <code>status</code> (case-insensitive)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sub</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Custom attributes are not searchable.
@@ -866,6 +896,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>status</code> (case-insensitive)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sub</code>
      *        </p>
      *        </li>
      *        </ul>

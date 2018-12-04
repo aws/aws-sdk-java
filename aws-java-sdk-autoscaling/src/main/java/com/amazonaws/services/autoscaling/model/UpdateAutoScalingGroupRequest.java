@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,17 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private String autoScalingGroupName;
     /**
      * <p>
-     * The name of the launch configuration.
+     * The name of the launch configuration. If you specify a launch configuration, you can't specify a launch template.
      * </p>
      */
     private String launchConfigurationName;
+    /**
+     * <p>
+     * The launch template to use to specify the updates. If you specify a launch template, you can't specify a launch
+     * configuration.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
      * The minimum size of the Auto Scaling group.
@@ -132,6 +139,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean newInstancesProtectedFromScaleIn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf.
+     * </p>
+     */
+    private String serviceLinkedRoleARN;
 
     /**
      * <p>
@@ -175,11 +189,12 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration.
+     * The name of the launch configuration. If you specify a launch configuration, you can't specify a launch template.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration.
+     *        The name of the launch configuration. If you specify a launch configuration, you can't specify a launch
+     *        template.
      */
 
     public void setLaunchConfigurationName(String launchConfigurationName) {
@@ -188,10 +203,11 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration.
+     * The name of the launch configuration. If you specify a launch configuration, you can't specify a launch template.
      * </p>
      * 
-     * @return The name of the launch configuration.
+     * @return The name of the launch configuration. If you specify a launch configuration, you can't specify a launch
+     *         template.
      */
 
     public String getLaunchConfigurationName() {
@@ -200,16 +216,63 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration.
+     * The name of the launch configuration. If you specify a launch configuration, you can't specify a launch template.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration.
+     *        The name of the launch configuration. If you specify a launch configuration, you can't specify a launch
+     *        template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAutoScalingGroupRequest withLaunchConfigurationName(String launchConfigurationName) {
         setLaunchConfigurationName(launchConfigurationName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to specify the updates. If you specify a launch template, you can't specify a launch
+     * configuration.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use to specify the updates. If you specify a launch template, you can't specify a
+     *        launch configuration.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to specify the updates. If you specify a launch template, you can't specify a launch
+     * configuration.
+     * </p>
+     * 
+     * @return The launch template to use to specify the updates. If you specify a launch template, you can't specify a
+     *         launch configuration.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to specify the updates. If you specify a launch template, you can't specify a launch
+     * configuration.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use to specify the updates. If you specify a launch template, you can't specify a
+     *        launch configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAutoScalingGroupRequest withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
         return this;
     }
 
@@ -913,6 +976,52 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf.
+     * </p>
+     * 
+     * @param serviceLinkedRoleARN
+     *        The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *        AWS services on your behalf.
+     */
+
+    public void setServiceLinkedRoleARN(String serviceLinkedRoleARN) {
+        this.serviceLinkedRoleARN = serviceLinkedRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *         AWS services on your behalf.
+     */
+
+    public String getServiceLinkedRoleARN() {
+        return this.serviceLinkedRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf.
+     * </p>
+     * 
+     * @param serviceLinkedRoleARN
+     *        The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *        AWS services on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAutoScalingGroupRequest withServiceLinkedRoleARN(String serviceLinkedRoleARN) {
+        setServiceLinkedRoleARN(serviceLinkedRoleARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -927,6 +1036,8 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLaunchConfigurationName() != null)
             sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getMinSize() != null)
             sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
@@ -948,7 +1059,9 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (getTerminationPolicies() != null)
             sb.append("TerminationPolicies: ").append(getTerminationPolicies()).append(",");
         if (getNewInstancesProtectedFromScaleIn() != null)
-            sb.append("NewInstancesProtectedFromScaleIn: ").append(getNewInstancesProtectedFromScaleIn());
+            sb.append("NewInstancesProtectedFromScaleIn: ").append(getNewInstancesProtectedFromScaleIn()).append(",");
+        if (getServiceLinkedRoleARN() != null)
+            sb.append("ServiceLinkedRoleARN: ").append(getServiceLinkedRoleARN());
         sb.append("}");
         return sb.toString();
     }
@@ -970,6 +1083,10 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null)
             return false;
         if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
+            return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
         if (other.getMinSize() == null ^ this.getMinSize() == null)
             return false;
@@ -1016,6 +1133,10 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getNewInstancesProtectedFromScaleIn() != null
                 && other.getNewInstancesProtectedFromScaleIn().equals(this.getNewInstancesProtectedFromScaleIn()) == false)
             return false;
+        if (other.getServiceLinkedRoleARN() == null ^ this.getServiceLinkedRoleARN() == null)
+            return false;
+        if (other.getServiceLinkedRoleARN() != null && other.getServiceLinkedRoleARN().equals(this.getServiceLinkedRoleARN()) == false)
+            return false;
         return true;
     }
 
@@ -1026,6 +1147,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());
@@ -1037,6 +1159,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode());
         hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode());
         hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
+        hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());
         return hashCode;
     }
 

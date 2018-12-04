@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,18 @@ public class DescribeThingTypeResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String thingTypeName;
+    /**
+     * <p>
+     * The thing type ID.
+     * </p>
+     */
+    private String thingTypeId;
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     */
+    private String thingTypeArn;
     /**
      * <p>
      * The ThingTypeProperties contains information about the thing type including description, and a list of searchable
@@ -81,6 +93,86 @@ public class DescribeThingTypeResult extends com.amazonaws.AmazonWebServiceResul
 
     public DescribeThingTypeResult withThingTypeName(String thingTypeName) {
         setThingTypeName(thingTypeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The thing type ID.
+     * </p>
+     * 
+     * @param thingTypeId
+     *        The thing type ID.
+     */
+
+    public void setThingTypeId(String thingTypeId) {
+        this.thingTypeId = thingTypeId;
+    }
+
+    /**
+     * <p>
+     * The thing type ID.
+     * </p>
+     * 
+     * @return The thing type ID.
+     */
+
+    public String getThingTypeId() {
+        return this.thingTypeId;
+    }
+
+    /**
+     * <p>
+     * The thing type ID.
+     * </p>
+     * 
+     * @param thingTypeId
+     *        The thing type ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeThingTypeResult withThingTypeId(String thingTypeId) {
+        setThingTypeId(thingTypeId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @param thingTypeArn
+     *        The thing type ARN.
+     */
+
+    public void setThingTypeArn(String thingTypeArn) {
+        this.thingTypeArn = thingTypeArn;
+    }
+
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @return The thing type ARN.
+     */
+
+    public String getThingTypeArn() {
+        return this.thingTypeArn;
+    }
+
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @param thingTypeArn
+     *        The thing type ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeThingTypeResult withThingTypeArn(String thingTypeArn) {
+        setThingTypeArn(thingTypeArn);
         return this;
     }
 
@@ -190,6 +282,10 @@ public class DescribeThingTypeResult extends com.amazonaws.AmazonWebServiceResul
         sb.append("{");
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
+        if (getThingTypeId() != null)
+            sb.append("ThingTypeId: ").append(getThingTypeId()).append(",");
+        if (getThingTypeArn() != null)
+            sb.append("ThingTypeArn: ").append(getThingTypeArn()).append(",");
         if (getThingTypeProperties() != null)
             sb.append("ThingTypeProperties: ").append(getThingTypeProperties()).append(",");
         if (getThingTypeMetadata() != null)
@@ -212,6 +308,14 @@ public class DescribeThingTypeResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getThingTypeName() != null && other.getThingTypeName().equals(this.getThingTypeName()) == false)
             return false;
+        if (other.getThingTypeId() == null ^ this.getThingTypeId() == null)
+            return false;
+        if (other.getThingTypeId() != null && other.getThingTypeId().equals(this.getThingTypeId()) == false)
+            return false;
+        if (other.getThingTypeArn() == null ^ this.getThingTypeArn() == null)
+            return false;
+        if (other.getThingTypeArn() != null && other.getThingTypeArn().equals(this.getThingTypeArn()) == false)
+            return false;
         if (other.getThingTypeProperties() == null ^ this.getThingTypeProperties() == null)
             return false;
         if (other.getThingTypeProperties() != null && other.getThingTypeProperties().equals(this.getThingTypeProperties()) == false)
@@ -229,6 +333,8 @@ public class DescribeThingTypeResult extends com.amazonaws.AmazonWebServiceResul
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
+        hashCode = prime * hashCode + ((getThingTypeId() == null) ? 0 : getThingTypeId().hashCode());
+        hashCode = prime * hashCode + ((getThingTypeArn() == null) ? 0 : getThingTypeArn().hashCode());
         hashCode = prime * hashCode + ((getThingTypeProperties() == null) ? 0 : getThingTypeProperties().hashCode());
         hashCode = prime * hashCode + ((getThingTypeMetadata() == null) ? 0 : getThingTypeMetadata().hashCode());
         return hashCode;

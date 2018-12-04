@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class SubmitTaskStateChangeRequestMarshaller {
             .marshallLocationName("containers").build();
     private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("attachments").build();
+    private static final MarshallingInfo<java.util.Date> PULLSTARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStartedAt").build();
+    private static final MarshallingInfo<java.util.Date> PULLSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStoppedAt").build();
+    private static final MarshallingInfo<java.util.Date> EXECUTIONSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionStoppedAt").build();
 
     private static final SubmitTaskStateChangeRequestMarshaller instance = new SubmitTaskStateChangeRequestMarshaller();
 
@@ -63,6 +69,9 @@ public class SubmitTaskStateChangeRequestMarshaller {
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getReason(), REASON_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getContainers(), CONTAINERS_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getAttachments(), ATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(submitTaskStateChangeRequest.getPullStartedAt(), PULLSTARTEDAT_BINDING);
+            protocolMarshaller.marshall(submitTaskStateChangeRequest.getPullStoppedAt(), PULLSTOPPEDAT_BINDING);
+            protocolMarshaller.marshall(submitTaskStateChangeRequest.getExecutionStoppedAt(), EXECUTIONSTOPPEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

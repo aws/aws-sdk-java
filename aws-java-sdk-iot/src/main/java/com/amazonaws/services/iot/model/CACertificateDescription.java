@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,12 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      * </p>
      */
     private String autoRegistrationStatus;
+
+    private java.util.Date lastModifiedDate;
+
+    private Integer customerVersion;
+
+    private String generationId;
 
     /**
      * <p>
@@ -426,6 +432,84 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * @param lastModifiedDate
+     */
+
+    public void setLastModifiedDate(java.util.Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getLastModifiedDate() {
+        return this.lastModifiedDate;
+    }
+
+    /**
+     * @param lastModifiedDate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CACertificateDescription withLastModifiedDate(java.util.Date lastModifiedDate) {
+        setLastModifiedDate(lastModifiedDate);
+        return this;
+    }
+
+    /**
+     * @param customerVersion
+     */
+
+    public void setCustomerVersion(Integer customerVersion) {
+        this.customerVersion = customerVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getCustomerVersion() {
+        return this.customerVersion;
+    }
+
+    /**
+     * @param customerVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CACertificateDescription withCustomerVersion(Integer customerVersion) {
+        setCustomerVersion(customerVersion);
+        return this;
+    }
+
+    /**
+     * @param generationId
+     */
+
+    public void setGenerationId(String generationId) {
+        this.generationId = generationId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getGenerationId() {
+        return this.generationId;
+    }
+
+    /**
+     * @param generationId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CACertificateDescription withGenerationId(String generationId) {
+        setGenerationId(generationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -449,7 +533,13 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getAutoRegistrationStatus() != null)
-            sb.append("AutoRegistrationStatus: ").append(getAutoRegistrationStatus());
+            sb.append("AutoRegistrationStatus: ").append(getAutoRegistrationStatus()).append(",");
+        if (getLastModifiedDate() != null)
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getCustomerVersion() != null)
+            sb.append("CustomerVersion: ").append(getCustomerVersion()).append(",");
+        if (getGenerationId() != null)
+            sb.append("GenerationId: ").append(getGenerationId());
         sb.append("}");
         return sb.toString();
     }
@@ -492,6 +582,18 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
             return false;
         if (other.getAutoRegistrationStatus() != null && other.getAutoRegistrationStatus().equals(this.getAutoRegistrationStatus()) == false)
             return false;
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null)
+            return false;
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
+            return false;
+        if (other.getCustomerVersion() == null ^ this.getCustomerVersion() == null)
+            return false;
+        if (other.getCustomerVersion() != null && other.getCustomerVersion().equals(this.getCustomerVersion()) == false)
+            return false;
+        if (other.getGenerationId() == null ^ this.getGenerationId() == null)
+            return false;
+        if (other.getGenerationId() != null && other.getGenerationId().equals(this.getGenerationId()) == false)
+            return false;
         return true;
     }
 
@@ -507,6 +609,9 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getOwnedBy() == null) ? 0 : getOwnedBy().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getAutoRegistrationStatus() == null) ? 0 : getAutoRegistrationStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getCustomerVersion() == null) ? 0 : getCustomerVersion().hashCode());
+        hashCode = prime * hashCode + ((getGenerationId() == null) ? 0 : getGenerationId().hashCode());
         return hashCode;
     }
 

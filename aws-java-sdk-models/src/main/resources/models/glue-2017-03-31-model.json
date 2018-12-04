@@ -75,6 +75,22 @@
       ],
       "documentation":"<p>Deletes multiple tables at once.</p>"
     },
+    "BatchDeleteTableVersion":{
+      "name":"BatchDeleteTableVersion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchDeleteTableVersionRequest"},
+      "output":{"shape":"BatchDeleteTableVersionResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"}
+      ],
+      "documentation":"<p>Deletes a specified batch of versions of a table.</p>"
+    },
     "BatchGetPartition":{
       "name":"BatchGetPartition",
       "http":{
@@ -104,7 +120,7 @@
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Stops a batch of job runs for a given job.</p>"
+      "documentation":"<p>Stops one or more job runs for a specified Job.</p>"
     },
     "CreateClassifier":{
       "name":"CreateClassifier",
@@ -119,7 +135,7 @@
         {"shape":"InvalidInputException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Creates a <code>Classifier</code> in the user's account.</p>"
+      "documentation":"<p>Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on which field of the request is present.</p>"
     },
     "CreateConnection":{
       "name":"CreateConnection",
@@ -132,7 +148,8 @@
       "errors":[
         {"shape":"AlreadyExistsException"},
         {"shape":"InvalidInputException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"ResourceNumberLimitExceededException"}
       ],
       "documentation":"<p>Creates a connection definition in the Data Catalog.</p>"
     },
@@ -150,7 +167,7 @@
         {"shape":"OperationTimeoutException"},
         {"shape":"ResourceNumberLimitExceededException"}
       ],
-      "documentation":"<p>Creates a new <code>Crawler</code> with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p>"
+      "documentation":"<p>Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p>"
     },
     "CreateDatabase":{
       "name":"CreateDatabase",
@@ -203,7 +220,8 @@
         {"shape":"AlreadyExistsException"},
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"ResourceNumberLimitExceededException"}
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Creates a new job.</p>"
     },
@@ -238,7 +256,7 @@
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Transforms a directed acyclic graph (DAG) into a Python script.</p>"
+      "documentation":"<p>Transforms a directed acyclic graph (DAG) into code.</p>"
     },
     "CreateTable":{
       "name":"CreateTable",
@@ -269,9 +287,11 @@
       "errors":[
         {"shape":"AlreadyExistsException"},
         {"shape":"InvalidInputException"},
+        {"shape":"IdempotentParameterMismatchException"},
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"ResourceNumberLimitExceededException"}
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Creates a new trigger.</p>"
     },
@@ -288,7 +308,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
         {"shape":"EntityNotFoundException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"ResourceNumberLimitExceededException"}
       ],
       "documentation":"<p>Creates a new function definition in the Data Catalog.</p>"
     },
@@ -304,7 +325,7 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Removes a <code>Classifier</code> from the metadata store.</p>"
+      "documentation":"<p>Removes a classifier from the Data Catalog.</p>"
     },
     "DeleteConnection":{
       "name":"DeleteConnection",
@@ -334,7 +355,7 @@
         {"shape":"SchedulerTransitioningException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Removes a specified <code>Crawler</code> from the metadata store, unless the <code>Crawler</code> state is <code>RUNNING</code>.</p>"
+      "documentation":"<p>Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.</p>"
     },
     "DeleteDatabase":{
       "name":"DeleteDatabase",
@@ -381,7 +402,7 @@
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Deletes a specified job.</p>"
+      "documentation":"<p>Deletes a specified job. If the job is not found, no exception is thrown.</p>"
     },
     "DeletePartition":{
       "name":"DeletePartition",
@@ -415,6 +436,22 @@
       ],
       "documentation":"<p>Removes a table definition from the Data Catalog.</p>"
     },
+    "DeleteTableVersion":{
+      "name":"DeleteTableVersion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteTableVersionRequest"},
+      "output":{"shape":"DeleteTableVersionResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"}
+      ],
+      "documentation":"<p>Deletes a specified version of a table.</p>"
+    },
     "DeleteTrigger":{
       "name":"DeleteTrigger",
       "http":{
@@ -426,9 +463,10 @@
       "errors":[
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"ConcurrentModificationException"}
       ],
-      "documentation":"<p>Deletes a specified trigger.</p>"
+      "documentation":"<p>Deletes a specified trigger. If the trigger is not found, no exception is thrown.</p>"
     },
     "DeleteUserDefinedFunction":{
       "name":"DeleteUserDefinedFunction",
@@ -472,7 +510,7 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Retrieve a <code>Classifier</code> by name.</p>"
+      "documentation":"<p>Retrieve a classifier by name.</p>"
     },
     "GetClassifiers":{
       "name":"GetClassifiers",
@@ -485,7 +523,7 @@
       "errors":[
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Lists all Classifier objects in the metadata store.</p>"
+      "documentation":"<p>Lists all classifier objects in the Data Catalog.</p>"
     },
     "GetConnection":{
       "name":"GetConnection",
@@ -527,7 +565,7 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Retrieves metadata for a specified <code>Crawler</code>.</p>"
+      "documentation":"<p>Retrieves metadata for a specified crawler.</p>"
     },
     "GetCrawlerMetrics":{
       "name":"GetCrawlerMetrics",
@@ -553,7 +591,7 @@
       "errors":[
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Retrieves metadata for all <code>Crawlers</code> defined in the customer account.</p>"
+      "documentation":"<p>Retrieves metadata for all crawlers defined in the customer account.</p>"
     },
     "GetDatabase":{
       "name":"GetDatabase",
@@ -708,7 +746,8 @@
       "errors":[
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"EntityNotFoundException"}
       ],
       "documentation":"<p>Creates mappings.</p>"
     },
@@ -757,7 +796,7 @@
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Gets a Python script to perform a specified mapping.</p>"
+      "documentation":"<p>Gets code to perform a specified mapping.</p>"
     },
     "GetTable":{
       "name":"GetTable",
@@ -774,6 +813,22 @@
         {"shape":"OperationTimeoutException"}
       ],
       "documentation":"<p>Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.</p>"
+    },
+    "GetTableVersion":{
+      "name":"GetTableVersion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetTableVersionRequest"},
+      "output":{"shape":"GetTableVersionResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"}
+      ],
+      "documentation":"<p>Retrieves a specified version of a table.</p>"
     },
     "GetTableVersions":{
       "name":"GetTableVersions",
@@ -914,7 +969,7 @@
         {"shape":"CrawlerRunningException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Starts a crawl using the specified <code>Crawler</code>, regardless of what is scheduled. If the <code>Crawler</code> is already running, does nothing.</p>"
+      "documentation":"<p>Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running, does nothing.</p>"
     },
     "StartCrawlerSchedule":{
       "name":"StartCrawlerSchedule",
@@ -967,7 +1022,7 @@
         {"shape":"ResourceNumberLimitExceededException"},
         {"shape":"ConcurrentRunsExceededException"}
       ],
-      "documentation":"<p>Starts an existing trigger.</p>"
+      "documentation":"<p>Starts an existing trigger. See <a href=\"http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html\">Triggering Jobs</a> for information about how different types of trigger are started.</p>"
     },
     "StopCrawler":{
       "name":"StopCrawler",
@@ -983,7 +1038,7 @@
         {"shape":"CrawlerStoppingException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>If the specified <code>Crawler</code> is running, stops the crawl.</p>"
+      "documentation":"<p>If the specified crawler is running, stops the crawl.</p>"
     },
     "StopCrawlerSchedule":{
       "name":"StopCrawlerSchedule",
@@ -1013,7 +1068,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
         {"shape":"EntityNotFoundException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Stops a specified trigger.</p>"
     },
@@ -1031,7 +1087,7 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Modifies an existing <code>Classifier</code>.</p>"
+      "documentation":"<p>Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>, or <code>JsonClassifier</code>, depending on which field is present).</p>"
     },
     "UpdateConnection":{
       "name":"UpdateConnection",
@@ -1063,7 +1119,7 @@
         {"shape":"CrawlerRunningException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Updates a <code>Crawler</code>. If a <code>Crawler</code> is running, you must stop it using <code>StopCrawler</code> before updating it.</p>"
+      "documentation":"<p>Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.</p>"
     },
     "UpdateCrawlerSchedule":{
       "name":"UpdateCrawlerSchedule",
@@ -1080,7 +1136,7 @@
         {"shape":"SchedulerTransitioningException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Updates the schedule of a crawler using a Cron expression. </p>"
+      "documentation":"<p>Updates the schedule of a crawler using a <code>cron</code> expression. </p>"
     },
     "UpdateDatabase":{
       "name":"UpdateDatabase",
@@ -1127,7 +1183,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"EntityNotFoundException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Updates an existing job definition.</p>"
     },
@@ -1160,7 +1217,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"ConcurrentModificationException"}
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"ResourceNumberLimitExceededException"}
       ],
       "documentation":"<p>Updates a metadata table in the Data Catalog.</p>"
     },
@@ -1176,7 +1234,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
         {"shape":"EntityNotFoundException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Updates a trigger definition.</p>"
     },
@@ -1218,7 +1277,7 @@
         },
         "Arguments":{
           "shape":"GenericMap",
-          "documentation":"<p>Arguments to be passed to the job.</p>"
+          "documentation":"<p>Arguments to be passed to the job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html\">Special Parameters Used by AWS Glue</a> topic in the developer guide.</p>"
         }
       },
       "documentation":"<p>Defines an action to be initiated by a trigger.</p>"
@@ -1361,7 +1420,7 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the catalog database where the tables to delete reside.</p>"
+          "documentation":"<p>The name of the catalog database where the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>"
         },
         "TablesToDelete":{
           "shape":"BatchDeleteTableNameList",
@@ -1375,6 +1434,47 @@
         "Errors":{
           "shape":"TableErrors",
           "documentation":"<p>A list of errors encountered in attempting to delete the specified tables.</p>"
+        }
+      }
+    },
+    "BatchDeleteTableVersionList":{
+      "type":"list",
+      "member":{"shape":"VersionString"},
+      "max":100,
+      "min":0
+    },
+    "BatchDeleteTableVersionRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "VersionIds"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>"
+        },
+        "VersionIds":{
+          "shape":"BatchDeleteTableVersionList",
+          "documentation":"<p>A list of the IDs of versions to be deleted.</p>"
+        }
+      }
+    },
+    "BatchDeleteTableVersionResponse":{
+      "type":"structure",
+      "members":{
+        "Errors":{
+          "shape":"TableVersionErrors",
+          "documentation":"<p>A list of errors encountered while trying to delete the specified table versions.</p>"
         }
       }
     },
@@ -1428,18 +1528,18 @@
       "members":{
         "JobName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the job.</p>"
+          "documentation":"<p>The name of the Job in question.</p>"
         },
         "JobRunId":{
           "shape":"IdString",
-          "documentation":"<p>The job run Id.</p>"
+          "documentation":"<p>The JobRunId of the JobRun in question.</p>"
         },
         "ErrorDetail":{
           "shape":"ErrorDetail",
-          "documentation":"<p>The details of the error that occurred.</p>"
+          "documentation":"<p>Specifies details about the error that was encountered.</p>"
         }
       },
-      "documentation":"<p>Details about the job run and the error that occurred while trying to submit it for stopping.</p>"
+      "documentation":"<p>Records an error that occurred when attempting to stop a specified JobRun.</p>"
     },
     "BatchStopJobRunErrorList":{
       "type":"list",
@@ -1460,11 +1560,11 @@
       "members":{
         "JobName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the job whose job runs are to be stopped.</p>"
+          "documentation":"<p>The name of the Job in question.</p>"
         },
         "JobRunIds":{
           "shape":"BatchStopJobRunJobRunIdList",
-          "documentation":"<p>A list of job run Ids of the given job to be stopped.</p>"
+          "documentation":"<p>A list of the JobRunIds that should be stopped for that Job.</p>"
         }
       }
     },
@@ -1473,11 +1573,11 @@
       "members":{
         "SuccessfulSubmissions":{
           "shape":"BatchStopJobRunSuccessfulSubmissionList",
-          "documentation":"<p>A list of job runs which are successfully submitted for stopping.</p>"
+          "documentation":"<p>A list of the JobRuns that were successfully submitted for stopping.</p>"
         },
         "Errors":{
           "shape":"BatchStopJobRunErrorList",
-          "documentation":"<p>A list containing the job run Ids and details of the error that occurred for each job run while submitting to stop.</p>"
+          "documentation":"<p>A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each error was encountered and details about the error.</p>"
         }
       }
     },
@@ -1486,20 +1586,21 @@
       "members":{
         "JobName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the job.</p>"
+          "documentation":"<p>The Name of the Job in question.</p>"
         },
         "JobRunId":{
           "shape":"IdString",
-          "documentation":"<p>The job run Id.</p>"
+          "documentation":"<p>The JobRunId of the JobRun in question.</p>"
         }
       },
-      "documentation":"<p>Details about the job run which is submitted successfully for stopping.</p>"
+      "documentation":"<p>Records a successful request to stop a specified JobRun.</p>"
     },
     "BatchStopJobRunSuccessfulSubmissionList":{
       "type":"list",
       "member":{"shape":"BatchStopJobRunSuccessfulSubmission"}
     },
     "Boolean":{"type":"boolean"},
+    "BooleanNullable":{"type":"boolean"},
     "BooleanValue":{"type":"boolean"},
     "BoundedPartitionValueList":{
       "type":"list",
@@ -1559,10 +1660,18 @@
       "members":{
         "GrokClassifier":{
           "shape":"GrokClassifier",
-          "documentation":"<p>A GrokClassifier object.</p>"
+          "documentation":"<p>A <code>GrokClassifier</code> object.</p>"
+        },
+        "XMLClassifier":{
+          "shape":"XMLClassifier",
+          "documentation":"<p>An <code>XMLClassifier</code> object.</p>"
+        },
+        "JsonClassifier":{
+          "shape":"JsonClassifier",
+          "documentation":"<p>A <code>JsonClassifier</code> object.</p>"
         }
       },
-      "documentation":"<p>Classifiers are written in Python and triggered during a Crawl Task. You can write your own Classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A Classifier first checks whether a given file is in a format it can handle, and then, if so, creates a schema in the form of a <code>StructType</code> object that matches that data format.</p>"
+      "documentation":"<p>Classifiers are written in Python and triggered during a crawl task. You can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier checks whether a given file is in a format it can handle, and if it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p> <p>A classifier can be a <code>grok</code> classifier, an XML classifier, or a JSON classifier, asspecified in one of the fields in the <code>Classifier</code> object.</p>"
     },
     "ClassifierList":{
       "type":"list",
@@ -1729,11 +1838,11 @@
         },
         "JobName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the job in question.</p>"
+          "documentation":"<p>The name of the Job to whose JobRuns this condition applies and on which this trigger waits.</p>"
         },
         "State":{
           "shape":"JobRunState",
-          "documentation":"<p>The condition state.</p>"
+          "documentation":"<p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.</p>"
         }
       },
       "documentation":"<p>Defines a condition under which a trigger fires.</p>"
@@ -1786,6 +1895,11 @@
     },
     "ConnectionInput":{
       "type":"structure",
+      "required":[
+        "Name",
+        "ConnectionType",
+        "ConnectionProperties"
+      ],
       "members":{
         "Name":{
           "shape":"NameString",
@@ -1864,11 +1978,11 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The <code>Crawler</code> name.</p>"
+          "documentation":"<p>The crawler name.</p>"
         },
         "Role":{
-          "shape":"RoleArn",
-          "documentation":"<p>The IAM role (or ARN of an IAM role) used to access customer resources such as data in S3.</p>"
+          "shape":"Role",
+          "documentation":"<p>The IAM role (or ARN of an IAM role) used to access customer resources, such as data in Amazon S3.</p>"
         },
         "Targets":{
           "shape":"CrawlerTargets",
@@ -1876,43 +1990,43 @@
         },
         "DatabaseName":{
           "shape":"DatabaseName",
-          "documentation":"<p>The <code>Database</code> where this Crawler's output should be stored.</p>"
+          "documentation":"<p>The database where metadata is written by this crawler.</p>"
         },
         "Description":{
           "shape":"DescriptionString",
-          "documentation":"<p>A description of this Crawler and where it should be used.</p>"
+          "documentation":"<p>A description of the crawler.</p>"
         },
         "Classifiers":{
           "shape":"ClassifierNameList",
-          "documentation":"<p>A list of custom <code>Classifier</code>s associated with this Crawler.</p>"
+          "documentation":"<p>A list of custom classifiers associated with the crawler.</p>"
         },
         "SchemaChangePolicy":{
           "shape":"SchemaChangePolicy",
-          "documentation":"<p>Sets policy for the crawler's update and delete behavior.</p>"
+          "documentation":"<p>Sets the behavior when the crawler finds a changed or deleted object.</p>"
         },
         "State":{
           "shape":"CrawlerState",
-          "documentation":"<p>Indicates whether this Crawler is running, or whether a run is pending.</p>"
+          "documentation":"<p>Indicates whether the crawler is running, or whether a run is pending.</p>"
         },
         "TablePrefix":{
           "shape":"TablePrefix",
-          "documentation":"<p>The table prefix used for catalog tables created.</p>"
+          "documentation":"<p>The prefix added to the names of tables that are created.</p>"
         },
         "Schedule":{
           "shape":"Schedule",
-          "documentation":"<p>A <code>Schedule</code> object that specifies the schedule on which this Crawler is to be run.</p>"
+          "documentation":"<p>For scheduled crawlers, the schedule when the crawler runs.</p>"
         },
         "CrawlElapsedTime":{
           "shape":"MillisecondsCount",
-          "documentation":"<p>If this Crawler is running, contains the total time elapsed since the last crawl began.</p>"
+          "documentation":"<p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>"
         },
         "CreationTime":{
           "shape":"Timestamp",
-          "documentation":"<p>The time when the Crawler was created.</p>"
+          "documentation":"<p>The time when the crawler was created.</p>"
         },
         "LastUpdated":{
           "shape":"Timestamp",
-          "documentation":"<p>The time the Crawler was last updated.</p>"
+          "documentation":"<p>The time the crawler was last updated.</p>"
         },
         "LastCrawl":{
           "shape":"LastCrawlInfo",
@@ -1920,11 +2034,16 @@
         },
         "Version":{
           "shape":"VersionId",
-          "documentation":"<p>The version of the Crawler.</p>"
+          "documentation":"<p>The version of the crawler.</p>"
+        },
+        "Configuration":{
+          "shape":"CrawlerConfiguration",
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's behavior.</p> <p>You can use this field to force partitions to inherit metadata such as classification, input format, output format, serde information, and schema from their parent table, rather than detect this information separately for each partition. Use the following JSON string to specify that behavior:</p> <p>Example: <code>'{ \"Version\": 1.0, \"CrawlerOutput\": { \"Partitions\": { \"AddOrUpdateBehavior\": \"InheritFromTable\" } } }'</code> </p>"
         }
       },
-      "documentation":"<p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metatdata concerning the data source in the Data Catalog.</p>"
+      "documentation":"<p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.</p>"
     },
+    "CrawlerConfiguration":{"type":"string"},
     "CrawlerList":{
       "type":"list",
       "member":{"shape":"Crawler"}
@@ -1942,7 +2061,7 @@
         },
         "StillEstimating":{
           "shape":"Boolean",
-          "documentation":"<p>True if the crawler is estimating its </p>"
+          "documentation":"<p>True if the crawler is still estimating how long it will take to complete this run.</p>"
         },
         "LastRuntimeSeconds":{
           "shape":"NonNegativeDouble",
@@ -1954,15 +2073,15 @@
         },
         "TablesCreated":{
           "shape":"NonNegativeInteger",
-          "documentation":"<p>A list of the tables created by this crawler.</p>"
+          "documentation":"<p>The number of tables created by this crawler.</p>"
         },
         "TablesUpdated":{
           "shape":"NonNegativeInteger",
-          "documentation":"<p>A list of the tables created by this crawler.</p>"
+          "documentation":"<p>The number of tables updated by this crawler.</p>"
         },
         "TablesDeleted":{
           "shape":"NonNegativeInteger",
-          "documentation":"<p>A list of the tables deleted by this crawler.</p>"
+          "documentation":"<p>The number of tables deleted by this crawler.</p>"
         }
       },
       "documentation":"<p>Metrics for a specified crawler.</p>"
@@ -2023,21 +2142,29 @@
       "members":{
         "S3Targets":{
           "shape":"S3TargetList",
-          "documentation":"<p>Specifies targets in AWS S3.</p>"
+          "documentation":"<p>Specifies Amazon S3 targets.</p>"
         },
         "JdbcTargets":{
           "shape":"JdbcTargetList",
           "documentation":"<p>Specifies JDBC targets.</p>"
         }
       },
-      "documentation":"<p>Specifies crawler targets.</p>"
+      "documentation":"<p>Specifies data stores to crawl.</p>"
     },
     "CreateClassifierRequest":{
       "type":"structure",
       "members":{
         "GrokClassifier":{
           "shape":"CreateGrokClassifierRequest",
-          "documentation":"<p>A grok classifier to create.</p>"
+          "documentation":"<p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>"
+        },
+        "XMLClassifier":{
+          "shape":"CreateXMLClassifierRequest",
+          "documentation":"<p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>"
+        },
+        "JsonClassifier":{
+          "shape":"CreateJsonClassifierRequest",
+          "documentation":"<p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>"
         }
       }
     },
@@ -2076,19 +2203,19 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the new <code>Crawler</code>.</p>"
+          "documentation":"<p>Name of the new crawler.</p>"
         },
         "Role":{
-          "shape":"RoleArn",
-          "documentation":"<p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.</p>"
+          "shape":"Role",
+          "documentation":"<p>The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.</p>"
         },
         "DatabaseName":{
           "shape":"DatabaseName",
-          "documentation":"<p>The Glue <code>Database</code> where results will be stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>"
+          "documentation":"<p>The AWS Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>"
         },
         "Description":{
           "shape":"DescriptionString",
-          "documentation":"<p>A description of the new <code>Crawler</code>.</p>"
+          "documentation":"<p>A description of the new crawler.</p>"
         },
         "Targets":{
           "shape":"CrawlerTargets",
@@ -2100,15 +2227,19 @@
         },
         "Classifiers":{
           "shape":"ClassifierNameList",
-          "documentation":"<p>A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>"
+          "documentation":"<p>A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>"
         },
         "TablePrefix":{
           "shape":"TablePrefix",
-          "documentation":"<p>The table prefix used for catalog tables created.</p>"
+          "documentation":"<p>The table prefix used for catalog tables that are created.</p>"
         },
         "SchemaChangePolicy":{
           "shape":"SchemaChangePolicy",
           "documentation":"<p>Policy for the crawler's update and deletion behavior.</p>"
+        },
+        "Configuration":{
+          "shape":"CrawlerConfiguration",
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's behavior.</p> <p>You can use this field to force partitions to inherit metadata such as classification, input format, output format, serde information, and schema from their parent table, rather than detect this information separately for each partition. Use the following JSON string to specify that behavior:</p> <p>Example: <code>'{ \"Version\": 1.0, \"CrawlerOutput\": { \"Partitions\": { \"AddOrUpdateBehavior\": \"InheritFromTable\" } } }'</code> </p>"
         }
       }
     },
@@ -2140,8 +2271,7 @@
       "type":"structure",
       "required":[
         "EndpointName",
-        "RoleArn",
-        "PublicKey"
+        "RoleArn"
       ],
       "members":{
         "EndpointName":{
@@ -2249,11 +2379,11 @@
       "members":{
         "Classification":{
           "shape":"Classification",
-          "documentation":"<p>The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and so forth.</p>"
+          "documentation":"<p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>"
         },
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name of the new Classifier.</p>"
+          "documentation":"<p>The name of the new classifier.</p>"
         },
         "GrokPattern":{
           "shape":"GrokPattern",
@@ -2261,10 +2391,10 @@
         },
         "CustomPatterns":{
           "shape":"CustomPatterns",
-          "documentation":"<p>Custom grok patterns used by this classifier.</p>"
+          "documentation":"<p>Optional custom grok patterns used by this classifier.</p>"
         }
       },
-      "documentation":"<p>Specifies a Grok classifier for CreateClassifier to create.</p>"
+      "documentation":"<p>Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.</p>"
     },
     "CreateJobRequest":{
       "type":"structure",
@@ -2276,7 +2406,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name you assign to this job.</p>"
+          "documentation":"<p>The name you assign to this job. It must be unique in your account.</p>"
         },
         "Description":{
           "shape":"DescriptionString",
@@ -2288,7 +2418,7 @@
         },
         "Role":{
           "shape":"RoleString",
-          "documentation":"<p>The role associated with this job.</p>"
+          "documentation":"<p>The name of the IAM role associated with this job.</p>"
         },
         "ExecutionProperty":{
           "shape":"ExecutionProperty",
@@ -2300,7 +2430,7 @@
         },
         "DefaultArguments":{
           "shape":"GenericMap",
-          "documentation":"<p>The default parameters for this job.</p>"
+          "documentation":"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html\">Special Parameters Used by AWS Glue</a> topic in the developer guide.</p>"
         },
         "Connections":{
           "shape":"ConnectionsList",
@@ -2312,7 +2442,7 @@
         },
         "AllocatedCapacity":{
           "shape":"IntegerValue",
-          "documentation":"<p>The number of capacity units allocated to this job.</p>"
+          "documentation":"<p>The number of AWS Glue data processing units (DPUs) to allocate to this Job. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p>"
         }
       }
     },
@@ -2321,9 +2451,27 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The unique name of the new job that has been created.</p>"
+          "documentation":"<p>The unique name that was provided.</p>"
         }
       }
+    },
+    "CreateJsonClassifierRequest":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "JsonPath"
+      ],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the classifier.</p>"
+        },
+        "JsonPath":{
+          "shape":"JsonPath",
+          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
+        }
+      },
+      "documentation":"<p>Specifies a JSON classifier for <code>CreateClassifier</code> to create.</p>"
     },
     "CreatePartitionRequest":{
       "type":"structure",
@@ -2366,6 +2514,10 @@
         "DagEdges":{
           "shape":"DagEdges",
           "documentation":"<p>A list of the edges in the DAG.</p>"
+        },
+        "Language":{
+          "shape":"Language",
+          "documentation":"<p>The programming language of the resulting code from the DAG.</p>"
         }
       }
     },
@@ -2375,6 +2527,10 @@
         "PythonScript":{
           "shape":"PythonScript",
           "documentation":"<p>The Python script generated from the DAG.</p>"
+        },
+        "ScalaCode":{
+          "shape":"ScalaCode",
+          "documentation":"<p>The Scala code generated from the DAG.</p>"
         }
       }
     },
@@ -2391,7 +2547,7 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The catalog database in which to create the new table.</p>"
+          "documentation":"<p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>"
         },
         "TableInput":{
           "shape":"TableInput",
@@ -2414,7 +2570,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name to assign to the new trigger.</p>"
+          "documentation":"<p>The name of the trigger.</p>"
         },
         "Type":{
           "shape":"TriggerType",
@@ -2422,11 +2578,11 @@
         },
         "Schedule":{
           "shape":"GenericString",
-          "documentation":"<p>A <code>cron</code> expression used to specify the schedule (see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>"
+          "documentation":"<p>A <code>cron</code> expression used to specify the schedule (see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This field is required when the trigger type is SCHEDULED.</p>"
         },
         "Predicate":{
           "shape":"Predicate",
-          "documentation":"<p>A predicate to specify when the new trigger should fire.</p>"
+          "documentation":"<p>A predicate to specify when the new trigger should fire.</p> <p>This field is required when the trigger type is CONDITIONAL.</p>"
         },
         "Actions":{
           "shape":"ActionList",
@@ -2443,7 +2599,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name assigned to the new trigger.</p>"
+          "documentation":"<p>The name of the trigger.</p>"
         }
       }
     },
@@ -2473,6 +2629,28 @@
       "members":{
       }
     },
+    "CreateXMLClassifierRequest":{
+      "type":"structure",
+      "required":[
+        "Classification",
+        "Name"
+      ],
+      "members":{
+        "Classification":{
+          "shape":"Classification",
+          "documentation":"<p>An identifier of the data format that the classifier matches.</p>"
+        },
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the classifier.</p>"
+        },
+        "RowTag":{
+          "shape":"RowTag",
+          "documentation":"<p>The XML tag designating the element that contains each record in an XML document being parsed. Note that this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>&lt;row item_a=\"A\" item_b=\"B\"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row item_a=\"A\" item_b=\"B\" /&gt;</code> is not).</p>"
+        }
+      },
+      "documentation":"<p>Specifies an XML classifier for <code>CreateClassifier</code> to create.</p>"
+    },
     "CronExpression":{"type":"string"},
     "CustomPatterns":{
       "type":"string",
@@ -2494,7 +2672,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the database.</p>"
+          "documentation":"<p>Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>"
         },
         "Description":{
           "shape":"DescriptionString",
@@ -2521,7 +2699,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the database.</p>"
+          "documentation":"<p>Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>"
         },
         "Description":{
           "shape":"DescriptionString",
@@ -2536,7 +2714,7 @@
           "documentation":"<p>A list of key-value pairs that define parameters and properties of the database.</p>"
         }
       },
-      "documentation":"<p>The structure used to create or updata a database.</p>"
+      "documentation":"<p>The structure used to create or update a database.</p>"
     },
     "DatabaseList":{
       "type":"list",
@@ -2557,7 +2735,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the <code>Classifier</code> to remove.</p>"
+          "documentation":"<p>Name of the classifier to remove.</p>"
         }
       }
     },
@@ -2597,7 +2775,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the <code>Crawler</code> to remove.</p>"
+          "documentation":"<p>Name of the crawler to remove.</p>"
         }
       }
     },
@@ -2616,7 +2794,7 @@
         },
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name of the Database to delete.</p>"
+          "documentation":"<p>The name of the Database to delete. For Hive compatibility, this must be all lowercase.</p>"
         }
       }
     },
@@ -2703,15 +2881,46 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the catalog database in which the table resides.</p>"
+          "documentation":"<p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>"
         },
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name of the table to be deleted.</p>"
+          "documentation":"<p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>"
         }
       }
     },
     "DeleteTableResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteTableVersionRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "VersionId"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>"
+        },
+        "VersionId":{
+          "shape":"VersionString",
+          "documentation":"<p>The ID of the table version to be deleted.</p>"
+        }
+      }
+    },
+    "DeleteTableVersionResponse":{
       "type":"structure",
       "members":{
       }
@@ -2796,13 +3005,17 @@
           "shape":"GenericString",
           "documentation":"<p>The YARN endpoint address used by this DevEndpoint.</p>"
         },
+        "PrivateAddress":{
+          "shape":"GenericString",
+          "documentation":"<p>The private address used by this DevEndpoint.</p>"
+        },
         "ZeppelinRemoteSparkInterpreterPort":{
           "shape":"IntegerValue",
           "documentation":"<p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>"
         },
         "PublicAddress":{
           "shape":"GenericString",
-          "documentation":"<p>The public address used by this DevEndpoint.</p>"
+          "documentation":"<p>The public VPC address used by this DevEndpoint.</p>"
         },
         "Status":{
           "shape":"GenericString",
@@ -2905,7 +3118,7 @@
       "members":{
         "MaxConcurrentRuns":{
           "shape":"MaxConcurrentRuns",
-          "documentation":"<p>The maximum number of concurrent runs allowed for a job.</p>"
+          "documentation":"<p>The maximum number of concurrent runs allowed for a job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>"
         }
       },
       "documentation":"<p>An execution property of a job.</p>"
@@ -2952,7 +3165,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the <code>Classifier</code> to retrieve.</p>"
+          "documentation":"<p>Name of the classifier to retrieve.</p>"
         }
       }
     },
@@ -2961,7 +3174,7 @@
       "members":{
         "Classifier":{
           "shape":"Classifier",
-          "documentation":"<p>The requested <code>Classifier</code>.</p>"
+          "documentation":"<p>The requested classifier.</p>"
         }
       }
     },
@@ -2983,7 +3196,7 @@
       "members":{
         "Classifiers":{
           "shape":"ClassifierList",
-          "documentation":"<p>The requested list of <code>Classifier</code> objects.</p>"
+          "documentation":"<p>The requested list of classifier objects.</p>"
         },
         "NextToken":{
           "shape":"Token",
@@ -3098,7 +3311,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the <code>Crawler</code> to retrieve metadata for.</p>"
+          "documentation":"<p>Name of the crawler to retrieve metadata for.</p>"
         }
       }
     },
@@ -3107,7 +3320,7 @@
       "members":{
         "Crawler":{
           "shape":"Crawler",
-          "documentation":"<p>The metadata for the specified <code>Crawler</code>.</p>"
+          "documentation":"<p>The metadata for the specified crawler.</p>"
         }
       }
     },
@@ -3116,7 +3329,7 @@
       "members":{
         "MaxResults":{
           "shape":"PageSize",
-          "documentation":"<p>The number of Crawlers to return on each call.</p>"
+          "documentation":"<p>The number of crawlers to return on each call.</p>"
         },
         "NextToken":{
           "shape":"Token",
@@ -3129,7 +3342,7 @@
       "members":{
         "Crawlers":{
           "shape":"CrawlerList",
-          "documentation":"<p>A list of <code>Crawler</code> metadata.</p>"
+          "documentation":"<p>A list of crawler metadata.</p>"
         },
         "NextToken":{
           "shape":"Token",
@@ -3147,7 +3360,7 @@
         },
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name of the database to retrieve.</p>"
+          "documentation":"<p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>"
         }
       }
     },
@@ -3294,7 +3507,7 @@
         },
         "PredecessorsIncluded":{
           "shape":"BooleanValue",
-          "documentation":"<p>A list of the predecessor runs to return as well.</p>"
+          "documentation":"<p>True if a list of predecessor runs should be returned.</p>"
         }
       }
     },
@@ -3499,6 +3712,10 @@
         "Location":{
           "shape":"Location",
           "documentation":"<p>Parameters for the mapping.</p>"
+        },
+        "Language":{
+          "shape":"Language",
+          "documentation":"<p>The programming language of the code to perform the mapping.</p>"
         }
       }
     },
@@ -3507,7 +3724,11 @@
       "members":{
         "PythonScript":{
           "shape":"PythonScript",
-          "documentation":"<p>A python script to perform the mapping.</p>"
+          "documentation":"<p>A Python script to perform the mapping.</p>"
+        },
+        "ScalaCode":{
+          "shape":"ScalaCode",
+          "documentation":"<p>Scala code to perform the mapping.</p>"
         }
       }
     },
@@ -3524,11 +3745,11 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the database in the catalog in which the table resides.</p>"
+          "documentation":"<p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>"
         },
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name of the table for which to retrieve the definition.</p>"
+          "documentation":"<p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>"
         }
       }
     },
@@ -3538,6 +3759,40 @@
         "Table":{
           "shape":"Table",
           "documentation":"<p>The <code>Table</code> object that defines the specified table.</p>"
+        }
+      }
+    },
+    "GetTableVersionRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the tables reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>"
+        },
+        "VersionId":{
+          "shape":"VersionString",
+          "documentation":"<p>The ID value of the table version to be retrieved.</p>"
+        }
+      }
+    },
+    "GetTableVersionResponse":{
+      "type":"structure",
+      "members":{
+        "TableVersion":{
+          "shape":"TableVersion",
+          "documentation":"<p>The requested table version.</p>"
         }
       }
     },
@@ -3558,11 +3813,11 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The database in the catalog in which the table resides.</p>"
+          "documentation":"<p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>"
         },
         "TableName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the table.</p>"
+          "documentation":"<p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>"
         },
         "NextToken":{
           "shape":"Token",
@@ -3597,7 +3852,7 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The database in the catalog whose tables to list.</p>"
+          "documentation":"<p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>"
         },
         "Expression":{
           "shape":"FilterString",
@@ -3654,7 +3909,7 @@
         },
         "DependentJobName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the job for which to retrieve triggers.</p>"
+          "documentation":"<p>The name of the job for which to retrieve triggers. The trigger that can start this job will be returned, and if there is no such trigger, all triggers will be returned.</p>"
         },
         "MaxResults":{
           "shape":"PageSize",
@@ -3761,7 +4016,7 @@
         },
         "Classification":{
           "shape":"Classification",
-          "documentation":"<p>The data form that the classifier matches, such as Twitter, JSON, Omniture Logs, and so forth.</p>"
+          "documentation":"<p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.</p>"
         },
         "CreationTime":{
           "shape":"Timestamp",
@@ -3777,14 +4032,14 @@
         },
         "GrokPattern":{
           "shape":"GrokPattern",
-          "documentation":"<p>The grok pattern used by this classifier.</p>"
+          "documentation":"<p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href=\"http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html\">Writing Custom Classifers</a>.</p>"
         },
         "CustomPatterns":{
           "shape":"CustomPatterns",
-          "documentation":"<p>Custom grok patterns used by this classifier.</p>"
+          "documentation":"<p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href=\"http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html\">Writing Custom Classifers</a>.</p>"
         }
       },
-      "documentation":"<p>A classifier that uses <code>grok</code>.</p>"
+      "documentation":"<p>A classifier that uses <code>grok</code> patterns.</p>"
     },
     "GrokPattern":{
       "type":"string",
@@ -3858,7 +4113,7 @@
       "members":{
         "ConnectionName":{
           "shape":"ConnectionName",
-          "documentation":"<p>The name of the connection to use for the JDBC target.</p>"
+          "documentation":"<p>The name of the connection to use to connect to the JDBC target.</p>"
         },
         "Path":{
           "shape":"Path",
@@ -3866,10 +4121,10 @@
         },
         "Exclusions":{
           "shape":"PathList",
-          "documentation":"<p>A list of items to exclude from the crawl.</p>"
+          "documentation":"<p>A list of glob patterns used to exclude from the crawl. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html\">Catalog Tables with a Crawler</a>.</p>"
         }
       },
-      "documentation":"<p>Specifies a JDBC target for a crawl.</p>"
+      "documentation":"<p>Specifies a JDBC data store to crawl.</p>"
     },
     "JdbcTargetList":{
       "type":"list",
@@ -3892,7 +4147,7 @@
         },
         "Role":{
           "shape":"RoleString",
-          "documentation":"<p>The role associated with this job.</p>"
+          "documentation":"<p>The name of the IAM role associated with this job.</p>"
         },
         "CreatedOn":{
           "shape":"TimestampValue",
@@ -3912,7 +4167,7 @@
         },
         "DefaultArguments":{
           "shape":"GenericMap",
-          "documentation":"<p>The default parameters for this job.</p>"
+          "documentation":"<p>The default arguments for this job, specified as name-value pairs.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html\">Special Parameters Used by AWS Glue</a> topic in the developer guide.</p>"
         },
         "Connections":{
           "shape":"ConnectionsList",
@@ -3924,10 +4179,10 @@
         },
         "AllocatedCapacity":{
           "shape":"IntegerValue",
-          "documentation":"<p>The number of capacity units allocated to this job.</p>"
+          "documentation":"<p>The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p>"
         }
       },
-      "documentation":"<p>Specifies a job in the Data Catalog.</p>"
+      "documentation":"<p>Specifies a job.</p>"
     },
     "JobBookmarkEntry":{
       "type":"structure",
@@ -3960,11 +4215,11 @@
       "members":{
         "Name":{
           "shape":"GenericString",
-          "documentation":"<p>The name of this job command.</p>"
+          "documentation":"<p>The name of the job command: this must be <code>glueetl</code>.</p>"
         },
         "ScriptLocation":{
           "shape":"ScriptLocationString",
-          "documentation":"<p>Specifies the location of a script that executes a job.</p>"
+          "documentation":"<p>Specifies the S3 path to a script that executes a job (required).</p>"
         }
       },
       "documentation":"<p>Specifies code that executes a job.</p>"
@@ -3983,15 +4238,15 @@
         },
         "Attempt":{
           "shape":"AttemptCount",
-          "documentation":"<p>The number or the attempt to run this job.</p>"
+          "documentation":"<p>The number of the attempt to run this job.</p>"
         },
         "PreviousRunId":{
           "shape":"IdString",
-          "documentation":"<p>The ID of the previous run of this job.</p>"
+          "documentation":"<p>The ID of the previous run of this job. For example, the JobRunId specified in the StartJobRun action.</p>"
         },
         "TriggerName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the trigger for this job run.</p>"
+          "documentation":"<p>The name of the trigger that started this job run.</p>"
         },
         "JobName":{
           "shape":"NameString",
@@ -4015,7 +4270,7 @@
         },
         "Arguments":{
           "shape":"GenericMap",
-          "documentation":"<p>The job arguments associated with this run.</p>"
+          "documentation":"<p>The job arguments associated with this run. These override equivalent default arguments set for the job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.</p> <p>For information about how to specify and consume your own job arguments, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html\">Special Parameters Used by AWS Glue</a> topic in the developer guide.</p>"
         },
         "ErrorMessage":{
           "shape":"ErrorString",
@@ -4027,7 +4282,7 @@
         },
         "AllocatedCapacity":{
           "shape":"IntegerValue",
-          "documentation":"<p>The amount of infrastructure capacity allocated to this job run.</p>"
+          "documentation":"<p>The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p>"
         }
       },
       "documentation":"<p>Contains information about a job run.</p>"
@@ -4060,7 +4315,7 @@
         },
         "Role":{
           "shape":"RoleString",
-          "documentation":"<p>The role associated with this job.</p>"
+          "documentation":"<p>The name of the IAM role associated with this job (required).</p>"
         },
         "ExecutionProperty":{
           "shape":"ExecutionProperty",
@@ -4068,11 +4323,11 @@
         },
         "Command":{
           "shape":"JobCommand",
-          "documentation":"<p>The JobCommand that executes this job.</p>"
+          "documentation":"<p>The JobCommand that executes this job (required).</p>"
         },
         "DefaultArguments":{
           "shape":"GenericMap",
-          "documentation":"<p>The default parameters for this job.</p>"
+          "documentation":"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html\">Special Parameters Used by AWS Glue</a> topic in the developer guide.</p>"
         },
         "Connections":{
           "shape":"ConnectionsList",
@@ -4084,17 +4339,55 @@
         },
         "AllocatedCapacity":{
           "shape":"IntegerValue",
-          "documentation":"<p>The number of capacity units allocated to this job.</p>"
+          "documentation":"<p>The number of AWS Glue data processing units (DPUs) to allocate to this Job. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p>"
         }
       },
-      "documentation":"<p>Specifies information used to update an existing job.</p>"
+      "documentation":"<p>Specifies information used to update an existing job. Note that the previous job definition will be completely overwritten by this information.</p>"
     },
+    "JsonClassifier":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "JsonPath"
+      ],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the classifier.</p>"
+        },
+        "CreationTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time this classifier was registered.</p>"
+        },
+        "LastUpdated":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time this classifier was last updated.</p>"
+        },
+        "Version":{
+          "shape":"VersionId",
+          "documentation":"<p>The version of this classifier.</p>"
+        },
+        "JsonPath":{
+          "shape":"JsonPath",
+          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
+        }
+      },
+      "documentation":"<p>A classifier for <code>JSON</code> content.</p>"
+    },
+    "JsonPath":{"type":"string"},
     "JsonValue":{"type":"string"},
     "KeyString":{
       "type":"string",
       "max":255,
       "min":1,
       "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*"
+    },
+    "Language":{
+      "type":"string",
+      "enum":[
+        "PYTHON",
+        "SCALA"
+      ]
     },
     "LastCrawlInfo":{
       "type":"structure",
@@ -4105,7 +4398,7 @@
         },
         "ErrorMessage":{
           "shape":"DescriptionString",
-          "documentation":"<p>Error information about the last crawl, if an error occurred.</p>"
+          "documentation":"<p>If an error occurred, the error information about the last crawl.</p>"
         },
         "LogGroup":{
           "shape":"LogGroup",
@@ -4143,7 +4436,7 @@
         },
         "S3":{
           "shape":"CodeGenNodeArgs",
-          "documentation":"<p>An AWS S3 location.</p>"
+          "documentation":"<p>An Amazon S3 location.</p>"
         }
       },
       "documentation":"<p>The location of resources.</p>"
@@ -4172,7 +4465,10 @@
     },
     "Logical":{
       "type":"string",
-      "enum":["AND"]
+      "enum":[
+        "AND",
+        "ANY"
+      ]
     },
     "LogicalOperator":{
       "type":"string",
@@ -4303,7 +4599,7 @@
     },
     "ParametersMapValue":{
       "type":"string",
-      "max":51200
+      "max":512000
     },
     "Partition":{
       "type":"structure",
@@ -4426,7 +4722,7 @@
         },
         "AvailabilityZone":{
           "shape":"NameString",
-          "documentation":"<p>The connection's availability zone.</p>"
+          "documentation":"<p>The connection's availability zone. This field is deprecated and has no effect.</p>"
         }
       },
       "documentation":"<p>Specifies the physical requirements for a connection.</p>"
@@ -4440,10 +4736,10 @@
         },
         "RunId":{
           "shape":"IdString",
-          "documentation":"<p>The job-run ID of the precessor job run.</p>"
+          "documentation":"<p>The job-run ID of the predecessor job run.</p>"
         }
       },
-      "documentation":"<p>A job run that preceded this one.</p>"
+      "documentation":"<p>A job run that was used in the predicate of a conditional trigger that triggered this job run.</p>"
     },
     "PredecessorList":{
       "type":"list",
@@ -4536,29 +4832,32 @@
       "max":1000,
       "min":0
     },
+    "Role":{"type":"string"},
     "RoleArn":{
       "type":"string",
       "pattern":"arn:aws:iam::\\d{12}:role/.*"
     },
     "RoleString":{"type":"string"},
+    "RowTag":{"type":"string"},
     "S3Target":{
       "type":"structure",
       "members":{
         "Path":{
           "shape":"Path",
-          "documentation":"<p>The path to the S3 target.</p>"
+          "documentation":"<p>The path to the Amazon S3 target.</p>"
         },
         "Exclusions":{
           "shape":"PathList",
-          "documentation":"<p>A list of S3 objects to exclude from the crawl.</p>"
+          "documentation":"<p>A list of glob patterns used to exclude from the crawl. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html\">Catalog Tables with a Crawler</a>.</p>"
         }
       },
-      "documentation":"<p>Specifies a crawler target in AWS S3.</p>"
+      "documentation":"<p>Specifies a data store in Amazon S3.</p>"
     },
     "S3TargetList":{
       "type":"list",
       "member":{"shape":"S3Target"}
     },
+    "ScalaCode":{"type":"string"},
     "Schedule":{
       "type":"structure",
       "members":{
@@ -4619,11 +4918,11 @@
       "members":{
         "UpdateBehavior":{
           "shape":"UpdateBehavior",
-          "documentation":"<p>The update behavior.</p>"
+          "documentation":"<p>The update behavior when the crawler finds a changed schema.</p>"
         },
         "DeleteBehavior":{
           "shape":"DeleteBehavior",
-          "documentation":"<p>The deletion behavior.</p>"
+          "documentation":"<p>The deletion behavior when the crawler finds a deleted object.</p>"
         }
       },
       "documentation":"<p>Crawler policy for update and deletion behavior.</p>"
@@ -4696,7 +4995,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the <code>Crawler</code> to start.</p>"
+          "documentation":"<p>Name of the crawler to start.</p>"
         }
       }
     },
@@ -4730,15 +5029,15 @@
         },
         "JobRunId":{
           "shape":"IdString",
-          "documentation":"<p>The ID of the job run to start.</p>"
+          "documentation":"<p>The ID of a previous JobRun to retry.</p>"
         },
         "Arguments":{
           "shape":"GenericMap",
-          "documentation":"<p>Specific arguments for this job run.</p>"
+          "documentation":"<p>The job arguments specifically for this run. They override the equivalent default arguments set for the job itself.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html\">Special Parameters Used by AWS Glue</a> topic in the developer guide.</p>"
         },
         "AllocatedCapacity":{
           "shape":"IntegerValue",
-          "documentation":"<p>The infrastructure capacity to allocate to this job.</p>"
+          "documentation":"<p>The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p>"
         }
       }
     },
@@ -4776,7 +5075,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the <code>Crawler</code> to stop.</p>"
+          "documentation":"<p>Name of the crawler to stop.</p>"
         }
       }
     },
@@ -4883,11 +5182,11 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the table.</p>"
+          "documentation":"<p>Name of the table. For Hive compatibility, this must be entirely lowercase.</p>"
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>Name of the metadata database where the table metadata resides.</p>"
+          "documentation":"<p>Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>"
         },
         "Description":{
           "shape":"DescriptionString",
@@ -4953,7 +5252,7 @@
       "members":{
         "TableName":{
           "shape":"NameString",
-          "documentation":"<p>Name of the table.</p>"
+          "documentation":"<p>Name of the table. For Hive compatibility, this must be entirely lowercase.</p>"
         },
         "ErrorDetail":{
           "shape":"ErrorDetail",
@@ -4972,7 +5271,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the table.</p>"
+          "documentation":"<p>Name of the table. For Hive compatibility, this is folded to lowercase when it is stored.</p>"
         },
         "Description":{
           "shape":"DescriptionString",
@@ -5049,6 +5348,28 @@
       },
       "documentation":"<p>Specifies a version of a table.</p>"
     },
+    "TableVersionError":{
+      "type":"structure",
+      "members":{
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the table in question.</p>"
+        },
+        "VersionId":{
+          "shape":"VersionString",
+          "documentation":"<p>The ID value of the version in question.</p>"
+        },
+        "ErrorDetail":{
+          "shape":"ErrorDetail",
+          "documentation":"<p>Detail about the error.</p>"
+        }
+      },
+      "documentation":"<p>An error record for table-version operations.</p>"
+    },
+    "TableVersionErrors":{
+      "type":"list",
+      "member":{"shape":"TableVersionError"}
+    },
     "Timestamp":{"type":"timestamp"},
     "TimestampValue":{"type":"timestamp"},
     "Token":{"type":"string"},
@@ -5066,7 +5387,7 @@
         },
         "Id":{
           "shape":"IdString",
-          "documentation":"<p>The trigger ID.</p>"
+          "documentation":"<p>Reserved for future use.</p>"
         },
         "Type":{
           "shape":"TriggerType",
@@ -5090,7 +5411,7 @@
         },
         "Predicate":{
           "shape":"Predicate",
-          "documentation":"<p>The predicate of this trigger.</p>"
+          "documentation":"<p>The predicate of this trigger, which defines when it will fire.</p>"
         }
       },
       "documentation":"<p>Information about a specific trigger.</p>"
@@ -5125,7 +5446,7 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name of the trigger.</p>"
+          "documentation":"<p>Reserved for future use.</p>"
         },
         "Description":{
           "shape":"DescriptionString",
@@ -5133,7 +5454,7 @@
         },
         "Schedule":{
           "shape":"GenericString",
-          "documentation":"<p>An updated <code>cron</code> expression used to specify the schedule (see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>"
+          "documentation":"<p>A <code>cron</code> expression used to specify the schedule (see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>"
         },
         "Actions":{
           "shape":"ActionList",
@@ -5144,7 +5465,7 @@
           "documentation":"<p>The predicate of this trigger, which defines when it will fire.</p>"
         }
       },
-      "documentation":"<p>A structure used to provide information used to updata a trigger.</p>"
+      "documentation":"<p>A structure used to provide information used to update a trigger. This object will update the the previous trigger definition by overwriting it completely.</p>"
     },
     "URI":{
       "type":"string",
@@ -5165,6 +5486,14 @@
         "GrokClassifier":{
           "shape":"UpdateGrokClassifierRequest",
           "documentation":"<p>A <code>GrokClassifier</code> object with updated fields.</p>"
+        },
+        "XMLClassifier":{
+          "shape":"UpdateXMLClassifierRequest",
+          "documentation":"<p>An <code>XMLClassifier</code> object with updated fields.</p>"
+        },
+        "JsonClassifier":{
+          "shape":"UpdateJsonClassifierRequest",
+          "documentation":"<p>A <code>JsonClassifier</code> object with updated fields.</p>"
         }
       }
     },
@@ -5205,23 +5534,23 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the new <code>Crawler</code>.</p>"
+          "documentation":"<p>Name of the new crawler.</p>"
         },
         "Role":{
-          "shape":"RoleArn",
-          "documentation":"<p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.</p>"
+          "shape":"Role",
+          "documentation":"<p>The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.</p>"
         },
         "DatabaseName":{
           "shape":"DatabaseName",
-          "documentation":"<p>The Glue <code>Database</code> where results will be stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>"
+          "documentation":"<p>The AWS Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>"
         },
         "Description":{
           "shape":"DescriptionStringRemovable",
-          "documentation":"<p>A description of the new <code>Crawler</code>.</p>"
+          "documentation":"<p>A description of the new crawler.</p>"
         },
         "Targets":{
           "shape":"CrawlerTargets",
-          "documentation":"<p>A list of collection of targets to crawl.</p>"
+          "documentation":"<p>A list of targets to crawl.</p>"
         },
         "Schedule":{
           "shape":"CronExpression",
@@ -5229,15 +5558,19 @@
         },
         "Classifiers":{
           "shape":"ClassifierNameList",
-          "documentation":"<p>A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>"
+          "documentation":"<p>A list of custom classifiers that the user has registered. By default, all classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>"
         },
         "TablePrefix":{
           "shape":"TablePrefix",
-          "documentation":"<p>The table prefix used for catalog tables created.</p>"
+          "documentation":"<p>The table prefix used for catalog tables that are created.</p>"
         },
         "SchemaChangePolicy":{
           "shape":"SchemaChangePolicy",
           "documentation":"<p>Policy for the crawler's update and deletion behavior.</p>"
+        },
+        "Configuration":{
+          "shape":"CrawlerConfiguration",
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's behavior.</p> <p>You can use this field to force partitions to inherit metadata such as classification, input format, output format, serde information, and schema from their parent table, rather than detect this information separately for each partition. Use the following JSON string to specify that behavior:</p> <p>Example: <code>'{ \"Version\": 1.0, \"CrawlerOutput\": { \"Partitions\": { \"AddOrUpdateBehavior\": \"InheritFromTable\" } } }'</code> </p>"
         }
       }
     },
@@ -5278,7 +5611,7 @@
         },
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>The name of the metadata database to update in the catalog.</p>"
+          "documentation":"<p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>"
         },
         "DatabaseInput":{
           "shape":"DatabaseInput",
@@ -5328,7 +5661,7 @@
         },
         "Classification":{
           "shape":"Classification",
-          "documentation":"<p>The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and so forth.</p>"
+          "documentation":"<p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>"
         },
         "GrokPattern":{
           "shape":"GrokPattern",
@@ -5336,10 +5669,10 @@
         },
         "CustomPatterns":{
           "shape":"CustomPatterns",
-          "documentation":"<p>Custom grok patterns used by this classifier.</p>"
+          "documentation":"<p>Optional custom grok patterns used by this classifier.</p>"
         }
       },
-      "documentation":"<p>Specifies a Grok classifier to update when passed to UpdateClassifier.</p>"
+      "documentation":"<p>Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.</p>"
     },
     "UpdateJobRequest":{
       "type":"structure",
@@ -5366,6 +5699,21 @@
           "documentation":"<p>Returns the name of the updated job.</p>"
         }
       }
+    },
+    "UpdateJsonClassifierRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the classifier.</p>"
+        },
+        "JsonPath":{
+          "shape":"JsonPath",
+          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
+        }
+      },
+      "documentation":"<p>Specifies a JSON classifier to be updated.</p>"
     },
     "UpdatePartitionRequest":{
       "type":"structure",
@@ -5416,11 +5764,15 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the catalog database in which the table resides.</p>"
+          "documentation":"<p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>"
         },
         "TableInput":{
           "shape":"TableInput",
           "documentation":"<p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>"
+        },
+        "SkipArchive":{
+          "shape":"BooleanNullable",
+          "documentation":"<p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. If <code>skipArchive</code> is set to true, however, <code>UpdateTable</code> does not create the archived version.</p>"
         }
       }
     },
@@ -5485,6 +5837,25 @@
       "type":"structure",
       "members":{
       }
+    },
+    "UpdateXMLClassifierRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the classifier.</p>"
+        },
+        "Classification":{
+          "shape":"Classification",
+          "documentation":"<p>An identifier of the data format that the classifier matches.</p>"
+        },
+        "RowTag":{
+          "shape":"RowTag",
+          "documentation":"<p>The XML tag designating the element that contains each record in an XML document being parsed. Note that this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>&lt;row item_a=\"A\" item_b=\"B\"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row item_a=\"A\" item_b=\"B\" /&gt;</code> is not).</p>"
+        }
+      },
+      "documentation":"<p>Specifies an XML classifier to be updated.</p>"
     },
     "UriString":{"type":"string"},
     "UserDefinedFunction":{
@@ -5586,7 +5957,41 @@
     },
     "ViewTextString":{
       "type":"string",
-      "max":2048
+      "max":409600
+    },
+    "XMLClassifier":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Classification"
+      ],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the classifier.</p>"
+        },
+        "Classification":{
+          "shape":"Classification",
+          "documentation":"<p>An identifier of the data format that the classifier matches.</p>"
+        },
+        "CreationTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time this classifier was registered.</p>"
+        },
+        "LastUpdated":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time this classifier was last updated.</p>"
+        },
+        "Version":{
+          "shape":"VersionId",
+          "documentation":"<p>The version of this classifier.</p>"
+        },
+        "RowTag":{
+          "shape":"RowTag",
+          "documentation":"<p>The XML tag designating the element that contains each record in an XML document being parsed. Note that this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>&lt;row item_a=\"A\" item_b=\"B\"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row item_a=\"A\" item_b=\"B\" /&gt;</code> is not).</p>"
+        }
+      },
+      "documentation":"<p>A classifier for <code>XML</code> content.</p>"
     }
   },
   "documentation":"<fullname>AWS Glue</fullname> <p>Defines the public endpoint for the AWS Glue service.</p>"

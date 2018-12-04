@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public interface AWSShieldAsync extends AWSShield {
     /**
      * <p>
      * Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution,
-     * Elastic Load Balancing load balancer, or an Amazon Route 53 hosted zone.
+     * Elastic Load Balancing load balancer, Elastic IP Address, or an Amazon Route 53 hosted zone.
      * </p>
      * 
      * @param createProtectionRequest
@@ -53,7 +53,7 @@ public interface AWSShieldAsync extends AWSShield {
     /**
      * <p>
      * Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution,
-     * Elastic Load Balancing load balancer, or an Amazon Route 53 hosted zone.
+     * Elastic Load Balancing load balancer, Elastic IP Address, or an Amazon Route 53 hosted zone.
      * </p>
      * 
      * @param createProtectionRequest
@@ -133,7 +133,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes AWS Shield Advanced from an account.
+     * Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year subscription commitment. You
+     * cannot delete a subscription prior to the completion of that commitment.
      * </p>
      * 
      * @param deleteSubscriptionRequest
@@ -146,7 +147,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes AWS Shield Advanced from an account.
+     * Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year subscription commitment. You
+     * cannot delete a subscription prior to the completion of that commitment.
      * </p>
      * 
      * @param deleteSubscriptionRequest
@@ -254,6 +256,37 @@ public interface AWSShieldAsync extends AWSShield {
      */
     java.util.concurrent.Future<DescribeSubscriptionResult> describeSubscriptionAsync(DescribeSubscriptionRequest describeSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionRequest, DescribeSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.
+     * </p>
+     * 
+     * @param getSubscriptionStateRequest
+     * @return A Java Future containing the result of the GetSubscriptionState operation returned by the service.
+     * @sample AWSShieldAsync.GetSubscriptionState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSubscriptionStateResult> getSubscriptionStateAsync(GetSubscriptionStateRequest getSubscriptionStateRequest);
+
+    /**
+     * <p>
+     * Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.
+     * </p>
+     * 
+     * @param getSubscriptionStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSubscriptionState operation returned by the service.
+     * @sample AWSShieldAsyncHandler.GetSubscriptionState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSubscriptionStateResult> getSubscriptionStateAsync(GetSubscriptionStateRequest getSubscriptionStateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSubscriptionStateRequest, GetSubscriptionStateResult> asyncHandler);
 
     /**
      * <p>

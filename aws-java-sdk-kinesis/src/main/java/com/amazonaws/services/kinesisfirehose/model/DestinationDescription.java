@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private ElasticsearchDestinationDescription elasticsearchDestinationDescription;
+    /**
+     * <p>
+     * The destination in Splunk.
+     * </p>
+     */
+    private SplunkDestinationDescription splunkDestinationDescription;
 
     /**
      * <p>
@@ -260,6 +266,46 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The destination in Splunk.
+     * </p>
+     * 
+     * @param splunkDestinationDescription
+     *        The destination in Splunk.
+     */
+
+    public void setSplunkDestinationDescription(SplunkDestinationDescription splunkDestinationDescription) {
+        this.splunkDestinationDescription = splunkDestinationDescription;
+    }
+
+    /**
+     * <p>
+     * The destination in Splunk.
+     * </p>
+     * 
+     * @return The destination in Splunk.
+     */
+
+    public SplunkDestinationDescription getSplunkDestinationDescription() {
+        return this.splunkDestinationDescription;
+    }
+
+    /**
+     * <p>
+     * The destination in Splunk.
+     * </p>
+     * 
+     * @param splunkDestinationDescription
+     *        The destination in Splunk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationDescription withSplunkDestinationDescription(SplunkDestinationDescription splunkDestinationDescription) {
+        setSplunkDestinationDescription(splunkDestinationDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -279,7 +325,9 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
         if (getRedshiftDestinationDescription() != null)
             sb.append("RedshiftDestinationDescription: ").append(getRedshiftDestinationDescription()).append(",");
         if (getElasticsearchDestinationDescription() != null)
-            sb.append("ElasticsearchDestinationDescription: ").append(getElasticsearchDestinationDescription());
+            sb.append("ElasticsearchDestinationDescription: ").append(getElasticsearchDestinationDescription()).append(",");
+        if (getSplunkDestinationDescription() != null)
+            sb.append("SplunkDestinationDescription: ").append(getSplunkDestinationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +365,10 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
         if (other.getElasticsearchDestinationDescription() != null
                 && other.getElasticsearchDestinationDescription().equals(this.getElasticsearchDestinationDescription()) == false)
             return false;
+        if (other.getSplunkDestinationDescription() == null ^ this.getSplunkDestinationDescription() == null)
+            return false;
+        if (other.getSplunkDestinationDescription() != null && other.getSplunkDestinationDescription().equals(this.getSplunkDestinationDescription()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +382,7 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getExtendedS3DestinationDescription() == null) ? 0 : getExtendedS3DestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getRedshiftDestinationDescription() == null) ? 0 : getRedshiftDestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchDestinationDescription() == null) ? 0 : getElasticsearchDestinationDescription().hashCode());
+        hashCode = prime * hashCode + ((getSplunkDestinationDescription() == null) ? 0 : getSplunkDestinationDescription().hashCode());
         return hashCode;
     }
 

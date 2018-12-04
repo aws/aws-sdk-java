@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,63 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regions;
+    /**
+     * <p>
+     * A list of stack set parameters whose values you want to override in the selected stack instances.
+     * </p>
+     * <p>
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
+     * stack instance operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To override the current value for a parameter, include the parameter and specify its value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave a parameter set to its present value, you can do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do not include the parameter in the list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify both a
+     * value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To set all overridden parameter back to the values specified in the stack set, specify a parameter list but do
+     * not include any parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave all parameters set to their present values, do not specify this property at all.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * During stack set updates, any parameter values overridden for a stack instance are not updated, but retain their
+     * overridden value.
+     * </p>
+     * <p>
+     * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     * parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Parameter> parameterOverrides;
     /**
      * <p>
      * Preferences for how AWS CloudFormation performs this stack set operation.
@@ -264,6 +321,483 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * A list of stack set parameters whose values you want to override in the selected stack instances.
+     * </p>
+     * <p>
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
+     * stack instance operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To override the current value for a parameter, include the parameter and specify its value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave a parameter set to its present value, you can do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do not include the parameter in the list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify both a
+     * value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To set all overridden parameter back to the values specified in the stack set, specify a parameter list but do
+     * not include any parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave all parameters set to their present values, do not specify this property at all.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * During stack set updates, any parameter values overridden for a stack instance are not updated, but retain their
+     * overridden value.
+     * </p>
+     * <p>
+     * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     * parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
+     * </p>
+     * 
+     * @return A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+     *         <p>
+     *         Any overridden parameter values will be applied to all stack instances in the specified accounts and
+     *         regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
+     *         values during stack instance operations:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To override the current value for a parameter, include the parameter and specify its value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To leave a parameter set to its present value, you can do one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Do not include the parameter in the list.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+     *         both a value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To set all overridden parameter back to the values specified in the stack set, specify a parameter list
+     *         but do not include any parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To leave all parameters set to their present values, do not specify this property at all.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         During stack set updates, any parameter values overridden for a stack instance are not updated, but
+     *         retain their overridden value.
+     *         </p>
+     *         <p>
+     *         You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     *         parameter itself, use <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *         >UpdateStackSet</a> to update the stack set template.
+     */
+
+    public java.util.List<Parameter> getParameterOverrides() {
+        if (parameterOverrides == null) {
+            parameterOverrides = new com.amazonaws.internal.SdkInternalList<Parameter>();
+        }
+        return parameterOverrides;
+    }
+
+    /**
+     * <p>
+     * A list of stack set parameters whose values you want to override in the selected stack instances.
+     * </p>
+     * <p>
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
+     * stack instance operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To override the current value for a parameter, include the parameter and specify its value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave a parameter set to its present value, you can do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do not include the parameter in the list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify both a
+     * value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To set all overridden parameter back to the values specified in the stack set, specify a parameter list but do
+     * not include any parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave all parameters set to their present values, do not specify this property at all.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * During stack set updates, any parameter values overridden for a stack instance are not updated, but retain their
+     * overridden value.
+     * </p>
+     * <p>
+     * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     * parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
+     * </p>
+     * 
+     * @param parameterOverrides
+     *        A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+     *        <p>
+     *        Any overridden parameter values will be applied to all stack instances in the specified accounts and
+     *        regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
+     *        values during stack instance operations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To override the current value for a parameter, include the parameter and specify its value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To leave a parameter set to its present value, you can do one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do not include the parameter in the list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+     *        both a value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To set all overridden parameter back to the values specified in the stack set, specify a parameter list
+     *        but do not include any parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To leave all parameters set to their present values, do not specify this property at all.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        During stack set updates, any parameter values overridden for a stack instance are not updated, but retain
+     *        their overridden value.
+     *        </p>
+     *        <p>
+     *        You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     *        parameter itself, use <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *        >UpdateStackSet</a> to update the stack set template.
+     */
+
+    public void setParameterOverrides(java.util.Collection<Parameter> parameterOverrides) {
+        if (parameterOverrides == null) {
+            this.parameterOverrides = null;
+            return;
+        }
+
+        this.parameterOverrides = new com.amazonaws.internal.SdkInternalList<Parameter>(parameterOverrides);
+    }
+
+    /**
+     * <p>
+     * A list of stack set parameters whose values you want to override in the selected stack instances.
+     * </p>
+     * <p>
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
+     * stack instance operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To override the current value for a parameter, include the parameter and specify its value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave a parameter set to its present value, you can do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do not include the parameter in the list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify both a
+     * value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To set all overridden parameter back to the values specified in the stack set, specify a parameter list but do
+     * not include any parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave all parameters set to their present values, do not specify this property at all.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * During stack set updates, any parameter values overridden for a stack instance are not updated, but retain their
+     * overridden value.
+     * </p>
+     * <p>
+     * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     * parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameterOverrides(java.util.Collection)} or {@link #withParameterOverrides(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param parameterOverrides
+     *        A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+     *        <p>
+     *        Any overridden parameter values will be applied to all stack instances in the specified accounts and
+     *        regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
+     *        values during stack instance operations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To override the current value for a parameter, include the parameter and specify its value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To leave a parameter set to its present value, you can do one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do not include the parameter in the list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+     *        both a value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To set all overridden parameter back to the values specified in the stack set, specify a parameter list
+     *        but do not include any parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To leave all parameters set to their present values, do not specify this property at all.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        During stack set updates, any parameter values overridden for a stack instance are not updated, but retain
+     *        their overridden value.
+     *        </p>
+     *        <p>
+     *        You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     *        parameter itself, use <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *        >UpdateStackSet</a> to update the stack set template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackInstancesRequest withParameterOverrides(Parameter... parameterOverrides) {
+        if (this.parameterOverrides == null) {
+            setParameterOverrides(new com.amazonaws.internal.SdkInternalList<Parameter>(parameterOverrides.length));
+        }
+        for (Parameter ele : parameterOverrides) {
+            this.parameterOverrides.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of stack set parameters whose values you want to override in the selected stack instances.
+     * </p>
+     * <p>
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
+     * stack instance operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To override the current value for a parameter, include the parameter and specify its value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave a parameter set to its present value, you can do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do not include the parameter in the list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify both a
+     * value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To set all overridden parameter back to the values specified in the stack set, specify a parameter list but do
+     * not include any parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To leave all parameters set to their present values, do not specify this property at all.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * During stack set updates, any parameter values overridden for a stack instance are not updated, but retain their
+     * overridden value.
+     * </p>
+     * <p>
+     * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     * parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
+     * </p>
+     * 
+     * @param parameterOverrides
+     *        A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+     *        <p>
+     *        Any overridden parameter values will be applied to all stack instances in the specified accounts and
+     *        regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
+     *        values during stack instance operations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To override the current value for a parameter, include the parameter and specify its value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To leave a parameter set to its present value, you can do one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do not include the parameter in the list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+     *        both a value and set <code>UsePreviousValue</code> to <code>true</code>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To set all overridden parameter back to the values specified in the stack set, specify a parameter list
+     *        but do not include any parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To leave all parameters set to their present values, do not specify this property at all.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        During stack set updates, any parameter values overridden for a stack instance are not updated, but retain
+     *        their overridden value.
+     *        </p>
+     *        <p>
+     *        You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
+     *        parameter itself, use <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *        >UpdateStackSet</a> to update the stack set template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackInstancesRequest withParameterOverrides(java.util.Collection<Parameter> parameterOverrides) {
+        setParameterOverrides(parameterOverrides);
+        return this;
+    }
+
+    /**
+     * <p>
      * Preferences for how AWS CloudFormation performs this stack set operation.
      * </p>
      * 
@@ -428,6 +962,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("Accounts: ").append(getAccounts()).append(",");
         if (getRegions() != null)
             sb.append("Regions: ").append(getRegions()).append(",");
+        if (getParameterOverrides() != null)
+            sb.append("ParameterOverrides: ").append(getParameterOverrides()).append(",");
         if (getOperationPreferences() != null)
             sb.append("OperationPreferences: ").append(getOperationPreferences()).append(",");
         if (getOperationId() != null)
@@ -458,6 +994,10 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
             return false;
+        if (other.getParameterOverrides() == null ^ this.getParameterOverrides() == null)
+            return false;
+        if (other.getParameterOverrides() != null && other.getParameterOverrides().equals(this.getParameterOverrides()) == false)
+            return false;
         if (other.getOperationPreferences() == null ^ this.getOperationPreferences() == null)
             return false;
         if (other.getOperationPreferences() != null && other.getOperationPreferences().equals(this.getOperationPreferences()) == false)
@@ -477,6 +1017,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
         hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
+        hashCode = prime * hashCode + ((getParameterOverrides() == null) ? 0 : getParameterOverrides().hashCode());
         hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());
         hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
         return hashCode;

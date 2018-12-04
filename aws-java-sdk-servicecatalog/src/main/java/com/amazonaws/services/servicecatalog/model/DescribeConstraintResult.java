@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,13 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Detailed constraint information.
+     * Information about the constraint.
      * </p>
      */
     private ConstraintDetail constraintDetail;
     /**
      * <p>
-     * The current parameters associated with the specified constraint.
+     * The constraint parameters.
      * </p>
      */
     private String constraintParameters;
@@ -44,11 +44,11 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Detailed constraint information.
+     * Information about the constraint.
      * </p>
      * 
      * @param constraintDetail
-     *        Detailed constraint information.
+     *        Information about the constraint.
      */
 
     public void setConstraintDetail(ConstraintDetail constraintDetail) {
@@ -57,10 +57,10 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Detailed constraint information.
+     * Information about the constraint.
      * </p>
      * 
-     * @return Detailed constraint information.
+     * @return Information about the constraint.
      */
 
     public ConstraintDetail getConstraintDetail() {
@@ -69,11 +69,11 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Detailed constraint information.
+     * Information about the constraint.
      * </p>
      * 
      * @param constraintDetail
-     *        Detailed constraint information.
+     *        Information about the constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current parameters associated with the specified constraint.
+     * The constraint parameters.
      * </p>
      * 
      * @param constraintParameters
-     *        The current parameters associated with the specified constraint.
+     *        The constraint parameters.
      */
 
     public void setConstraintParameters(String constraintParameters) {
@@ -97,10 +97,10 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current parameters associated with the specified constraint.
+     * The constraint parameters.
      * </p>
      * 
-     * @return The current parameters associated with the specified constraint.
+     * @return The constraint parameters.
      */
 
     public String getConstraintParameters() {
@@ -109,11 +109,11 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current parameters associated with the specified constraint.
+     * The constraint parameters.
      * </p>
      * 
      * @param constraintParameters
-     *        The current parameters associated with the specified constraint.
+     *        The constraint parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

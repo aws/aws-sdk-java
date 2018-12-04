@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class WorkspaceBundleMarshaller {
             .marshallLocationName("Owner").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<StructuredPojo> ROOTSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootStorage").build();
     private static final MarshallingInfo<StructuredPojo> USERSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserStorage").build();
     private static final MarshallingInfo<StructuredPojo> COMPUTETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -60,6 +62,7 @@ public class WorkspaceBundleMarshaller {
             protocolMarshaller.marshall(workspaceBundle.getName(), NAME_BINDING);
             protocolMarshaller.marshall(workspaceBundle.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(workspaceBundle.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(workspaceBundle.getRootStorage(), ROOTSTORAGE_BINDING);
             protocolMarshaller.marshall(workspaceBundle.getUserStorage(), USERSTORAGE_BINDING);
             protocolMarshaller.marshall(workspaceBundle.getComputeType(), COMPUTETYPE_BINDING);
         } catch (Exception e) {

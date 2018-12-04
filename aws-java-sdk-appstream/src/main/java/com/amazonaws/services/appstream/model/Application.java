@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The application name displayed to end users.
+     * The application name for display.
      * </p>
      */
     private String displayName;
@@ -113,11 +113,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application name displayed to end users.
+     * The application name for display.
      * </p>
      * 
      * @param displayName
-     *        The application name displayed to end users.
+     *        The application name for display.
      */
 
     public void setDisplayName(String displayName) {
@@ -126,10 +126,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application name displayed to end users.
+     * The application name for display.
      * </p>
      * 
-     * @return The application name displayed to end users.
+     * @return The application name for display.
      */
 
     public String getDisplayName() {
@@ -138,11 +138,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application name displayed to end users.
+     * The application name for display.
      * </p>
      * 
      * @param displayName
-     *        The application name displayed to end users.
+     *        The application name for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

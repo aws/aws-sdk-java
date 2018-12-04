@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,17 +18,49 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Subscriber model. Each notification may contain multiple subscribers with different addresses.
+ * <p>
+ * The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon Simple
+ * Notification Service topic or an email address.
+ * </p>
+ * <p>
+ * For example, an email subscriber would have the following parameters:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * A <code>subscriptionType</code> of <code>EMAIL</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * An <code>address</code> of <code>example@example.com</code>
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Subscriber implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     */
     private String subscriptionType;
-
+    /**
+     * <p>
+     * The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * </p>
+     */
     private String address;
 
     /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
      * @param subscriptionType
+     *        The type of notification that AWS sends to a subscriber.
      * @see SubscriptionType
      */
 
@@ -37,7 +69,11 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
+     * @return The type of notification that AWS sends to a subscriber.
      * @see SubscriptionType
      */
 
@@ -46,7 +82,12 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
      * @param subscriptionType
+     *        The type of notification that AWS sends to a subscriber.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionType
      */
@@ -57,7 +98,12 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
      * @param subscriptionType
+     *        The type of notification that AWS sends to a subscriber.
      * @see SubscriptionType
      */
 
@@ -66,7 +112,12 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
      * @param subscriptionType
+     *        The type of notification that AWS sends to a subscriber.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionType
      */
@@ -77,7 +128,12 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * </p>
+     * 
      * @param address
+     *        The address that AWS sends budget notifications to, either an SNS topic or an email.
      */
 
     public void setAddress(String address) {
@@ -85,7 +141,11 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * </p>
+     * 
+     * @return The address that AWS sends budget notifications to, either an SNS topic or an email.
      */
 
     public String getAddress() {
@@ -93,7 +153,12 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * </p>
+     * 
      * @param address
+     *        The address that AWS sends budget notifications to, either an SNS topic or an email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

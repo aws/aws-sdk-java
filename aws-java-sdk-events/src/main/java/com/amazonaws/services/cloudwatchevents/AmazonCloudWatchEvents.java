@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -328,6 +328,11 @@ public interface AmazonCloudWatchEvents {
      * disable a rule using <a>DisableRule</a>.
      * </p>
      * <p>
+     * If you are updating an existing rule, the rule is completely replaced with what you specify in this
+     * <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>, the old values for those arguments
+     * are not kept. Instead, they are replaced with null values.
+     * </p>
+     * <p>
      * When you create or update a rule, incoming events might not immediately start matching to new or updated rules.
      * Please allow a short period of time for changes to take effect.
      * </p>
@@ -403,6 +408,11 @@ public interface AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
+     * AWS Batch jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Pipelines in Amazon Code Pipeline
      * </p>
      * </li>
@@ -418,7 +428,7 @@ public interface AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
-     * Amazon SQS queues
+     * Amazon SQS queues, including FIFO queues
      * </p>
      * </li>
      * <li>
@@ -488,8 +498,8 @@ public interface AmazonCloudWatchEvents {
      * </li>
      * </ul>
      * <p>
-     * When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON
-     * dot notation, not bracket notation.
+     * When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not
+     * bracket notation.
      * </p>
      * <p>
      * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be

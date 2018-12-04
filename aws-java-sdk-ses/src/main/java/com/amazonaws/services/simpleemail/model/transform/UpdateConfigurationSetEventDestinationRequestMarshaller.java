@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,9 +58,10 @@ public class UpdateConfigurationSetEventDestinationRequestMarshaller implements
                 request.addParameter("EventDestination.Enabled", StringUtils.fromBoolean(eventDestination.getEnabled()));
             }
 
-            com.amazonaws.internal.SdkInternalList<String> matchingEventTypesList = (com.amazonaws.internal.SdkInternalList<String>) eventDestination
-                    .getMatchingEventTypes();
-            if (!matchingEventTypesList.isEmpty() || !matchingEventTypesList.isAutoConstruct()) {
+            if (!eventDestination.getMatchingEventTypes().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<String>) eventDestination.getMatchingEventTypes()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> matchingEventTypesList = (com.amazonaws.internal.SdkInternalList<String>) eventDestination
+                        .getMatchingEventTypes();
                 int matchingEventTypesListIndex = 1;
 
                 for (String matchingEventTypesListValue : matchingEventTypesList) {
@@ -89,9 +90,11 @@ public class UpdateConfigurationSetEventDestinationRequestMarshaller implements
             CloudWatchDestination cloudWatchDestination = eventDestination.getCloudWatchDestination();
             if (cloudWatchDestination != null) {
 
-                com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration> dimensionConfigurationsList = (com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration>) cloudWatchDestination
-                        .getDimensionConfigurations();
-                if (!dimensionConfigurationsList.isEmpty() || !dimensionConfigurationsList.isAutoConstruct()) {
+                if (!cloudWatchDestination.getDimensionConfigurations().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration>) cloudWatchDestination.getDimensionConfigurations())
+                                .isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration> dimensionConfigurationsList = (com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration>) cloudWatchDestination
+                            .getDimensionConfigurations();
                     int dimensionConfigurationsListIndex = 1;
 
                     for (CloudWatchDimensionConfiguration dimensionConfigurationsListValue : dimensionConfigurationsList) {

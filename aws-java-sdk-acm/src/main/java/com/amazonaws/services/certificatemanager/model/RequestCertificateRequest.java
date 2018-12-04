@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,23 +32,17 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
-     * The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No
-     * label can be longer than 63 octets. Consider the following examples:
-     * </p>
-     * <p>
-     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
-     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
-     * </p>
-     * <p>
-     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
-     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
-     * </p>
-     * <p>
-     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
-     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative
+     * Name (SAN), however, can be up to 253 octets in length.
      * </p>
      */
     private String domainName;
+    /**
+     * <p>
+     * The method you want to use to validate your domain.
+     * </p>
+     */
+    private String validationMethod;
     /**
      * <p>
      * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
@@ -58,6 +52,30 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
+     * <p>
+     * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
+     * No label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> subjectAlternativeNames;
     /**
@@ -72,7 +90,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     private String idempotencyToken;
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      */
     private java.util.List<DomainValidationOption> domainValidationOptions;
@@ -84,20 +102,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
-     * The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No
-     * label can be longer than 63 octets. Consider the following examples:
-     * </p>
-     * <p>
-     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
-     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
-     * </p>
-     * <p>
-     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
-     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
-     * </p>
-     * <p>
-     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
-     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative
+     * Name (SAN), however, can be up to 253 octets in length.
      * </p>
      * 
      * @param domainName
@@ -106,20 +112,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        same domain. For example, *.example.com protects www.example.com, site.example.com, and
      *        images.example.com. </p>
      *        <p>
-     *        The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by
-     *        periods. No label can be longer than 63 octets. Consider the following examples:
-     *        </p>
-     *        <p>
-     *        <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
-     *        octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
-     *        </p>
-     *        <p>
-     *        <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds
-     *        253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
-     *        </p>
-     *        <p>
-     *        <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
-     *        DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
+     *        The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject
+     *        Alternative Name (SAN), however, can be up to 253 octets in length.
      */
 
     public void setDomainName(String domainName) {
@@ -133,20 +127,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
-     * The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No
-     * label can be longer than 63 octets. Consider the following examples:
-     * </p>
-     * <p>
-     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
-     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
-     * </p>
-     * <p>
-     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
-     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
-     * </p>
-     * <p>
-     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
-     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative
+     * Name (SAN), however, can be up to 253 octets in length.
      * </p>
      * 
      * @return Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an
@@ -154,20 +136,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *         same domain. For example, *.example.com protects www.example.com, site.example.com, and
      *         images.example.com. </p>
      *         <p>
-     *         The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by
-     *         periods. No label can be longer than 63 octets. Consider the following examples:
-     *         </p>
-     *         <p>
-     *         <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
-     *         octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
-     *         </p>
-     *         <p>
-     *         <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length
-     *         exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
-     *         </p>
-     *         <p>
-     *         <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
-     *         DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
+     *         The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject
+     *         Alternative Name (SAN), however, can be up to 253 octets in length.
      */
 
     public String getDomainName() {
@@ -181,20 +151,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
-     * The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No
-     * label can be longer than 63 octets. Consider the following examples:
-     * </p>
-     * <p>
-     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
-     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
-     * </p>
-     * <p>
-     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
-     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
-     * </p>
-     * <p>
-     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
-     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative
+     * Name (SAN), however, can be up to 253 octets in length.
      * </p>
      * 
      * @param domainName
@@ -203,25 +161,72 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        same domain. For example, *.example.com protects www.example.com, site.example.com, and
      *        images.example.com. </p>
      *        <p>
-     *        The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by
-     *        periods. No label can be longer than 63 octets. Consider the following examples:
-     *        </p>
-     *        <p>
-     *        <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
-     *        octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
-     *        </p>
-     *        <p>
-     *        <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds
-     *        253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
-     *        </p>
-     *        <p>
-     *        <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
-     *        DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
+     *        The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject
+     *        Alternative Name (SAN), however, can be up to 253 octets in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RequestCertificateRequest withDomainName(String domainName) {
         setDomainName(domainName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The method you want to use to validate your domain.
+     * </p>
+     * 
+     * @param validationMethod
+     *        The method you want to use to validate your domain.
+     * @see ValidationMethod
+     */
+
+    public void setValidationMethod(String validationMethod) {
+        this.validationMethod = validationMethod;
+    }
+
+    /**
+     * <p>
+     * The method you want to use to validate your domain.
+     * </p>
+     * 
+     * @return The method you want to use to validate your domain.
+     * @see ValidationMethod
+     */
+
+    public String getValidationMethod() {
+        return this.validationMethod;
+    }
+
+    /**
+     * <p>
+     * The method you want to use to validate your domain.
+     * </p>
+     * 
+     * @param validationMethod
+     *        The method you want to use to validate your domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ValidationMethod
+     */
+
+    public RequestCertificateRequest withValidationMethod(String validationMethod) {
+        setValidationMethod(validationMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The method you want to use to validate your domain.
+     * </p>
+     * 
+     * @param validationMethod
+     *        The method you want to use to validate your domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ValidationMethod
+     */
+
+    public RequestCertificateRequest withValidationMethod(ValidationMethod validationMethod) {
+        this.validationMethod = validationMethod.toString();
         return this;
     }
 
@@ -234,13 +239,60 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
+     * <p>
+     * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
+     * No label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
      *         example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
      *         www.example.com if users can reach your site by using either name. The maximum number of domain names
      *         that you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need
      *         more than 10 names, you must request a limit increase. For more information, see <a
-     *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     *         <p>
+     *         The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by
+     *         periods. No label can be longer than 63 octets. Consider the following examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
+     *         octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length
+     *         exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
+     *         DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getSubjectAlternativeNames() {
@@ -256,6 +308,30 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
+     * <p>
+     * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
+     * No label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param subjectAlternativeNames
      *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
@@ -263,7 +339,30 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
      *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
-     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     *        <p>
+     *        The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by
+     *        periods. No label can be longer than 63 octets. Consider the following examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
+     *        octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds
+     *        253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
+     *        DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
+     *        </p>
+     *        </li>
      */
 
     public void setSubjectAlternativeNames(java.util.Collection<String> subjectAlternativeNames) {
@@ -285,6 +384,30 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * <p>
+     * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
+     * No label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubjectAlternativeNames(java.util.Collection)} or
      * {@link #withSubjectAlternativeNames(java.util.Collection)} if you want to override the existing values.
@@ -296,7 +419,30 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
      *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
-     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     *        <p>
+     *        The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by
+     *        periods. No label can be longer than 63 octets. Consider the following examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
+     *        octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds
+     *        253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
+     *        DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,6 +465,30 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
+     * <p>
+     * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
+     * No label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param subjectAlternativeNames
      *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
@@ -326,7 +496,30 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
      *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
-     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     *        <p>
+     *        The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by
+     *        periods. No label can be longer than 63 octets. Consider the following examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
+     *        octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds
+     *        253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
+     *        DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,10 +594,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      * 
-     * @return The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     * @return The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      */
 
     public java.util.List<DomainValidationOption> getDomainValidationOptions() {
@@ -413,11 +606,11 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      * 
      * @param domainValidationOptions
-     *        The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     *        The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      */
 
     public void setDomainValidationOptions(java.util.Collection<DomainValidationOption> domainValidationOptions) {
@@ -431,7 +624,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -440,7 +633,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param domainValidationOptions
-     *        The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     *        The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,11 +649,11 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      * 
      * @param domainValidationOptions
-     *        The domain name that you want ACM to use to send you emails to validate your ownership of the domain.
+     *        The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,6 +675,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
         sb.append("{");
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
+        if (getValidationMethod() != null)
+            sb.append("ValidationMethod: ").append(getValidationMethod()).append(",");
         if (getSubjectAlternativeNames() != null)
             sb.append("SubjectAlternativeNames: ").append(getSubjectAlternativeNames()).append(",");
         if (getIdempotencyToken() != null)
@@ -506,6 +701,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
+        if (other.getValidationMethod() == null ^ this.getValidationMethod() == null)
+            return false;
+        if (other.getValidationMethod() != null && other.getValidationMethod().equals(this.getValidationMethod()) == false)
+            return false;
         if (other.getSubjectAlternativeNames() == null ^ this.getSubjectAlternativeNames() == null)
             return false;
         if (other.getSubjectAlternativeNames() != null && other.getSubjectAlternativeNames().equals(this.getSubjectAlternativeNames()) == false)
@@ -527,6 +726,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getValidationMethod() == null) ? 0 : getValidationMethod().hashCode());
         hashCode = prime * hashCode + ((getSubjectAlternativeNames() == null) ? 0 : getSubjectAlternativeNames().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         hashCode = prime * hashCode + ((getDomainValidationOptions() == null) ? 0 : getDomainValidationOptions().hashCode());

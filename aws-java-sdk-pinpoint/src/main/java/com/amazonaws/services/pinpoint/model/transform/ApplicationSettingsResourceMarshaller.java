@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ApplicationSettingsResourceMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
+    private static final MarshallingInfo<StructuredPojo> CAMPAIGNHOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CampaignHook").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
     private static final MarshallingInfo<StructuredPojo> LIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -53,6 +55,7 @@ public class ApplicationSettingsResourceMarshaller {
 
         try {
             protocolMarshaller.marshall(applicationSettingsResource.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(applicationSettingsResource.getCampaignHook(), CAMPAIGNHOOK_BINDING);
             protocolMarshaller.marshall(applicationSettingsResource.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(applicationSettingsResource.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(applicationSettingsResource.getQuietTime(), QUIETTIME_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,21 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
      * the Application Discovery Service (ADS)'s repository.
      * </p>
+     * <note>
+     * <p>
+     * In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the following
+     * values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     * , and the identifying value can be a string up to 256 characters.
+     * </p>
+     * </note> <important>
+     * <p>
+     * If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be associated in
+     * the Application Discovery Service (ADS)'s repository using any of the other "VM" related values, and you will
+     * experience data loss. See the Example section below for a use case of specifying "VM" related values.
+     * </p>
+     * </important>
      */
     private java.util.List<ResourceAttribute> resourceAttributeList;
     /**
@@ -137,9 +152,38 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
      * the Application Discovery Service (ADS)'s repository.
      * </p>
+     * <note>
+     * <p>
+     * In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the following
+     * values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     * , and the identifying value can be a string up to 256 characters.
+     * </p>
+     * </note> <important>
+     * <p>
+     * If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be associated in
+     * the Application Discovery Service (ADS)'s repository using any of the other "VM" related values, and you will
+     * experience data loss. See the Example section below for a use case of specifying "VM" related values.
+     * </p>
+     * </important>
      * 
      * @return Information about the resource that is being migrated. This data will be used to map the task to a
-     *         resource in the Application Discovery Service (ADS)'s repository.
+     *         resource in the Application Discovery Service (ADS)'s repository.</p> <note>
+     *         <p>
+     *         In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the
+     *         following values:
+     *         <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     *         , and the identifying value can be a string up to 256 characters.
+     *         </p>
+     *         </note> <important>
+     *         <p>
+     *         If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     *         <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be
+     *         associated in the Application Discovery Service (ADS)'s repository using any of the other "VM" related
+     *         values, and you will experience data loss. See the Example section below for a use case of specifying
+     *         "VM" related values.
+     *         </p>
      */
 
     public java.util.List<ResourceAttribute> getResourceAttributeList() {
@@ -151,10 +195,39 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
      * the Application Discovery Service (ADS)'s repository.
      * </p>
+     * <note>
+     * <p>
+     * In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the following
+     * values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     * , and the identifying value can be a string up to 256 characters.
+     * </p>
+     * </note> <important>
+     * <p>
+     * If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be associated in
+     * the Application Discovery Service (ADS)'s repository using any of the other "VM" related values, and you will
+     * experience data loss. See the Example section below for a use case of specifying "VM" related values.
+     * </p>
+     * </important>
      * 
      * @param resourceAttributeList
      *        Information about the resource that is being migrated. This data will be used to map the task to a
-     *        resource in the Application Discovery Service (ADS)'s repository.
+     *        resource in the Application Discovery Service (ADS)'s repository.</p> <note>
+     *        <p>
+     *        In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the
+     *        following values:
+     *        <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     *        , and the identifying value can be a string up to 256 characters.
+     *        </p>
+     *        </note> <important>
+     *        <p>
+     *        If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     *        <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be
+     *        associated in the Application Discovery Service (ADS)'s repository using any of the other "VM" related
+     *        values, and you will experience data loss. See the Example section below for a use case of specifying "VM"
+     *        related values.
+     *        </p>
      */
 
     public void setResourceAttributeList(java.util.Collection<ResourceAttribute> resourceAttributeList) {
@@ -171,6 +244,21 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
      * the Application Discovery Service (ADS)'s repository.
      * </p>
+     * <note>
+     * <p>
+     * In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the following
+     * values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     * , and the identifying value can be a string up to 256 characters.
+     * </p>
+     * </note> <important>
+     * <p>
+     * If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be associated in
+     * the Application Discovery Service (ADS)'s repository using any of the other "VM" related values, and you will
+     * experience data loss. See the Example section below for a use case of specifying "VM" related values.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceAttributeList(java.util.Collection)} or
@@ -179,7 +267,21 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * 
      * @param resourceAttributeList
      *        Information about the resource that is being migrated. This data will be used to map the task to a
-     *        resource in the Application Discovery Service (ADS)'s repository.
+     *        resource in the Application Discovery Service (ADS)'s repository.</p> <note>
+     *        <p>
+     *        In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the
+     *        following values:
+     *        <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     *        , and the identifying value can be a string up to 256 characters.
+     *        </p>
+     *        </note> <important>
+     *        <p>
+     *        If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     *        <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be
+     *        associated in the Application Discovery Service (ADS)'s repository using any of the other "VM" related
+     *        values, and you will experience data loss. See the Example section below for a use case of specifying "VM"
+     *        related values.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,10 +300,39 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
      * the Application Discovery Service (ADS)'s repository.
      * </p>
+     * <note>
+     * <p>
+     * In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the following
+     * values:
+     * <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     * , and the identifying value can be a string up to 256 characters.
+     * </p>
+     * </note> <important>
+     * <p>
+     * If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     * <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be associated in
+     * the Application Discovery Service (ADS)'s repository using any of the other "VM" related values, and you will
+     * experience data loss. See the Example section below for a use case of specifying "VM" related values.
+     * </p>
+     * </important>
      * 
      * @param resourceAttributeList
      *        Information about the resource that is being migrated. This data will be used to map the task to a
-     *        resource in the Application Discovery Service (ADS)'s repository.
+     *        resource in the Application Discovery Service (ADS)'s repository.</p> <note>
+     *        <p>
+     *        In the <code>ResourceAttribute</code> object array, the <code>Type</code> field is reserved for the
+     *        following values:
+     *        <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code>
+     *        , and the identifying value can be a string up to 256 characters.
+     *        </p>
+     *        </note> <important>
+     *        <p>
+     *        If any "VM" related value is used for a <code>ResourceAttribute</code> object, it is required that
+     *        <code>VM_MANAGER_ID</code>, as a minimum, is always used. If it is not used, the server will not be
+     *        associated in the Application Discovery Service (ADS)'s repository using any of the other "VM" related
+     *        values, and you will experience data loss. See the Example section below for a use case of specifying "VM"
+     *        related values.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

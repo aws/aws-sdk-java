@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,15 +35,16 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
     private String format;
     /**
      * <p>
-     * The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values are
-     * "archive-retrieval" and "inventory-retrieval".
+     * The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an
+     * inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".
      * </p>
      */
     private String type;
     /**
      * <p>
      * The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to
-     * archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job request.
+     * <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request
+     * parameter for an inventory retrieval job request.
      * </p>
      */
     private String archiveId;
@@ -78,7 +79,7 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
     private String retrievalByteRange;
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      */
@@ -89,6 +90,18 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private InventoryRetrievalJobInput inventoryRetrievalParameters;
+    /**
+     * <p>
+     * Contains the parameters that define a job.
+     * </p>
+     */
+    private SelectParameters selectParameters;
+    /**
+     * <p>
+     * Contains information about the location where the select job results are stored.
+     * </p>
+     */
+    private OutputLocation outputLocation;
 
     /**
      * Default constructor for JobParameters object. Callers should use the setter or fluent setter (with...) methods to
@@ -106,12 +119,12 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
      *        to specify the output format. If you are initiating an inventory job and do not specify a Format field,
      *        JSON is the default format. Valid values are "CSV" and "JSON".
      * @param type
-     *        The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values
-     *        are "archive-retrieval" and "inventory-retrieval".
+     *        The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get
+     *        an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".
      * @param archiveId
      *        The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set
-     *        to archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job
-     *        request.
+     *        to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     *        request parameter for an inventory retrieval job request.
      * @param description
      *        The optional description for the job. The description must be less than or equal to 1,024 bytes. The
      *        allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or
@@ -178,13 +191,13 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values are
-     * "archive-retrieval" and "inventory-retrieval".
+     * The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an
+     * inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".
      * </p>
      * 
      * @param type
-     *        The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values
-     *        are "archive-retrieval" and "inventory-retrieval".
+     *        The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get
+     *        an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".
      */
 
     public void setType(String type) {
@@ -193,12 +206,12 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values are
-     * "archive-retrieval" and "inventory-retrieval".
+     * The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an
+     * inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".
      * </p>
      * 
-     * @return The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values
-     *         are "archive-retrieval" and "inventory-retrieval".
+     * @return The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get
+     *         an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".
      */
 
     public String getType() {
@@ -207,13 +220,13 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values are
-     * "archive-retrieval" and "inventory-retrieval".
+     * The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an
+     * inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".
      * </p>
      * 
      * @param type
-     *        The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values
-     *        are "archive-retrieval" and "inventory-retrieval".
+     *        The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get
+     *        an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,13 +238,14 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to
-     * archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job request.
+     * <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request
+     * parameter for an inventory retrieval job request.
      * </p>
      * 
      * @param archiveId
      *        The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set
-     *        to archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job
-     *        request.
+     *        to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     *        request parameter for an inventory retrieval job request.
      */
 
     public void setArchiveId(String archiveId) {
@@ -241,12 +255,13 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to
-     * archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job request.
+     * <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request
+     * parameter for an inventory retrieval job request.
      * </p>
      * 
      * @return The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set
-     *         to archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval
-     *         job request.
+     *         to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     *         request parameter for an inventory retrieval job request.
      */
 
     public String getArchiveId() {
@@ -256,13 +271,14 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to
-     * archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job request.
+     * <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request
+     * parameter for an inventory retrieval job request.
      * </p>
      * 
      * @param archiveId
      *        The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set
-     *        to archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job
-     *        request.
+     *        to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     *        request parameter for an inventory retrieval job request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,12 +475,12 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
      * @param tier
-     *        The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *        The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
      *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      */
 
@@ -474,11 +490,11 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
-     * @return The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * @return The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
      *         <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      */
 
@@ -488,12 +504,12 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
      * @param tier
-     *        The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *        The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
      *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -544,6 +560,86 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains the parameters that define a job.
+     * </p>
+     * 
+     * @param selectParameters
+     *        Contains the parameters that define a job.
+     */
+
+    public void setSelectParameters(SelectParameters selectParameters) {
+        this.selectParameters = selectParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the parameters that define a job.
+     * </p>
+     * 
+     * @return Contains the parameters that define a job.
+     */
+
+    public SelectParameters getSelectParameters() {
+        return this.selectParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the parameters that define a job.
+     * </p>
+     * 
+     * @param selectParameters
+     *        Contains the parameters that define a job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobParameters withSelectParameters(SelectParameters selectParameters) {
+        setSelectParameters(selectParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the location where the select job results are stored.
+     * </p>
+     * 
+     * @param outputLocation
+     *        Contains information about the location where the select job results are stored.
+     */
+
+    public void setOutputLocation(OutputLocation outputLocation) {
+        this.outputLocation = outputLocation;
+    }
+
+    /**
+     * <p>
+     * Contains information about the location where the select job results are stored.
+     * </p>
+     * 
+     * @return Contains information about the location where the select job results are stored.
+     */
+
+    public OutputLocation getOutputLocation() {
+        return this.outputLocation;
+    }
+
+    /**
+     * <p>
+     * Contains information about the location where the select job results are stored.
+     * </p>
+     * 
+     * @param outputLocation
+     *        Contains information about the location where the select job results are stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobParameters withOutputLocation(OutputLocation outputLocation) {
+        setOutputLocation(outputLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -569,7 +665,11 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
         if (getTier() != null)
             sb.append("Tier: ").append(getTier()).append(",");
         if (getInventoryRetrievalParameters() != null)
-            sb.append("InventoryRetrievalParameters: ").append(getInventoryRetrievalParameters());
+            sb.append("InventoryRetrievalParameters: ").append(getInventoryRetrievalParameters()).append(",");
+        if (getSelectParameters() != null)
+            sb.append("SelectParameters: ").append(getSelectParameters()).append(",");
+        if (getOutputLocation() != null)
+            sb.append("OutputLocation: ").append(getOutputLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -616,6 +716,14 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInventoryRetrievalParameters() != null && other.getInventoryRetrievalParameters().equals(this.getInventoryRetrievalParameters()) == false)
             return false;
+        if (other.getSelectParameters() == null ^ this.getSelectParameters() == null)
+            return false;
+        if (other.getSelectParameters() != null && other.getSelectParameters().equals(this.getSelectParameters()) == false)
+            return false;
+        if (other.getOutputLocation() == null ^ this.getOutputLocation() == null)
+            return false;
+        if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
+            return false;
         return true;
     }
 
@@ -632,6 +740,8 @@ public class JobParameters implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRetrievalByteRange() == null) ? 0 : getRetrievalByteRange().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getInventoryRetrievalParameters() == null) ? 0 : getInventoryRetrievalParameters().hashCode());
+        hashCode = prime * hashCode + ((getSelectParameters() == null) ? 0 : getSelectParameters().hashCode());
+        hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
         return hashCode;
     }
 

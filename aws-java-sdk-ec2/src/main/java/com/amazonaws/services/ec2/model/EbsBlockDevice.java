@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,21 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      */
     private Integer iops;
+    /**
+     * <p>
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * encrypted.
+     * </p>
+     * <p>
+     * Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances
+     * </a>.
+     * </p>
+     */
+    private String kmsKeyId;
     /**
      * <p>
      * The ID of the snapshot.
@@ -326,6 +341,97 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * encrypted.
+     * </p>
+     * <p>
+     * Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances
+     * </a>.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     *        encrypted.</p>
+     *        <p>
+     *        Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     *        href
+     *        ="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     *        and <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     *        RequestSpotInstances</a>.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * encrypted.
+     * </p>
+     * <p>
+     * Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances
+     * </a>.
+     * </p>
+     * 
+     * @return Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     *         encrypted.</p>
+     *         <p>
+     *         Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     *         href
+     *         ="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     *         and <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     *         RequestSpotInstances</a>.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * encrypted.
+     * </p>
+     * <p>
+     * Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and
+     * <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances
+     * </a>.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     *        encrypted.</p>
+     *        <p>
+     *        Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     *        href
+     *        ="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     *        and <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     *        RequestSpotInstances</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsBlockDevice withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the snapshot.
      * </p>
      * 
@@ -586,6 +692,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
             sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
         if (getIops() != null)
             sb.append("Iops: ").append(getIops()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getSnapshotId() != null)
             sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getVolumeSize() != null)
@@ -618,6 +726,10 @@ public class EbsBlockDevice implements Serializable, Cloneable {
             return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
             return false;
         if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
@@ -641,6 +753,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());

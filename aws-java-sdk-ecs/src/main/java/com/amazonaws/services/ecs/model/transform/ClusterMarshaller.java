@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pendingTasksCount").build();
     private static final MarshallingInfo<Integer> ACTIVESERVICESCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activeServicesCount").build();
+    private static final MarshallingInfo<List> STATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("statistics").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -65,6 +68,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getRunningTasksCount(), RUNNINGTASKSCOUNT_BINDING);
             protocolMarshaller.marshall(cluster.getPendingTasksCount(), PENDINGTASKSCOUNT_BINDING);
             protocolMarshaller.marshall(cluster.getActiveServicesCount(), ACTIVESERVICESCOUNT_BINDING);
+            protocolMarshaller.marshall(cluster.getStatistics(), STATISTICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

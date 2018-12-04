@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -781,6 +781,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<AdminListUserAuthEventsResult> adminListUserAuthEventsAsync(AdminListUserAuthEventsRequest request) {
+
+        return adminListUserAuthEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminListUserAuthEventsResult> adminListUserAuthEventsAsync(final AdminListUserAuthEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminListUserAuthEventsRequest, AdminListUserAuthEventsResult> asyncHandler) {
+        final AdminListUserAuthEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminListUserAuthEventsResult>() {
+            @Override
+            public AdminListUserAuthEventsResult call() throws Exception {
+                AdminListUserAuthEventsResult result = null;
+
+                try {
+                    result = executeAdminListUserAuthEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminRemoveUserFromGroupResult> adminRemoveUserFromGroupAsync(AdminRemoveUserFromGroupRequest request) {
 
         return adminRemoveUserFromGroupAsync(request, null);
@@ -880,6 +913,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<AdminSetUserMFAPreferenceResult> adminSetUserMFAPreferenceAsync(AdminSetUserMFAPreferenceRequest request) {
+
+        return adminSetUserMFAPreferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminSetUserMFAPreferenceResult> adminSetUserMFAPreferenceAsync(final AdminSetUserMFAPreferenceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminSetUserMFAPreferenceRequest, AdminSetUserMFAPreferenceResult> asyncHandler) {
+        final AdminSetUserMFAPreferenceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminSetUserMFAPreferenceResult>() {
+            @Override
+            public AdminSetUserMFAPreferenceResult call() throws Exception {
+                AdminSetUserMFAPreferenceResult result = null;
+
+                try {
+                    result = executeAdminSetUserMFAPreference(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(AdminSetUserSettingsRequest request) {
 
         return adminSetUserSettingsAsync(request, null);
@@ -897,6 +963,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeAdminSetUserSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminUpdateAuthEventFeedbackResult> adminUpdateAuthEventFeedbackAsync(AdminUpdateAuthEventFeedbackRequest request) {
+
+        return adminUpdateAuthEventFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminUpdateAuthEventFeedbackResult> adminUpdateAuthEventFeedbackAsync(final AdminUpdateAuthEventFeedbackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminUpdateAuthEventFeedbackRequest, AdminUpdateAuthEventFeedbackResult> asyncHandler) {
+        final AdminUpdateAuthEventFeedbackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminUpdateAuthEventFeedbackResult>() {
+            @Override
+            public AdminUpdateAuthEventFeedbackResult call() throws Exception {
+                AdminUpdateAuthEventFeedbackResult result = null;
+
+                try {
+                    result = executeAdminUpdateAuthEventFeedback(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -996,6 +1095,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeAdminUserGlobalSignOut(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSoftwareTokenResult> associateSoftwareTokenAsync(AssociateSoftwareTokenRequest request) {
+
+        return associateSoftwareTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSoftwareTokenResult> associateSoftwareTokenAsync(final AssociateSoftwareTokenRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateSoftwareTokenRequest, AssociateSoftwareTokenResult> asyncHandler) {
+        final AssociateSoftwareTokenRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateSoftwareTokenResult>() {
+            @Override
+            public AssociateSoftwareTokenResult call() throws Exception {
+                AssociateSoftwareTokenResult result = null;
+
+                try {
+                    result = executeAssociateSoftwareToken(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1705,6 +1837,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRiskConfigurationResult> describeRiskConfigurationAsync(DescribeRiskConfigurationRequest request) {
+
+        return describeRiskConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRiskConfigurationResult> describeRiskConfigurationAsync(final DescribeRiskConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRiskConfigurationRequest, DescribeRiskConfigurationResult> asyncHandler) {
+        final DescribeRiskConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRiskConfigurationResult>() {
+            @Override
+            public DescribeRiskConfigurationResult call() throws Exception {
+                DescribeRiskConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeRiskConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(DescribeUserImportJobRequest request) {
 
         return describeUserImportJobAsync(request, null);
@@ -2037,6 +2202,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(GetSigningCertificateRequest request) {
+
+        return getSigningCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(final GetSigningCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSigningCertificateRequest, GetSigningCertificateResult> asyncHandler) {
+        final GetSigningCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSigningCertificateResult>() {
+            @Override
+            public GetSigningCertificateResult call() throws Exception {
+                GetSigningCertificateResult result = null;
+
+                try {
+                    result = executeGetSigningCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUICustomizationResult> getUICustomizationAsync(GetUICustomizationRequest request) {
 
         return getUICustomizationAsync(request, null);
@@ -2122,6 +2320,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeGetUserAttributeVerificationCode(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserPoolMfaConfigResult> getUserPoolMfaConfigAsync(GetUserPoolMfaConfigRequest request) {
+
+        return getUserPoolMfaConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserPoolMfaConfigResult> getUserPoolMfaConfigAsync(final GetUserPoolMfaConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUserPoolMfaConfigRequest, GetUserPoolMfaConfigResult> asyncHandler) {
+        final GetUserPoolMfaConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetUserPoolMfaConfigResult>() {
+            @Override
+            public GetUserPoolMfaConfigResult call() throws Exception {
+                GetUserPoolMfaConfigResult result = null;
+
+                try {
+                    result = executeGetUserPoolMfaConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2567,6 +2798,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<SetRiskConfigurationResult> setRiskConfigurationAsync(SetRiskConfigurationRequest request) {
+
+        return setRiskConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetRiskConfigurationResult> setRiskConfigurationAsync(final SetRiskConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetRiskConfigurationRequest, SetRiskConfigurationResult> asyncHandler) {
+        final SetRiskConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetRiskConfigurationResult>() {
+            @Override
+            public SetRiskConfigurationResult call() throws Exception {
+                SetRiskConfigurationResult result = null;
+
+                try {
+                    result = executeSetRiskConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetUICustomizationResult> setUICustomizationAsync(SetUICustomizationRequest request) {
 
         return setUICustomizationAsync(request, null);
@@ -2584,6 +2848,72 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeSetUICustomization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUserMFAPreferenceResult> setUserMFAPreferenceAsync(SetUserMFAPreferenceRequest request) {
+
+        return setUserMFAPreferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUserMFAPreferenceResult> setUserMFAPreferenceAsync(final SetUserMFAPreferenceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetUserMFAPreferenceRequest, SetUserMFAPreferenceResult> asyncHandler) {
+        final SetUserMFAPreferenceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetUserMFAPreferenceResult>() {
+            @Override
+            public SetUserMFAPreferenceResult call() throws Exception {
+                SetUserMFAPreferenceResult result = null;
+
+                try {
+                    result = executeSetUserMFAPreference(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUserPoolMfaConfigResult> setUserPoolMfaConfigAsync(SetUserPoolMfaConfigRequest request) {
+
+        return setUserPoolMfaConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUserPoolMfaConfigResult> setUserPoolMfaConfigAsync(final SetUserPoolMfaConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetUserPoolMfaConfigRequest, SetUserPoolMfaConfigResult> asyncHandler) {
+        final SetUserPoolMfaConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetUserPoolMfaConfigResult>() {
+            @Override
+            public SetUserPoolMfaConfigResult call() throws Exception {
+                SetUserPoolMfaConfigResult result = null;
+
+                try {
+                    result = executeSetUserPoolMfaConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2716,6 +3046,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeStopUserImportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuthEventFeedbackResult> updateAuthEventFeedbackAsync(UpdateAuthEventFeedbackRequest request) {
+
+        return updateAuthEventFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuthEventFeedbackResult> updateAuthEventFeedbackAsync(final UpdateAuthEventFeedbackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAuthEventFeedbackRequest, UpdateAuthEventFeedbackResult> asyncHandler) {
+        final UpdateAuthEventFeedbackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAuthEventFeedbackResult>() {
+            @Override
+            public UpdateAuthEventFeedbackResult call() throws Exception {
+                UpdateAuthEventFeedbackResult result = null;
+
+                try {
+                    result = executeUpdateAuthEventFeedback(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2947,6 +3310,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeUpdateUserPoolClient(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifySoftwareTokenResult> verifySoftwareTokenAsync(VerifySoftwareTokenRequest request) {
+
+        return verifySoftwareTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifySoftwareTokenResult> verifySoftwareTokenAsync(final VerifySoftwareTokenRequest request,
+            final com.amazonaws.handlers.AsyncHandler<VerifySoftwareTokenRequest, VerifySoftwareTokenResult> asyncHandler) {
+        final VerifySoftwareTokenRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<VerifySoftwareTokenResult>() {
+            @Override
+            public VerifySoftwareTokenResult call() throws Exception {
+                VerifySoftwareTokenResult result = null;
+
+                try {
+                    result = executeVerifySoftwareToken(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

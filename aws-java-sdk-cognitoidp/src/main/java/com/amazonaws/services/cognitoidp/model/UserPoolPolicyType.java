@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type of policy in a user pool.
+ * The policy associated with a user pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolPolicyType" target="_top">AWS API
@@ -30,18 +30,18 @@ public class UserPoolPolicyType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A container for information about the user pool password policy.
+     * The password policy.
      * </p>
      */
     private PasswordPolicyType passwordPolicy;
 
     /**
      * <p>
-     * A container for information about the user pool password policy.
+     * The password policy.
      * </p>
      * 
      * @param passwordPolicy
-     *        A container for information about the user pool password policy.
+     *        The password policy.
      */
 
     public void setPasswordPolicy(PasswordPolicyType passwordPolicy) {
@@ -50,10 +50,10 @@ public class UserPoolPolicyType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A container for information about the user pool password policy.
+     * The password policy.
      * </p>
      * 
-     * @return A container for information about the user pool password policy.
+     * @return The password policy.
      */
 
     public PasswordPolicyType getPasswordPolicy() {
@@ -62,11 +62,11 @@ public class UserPoolPolicyType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A container for information about the user pool password policy.
+     * The password policy.
      * </p>
      * 
      * @param passwordPolicy
-     *        A container for information about the user pool password policy.
+     *        The password policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

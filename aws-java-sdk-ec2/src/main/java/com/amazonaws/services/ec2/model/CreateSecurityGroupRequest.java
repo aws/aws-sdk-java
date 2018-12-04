@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * The name of the security group.
      * </p>
      * <p>
-     * Constraints: Up to 255 characters in length
+     * Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      * </p>
      * <p>
      * Constraints for EC2-Classic: ASCII characters
@@ -78,7 +78,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * @param groupName
      *        The name of the security group.</p>
      *        <p>
-     *        Constraints: Up to 255 characters in length
+     *        Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      *        </p>
      *        <p>
      *        Constraints for EC2-Classic: ASCII characters
@@ -198,7 +198,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * The name of the security group.
      * </p>
      * <p>
-     * Constraints: Up to 255 characters in length
+     * Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      * </p>
      * <p>
      * Constraints for EC2-Classic: ASCII characters
@@ -210,7 +210,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * @param groupName
      *        The name of the security group.</p>
      *        <p>
-     *        Constraints: Up to 255 characters in length
+     *        Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      *        </p>
      *        <p>
      *        Constraints for EC2-Classic: ASCII characters
@@ -228,7 +228,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * The name of the security group.
      * </p>
      * <p>
-     * Constraints: Up to 255 characters in length
+     * Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      * </p>
      * <p>
      * Constraints for EC2-Classic: ASCII characters
@@ -239,7 +239,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * 
      * @return The name of the security group.</p>
      *         <p>
-     *         Constraints: Up to 255 characters in length
+     *         Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      *         </p>
      *         <p>
      *         Constraints for EC2-Classic: ASCII characters
@@ -257,7 +257,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * The name of the security group.
      * </p>
      * <p>
-     * Constraints: Up to 255 characters in length
+     * Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      * </p>
      * <p>
      * Constraints for EC2-Classic: ASCII characters
@@ -269,7 +269,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * @param groupName
      *        The name of the security group.</p>
      *        <p>
-     *        Constraints: Up to 255 characters in length
+     *        Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      *        </p>
      *        <p>
      *        Constraints for EC2-Classic: ASCII characters

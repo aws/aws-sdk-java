@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,8 +47,8 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon
-     * ECS APIs with the version reported in CloudWatch events for the container instance (inside the
+     * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
+     * ECS APIs with the version reported in CloudWatch Events for the container instance (inside the
      * <code>detail</code> object) to verify that the version in your event stream is current.
      * </p>
      */
@@ -61,18 +61,21 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private VersionInfo versionInfo;
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Resource> remainingResources;
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Resource> registeredResources;
@@ -83,15 +86,15 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
      * running on the container instance are removed if possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered instances
-     * with an agent that may be unhealthy or stopped return <code>false</code>, and instances without a connected agent
-     * cannot accept placement requests.
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
+     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
+     * accept placement requests.
      * </p>
      */
     private Boolean agentConnected;
@@ -123,7 +126,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private com.amazonaws.internal.SdkInternalList<Attribute> attributes;
     /**
      * <p>
-     * The Unix timestamp for when the container instance was registered.
+     * The Unix time stamp for when the container instance was registered.
      * </p>
      */
     private java.util.Date registeredAt;
@@ -239,16 +242,16 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon
-     * ECS APIs with the version reported in CloudWatch events for the container instance (inside the
+     * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
+     * ECS APIs with the version reported in CloudWatch Events for the container instance (inside the
      * <code>detail</code> object) to verify that the version in your event stream is current.
      * </p>
      * 
      * @param version
      *        The version counter for the container instance. Every time a container instance experiences a change that
      *        triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS
-     *        container instance state with CloudWatch events, you can compare the version of a container instance
-     *        reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance
+     *        container instance state with CloudWatch Events, you can compare the version of a container instance
+     *        reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance
      *        (inside the <code>detail</code> object) to verify that the version in your event stream is current.
      */
 
@@ -260,15 +263,15 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon
-     * ECS APIs with the version reported in CloudWatch events for the container instance (inside the
+     * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
+     * ECS APIs with the version reported in CloudWatch Events for the container instance (inside the
      * <code>detail</code> object) to verify that the version in your event stream is current.
      * </p>
      * 
      * @return The version counter for the container instance. Every time a container instance experiences a change that
      *         triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS
-     *         container instance state with CloudWatch events, you can compare the version of a container instance
-     *         reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance
+     *         container instance state with CloudWatch Events, you can compare the version of a container instance
+     *         reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance
      *         (inside the <code>detail</code> object) to verify that the version in your event stream is current.
      */
 
@@ -280,16 +283,16 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon
-     * ECS APIs with the version reported in CloudWatch events for the container instance (inside the
+     * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
+     * ECS APIs with the version reported in CloudWatch Events for the container instance (inside the
      * <code>detail</code> object) to verify that the version in your event stream is current.
      * </p>
      * 
      * @param version
      *        The version counter for the container instance. Every time a container instance experiences a change that
      *        triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS
-     *        container instance state with CloudWatch events, you can compare the version of a container instance
-     *        reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance
+     *        container instance state with CloudWatch Events, you can compare the version of a container instance
+     *        reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance
      *        (inside the <code>detail</code> object) to verify that the version in your event stream is current.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -344,16 +347,19 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      * 
-     * @return For most resource types, this parameter describes the remaining resources of the container instance that
-     *         are available for new tasks. For port resource types, this parameter describes the ports that are
-     *         reserved by the Amazon ECS container agent and any containers that have reserved port mappings; any port
-     *         that is not specified here is available for new tasks.
+     * @return For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has
+     *         not already been allocated to tasks (and is therefore available for new tasks). For port resource types,
+     *         this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
+     *         registration time) and any task containers that have reserved port mappings on the host (with the
+     *         <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *         for new tasks.
      */
 
     public java.util.List<Resource> getRemainingResources() {
@@ -365,17 +371,20 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      * 
      * @param remainingResources
-     *        For most resource types, this parameter describes the remaining resources of the container instance that
-     *        are available for new tasks. For port resource types, this parameter describes the ports that are reserved
-     *        by the Amazon ECS container agent and any containers that have reserved port mappings; any port that is
-     *        not specified here is available for new tasks.
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has
+     *        not already been allocated to tasks (and is therefore available for new tasks). For port resource types,
+     *        this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
+     *        registration time) and any task containers that have reserved port mappings on the host (with the
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        for new tasks.
      */
 
     public void setRemainingResources(java.util.Collection<Resource> remainingResources) {
@@ -389,10 +398,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -401,10 +411,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param remainingResources
-     *        For most resource types, this parameter describes the remaining resources of the container instance that
-     *        are available for new tasks. For port resource types, this parameter describes the ports that are reserved
-     *        by the Amazon ECS container agent and any containers that have reserved port mappings; any port that is
-     *        not specified here is available for new tasks.
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has
+     *        not already been allocated to tasks (and is therefore available for new tasks). For port resource types,
+     *        this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
+     *        registration time) and any task containers that have reserved port mappings on the host (with the
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        for new tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -420,17 +432,20 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      * 
      * @param remainingResources
-     *        For most resource types, this parameter describes the remaining resources of the container instance that
-     *        are available for new tasks. For port resource types, this parameter describes the ports that are reserved
-     *        by the Amazon ECS container agent and any containers that have reserved port mappings; any port that is
-     *        not specified here is available for new tasks.
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has
+     *        not already been allocated to tasks (and is therefore available for new tasks). For port resource types,
+     *        this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
+     *        registration time) and any task containers that have reserved port mappings on the host (with the
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        for new tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,14 +456,18 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      * 
-     * @return For most resource types, this parameter describes the registered resources on the container instance that
-     *         are in use by current tasks. For port resource types, this parameter describes the ports that were
-     *         reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * @return For CPU and memory resource types, this parameter describes the amount of each resource that was
+     *         available on the container instance when the container agent registered it with Amazon ECS; this value
+     *         represents the total amount of CPU and memory that can be allocated on this container instance to tasks.
+     *         For port resource types, this parameter describes the ports that were reserved by the Amazon ECS
+     *         container agent when it registered the container instance with Amazon ECS.
      */
 
     public java.util.List<Resource> getRegisteredResources() {
@@ -460,15 +479,19 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      * 
      * @param registeredResources
-     *        For most resource types, this parameter describes the registered resources on the container instance that
-     *        are in use by current tasks. For port resource types, this parameter describes the ports that were
-     *        reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     *        For CPU and memory resource types, this parameter describes the amount of each resource that was available
+     *        on the container instance when the container agent registered it with Amazon ECS; this value represents
+     *        the total amount of CPU and memory that can be allocated on this container instance to tasks. For port
+     *        resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent
+     *        when it registered the container instance with Amazon ECS.
      */
 
     public void setRegisteredResources(java.util.Collection<Resource> registeredResources) {
@@ -482,9 +505,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -493,9 +518,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param registeredResources
-     *        For most resource types, this parameter describes the registered resources on the container instance that
-     *        are in use by current tasks. For port resource types, this parameter describes the ports that were
-     *        reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     *        For CPU and memory resource types, this parameter describes the amount of each resource that was available
+     *        on the container instance when the container agent registered it with Amazon ECS; this value represents
+     *        the total amount of CPU and memory that can be allocated on this container instance to tasks. For port
+     *        resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent
+     *        when it registered the container instance with Amazon ECS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -511,15 +538,19 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      * 
      * @param registeredResources
-     *        For most resource types, this parameter describes the registered resources on the container instance that
-     *        are in use by current tasks. For port resource types, this parameter describes the ports that were
-     *        reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     *        For CPU and memory resource types, this parameter describes the amount of each resource that was available
+     *        on the container instance when the container agent registered it with Amazon ECS; this value represents
+     *        the total amount of CPU and memory that can be allocated on this container instance to tasks. For port
+     *        resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent
+     *        when it registered the container instance with Amazon ECS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,7 +566,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
      * running on the container instance are removed if possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param status
@@ -544,7 +575,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *        <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
      *        tasks running on the container instance are removed if possible. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
-     *        >Container Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setStatus(String status) {
@@ -558,7 +589,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
      * running on the container instance are removed if possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>, or
@@ -566,7 +597,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *         <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
      *         tasks running on the container instance are removed if possible. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
-     *         >Container Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getStatus() {
@@ -580,7 +611,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
      * running on the container instance are removed if possible. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param status
@@ -589,7 +620,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *        <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
      *        tasks running on the container instance are removed if possible. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
-     *        >Container Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -600,15 +631,15 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered instances
-     * with an agent that may be unhealthy or stopped return <code>false</code>, and instances without a connected agent
-     * cannot accept placement requests.
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
+     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
+     * accept placement requests.
      * </p>
      * 
      * @param agentConnected
-     *        This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered
-     *        instances with an agent that may be unhealthy or stopped return <code>false</code>, and instances without
-     *        a connected agent cannot accept placement requests.
+     *        This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
+     *        with an agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected
+     *        agent can't accept placement requests.
      */
 
     public void setAgentConnected(Boolean agentConnected) {
@@ -617,14 +648,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered instances
-     * with an agent that may be unhealthy or stopped return <code>false</code>, and instances without a connected agent
-     * cannot accept placement requests.
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
+     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
+     * accept placement requests.
      * </p>
      * 
-     * @return This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered
-     *         instances with an agent that may be unhealthy or stopped return <code>false</code>, and instances without
-     *         a connected agent cannot accept placement requests.
+     * @return This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
+     *         with an agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected
+     *         agent can't accept placement requests.
      */
 
     public Boolean getAgentConnected() {
@@ -633,15 +664,15 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered instances
-     * with an agent that may be unhealthy or stopped return <code>false</code>, and instances without a connected agent
-     * cannot accept placement requests.
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
+     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
+     * accept placement requests.
      * </p>
      * 
      * @param agentConnected
-     *        This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered
-     *        instances with an agent that may be unhealthy or stopped return <code>false</code>, and instances without
-     *        a connected agent cannot accept placement requests.
+     *        This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
+     *        with an agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected
+     *        agent can't accept placement requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -652,14 +683,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered instances
-     * with an agent that may be unhealthy or stopped return <code>false</code>, and instances without a connected agent
-     * cannot accept placement requests.
+     * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
+     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
+     * accept placement requests.
      * </p>
      * 
-     * @return This parameter returns <code>true</code> if the agent is actually connected to Amazon ECS. Registered
-     *         instances with an agent that may be unhealthy or stopped return <code>false</code>, and instances without
-     *         a connected agent cannot accept placement requests.
+     * @return This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
+     *         with an agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected
+     *         agent can't accept placement requests.
      */
 
     public Boolean isAgentConnected() {
@@ -912,11 +943,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Unix timestamp for when the container instance was registered.
+     * The Unix time stamp for when the container instance was registered.
      * </p>
      * 
      * @param registeredAt
-     *        The Unix timestamp for when the container instance was registered.
+     *        The Unix time stamp for when the container instance was registered.
      */
 
     public void setRegisteredAt(java.util.Date registeredAt) {
@@ -925,10 +956,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Unix timestamp for when the container instance was registered.
+     * The Unix time stamp for when the container instance was registered.
      * </p>
      * 
-     * @return The Unix timestamp for when the container instance was registered.
+     * @return The Unix time stamp for when the container instance was registered.
      */
 
     public java.util.Date getRegisteredAt() {
@@ -937,11 +968,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Unix timestamp for when the container instance was registered.
+     * The Unix time stamp for when the container instance was registered.
      * </p>
      * 
      * @param registeredAt
-     *        The Unix timestamp for when the container instance was registered.
+     *        The Unix time stamp for when the container instance was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,50 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     automationExecutionMetadata.setOutputs(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                }
+                if (context.testExpression("Mode", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ParentAutomationExecutionId", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setParentAutomationExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CurrentStepName", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setCurrentStepName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CurrentAction", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setCurrentAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FailureMessage", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetParameterName", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setTargetParameterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Targets", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ResolvedTargets", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setResolvedTargets(ResolvedTargetsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MaxConcurrency", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setMaxConcurrency(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxErrors", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setMaxErrors(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Target", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

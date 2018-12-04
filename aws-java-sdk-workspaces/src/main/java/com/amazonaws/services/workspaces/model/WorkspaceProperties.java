@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the properties of a WorkSpace.
+ * Information about a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceProperties" target="_top">AWS API
@@ -30,8 +30,9 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
-     * hour and stopped when no longer being used in order to save on costs.
+     * The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * Mode</a>.
      * </p>
      */
     private String runningMode;
@@ -41,16 +42,37 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private Integer runningModeAutoStopTimeoutInMinutes;
+    /**
+     * <p>
+     * The size of the root volume.
+     * </p>
+     */
+    private Integer rootVolumeSizeGib;
+    /**
+     * <p>
+     * The size of the user storage.
+     * </p>
+     */
+    private Integer userVolumeSizeGib;
+    /**
+     * <p>
+     * The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * </p>
+     */
+    private String computeTypeName;
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
-     * hour and stopped when no longer being used in order to save on costs.
+     * The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * Mode</a>.
      * </p>
      * 
      * @param runningMode
-     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
-     *        by the hour and stopped when no longer being used in order to save on costs.
+     *        The running mode. For more information, see <a
+     *        href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *        Running Mode</a>.
      * @see RunningMode
      */
 
@@ -60,12 +82,14 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
-     * hour and stopped when no longer being used in order to save on costs.
+     * The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * Mode</a>.
      * </p>
      * 
-     * @return The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
-     *         by the hour and stopped when no longer being used in order to save on costs.
+     * @return The running mode. For more information, see <a
+     *         href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *         Running Mode</a>.
      * @see RunningMode
      */
 
@@ -75,13 +99,15 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
-     * hour and stopped when no longer being used in order to save on costs.
+     * The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * Mode</a>.
      * </p>
      * 
      * @param runningMode
-     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
-     *        by the hour and stopped when no longer being used in order to save on costs.
+     *        The running mode. For more information, see <a
+     *        href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *        Running Mode</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RunningMode
      */
@@ -93,13 +119,15 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
-     * hour and stopped when no longer being used in order to save on costs.
+     * The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * Mode</a>.
      * </p>
      * 
      * @param runningMode
-     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
-     *        by the hour and stopped when no longer being used in order to save on costs.
+     *        The running mode. For more information, see <a
+     *        href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *        Running Mode</a>.
      * @see RunningMode
      */
 
@@ -109,13 +137,15 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the
-     * hour and stopped when no longer being used in order to save on costs.
+     * The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+     * Mode</a>.
      * </p>
      * 
      * @param runningMode
-     *        The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed
-     *        by the hour and stopped when no longer being used in order to save on costs.
+     *        The running mode. For more information, see <a
+     *        href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace
+     *        Running Mode</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RunningMode
      */
@@ -169,6 +199,169 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The size of the root volume.
+     * </p>
+     * 
+     * @param rootVolumeSizeGib
+     *        The size of the root volume.
+     */
+
+    public void setRootVolumeSizeGib(Integer rootVolumeSizeGib) {
+        this.rootVolumeSizeGib = rootVolumeSizeGib;
+    }
+
+    /**
+     * <p>
+     * The size of the root volume.
+     * </p>
+     * 
+     * @return The size of the root volume.
+     */
+
+    public Integer getRootVolumeSizeGib() {
+        return this.rootVolumeSizeGib;
+    }
+
+    /**
+     * <p>
+     * The size of the root volume.
+     * </p>
+     * 
+     * @param rootVolumeSizeGib
+     *        The size of the root volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceProperties withRootVolumeSizeGib(Integer rootVolumeSizeGib) {
+        setRootVolumeSizeGib(rootVolumeSizeGib);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size of the user storage.
+     * </p>
+     * 
+     * @param userVolumeSizeGib
+     *        The size of the user storage.
+     */
+
+    public void setUserVolumeSizeGib(Integer userVolumeSizeGib) {
+        this.userVolumeSizeGib = userVolumeSizeGib;
+    }
+
+    /**
+     * <p>
+     * The size of the user storage.
+     * </p>
+     * 
+     * @return The size of the user storage.
+     */
+
+    public Integer getUserVolumeSizeGib() {
+        return this.userVolumeSizeGib;
+    }
+
+    /**
+     * <p>
+     * The size of the user storage.
+     * </p>
+     * 
+     * @param userVolumeSizeGib
+     *        The size of the user storage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceProperties withUserVolumeSizeGib(Integer userVolumeSizeGib) {
+        setUserVolumeSizeGib(userVolumeSizeGib);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * </p>
+     * 
+     * @param computeTypeName
+     *        The compute type. For more information, see <a
+     *        href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * @see Compute
+     */
+
+    public void setComputeTypeName(String computeTypeName) {
+        this.computeTypeName = computeTypeName;
+    }
+
+    /**
+     * <p>
+     * The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * </p>
+     * 
+     * @return The compute type. For more information, see <a
+     *         href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * @see Compute
+     */
+
+    public String getComputeTypeName() {
+        return this.computeTypeName;
+    }
+
+    /**
+     * <p>
+     * The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * </p>
+     * 
+     * @param computeTypeName
+     *        The compute type. For more information, see <a
+     *        href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compute
+     */
+
+    public WorkspaceProperties withComputeTypeName(String computeTypeName) {
+        setComputeTypeName(computeTypeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * </p>
+     * 
+     * @param computeTypeName
+     *        The compute type. For more information, see <a
+     *        href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * @see Compute
+     */
+
+    public void setComputeTypeName(Compute computeTypeName) {
+        withComputeTypeName(computeTypeName);
+    }
+
+    /**
+     * <p>
+     * The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * </p>
+     * 
+     * @param computeTypeName
+     *        The compute type. For more information, see <a
+     *        href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compute
+     */
+
+    public WorkspaceProperties withComputeTypeName(Compute computeTypeName) {
+        this.computeTypeName = computeTypeName.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -182,7 +375,13 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
         if (getRunningMode() != null)
             sb.append("RunningMode: ").append(getRunningMode()).append(",");
         if (getRunningModeAutoStopTimeoutInMinutes() != null)
-            sb.append("RunningModeAutoStopTimeoutInMinutes: ").append(getRunningModeAutoStopTimeoutInMinutes());
+            sb.append("RunningModeAutoStopTimeoutInMinutes: ").append(getRunningModeAutoStopTimeoutInMinutes()).append(",");
+        if (getRootVolumeSizeGib() != null)
+            sb.append("RootVolumeSizeGib: ").append(getRootVolumeSizeGib()).append(",");
+        if (getUserVolumeSizeGib() != null)
+            sb.append("UserVolumeSizeGib: ").append(getUserVolumeSizeGib()).append(",");
+        if (getComputeTypeName() != null)
+            sb.append("ComputeTypeName: ").append(getComputeTypeName());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +405,18 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
         if (other.getRunningModeAutoStopTimeoutInMinutes() != null
                 && other.getRunningModeAutoStopTimeoutInMinutes().equals(this.getRunningModeAutoStopTimeoutInMinutes()) == false)
             return false;
+        if (other.getRootVolumeSizeGib() == null ^ this.getRootVolumeSizeGib() == null)
+            return false;
+        if (other.getRootVolumeSizeGib() != null && other.getRootVolumeSizeGib().equals(this.getRootVolumeSizeGib()) == false)
+            return false;
+        if (other.getUserVolumeSizeGib() == null ^ this.getUserVolumeSizeGib() == null)
+            return false;
+        if (other.getUserVolumeSizeGib() != null && other.getUserVolumeSizeGib().equals(this.getUserVolumeSizeGib()) == false)
+            return false;
+        if (other.getComputeTypeName() == null ^ this.getComputeTypeName() == null)
+            return false;
+        if (other.getComputeTypeName() != null && other.getComputeTypeName().equals(this.getComputeTypeName()) == false)
+            return false;
         return true;
     }
 
@@ -216,6 +427,9 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getRunningMode() == null) ? 0 : getRunningMode().hashCode());
         hashCode = prime * hashCode + ((getRunningModeAutoStopTimeoutInMinutes() == null) ? 0 : getRunningModeAutoStopTimeoutInMinutes().hashCode());
+        hashCode = prime * hashCode + ((getRootVolumeSizeGib() == null) ? 0 : getRootVolumeSizeGib().hashCode());
+        hashCode = prime * hashCode + ((getUserVolumeSizeGib() == null) ? 0 : getUserVolumeSizeGib().hashCode());
+        hashCode = prime * hashCode + ((getComputeTypeName() == null) ? 0 : getComputeTypeName().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,13 +42,13 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The stack name displayed to end users.
+     * The stack name for display.
      * </p>
      */
     private String displayName;
@@ -64,6 +64,12 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<StorageConnector> storageConnectors;
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     */
+    private String redirectURL;
     /**
      * <p>
      * The errors for the stack.
@@ -153,11 +159,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users.
+     *        The description for display.
      */
 
     public void setDescription(String description) {
@@ -166,10 +172,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
-     * @return The description displayed to end users.
+     * @return The description for display.
      */
 
     public String getDescription() {
@@ -178,11 +184,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users.
+     *        The description for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +199,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name displayed to end users.
+     * The stack name for display.
      * </p>
      * 
      * @param displayName
-     *        The stack name displayed to end users.
+     *        The stack name for display.
      */
 
     public void setDisplayName(String displayName) {
@@ -206,10 +212,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name displayed to end users.
+     * The stack name for display.
      * </p>
      * 
-     * @return The stack name displayed to end users.
+     * @return The stack name for display.
      */
 
     public String getDisplayName() {
@@ -218,11 +224,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name displayed to end users.
+     * The stack name for display.
      * </p>
      * 
      * @param displayName
-     *        The stack name displayed to end users.
+     *        The stack name for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,6 +349,46 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL the user is redirected to after the streaming session ends.
+     */
+
+    public void setRedirectURL(String redirectURL) {
+        this.redirectURL = redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @return The URL the user is redirected to after the streaming session ends.
+     */
+
+    public String getRedirectURL() {
+        return this.redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL the user is redirected to after the streaming session ends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withRedirectURL(String redirectURL) {
+        setRedirectURL(redirectURL);
+        return this;
+    }
+
+    /**
+     * <p>
      * The errors for the stack.
      * </p>
      * 
@@ -434,6 +480,8 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getStorageConnectors() != null)
             sb.append("StorageConnectors: ").append(getStorageConnectors()).append(",");
+        if (getRedirectURL() != null)
+            sb.append("RedirectURL: ").append(getRedirectURL()).append(",");
         if (getStackErrors() != null)
             sb.append("StackErrors: ").append(getStackErrors());
         sb.append("}");
@@ -474,6 +522,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStorageConnectors() != null && other.getStorageConnectors().equals(this.getStorageConnectors()) == false)
             return false;
+        if (other.getRedirectURL() == null ^ this.getRedirectURL() == null)
+            return false;
+        if (other.getRedirectURL() != null && other.getRedirectURL().equals(this.getRedirectURL()) == false)
+            return false;
         if (other.getStackErrors() == null ^ this.getStackErrors() == null)
             return false;
         if (other.getStackErrors() != null && other.getStackErrors().equals(this.getStackErrors()) == false)
@@ -492,6 +544,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
+        hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
         hashCode = prime * hashCode + ((getStackErrors() == null) ? 0 : getStackErrors().hashCode());
         return hashCode;
     }

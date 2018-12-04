@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a Spot fleet request that was not successfully canceled.
+ * Describes a Spot Fleet request that was not successfully canceled.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequestsErrorItem"
@@ -34,7 +34,7 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
     private CancelSpotFleetRequestsError error;
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      */
     private String spotFleetRequestId;
@@ -81,11 +81,11 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      */
 
     public void setSpotFleetRequestId(String spotFleetRequestId) {
@@ -94,10 +94,10 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @return The ID of the Spot fleet request.
+     * @return The ID of the Spot Fleet request.
      */
 
     public String getSpotFleetRequestId() {
@@ -106,11 +106,11 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

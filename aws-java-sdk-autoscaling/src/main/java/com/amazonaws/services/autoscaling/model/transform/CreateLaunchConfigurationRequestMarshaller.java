@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,9 +53,10 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
             request.addParameter("KeyName", StringUtils.fromString(createLaunchConfigurationRequest.getKeyName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createLaunchConfigurationRequest
-                .getSecurityGroups();
-        if (!securityGroupsList.isEmpty() || !securityGroupsList.isAutoConstruct()) {
+        if (!createLaunchConfigurationRequest.getSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createLaunchConfigurationRequest.getSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createLaunchConfigurationRequest
+                    .getSecurityGroups();
             int securityGroupsListIndex = 1;
 
             for (String securityGroupsListValue : securityGroupsList) {
@@ -70,9 +71,10 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
             request.addParameter("ClassicLinkVPCId", StringUtils.fromString(createLaunchConfigurationRequest.getClassicLinkVPCId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> classicLinkVPCSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createLaunchConfigurationRequest
-                .getClassicLinkVPCSecurityGroups();
-        if (!classicLinkVPCSecurityGroupsList.isEmpty() || !classicLinkVPCSecurityGroupsList.isAutoConstruct()) {
+        if (!createLaunchConfigurationRequest.getClassicLinkVPCSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createLaunchConfigurationRequest.getClassicLinkVPCSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> classicLinkVPCSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createLaunchConfigurationRequest
+                    .getClassicLinkVPCSecurityGroups();
             int classicLinkVPCSecurityGroupsListIndex = 1;
 
             for (String classicLinkVPCSecurityGroupsListValue : classicLinkVPCSecurityGroupsList) {
@@ -104,9 +106,10 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
             request.addParameter("RamdiskId", StringUtils.fromString(createLaunchConfigurationRequest.getRamdiskId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) createLaunchConfigurationRequest
-                .getBlockDeviceMappings();
-        if (!blockDeviceMappingsList.isEmpty() || !blockDeviceMappingsList.isAutoConstruct()) {
+        if (!createLaunchConfigurationRequest.getBlockDeviceMappings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) createLaunchConfigurationRequest.getBlockDeviceMappings()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) createLaunchConfigurationRequest
+                    .getBlockDeviceMappings();
             int blockDeviceMappingsListIndex = 1;
 
             for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {

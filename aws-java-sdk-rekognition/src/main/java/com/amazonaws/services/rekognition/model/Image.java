@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * You pass image bytes to a Rekognition API operation by using the <code>Bytes</code> property. For example, you would
  * use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the
  * <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an
- * AWS SDK to call Rekognition API operations. For more information, see <a>example4</a>.
+ * AWS SDK to call Rekognition API operations. For more information, see <a>images-bytes</a>.
  * </p>
  * <p>
  * You pass images stored in an S3 bucket to a Rekognition API operation by using the <code>S3Object</code> property.

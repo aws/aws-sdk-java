@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,9 +45,10 @@ public class SendMessageBatchRequestMarshaller implements Marshaller<Request<Sen
             request.addParameter("QueueUrl", StringUtils.fromString(sendMessageBatchRequest.getQueueUrl()));
         }
 
-        com.amazonaws.internal.SdkInternalList<SendMessageBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<SendMessageBatchRequestEntry>) sendMessageBatchRequest
-                .getEntries();
-        if (!entriesList.isEmpty() || !entriesList.isAutoConstruct()) {
+        if (!sendMessageBatchRequest.getEntries().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<SendMessageBatchRequestEntry>) sendMessageBatchRequest.getEntries()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<SendMessageBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<SendMessageBatchRequestEntry>) sendMessageBatchRequest
+                    .getEntries();
             int entriesListIndex = 1;
 
             for (SendMessageBatchRequestEntry entriesListValue : entriesList) {
@@ -85,9 +86,10 @@ public class SendMessageBatchRequestMarshaller implements Marshaller<Request<Sen
                                     + ".Value.BinaryValue", StringUtils.fromByteBuffer(entry.getValue().getBinaryValue()));
                         }
 
-                        com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry.getValue()
-                                .getStringListValues();
-                        if (!stringListValuesList.isEmpty() || !stringListValuesList.isAutoConstruct()) {
+                        if (!entry.getValue().getStringListValues().isEmpty()
+                                || !((com.amazonaws.internal.SdkInternalList<String>) entry.getValue().getStringListValues()).isAutoConstruct()) {
+                            com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry
+                                    .getValue().getStringListValues();
                             int stringListValuesListIndex = 1;
 
                             for (String stringListValuesListValue : stringListValuesList) {
@@ -99,9 +101,10 @@ public class SendMessageBatchRequestMarshaller implements Marshaller<Request<Sen
                             }
                         }
 
-                        com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
-                                .getValue().getBinaryListValues();
-                        if (!binaryListValuesList.isEmpty() || !binaryListValuesList.isAutoConstruct()) {
+                        if (!entry.getValue().getBinaryListValues().isEmpty()
+                                || !((com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry.getValue().getBinaryListValues()).isAutoConstruct()) {
+                            com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
+                                    .getValue().getBinaryListValues();
                             int binaryListValuesListIndex = 1;
 
                             for (java.nio.ByteBuffer binaryListValuesListValue : binaryListValuesList) {

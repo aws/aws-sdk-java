@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class GetClassifiersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The requested list of <code>Classifier</code> objects.
+     * The requested list of classifier objects.
      * </p>
      */
     private java.util.List<Classifier> classifiers;
@@ -38,10 +38,10 @@ public class GetClassifiersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The requested list of <code>Classifier</code> objects.
+     * The requested list of classifier objects.
      * </p>
      * 
-     * @return The requested list of <code>Classifier</code> objects.
+     * @return The requested list of classifier objects.
      */
 
     public java.util.List<Classifier> getClassifiers() {
@@ -50,11 +50,11 @@ public class GetClassifiersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The requested list of <code>Classifier</code> objects.
+     * The requested list of classifier objects.
      * </p>
      * 
      * @param classifiers
-     *        The requested list of <code>Classifier</code> objects.
+     *        The requested list of classifier objects.
      */
 
     public void setClassifiers(java.util.Collection<Classifier> classifiers) {
@@ -68,7 +68,7 @@ public class GetClassifiersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The requested list of <code>Classifier</code> objects.
+     * The requested list of classifier objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class GetClassifiersResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param classifiers
-     *        The requested list of <code>Classifier</code> objects.
+     *        The requested list of classifier objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class GetClassifiersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The requested list of <code>Classifier</code> objects.
+     * The requested list of classifier objects.
      * </p>
      * 
      * @param classifiers
-     *        The requested list of <code>Classifier</code> objects.
+     *        The requested list of classifier objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

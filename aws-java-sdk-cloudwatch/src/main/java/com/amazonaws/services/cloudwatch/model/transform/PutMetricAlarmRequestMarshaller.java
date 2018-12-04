@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,8 +52,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             request.addParameter("ActionsEnabled", StringUtils.fromBoolean(putMetricAlarmRequest.getActionsEnabled()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> oKActionsList = (com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest.getOKActions();
-        if (!oKActionsList.isEmpty() || !oKActionsList.isAutoConstruct()) {
+        if (!putMetricAlarmRequest.getOKActions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest.getOKActions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> oKActionsList = (com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest
+                    .getOKActions();
             int oKActionsListIndex = 1;
 
             for (String oKActionsListValue : oKActionsList) {
@@ -64,9 +66,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> alarmActionsList = (com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest
-                .getAlarmActions();
-        if (!alarmActionsList.isEmpty() || !alarmActionsList.isAutoConstruct()) {
+        if (!putMetricAlarmRequest.getAlarmActions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest.getAlarmActions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> alarmActionsList = (com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest
+                    .getAlarmActions();
             int alarmActionsListIndex = 1;
 
             for (String alarmActionsListValue : alarmActionsList) {
@@ -77,9 +80,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> insufficientDataActionsList = (com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest
-                .getInsufficientDataActions();
-        if (!insufficientDataActionsList.isEmpty() || !insufficientDataActionsList.isAutoConstruct()) {
+        if (!putMetricAlarmRequest.getInsufficientDataActions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest.getInsufficientDataActions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> insufficientDataActionsList = (com.amazonaws.internal.SdkInternalList<String>) putMetricAlarmRequest
+                    .getInsufficientDataActions();
             int insufficientDataActionsListIndex = 1;
 
             for (String insufficientDataActionsListValue : insufficientDataActionsList) {
@@ -107,9 +111,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             request.addParameter("ExtendedStatistic", StringUtils.fromString(putMetricAlarmRequest.getExtendedStatistic()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) putMetricAlarmRequest
-                .getDimensions();
-        if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {
+        if (!putMetricAlarmRequest.getDimensions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Dimension>) putMetricAlarmRequest.getDimensions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) putMetricAlarmRequest
+                    .getDimensions();
             int dimensionsListIndex = 1;
 
             for (Dimension dimensionsListValue : dimensionsList) {
@@ -135,6 +140,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
 
         if (putMetricAlarmRequest.getEvaluationPeriods() != null) {
             request.addParameter("EvaluationPeriods", StringUtils.fromInteger(putMetricAlarmRequest.getEvaluationPeriods()));
+        }
+
+        if (putMetricAlarmRequest.getDatapointsToAlarm() != null) {
+            request.addParameter("DatapointsToAlarm", StringUtils.fromInteger(putMetricAlarmRequest.getDatapointsToAlarm()));
         }
 
         if (putMetricAlarmRequest.getThreshold() != null) {

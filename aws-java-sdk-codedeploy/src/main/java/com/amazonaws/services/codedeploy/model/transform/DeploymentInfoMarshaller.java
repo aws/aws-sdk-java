@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -77,6 +78,10 @@ public class DeploymentInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalDeploymentStatusInfo").build();
     private static final MarshallingInfo<String> FILEEXISTSBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileExistsBehavior").build();
+    private static final MarshallingInfo<List> DEPLOYMENTSTATUSMESSAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentStatusMessages").build();
+    private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
 
     private static final DeploymentInfoMarshaller instance = new DeploymentInfoMarshaller();
 
@@ -119,6 +124,8 @@ public class DeploymentInfoMarshaller {
             protocolMarshaller.marshall(deploymentInfo.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getAdditionalDeploymentStatusInfo(), ADDITIONALDEPLOYMENTSTATUSINFO_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getFileExistsBehavior(), FILEEXISTSBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(deploymentInfo.getDeploymentStatusMessages(), DEPLOYMENTSTATUSMESSAGES_BINDING);
+            protocolMarshaller.marshall(deploymentInfo.getComputePlatform(), COMPUTEPLATFORM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

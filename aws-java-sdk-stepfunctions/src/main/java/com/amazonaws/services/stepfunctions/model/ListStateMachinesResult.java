@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,9 @@ public class ListStateMachinesResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.List<StateMachineListItem> stateMachines;
     /**
      * <p>
-     * If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results,
-     * make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * <p>
      * The configured <code>maxResults</code> determines how many results can be returned in a single call.
@@ -89,17 +90,18 @@ public class ListStateMachinesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results,
-     * make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * <p>
      * The configured <code>maxResults</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextToken
-     *        If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
+     *        the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all
+     *        other arguments unchanged.</p>
      *        <p>
      *        The configured <code>maxResults</code> determines how many results can be returned in a single call.
      */
@@ -110,16 +112,17 @@ public class ListStateMachinesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results,
-     * make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * <p>
      * The configured <code>maxResults</code> determines how many results can be returned in a single call.
      * </p>
      * 
-     * @return If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of
-     *         results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments
-     *         unchanged.</p>
+     * @return If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
+     *         the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep
+     *         all other arguments unchanged.</p>
      *         <p>
      *         The configured <code>maxResults</code> determines how many results can be returned in a single call.
      */
@@ -130,17 +133,18 @@ public class ListStateMachinesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results,
-     * make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * <p>
      * The configured <code>maxResults</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextToken
-     *        If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of
-     *        results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments
-     *        unchanged.</p>
+     *        If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
+     *        the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all
+     *        other arguments unchanged.</p>
      *        <p>
      *        The configured <code>maxResults</code> determines how many results can be returned in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.

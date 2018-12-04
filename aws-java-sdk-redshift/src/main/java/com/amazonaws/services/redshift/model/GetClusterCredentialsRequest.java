@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 64 alphanumeric characters or hyphens
+     * Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
      * </p>
      * </li>
      * <li>
@@ -199,7 +199,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 64 alphanumeric characters or hyphens
+     * Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
      * </p>
      * </li>
      * <li>
@@ -244,7 +244,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 64 alphanumeric characters or hyphens
+     *        Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -295,7 +295,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 64 alphanumeric characters or hyphens
+     * Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
      * </p>
      * </li>
      * <li>
@@ -339,7 +339,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 64 alphanumeric characters or hyphens
+     *         Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -390,7 +390,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 64 alphanumeric characters or hyphens
+     * Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
      * </p>
      * </li>
      * <li>
@@ -435,7 +435,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 64 alphanumeric characters or hyphens
+     *        Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
      *        </p>
      *        </li>
      *        <li>

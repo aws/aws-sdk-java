@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed resource information.
+ * Information about a resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ResourceDetail" target="_top">AWS API
@@ -30,42 +30,42 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of the resource.
+     * The identifier of the resource.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * ARN of the resource.
+     * The ARN of the resource.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * Name of the resource.
+     * The name of the resource.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Description of the resource.
+     * The description of the resource.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Creation time of the resource.
+     * The creation time of the resource.
      * </p>
      */
     private java.util.Date createdTime;
 
     /**
      * <p>
-     * Identifier of the resource.
+     * The identifier of the resource.
      * </p>
      * 
      * @param id
-     *        Identifier of the resource.
+     *        The identifier of the resource.
      */
 
     public void setId(String id) {
@@ -74,10 +74,10 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of the resource.
+     * The identifier of the resource.
      * </p>
      * 
-     * @return Identifier of the resource.
+     * @return The identifier of the resource.
      */
 
     public String getId() {
@@ -86,11 +86,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of the resource.
+     * The identifier of the resource.
      * </p>
      * 
      * @param id
-     *        Identifier of the resource.
+     *        The identifier of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the resource.
+     * The ARN of the resource.
      * </p>
      * 
      * @param aRN
-     *        ARN of the resource.
+     *        The ARN of the resource.
      */
 
     public void setARN(String aRN) {
@@ -114,10 +114,10 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the resource.
+     * The ARN of the resource.
      * </p>
      * 
-     * @return ARN of the resource.
+     * @return The ARN of the resource.
      */
 
     public String getARN() {
@@ -126,11 +126,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the resource.
+     * The ARN of the resource.
      * </p>
      * 
      * @param aRN
-     *        ARN of the resource.
+     *        The ARN of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the resource.
+     * The name of the resource.
      * </p>
      * 
      * @param name
-     *        Name of the resource.
+     *        The name of the resource.
      */
 
     public void setName(String name) {
@@ -154,10 +154,10 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the resource.
+     * The name of the resource.
      * </p>
      * 
-     * @return Name of the resource.
+     * @return The name of the resource.
      */
 
     public String getName() {
@@ -166,11 +166,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the resource.
+     * The name of the resource.
      * </p>
      * 
      * @param name
-     *        Name of the resource.
+     *        The name of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the resource.
+     * The description of the resource.
      * </p>
      * 
      * @param description
-     *        Description of the resource.
+     *        The description of the resource.
      */
 
     public void setDescription(String description) {
@@ -194,10 +194,10 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the resource.
+     * The description of the resource.
      * </p>
      * 
-     * @return Description of the resource.
+     * @return The description of the resource.
      */
 
     public String getDescription() {
@@ -206,11 +206,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the resource.
+     * The description of the resource.
      * </p>
      * 
      * @param description
-     *        Description of the resource.
+     *        The description of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creation time of the resource.
+     * The creation time of the resource.
      * </p>
      * 
      * @param createdTime
-     *        Creation time of the resource.
+     *        The creation time of the resource.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -234,10 +234,10 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creation time of the resource.
+     * The creation time of the resource.
      * </p>
      * 
-     * @return Creation time of the resource.
+     * @return The creation time of the resource.
      */
 
     public java.util.Date getCreatedTime() {
@@ -246,11 +246,11 @@ public class ResourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creation time of the resource.
+     * The creation time of the resource.
      * </p>
      * 
      * @param createdTime
-     *        Creation time of the resource.
+     *        The creation time of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

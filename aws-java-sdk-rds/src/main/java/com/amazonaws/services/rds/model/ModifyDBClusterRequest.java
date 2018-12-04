@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -147,14 +147,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter does not result in an outage except in the following case, and the change is applied during the next
+     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
      * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. The option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      */
     private String optionGroupName;
@@ -164,8 +164,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -180,7 +180,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -204,13 +204,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -219,8 +219,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1023,25 +1023,25 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter does not result in an outage except in the following case, and the change is applied during the next
+     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
      * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. The option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *        this parameter does not result in an outage except in the following case, and the change is applied during
+     *        this parameter doesn't result in an outage except in the following case, and the change is applied during
      *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *        for this request. If the parameter change results in an option group that enables OEM, this change can
      *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
      *        not interrupted. </p>
      *        <p>
-     *        Permanent options cannot be removed from an option group. The option group cannot be removed from a DB
+     *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
      */
 
@@ -1052,24 +1052,24 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter does not result in an outage except in the following case, and the change is applied during the next
+     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
      * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. The option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @return A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *         this parameter does not result in an outage except in the following case, and the change is applied
-     *         during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
+     *         this parameter doesn't result in an outage except in the following case, and the change is applied during
+     *         the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      *         <code>true</code> for this request. If the parameter change results in an option group that enables OEM,
      *         this change can cause a brief (sub-second) period during which new connections are rejected but existing
      *         connections are not interrupted. </p>
      *         <p>
-     *         Permanent options cannot be removed from an option group. The option group cannot be removed from a DB
+     *         Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *         cluster once it is associated with a DB cluster.
      */
 
@@ -1080,25 +1080,25 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter does not result in an outage except in the following case, and the change is applied during the next
+     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
      * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. The option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *        this parameter does not result in an outage except in the following case, and the change is applied during
+     *        this parameter doesn't result in an outage except in the following case, and the change is applied during
      *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *        for this request. If the parameter change results in an option group that enables OEM, this change can
      *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
      *        not interrupted. </p>
      *        <p>
-     *        Permanent options cannot be removed from an option group. The option group cannot be removed from a DB
+     *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1114,8 +1114,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1130,7 +1130,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1149,8 +1149,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *        time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *        see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1165,7 +1165,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Coordinated Time (UTC).
+     *        Must be in Universal Coordinated Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -1190,8 +1190,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1206,7 +1206,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1224,8 +1224,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The daily time range during which automated backups are created if automated backups are enabled, using
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *         time blocks available, see <a
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *         see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1240,7 +1240,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         Times should be in Universal Coordinated Time (UTC).
+     *         Must be in Universal Coordinated Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -1265,8 +1265,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1281,7 +1281,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1300,8 +1300,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *        time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *        see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1316,7 +1316,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Coordinated Time (UTC).
+     *        Must be in Universal Coordinated Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -1345,13 +1345,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1363,13 +1363,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
-     *        random day of the week. To see the time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        occurring on a random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
-     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
@@ -1387,13 +1387,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1404,13 +1404,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
-     *         a random day of the week. To see the time blocks available, see <a
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *         occurring on a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
-     *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *         </p>
      *         <p>
      *         Constraints: Minimum 30-minute window.
@@ -1428,13 +1428,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1446,13 +1446,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
-     *        random day of the week. To see the time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        occurring on a random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
-     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
@@ -1466,16 +1466,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -1486,15 +1486,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1505,16 +1505,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1527,15 +1527,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */

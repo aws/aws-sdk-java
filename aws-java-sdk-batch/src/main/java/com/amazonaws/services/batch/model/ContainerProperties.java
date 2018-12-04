@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,7 +75,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
-     * vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.
      * </p>
      */
     private Integer vcpus;
@@ -126,7 +126,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -440,7 +440,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
-     * vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.
      * </p>
      * 
      * @param vcpus
@@ -449,7 +449,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.
      */
 
     public void setVcpus(Integer vcpus) {
@@ -463,7 +463,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
-     * vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.
      * </p>
      * 
      * @return The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
@@ -471,7 +471,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and
      *         the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
+     *         run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.
      */
 
     public Integer getVcpus() {
@@ -485,7 +485,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
-     * vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.
      * </p>
      * 
      * @param vcpus
@@ -494,7 +494,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -825,7 +825,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -841,7 +841,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <important>
      *         <p>
-     *         We do not recommend using plain text environment variables for sensitive information, such as credential
+     *         We do not recommend using plaintext environment variables for sensitive information, such as credential
      *         data.
      *         </p>
      *         </important> <note>
@@ -865,7 +865,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -882,7 +882,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <important>
      *        <p>
-     *        We do not recommend using plain text environment variables for sensitive information, such as credential
+     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      *        </important> <note>
@@ -911,7 +911,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -933,7 +933,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <important>
      *        <p>
-     *        We do not recommend using plain text environment variables for sensitive information, such as credential
+     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      *        </important> <note>
@@ -964,7 +964,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -981,7 +981,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <important>
      *        <p>
-     *        We do not recommend using plain text environment variables for sensitive information, such as credential
+     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      *        </important> <note>

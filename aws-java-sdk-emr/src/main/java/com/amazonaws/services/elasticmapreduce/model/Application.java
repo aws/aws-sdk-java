@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list
  * of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts
  * and forwards the argument list to the corresponding installation script as bootstrap action argument. For more
- * information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-mapr.html">Using the
- * MapR Distribution for Hadoop</a>. Currently supported values are:
+ * information, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-mapr.html">Using the MapR
+ * Distribution for Hadoop</a>. Currently supported values are:
  * </p>
  * <ul>
  * <li>

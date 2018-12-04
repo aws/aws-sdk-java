@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -308,6 +308,75 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeAttachDisk(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachInstancesToLoadBalancerResult> attachInstancesToLoadBalancerAsync(AttachInstancesToLoadBalancerRequest request) {
+
+        return attachInstancesToLoadBalancerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachInstancesToLoadBalancerResult> attachInstancesToLoadBalancerAsync(
+            final AttachInstancesToLoadBalancerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AttachInstancesToLoadBalancerRequest, AttachInstancesToLoadBalancerResult> asyncHandler) {
+        final AttachInstancesToLoadBalancerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AttachInstancesToLoadBalancerResult>() {
+            @Override
+            public AttachInstancesToLoadBalancerResult call() throws Exception {
+                AttachInstancesToLoadBalancerResult result = null;
+
+                try {
+                    result = executeAttachInstancesToLoadBalancer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachLoadBalancerTlsCertificateResult> attachLoadBalancerTlsCertificateAsync(
+            AttachLoadBalancerTlsCertificateRequest request) {
+
+        return attachLoadBalancerTlsCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachLoadBalancerTlsCertificateResult> attachLoadBalancerTlsCertificateAsync(
+            final AttachLoadBalancerTlsCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AttachLoadBalancerTlsCertificateRequest, AttachLoadBalancerTlsCertificateResult> asyncHandler) {
+        final AttachLoadBalancerTlsCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AttachLoadBalancerTlsCertificateResult>() {
+            @Override
+            public AttachLoadBalancerTlsCertificateResult call() throws Exception {
+                AttachLoadBalancerTlsCertificateResult result = null;
+
+                try {
+                    result = executeAttachLoadBalancerTlsCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -687,6 +756,74 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLoadBalancerResult> createLoadBalancerAsync(CreateLoadBalancerRequest request) {
+
+        return createLoadBalancerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLoadBalancerResult> createLoadBalancerAsync(final CreateLoadBalancerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerRequest, CreateLoadBalancerResult> asyncHandler) {
+        final CreateLoadBalancerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLoadBalancerResult>() {
+            @Override
+            public CreateLoadBalancerResult call() throws Exception {
+                CreateLoadBalancerResult result = null;
+
+                try {
+                    result = executeCreateLoadBalancer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLoadBalancerTlsCertificateResult> createLoadBalancerTlsCertificateAsync(
+            CreateLoadBalancerTlsCertificateRequest request) {
+
+        return createLoadBalancerTlsCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLoadBalancerTlsCertificateResult> createLoadBalancerTlsCertificateAsync(
+            final CreateLoadBalancerTlsCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerTlsCertificateRequest, CreateLoadBalancerTlsCertificateResult> asyncHandler) {
+        final CreateLoadBalancerTlsCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLoadBalancerTlsCertificateResult>() {
+            @Override
+            public CreateLoadBalancerTlsCertificateResult call() throws Exception {
+                CreateLoadBalancerTlsCertificateResult result = null;
+
+                try {
+                    result = executeCreateLoadBalancerTlsCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDiskResult> deleteDiskAsync(DeleteDiskRequest request) {
 
         return deleteDiskAsync(request, null);
@@ -918,6 +1055,74 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLoadBalancerResult> deleteLoadBalancerAsync(DeleteLoadBalancerRequest request) {
+
+        return deleteLoadBalancerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLoadBalancerResult> deleteLoadBalancerAsync(final DeleteLoadBalancerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerRequest, DeleteLoadBalancerResult> asyncHandler) {
+        final DeleteLoadBalancerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLoadBalancerResult>() {
+            @Override
+            public DeleteLoadBalancerResult call() throws Exception {
+                DeleteLoadBalancerResult result = null;
+
+                try {
+                    result = executeDeleteLoadBalancer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLoadBalancerTlsCertificateResult> deleteLoadBalancerTlsCertificateAsync(
+            DeleteLoadBalancerTlsCertificateRequest request) {
+
+        return deleteLoadBalancerTlsCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLoadBalancerTlsCertificateResult> deleteLoadBalancerTlsCertificateAsync(
+            final DeleteLoadBalancerTlsCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerTlsCertificateRequest, DeleteLoadBalancerTlsCertificateResult> asyncHandler) {
+        final DeleteLoadBalancerTlsCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLoadBalancerTlsCertificateResult>() {
+            @Override
+            public DeleteLoadBalancerTlsCertificateResult call() throws Exception {
+                DeleteLoadBalancerTlsCertificateResult result = null;
+
+                try {
+                    result = executeDeleteLoadBalancerTlsCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachDiskResult> detachDiskAsync(DetachDiskRequest request) {
 
         return detachDiskAsync(request, null);
@@ -935,6 +1140,41 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeDetachDisk(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachInstancesFromLoadBalancerResult> detachInstancesFromLoadBalancerAsync(
+            DetachInstancesFromLoadBalancerRequest request) {
+
+        return detachInstancesFromLoadBalancerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachInstancesFromLoadBalancerResult> detachInstancesFromLoadBalancerAsync(
+            final DetachInstancesFromLoadBalancerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetachInstancesFromLoadBalancerRequest, DetachInstancesFromLoadBalancerResult> asyncHandler) {
+        final DetachInstancesFromLoadBalancerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetachInstancesFromLoadBalancerResult>() {
+            @Override
+            public DetachInstancesFromLoadBalancerResult call() throws Exception {
+                DetachInstancesFromLoadBalancerResult result = null;
+
+                try {
+                    result = executeDetachInstancesFromLoadBalancer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1644,6 +1884,139 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetLoadBalancerResult> getLoadBalancerAsync(GetLoadBalancerRequest request) {
+
+        return getLoadBalancerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoadBalancerResult> getLoadBalancerAsync(final GetLoadBalancerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLoadBalancerRequest, GetLoadBalancerResult> asyncHandler) {
+        final GetLoadBalancerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLoadBalancerResult>() {
+            @Override
+            public GetLoadBalancerResult call() throws Exception {
+                GetLoadBalancerResult result = null;
+
+                try {
+                    result = executeGetLoadBalancer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoadBalancerMetricDataResult> getLoadBalancerMetricDataAsync(GetLoadBalancerMetricDataRequest request) {
+
+        return getLoadBalancerMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoadBalancerMetricDataResult> getLoadBalancerMetricDataAsync(final GetLoadBalancerMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLoadBalancerMetricDataRequest, GetLoadBalancerMetricDataResult> asyncHandler) {
+        final GetLoadBalancerMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLoadBalancerMetricDataResult>() {
+            @Override
+            public GetLoadBalancerMetricDataResult call() throws Exception {
+                GetLoadBalancerMetricDataResult result = null;
+
+                try {
+                    result = executeGetLoadBalancerMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoadBalancerTlsCertificatesResult> getLoadBalancerTlsCertificatesAsync(GetLoadBalancerTlsCertificatesRequest request) {
+
+        return getLoadBalancerTlsCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoadBalancerTlsCertificatesResult> getLoadBalancerTlsCertificatesAsync(
+            final GetLoadBalancerTlsCertificatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLoadBalancerTlsCertificatesRequest, GetLoadBalancerTlsCertificatesResult> asyncHandler) {
+        final GetLoadBalancerTlsCertificatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLoadBalancerTlsCertificatesResult>() {
+            @Override
+            public GetLoadBalancerTlsCertificatesResult call() throws Exception {
+                GetLoadBalancerTlsCertificatesResult result = null;
+
+                try {
+                    result = executeGetLoadBalancerTlsCertificates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoadBalancersResult> getLoadBalancersAsync(GetLoadBalancersRequest request) {
+
+        return getLoadBalancersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoadBalancersResult> getLoadBalancersAsync(final GetLoadBalancersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLoadBalancersRequest, GetLoadBalancersResult> asyncHandler) {
+        final GetLoadBalancersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLoadBalancersResult>() {
+            @Override
+            public GetLoadBalancersResult call() throws Exception {
+                GetLoadBalancersResult result = null;
+
+                try {
+                    result = executeGetLoadBalancers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOperationResult> getOperationAsync(GetOperationRequest request) {
 
         return getOperationAsync(request, null);
@@ -2189,6 +2562,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeUpdateDomainEntry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLoadBalancerAttributeResult> updateLoadBalancerAttributeAsync(UpdateLoadBalancerAttributeRequest request) {
+
+        return updateLoadBalancerAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLoadBalancerAttributeResult> updateLoadBalancerAttributeAsync(final UpdateLoadBalancerAttributeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLoadBalancerAttributeRequest, UpdateLoadBalancerAttributeResult> asyncHandler) {
+        final UpdateLoadBalancerAttributeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLoadBalancerAttributeResult>() {
+            @Override
+            public UpdateLoadBalancerAttributeResult call() throws Exception {
+                UpdateLoadBalancerAttributeResult result = null;
+
+                try {
+                    result = executeUpdateLoadBalancerAttribute(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

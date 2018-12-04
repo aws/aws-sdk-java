@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ import com.amazonaws.services.rds.model.*;
  * Amazon Aurora database server. These capabilities mean that the code, applications, and tools you already use today
  * with your existing databases work with Amazon RDS without modification. Amazon RDS automatically backs up your
  * database and maintains the database software that powers your DB instance. Amazon RDS is flexible: you can scale your
- * database instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web
+ * DB instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web
  * Services, there are no up-front investments, and you pay only for the resources you use.
  * </p>
  * <p>
@@ -259,9 +259,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * You cannot authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS DB instance in
-     * another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in
-     * another.
+     * You can't authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS DB instance in another.
+     * You can't authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another.
      * </p>
      * </note>
      * <p>
@@ -289,9 +288,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * You cannot authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS DB instance in
-     * another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in
-     * another.
+     * You can't authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS DB instance in another.
+     * You can't authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another.
      * </p>
      * </note>
      * <p>
@@ -364,8 +362,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the key to use to encrypt the copy
-     * of the DB cluster snapshot in the destination AWS Region.
+     * <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the
+     * copy of the DB cluster snapshot in the destination AWS Region.
      * </p>
      * </li>
      * <li>
@@ -395,7 +393,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
      * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS
-     * Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 region, then your
+     * Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
      * <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
      * </p>
@@ -465,8 +463,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the key to use to encrypt the copy
-     * of the DB cluster snapshot in the destination AWS Region.
+     * <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the
+     * copy of the DB cluster snapshot in the destination AWS Region.
      * </p>
      * </li>
      * <li>
@@ -496,7 +494,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
      * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS
-     * Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 region, then your
+     * Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
      * <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
      * </p>
@@ -593,9 +591,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB snapshot copy.
      * </p>
      * <p>
-     * You cannot copy an encrypted, shared DB snapshot from one AWS Region to another.
-     * </p>
-     * <p>
      * For more information about copying snapshots, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying a DB Snapshot</a>
      * in the Amazon RDS User Guide.
@@ -616,9 +611,6 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * You can copy a snapshot from one AWS Region to another. In that case, the AWS Region where you call the
      * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB snapshot copy.
-     * </p>
-     * <p>
-     * You cannot copy an encrypted, shared DB snapshot from one AWS Region to another.
      * </p>
      * <p>
      * For more information about copying snapshots, see <a
@@ -883,29 +875,24 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Creates a new DB instance that acts as a Read Replica for an existing source DB instance. You can create a Read
-     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL.
-     * </p>
-     * <note>
-     * <p>
-     * Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code> action to create a DB
-     * instance for an Aurora DB cluster.
-     * </p>
-     * </note>
-     * <p>
-     * All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance
-     * attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance,
-     * except as specified below.
-     * </p>
-     * <important>
-     * <p>
-     * The source DB instance must have backup retention enabled.
-     * </p>
-     * </important>
-     * <p>
-     * For more information, see <a
+     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
      * and MariaDB Read Replicas</a>.
      * </p>
+     * <p>
+     * Amazon Aurora doesn't support this action. You must call the <code>CreateDBInstance</code> action to create a DB
+     * instance for an Aurora DB cluster.
+     * </p>
+     * <p>
+     * All Read Replica DB instances are created with backups disabled. All other DB instance attributes (including DB
+     * security groups and DB parameter groups) are inherited from the source DB instance, except as specified
+     * following.
+     * </p>
+     * <important>
+     * <p>
+     * Your source DB instance must have backup retention enabled.
+     * </p>
+     * </important>
      * 
      * @param createDBInstanceReadReplicaRequest
      * @return A Java Future containing the result of the CreateDBInstanceReadReplica operation returned by the service.
@@ -918,29 +905,24 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Creates a new DB instance that acts as a Read Replica for an existing source DB instance. You can create a Read
-     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL.
-     * </p>
-     * <note>
-     * <p>
-     * Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code> action to create a DB
-     * instance for an Aurora DB cluster.
-     * </p>
-     * </note>
-     * <p>
-     * All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance
-     * attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance,
-     * except as specified below.
-     * </p>
-     * <important>
-     * <p>
-     * The source DB instance must have backup retention enabled.
-     * </p>
-     * </important>
-     * <p>
-     * For more information, see <a
+     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
      * and MariaDB Read Replicas</a>.
      * </p>
+     * <p>
+     * Amazon Aurora doesn't support this action. You must call the <code>CreateDBInstance</code> action to create a DB
+     * instance for an Aurora DB cluster.
+     * </p>
+     * <p>
+     * All Read Replica DB instances are created with backups disabled. All other DB instance attributes (including DB
+     * security groups and DB parameter groups) are inherited from the source DB instance, except as specified
+     * following.
+     * </p>
+     * <important>
+     * <p>
+     * Your source DB instance must have backup retention enabled.
+     * </p>
+     * </important>
      * 
      * @param createDBInstanceReadReplicaRequest
      * @param asyncHandler
@@ -1214,7 +1196,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all
-     * automated backups for that DB cluster are deleted and cannot be recovered. Manual DB cluster snapshots of the
+     * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
      * </p>
      * <p/>
@@ -1235,7 +1217,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all
-     * automated backups for that DB cluster are deleted and cannot be recovered. Manual DB cluster snapshots of the
+     * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
      * </p>
      * <p/>
@@ -1260,7 +1242,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted cannot be associated
+     * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated
      * with any DB clusters.
      * </p>
      * <p>
@@ -1281,7 +1263,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted cannot be associated
+     * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated
      * with any DB clusters.
      * </p>
      * <p>
@@ -1359,13 +1341,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all
-     * automated backups for that instance are deleted and cannot be recovered. Manual DB snapshots of the DB instance
-     * to be deleted by <code>DeleteDBInstance</code> are not deleted.
+     * automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to
+     * be deleted by <code>DeleteDBInstance</code> are not deleted.
      * </p>
      * <p>
      * If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code> until the DB
      * snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this
-     * operation. The action cannot be canceled or reverted once submitted.
+     * operation. The action can't be canceled or reverted once submitted.
      * </p>
      * <p>
      * Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
@@ -1373,7 +1355,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete the DB instance if both of
+     * If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of
      * the following conditions are true:
      * </p>
      * <ul>
@@ -1405,13 +1387,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all
-     * automated backups for that instance are deleted and cannot be recovered. Manual DB snapshots of the DB instance
-     * to be deleted by <code>DeleteDBInstance</code> are not deleted.
+     * automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to
+     * be deleted by <code>DeleteDBInstance</code> are not deleted.
      * </p>
      * <p>
      * If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code> until the DB
      * snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this
-     * operation. The action cannot be canceled or reverted once submitted.
+     * operation. The action can't be canceled or reverted once submitted.
      * </p>
      * <p>
      * Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
@@ -1419,7 +1401,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete the DB instance if both of
+     * If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of
      * the following conditions are true:
      * </p>
      * <ul>
@@ -1455,7 +1437,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be associated with any DB
+     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be associated with any DB
      * instances.
      * </p>
      * 
@@ -1469,7 +1451,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be associated with any DB
+     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be associated with any DB
      * instances.
      * </p>
      * 
@@ -1678,7 +1660,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * toward that quota, and the quota's maximum value.
      * </p>
      * <p>
-     * This command does not take any parameters.
+     * This command doesn't take any parameters.
      * </p>
      * 
      * @param describeAccountAttributesRequest
@@ -1697,7 +1679,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * toward that quota, and the quota's maximum value.
      * </p>
      * <p>
-     * This command does not take any parameters.
+     * This command doesn't take any parameters.
      * </p>
      * 
      * @param describeAccountAttributesRequest
@@ -2980,7 +2962,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of the source AWS regions where the current AWS Region can create a Read Replica or copy a DB
+     * Returns a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB
      * snapshot from. This API action supports pagination.
      * </p>
      * 
@@ -2994,7 +2976,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of the source AWS regions where the current AWS Region can create a Read Replica or copy a DB
+     * Returns a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB
      * snapshot from. This API action supports pagination.
      * </p>
      * 
@@ -3611,9 +3593,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers
-     * using this call; to change source identifiers for a subscription, use the
-     * <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.
+     * Modifies an existing RDS event notification subscription. Note that you can't modify the source identifiers using
+     * this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and
+     * <a>RemoveSourceIdentifierFromSubscription</a> calls.
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in the <a
@@ -3631,9 +3613,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers
-     * using this call; to change source identifiers for a subscription, use the
-     * <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.
+     * Modifies an existing RDS event notification subscription. Note that you can't modify the source identifiers using
+     * this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and
+     * <a>RemoveSourceIdentifierFromSubscription</a> calls.
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in the <a
@@ -3690,11 +3672,22 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Promotes a Read Replica DB instance to a standalone DB instance.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
-     * We recommend that you enable automated backups on your Read Replica before promoting the Read Replica. This
-     * ensures that no backup is taken during the promotion process. Once the instance is promoted to a primary
-     * instance, backups are taken based on your backup settings.
+     * Backup duration is a function of the amount of changes to the database since the previous backup. If you plan to
+     * promote a Read Replica to a standalone instance, we recommend that you enable backups and complete at least one
+     * backup prior to promotion. In addition, a Read Replica cannot be promoted to a standalone instance when it is in
+     * the <code>backing-up</code> status. If you have enabled backups on your Read Replica, configure the automated
+     * backup window so that daily backups do not interfere with Read Replica promotion.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param promoteReadReplicaRequest
@@ -3710,11 +3703,22 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Promotes a Read Replica DB instance to a standalone DB instance.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
-     * We recommend that you enable automated backups on your Read Replica before promoting the Read Replica. This
-     * ensures that no backup is taken during the promotion process. Once the instance is promoted to a primary
-     * instance, backups are taken based on your backup settings.
+     * Backup duration is a function of the amount of changes to the database since the previous backup. If you plan to
+     * promote a Read Replica to a standalone instance, we recommend that you enable backups and complete at least one
+     * backup prior to promotion. In addition, a Read Replica cannot be promoted to a standalone instance when it is in
+     * the <code>backing-up</code> status. If you have enabled backups on your Read Replica, configure the automated
+     * backup window so that daily backups do not interfere with Read Replica promotion.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param promoteReadReplicaRequest
@@ -3798,21 +3802,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any
-     * modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a
-     * momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is
-     * configured for MultiAZ, it is possible that the reboot is conducted through a failover. An Amazon RDS event is
-     * created when the reboot is completed.
+     * You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain
+     * modifications, or if you change the DB parameter group associated with the DB instance, you must reboot the
+     * instance for the changes to take effect.
      * </p>
      * <p>
-     * If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other
-     * during the reboot. You might force a failover to test the availability of your DB instance deployment or to
-     * restore operations to the original AZ after a failover occurs.
+     * Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary
+     * outage, during which the DB instance status is set to rebooting.
      * </p>
      * <p>
-     * The time required to reboot is a function of the specific database engine's crash recovery process. To improve
-     * the reboot time, we recommend that you reduce database activities as much as possible during the reboot process
-     * to reduce rollback activity for in-transit transactions.
+     * For more information about rebooting, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB
+     * Instance</a>.
      * </p>
      * 
      * @param rebootDBInstanceRequest
@@ -3825,21 +3826,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any
-     * modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a
-     * momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is
-     * configured for MultiAZ, it is possible that the reboot is conducted through a failover. An Amazon RDS event is
-     * created when the reboot is completed.
+     * You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain
+     * modifications, or if you change the DB parameter group associated with the DB instance, you must reboot the
+     * instance for the changes to take effect.
      * </p>
      * <p>
-     * If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other
-     * during the reboot. You might force a failover to test the availability of your DB instance deployment or to
-     * restore operations to the original AZ after a failover occurs.
+     * Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary
+     * outage, during which the DB instance status is set to rebooting.
      * </p>
      * <p>
-     * The time required to reboot is a function of the specific database engine's crash recovery process. To improve
-     * the reboot time, we recommend that you reduce database activities as much as possible during the reboot process
-     * to reduce rollback activity for in-transit transactions.
+     * For more information about rebooting, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB
+     * Instance</a>.
      * </p>
      * 
      * @param rebootDBInstanceRequest
@@ -4243,7 +4241,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * If your intent is to replace your original DB instance with the new, restored DB instance, then rename your
-     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does not allow two DB
+     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
      * instances with the same name. Once you have renamed your original DB instance with a different identifier, then
      * you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the
      * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB
@@ -4253,6 +4251,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+     * <a>RestoreDBClusterFromSnapshot</a>.
+     * </p>
+     * </note>
      * 
      * @param restoreDBInstanceFromDBSnapshotRequest
      * @return A Java Future containing the result of the RestoreDBInstanceFromDBSnapshot operation returned by the
@@ -4273,7 +4277,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * If your intent is to replace your original DB instance with the new, restored DB instance, then rename your
-     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does not allow two DB
+     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
      * instances with the same name. Once you have renamed your original DB instance with a different identifier, then
      * you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the
      * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB
@@ -4283,6 +4287,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+     * <a>RestoreDBClusterFromSnapshot</a>.
+     * </p>
+     * </note>
      * 
      * @param restoreDBInstanceFromDBSnapshotRequest
      * @param asyncHandler
@@ -4300,6 +4310,45 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can
+     * create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then
+     * restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into
+     * an Amazon RDS MySQL DB Instance</a>.
+     * </p>
+     * 
+     * @param restoreDBInstanceFromS3Request
+     * @return A Java Future containing the result of the RestoreDBInstanceFromS3 operation returned by the service.
+     * @sample AmazonRDSAsync.RestoreDBInstanceFromS3
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstance> restoreDBInstanceFromS3Async(RestoreDBInstanceFromS3Request restoreDBInstanceFromS3Request);
+
+    /**
+     * <p>
+     * Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can
+     * create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then
+     * restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into
+     * an Amazon RDS MySQL DB Instance</a>.
+     * </p>
+     * 
+     * @param restoreDBInstanceFromS3Request
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreDBInstanceFromS3 operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.RestoreDBInstanceFromS3
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstance> restoreDBInstanceFromS3Async(RestoreDBInstanceFromS3Request restoreDBInstanceFromS3Request,
+            com.amazonaws.handlers.AsyncHandler<RestoreDBInstanceFromS3Request, DBInstance> asyncHandler);
+
+    /**
+     * <p>
      * Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time
      * identified by the LatestRestorableTime property. You can restore to a point up to the number of days specified by
      * the BackupRetentionPeriod property.
@@ -4311,6 +4360,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment
      * and not a single-AZ deployment.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+     * <a>RestoreDBClusterToPointInTime</a>.
+     * </p>
+     * </note>
      * 
      * @param restoreDBInstanceToPointInTimeRequest
      * @return A Java Future containing the result of the RestoreDBInstanceToPointInTime operation returned by the
@@ -4334,6 +4389,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment
      * and not a single-AZ deployment.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+     * <a>RestoreDBClusterToPointInTime</a>.
+     * </p>
+     * </note>
      * 
      * @param restoreDBInstanceToPointInTimeRequest
      * @param asyncHandler
@@ -4391,6 +4452,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
      * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </note>
      * 
      * @param startDBInstanceRequest
      * @return A Java Future containing the result of the StartDBInstance operation returned by the service.
@@ -4405,6 +4471,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
      * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </note>
      * 
      * @param startDBInstanceRequest
      * @param asyncHandler
@@ -4426,6 +4497,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
      * AWS RDS user guide.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </note>
      * 
      * @param stopDBInstanceRequest
      * @return A Java Future containing the result of the StopDBInstance operation returned by the service.
@@ -4442,6 +4518,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
      * AWS RDS user guide.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </note>
      * 
      * @param stopDBInstanceRequest
      * @param asyncHandler

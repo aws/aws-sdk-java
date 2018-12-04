@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,27 +30,27 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to
-     * preprocess the records in the stream.
+     * The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.
      * </p>
      */
     private String resourceARNUpdate;
     /**
      * <p>
-     * The ARN of the new IAM role used to access the AWS Lambda function.
+     * The ARN of the new IAM role that is used to access the AWS Lambda function.
      * </p>
      */
     private String roleARNUpdate;
 
     /**
      * <p>
-     * The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to
-     * preprocess the records in the stream.
+     * The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.
      * </p>
      * 
      * @param resourceARNUpdate
-     *        The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is
-     *        used to preprocess the records in the stream.
+     *        The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
+     *        Lambda</a> function that is used to preprocess the records in the stream.
      */
 
     public void setResourceARNUpdate(String resourceARNUpdate) {
@@ -59,12 +59,12 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to
-     * preprocess the records in the stream.
+     * The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.
      * </p>
      * 
-     * @return The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is
-     *         used to preprocess the records in the stream.
+     * @return The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
+     *         Lambda</a> function that is used to preprocess the records in the stream.
      */
 
     public String getResourceARNUpdate() {
@@ -73,13 +73,13 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to
-     * preprocess the records in the stream.
+     * The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.
      * </p>
      * 
      * @param resourceARNUpdate
-     *        The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is
-     *        used to preprocess the records in the stream.
+     *        The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
+     *        Lambda</a> function that is used to preprocess the records in the stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the new IAM role used to access the AWS Lambda function.
+     * The ARN of the new IAM role that is used to access the AWS Lambda function.
      * </p>
      * 
      * @param roleARNUpdate
-     *        The ARN of the new IAM role used to access the AWS Lambda function.
+     *        The ARN of the new IAM role that is used to access the AWS Lambda function.
      */
 
     public void setRoleARNUpdate(String roleARNUpdate) {
@@ -103,10 +103,10 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the new IAM role used to access the AWS Lambda function.
+     * The ARN of the new IAM role that is used to access the AWS Lambda function.
      * </p>
      * 
-     * @return The ARN of the new IAM role used to access the AWS Lambda function.
+     * @return The ARN of the new IAM role that is used to access the AWS Lambda function.
      */
 
     public String getRoleARNUpdate() {
@@ -115,11 +115,11 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the new IAM role used to access the AWS Lambda function.
+     * The ARN of the new IAM role that is used to access the AWS Lambda function.
      * </p>
      * 
      * @param roleARNUpdate
-     *        The ARN of the new IAM role used to access the AWS Lambda function.
+     *        The ARN of the new IAM role that is used to access the AWS Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

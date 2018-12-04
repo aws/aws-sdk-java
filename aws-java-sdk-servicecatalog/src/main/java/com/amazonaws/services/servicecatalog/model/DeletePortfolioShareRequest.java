@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ public class DeletePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     private String portfolioId;
     /**
      * <p>
-     * The account ID associated with the share to delete.
+     * The AWS account ID.
      * </p>
      */
     private String accountId;
@@ -242,11 +242,11 @@ public class DeletePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID associated with the share to delete.
+     * The AWS account ID.
      * </p>
      * 
      * @param accountId
-     *        The account ID associated with the share to delete.
+     *        The AWS account ID.
      */
 
     public void setAccountId(String accountId) {
@@ -255,10 +255,10 @@ public class DeletePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID associated with the share to delete.
+     * The AWS account ID.
      * </p>
      * 
-     * @return The account ID associated with the share to delete.
+     * @return The AWS account ID.
      */
 
     public String getAccountId() {
@@ -267,11 +267,11 @@ public class DeletePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID associated with the share to delete.
+     * The AWS account ID.
      * </p>
      * 
      * @param accountId
-     *        The account ID associated with the share to delete.
+     *        The AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

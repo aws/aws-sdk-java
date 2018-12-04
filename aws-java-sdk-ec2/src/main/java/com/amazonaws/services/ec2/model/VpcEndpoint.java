@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The name of the AWS service to which the endpoint is associated.
+     * The name of the service to which the endpoint is associated.
      * </p>
      */
     private String serviceName;
@@ -260,11 +260,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service to which the endpoint is associated.
+     * The name of the service to which the endpoint is associated.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service to which the endpoint is associated.
+     *        The name of the service to which the endpoint is associated.
      */
 
     public void setServiceName(String serviceName) {
@@ -273,10 +273,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service to which the endpoint is associated.
+     * The name of the service to which the endpoint is associated.
      * </p>
      * 
-     * @return The name of the AWS service to which the endpoint is associated.
+     * @return The name of the service to which the endpoint is associated.
      */
 
     public String getServiceName() {
@@ -285,11 +285,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service to which the endpoint is associated.
+     * The name of the service to which the endpoint is associated.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service to which the endpoint is associated.
+     *        The name of the service to which the endpoint is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

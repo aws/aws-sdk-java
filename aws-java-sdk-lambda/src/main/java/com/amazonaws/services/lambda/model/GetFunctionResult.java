@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
+    /**
+     * <p>
+     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+     * </p>
+     */
+    private Concurrency concurrency;
 
     /**
      * @param configuration
@@ -153,6 +159,49 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param concurrency
+     *        The concurrent execution limit set for this function. For more information, see
+     *        <a>concurrent-executions</a>.
+     */
+
+    public void setConcurrency(Concurrency concurrency) {
+        this.concurrency = concurrency;
+    }
+
+    /**
+     * <p>
+     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @return The concurrent execution limit set for this function. For more information, see
+     *         <a>concurrent-executions</a>.
+     */
+
+    public Concurrency getConcurrency() {
+        return this.concurrency;
+    }
+
+    /**
+     * <p>
+     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param concurrency
+     *        The concurrent execution limit set for this function. For more information, see
+     *        <a>concurrent-executions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFunctionResult withConcurrency(Concurrency concurrency) {
+        setConcurrency(concurrency);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -168,7 +217,9 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getCode() != null)
             sb.append("Code: ").append(getCode()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getConcurrency() != null)
+            sb.append("Concurrency: ").append(getConcurrency());
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +246,10 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getConcurrency() == null ^ this.getConcurrency() == null)
+            return false;
+        if (other.getConcurrency() != null && other.getConcurrency().equals(this.getConcurrency()) == false)
+            return false;
         return true;
     }
 
@@ -206,6 +261,7 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConcurrency() == null) ? 0 : getConcurrency().hashCode());
         return hashCode;
     }
 

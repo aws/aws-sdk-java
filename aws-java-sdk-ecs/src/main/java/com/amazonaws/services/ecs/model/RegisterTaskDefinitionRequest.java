@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,33 +38,46 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this role. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
-     * the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String taskRoleArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     */
+    private String executionRoleArn;
+    /**
+     * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in your
-     * container definitions, and the task's containers do not have external connectivity. The <code>host</code> and
-     * <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the
-     * EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
-     * the corresponding host port (for the <code>host</code> network mode) or the attached ENI port (for the
-     * <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a single
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -91,6 +104,115 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
+    /**
+     * <p>
+     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
+    /**
+     * <p>
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
+     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>memory</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6
+     * GB), 7168 (7 GB), 8192 (8 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024
+     * (1 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String cpu;
+    /**
+     * <p>
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If using the EC2 launch type, this field is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String memory;
 
     /**
      * <p>
@@ -149,7 +271,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this role. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
-     * the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param taskRoleArn
@@ -157,7 +279,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        All containers in this task are granted the permissions that are specified in this role. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
-     *        Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setTaskRoleArn(String taskRoleArn) {
@@ -169,14 +291,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this role. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
-     * the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can
      *         assume. All containers in this task are granted the permissions that are specified in this role. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
-     *         Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getTaskRoleArn() {
@@ -188,7 +310,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All
      * containers in this task are granted the permissions that are specified in this role. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
-     * the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param taskRoleArn
@@ -196,7 +318,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        All containers in this task are granted the permissions that are specified in this role. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
-     *        Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,27 +329,79 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *        Docker daemon can assume.
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *         Docker daemon can assume.
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *        Docker daemon can assume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskDefinitionRequest withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in your
-     * container definitions, and the task's containers do not have external connectivity. The <code>host</code> and
-     * <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the
-     * EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
-     * the corresponding host port (for the <code>host</code> network mode) or the attached ENI port (for the
-     * <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a single
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -237,26 +411,32 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in
-     *        your container definitions, and the task's containers do not have external connectivity. The
-     *        <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     *        containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     *        <code>bridge</code> mode.</p>
+     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *        <p>
      *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
-     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached ENI port
-     *        (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
+     *        host port mappings.
      *        </p>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a
+     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -272,25 +452,31 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in your
-     * container definitions, and the task's containers do not have external connectivity. The <code>host</code> and
-     * <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the
-     * EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
-     * the corresponding host port (for the <code>host</code> network mode) or the attached ENI port (for the
-     * <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a single
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -299,26 +485,32 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *         <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *         <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in
-     *         your container definitions, and the task's containers do not have external connectivity. The
-     *         <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     *         containers because they use the EC2 network stack instead of the virtualized network stack provided by
-     *         the <code>bridge</code> mode.</p>
+     *         <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *         If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *         <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *         containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *         offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *         the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *         <p>
      *         With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
-     *         directly to the corresponding host port (for the <code>host</code> network mode) or the attached ENI port
-     *         (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     *         directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *         network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     *         dynamic host port mappings.
      *         </p>
      *         <p>
      *         If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
      *         must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *         definition. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *         in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <p>
-     *         If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a
+     *         If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *         single container instance when port mappings are used.
+     *         </p>
+     *         <p>
+     *         Docker for Windows uses different network modes than Docker for Linux. When you register a task
+     *         definition with Windows containers, you must not specify a network mode.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -335,25 +527,31 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in your
-     * container definitions, and the task's containers do not have external connectivity. The <code>host</code> and
-     * <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the
-     * EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
-     * the corresponding host port (for the <code>host</code> network mode) or the attached ENI port (for the
-     * <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a single
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -363,26 +561,32 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in
-     *        your container definitions, and the task's containers do not have external connectivity. The
-     *        <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     *        containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     *        <code>bridge</code> mode.</p>
+     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *        <p>
      *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
-     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached ENI port
-     *        (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
+     *        host port mappings.
      *        </p>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a
+     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -400,25 +604,31 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in your
-     * container definitions, and the task's containers do not have external connectivity. The <code>host</code> and
-     * <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the
-     * EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
-     * the corresponding host port (for the <code>host</code> network mode) or the attached ENI port (for the
-     * <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a single
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -428,26 +638,32 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in
-     *        your container definitions, and the task's containers do not have external connectivity. The
-     *        <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     *        containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     *        <code>bridge</code> mode.</p>
+     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *        <p>
      *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
-     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached ENI port
-     *        (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
+     *        host port mappings.
      *        </p>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a
+     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -463,25 +679,31 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in your
-     * container definitions, and the task's containers do not have external connectivity. The <code>host</code> and
-     * <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the
-     * EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
-     * the corresponding host port (for the <code>host</code> network mode) or the attached ENI port (for the
-     * <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
-     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a single
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -491,26 +713,32 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If the network mode is set to <code>none</code>, you cannot specify port mappings in
-     *        your container definitions, and the task's containers do not have external connectivity. The
-     *        <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     *        containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     *        <code>bridge</code> mode.</p>
+     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *        <p>
      *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
-     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached ENI port
-     *        (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
+     *        host port mappings.
      *        </p>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If the network mode is <code>host</code>, you can not run multiple instantiations of the same task on a
+     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -756,6 +984,728 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * </p>
+     * 
+     * @return The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * @see Compatibility
+     */
+
+    public java.util.List<String> getRequiresCompatibilities() {
+        if (requiresCompatibilities == null) {
+            requiresCompatibilities = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return requiresCompatibilities;
+    }
+
+    /**
+     * <p>
+     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * </p>
+     * 
+     * @param requiresCompatibilities
+     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * @see Compatibility
+     */
+
+    public void setRequiresCompatibilities(java.util.Collection<String> requiresCompatibilities) {
+        if (requiresCompatibilities == null) {
+            this.requiresCompatibilities = null;
+            return;
+        }
+
+        this.requiresCompatibilities = new com.amazonaws.internal.SdkInternalList<String>(requiresCompatibilities);
+    }
+
+    /**
+     * <p>
+     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRequiresCompatibilities(java.util.Collection)} or
+     * {@link #withRequiresCompatibilities(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param requiresCompatibilities
+     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public RegisterTaskDefinitionRequest withRequiresCompatibilities(String... requiresCompatibilities) {
+        if (this.requiresCompatibilities == null) {
+            setRequiresCompatibilities(new com.amazonaws.internal.SdkInternalList<String>(requiresCompatibilities.length));
+        }
+        for (String ele : requiresCompatibilities) {
+            this.requiresCompatibilities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * </p>
+     * 
+     * @param requiresCompatibilities
+     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public RegisterTaskDefinitionRequest withRequiresCompatibilities(java.util.Collection<String> requiresCompatibilities) {
+        setRequiresCompatibilities(requiresCompatibilities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * </p>
+     * 
+     * @param requiresCompatibilities
+     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public RegisterTaskDefinitionRequest withRequiresCompatibilities(Compatibility... requiresCompatibilities) {
+        com.amazonaws.internal.SdkInternalList<String> requiresCompatibilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                requiresCompatibilities.length);
+        for (Compatibility value : requiresCompatibilities) {
+            requiresCompatibilitiesCopy.add(value.toString());
+        }
+        if (getRequiresCompatibilities() == null) {
+            setRequiresCompatibilities(requiresCompatibilitiesCopy);
+        } else {
+            getRequiresCompatibilities().addAll(requiresCompatibilitiesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
+     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>memory</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6
+     * GB), 7168 (7 GB), 8192 (8 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024
+     * (1 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param cpu
+     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
+     *        a task definition but will be converted to an integer indicating the CPU units when the task definition is
+     *        registered.</p> <note>
+     *        <p>
+     *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *        container-level resources for Windows containers.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>memory</code> parameter:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     *        6144 (6 GB), 7168 (7 GB), 8192 (8 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments
+     *        of 1024 (1 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     *        of 1024 (1 GB)
+     *        </p>
+     *        </li>
+     */
+
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
+
+    /**
+     * <p>
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
+     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>memory</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6
+     * GB), 7168 (7 GB), 8192 (8 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024
+     * (1 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     *         <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
+     *         a task definition but will be converted to an integer indicating the CPU units when the task definition
+     *         is registered.</p> <note>
+     *         <p>
+     *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *         container-level resources for Windows containers.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     *         units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *         </p>
+     *         <p>
+     *         If using the Fargate launch type, this field is required and you must use one of the following values,
+     *         which determines your range of supported values for the <code>memory</code> parameter:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     *         6144 (6 GB), 7168 (7 GB), 8192 (8 GB)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments
+     *         of 1024 (1 GB)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     *         of 1024 (1 GB)
+     *         </p>
+     *         </li>
+     */
+
+    public String getCpu() {
+        return this.cpu;
+    }
+
+    /**
+     * <p>
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
+     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>memory</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6
+     * GB), 7168 (7 GB), 8192 (8 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024
+     * (1 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param cpu
+     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
+     *        a task definition but will be converted to an integer indicating the CPU units when the task definition is
+     *        registered.</p> <note>
+     *        <p>
+     *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *        container-level resources for Windows containers.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>memory</code> parameter:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     *        6144 (6 GB), 7168 (7 GB), 8192 (8 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments
+     *        of 1024 (1 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     *        of 1024 (1 GB)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskDefinitionRequest withCpu(String cpu) {
+        setCpu(cpu);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If using the EC2 launch type, this field is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param memory
+     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     *        definition but will be converted to an integer indicating the MiB when the task definition is
+     *        registered.</p> <note>
+     *        <p>
+     *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *        container-level resources for Windows containers.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If using the EC2 launch type, this field is optional.
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>cpu</code> parameter:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     *        <code>cpu</code> values: 1024 (1 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     *        2048 (2 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     *        4096 (4 vCPU)
+     *        </p>
+     *        </li>
+     */
+
+    public void setMemory(String memory) {
+        this.memory = memory;
+    }
+
+    /**
+     * <p>
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If using the EC2 launch type, this field is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     *         <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     *         definition but will be converted to an integer indicating the MiB when the task definition is
+     *         registered.</p> <note>
+     *         <p>
+     *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *         container-level resources for Windows containers.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         If using the EC2 launch type, this field is optional.
+     *         </p>
+     *         <p>
+     *         If using the Fargate launch type, this field is required and you must use one of the following values,
+     *         which determines your range of supported values for the <code>cpu</code> parameter:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     *         <code>cpu</code> values: 1024 (1 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     *         2048 (2 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     *         4096 (4 vCPU)
+     *         </p>
+     *         </li>
+     */
+
+    public String getMemory() {
+        return this.memory;
+    }
+
+    /**
+     * <p>
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If using the EC2 launch type, this field is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param memory
+     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     *        definition but will be converted to an integer indicating the MiB when the task definition is
+     *        registered.</p> <note>
+     *        <p>
+     *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *        container-level resources for Windows containers.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If using the EC2 launch type, this field is optional.
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>cpu</code> parameter:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     *        <code>cpu</code> values: 1024 (1 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     *        2048 (2 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     *        4096 (4 vCPU)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskDefinitionRequest withMemory(String memory) {
+        setMemory(memory);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -770,6 +1720,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
             sb.append("Family: ").append(getFamily()).append(",");
         if (getTaskRoleArn() != null)
             sb.append("TaskRoleArn: ").append(getTaskRoleArn()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getNetworkMode() != null)
             sb.append("NetworkMode: ").append(getNetworkMode()).append(",");
         if (getContainerDefinitions() != null)
@@ -777,7 +1729,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         if (getVolumes() != null)
             sb.append("Volumes: ").append(getVolumes()).append(",");
         if (getPlacementConstraints() != null)
-            sb.append("PlacementConstraints: ").append(getPlacementConstraints());
+            sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
+        if (getRequiresCompatibilities() != null)
+            sb.append("RequiresCompatibilities: ").append(getRequiresCompatibilities()).append(",");
+        if (getCpu() != null)
+            sb.append("Cpu: ").append(getCpu()).append(",");
+        if (getMemory() != null)
+            sb.append("Memory: ").append(getMemory());
         sb.append("}");
         return sb.toString();
     }
@@ -800,6 +1758,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTaskRoleArn() != null && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
             return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
+            return false;
         if (other.getNetworkMode() == null ^ this.getNetworkMode() == null)
             return false;
         if (other.getNetworkMode() != null && other.getNetworkMode().equals(this.getNetworkMode()) == false)
@@ -816,6 +1778,18 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getPlacementConstraints() != null && other.getPlacementConstraints().equals(this.getPlacementConstraints()) == false)
             return false;
+        if (other.getRequiresCompatibilities() == null ^ this.getRequiresCompatibilities() == null)
+            return false;
+        if (other.getRequiresCompatibilities() != null && other.getRequiresCompatibilities().equals(this.getRequiresCompatibilities()) == false)
+            return false;
+        if (other.getCpu() == null ^ this.getCpu() == null)
+            return false;
+        if (other.getCpu() != null && other.getCpu().equals(this.getCpu()) == false)
+            return false;
+        if (other.getMemory() == null ^ this.getMemory() == null)
+            return false;
+        if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
+            return false;
         return true;
     }
 
@@ -826,10 +1800,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getFamily() == null) ? 0 : getFamily().hashCode());
         hashCode = prime * hashCode + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getNetworkMode() == null) ? 0 : getNetworkMode().hashCode());
         hashCode = prime * hashCode + ((getContainerDefinitions() == null) ? 0 : getContainerDefinitions().hashCode());
         hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode());
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
+        hashCode = prime * hashCode + ((getRequiresCompatibilities() == null) ? 0 : getRequiresCompatibilities().hashCode());
+        hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
+        hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         return hashCode;
     }
 

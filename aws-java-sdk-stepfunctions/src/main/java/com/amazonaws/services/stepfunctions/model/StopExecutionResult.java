@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class StopExecutionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date the execution was stopped.
+     * The date the execution is stopped.
      * </p>
      */
     private java.util.Date stopDate;
 
     /**
      * <p>
-     * The date the execution was stopped.
+     * The date the execution is stopped.
      * </p>
      * 
      * @param stopDate
-     *        The date the execution was stopped.
+     *        The date the execution is stopped.
      */
 
     public void setStopDate(java.util.Date stopDate) {
@@ -45,10 +45,10 @@ public class StopExecutionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date the execution was stopped.
+     * The date the execution is stopped.
      * </p>
      * 
-     * @return The date the execution was stopped.
+     * @return The date the execution is stopped.
      */
 
     public java.util.Date getStopDate() {
@@ -57,11 +57,11 @@ public class StopExecutionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date the execution was stopped.
+     * The date the execution is stopped.
      * </p>
      * 
      * @param stopDate
-     *        The date the execution was stopped.
+     *        The date the execution is stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

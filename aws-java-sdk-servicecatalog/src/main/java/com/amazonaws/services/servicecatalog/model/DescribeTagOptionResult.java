@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class DescribeTagOptionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOption.
      * </p>
      */
     private TagOptionDetail tagOptionDetail;
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOption.
      * </p>
      * 
      * @param tagOptionDetail
-     *        The resulting detailed TagOption information.
+     *        Information about the TagOption.
      */
 
     public void setTagOptionDetail(TagOptionDetail tagOptionDetail) {
@@ -45,10 +45,10 @@ public class DescribeTagOptionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOption.
      * </p>
      * 
-     * @return The resulting detailed TagOption information.
+     * @return Information about the TagOption.
      */
 
     public TagOptionDetail getTagOptionDetail() {
@@ -57,11 +57,11 @@ public class DescribeTagOptionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOption.
      * </p>
      * 
      * @param tagOptionDetail
-     *        The resulting detailed TagOption information.
+     *        Information about the TagOption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

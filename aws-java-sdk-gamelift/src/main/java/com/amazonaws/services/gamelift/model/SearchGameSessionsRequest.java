@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     * <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      * </p>
      * </li>
      * <li>
@@ -66,10 +66,10 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and string
-     * values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following
-     * filter expression searches on <code>gameSessionName</code>: "
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending
+     * on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must
+     * be escaped. Boolean and string values can only be used with the comparators <code>=</code> and
+     * <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "
      * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
      * </p>
      * </li>
@@ -125,8 +125,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     * <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      * </p>
      * </li>
      * <li>
@@ -262,8 +262,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     * <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      * </p>
      * </li>
      * <li>
@@ -274,10 +274,10 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and string
-     * values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following
-     * filter expression searches on <code>gameSessionName</code>: "
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending
+     * on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must
+     * be escaped. Boolean and string values can only be used with the comparators <code>=</code> and
+     * <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "
      * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
      * </p>
      * </li>
@@ -333,8 +333,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     *        <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *        <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     *        <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -345,10 +345,11 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
-     *        String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean
-     *        and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For
-     *        example, the following filter expression searches on <code>gameSessionName</code>: "
+     *        <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings
+     *        depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special
+     *        characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code>
+     *        and <code>&lt;&gt;</code>. For example, the following filter expression searches on
+     *        <code>gameSessionName</code>: "
      *        <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
      *        </p>
      *        </li>
@@ -410,8 +411,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     * <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      * </p>
      * </li>
      * <li>
@@ -422,10 +423,10 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and string
-     * values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following
-     * filter expression searches on <code>gameSessionName</code>: "
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending
+     * on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must
+     * be escaped. Boolean and string values can only be used with the comparators <code>=</code> and
+     * <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "
      * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
      * </p>
      * </li>
@@ -480,8 +481,9 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     *         <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *         <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *         <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     *         <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>
+     *         .
      *         </p>
      *         </li>
      *         <li>
@@ -492,10 +494,11 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
-     *         String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean
-     *         and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For
-     *         example, the following filter expression searches on <code>gameSessionName</code>: "
+     *         <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings
+     *         depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special
+     *         characters must be escaped. Boolean and string values can only be used with the comparators
+     *         <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on
+     *         <code>gameSessionName</code>: "
      *         <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
      *         </p>
      *         </li>
@@ -557,8 +560,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     * <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      * </p>
      * </li>
      * <li>
@@ -569,10 +572,10 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings. String
-     * values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and string
-     * values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following
-     * filter expression searches on <code>gameSessionName</code>: "
+     * <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending
+     * on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must
+     * be escaped. Boolean and string values can only be used with the comparators <code>=</code> and
+     * <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "
      * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
      * </p>
      * </li>
@@ -628,8 +631,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     *        <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *        <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     *        <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -640,10 +643,11 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
-     *        String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean
-     *        and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For
-     *        example, the following filter expression searches on <code>gameSessionName</code>: "
+     *        <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings
+     *        depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special
+     *        characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code>
+     *        and <code>&lt;&gt;</code>. For example, the following filter expression searches on
+     *        <code>gameSessionName</code>: "
      *        <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
      *        </p>
      *        </li>
@@ -704,8 +708,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     * <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      * </p>
      * </li>
      * <li>
@@ -727,8 +731,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     *        <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *        <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     *        <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -756,8 +760,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     * <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      * </p>
      * </li>
      * <li>
@@ -778,8 +782,9 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     *         <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *         <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *         <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     *         <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>
+     *         .
      *         </p>
      *         </li>
      *         <li>
@@ -807,8 +812,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     * <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      * </p>
      * </li>
      * <li>
@@ -830,8 +835,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-     *        <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *        <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+     *        <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
      *        </p>
      *        </li>
      *        <li>

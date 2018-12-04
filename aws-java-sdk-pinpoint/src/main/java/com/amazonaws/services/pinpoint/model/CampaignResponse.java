@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     private String description;
     /** The allocated percentage of end users who will not receive messages from this campaign. */
     private Integer holdoutPercent;
+    /** Campaign hook information. */
+    private CampaignHook hook;
     /** The unique campaign ID. */
     private String id;
     /**
@@ -301,6 +303,40 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     public CampaignResponse withHoldoutPercent(Integer holdoutPercent) {
         setHoldoutPercent(holdoutPercent);
+        return this;
+    }
+
+    /**
+     * Campaign hook information.
+     * 
+     * @param hook
+     *        Campaign hook information.
+     */
+
+    public void setHook(CampaignHook hook) {
+        this.hook = hook;
+    }
+
+    /**
+     * Campaign hook information.
+     * 
+     * @return Campaign hook information.
+     */
+
+    public CampaignHook getHook() {
+        return this.hook;
+    }
+
+    /**
+     * Campaign hook information.
+     * 
+     * @param hook
+     *        Campaign hook information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignResponse withHook(CampaignHook hook) {
+        setHook(hook);
         return this;
     }
 
@@ -799,6 +835,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
             sb.append("Description: ").append(getDescription()).append(",");
         if (getHoldoutPercent() != null)
             sb.append("HoldoutPercent: ").append(getHoldoutPercent()).append(",");
+        if (getHook() != null)
+            sb.append("Hook: ").append(getHook()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getIsPaused() != null)
@@ -862,6 +900,10 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
         if (other.getHoldoutPercent() == null ^ this.getHoldoutPercent() == null)
             return false;
         if (other.getHoldoutPercent() != null && other.getHoldoutPercent().equals(this.getHoldoutPercent()) == false)
+            return false;
+        if (other.getHook() == null ^ this.getHook() == null)
+            return false;
+        if (other.getHook() != null && other.getHook().equals(this.getHook()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
@@ -929,6 +971,7 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDefaultState() == null) ? 0 : getDefaultState().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHoldoutPercent() == null) ? 0 : getHoldoutPercent().hashCode());
+        hashCode = prime * hashCode + ((getHook() == null) ? 0 : getHook().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIsPaused() == null) ? 0 : getIsPaused().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());

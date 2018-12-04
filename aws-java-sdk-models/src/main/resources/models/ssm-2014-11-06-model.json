@@ -7,6 +7,7 @@
     "protocol":"json",
     "serviceAbbreviation":"Amazon SSM",
     "serviceFullName":"Amazon Simple Systems Manager (SSM)",
+    "serviceId":"SSM",
     "signatureVersion":"v4",
     "targetPrefix":"AmazonSSM",
     "uid":"ssm-2014-11-06"
@@ -26,7 +27,7 @@
         {"shape":"InternalServerError"},
         {"shape":"TooManyTagsError"}
       ],
-      "documentation":"<p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed instances that helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters. </p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>"
+      "documentation":"<p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed instances that helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a maximum of 50 tags. </p> <p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters. </p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>"
     },
     "CancelCommand":{
       "name":"CancelCommand",
@@ -149,7 +150,7 @@
         {"shape":"ResourceLimitExceededException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Creates a patch baseline.</p>"
+      "documentation":"<p>Creates a patch baseline.</p> <note> <p>For information about valid key and value pairs in <code>PatchFilters</code> for each supported operating system type, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html\">PatchFilter</a>.</p> </note>"
     },
     "CreateResourceDataSync":{
       "name":"CreateResourceDataSync",
@@ -382,10 +383,29 @@
       "input":{"shape":"DescribeAutomationExecutionsRequest"},
       "output":{"shape":"DescribeAutomationExecutionsResult"},
       "errors":[
+        {"shape":"InvalidFilterKey"},
+        {"shape":"InvalidFilterValue"},
         {"shape":"InvalidNextToken"},
         {"shape":"InternalServerError"}
       ],
       "documentation":"<p>Provides details about all active and terminated Automation executions.</p>"
+    },
+    "DescribeAutomationStepExecutions":{
+      "name":"DescribeAutomationStepExecutions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeAutomationStepExecutionsRequest"},
+      "output":{"shape":"DescribeAutomationStepExecutionsResult"},
+      "errors":[
+        {"shape":"AutomationExecutionNotFoundException"},
+        {"shape":"InvalidNextToken"},
+        {"shape":"InvalidFilterKey"},
+        {"shape":"InvalidFilterValue"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Information about all active and terminated step executions in an Automation workflow.</p>"
     },
     "DescribeAvailablePatches":{
       "name":"DescribeAvailablePatches",
@@ -914,7 +934,7 @@
         {"shape":"InvalidKeyId"},
         {"shape":"InvalidNextToken"}
       ],
-      "documentation":"<p>Retrieve parameters in a specific hierarchy. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html\">Working with Systems Manager Parameters</a>. </p> <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p>"
+      "documentation":"<p>Retrieve parameters in a specific hierarchy. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html\">Working with Systems Manager Parameters</a>. </p> <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p> <note> <p>This API action doesn't support filtering by tags. </p> </note>"
     },
     "GetPatchBaseline":{
       "name":"GetPatchBaseline",
@@ -1164,7 +1184,7 @@
         {"shape":"InvalidResourceType"},
         {"shape":"InvalidResourceId"}
       ],
-      "documentation":"<p>Registers a compliance type and other compliance details on a designated resource. This action lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p>"
+      "documentation":"<p>Registers a compliance type and other compliance details on a designated resource. This action lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li> <p>ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to the instance.</p> </li> <li> <p>Id: The patch, association, or custom compliance ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.</p> </li> <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li> <li> <p>Classification: A patch classification. For example, <code>security updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p> </li> <li> <p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name of a patch group.</p> </li> <li> <p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li> </ul>"
     },
     "PutInventory":{
       "name":"PutInventory",
@@ -1303,6 +1323,7 @@
       "output":{"shape":"SendAutomationSignalResult"},
       "errors":[
         {"shape":"AutomationExecutionNotFoundException"},
+        {"shape":"AutomationStepNotFoundException"},
         {"shape":"InvalidAutomationSignalException"},
         {"shape":"InternalServerError"}
       ],
@@ -1344,6 +1365,7 @@
         {"shape":"AutomationExecutionLimitExceededException"},
         {"shape":"AutomationDefinitionVersionNotFoundException"},
         {"shape":"IdempotentParameterMismatch"},
+        {"shape":"InvalidTarget"},
         {"shape":"InternalServerError"}
       ],
       "documentation":"<p>Initiates execution of an Automation document.</p>"
@@ -1358,6 +1380,7 @@
       "output":{"shape":"StopAutomationExecutionResult"},
       "errors":[
         {"shape":"AutomationExecutionNotFoundException"},
+        {"shape":"InvalidAutomationStatusUpdateException"},
         {"shape":"InternalServerError"}
       ],
       "documentation":"<p>Stop an Automation that is currently executing.</p>"
@@ -1508,7 +1531,7 @@
         {"shape":"DoesNotExistException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Modifies an existing patch baseline. Fields not specified in the request are left unchanged.</p>"
+      "documentation":"<p>Modifies an existing patch baseline. Fields not specified in the request are left unchanged.</p> <note> <p>For information about valid key and value pairs in <code>PatchFilters</code> for each supported operating system type, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html\">PatchFilter</a>.</p> </note>"
     }
   },
   "shapes":{
@@ -2013,6 +2036,10 @@
           "shape":"StepExecutionList",
           "documentation":"<p>A list of details about the current state of all steps that comprise an execution. An Automation document contains a list of steps that are executed in order.</p>"
         },
+        "StepExecutionsTruncated":{
+          "shape":"Boolean",
+          "documentation":"<p>A boolean value that indicates if the response contains the full list of the Automation step executions. If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.</p>"
+        },
         "Parameters":{
           "shape":"AutomationParameterMap",
           "documentation":"<p>The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.</p>"
@@ -2024,6 +2051,50 @@
         "FailureMessage":{
           "shape":"String",
           "documentation":"<p>A message describing why an execution has failed, if the status is set to Failed.</p>"
+        },
+        "Mode":{
+          "shape":"ExecutionMode",
+          "documentation":"<p>The automation execution mode.</p>"
+        },
+        "ParentAutomationExecutionId":{
+          "shape":"AutomationExecutionId",
+          "documentation":"<p>The AutomationExecutionId of the parent automation.</p>"
+        },
+        "ExecutedBy":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>"
+        },
+        "CurrentStepName":{
+          "shape":"String",
+          "documentation":"<p>The name of the currently executing step.</p>"
+        },
+        "CurrentAction":{
+          "shape":"String",
+          "documentation":"<p>The action of the currently executing step.</p>"
+        },
+        "TargetParameterName":{
+          "shape":"AutomationParameterKey",
+          "documentation":"<p>The parameter name.</p>"
+        },
+        "Targets":{
+          "shape":"Targets",
+          "documentation":"<p>The specified targets.</p>"
+        },
+        "ResolvedTargets":{
+          "shape":"ResolvedTargets",
+          "documentation":"<p>A list of resolved targets in the rate control execution.</p>"
+        },
+        "MaxConcurrency":{
+          "shape":"MaxConcurrency",
+          "documentation":"<p>The MaxConcurrency value specified by the user when the execution started.</p>"
+        },
+        "MaxErrors":{
+          "shape":"MaxErrors",
+          "documentation":"<p>The MaxErrors value specified by the user when the execution started.</p>"
+        },
+        "Target":{
+          "shape":"String",
+          "documentation":"<p>The target of the execution.</p>"
         }
       },
       "documentation":"<p>Detailed information about the current state of an individual Automation execution.</p>"
@@ -2037,7 +2108,7 @@
       "members":{
         "Key":{
           "shape":"AutomationExecutionFilterKey",
-          "documentation":"<p>The aspect of the Automation execution information that should be limited.</p>"
+          "documentation":"<p>One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.</p>"
         },
         "Values":{
           "shape":"AutomationExecutionFilterValueList",
@@ -2050,7 +2121,12 @@
       "type":"string",
       "enum":[
         "DocumentNamePrefix",
-        "ExecutionStatus"
+        "ExecutionStatus",
+        "ExecutionId",
+        "ParentExecutionId",
+        "CurrentAction",
+        "StartTimeBefore",
+        "StartTimeAfter"
       ]
     },
     "AutomationExecutionFilterList":{
@@ -2121,15 +2197,57 @@
         "Outputs":{
           "shape":"AutomationParameterMap",
           "documentation":"<p>The list of execution outputs as defined in the Automation document.</p>"
+        },
+        "Mode":{
+          "shape":"ExecutionMode",
+          "documentation":"<p>The Automation execution mode.</p>"
+        },
+        "ParentAutomationExecutionId":{
+          "shape":"AutomationExecutionId",
+          "documentation":"<p>The ExecutionId of the parent Automation.</p>"
+        },
+        "CurrentStepName":{
+          "shape":"String",
+          "documentation":"<p>The name of the currently executing step.</p>"
+        },
+        "CurrentAction":{
+          "shape":"String",
+          "documentation":"<p>The action of the currently executing step.</p>"
+        },
+        "FailureMessage":{
+          "shape":"String",
+          "documentation":"<p>The list of execution outputs as defined in the Automation document.</p>"
+        },
+        "TargetParameterName":{
+          "shape":"AutomationParameterKey",
+          "documentation":"<p>The list of execution outputs as defined in the Automation document.</p>"
+        },
+        "Targets":{
+          "shape":"Targets",
+          "documentation":"<p>The targets defined by the user when starting the Automation.</p>"
+        },
+        "ResolvedTargets":{
+          "shape":"ResolvedTargets",
+          "documentation":"<p>A list of targets that resolved during the execution.</p>"
+        },
+        "MaxConcurrency":{
+          "shape":"MaxConcurrency",
+          "documentation":"<p>The MaxConcurrency value specified by the user when starting the Automation.</p>"
+        },
+        "MaxErrors":{
+          "shape":"MaxErrors",
+          "documentation":"<p>The MaxErrors value specified by the user when starting the Automation.</p>"
+        },
+        "Target":{
+          "shape":"String",
+          "documentation":"<p>The list of execution outputs as defined in the Automation document.</p>"
         }
       },
       "documentation":"<p>Details about a specific Automation execution.</p>"
     },
     "AutomationExecutionMetadataList":{
       "type":"list",
-      "member":{"shape":"AutomationExecutionMetadata"},
-      "max":50,
-      "min":0
+      "member":{"shape":"AutomationExecutionMetadata"}
     },
     "AutomationExecutionNotFoundException":{
       "type":"structure",
@@ -2147,6 +2265,7 @@
         "Waiting",
         "Success",
         "TimedOut",
+        "Cancelling",
         "Cancelled",
         "Failed"
       ]
@@ -2173,6 +2292,14 @@
       "member":{"shape":"AutomationParameterValue"},
       "max":10,
       "min":0
+    },
+    "AutomationStepNotFoundException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The specified step name and execution ID don't exist. Verify the information and try again.</p>",
+      "exception":true
     },
     "BaselineDescription":{
       "type":"string",
@@ -2280,7 +2407,7 @@
         },
         "MaxErrors":{
           "shape":"MaxErrors",
-          "documentation":"<p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more information about how to use MaxErrors, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>"
+          "documentation":"<p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more information about how to use MaxErrors, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>"
         },
         "TargetCount":{
           "shape":"TargetCount",
@@ -2953,15 +3080,23 @@
       "members":{
         "Content":{
           "shape":"DocumentContent",
-          "documentation":"<p>A valid JSON string.</p>"
+          "documentation":"<p>A valid JSON or YAML string.</p>"
         },
         "Name":{
           "shape":"DocumentName",
-          "documentation":"<p>A name for the Systems Manager document.</p>"
+          "documentation":"<p>A name for the Systems Manager document.</p> <important> <p>Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul> </important>"
         },
         "DocumentType":{
           "shape":"DocumentType",
           "documentation":"<p>The type of document to create. Valid document types include: Policy, Automation, and Command.</p>"
+        },
+        "DocumentFormat":{
+          "shape":"DocumentFormat",
+          "documentation":"<p>Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default format.</p>"
+        },
+        "TargetType":{
+          "shape":"TargetType",
+          "documentation":"<p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>"
         }
       }
     },
@@ -3052,6 +3187,11 @@
           "shape":"PatchComplianceLevel",
           "documentation":"<p>Defines the compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. Valid compliance severity levels include the following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.</p>"
         },
+        "ApprovedPatchesEnableNonSecurity":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>",
+          "box":true
+        },
         "RejectedPatches":{
           "shape":"PatchIdList",
           "documentation":"<p>A list of explicitly rejected patches for the baseline.</p>"
@@ -3059,6 +3199,10 @@
         "Description":{
           "shape":"BaselineDescription",
           "documentation":"<p>A description of the patch baseline.</p>"
+        },
+        "Sources":{
+          "shape":"PatchSourceList",
+          "documentation":"<p>Information about the patches to use to update the instances, including target operating systems and source repositories. Applies to Linux instances only.</p>"
         },
         "ClientToken":{
           "shape":"ClientToken",
@@ -3479,6 +3623,47 @@
         "AutomationExecutionMetadataList":{
           "shape":"AutomationExecutionMetadataList",
           "documentation":"<p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>"
+        }
+      }
+    },
+    "DescribeAutomationStepExecutionsRequest":{
+      "type":"structure",
+      "required":["AutomationExecutionId"],
+      "members":{
+        "AutomationExecutionId":{
+          "shape":"AutomationExecutionId",
+          "documentation":"<p>The Automation execution ID for which you want step execution descriptions.</p>"
+        },
+        "Filters":{
+          "shape":"StepExecutionFilterList",
+          "documentation":"<p>One or more filters to limit the number of step executions returned by the request.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token for the next set of items to return. (You received this token from a previous call.)</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>",
+          "box":true
+        },
+        "ReverseOrder":{
+          "shape":"Boolean",
+          "documentation":"<p>A boolean that indicates whether to list step executions in reverse order by start time. The default value is false.</p>",
+          "box":true
+        }
+      }
+    },
+    "DescribeAutomationStepExecutionsResult":{
+      "type":"structure",
+      "members":{
+        "StepExecutions":{
+          "shape":"StepExecutionList",
+          "documentation":"<p>A list of details about the current state of all steps that make up an execution.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -4249,6 +4434,14 @@
           "shape":"DocumentVersion",
           "documentation":"<p>The default version.</p>"
         },
+        "DocumentFormat":{
+          "shape":"DocumentFormat",
+          "documentation":"<p>The document format, either JSON or YAML.</p>"
+        },
+        "TargetType":{
+          "shape":"TargetType",
+          "documentation":"<p>The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance. For a list of valid resource types, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>"
+        },
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The tags, or metadata, that have been applied to the document.</p>"
@@ -4292,6 +4485,13 @@
       "type":"string",
       "min":1
     },
+    "DocumentFormat":{
+      "type":"string",
+      "enum":[
+        "YAML",
+        "JSON"
+      ]
+    },
     "DocumentHash":{
       "type":"string",
       "max":256
@@ -4330,6 +4530,14 @@
           "shape":"DocumentSchemaVersion",
           "documentation":"<p>The schema version.</p>"
         },
+        "DocumentFormat":{
+          "shape":"DocumentFormat",
+          "documentation":"<p>The document format, either JSON or YAML.</p>"
+        },
+        "TargetType":{
+          "shape":"TargetType",
+          "documentation":"<p>The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance. For a list of valid resource types, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>"
+        },
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The tags, or metadata, that have been applied to the document.</p>"
@@ -4363,7 +4571,7 @@
     "DocumentKeyValuesFilterList":{
       "type":"list",
       "member":{"shape":"DocumentKeyValuesFilter"},
-      "max":5,
+      "max":6,
       "min":0
     },
     "DocumentKeyValuesFilterValue":{
@@ -4480,6 +4688,10 @@
         "IsDefaultVersion":{
           "shape":"Boolean",
           "documentation":"<p>An identifier for the default version of the document.</p>"
+        },
+        "DocumentFormat":{
+          "shape":"DocumentFormat",
+          "documentation":"<p>The document format, either JSON or YAML.</p>"
         }
       },
       "documentation":"<p>Version information about the document.</p>"
@@ -4506,7 +4718,7 @@
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.</p>",
+      "documentation":"<p>Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline, doesn't exist.</p> <p>For information about resource limits in Systems Manager, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm\">AWS Systems Manager Limits</a>.</p>",
       "exception":true
     },
     "DuplicateDocumentContent":{
@@ -4548,6 +4760,13 @@
       "member":{"shape":"EffectivePatch"}
     },
     "ErrorCount":{"type":"integer"},
+    "ExecutionMode":{
+      "type":"string",
+      "enum":[
+        "Auto",
+        "Interactive"
+      ]
+    },
     "ExpirationDate":{"type":"timestamp"},
     "FailedCreateAssociation":{
       "type":"structure",
@@ -4781,6 +5000,10 @@
         "DocumentVersion":{
           "shape":"DocumentVersion",
           "documentation":"<p>The document version for which you want information.</p>"
+        },
+        "DocumentFormat":{
+          "shape":"DocumentFormat",
+          "documentation":"<p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>"
         }
       }
     },
@@ -4802,6 +5025,10 @@
         "DocumentType":{
           "shape":"DocumentType",
           "documentation":"<p>The document type.</p>"
+        },
+        "DocumentFormat":{
+          "shape":"DocumentFormat",
+          "documentation":"<p>The document format, either JSON or YAML.</p>"
         }
       }
     },
@@ -5282,7 +5509,7 @@
       "members":{
         "Path":{
           "shape":"PSParameterName",
-          "documentation":"<p>The hierarchy for the parameter. Hierarchies start with a forward slash (/) and end with the parameter name. A hierarchy can have a maximum of five levels. For example: <code>/Finance/Prod/IAD/WinServ2016/license15</code> </p>"
+          "documentation":"<p>The hierarchy for the parameter. Hierarchies start with a forward slash (/) and end with the parameter name. A hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>"
         },
         "Recursive":{
           "shape":"Boolean",
@@ -5422,6 +5649,11 @@
           "shape":"PatchComplianceLevel",
           "documentation":"<p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>"
         },
+        "ApprovedPatchesEnableNonSecurity":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>",
+          "box":true
+        },
         "RejectedPatches":{
           "shape":"PatchIdList",
           "documentation":"<p>A list of explicitly rejected patches for the baseline.</p>"
@@ -5441,6 +5673,10 @@
         "Description":{
           "shape":"BaselineDescription",
           "documentation":"<p>A description of the patch baseline.</p>"
+        },
+        "Sources":{
+          "shape":"PatchSourceList",
+          "documentation":"<p>Information about the patches to use to update the instances, including target operating systems and source repositories. Applies to Linux instances only.</p>"
         }
       }
     },
@@ -5449,10 +5685,10 @@
       "members":{
         "message":{
           "shape":"String",
-          "documentation":"<p>A hierarchy can have a maximum of five levels. For example:</p> <p>/Finance/Prod/IAD/OS/WinServ2016/license15</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html\">Working with Systems Manager Parameters</a>. </p>"
+          "documentation":"<p>A hierarchy can have a maximum of 15 levels. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html\">Working with Systems Manager Parameters</a>. </p>"
         }
       },
-      "documentation":"<p>A hierarchy can have a maximum of five levels. For example:</p> <p>/Finance/Prod/IAD/OS/WinServ2016/license15</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html\">Working with Systems Manager Parameters</a>. </p>",
+      "documentation":"<p>A hierarchy can have a maximum of 15 levels. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html\">Working with Systems Manager Parameters</a>. </p>",
       "exception":true
     },
     "HierarchyTypeMismatchException":{
@@ -5650,7 +5886,7 @@
         },
         "IsLatestVersion":{
           "shape":"Boolean",
-          "documentation":"<p>Indicates whether latest version of the SSM Agent is running on your instance. </p>",
+          "documentation":"<p>Indicates whether latest version of the SSM Agent is running on your instance. Some older versions of Windows Server use the EC2Config service to process SSM requests. For this reason, this field does not indicate whether or not the latest version is installed on Windows managed instances.</p>",
           "box":true
         },
         "PlatformType":{
@@ -5980,6 +6216,14 @@
       "documentation":"<p>The signal is not valid for the current Automation execution.</p>",
       "exception":true
     },
+    "InvalidAutomationStatusUpdateException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The specified update status operation is not valid.</p>",
+      "exception":true
+    },
     "InvalidCommandId":{
       "type":"structure",
       "members":{
@@ -6187,7 +6431,7 @@
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html\">Configuring Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.</p>",
+      "documentation":"<p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html\">Configuring Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>",
       "exception":true
     },
     "InvalidSchedule":{
@@ -6452,7 +6696,7 @@
         },
         "Data":{
           "shape":"InventoryResultItemMap",
-          "documentation":"<p>The data section in the inventory result entity json.</p>"
+          "documentation":"<p>The data section in the inventory result entity JSON.</p>"
         }
       },
       "documentation":"<p>Inventory query results.</p>"
@@ -6534,6 +6778,7 @@
       "type":"list",
       "member":{"shape":"TagKey"}
     },
+    "LastResourceDataSyncMessage":{"type":"string"},
     "LastResourceDataSyncStatus":{
       "type":"string",
       "enum":[
@@ -6991,6 +7236,7 @@
       },
       "documentation":"<p>Information about an Amazon S3 bucket to write instance-level logs to.</p>"
     },
+    "Long":{"type":"long"},
     "MaintenanceWindowAllowUnassociatedTargets":{"type":"boolean"},
     "MaintenanceWindowAutomationParameters":{
       "type":"structure",
@@ -7684,7 +7930,7 @@
         },
         "NotificationEvents":{
           "shape":"NotificationEventList",
-          "documentation":"<p>The different events for which you can receive notifications. These events include the following: All (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html\">Setting Up Events and Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.</p>"
+          "documentation":"<p>The different events for which you can receive notifications. These events include the following: All (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html\">Setting Up Events and Notifications</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
         },
         "NotificationType":{
           "shape":"NotificationType",
@@ -7721,7 +7967,8 @@
         "WINDOWS",
         "AMAZON_LINUX",
         "UBUNTU",
-        "REDHAT_ENTERPRISE_LINUX"
+        "REDHAT_ENTERPRISE_LINUX",
+        "SUSE"
       ]
     },
     "OwnerInformation":{
@@ -8003,7 +8250,7 @@
           "documentation":"<p>The filter values.</p>"
         }
       },
-      "documentation":"<p>One or more filters. Use a filter to return a more specific list of results.</p>"
+      "documentation":"<p>This data type is deprecated. Instead, use <a>ParameterStringFilter</a>.</p>"
     },
     "ParametersFilterKey":{
       "type":"string",
@@ -8211,14 +8458,14 @@
       "members":{
         "Key":{
           "shape":"PatchFilterKey",
-          "documentation":"<p>The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)</p>"
+          "documentation":"<p>The key for the filter.</p> <p>See <a>PatchFilter</a> for lists of valid keys for each operating system type.</p>"
         },
         "Values":{
           "shape":"PatchFilterValueList",
-          "documentation":"<p>The value for the filter key.</p>"
+          "documentation":"<p>The value for the filter key.</p> <p>See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.</p>"
         }
       },
-      "documentation":"<p>Defines a patch filter.</p>"
+      "documentation":"<p>Defines a patch filter.</p> <p>A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key <code>PRODUCT</code> is valid for all supported operating system types. The key <code>MSRC_SEVERITY</code>, however, is valid only for Windows operating systems, and the key <code>SECTION</code> is valid only for Ubuntu operating systems.</p> <p>Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.</p> <p> <b>Windows Operating Systems</b> </p> <p>The supported keys for Windows operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>MSRC_SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Windows7</code> </p> </li> <li> <p> <code>Windows8</code> </p> </li> <li> <p> <code>Windows8.1</code> </p> </li> <li> <p> <code>Windows8Embedded</code> </p> </li> <li> <p> <code>Windows10</code> </p> </li> <li> <p> <code>Windows10LTSB</code> </p> </li> <li> <p> <code>WindowsServer2008</code> </p> </li> <li> <p> <code>WindowsServer2008R2</code> </p> </li> <li> <p> <code>WindowsServer2012</code> </p> </li> <li> <p> <code>WindowsServer2012R2</code> </p> </li> <li> <p> <code>WindowsServer2016</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>CriticalUpdates</code> </p> </li> <li> <p> <code>DefinitionUpdates</code> </p> </li> <li> <p> <code>Drivers</code> </p> </li> <li> <p> <code>FeaturePacks</code> </p> </li> <li> <p> <code>SecurityUpdates</code> </p> </li> <li> <p> <code>ServicePacks</code> </p> </li> <li> <p> <code>Tools</code> </p> </li> <li> <p> <code>UpdateRollups</code> </p> </li> <li> <p> <code>Updates</code> </p> </li> <li> <p> <code>Upgrades</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>MSRC_SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Moderate</code> </p> </li> <li> <p> <code>Low</code> </p> </li> <li> <p> <code>Unspecified</code> </p> </li> </ul> <p> <b>Ubuntu Operating Systems</b> </p> <p>The supported keys for Ubuntu operating systems are <code>PRODUCT</code>, <code>PRIORITY</code>, and <code>SECTION</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Ubuntu14.04</code> </p> </li> <li> <p> <code>Ubuntu16.04</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>PRIORITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Required</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Standard</code> </p> </li> <li> <p> <code>Optional</code> </p> </li> <li> <p> <code>Extra</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SECTION</code> </p> <p>Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.</p> <p> <b>Amazon Linux Operating Systems</b> </p> <p>The supported keys for Amazon Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>AmazonLinux2012.03</code> </p> </li> <li> <p> <code>AmazonLinux2012.09</code> </p> </li> <li> <p> <code>AmazonLinux2013.03</code> </p> </li> <li> <p> <code>AmazonLinux2013.09</code> </p> </li> <li> <p> <code>AmazonLinux2014.03</code> </p> </li> <li> <p> <code>AmazonLinux2014.09</code> </p> </li> <li> <p> <code>AmazonLinux2015.03</code> </p> </li> <li> <p> <code>AmazonLinux2015.09</code> </p> </li> <li> <p> <code>AmazonLinux2016.03</code> </p> </li> <li> <p> <code>AmazonLinux2016.09</code> </p> </li> <li> <p> <code>AmazonLinux2017.03</code> </p> </li> <li> <p> <code>AmazonLinux2017.09</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul> <p> <b>RedHat Enterprise Linux (RHEL) Operating Systems</b> </p> <p>The supported keys for RedHat Enterprise Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>RedhatEnterpriseLinux6.5</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux6.6</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux6.7</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux6.8</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux6.9</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.0</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.1</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.2</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.3</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.4</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul> <p> <b>SUSE Linux Enterprise Server (SUSE) Operating Systems</b> </p> <p>The supported keys for SUSE operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Suse12.0</code> </p> </li> <li> <p> <code>Suse12.1</code> </p> </li> <li> <p> <code>Suse12.2</code> </p> </li> <li> <p> <code>Suse12.3</code> </p> </li> <li> <p> <code>Suse12.4</code> </p> </li> <li> <p> <code>Suse12.5</code> </p> </li> <li> <p> <code>Suse12.6</code> </p> </li> <li> <p> <code>Suse12.7</code> </p> </li> <li> <p> <code>Suse12.8</code> </p> </li> <li> <p> <code>Suse12.9</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Optional</code> </p> </li> <li> <p> <code>Feature</code> </p> </li> <li> <p> <code>Document</code> </p> </li> <li> <p> <code>Yast</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Moderate</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul>"
     },
     "PatchFilterGroup":{
       "type":"structure",
@@ -8373,6 +8620,11 @@
           "shape":"ApproveAfterDays",
           "documentation":"<p>The number of days after the release date of each patch matched by the rule the patch is marked as approved in the patch baseline.</p>",
           "box":true
+        },
+        "EnableNonSecurity":{
+          "shape":"Boolean",
+          "documentation":"<p>For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is 'false'. Applies to Linux instances only.</p>",
+          "box":true
         }
       },
       "documentation":"<p>Defines an approval rule for a patch baseline.</p>"
@@ -8395,6 +8647,56 @@
       "min":0
     },
     "PatchSeverity":{"type":"string"},
+    "PatchSource":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Products",
+        "Configuration"
+      ],
+      "members":{
+        "Name":{
+          "shape":"PatchSourceName",
+          "documentation":"<p>The name specified to identify the patch source.</p>"
+        },
+        "Products":{
+          "shape":"PatchSourceProductList",
+          "documentation":"<p>The specific operating system versions a patch repository applies to, such as \"Ubuntu16.04\", \"AmazonLinux2016.09\", \"RedhatEnterpriseLinux7.2\" or \"Suse12.7\". For lists of supported product values, see <a>PatchFilter</a>.</p>"
+        },
+        "Configuration":{
+          "shape":"PatchSourceConfiguration",
+          "documentation":"<p>The value of the yum repo configuration. For example:</p> <p> <code>cachedir=/var/cache/yum/$basesearch</code> </p> <p> <code>$releasever</code> </p> <p> <code>keepcache=0</code> </p> <p> <code>debualevel=2</code> </p>"
+        }
+      },
+      "documentation":"<p>Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.</p>"
+    },
+    "PatchSourceConfiguration":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "sensitive":true
+    },
+    "PatchSourceList":{
+      "type":"list",
+      "member":{"shape":"PatchSource"},
+      "max":20,
+      "min":0
+    },
+    "PatchSourceName":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9_\\-.]{3,50}$"
+    },
+    "PatchSourceProduct":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "PatchSourceProductList":{
+      "type":"list",
+      "member":{"shape":"PatchSourceProduct"},
+      "max":20,
+      "min":1
+    },
     "PatchStatus":{
       "type":"structure",
       "members":{
@@ -8508,7 +8810,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note> <p>The maximum length constraint listed below includes capacity for additional system attributes that are not part of the name. The maximum length for the fully qualified parameter name is 1011 characters. </p> </note>"
+          "documentation":"<p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>For information about parameter name requirements and restrictions, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about\">About Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below includes capacity for additional system attributes that are not part of the name. The maximum length for the fully qualified parameter name is 1011 characters. </p> </note>"
         },
         "Description":{
           "shape":"ParameterDescription",
@@ -8761,6 +9063,20 @@
       "members":{
       }
     },
+    "ResolvedTargets":{
+      "type":"structure",
+      "members":{
+        "ParameterValues":{
+          "shape":"TargetParameterList",
+          "documentation":"<p>A list of parameter values sent to targets that resolved during the Automation execution.</p>"
+        },
+        "Truncated":{
+          "shape":"Boolean",
+          "documentation":"<p>A boolean value indicating whether the resolved target list is truncated.</p>"
+        }
+      },
+      "documentation":"<p>Information about targets that resolved during the Automation execution.</p>"
+    },
     "ResourceComplianceSummaryItem":{
       "type":"structure",
       "members":{
@@ -8860,6 +9176,10 @@
         "SyncCreatedTime":{
           "shape":"ResourceDataSyncCreatedTime",
           "documentation":"<p>The date and time the configuration was created (UTC).</p>"
+        },
+        "LastSyncStatusMessage":{
+          "shape":"LastResourceDataSyncMessage",
+          "documentation":"<p>The status message details reported by the last sync.</p>"
         }
       },
       "documentation":"<p>Information about a Resource Data Sync configuration, including its current status and last successful sync.</p>"
@@ -8945,7 +9265,7 @@
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance Windows have been created).</p>",
+      "documentation":"<p>Error returned when the caller has exceeded the default resource limits. For example, too many Maintenance Windows or Patch baselines have been created.</p> <p>For information about resource limits in Systems Manager, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm\">AWS Systems Manager Limits</a>.</p>",
       "exception":true
     },
     "ResourceType":{
@@ -9112,7 +9432,7 @@
         },
         "MaxErrors":{
           "shape":"MaxErrors",
-          "documentation":"<p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is 50. For more information about how to use MaxErrors, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html\">Using Error Controls</a>.</p>"
+          "documentation":"<p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is 0. For more information about how to use MaxErrors, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html\">Using Error Controls</a>.</p>"
         },
         "ServiceRoleArn":{
           "shape":"ServiceRole",
@@ -9168,7 +9488,10 @@
       "type":"string",
       "enum":[
         "Approve",
-        "Reject"
+        "Reject",
+        "StartStep",
+        "StopStep",
+        "Resume"
       ]
     },
     "SnapshotDownloadUrl":{"type":"string"},
@@ -9206,6 +9529,26 @@
         "ClientToken":{
           "shape":"IdempotencyToken",
           "documentation":"<p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>"
+        },
+        "Mode":{
+          "shape":"ExecutionMode",
+          "documentation":"<p>The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.</p>"
+        },
+        "TargetParameterName":{
+          "shape":"AutomationParameterKey",
+          "documentation":"<p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify Targets.</p>"
+        },
+        "Targets":{
+          "shape":"Targets",
+          "documentation":"<p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>"
+        },
+        "MaxConcurrency":{
+          "shape":"MaxConcurrency",
+          "documentation":"<p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is 10.</p>"
+        },
+        "MaxErrors":{
+          "shape":"MaxErrors",
+          "documentation":"<p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p> <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>"
         }
       }
     },
@@ -9251,6 +9594,20 @@
           "shape":"AutomationActionName",
           "documentation":"<p>The action this step performs. The action determines the behavior of the step.</p>"
         },
+        "TimeoutSeconds":{
+          "shape":"Long",
+          "documentation":"<p>The timeout seconds of the step.</p>",
+          "box":true
+        },
+        "OnFailure":{
+          "shape":"String",
+          "documentation":"<p>The action to take if the step fails. The default value is Abort.</p>"
+        },
+        "MaxAttempts":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum number of tries to run the action of the step. The default value is 1.</p>",
+          "box":true
+        },
         "ExecutionStartTime":{
           "shape":"DateTime",
           "documentation":"<p>If a step has begun execution, this contains the time the step started. If the step is in Pending status, this field is not populated.</p>"
@@ -9286,15 +9643,67 @@
         "FailureDetails":{
           "shape":"FailureDetails",
           "documentation":"<p>Information about the Automation failure.</p>"
+        },
+        "StepExecutionId":{
+          "shape":"String",
+          "documentation":"<p>The unique ID of a step execution.</p>"
+        },
+        "OverriddenParameters":{
+          "shape":"AutomationParameterMap",
+          "documentation":"<p>A user-specified list of parameters to override when executing a step.</p>"
         }
       },
       "documentation":"<p>Detailed information about an the execution state of an Automation step.</p>"
     },
+    "StepExecutionFilter":{
+      "type":"structure",
+      "required":[
+        "Key",
+        "Values"
+      ],
+      "members":{
+        "Key":{
+          "shape":"StepExecutionFilterKey",
+          "documentation":"<p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>"
+        },
+        "Values":{
+          "shape":"StepExecutionFilterValueList",
+          "documentation":"<p>The values of the filter key.</p>"
+        }
+      },
+      "documentation":"<p>A filter to limit the amount of step execution information returned by the call.</p>"
+    },
+    "StepExecutionFilterKey":{
+      "type":"string",
+      "enum":[
+        "StartTimeBefore",
+        "StartTimeAfter",
+        "StepExecutionStatus",
+        "StepExecutionId",
+        "StepName",
+        "Action"
+      ]
+    },
+    "StepExecutionFilterList":{
+      "type":"list",
+      "member":{"shape":"StepExecutionFilter"},
+      "max":6,
+      "min":1
+    },
+    "StepExecutionFilterValue":{
+      "type":"string",
+      "max":150,
+      "min":1
+    },
+    "StepExecutionFilterValueList":{
+      "type":"list",
+      "member":{"shape":"StepExecutionFilterValue"},
+      "max":10,
+      "min":1
+    },
     "StepExecutionList":{
       "type":"list",
-      "member":{"shape":"StepExecution"},
-      "max":100,
-      "min":0
+      "member":{"shape":"StepExecution"}
     },
     "StopAutomationExecutionRequest":{
       "type":"structure",
@@ -9303,6 +9712,10 @@
         "AutomationExecutionId":{
           "shape":"AutomationExecutionId",
           "documentation":"<p>The execution ID of the Automation to stop.</p>"
+        },
+        "Type":{
+          "shape":"StopType",
+          "documentation":"<p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>"
         }
       }
     },
@@ -9310,6 +9723,13 @@
       "type":"structure",
       "members":{
       }
+    },
+    "StopType":{
+      "type":"string",
+      "enum":[
+        "Complete",
+        "Cancel"
+      ]
     },
     "String":{"type":"string"},
     "StringDateTime":{
@@ -9390,6 +9810,15 @@
       "max":128,
       "min":1,
       "pattern":"^[\\p{L}\\p{Z}\\p{N}_.:/=\\-@]*$"
+    },
+    "TargetParameterList":{
+      "type":"list",
+      "member":{"shape":"ParameterValue"}
+    },
+    "TargetType":{
+      "type":"string",
+      "max":200,
+      "pattern":"^\\/[\\w\\.\\-\\:\\/]*$"
     },
     "TargetValue":{"type":"string"},
     "TargetValues":{
@@ -9599,6 +10028,14 @@
         "DocumentVersion":{
           "shape":"DocumentVersion",
           "documentation":"<p>The version of the document that you want to update.</p>"
+        },
+        "DocumentFormat":{
+          "shape":"DocumentFormat",
+          "documentation":"<p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>"
+        },
+        "TargetType":{
+          "shape":"TargetType",
+          "documentation":"<p>Specify a new target type for the document.</p>"
         }
       }
     },
@@ -9936,6 +10373,11 @@
           "shape":"PatchComplianceLevel",
           "documentation":"<p>Assigns a new compliance severity level to an existing patch baseline.</p>"
         },
+        "ApprovedPatchesEnableNonSecurity":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>",
+          "box":true
+        },
         "RejectedPatches":{
           "shape":"PatchIdList",
           "documentation":"<p>A list of explicitly rejected patches for the baseline.</p>"
@@ -9943,6 +10385,15 @@
         "Description":{
           "shape":"BaselineDescription",
           "documentation":"<p>A description of the patch baseline.</p>"
+        },
+        "Sources":{
+          "shape":"PatchSourceList",
+          "documentation":"<p>Information about the patches to use to update the instances, including target operating systems and source repositories. Applies to Linux instances only.</p>"
+        },
+        "Replace":{
+          "shape":"Boolean",
+          "documentation":"<p>If True, then all fields that are required by the CreatePatchBaseline action are also required for this API request. Optional fields that are not specified are set to null.</p>",
+          "box":true
         }
       }
     },
@@ -9977,6 +10428,11 @@
           "shape":"PatchComplianceLevel",
           "documentation":"<p>The compliance severity level assigned to the patch baseline after the update completed.</p>"
         },
+        "ApprovedPatchesEnableNonSecurity":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>",
+          "box":true
+        },
         "RejectedPatches":{
           "shape":"PatchIdList",
           "documentation":"<p>A list of explicitly rejected patches for the baseline.</p>"
@@ -9992,6 +10448,10 @@
         "Description":{
           "shape":"BaselineDescription",
           "documentation":"<p>A description of the Patch Baseline.</p>"
+        },
+        "Sources":{
+          "shape":"PatchSourceList",
+          "documentation":"<p>Information about the patches to use to update the instances, including target operating systems and source repositories. Applies to Linux instances only.</p>"
         }
       }
     },
@@ -10001,5 +10461,5 @@
       "pattern":"^[0-9]{1,6}(\\.[0-9]{1,6}){2,3}$"
     }
   },
-  "documentation":"<fullname>Amazon EC2 Systems Manager</fullname> <p>Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or on-premises machine in your hybrid environment that has been configured for Systems Manager.</p> <p>This reference is intended to be used with the <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/\">Amazon EC2 Systems Manager User Guide</a>.</p> <p>To get started, verify prerequisites and configure managed instances. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html\">Systems Manager Prerequisites</a>.</p> <p>For information about other API actions you can perform on Amazon EC2 instances, see the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/\">Amazon EC2 API Reference</a>. For information about how to use a Query API, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html\">Making API Requests</a>. </p>"
+  "documentation":"<fullname>AWS Systems Manager</fullname> <p>AWS Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or on-premises machine in your hybrid environment that has been configured for Systems Manager.</p> <p>This reference is intended to be used with the <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/\">AWS Systems Manager User Guide</a>.</p> <p>To get started, verify prerequisites and configure managed instances. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html\">Systems Manager Prerequisites</a>.</p> <p>For information about other API actions you can perform on Amazon EC2 instances, see the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/\">Amazon EC2 API Reference</a>. For information about how to use a Query API, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html\">Making API Requests</a>. </p>"
 }

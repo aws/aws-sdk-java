@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,13 +55,13 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     private String registrationCode;
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> dnsIpAddresses;
@@ -98,7 +98,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     private String state;
     /**
      * <p>
-     * A structure that specifies the default creation properties for all WorkSpaces in the directory.
+     * The default creation properties for all WorkSpaces in the directory.
      * </p>
      */
     private DefaultWorkspaceCreationProperties workspaceCreationProperties;
@@ -271,10 +271,10 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      * 
-     * @return An array of strings that contains the identifiers of the subnets used with the directory.
+     * @return The identifiers of the subnets used with the directory.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -286,11 +286,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      * 
      * @param subnetIds
-     *        An array of strings that contains the identifiers of the subnets used with the directory.
+     *        The identifiers of the subnets used with the directory.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -304,7 +304,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -313,7 +313,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param subnetIds
-     *        An array of strings that contains the identifiers of the subnets used with the directory.
+     *        The identifiers of the subnets used with the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,11 +329,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the subnets used with the directory.
+     * The identifiers of the subnets used with the directory.
      * </p>
      * 
      * @param subnetIds
-     *        An array of strings that contains the identifiers of the subnets used with the directory.
+     *        The identifiers of the subnets used with the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,10 +344,10 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      * 
-     * @return An array of strings that contains the IP addresses of the DNS servers for the directory.
+     * @return The IP addresses of the DNS servers for the directory.
      */
 
     public java.util.List<String> getDnsIpAddresses() {
@@ -359,11 +359,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      * 
      * @param dnsIpAddresses
-     *        An array of strings that contains the IP addresses of the DNS servers for the directory.
+     *        The IP addresses of the DNS servers for the directory.
      */
 
     public void setDnsIpAddresses(java.util.Collection<String> dnsIpAddresses) {
@@ -377,7 +377,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -386,7 +386,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param dnsIpAddresses
-     *        An array of strings that contains the IP addresses of the DNS servers for the directory.
+     *        The IP addresses of the DNS servers for the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,11 +402,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of strings that contains the IP addresses of the DNS servers for the directory.
+     * The IP addresses of the DNS servers for the directory.
      * </p>
      * 
      * @param dnsIpAddresses
-     *        An array of strings that contains the IP addresses of the DNS servers for the directory.
+     *        The IP addresses of the DNS servers for the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -689,11 +689,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A structure that specifies the default creation properties for all WorkSpaces in the directory.
+     * The default creation properties for all WorkSpaces in the directory.
      * </p>
      * 
      * @param workspaceCreationProperties
-     *        A structure that specifies the default creation properties for all WorkSpaces in the directory.
+     *        The default creation properties for all WorkSpaces in the directory.
      */
 
     public void setWorkspaceCreationProperties(DefaultWorkspaceCreationProperties workspaceCreationProperties) {
@@ -702,10 +702,10 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A structure that specifies the default creation properties for all WorkSpaces in the directory.
+     * The default creation properties for all WorkSpaces in the directory.
      * </p>
      * 
-     * @return A structure that specifies the default creation properties for all WorkSpaces in the directory.
+     * @return The default creation properties for all WorkSpaces in the directory.
      */
 
     public DefaultWorkspaceCreationProperties getWorkspaceCreationProperties() {
@@ -714,11 +714,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A structure that specifies the default creation properties for all WorkSpaces in the directory.
+     * The default creation properties for all WorkSpaces in the directory.
      * </p>
      * 
      * @param workspaceCreationProperties
-     *        A structure that specifies the default creation properties for all WorkSpaces in the directory.
+     *        The default creation properties for all WorkSpaces in the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

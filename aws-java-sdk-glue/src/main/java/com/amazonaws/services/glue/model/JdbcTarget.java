@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a JDBC target for a crawl.
+ * Specifies a JDBC data store to crawl.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JdbcTarget" target="_top">AWS API
@@ -30,7 +30,7 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection to use for the JDBC target.
+     * The name of the connection to use to connect to the JDBC target.
      * </p>
      */
     private String connectionName;
@@ -42,18 +42,19 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
     private String path;
     /**
      * <p>
-     * A list of items to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      */
     private java.util.List<String> exclusions;
 
     /**
      * <p>
-     * The name of the connection to use for the JDBC target.
+     * The name of the connection to use to connect to the JDBC target.
      * </p>
      * 
      * @param connectionName
-     *        The name of the connection to use for the JDBC target.
+     *        The name of the connection to use to connect to the JDBC target.
      */
 
     public void setConnectionName(String connectionName) {
@@ -62,10 +63,10 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection to use for the JDBC target.
+     * The name of the connection to use to connect to the JDBC target.
      * </p>
      * 
-     * @return The name of the connection to use for the JDBC target.
+     * @return The name of the connection to use to connect to the JDBC target.
      */
 
     public String getConnectionName() {
@@ -74,11 +75,11 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection to use for the JDBC target.
+     * The name of the connection to use to connect to the JDBC target.
      * </p>
      * 
      * @param connectionName
-     *        The name of the connection to use for the JDBC target.
+     *        The name of the connection to use to connect to the JDBC target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,10 +130,12 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of items to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
-     * @return A list of items to exclude from the crawl.
+     * @return A list of glob patterns used to exclude from the crawl. For more information, see <a
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      */
 
     public java.util.List<String> getExclusions() {
@@ -141,11 +144,13 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of items to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @param exclusions
-     *        A list of items to exclude from the crawl.
+     *        A list of glob patterns used to exclude from the crawl. For more information, see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      */
 
     public void setExclusions(java.util.Collection<String> exclusions) {
@@ -159,7 +164,8 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of items to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,7 +174,8 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param exclusions
-     *        A list of items to exclude from the crawl.
+     *        A list of glob patterns used to exclude from the crawl. For more information, see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +191,13 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of items to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @param exclusions
-     *        A list of items to exclude from the crawl.
+     *        A list of glob patterns used to exclude from the crawl. For more information, see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

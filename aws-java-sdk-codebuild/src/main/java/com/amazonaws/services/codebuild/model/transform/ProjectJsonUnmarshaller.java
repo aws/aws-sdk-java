@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setArtifacts(ProjectArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("cache", targetDepth)) {
+                    context.nextToken();
+                    project.setCache(ProjectCacheJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("environment", targetDepth)) {
                     context.nextToken();
                     project.setEnvironment(ProjectEnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
@@ -99,6 +103,14 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 if (context.testExpression("webhook", targetDepth)) {
                     context.nextToken();
                     project.setWebhook(WebhookJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vpcConfig", targetDepth)) {
+                    context.nextToken();
+                    project.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("badge", targetDepth)) {
+                    context.nextToken();
+                    project.setBadge(ProjectBadgeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

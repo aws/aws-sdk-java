@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,7 +68,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * Analytics API Reference and User Guide</i>.
      * </p>
      * <p>
-     * The ClientContext JSON must be base64-encoded.
+     * The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * </p>
      */
     private String clientContext;
@@ -410,7 +410,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * Analytics API Reference and User Guide</i>.
      * </p>
      * <p>
-     * The ClientContext JSON must be base64-encoded.
+     * The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * </p>
      * 
      * @param clientContext
@@ -420,7 +420,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon
      *        Mobile Analytics API Reference and User Guide</i>.</p>
      *        <p>
-     *        The ClientContext JSON must be base64-encoded.
+     *        The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      */
 
     public void setClientContext(String clientContext) {
@@ -436,7 +436,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * Analytics API Reference and User Guide</i>.
      * </p>
      * <p>
-     * The ClientContext JSON must be base64-encoded.
+     * The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * </p>
      * 
      * @return Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you
@@ -445,7 +445,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon
      *         Mobile Analytics API Reference and User Guide</i>.</p>
      *         <p>
-     *         The ClientContext JSON must be base64-encoded.
+     *         The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      */
 
     public String getClientContext() {
@@ -461,7 +461,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * Analytics API Reference and User Guide</i>.
      * </p>
      * <p>
-     * The ClientContext JSON must be base64-encoded.
+     * The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * </p>
      * 
      * @param clientContext
@@ -471,7 +471,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <i>Amazon
      *        Mobile Analytics API Reference and User Guide</i>.</p>
      *        <p>
-     *        The ClientContext JSON must be base64-encoded.
+     *        The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

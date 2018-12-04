@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,19 +42,13 @@ import java.util.regex.Pattern;
 public enum Region {
 
     /**
-     * The US Standard Amazon S3 Region. This region
-     * uses Amazon S3 servers located in the United
-     * States.
+     * The US Standard Amazon S3 Region. This region is equivalent to 'us-east-1', see
+     * <a href="https://aws.amazon.com/s3/faqs/">Amazon Simple Storage Service (S3) FAQs</a> for more information.
      * <p>
-     * This is the default Amazon S3 Region. All requests sent to
-     * <code>s3.amazonaws.com</code> go
+     * This is the default Amazon S3 Region. All requests sent to <code>s3.amazonaws.com</code> go
      * to this region unless a location constraint is specified when creating a bucket.
-     * The US Standard Region automatically places
-     * data in either Amazon's east or west coast data centers depending on
-     * which one provides the lowest latency.
-     * </p>
      */
-    US_Standard((String[])null),
+    US_Standard((String[]) null),
 
     /**
      * The US-East-2 (Ohio) Region. This region
@@ -109,6 +103,12 @@ public enum Region {
      * in London.
      */
     EU_London("eu-west-2"),
+
+    /**
+     * The EU (Paris) Amazon S3 Region. This region uses Amazon S3 servers located
+     * in Paris.
+     */
+    EU_Paris("eu-west-3"),
 
     /**
      * The EU (Frankfurt) Amazon S3 Region. This region uses Amazon S3 servers
@@ -223,7 +223,17 @@ public enum Region {
      * <code>s3.cn-north-1.amazonaws.com.cn</code>.
      * </p>
      */
-    CN_Beijing("cn-north-1");
+    CN_Beijing("cn-north-1"),
+
+    /**
+     * The China (Ningxia) Region. This region uses Amazon S3 servers
+     * located in Ningxia.
+     * <p>
+     * When using buckets in this region, you must set the client endpoint to
+     * <code>s3.cn-northwest-1.amazonaws.com.cn</code>.
+     * </p>
+     */
+    CN_Northwest_1("cn-northwest-1");
 
    /**
     * Used to extract the S3 regional id from an S3 end point.

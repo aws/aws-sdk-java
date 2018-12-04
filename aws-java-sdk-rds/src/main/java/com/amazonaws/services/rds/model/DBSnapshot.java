@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,20 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the details of an Amazon RDS DB snapshot.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateDBSnapshot</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteDBSnapshot</a>
- * </p>
- * </li>
- * </ul>
  * <p>
  * This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
  * </p>
@@ -67,7 +55,7 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String engine;
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      */
     private Integer allocatedStorage;
@@ -176,7 +164,7 @@ public class DBSnapshot implements Serializable, Cloneable {
     private Boolean encrypted;
     /**
      * <p>
-     * If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
      */
     private String kmsKeyId;
@@ -196,8 +184,8 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String timezone;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -364,11 +352,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size in gigabytes (GB).
+     *        Specifies the allocated storage size in gibibytes (GiB).
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -377,10 +365,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
-     * @return Specifies the allocated storage size in gigabytes (GB).
+     * @return Specifies the allocated storage size in gibibytes (GiB).
      */
 
     public Integer getAllocatedStorage() {
@@ -389,11 +377,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size in gigabytes (GB).
+     *        Specifies the allocated storage size in gibibytes (GiB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1106,11 +1094,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1119,10 +1107,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
      * 
-     * @return If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * @return If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      */
 
     public String getKmsKeyId() {
@@ -1131,11 +1119,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1238,12 +1226,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *        otherwise false.
      */
 
@@ -1253,11 +1241,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *         otherwise false.
      */
 
@@ -1267,12 +1255,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *        otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1284,11 +1272,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *         otherwise false.
      */
 

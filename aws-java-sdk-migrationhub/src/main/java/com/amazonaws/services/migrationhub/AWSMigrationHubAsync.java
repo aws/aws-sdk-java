@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,10 @@ import com.amazonaws.services.migrationhub.model.*;
  * {@link com.amazonaws.services.migrationhub.AbstractAWSMigrationHubAsync} instead.
  * </p>
  * <p>
- * <p/>
+ * <p>
+ * The AWS Migration Hub API methods help to obtain server and application migration status and integrate your
+ * resource-specific migration tool by providing a programmatic interface to Migration Hub.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSMigrationHubAsync extends AWSMigrationHub {
@@ -187,8 +190,8 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * </li>
      * <li>
      * <p>
-     * The call will return, and a background process will asynchronously be doing the actual delete of the stream and
-     * all of its resources (tasks, associated resources, resource attributes, created artifacts).
+     * The call will return, and a background process will asynchronously delete the stream and all of its resources
+     * (tasks, associated resources, resource attributes, created artifacts).
      * </p>
      * </li>
      * <li>
@@ -235,8 +238,8 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * </li>
      * <li>
      * <p>
-     * The call will return, and a background process will asynchronously be doing the actual delete of the stream and
-     * all of its resources (tasks, associated resources, resource attributes, created artifacts).
+     * The call will return, and a background process will asynchronously delete the stream and all of its resources
+     * (tasks, associated resources, resource attributes, created artifacts).
      * </p>
      * </li>
      * <li>
@@ -794,15 +797,25 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * <code>PutResourceAttributes</code> returns.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * Keep in mind that subsequent calls to PutResourceAttributes will override previously stored attributes. For
      * example, if it is first called with a MAC address, but later, it is desired to <i>add</i> an IP address, it will
      * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overiding the MAC address.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Note the instructions regarding the special use case of the <code>ResourceAttributeList</code> parameter when
+     * specifying any "VM" related value.
+     * </p>
+     * </li>
+     * </ul>
      * </important> <note>
      * <p>
      * Because this is an asynchronous call, it will always return 200, whether an association occurs or not. To confirm
-     * if an association was found based on the provided details, call <code>ListAssociatedResource</code>.
+     * if an association was found based on the provided details, call <code>ListDiscoveredResources</code>.
      * </p>
      * </note>
      * 
@@ -821,15 +834,25 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * <code>PutResourceAttributes</code> returns.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * Keep in mind that subsequent calls to PutResourceAttributes will override previously stored attributes. For
      * example, if it is first called with a MAC address, but later, it is desired to <i>add</i> an IP address, it will
      * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overiding the MAC address.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Note the instructions regarding the special use case of the <code>ResourceAttributeList</code> parameter when
+     * specifying any "VM" related value.
+     * </p>
+     * </li>
+     * </ul>
      * </important> <note>
      * <p>
      * Because this is an asynchronous call, it will always return 200, whether an association occurs or not. To confirm
-     * if an association was found based on the provided details, call <code>ListAssociatedResource</code>.
+     * if an association was found based on the provided details, call <code>ListDiscoveredResources</code>.
      * </p>
      * </note>
      * 

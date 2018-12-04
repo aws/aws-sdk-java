@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,8 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
     private String nodeAssociationStatus;
     /**
      * <p>
-     * Attributes specific to the node association.
+     * Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     * certificate (the result of the CSR).
      * </p>
      */
     private java.util.List<EngineAttribute> engineAttributes;
@@ -327,10 +328,12 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Attributes specific to the node association.
+     * Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     * certificate (the result of the CSR).
      * </p>
      * 
-     * @return Attributes specific to the node association.
+     * @return Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     *         certificate (the result of the CSR).
      */
 
     public java.util.List<EngineAttribute> getEngineAttributes() {
@@ -339,11 +342,13 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Attributes specific to the node association.
+     * Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     * certificate (the result of the CSR).
      * </p>
      * 
      * @param engineAttributes
-     *        Attributes specific to the node association.
+     *        Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     *        certificate (the result of the CSR).
      */
 
     public void setEngineAttributes(java.util.Collection<EngineAttribute> engineAttributes) {
@@ -357,7 +362,8 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Attributes specific to the node association.
+     * Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     * certificate (the result of the CSR).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -366,7 +372,8 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param engineAttributes
-     *        Attributes specific to the node association.
+     *        Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     *        certificate (the result of the CSR).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,11 +389,13 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Attributes specific to the node association.
+     * Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     * certificate (the result of the CSR).
      * </p>
      * 
      * @param engineAttributes
-     *        Attributes specific to the node association.
+     *        Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed
+     *        certificate (the result of the CSR).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class UpdateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed product view information.
+     * Information about the product view.
      * </p>
      */
     private ProductViewDetail productViewDetail;
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the tags associated with the product.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The resulting detailed product view information.
+     * Information about the product view.
      * </p>
      * 
      * @param productViewDetail
-     *        The resulting detailed product view information.
+     *        Information about the product view.
      */
 
     public void setProductViewDetail(ProductViewDetail productViewDetail) {
@@ -51,10 +51,10 @@ public class UpdateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed product view information.
+     * Information about the product view.
      * </p>
      * 
-     * @return The resulting detailed product view information.
+     * @return Information about the product view.
      */
 
     public ProductViewDetail getProductViewDetail() {
@@ -63,11 +63,11 @@ public class UpdateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed product view information.
+     * Information about the product view.
      * </p>
      * 
      * @param productViewDetail
-     *        The resulting detailed product view information.
+     *        Information about the product view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class UpdateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the tags associated with the product.
      * </p>
      * 
-     * @return Tags associated with the product.
+     * @return Information about the tags associated with the product.
      */
 
     public java.util.List<Tag> getTags() {
@@ -90,11 +90,11 @@ public class UpdateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the tags associated with the product.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the product.
+     *        Information about the tags associated with the product.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -108,7 +108,7 @@ public class UpdateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the tags associated with the product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class UpdateProductResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param tags
-     *        Tags associated with the product.
+     *        Information about the tags associated with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class UpdateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the tags associated with the product.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the product.
+     *        Information about the tags associated with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

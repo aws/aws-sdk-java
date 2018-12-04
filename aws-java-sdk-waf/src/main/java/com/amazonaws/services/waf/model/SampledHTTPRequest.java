@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,14 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String action;
+    /**
+     * <p>
+     * This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a
+     * <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule
+     * within the specified <code>RuleGroup</code> that matched the request listed in the response.
+     * </p>
+     */
+    private String ruleWithinRuleGroup;
 
     /**
      * <p>
@@ -237,6 +245,58 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a
+     * <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule
+     * within the specified <code>RuleGroup</code> that matched the request listed in the response.
+     * </p>
+     * 
+     * @param ruleWithinRuleGroup
+     *        This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a
+     *        <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the
+     *        rule within the specified <code>RuleGroup</code> that matched the request listed in the response.
+     */
+
+    public void setRuleWithinRuleGroup(String ruleWithinRuleGroup) {
+        this.ruleWithinRuleGroup = ruleWithinRuleGroup;
+    }
+
+    /**
+     * <p>
+     * This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a
+     * <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule
+     * within the specified <code>RuleGroup</code> that matched the request listed in the response.
+     * </p>
+     * 
+     * @return This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a
+     *         <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the
+     *         rule within the specified <code>RuleGroup</code> that matched the request listed in the response.
+     */
+
+    public String getRuleWithinRuleGroup() {
+        return this.ruleWithinRuleGroup;
+    }
+
+    /**
+     * <p>
+     * This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a
+     * <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule
+     * within the specified <code>RuleGroup</code> that matched the request listed in the response.
+     * </p>
+     * 
+     * @param ruleWithinRuleGroup
+     *        This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a
+     *        <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the
+     *        rule within the specified <code>RuleGroup</code> that matched the request listed in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withRuleWithinRuleGroup(String ruleWithinRuleGroup) {
+        setRuleWithinRuleGroup(ruleWithinRuleGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -254,7 +314,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         if (getTimestamp() != null)
             sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getAction() != null)
-            sb.append("Action: ").append(getAction());
+            sb.append("Action: ").append(getAction()).append(",");
+        if (getRuleWithinRuleGroup() != null)
+            sb.append("RuleWithinRuleGroup: ").append(getRuleWithinRuleGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -285,6 +347,10 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
+        if (other.getRuleWithinRuleGroup() == null ^ this.getRuleWithinRuleGroup() == null)
+            return false;
+        if (other.getRuleWithinRuleGroup() != null && other.getRuleWithinRuleGroup().equals(this.getRuleWithinRuleGroup()) == false)
+            return false;
         return true;
     }
 
@@ -297,6 +363,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getWeight() == null) ? 0 : getWeight().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getRuleWithinRuleGroup() == null) ? 0 : getRuleWithinRuleGroup().hashCode());
         return hashCode;
     }
 

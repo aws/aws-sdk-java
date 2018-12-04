@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role that grants access to the Amazon Kinesis Firehost stream.
+     * The IAM role that grants access to the Amazon Kinesis Firehose stream.
      * </p>
      */
     private String roleArn;
@@ -47,11 +47,11 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role that grants access to the Amazon Kinesis Firehost stream.
+     * The IAM role that grants access to the Amazon Kinesis Firehose stream.
      * </p>
      * 
      * @param roleArn
-     *        The IAM role that grants access to the Amazon Kinesis Firehost stream.
+     *        The IAM role that grants access to the Amazon Kinesis Firehose stream.
      */
 
     public void setRoleArn(String roleArn) {
@@ -60,10 +60,10 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role that grants access to the Amazon Kinesis Firehost stream.
+     * The IAM role that grants access to the Amazon Kinesis Firehose stream.
      * </p>
      * 
-     * @return The IAM role that grants access to the Amazon Kinesis Firehost stream.
+     * @return The IAM role that grants access to the Amazon Kinesis Firehose stream.
      */
 
     public String getRoleArn() {
@@ -72,11 +72,11 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role that grants access to the Amazon Kinesis Firehost stream.
+     * The IAM role that grants access to the Amazon Kinesis Firehose stream.
      * </p>
      * 
      * @param roleArn
-     *        The IAM role that grants access to the Amazon Kinesis Firehost stream.
+     *        The IAM role that grants access to the Amazon Kinesis Firehose stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

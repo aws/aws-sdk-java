@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Represents status information for a VPC peering connection. Status is associated with a <a>VpcPeeringConnection</a>
- * object. Status codes and messages are provided from EC2 (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">).</a>
- * Connection status information is also communicated as a fleet <a>Event</a>.
+ * object. Status codes and messages are provided from EC2 (see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html"
+ * >VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet <a>Event</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/VpcPeeringConnectionStatus"

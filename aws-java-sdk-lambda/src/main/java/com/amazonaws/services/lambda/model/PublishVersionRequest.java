@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,9 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The SHA256 hash of the deployment package you want to publish. This provides validation on the code you are
-     * publishing. If you provide this parameter value must match the SHA256 of the $LATEST version for the publication
-     * to succeed.
+     * publishing. If you provide this parameter, the value must match the SHA256 of the $LATEST version for the
+     * publication to succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to verify the hash
+     * value that will be returned before publishing your new version.
      * </p>
      */
     private String codeSha256;
@@ -51,6 +52,15 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
@@ -119,14 +129,16 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The SHA256 hash of the deployment package you want to publish. This provides validation on the code you are
-     * publishing. If you provide this parameter value must match the SHA256 of the $LATEST version for the publication
-     * to succeed.
+     * publishing. If you provide this parameter, the value must match the SHA256 of the $LATEST version for the
+     * publication to succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to verify the hash
+     * value that will be returned before publishing your new version.
      * </p>
      * 
      * @param codeSha256
      *        The SHA256 hash of the deployment package you want to publish. This provides validation on the code you
-     *        are publishing. If you provide this parameter value must match the SHA256 of the $LATEST version for the
-     *        publication to succeed.
+     *        are publishing. If you provide this parameter, the value must match the SHA256 of the $LATEST version for
+     *        the publication to succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to verify
+     *        the hash value that will be returned before publishing your new version.
      */
 
     public void setCodeSha256(String codeSha256) {
@@ -136,13 +148,15 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The SHA256 hash of the deployment package you want to publish. This provides validation on the code you are
-     * publishing. If you provide this parameter value must match the SHA256 of the $LATEST version for the publication
-     * to succeed.
+     * publishing. If you provide this parameter, the value must match the SHA256 of the $LATEST version for the
+     * publication to succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to verify the hash
+     * value that will be returned before publishing your new version.
      * </p>
      * 
      * @return The SHA256 hash of the deployment package you want to publish. This provides validation on the code you
-     *         are publishing. If you provide this parameter value must match the SHA256 of the $LATEST version for the
-     *         publication to succeed.
+     *         are publishing. If you provide this parameter, the value must match the SHA256 of the $LATEST version for
+     *         the publication to succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to
+     *         verify the hash value that will be returned before publishing your new version.
      */
 
     public String getCodeSha256() {
@@ -152,14 +166,16 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The SHA256 hash of the deployment package you want to publish. This provides validation on the code you are
-     * publishing. If you provide this parameter value must match the SHA256 of the $LATEST version for the publication
-     * to succeed.
+     * publishing. If you provide this parameter, the value must match the SHA256 of the $LATEST version for the
+     * publication to succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to verify the hash
+     * value that will be returned before publishing your new version.
      * </p>
      * 
      * @param codeSha256
      *        The SHA256 hash of the deployment package you want to publish. This provides validation on the code you
-     *        are publishing. If you provide this parameter value must match the SHA256 of the $LATEST version for the
-     *        publication to succeed.
+     *        are publishing. If you provide this parameter, the value must match the SHA256 of the $LATEST version for
+     *        the publication to succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to verify
+     *        the hash value that will be returned before publishing your new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,6 +231,64 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @param revisionId
+     *        An optional value you can use to ensure you are updating the latest update of the function version or
+     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *        version or alias <code>RevisionID</code> using either or .
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @return An optional value you can use to ensure you are updating the latest update of the function version or
+     *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *         function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *         version or alias <code>RevisionID</code> using either or .
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @param revisionId
+     *        An optional value you can use to ensure you are updating the latest update of the function version or
+     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *        version or alias <code>RevisionID</code> using either or .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishVersionRequest withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -230,7 +304,9 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getCodeSha256() != null)
             sb.append("CodeSha256: ").append(getCodeSha256()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -257,6 +333,10 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
         return true;
     }
 
@@ -268,6 +348,7 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
         hashCode = prime * hashCode + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 

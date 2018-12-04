@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      */
     private java.util.List<Operation> operations;
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      * 
-     * @return An object describing the API operation.
+     * @return An object describing the API operations.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -44,11 +44,11 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      * 
      * @param operations
-     *        An object describing the API operation.
+     *        An object describing the API operations.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -62,7 +62,7 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param operations
-     *        An object describing the API operation.
+     *        An object describing the API operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      * 
      * @param operations
-     *        An object describing the API operation.
+     *        An object describing the API operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

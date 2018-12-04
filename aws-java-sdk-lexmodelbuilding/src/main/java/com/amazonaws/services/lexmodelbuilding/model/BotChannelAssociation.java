@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,37 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Map<String, String> botConfiguration;
+    /**
+     * <p>
+     * The status of the bot channel.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED</code> - The channel has been created and is ready for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure,
+     * see the <code>failureReason</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String status;
+    /**
+     * <p>
+     * If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the
+     * association.
+     * </p>
+     */
+    private String failureReason;
 
     /**
      * <p>
@@ -446,6 +477,300 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The status of the bot channel.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED</code> - The channel has been created and is ready for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure,
+     * see the <code>failureReason</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param status
+     *        The status of the bot channel. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATED</code> - The channel has been created and is ready for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_PROGRESS</code> - Channel creation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - There was an error creating the channel. For information about the reason for the
+     *        failure, see the <code>failureReason</code> field.
+     *        </p>
+     *        </li>
+     * @see ChannelStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the bot channel.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED</code> - The channel has been created and is ready for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure,
+     * see the <code>failureReason</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The status of the bot channel. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATED</code> - The channel has been created and is ready for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IN_PROGRESS</code> - Channel creation is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> - There was an error creating the channel. For information about the reason for the
+     *         failure, see the <code>failureReason</code> field.
+     *         </p>
+     *         </li>
+     * @see ChannelStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the bot channel.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED</code> - The channel has been created and is ready for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure,
+     * see the <code>failureReason</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param status
+     *        The status of the bot channel. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATED</code> - The channel has been created and is ready for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_PROGRESS</code> - Channel creation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - There was an error creating the channel. For information about the reason for the
+     *        failure, see the <code>failureReason</code> field.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ChannelStatus
+     */
+
+    public BotChannelAssociation withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the bot channel.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED</code> - The channel has been created and is ready for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure,
+     * see the <code>failureReason</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param status
+     *        The status of the bot channel. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATED</code> - The channel has been created and is ready for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_PROGRESS</code> - Channel creation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - There was an error creating the channel. For information about the reason for the
+     *        failure, see the <code>failureReason</code> field.
+     *        </p>
+     *        </li>
+     * @see ChannelStatus
+     */
+
+    public void setStatus(ChannelStatus status) {
+        withStatus(status);
+    }
+
+    /**
+     * <p>
+     * The status of the bot channel.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED</code> - The channel has been created and is ready for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure,
+     * see the <code>failureReason</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param status
+     *        The status of the bot channel. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATED</code> - The channel has been created and is ready for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_PROGRESS</code> - Channel creation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - There was an error creating the channel. For information about the reason for the
+     *        failure, see the <code>failureReason</code> field.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ChannelStatus
+     */
+
+    public BotChannelAssociation withStatus(ChannelStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the
+     * association.
+     * </p>
+     * 
+     * @param failureReason
+     *        If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the
+     *        association.
+     */
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
+    /**
+     * <p>
+     * If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the
+     * association.
+     * </p>
+     * 
+     * @return If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create
+     *         the association.
+     */
+
+    public String getFailureReason() {
+        return this.failureReason;
+    }
+
+    /**
+     * <p>
+     * If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the
+     * association.
+     * </p>
+     * 
+     * @param failureReason
+     *        If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the
+     *        association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BotChannelAssociation withFailureReason(String failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -469,7 +794,11 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getBotConfiguration() != null)
-            sb.append("BotConfiguration: ").append(getBotConfiguration());
+            sb.append("BotConfiguration: ").append(getBotConfiguration()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getFailureReason() != null)
+            sb.append("FailureReason: ").append(getFailureReason());
         sb.append("}");
         return sb.toString();
     }
@@ -512,6 +841,14 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
             return false;
         if (other.getBotConfiguration() != null && other.getBotConfiguration().equals(this.getBotConfiguration()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getFailureReason() == null ^ this.getFailureReason() == null)
+            return false;
+        if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
+            return false;
         return true;
     }
 
@@ -527,6 +864,8 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getBotConfiguration() == null) ? 0 : getBotConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         return hashCode;
     }
 

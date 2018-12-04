@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,9 +51,8 @@ import com.amazonaws.services.ec2.model.transform.*;
  * <p>
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS)
- * cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy
- * applications faster.
+ * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the AWS Cloud. Using Amazon EC2
+ * eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.
  * </p>
  */
 @ThreadSafe
@@ -296,6 +295,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(acceptReservedInstancesExchangeQuoteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -314,9 +314,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Accepts one or more interface VPC endpoint connection requests to your VPC endpoint service.
+     * </p>
+     * 
+     * @param acceptVpcEndpointConnectionsRequest
+     * @return Result of the AcceptVpcEndpointConnections operation returned by the service.
+     * @sample AmazonEC2.AcceptVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptVpcEndpointConnectionsResult acceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptVpcEndpointConnections(request);
+    }
+
+    @SdkInternalApi
+    final AcceptVpcEndpointConnectionsResult executeAcceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest acceptVpcEndpointConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptVpcEndpointConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptVpcEndpointConnectionsRequest> request = null;
+        Response<AcceptVpcEndpointConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptVpcEndpointConnectionsRequestMarshaller().marshall(super.beforeMarshalling(acceptVpcEndpointConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AcceptVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<AcceptVpcEndpointConnectionsResult>(
+                    new AcceptVpcEndpointConnectionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the
      * <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use
      * <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering connection requests.
+     * </p>
+     * <p>
+     * For an inter-region VPC peering connection request, you must accept the VPC peering connection in the region of
+     * the accepter VPC.
      * </p>
      * 
      * @param acceptVpcPeeringConnectionRequest
@@ -347,6 +400,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AcceptVpcPeeringConnectionRequestMarshaller().marshall(super.beforeMarshalling(acceptVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -415,6 +469,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AllocateAddressRequestMarshaller().marshall(super.beforeMarshalling(allocateAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -470,6 +525,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AllocateHostsRequestMarshaller().marshall(super.beforeMarshalling(allocateHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -522,6 +578,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssignIpv6AddressesRequestMarshaller().marshall(super.beforeMarshalling(assignIpv6AddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -581,6 +638,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssignPrivateIpAddressesRequestMarshaller().marshall(super.beforeMarshalling(assignPrivateIpAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -655,6 +713,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateAddressRequestMarshaller().marshall(super.beforeMarshalling(associateAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -716,6 +775,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(associateDhcpOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -765,6 +825,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateIamInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(associateIamInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -822,6 +883,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateRouteTableRequestMarshaller().marshall(super.beforeMarshalling(associateRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -871,6 +933,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateSubnetCidrBlockRequestMarshaller().marshall(super.beforeMarshalling(associateSubnetCidrBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -925,6 +988,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateVpcCidrBlockRequestMarshaller().marshall(super.beforeMarshalling(associateVpcCidrBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -984,6 +1048,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachClassicLinkVpcRequestMarshaller().marshall(super.beforeMarshalling(attachClassicLinkVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1035,6 +1100,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(attachInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1084,6 +1150,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachNetworkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(attachNetworkInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1181,6 +1248,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachVolumeRequestMarshaller().marshall(super.beforeMarshalling(attachVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1233,6 +1301,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachVpnGatewayRequestMarshaller().marshall(super.beforeMarshalling(attachVpnGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1298,6 +1367,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AuthorizeSecurityGroupEgressRequestMarshaller().marshall(super.beforeMarshalling(authorizeSecurityGroupEgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1367,6 +1437,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AuthorizeSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(authorizeSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1430,6 +1501,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new BundleInstanceRequestMarshaller().marshall(super.beforeMarshalling(bundleInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1479,6 +1551,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelBundleTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelBundleTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1535,6 +1608,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelConversionTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelConversionTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1586,6 +1660,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelExportTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1635,6 +1710,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelImportTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelImportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1694,6 +1770,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelReservedInstancesListingRequestMarshaller().marshall(super.beforeMarshalling(cancelReservedInstancesListingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1712,12 +1789,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Cancels the specified Spot fleet requests.
+     * Cancels the specified Spot Fleet requests.
      * </p>
      * <p>
-     * After you cancel a Spot fleet request, the Spot fleet launches no new Spot instances. You must specify whether
-     * the Spot fleet should also terminate its Spot instances. If you terminate the instances, the Spot fleet request
-     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot fleet request enters the
+     * After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances. You must specify whether
+     * the Spot Fleet should also terminate its Spot Instances. If you terminate the instances, the Spot Fleet request
+     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the
      * <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you
      * terminate them manually.
      * </p>
@@ -1750,6 +1827,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelSpotFleetRequestsRequestMarshaller().marshall(super.beforeMarshalling(cancelSpotFleetRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1768,15 +1846,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Cancels one or more Spot instance requests. Spot instances are instances that Amazon EC2 starts on your behalf
-     * when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically sets the Spot price
-     * based on available Spot instance capacity and current Spot instance requests. For more information, see <a
+     * Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * Canceling a Spot instance request does not terminate running Spot instances associated with the request.
+     * Canceling a Spot Instance request does not terminate running Spot Instances associated with the request.
      * </p>
      * </important>
      * 
@@ -1808,6 +1885,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelSpotInstanceRequestsRequestMarshaller().marshall(super.beforeMarshalling(cancelSpotInstanceRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1859,6 +1937,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ConfirmProductInstanceRequestMarshaller().marshall(super.beforeMarshalling(confirmProductInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1907,6 +1986,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CopyFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(copyFpgaImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1961,6 +2041,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CopyImageRequestMarshaller().marshall(super.beforeMarshalling(copyImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2032,6 +2113,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CopySnapshotRequestMarshaller().marshall(super.beforeMarshalling(copySnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2107,6 +2189,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateCustomerGatewayRequestMarshaller().marshall(super.beforeMarshalling(createCustomerGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2158,6 +2241,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateDefaultSubnetRequestMarshaller().marshall(super.beforeMarshalling(createDefaultSubnetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2221,6 +2305,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateDefaultVpcRequestMarshaller().marshall(super.beforeMarshalling(createDefaultVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2321,6 +2406,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(createDhcpOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2372,6 +2458,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateEgressOnlyInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(createEgressOnlyInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2398,6 +2485,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * In your request, you must also specify an IAM role that has permission to publish logs to CloudWatch Logs.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC Flow
+     * Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createFlowLogsRequest
@@ -2428,6 +2519,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateFlowLogsRequestMarshaller().marshall(super.beforeMarshalling(createFlowLogsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2484,6 +2576,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(createFpgaImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2543,6 +2636,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateImageRequestMarshaller().marshall(super.beforeMarshalling(createImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2597,6 +2691,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateInstanceExportTaskRequestMarshaller().marshall(super.beforeMarshalling(createInstanceExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2651,6 +2746,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(createInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2675,20 +2771,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public key and displays the
-     * private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#8 private
+     * private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#1 private
      * key. If a key with the specified name already exists, Amazon EC2 returns an error.
      * </p>
      * <p>
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
-     * The key pair returned to you is available only in the region in which you create it. To create a key pair that is
-     * available in all regions, use <a>ImportKeyPair</a>.
+     * The key pair returned to you is available only in the region in which you create it. If you prefer, you can
+     * create your own key pair using a third-party tool and upload it to any region using <a>ImportKeyPair</a>.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+     * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -2719,11 +2814,117 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateKeyPairRequestMarshaller().marshall(super.beforeMarshalling(createKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<CreateKeyPairResult> responseHandler = new StaxResponseHandler<CreateKeyPairResult>(new CreateKeyPairResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a launch template. A launch template contains the parameters to launch an instance. When you launch an
+     * instance using <a>RunInstances</a>, you can specify a launch template instead of providing the launch parameters
+     * in the request.
+     * </p>
+     * 
+     * @param createLaunchTemplateRequest
+     * @return Result of the CreateLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2.CreateLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateLaunchTemplateResult createLaunchTemplate(CreateLaunchTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLaunchTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateLaunchTemplateResult executeCreateLaunchTemplate(CreateLaunchTemplateRequest createLaunchTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLaunchTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLaunchTemplateRequest> request = null;
+        Response<CreateLaunchTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLaunchTemplateRequestMarshaller().marshall(super.beforeMarshalling(createLaunchTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateLaunchTemplateResult> responseHandler = new StaxResponseHandler<CreateLaunchTemplateResult>(
+                    new CreateLaunchTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new version for a launch template. You can specify an existing version of launch template from which to
+     * base the new version.
+     * </p>
+     * <p>
+     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * replace the numbering of launch template versions.
+     * </p>
+     * 
+     * @param createLaunchTemplateVersionRequest
+     * @return Result of the CreateLaunchTemplateVersion operation returned by the service.
+     * @sample AmazonEC2.CreateLaunchTemplateVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLaunchTemplateVersionResult createLaunchTemplateVersion(CreateLaunchTemplateVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLaunchTemplateVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateLaunchTemplateVersionResult executeCreateLaunchTemplateVersion(CreateLaunchTemplateVersionRequest createLaunchTemplateVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLaunchTemplateVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLaunchTemplateVersionRequest> request = null;
+        Response<CreateLaunchTemplateVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLaunchTemplateVersionRequestMarshaller().marshall(super.beforeMarshalling(createLaunchTemplateVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateLaunchTemplateVersionResult> responseHandler = new StaxResponseHandler<CreateLaunchTemplateVersionResult>(
+                    new CreateLaunchTemplateVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2771,6 +2972,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNatGatewayRequestMarshaller().marshall(super.beforeMarshalling(createNatGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2826,6 +3028,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNetworkAclRequestMarshaller().marshall(super.beforeMarshalling(createNetworkAclRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2892,6 +3095,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNetworkAclEntryRequestMarshaller().marshall(super.beforeMarshalling(createNetworkAclEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2946,6 +3150,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNetworkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(createNetworkInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3000,6 +3205,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNetworkInterfacePermissionRequestMarshaller().marshall(super.beforeMarshalling(createNetworkInterfacePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3018,13 +3224,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a placement group that you launch cluster instances into. Give the group a name that's unique within the
-     * scope of your account.
+     * Creates a placement group in which to launch instances. The strategy of the placement group determines how the
+     * instances are organized within the group.
      * </p>
      * <p>
-     * For more information about placement groups and cluster instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that
+     * benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances
+     * on distinct hardware.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createPlacementGroupRequest
@@ -3055,6 +3266,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreatePlacementGroupRequestMarshaller().marshall(super.beforeMarshalling(createPlacementGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3129,6 +3341,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateReservedInstancesListingRequestMarshaller().marshall(super.beforeMarshalling(createReservedInstancesListingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3208,6 +3421,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateRouteRequestMarshaller().marshall(super.beforeMarshalling(createRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3262,6 +3476,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateRouteTableRequestMarshaller().marshall(super.beforeMarshalling(createRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3341,6 +3556,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(createSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3385,6 +3601,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * remain protected.
      * </p>
      * <p>
+     * You can tag your snapshots during creation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * </p>
+     * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
      * Elastic Block Store</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
@@ -3419,6 +3639,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3437,7 +3658,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a data feed for Spot instances, enabling you to view Spot instance usage logs. You can create one data
+     * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
      * feed per AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3471,6 +3692,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSpotDatafeedSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(createSpotDatafeedSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3551,6 +3773,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSubnetRequestMarshaller().marshall(super.beforeMarshalling(createSubnetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3608,6 +3831,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTagsRequestMarshaller().marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3678,6 +3902,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVolumeRequestMarshaller().marshall(super.beforeMarshalling(createVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3745,6 +3970,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpcRequestMarshaller().marshall(super.beforeMarshalling(createVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3762,19 +3988,23 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create a private connection
-     * between your VPC and another AWS service in your account. You can create a gateway endpoint or an interface
-     * endpoint.
+     * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
+     * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+     * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * A gateway endpoint serves as a target for a route in your route table for traffic destined for the AWS service.
-     * You can specify the VPC route tables that use the endpoint, and you can optionally specify an endpoint policy to
-     * attach to the endpoint that will control access to the service from your VPC.
+     * A <code>gateway</code> endpoint serves as a target for a route in your route table for traffic destined for the
+     * AWS service. You can specify an endpoint policy to attach to the endpoint that will control access to the service
+     * from your VPC. You can also specify the VPC route tables that use the endpoint.
      * </p>
      * <p>
-     * An interface endpoint is a network interface in your subnet with a private IP address that serves as an entry
-     * point for traffic destined to the AWS service. You can specify the subnets in which to create an endpoint, and
-     * the security groups to associate with the network interface.
+     * An <code>interface</code> endpoint is a network interface in your subnet that serves as an endpoint for
+     * communicating with the specified service. You can specify the subnets in which to create an endpoint, and the
+     * security groups to associate with the endpoint network interface.
+     * </p>
+     * <p>
+     * Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
      * </p>
      * 
      * @param createVpcEndpointRequest
@@ -3805,6 +4035,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpcEndpointRequestMarshaller().marshall(super.beforeMarshalling(createVpcEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3823,17 +4054,138 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to
-     * create the connection. The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have
-     * overlapping CIDR blocks.
+     * Creates a connection notification for a specified VPC endpoint or VPC endpoint service. A connection notification
+     * notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more
+     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a Topic</a> in the
+     * <i>Amazon Simple Notification Service Developer Guide</i>.
      * </p>
      * <p>
-     * The owner of the peer VPC must accept the peering request to activate the peering connection. The VPC peering
+     * You can create a connection notification for interface endpoints only.
+     * </p>
+     * 
+     * @param createVpcEndpointConnectionNotificationRequest
+     * @return Result of the CreateVpcEndpointConnectionNotification operation returned by the service.
+     * @sample AmazonEC2.CreateVpcEndpointConnectionNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVpcEndpointConnectionNotificationResult createVpcEndpointConnectionNotification(CreateVpcEndpointConnectionNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVpcEndpointConnectionNotification(request);
+    }
+
+    @SdkInternalApi
+    final CreateVpcEndpointConnectionNotificationResult executeCreateVpcEndpointConnectionNotification(
+            CreateVpcEndpointConnectionNotificationRequest createVpcEndpointConnectionNotificationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVpcEndpointConnectionNotificationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVpcEndpointConnectionNotificationRequest> request = null;
+        Response<CreateVpcEndpointConnectionNotificationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVpcEndpointConnectionNotificationRequestMarshaller().marshall(super
+                        .beforeMarshalling(createVpcEndpointConnectionNotificationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateVpcEndpointConnectionNotificationResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointConnectionNotificationResult>(
+                    new CreateVpcEndpointConnectionNotificationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles)
+     * can connect. Service consumers can create an interface VPC endpoint to connect to your service.
+     * </p>
+     * <p>
+     * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
+     * more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+     * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createVpcEndpointServiceConfigurationRequest
+     * @return Result of the CreateVpcEndpointServiceConfiguration operation returned by the service.
+     * @sample AmazonEC2.CreateVpcEndpointServiceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVpcEndpointServiceConfigurationResult createVpcEndpointServiceConfiguration(CreateVpcEndpointServiceConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVpcEndpointServiceConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateVpcEndpointServiceConfigurationResult executeCreateVpcEndpointServiceConfiguration(
+            CreateVpcEndpointServiceConfigurationRequest createVpcEndpointServiceConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVpcEndpointServiceConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVpcEndpointServiceConfigurationRequest> request = null;
+        Response<CreateVpcEndpointServiceConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVpcEndpointServiceConfigurationRequestMarshaller().marshall(super
+                        .beforeMarshalling(createVpcEndpointServiceConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateVpcEndpointServiceConfigurationResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointServiceConfigurationResult>(
+                    new CreateVpcEndpointServiceConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which
+     * to create the connection. The accepter VPC can belong to another AWS account and can be in a different region to
+     * the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
+     * </p>
+     * <note>
+     * <p>
+     * Limitations and rules apply to a VPC peering connection. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations"
+     * >limitations</a> section in the <i>VPC Peering Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering
      * connection request expires after 7 days, after which it cannot be accepted or rejected.
      * </p>
      * <p>
-     * If you try to create a VPC peering connection between VPCs that have overlapping CIDR blocks, the VPC peering
-     * connection status goes to <code>failed</code>.
+     * If you create a VPC peering connection request between VPCs with overlapping CIDR blocks, the VPC peering
+     * connection has a status of <code>failed</code>.
      * </p>
      * 
      * @param createVpcPeeringConnectionRequest
@@ -3864,6 +4216,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpcPeeringConnectionRequestMarshaller().marshall(super.beforeMarshalling(createVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3940,6 +4293,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpnConnectionRequestMarshaller().marshall(super.beforeMarshalling(createVpnConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3996,6 +4350,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpnConnectionRouteRequestMarshaller().marshall(super.beforeMarshalling(createVpnConnectionRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4051,6 +4406,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpnGatewayRequestMarshaller().marshall(super.beforeMarshalling(createVpnGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4101,6 +4457,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteCustomerGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteCustomerGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4152,6 +4509,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(deleteDhcpOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4201,6 +4559,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteEgressOnlyInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteEgressOnlyInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4250,6 +4609,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteFlowLogsRequestMarshaller().marshall(super.beforeMarshalling(deleteFlowLogsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4298,6 +4658,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(deleteFpgaImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4348,6 +4709,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4397,11 +4759,112 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteKeyPairRequestMarshaller().marshall(super.beforeMarshalling(deleteKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DeleteKeyPairResult> responseHandler = new StaxResponseHandler<DeleteKeyPairResult>(new DeleteKeyPairResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a launch template. Deleting a launch template deletes all of its versions.
+     * </p>
+     * 
+     * @param deleteLaunchTemplateRequest
+     * @return Result of the DeleteLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2.DeleteLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteLaunchTemplateResult deleteLaunchTemplate(DeleteLaunchTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLaunchTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLaunchTemplateResult executeDeleteLaunchTemplate(DeleteLaunchTemplateRequest deleteLaunchTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLaunchTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLaunchTemplateRequest> request = null;
+        Response<DeleteLaunchTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLaunchTemplateRequestMarshaller().marshall(super.beforeMarshalling(deleteLaunchTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteLaunchTemplateResult> responseHandler = new StaxResponseHandler<DeleteLaunchTemplateResult>(
+                    new DeleteLaunchTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes one or more versions of a launch template. You cannot delete the default version of a launch template;
+     * you must first assign a different version as the default. If the default version is the only version for the
+     * launch template, you must delete the entire launch template using <a>DeleteLaunchTemplate</a>.
+     * </p>
+     * 
+     * @param deleteLaunchTemplateVersionsRequest
+     * @return Result of the DeleteLaunchTemplateVersions operation returned by the service.
+     * @sample AmazonEC2.DeleteLaunchTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLaunchTemplateVersionsResult deleteLaunchTemplateVersions(DeleteLaunchTemplateVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLaunchTemplateVersions(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLaunchTemplateVersionsResult executeDeleteLaunchTemplateVersions(DeleteLaunchTemplateVersionsRequest deleteLaunchTemplateVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLaunchTemplateVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLaunchTemplateVersionsRequest> request = null;
+        Response<DeleteLaunchTemplateVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLaunchTemplateVersionsRequestMarshaller().marshall(super.beforeMarshalling(deleteLaunchTemplateVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteLaunchTemplateVersionsResult> responseHandler = new StaxResponseHandler<DeleteLaunchTemplateVersionsResult>(
+                    new DeleteLaunchTemplateVersionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4447,6 +4910,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNatGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteNatGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4497,6 +4961,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNetworkAclRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkAclRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4546,6 +5011,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNetworkAclEntryRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkAclEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4595,6 +5061,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNetworkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4647,6 +5114,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNetworkInterfacePermissionRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInterfacePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4666,9 +5134,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Deletes the specified placement group. You must terminate all instances in the placement group before you can
-     * delete the placement group. For more information about placement groups and cluster instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * delete the placement group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param deletePlacementGroupRequest
@@ -4699,6 +5167,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeletePlacementGroupRequestMarshaller().marshall(super.beforeMarshalling(deletePlacementGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4748,6 +5217,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteRouteRequestMarshaller().marshall(super.beforeMarshalling(deleteRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4797,6 +5267,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteRouteTableRequestMarshaller().marshall(super.beforeMarshalling(deleteRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4851,6 +5322,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4915,6 +5387,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteSnapshotRequestMarshaller().marshall(super.beforeMarshalling(deleteSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4933,7 +5406,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Deletes the data feed for Spot instances.
+     * Deletes the data feed for Spot Instances.
      * </p>
      * 
      * @param deleteSpotDatafeedSubscriptionRequest
@@ -4964,6 +5437,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteSpotDatafeedSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(deleteSpotDatafeedSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5019,6 +5493,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteSubnetRequestMarshaller().marshall(super.beforeMarshalling(deleteSubnetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5072,6 +5547,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTagsRequestMarshaller().marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5131,6 +5607,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVolumeRequestMarshaller().marshall(super.beforeMarshalling(deleteVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5182,11 +5659,116 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpcRequestMarshaller().marshall(super.beforeMarshalling(deleteVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DeleteVpcResult> responseHandler = new StaxResponseHandler<DeleteVpcResult>(new DeleteVpcResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes one or more VPC endpoint connection notifications.
+     * </p>
+     * 
+     * @param deleteVpcEndpointConnectionNotificationsRequest
+     * @return Result of the DeleteVpcEndpointConnectionNotifications operation returned by the service.
+     * @sample AmazonEC2.DeleteVpcEndpointConnectionNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVpcEndpointConnectionNotificationsResult deleteVpcEndpointConnectionNotifications(DeleteVpcEndpointConnectionNotificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVpcEndpointConnectionNotifications(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVpcEndpointConnectionNotificationsResult executeDeleteVpcEndpointConnectionNotifications(
+            DeleteVpcEndpointConnectionNotificationsRequest deleteVpcEndpointConnectionNotificationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVpcEndpointConnectionNotificationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVpcEndpointConnectionNotificationsRequest> request = null;
+        Response<DeleteVpcEndpointConnectionNotificationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVpcEndpointConnectionNotificationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteVpcEndpointConnectionNotificationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteVpcEndpointConnectionNotificationsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointConnectionNotificationsResult>(
+                    new DeleteVpcEndpointConnectionNotificationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes one or more VPC endpoint service configurations in your account. Before you delete the endpoint service
+     * configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code> interface endpoint
+     * connections that are attached to the service.
+     * </p>
+     * 
+     * @param deleteVpcEndpointServiceConfigurationsRequest
+     * @return Result of the DeleteVpcEndpointServiceConfigurations operation returned by the service.
+     * @sample AmazonEC2.DeleteVpcEndpointServiceConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVpcEndpointServiceConfigurationsResult deleteVpcEndpointServiceConfigurations(DeleteVpcEndpointServiceConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVpcEndpointServiceConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVpcEndpointServiceConfigurationsResult executeDeleteVpcEndpointServiceConfigurations(
+            DeleteVpcEndpointServiceConfigurationsRequest deleteVpcEndpointServiceConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVpcEndpointServiceConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVpcEndpointServiceConfigurationsRequest> request = null;
+        Response<DeleteVpcEndpointServiceConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVpcEndpointServiceConfigurationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteVpcEndpointServiceConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteVpcEndpointServiceConfigurationsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointServiceConfigurationsResult>(
+                    new DeleteVpcEndpointServiceConfigurationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5232,6 +5814,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpcEndpointsRequestMarshaller().marshall(super.beforeMarshalling(deleteVpcEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5250,9 +5833,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete
-     * the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can delete a
-     * VPC peering connection in the <code>pending-acceptance</code> state.
+     * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can
+     * delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can
+     * delete a VPC peering connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering
+     * connection that's in the <code>failed</code> state.
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
@@ -5283,6 +5867,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpcPeeringConnectionRequestMarshaller().marshall(super.beforeMarshalling(deleteVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5340,6 +5925,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpnConnectionRequestMarshaller().marshall(super.beforeMarshalling(deleteVpnConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5391,6 +5977,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpnConnectionRouteRequestMarshaller().marshall(super.beforeMarshalling(deleteVpnConnectionRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5442,6 +6029,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpnGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteVpnGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5498,6 +6086,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeregisterImageRequestMarshaller().marshall(super.beforeMarshalling(deregisterImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5532,7 +6121,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </li>
      * <li>
      * <p>
-     * <code>max-instances</code>: The maximum number of On-Demand instances that you can run.
+     * <code>max-instances</code>: The maximum number of On-Demand Instances that you can run.
      * </p>
      * </li>
      * <li>
@@ -5583,6 +6172,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeAccountAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeAccountAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5642,6 +6232,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeAddressesRequestMarshaller().marshall(super.beforeMarshalling(describeAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5661,6 +6252,72 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeAddressesResult describeAddresses() {
         return describeAddresses(new DescribeAddressesRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the longer ID format settings for all resource types in a specific region. This request is useful for
+     * performing a quick audit to determine whether a specific region is fully opted in for longer IDs (17-character
+     * IDs).
+     * </p>
+     * <p>
+     * This request only returns information about resource types that support longer IDs.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * 
+     * @param describeAggregateIdFormatRequest
+     * @return Result of the DescribeAggregateIdFormat operation returned by the service.
+     * @sample AmazonEC2.DescribeAggregateIdFormat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAggregateIdFormatResult describeAggregateIdFormat(DescribeAggregateIdFormatRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAggregateIdFormat(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAggregateIdFormatResult executeDescribeAggregateIdFormat(DescribeAggregateIdFormatRequest describeAggregateIdFormatRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAggregateIdFormatRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAggregateIdFormatRequest> request = null;
+        Response<DescribeAggregateIdFormatResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAggregateIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describeAggregateIdFormatRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAggregateIdFormatResult> responseHandler = new StaxResponseHandler<DescribeAggregateIdFormatResult>(
+                    new DescribeAggregateIdFormatResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -5703,6 +6360,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeAvailabilityZonesRequestMarshaller().marshall(super.beforeMarshalling(describeAvailabilityZonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5764,6 +6422,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeBundleTasksRequestMarshaller().marshall(super.beforeMarshalling(describeBundleTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5820,6 +6479,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeClassicLinkInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeClassicLinkInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5879,6 +6539,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeConversionTasksRequestMarshaller().marshall(super.beforeMarshalling(describeConversionTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5938,6 +6599,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeCustomerGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeCustomerGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5997,6 +6659,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeDhcpOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6052,6 +6715,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .marshall(super.beforeMarshalling(describeEgressOnlyInternetGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6101,6 +6765,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeElasticGpusRequestMarshaller().marshall(super.beforeMarshalling(describeElasticGpusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6150,6 +6815,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeExportTasksRequestMarshaller().marshall(super.beforeMarshalling(describeExportTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6205,6 +6871,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFlowLogsRequestMarshaller().marshall(super.beforeMarshalling(describeFlowLogsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6258,6 +6925,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeFpgaImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6307,6 +6975,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFpgaImagesRequestMarshaller().marshall(super.beforeMarshalling(describeFpgaImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6364,6 +7033,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeHostReservationOfferingsRequestMarshaller().marshall(super.beforeMarshalling(describeHostReservationOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6412,6 +7082,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeHostReservationsRequestMarshaller().marshall(super.beforeMarshalling(describeHostReservationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6466,6 +7137,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeHostsRequestMarshaller().marshall(super.beforeMarshalling(describeHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6520,6 +7192,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeIamInstanceProfileAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6543,8 +7216,16 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * be modified; it does not return information about other resource types.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>.
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * These settings apply to the IAM user who makes the request; they do not apply to the entire AWS account. By
@@ -6582,6 +7263,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describeIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6612,8 +7294,16 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>.
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * These settings apply to the principal specified in the request. They do not apply to the principal that makes the
@@ -6648,6 +7338,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeIdentityIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describeIdentityIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6697,6 +7388,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6753,6 +7445,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeImagesRequestMarshaller().marshall(super.beforeMarshalling(describeImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6807,6 +7500,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeImportImageTasksRequestMarshaller().marshall(super.beforeMarshalling(describeImportImageTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6861,6 +7555,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeImportSnapshotTasksRequestMarshaller().marshall(super.beforeMarshalling(describeImportSnapshotTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6919,12 +7614,83 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInstanceAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DescribeInstanceAttributeResult> responseHandler = new StaxResponseHandler<DescribeInstanceAttributeResult>(
                     new DescribeInstanceAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the credit option for CPU usage of one or more of your T2 instances. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
+     * </p>
+     * <p>
+     * If you do not specify an instance ID, Amazon EC2 returns only the T2 instances with the <code>unlimited</code>
+     * credit option. If you specify one or more instance IDs, Amazon EC2 returns the credit option (
+     * <code>standard</code> or <code>unlimited</code>) of those instances. If you specify an instance ID that is not
+     * valid, such as an instance that is not a T2 instance, an error is returned.
+     * </p>
+     * <p>
+     * Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
+     * </p>
+     * <p>
+     * If an Availability Zone is experiencing a service disruption and you specify instance IDs in the affected zone,
+     * or do not specify any instance IDs at all, the call fails. If you specify only instance IDs in an unaffected
+     * zone, the call works normally.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceCreditSpecificationsRequest
+     * @return Result of the DescribeInstanceCreditSpecifications operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceCreditSpecifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInstanceCreditSpecificationsResult describeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceCreditSpecifications(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceCreditSpecificationsResult executeDescribeInstanceCreditSpecifications(
+            DescribeInstanceCreditSpecificationsRequest describeInstanceCreditSpecificationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceCreditSpecificationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceCreditSpecificationsRequest> request = null;
+        Response<DescribeInstanceCreditSpecificationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceCreditSpecificationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeInstanceCreditSpecificationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeInstanceCreditSpecificationsResult> responseHandler = new StaxResponseHandler<DescribeInstanceCreditSpecificationsResult>(
+                    new DescribeInstanceCreditSpecificationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7000,6 +7766,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInstanceStatusRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7069,6 +7836,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7123,6 +7891,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInternetGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeInternetGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7182,6 +7951,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeKeyPairsRequestMarshaller().marshall(super.beforeMarshalling(describeKeyPairsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7201,6 +7971,105 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeKeyPairsResult describeKeyPairs() {
         return describeKeyPairs(new DescribeKeyPairsRequest());
+    }
+
+    /**
+     * <p>
+     * Describes one or more versions of a specified launch template. You can describe all versions, individual
+     * versions, or a range of versions.
+     * </p>
+     * 
+     * @param describeLaunchTemplateVersionsRequest
+     * @return Result of the DescribeLaunchTemplateVersions operation returned by the service.
+     * @sample AmazonEC2.DescribeLaunchTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeLaunchTemplateVersionsResult describeLaunchTemplateVersions(DescribeLaunchTemplateVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLaunchTemplateVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLaunchTemplateVersionsResult executeDescribeLaunchTemplateVersions(DescribeLaunchTemplateVersionsRequest describeLaunchTemplateVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeLaunchTemplateVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLaunchTemplateVersionsRequest> request = null;
+        Response<DescribeLaunchTemplateVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLaunchTemplateVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeLaunchTemplateVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeLaunchTemplateVersionsResult> responseHandler = new StaxResponseHandler<DescribeLaunchTemplateVersionsResult>(
+                    new DescribeLaunchTemplateVersionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more launch templates.
+     * </p>
+     * 
+     * @param describeLaunchTemplatesRequest
+     * @return Result of the DescribeLaunchTemplates operation returned by the service.
+     * @sample AmazonEC2.DescribeLaunchTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeLaunchTemplatesResult describeLaunchTemplates(DescribeLaunchTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLaunchTemplates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLaunchTemplatesResult executeDescribeLaunchTemplates(DescribeLaunchTemplatesRequest describeLaunchTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeLaunchTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLaunchTemplatesRequest> request = null;
+        Response<DescribeLaunchTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLaunchTemplatesRequestMarshaller().marshall(super.beforeMarshalling(describeLaunchTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeLaunchTemplatesResult> responseHandler = new StaxResponseHandler<DescribeLaunchTemplatesResult>(
+                    new DescribeLaunchTemplatesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -7238,6 +8107,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeMovingAddressesRequestMarshaller().marshall(super.beforeMarshalling(describeMovingAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7292,6 +8162,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeNatGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeNatGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7346,6 +8217,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeNetworkAclsRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkAclsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7401,6 +8273,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeNetworkInterfaceAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInterfaceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7452,6 +8325,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeNetworkInterfacePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7501,6 +8375,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeNetworkInterfacesRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInterfacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7524,9 +8399,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information about placement groups and cluster
-     * instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Describes one or more of your placement groups. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describePlacementGroupsRequest
@@ -7557,6 +8432,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribePlacementGroupsRequestMarshaller().marshall(super.beforeMarshalling(describePlacementGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7582,7 +8458,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
      * of the service and the IP address range for the service. A prefix list ID is required for creating an outbound
-     * security group rule that allows traffic from a VPC to access an AWS service through a VPC endpoint.
+     * security group rule that allows traffic from a VPC to access an AWS service through a gateway VPC endpoint.
      * </p>
      * 
      * @param describePrefixListsRequest
@@ -7613,6 +8489,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribePrefixListsRequestMarshaller().marshall(super.beforeMarshalling(describePrefixListsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7632,6 +8509,73 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribePrefixListsResult describePrefixLists() {
         return describePrefixLists(new DescribePrefixListsRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the ID format settings for the root user and all IAM roles and IAM users that have explicitly specified
+     * a longer ID (17-character ID) preference.
+     * </p>
+     * <p>
+     * By default, all IAM roles and IAM users default to the same ID settings as the root user, unless they explicitly
+     * override the settings. This request is useful for identifying those IAM users and IAM roles that have overridden
+     * the default ID settings.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * 
+     * @param describePrincipalIdFormatRequest
+     * @return Result of the DescribePrincipalIdFormat operation returned by the service.
+     * @sample AmazonEC2.DescribePrincipalIdFormat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribePrincipalIdFormatResult describePrincipalIdFormat(DescribePrincipalIdFormatRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePrincipalIdFormat(request);
+    }
+
+    @SdkInternalApi
+    final DescribePrincipalIdFormatResult executeDescribePrincipalIdFormat(DescribePrincipalIdFormatRequest describePrincipalIdFormatRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePrincipalIdFormatRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePrincipalIdFormatRequest> request = null;
+        Response<DescribePrincipalIdFormatResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePrincipalIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describePrincipalIdFormatRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribePrincipalIdFormatResult> responseHandler = new StaxResponseHandler<DescribePrincipalIdFormatResult>(
+                    new DescribePrincipalIdFormatResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -7671,6 +8615,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeRegionsRequestMarshaller().marshall(super.beforeMarshalling(describeRegionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7730,6 +8675,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeReservedInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeReservedInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7806,6 +8752,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeReservedInstancesListingsRequestMarshaller().marshall(super.beforeMarshalling(describeReservedInstancesListingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7869,6 +8816,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeReservedInstancesModificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7936,6 +8884,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .marshall(super.beforeMarshalling(describeReservedInstancesOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8000,6 +8949,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeRouteTablesRequestMarshaller().marshall(super.beforeMarshalling(describeRouteTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8065,6 +9015,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeScheduledInstanceAvailabilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8114,6 +9065,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeScheduledInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeScheduledInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8164,6 +9116,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSecurityGroupReferencesRequestMarshaller().marshall(super.beforeMarshalling(describeSecurityGroupReferencesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8220,6 +9173,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSecurityGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8279,6 +9233,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSnapshotAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeSnapshotAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8384,6 +9339,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(describeSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8407,7 +9363,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the data feed for Spot instances. For more information, see <a
+     * Describes the data feed for Spot Instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -8441,6 +9397,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotDatafeedSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(describeSpotDatafeedSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8464,7 +9421,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the running instances for the specified Spot fleet.
+     * Describes the running instances for the specified Spot Fleet.
      * </p>
      * 
      * @param describeSpotFleetInstancesRequest
@@ -8495,6 +9452,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotFleetInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8513,10 +9471,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the events for the specified Spot fleet request during the specified time.
+     * Describes the events for the specified Spot Fleet request during the specified time.
      * </p>
      * <p>
-     * Spot fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
+     * Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
      * by the last evaluated time and not miss a recorded event.
      * </p>
      * 
@@ -8549,6 +9507,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotFleetRequestHistoryRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetRequestHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8567,10 +9526,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes your Spot fleet requests.
+     * Describes your Spot Fleet requests.
      * </p>
      * <p>
-     * Spot fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
+     * Spot Fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotFleetRequestsRequest
@@ -8601,6 +9560,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotFleetRequestsRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8624,20 +9584,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the Spot instance requests that belong to your account. Spot instances are instances that Amazon EC2
-     * launches when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically sets the
-     * Spot price based on available Spot instance capacity and current Spot instance requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2
+     * launches when the Spot price that you specify exceeds the current Spot price. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance by examining the response.
-     * If the status of the Spot instance is <code>fulfilled</code>, the instance ID appears in the response and
+     * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
+     * If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and
      * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
      * look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
-     * Spot instance requests are deleted 4 hours after they are canceled and their instances are terminated.
+     * Spot Instance requests are deleted 4 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotInstanceRequestsRequest
@@ -8668,6 +9627,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotInstanceRequestsRequestMarshaller().marshall(super.beforeMarshalling(describeSpotInstanceRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8729,6 +9689,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotPriceHistoryRequestMarshaller().marshall(super.beforeMarshalling(describeSpotPriceHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8784,6 +9745,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeStaleSecurityGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeStaleSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8838,6 +9800,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSubnetsRequestMarshaller().marshall(super.beforeMarshalling(describeSubnetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8897,6 +9860,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeTagsRequestMarshaller().marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8955,6 +9919,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVolumeAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeVolumeAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9040,6 +10005,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVolumeStatusRequestMarshaller().marshall(super.beforeMarshalling(describeVolumeStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9106,6 +10072,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVolumesRequestMarshaller().marshall(super.beforeMarshalling(describeVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9173,6 +10140,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVolumesModificationsRequestMarshaller().marshall(super.beforeMarshalling(describeVolumesModificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9222,6 +10190,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeVpcAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9271,6 +10240,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcClassicLinkRequestMarshaller().marshall(super.beforeMarshalling(describeVpcClassicLinkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9331,6 +10301,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcClassicLinkDnsSupportRequestMarshaller().marshall(super.beforeMarshalling(describeVpcClassicLinkDnsSupportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9349,7 +10320,210 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes all supported AWS services that can be specified when creating a VPC endpoint.
+     * Describes the connection notifications for VPC endpoints and VPC endpoint services.
+     * </p>
+     * 
+     * @param describeVpcEndpointConnectionNotificationsRequest
+     * @return Result of the DescribeVpcEndpointConnectionNotifications operation returned by the service.
+     * @sample AmazonEC2.DescribeVpcEndpointConnectionNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVpcEndpointConnectionNotificationsResult describeVpcEndpointConnectionNotifications(DescribeVpcEndpointConnectionNotificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVpcEndpointConnectionNotifications(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVpcEndpointConnectionNotificationsResult executeDescribeVpcEndpointConnectionNotifications(
+            DescribeVpcEndpointConnectionNotificationsRequest describeVpcEndpointConnectionNotificationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVpcEndpointConnectionNotificationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVpcEndpointConnectionNotificationsRequest> request = null;
+        Response<DescribeVpcEndpointConnectionNotificationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVpcEndpointConnectionNotificationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeVpcEndpointConnectionNotificationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVpcEndpointConnectionNotificationsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointConnectionNotificationsResult>(
+                    new DescribeVpcEndpointConnectionNotificationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the VPC endpoint connections to your VPC endpoint services, including any endpoints that are pending
+     * your acceptance.
+     * </p>
+     * 
+     * @param describeVpcEndpointConnectionsRequest
+     * @return Result of the DescribeVpcEndpointConnections operation returned by the service.
+     * @sample AmazonEC2.DescribeVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVpcEndpointConnectionsResult describeVpcEndpointConnections(DescribeVpcEndpointConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVpcEndpointConnections(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVpcEndpointConnectionsResult executeDescribeVpcEndpointConnections(DescribeVpcEndpointConnectionsRequest describeVpcEndpointConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVpcEndpointConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVpcEndpointConnectionsRequest> request = null;
+        Response<DescribeVpcEndpointConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVpcEndpointConnectionsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcEndpointConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointConnectionsResult>(
+                    new DescribeVpcEndpointConnectionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the VPC endpoint service configurations in your account (your services).
+     * </p>
+     * 
+     * @param describeVpcEndpointServiceConfigurationsRequest
+     * @return Result of the DescribeVpcEndpointServiceConfigurations operation returned by the service.
+     * @sample AmazonEC2.DescribeVpcEndpointServiceConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVpcEndpointServiceConfigurationsResult describeVpcEndpointServiceConfigurations(DescribeVpcEndpointServiceConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVpcEndpointServiceConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVpcEndpointServiceConfigurationsResult executeDescribeVpcEndpointServiceConfigurations(
+            DescribeVpcEndpointServiceConfigurationsRequest describeVpcEndpointServiceConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVpcEndpointServiceConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVpcEndpointServiceConfigurationsRequest> request = null;
+        Response<DescribeVpcEndpointServiceConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVpcEndpointServiceConfigurationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeVpcEndpointServiceConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVpcEndpointServiceConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServiceConfigurationsResult>(
+                    new DescribeVpcEndpointServiceConfigurationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the principals (service consumers) that are permitted to discover your VPC endpoint service.
+     * </p>
+     * 
+     * @param describeVpcEndpointServicePermissionsRequest
+     * @return Result of the DescribeVpcEndpointServicePermissions operation returned by the service.
+     * @sample AmazonEC2.DescribeVpcEndpointServicePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVpcEndpointServicePermissionsResult describeVpcEndpointServicePermissions(DescribeVpcEndpointServicePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVpcEndpointServicePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVpcEndpointServicePermissionsResult executeDescribeVpcEndpointServicePermissions(
+            DescribeVpcEndpointServicePermissionsRequest describeVpcEndpointServicePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVpcEndpointServicePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVpcEndpointServicePermissionsRequest> request = null;
+        Response<DescribeVpcEndpointServicePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVpcEndpointServicePermissionsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeVpcEndpointServicePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVpcEndpointServicePermissionsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServicePermissionsResult>(
+                    new DescribeVpcEndpointServicePermissionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes available services to which you can create a VPC endpoint.
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
@@ -9380,6 +10554,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcEndpointServicesRequestMarshaller().marshall(super.beforeMarshalling(describeVpcEndpointServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9434,6 +10609,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9488,6 +10664,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcPeeringConnectionsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcPeeringConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9542,6 +10719,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9600,6 +10778,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpnConnectionsRequestMarshaller().marshall(super.beforeMarshalling(describeVpnConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9659,6 +10838,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpnGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeVpnGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9715,6 +10895,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachClassicLinkVpcRequestMarshaller().marshall(super.beforeMarshalling(detachClassicLinkVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9765,6 +10946,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(detachInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9814,6 +10996,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachNetworkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(detachNetworkInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9877,6 +11060,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachVolumeRequestMarshaller().marshall(super.beforeMarshalling(detachVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9931,6 +11115,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachVpnGatewayRequestMarshaller().marshall(super.beforeMarshalling(detachVpnGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9980,6 +11165,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisableVgwRoutePropagationRequestMarshaller().marshall(super.beforeMarshalling(disableVgwRoutePropagationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10030,6 +11216,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisableVpcClassicLinkRequestMarshaller().marshall(super.beforeMarshalling(disableVpcClassicLinkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10084,6 +11271,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisableVpcClassicLinkDnsSupportRequestMarshaller().marshall(super.beforeMarshalling(disableVpcClassicLinkDnsSupportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10141,6 +11329,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateAddressRequestMarshaller().marshall(super.beforeMarshalling(disassociateAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10192,6 +11381,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateIamInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(disassociateIamInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10247,6 +11437,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateRouteTableRequestMarshaller().marshall(super.beforeMarshalling(disassociateRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10297,6 +11488,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateSubnetCidrBlockRequestMarshaller().marshall(super.beforeMarshalling(disassociateSubnetCidrBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10350,6 +11542,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateVpcCidrBlockRequestMarshaller().marshall(super.beforeMarshalling(disassociateVpcCidrBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10399,6 +11592,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableVgwRoutePropagationRequestMarshaller().marshall(super.beforeMarshalling(enableVgwRoutePropagationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10449,6 +11643,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableVolumeIORequestMarshaller().marshall(super.beforeMarshalling(enableVolumeIORequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10504,6 +11699,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableVpcClassicLinkRequestMarshaller().marshall(super.beforeMarshalling(enableVpcClassicLinkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10558,6 +11754,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableVpcClassicLinkDnsSupportRequestMarshaller().marshall(super.beforeMarshalling(enableVpcClassicLinkDnsSupportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10624,6 +11821,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetConsoleOutputRequestMarshaller().marshall(super.beforeMarshalling(getConsoleOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10676,6 +11874,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetConsoleScreenshotRequestMarshaller().marshall(super.beforeMarshalling(getConsoleScreenshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10730,12 +11929,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetHostReservationPurchasePreviewRequestMarshaller().marshall(super.beforeMarshalling(getHostReservationPurchasePreviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<GetHostReservationPurchasePreviewResult> responseHandler = new StaxResponseHandler<GetHostReservationPurchasePreviewResult>(
                     new GetHostReservationPurchasePreviewResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the configuration data of the specified instance. You can use this data to create a launch template.
+     * </p>
+     * 
+     * @param getLaunchTemplateDataRequest
+     * @return Result of the GetLaunchTemplateData operation returned by the service.
+     * @sample AmazonEC2.GetLaunchTemplateData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetLaunchTemplateDataResult getLaunchTemplateData(GetLaunchTemplateDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLaunchTemplateData(request);
+    }
+
+    @SdkInternalApi
+    final GetLaunchTemplateDataResult executeGetLaunchTemplateData(GetLaunchTemplateDataRequest getLaunchTemplateDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLaunchTemplateDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLaunchTemplateDataRequest> request = null;
+        Response<GetLaunchTemplateDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLaunchTemplateDataRequestMarshaller().marshall(super.beforeMarshalling(getLaunchTemplateDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetLaunchTemplateDataResult> responseHandler = new StaxResponseHandler<GetLaunchTemplateDataResult>(
+                    new GetLaunchTemplateDataResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10800,6 +12049,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetPasswordDataRequestMarshaller().marshall(super.beforeMarshalling(getPasswordDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10852,6 +12102,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetReservedInstancesExchangeQuoteRequestMarshaller().marshall(super.beforeMarshalling(getReservedInstancesExchangeQuoteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10904,6 +12155,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportImageRequestMarshaller().marshall(super.beforeMarshalling(importImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10964,6 +12216,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportInstanceRequestMarshaller().marshall(super.beforeMarshalling(importInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11021,6 +12274,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportKeyPairRequestMarshaller().marshall(super.beforeMarshalling(importKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11069,6 +12323,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportSnapshotRequestMarshaller().marshall(super.beforeMarshalling(importSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11129,6 +12384,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportVolumeRequestMarshaller().marshall(super.beforeMarshalling(importVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11176,6 +12432,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyFpgaImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11229,6 +12486,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyHostsRequestMarshaller().marshall(super.beforeMarshalling(modifyHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11247,8 +12505,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Modifies the ID format for the specified resource on a per-region basis. You can specify that resources should
-     * receive longer IDs (17-character IDs) when they are created. The following resource types support longer IDs:
-     * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> | <code>volume</code>.
+     * receive longer IDs (17-character IDs) when they are created.
+     * </p>
+     * <p>
+     * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
+     * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>route-table</code> | <code>route-table-association</code> |
+     * <code>security-group</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+     * | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * This setting applies to the IAM user who makes the request; it does not apply to the entire AWS account. By
@@ -11291,6 +12560,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyIdFormatRequestMarshaller().marshall(super.beforeMarshalling(modifyIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11314,10 +12584,20 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * (17-character IDs) when they are created.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource IDs</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
+     * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>route-table</code> | <code>route-table-association</code> |
+     * <code>security-group</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+     * | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+     * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * This setting applies to the principal specified in the request; it does not apply to the principal that makes the
@@ -11356,6 +12636,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyIdentityIdFormatRequestMarshaller().marshall(super.beforeMarshalling(modifyIdentityIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11415,6 +12696,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11469,6 +12751,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyInstanceAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11487,24 +12770,98 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Set the instance affinity value for a specific stopped instance and modify the instance tenancy setting.
+     * Modifies the credit option for CPU usage on a running or stopped T2 instance. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
      * </p>
      * <p>
-     * Instance affinity is disabled by default. When instance affinity is <code>host</code> and it is not associated
-     * with a specific Dedicated Host, the next time it is launched it will automatically be associated with the host it
-     * lands on. This relationship will persist if the instance is stopped/started, or rebooted.
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param modifyInstanceCreditSpecificationRequest
+     * @return Result of the ModifyInstanceCreditSpecification operation returned by the service.
+     * @sample AmazonEC2.ModifyInstanceCreditSpecification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyInstanceCreditSpecificationResult modifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyInstanceCreditSpecification(request);
+    }
+
+    @SdkInternalApi
+    final ModifyInstanceCreditSpecificationResult executeModifyInstanceCreditSpecification(
+            ModifyInstanceCreditSpecificationRequest modifyInstanceCreditSpecificationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyInstanceCreditSpecificationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyInstanceCreditSpecificationRequest> request = null;
+        Response<ModifyInstanceCreditSpecificationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyInstanceCreditSpecificationRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceCreditSpecificationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyInstanceCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyInstanceCreditSpecificationResult>(
+                    new ModifyInstanceCreditSpecificationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the placement attributes for a specified instance. You can do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Modify the affinity between an instance and a <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When
+     * affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next
+     * time the instance is launched, it is automatically associated with the host on which it lands. If the instance is
+     * restarted or rebooted, this relationship persists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the Dedicated Host with which an instance is associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the instance tenancy of an instance from <code>host</code> to <code>dedicated</code>, or from
+     * <code>dedicated</code> to <code>host</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Move an instance to or from a <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement group</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * At least one attribute for affinity, host ID, tenancy, or placement group name must be specified in the request.
+     * Affinity and tenancy can be modified in the same request.
      * </p>
      * <p>
-     * You can modify the host ID associated with a stopped instance. If a stopped instance has a new host ID
-     * association, the instance will target that host when restarted.
-     * </p>
-     * <p>
-     * You can modify the tenancy of a stopped instance with a tenancy of <code>host</code> or <code>dedicated</code>.
-     * </p>
-     * <p>
-     * Affinity, hostID, and tenancy are not required parameters, but at least one of them must be specified in the
-     * request. Affinity and tenancy can be modified in the same request, but tenancy can only be modified on instances
-     * that are stopped.
+     * To modify the host ID, tenancy, or placement group for an instance, the instance must be in the
+     * <code>stopped</code> state.
      * </p>
      * 
      * @param modifyInstancePlacementRequest
@@ -11535,12 +12892,63 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyInstancePlacementRequestMarshaller().marshall(super.beforeMarshalling(modifyInstancePlacementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<ModifyInstancePlacementResult> responseHandler = new StaxResponseHandler<ModifyInstancePlacementResult>(
                     new ModifyInstancePlacementResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a launch template. You can specify which version of the launch template to set as the default version.
+     * When launching an instance, the default version applies when a launch template version is not specified.
+     * </p>
+     * 
+     * @param modifyLaunchTemplateRequest
+     * @return Result of the ModifyLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2.ModifyLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyLaunchTemplateResult modifyLaunchTemplate(ModifyLaunchTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyLaunchTemplate(request);
+    }
+
+    @SdkInternalApi
+    final ModifyLaunchTemplateResult executeModifyLaunchTemplate(ModifyLaunchTemplateRequest modifyLaunchTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyLaunchTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyLaunchTemplateRequest> request = null;
+        Response<ModifyLaunchTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyLaunchTemplateRequestMarshaller().marshall(super.beforeMarshalling(modifyLaunchTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyLaunchTemplateResult> responseHandler = new StaxResponseHandler<ModifyLaunchTemplateResult>(
+                    new ModifyLaunchTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11585,6 +12993,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyNetworkInterfaceAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyNetworkInterfaceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11641,6 +13050,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyReservedInstancesRequestMarshaller().marshall(super.beforeMarshalling(modifyReservedInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11703,6 +13113,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifySnapshotAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifySnapshotAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11721,25 +13132,29 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Modifies the specified Spot fleet request.
+     * Modifies the specified Spot Fleet request.
      * </p>
      * <p>
-     * While the Spot fleet request is being modified, it is in the <code>modifying</code> state.
+     * While the Spot Fleet request is being modified, it is in the <code>modifying</code> state.
      * </p>
      * <p>
-     * To scale up your Spot fleet, increase its target capacity. The Spot fleet launches the additional Spot instances
-     * according to the allocation strategy for the Spot fleet request. If the allocation strategy is
-     * <code>lowestPrice</code>, the Spot fleet launches instances using the Spot pool with the lowest price. If the
-     * allocation strategy is <code>diversified</code>, the Spot fleet distributes the instances across the Spot pools.
+     * To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches the additional Spot Instances
+     * according to the allocation strategy for the Spot Fleet request. If the allocation strategy is
+     * <code>lowestPrice</code>, the Spot Fleet launches instances using the Spot pool with the lowest price. If the
+     * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot pools.
      * </p>
      * <p>
-     * To scale down your Spot fleet, decrease its target capacity. First, the Spot fleet cancels any open bids that
-     * exceed the new target capacity. You can request that the Spot fleet terminate Spot instances until the size of
+     * To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet cancels any open requests that
+     * exceed the new target capacity. You can request that the Spot Fleet terminate Spot Instances until the size of
      * the fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
-     * Spot fleet terminates the instances with the highest price per unit. If the allocation strategy is
-     * <code>diversified</code>, the Spot fleet terminates instances across the Spot pools. Alternatively, you can
-     * request that the Spot fleet keep the fleet at its current size, but not replace any Spot instances that are
+     * Spot Fleet terminates the instances with the highest price per unit. If the allocation strategy is
+     * <code>diversified</code>, the Spot Fleet terminates instances across the Spot pools. Alternatively, you can
+     * request that the Spot Fleet keep the fleet at its current size, but not replace any Spot Instances that are
      * interrupted or that you terminate manually.
+     * </p>
+     * <p>
+     * If you are finished with your Spot Fleet for now, but will use it again later, you can set the target capacity to
+     * 0.
      * </p>
      * 
      * @param modifySpotFleetRequestRequest
@@ -11770,6 +13185,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifySpotFleetRequestRequestMarshaller().marshall(super.beforeMarshalling(modifySpotFleetRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11819,6 +13235,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifySubnetAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifySubnetAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11905,6 +13322,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVolumeRequestMarshaller().marshall(super.beforeMarshalling(modifyVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -11962,6 +13380,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVolumeAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyVolumeAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12011,6 +13430,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpcAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12063,12 +13483,172 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpcEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<ModifyVpcEndpointResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointResult>(
                     new ModifyVpcEndpointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a connection notification for VPC endpoint or VPC endpoint service. You can change the SNS topic for the
+     * notification, or the events for which to be notified.
+     * </p>
+     * 
+     * @param modifyVpcEndpointConnectionNotificationRequest
+     * @return Result of the ModifyVpcEndpointConnectionNotification operation returned by the service.
+     * @sample AmazonEC2.ModifyVpcEndpointConnectionNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVpcEndpointConnectionNotificationResult modifyVpcEndpointConnectionNotification(ModifyVpcEndpointConnectionNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVpcEndpointConnectionNotification(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVpcEndpointConnectionNotificationResult executeModifyVpcEndpointConnectionNotification(
+            ModifyVpcEndpointConnectionNotificationRequest modifyVpcEndpointConnectionNotificationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVpcEndpointConnectionNotificationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVpcEndpointConnectionNotificationRequest> request = null;
+        Response<ModifyVpcEndpointConnectionNotificationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVpcEndpointConnectionNotificationRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyVpcEndpointConnectionNotificationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVpcEndpointConnectionNotificationResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointConnectionNotificationResult>(
+                    new ModifyVpcEndpointConnectionNotificationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers for
+     * your service, and you can specify whether acceptance is required for requests to connect to your endpoint service
+     * through an interface VPC endpoint.
+     * </p>
+     * 
+     * @param modifyVpcEndpointServiceConfigurationRequest
+     * @return Result of the ModifyVpcEndpointServiceConfiguration operation returned by the service.
+     * @sample AmazonEC2.ModifyVpcEndpointServiceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVpcEndpointServiceConfigurationResult modifyVpcEndpointServiceConfiguration(ModifyVpcEndpointServiceConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVpcEndpointServiceConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVpcEndpointServiceConfigurationResult executeModifyVpcEndpointServiceConfiguration(
+            ModifyVpcEndpointServiceConfigurationRequest modifyVpcEndpointServiceConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVpcEndpointServiceConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVpcEndpointServiceConfigurationRequest> request = null;
+        Response<ModifyVpcEndpointServiceConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVpcEndpointServiceConfigurationRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyVpcEndpointServiceConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVpcEndpointServiceConfigurationResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointServiceConfigurationResult>(
+                    new ModifyVpcEndpointServiceConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the permissions for your <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC endpoint service</a>. You
+     * can add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
+     * endpoint service.
+     * </p>
+     * 
+     * @param modifyVpcEndpointServicePermissionsRequest
+     * @return Result of the ModifyVpcEndpointServicePermissions operation returned by the service.
+     * @sample AmazonEC2.ModifyVpcEndpointServicePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVpcEndpointServicePermissionsResult modifyVpcEndpointServicePermissions(ModifyVpcEndpointServicePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVpcEndpointServicePermissions(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVpcEndpointServicePermissionsResult executeModifyVpcEndpointServicePermissions(
+            ModifyVpcEndpointServicePermissionsRequest modifyVpcEndpointServicePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVpcEndpointServicePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVpcEndpointServicePermissionsRequest> request = null;
+        Response<ModifyVpcEndpointServicePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVpcEndpointServicePermissionsRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyVpcEndpointServicePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVpcEndpointServicePermissionsResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointServicePermissionsResult>(
+                    new ModifyVpcEndpointServicePermissionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12098,7 +13678,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </li>
      * <li>
      * <p>
-     * Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in
+     * Enable/disable the ability to resolve public DNS hostnames to private IP addresses when queried from instances in
      * the peer VPC.
      * </p>
      * </li>
@@ -12139,6 +13719,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpcPeeringConnectionOptionsRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcPeeringConnectionOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12199,6 +13780,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpcTenancyRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcTenancyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12253,6 +13835,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new MonitorInstancesRequestMarshaller().marshall(super.beforeMarshalling(monitorInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12306,6 +13889,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new MoveAddressToVpcRequestMarshaller().marshall(super.beforeMarshalling(moveAddressToVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12356,6 +13940,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new PurchaseHostReservationRequestMarshaller().marshall(super.beforeMarshalling(purchaseHostReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12418,6 +14003,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new PurchaseReservedInstancesOfferingRequestMarshaller().marshall(super.beforeMarshalling(purchaseReservedInstancesOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12476,6 +14062,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new PurchaseScheduledInstancesRequestMarshaller().marshall(super.beforeMarshalling(purchaseScheduledInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12535,6 +14122,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RebootInstancesRequestMarshaller().marshall(super.beforeMarshalling(rebootInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12614,11 +14202,61 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RegisterImageRequestMarshaller().marshall(super.beforeMarshalling(registerImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<RegisterImageResult> responseHandler = new StaxResponseHandler<RegisterImageResult>(new RegisterImageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+     * </p>
+     * 
+     * @param rejectVpcEndpointConnectionsRequest
+     * @return Result of the RejectVpcEndpointConnections operation returned by the service.
+     * @sample AmazonEC2.RejectVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RejectVpcEndpointConnectionsResult rejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectVpcEndpointConnections(request);
+    }
+
+    @SdkInternalApi
+    final RejectVpcEndpointConnectionsResult executeRejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest rejectVpcEndpointConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectVpcEndpointConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectVpcEndpointConnectionsRequest> request = null;
+        Response<RejectVpcEndpointConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectVpcEndpointConnectionsRequestMarshaller().marshall(super.beforeMarshalling(rejectVpcEndpointConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RejectVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<RejectVpcEndpointConnectionsResult>(
+                    new RejectVpcEndpointConnectionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12665,6 +14303,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RejectVpcPeeringConnectionRequestMarshaller().marshall(super.beforeMarshalling(rejectVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12732,6 +14371,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReleaseAddressRequestMarshaller().marshall(super.beforeMarshalling(releaseAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12792,6 +14432,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReleaseHostsRequestMarshaller().marshall(super.beforeMarshalling(releaseHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12846,6 +14487,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(replaceIamInstanceProfileAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12868,6 +14510,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * associated with the default network ACL. For more information about network ACLs, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
      * Virtual Private Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * This is an idempotent operation.
      * </p>
      * 
      * @param replaceNetworkAclAssociationRequest
@@ -12898,6 +14543,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceNetworkAclAssociationRequestMarshaller().marshall(super.beforeMarshalling(replaceNetworkAclAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -12949,6 +14595,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceNetworkAclEntryRequestMarshaller().marshall(super.beforeMarshalling(replaceNetworkAclEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13005,6 +14652,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceRouteRequestMarshaller().marshall(super.beforeMarshalling(replaceRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13060,6 +14708,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceRouteTableAssociationRequestMarshaller().marshall(super.beforeMarshalling(replaceRouteTableAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13115,6 +14764,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReportInstanceStatusRequestMarshaller().marshall(super.beforeMarshalling(reportInstanceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13133,21 +14783,25 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a Spot fleet request.
+     * Creates a Spot Fleet request.
      * </p>
      * <p>
      * You can submit a single request that includes multiple launch specifications that vary by instance type, AMI,
      * Availability Zone, or subnet.
      * </p>
      * <p>
-     * By default, the Spot fleet requests Spot instances in the Spot pool where the price per unit is the lowest. Each
+     * By default, the Spot Fleet requests Spot Instances in the Spot pool where the price per unit is the lowest. Each
      * launch specification can include its own instance weighting that reflects the value of the instance type to your
      * application workload.
      * </p>
      * <p>
-     * Alternatively, you can specify that the Spot fleet distribute the target capacity across the Spot pools included
-     * in its launch specifications. By ensuring that the Spot instances in your Spot fleet are in different Spot pools,
+     * Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included
+     * in its launch specifications. By ensuring that the Spot Instances in your Spot Fleet are in different Spot pools,
      * you can improve the availability of your fleet.
+     * </p>
+     * <p>
+     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request; only
+     * the <code>instance</code> resource type is supported.
      * </p>
      * <p>
      * For more information, see <a
@@ -13183,6 +14837,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RequestSpotFleetRequestMarshaller().marshall(super.beforeMarshalling(requestSpotFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13201,9 +14856,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a Spot instance request. Spot instances are instances that Amazon EC2 launches when the bid price that
-     * you specify exceeds the current Spot price. Amazon EC2 periodically sets the Spot price based on available Spot
-     * Instance capacity and current Spot instance requests. For more information, see <a
+     * Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches when the maximum price
+     * that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -13236,6 +14890,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RequestSpotInstancesRequestMarshaller().marshall(super.beforeMarshalling(requestSpotInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13285,6 +14940,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetFpgaImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13339,6 +14995,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13397,6 +15054,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetInstanceAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetInstanceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13446,6 +15104,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetNetworkInterfaceAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetNetworkInterfaceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13500,6 +15159,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetSnapshotAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetSnapshotAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13551,6 +15211,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RestoreAddressToClassicRequestMarshaller().marshall(super.beforeMarshalling(restoreAddressToClassicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13612,6 +15273,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RevokeSecurityGroupEgressRequestMarshaller().marshall(super.beforeMarshalling(revokeSecurityGroupEgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13678,6 +15340,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RevokeSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(revokeSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13752,6 +15415,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </li>
      * </ul>
      * <p>
+     * You can create a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+     * template</a>, which is a resource that contains the parameters to launch an instance. When you launch an instance
+     * using <a>RunInstances</a>, you can specify the launch template instead of specifying the launch parameters.
+     * </p>
+     * <p>
      * To ensure faster instance launches, break up large requests into smaller batches. For example, create five
      * separate launch requests for 100 instances each instead of one launch request for 500 instances.
      * </p>
@@ -13803,6 +15471,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RunInstancesRequestMarshaller().marshall(super.beforeMarshalling(runInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13862,6 +15531,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RunScheduledInstancesRequestMarshaller().marshall(super.beforeMarshalling(runScheduledInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -13932,6 +15602,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new StartInstancesRequestMarshaller().marshall(super.beforeMarshalling(startInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -14012,6 +15683,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new StopInstancesRequestMarshaller().marshall(super.beforeMarshalling(stopInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -14086,6 +15758,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new TerminateInstancesRequestMarshaller().marshall(super.beforeMarshalling(terminateInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -14134,6 +15807,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new UnassignIpv6AddressesRequestMarshaller().marshall(super.beforeMarshalling(unassignIpv6AddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -14183,6 +15857,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new UnassignPrivateIpAddressesRequestMarshaller().marshall(super.beforeMarshalling(unassignPrivateIpAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -14234,6 +15909,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new UnmonitorInstancesRequestMarshaller().marshall(super.beforeMarshalling(unmonitorInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -14290,6 +15966,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(updateSecurityGroupRuleDescriptionsEgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -14346,6 +16023,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(updateSecurityGroupRuleDescriptionsIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

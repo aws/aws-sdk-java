@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a Spot instance state change.
+ * Describes a Spot Instance state change.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotInstanceStateFault" target="_top">AWS API
@@ -28,24 +28,24 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason code for the Spot instance state change.
+     * The reason code for the Spot Instance state change.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * The message for the Spot instance state change.
+     * The message for the Spot Instance state change.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The reason code for the Spot instance state change.
+     * The reason code for the Spot Instance state change.
      * </p>
      * 
      * @param code
-     *        The reason code for the Spot instance state change.
+     *        The reason code for the Spot Instance state change.
      */
 
     public void setCode(String code) {
@@ -54,10 +54,10 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason code for the Spot instance state change.
+     * The reason code for the Spot Instance state change.
      * </p>
      * 
-     * @return The reason code for the Spot instance state change.
+     * @return The reason code for the Spot Instance state change.
      */
 
     public String getCode() {
@@ -66,11 +66,11 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason code for the Spot instance state change.
+     * The reason code for the Spot Instance state change.
      * </p>
      * 
      * @param code
-     *        The reason code for the Spot instance state change.
+     *        The reason code for the Spot Instance state change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message for the Spot instance state change.
+     * The message for the Spot Instance state change.
      * </p>
      * 
      * @param message
-     *        The message for the Spot instance state change.
+     *        The message for the Spot Instance state change.
      */
 
     public void setMessage(String message) {
@@ -94,10 +94,10 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message for the Spot instance state change.
+     * The message for the Spot Instance state change.
      * </p>
      * 
-     * @return The message for the Spot instance state change.
+     * @return The message for the Spot Instance state change.
      */
 
     public String getMessage() {
@@ -106,11 +106,11 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message for the Spot instance state change.
+     * The message for the Spot Instance state change.
      * </p>
      * 
      * @param message
-     *        The message for the Spot instance state change.
+     *        The message for the Spot Instance state change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -263,6 +263,40 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Creates a new custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createCustomVerificationEmailTemplateRequest
+     *        Represents a request to create a custom verification email template.
+     * @return Result of the CreateCustomVerificationEmailTemplate operation returned by the service.
+     * @throws CustomVerificationEmailTemplateAlreadyExistsException
+     *         Indicates that a custom verification email template with the name you specified already exists.
+     * @throws FromEmailAddressNotVerifiedException
+     *         Indicates that the sender address specified for a custom verification email is not verified, and is
+     *         therefore not eligible to send the custom verification email.
+     * @throws CustomVerificationEmailInvalidContentException
+     *         Indicates that custom verification email template provided content is invalid.
+     * @throws LimitExceededException
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
+     * @sample AmazonSimpleEmailService.CreateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCustomVerificationEmailTemplateResult createCustomVerificationEmailTemplate(
+            CreateCustomVerificationEmailTemplateRequest createCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
      * Creates a new IP address filter.
      * </p>
      * <p>
@@ -490,6 +524,29 @@ public interface AmazonSimpleEmailService {
      */
     DeleteConfigurationSetTrackingOptionsResult deleteConfigurationSetTrackingOptions(
             DeleteConfigurationSetTrackingOptionsRequest deleteConfigurationSetTrackingOptionsRequest);
+
+    /**
+     * <p>
+     * Deletes an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteCustomVerificationEmailTemplateRequest
+     *        Represents a request to delete an existing custom verification email template.
+     * @return Result of the DeleteCustomVerificationEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailService.DeleteCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteCustomVerificationEmailTemplateResult deleteCustomVerificationEmailTemplate(
+            DeleteCustomVerificationEmailTemplateRequest deleteCustomVerificationEmailTemplateRequest);
 
     /**
      * <p>
@@ -765,6 +822,47 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Returns the email sending status of the Amazon SES account.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getAccountSendingEnabledRequest
+     * @return Result of the GetAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailService.GetAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetAccountSendingEnabledResult getAccountSendingEnabled(GetAccountSendingEnabledRequest getAccountSendingEnabledRequest);
+
+    /**
+     * <p>
+     * Returns the custom email verification template for the template name you specify.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getCustomVerificationEmailTemplateRequest
+     *        Represents a request to retrieve an existing custom verification email template.
+     * @return Result of the GetCustomVerificationEmailTemplate operation returned by the service.
+     * @throws CustomVerificationEmailTemplateDoesNotExistException
+     *         Indicates that a custom verification email template with the name you specified does not exist.
+     * @sample AmazonSimpleEmailService.GetCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCustomVerificationEmailTemplateResult getCustomVerificationEmailTemplate(
+            GetCustomVerificationEmailTemplateRequest getCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
      * Returns the current status of Easy DKIM signing for an entity. For domain name identities, this operation also
      * returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified
      * that these tokens have been published.
@@ -1025,6 +1123,33 @@ public interface AmazonSimpleEmailService {
      *      API Documentation</a>
      */
     ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest);
+
+    /**
+     * <p>
+     * Lists the existing custom verification email templates for your account.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listCustomVerificationEmailTemplatesRequest
+     *        Represents a request to list the existing custom verification email templates for your account.</p>
+     *        <p>
+     *        For more information about custom verification email templates, see <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     *        Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * @return Result of the ListCustomVerificationEmailTemplates operation returned by the service.
+     * @sample AmazonSimpleEmailService.ListCustomVerificationEmailTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCustomVerificationEmailTemplatesResult listCustomVerificationEmailTemplates(
+            ListCustomVerificationEmailTemplatesRequest listCustomVerificationEmailTemplatesRequest);
 
     /**
      * <p>
@@ -1337,11 +1462,58 @@ public interface AmazonSimpleEmailService {
      *         Indicates that the configuration set does not exist.
      * @throws TemplateDoesNotExistException
      *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendBulkTemplatedEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail" target="_top">AWS
      *      API Documentation</a>
      */
     SendBulkTemplatedEmailResult sendBulkTemplatedEmail(SendBulkTemplatedEmailRequest sendBulkTemplatedEmailRequest);
+
+    /**
+     * <p>
+     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. As a
+     * result of executing this operation, a customized verification email is sent to the specified address.
+     * </p>
+     * <p>
+     * To use this operation, you must first create a custom verification email template. For more information about
+     * creating and using custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param sendCustomVerificationEmailRequest
+     *        Represents a request to send a custom verification email to a specified recipient.
+     * @return Result of the SendCustomVerificationEmail operation returned by the service.
+     * @throws MessageRejectedException
+     *         Indicates that the action failed, and the message could not be sent. Check the error stack for more
+     *         information about what caused the error.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws CustomVerificationEmailTemplateDoesNotExistException
+     *         Indicates that a custom verification email template with the name you specified does not exist.
+     * @throws FromEmailAddressNotVerifiedException
+     *         Indicates that the sender address specified for a custom verification email is not verified, and is
+     *         therefore not eligible to send the custom verification email.
+     * @throws ProductionAccessNotGrantedException
+     *         Indicates that the account has not been granted production access.
+     * @sample AmazonSimpleEmailService.SendCustomVerificationEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendCustomVerificationEmailResult sendCustomVerificationEmail(SendCustomVerificationEmailRequest sendCustomVerificationEmailRequest);
 
     /**
      * <p>
@@ -1410,6 +1582,17 @@ public interface AmazonSimpleEmailService {
      *         Guide</a>.
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail" target="_top">AWS API
      *      Documentation</a>
@@ -1539,6 +1722,17 @@ public interface AmazonSimpleEmailService {
      *         Guide</a>.
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendRawEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail" target="_top">AWS API
      *      Documentation</a>
@@ -1613,6 +1807,17 @@ public interface AmazonSimpleEmailService {
      *         Indicates that the configuration set does not exist.
      * @throws TemplateDoesNotExistException
      *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendTemplatedEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail" target="_top">AWS API
      *      Documentation</a>
@@ -1869,6 +2074,26 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Enables or disables email sending across your entire Amazon SES account. You can use this operation in
+     * conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account when
+     * reputation metrics (such as your bounce on complaint rate) reach certain thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateAccountSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for your entire Amazon SES
+     *        account.
+     * @return Result of the UpdateAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailService.UpdateAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAccountSendingEnabledResult updateAccountSendingEnabled(UpdateAccountSendingEnabledRequest updateAccountSendingEnabledRequest);
+
+    /**
+     * <p>
      * Updates the event destination of a configuration set. Event destinations are associated with configuration sets,
      * which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
      * Notification Service (Amazon SNS). For information about using configuration sets, see <a
@@ -1911,6 +2136,52 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set.
+     * Reputation metrics include bounce and complaint rates. These metrics are published to Amazon CloudWatch. By using
+     * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a certain threshold.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetReputationMetricsEnabledRequest
+     *        Represents a request to modify the reputation metric publishing settings for a configuration set.
+     * @return Result of the UpdateConfigurationSetReputationMetricsEnabled operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.UpdateConfigurationSetReputationMetricsEnabled
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateConfigurationSetReputationMetricsEnabledResult updateConfigurationSetReputationMetricsEnabled(
+            UpdateConfigurationSetReputationMetricsEnabledRequest updateConfigurationSetReputationMetricsEnabledRequest);
+
+    /**
+     * <p>
+     * Enables or disables email sending for messages sent using a specific configuration set. You can use this
+     * operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set
+     * when the reputation metrics for that configuration set (such as your bounce on complaint rate) reach certain
+     * thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for a specific configuration set.
+     * @return Result of the UpdateConfigurationSetSendingEnabled operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.UpdateConfigurationSetSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateConfigurationSetSendingEnabledResult updateConfigurationSetSendingEnabled(
+            UpdateConfigurationSetSendingEnabledRequest updateConfigurationSetSendingEnabledRequest);
+
+    /**
+     * <p>
      * Modifies an association between a configuration set and a custom domain for open and click event tracking.
      * </p>
      * <p>
@@ -1949,6 +2220,36 @@ public interface AmazonSimpleEmailService {
      */
     UpdateConfigurationSetTrackingOptionsResult updateConfigurationSetTrackingOptions(
             UpdateConfigurationSetTrackingOptionsRequest updateConfigurationSetTrackingOptionsRequest);
+
+    /**
+     * <p>
+     * Updates an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateCustomVerificationEmailTemplateRequest
+     *        Represents a request to update an existing custom verification email template.
+     * @return Result of the UpdateCustomVerificationEmailTemplate operation returned by the service.
+     * @throws CustomVerificationEmailTemplateDoesNotExistException
+     *         Indicates that a custom verification email template with the name you specified does not exist.
+     * @throws FromEmailAddressNotVerifiedException
+     *         Indicates that the sender address specified for a custom verification email is not verified, and is
+     *         therefore not eligible to send the custom verification email.
+     * @throws CustomVerificationEmailInvalidContentException
+     *         Indicates that custom verification email template provided content is invalid.
+     * @sample AmazonSimpleEmailService.UpdateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateCustomVerificationEmailTemplateResult updateCustomVerificationEmailTemplate(
+            UpdateCustomVerificationEmailTemplateRequest updateCustomVerificationEmailTemplateRequest);
 
     /**
      * <p>
@@ -2096,8 +2397,8 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
-     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. This
-     * operation causes a confirmation email message to be sent to the specified address.
+     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. As a
+     * result of executing this operation, a verification email is sent to the specified address.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,9 +63,10 @@ public class SendBounceRequestMarshaller implements Marshaller<Request<SendBounc
                 request.addParameter("MessageDsn.ArrivalDate", StringUtils.fromDate(messageDsn.getArrivalDate()));
             }
 
-            com.amazonaws.internal.SdkInternalList<ExtensionField> extensionFieldsList = (com.amazonaws.internal.SdkInternalList<ExtensionField>) messageDsn
-                    .getExtensionFields();
-            if (!extensionFieldsList.isEmpty() || !extensionFieldsList.isAutoConstruct()) {
+            if (!messageDsn.getExtensionFields().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<ExtensionField>) messageDsn.getExtensionFields()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<ExtensionField> extensionFieldsList = (com.amazonaws.internal.SdkInternalList<ExtensionField>) messageDsn
+                        .getExtensionFields();
                 int extensionFieldsListIndex = 1;
 
                 for (ExtensionField extensionFieldsListValue : extensionFieldsList) {
@@ -84,9 +85,10 @@ public class SendBounceRequestMarshaller implements Marshaller<Request<SendBounc
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<BouncedRecipientInfo> bouncedRecipientInfoListList = (com.amazonaws.internal.SdkInternalList<BouncedRecipientInfo>) sendBounceRequest
-                .getBouncedRecipientInfoList();
-        if (!bouncedRecipientInfoListList.isEmpty() || !bouncedRecipientInfoListList.isAutoConstruct()) {
+        if (!sendBounceRequest.getBouncedRecipientInfoList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<BouncedRecipientInfo>) sendBounceRequest.getBouncedRecipientInfoList()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<BouncedRecipientInfo> bouncedRecipientInfoListList = (com.amazonaws.internal.SdkInternalList<BouncedRecipientInfo>) sendBounceRequest
+                    .getBouncedRecipientInfoList();
             int bouncedRecipientInfoListListIndex = 1;
 
             for (BouncedRecipientInfo bouncedRecipientInfoListListValue : bouncedRecipientInfoListList) {
@@ -139,9 +141,10 @@ public class SendBounceRequestMarshaller implements Marshaller<Request<SendBounc
                                 StringUtils.fromDate(recipientDsnFields.getLastAttemptDate()));
                     }
 
-                    com.amazonaws.internal.SdkInternalList<ExtensionField> extensionFieldsList = (com.amazonaws.internal.SdkInternalList<ExtensionField>) recipientDsnFields
-                            .getExtensionFields();
-                    if (!extensionFieldsList.isEmpty() || !extensionFieldsList.isAutoConstruct()) {
+                    if (!recipientDsnFields.getExtensionFields().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<ExtensionField>) recipientDsnFields.getExtensionFields()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<ExtensionField> extensionFieldsList = (com.amazonaws.internal.SdkInternalList<ExtensionField>) recipientDsnFields
+                                .getExtensionFields();
                         int extensionFieldsListIndex = 1;
 
                         for (ExtensionField extensionFieldsListValue : extensionFieldsList) {

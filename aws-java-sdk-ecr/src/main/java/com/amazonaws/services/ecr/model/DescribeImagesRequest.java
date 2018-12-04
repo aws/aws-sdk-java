@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,8 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * when there are no more results to return. This option cannot be used when you specify images with
+     * <code>imageIds</code>.
      * </p>
      */
     private String nextToken;
@@ -61,7 +62,8 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
      * can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable.
+     * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
+     * with <code>imageIds</code>.
      * </p>
      */
     private Integer maxResults;
@@ -239,14 +241,16 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * when there are no more results to return. This option cannot be used when you specify images with
+     * <code>imageIds</code>.
      * </p>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request
      *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
      *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return.
+     *        is <code>null</code> when there are no more results to return. This option cannot be used when you specify
+     *        images with <code>imageIds</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -258,13 +262,15 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * when there are no more results to return. This option cannot be used when you specify images with
+     * <code>imageIds</code>.
      * </p>
      * 
      * @return The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request
      *         where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
      *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *         is <code>null</code> when there are no more results to return.
+     *         is <code>null</code> when there are no more results to return. This option cannot be used when you
+     *         specify images with <code>imageIds</code>.
      */
 
     public String getNextToken() {
@@ -276,14 +282,16 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * when there are no more results to return. This option cannot be used when you specify images with
+     * <code>imageIds</code>.
      * </p>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request
      *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
      *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return.
+     *        is <code>null</code> when there are no more results to return. This option cannot be used when you specify
+     *        images with <code>imageIds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,7 +307,8 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
      * can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable.
+     * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
+     * with <code>imageIds</code>.
      * </p>
      * 
      * @param maxResults
@@ -309,6 +318,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      *        request can be seen by sending another <code>DescribeImages</code> request with the returned
      *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      *        <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+     *        This option cannot be used when you specify images with <code>imageIds</code>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -322,7 +332,8 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
      * can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable.
+     * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
+     * with <code>imageIds</code>.
      * </p>
      * 
      * @return The maximum number of repository results returned by <code>DescribeImages</code> in paginated output.
@@ -331,6 +342,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      *         request can be seen by sending another <code>DescribeImages</code> request with the returned
      *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      *         <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+     *         This option cannot be used when you specify images with <code>imageIds</code>.
      */
 
     public Integer getMaxResults() {
@@ -344,7 +356,8 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
      * can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable.
+     * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
+     * with <code>imageIds</code>.
      * </p>
      * 
      * @param maxResults
@@ -354,6 +367,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      *        request can be seen by sending another <code>DescribeImages</code> request with the returned
      *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      *        <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+     *        This option cannot be used when you specify images with <code>imageIds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

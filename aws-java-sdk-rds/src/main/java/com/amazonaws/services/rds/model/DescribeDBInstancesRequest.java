@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include information about the DB instances associated with the DB Clusters identified by
+     * results list will only include information about the DB instances associated with the DB clusters identified by
      * these ARNs.
      * </p>
      * </li>
@@ -204,7 +204,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include information about the DB instances associated with the DB Clusters identified by
+     * results list will only include information about the DB instances associated with the DB clusters identified by
      * these ARNs.
      * </p>
      * </li>
@@ -224,7 +224,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *         <li>
      *         <p>
      *         <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *         The results list will only include information about the DB instances associated with the DB Clusters
+     *         The results list will only include information about the DB instances associated with the DB clusters
      *         identified by these ARNs.
      *         </p>
      *         </li>
@@ -254,7 +254,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include information about the DB instances associated with the DB Clusters identified by
+     * results list will only include information about the DB instances associated with the DB clusters identified by
      * these ARNs.
      * </p>
      * </li>
@@ -275,7 +275,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list will only include information about the DB instances associated with the DB Clusters
+     *        The results list will only include information about the DB instances associated with the DB clusters
      *        identified by these ARNs.
      *        </p>
      *        </li>
@@ -307,7 +307,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include information about the DB instances associated with the DB Clusters identified by
+     * results list will only include information about the DB instances associated with the DB clusters identified by
      * these ARNs.
      * </p>
      * </li>
@@ -333,7 +333,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list will only include information about the DB instances associated with the DB Clusters
+     *        The results list will only include information about the DB instances associated with the DB clusters
      *        identified by these ARNs.
      *        </p>
      *        </li>
@@ -367,7 +367,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list will only include information about the DB instances associated with the DB Clusters identified by
+     * results list will only include information about the DB instances associated with the DB clusters identified by
      * these ARNs.
      * </p>
      * </li>
@@ -388,7 +388,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list will only include information about the DB instances associated with the DB Clusters
+     *        The results list will only include information about the DB instances associated with the DB clusters
      *        identified by these ARNs.
      *        </p>
      *        </li>

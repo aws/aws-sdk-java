@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,12 +44,10 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String version;
     /**
      * <p>
-     * Amazon S3 location of the game build files to be uploaded. The S3 bucket must be owned by the same AWS account
-     * that you're using to manage Amazon GameLift. It also must in the same region that you want to create a new build
-     * in. Before calling <code>CreateBuild</code> with this location, you must allow Amazon GameLift to access your
-     * Amazon S3 bucket (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     * >Create a Build with Files in Amazon S3</a>).
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3
+     * bucket must be in the same region that you want to create a new build in.
      * </p>
      */
     private S3Location storageLocation;
@@ -57,7 +55,8 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
      * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system.
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      */
     private String operatingSystem;
@@ -156,21 +155,17 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Amazon S3 location of the game build files to be uploaded. The S3 bucket must be owned by the same AWS account
-     * that you're using to manage Amazon GameLift. It also must in the same region that you want to create a new build
-     * in. Before calling <code>CreateBuild</code> with this location, you must allow Amazon GameLift to access your
-     * Amazon S3 bucket (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     * >Create a Build with Files in Amazon S3</a>).
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3
+     * bucket must be in the same region that you want to create a new build in.
      * </p>
      * 
      * @param storageLocation
-     *        Amazon S3 location of the game build files to be uploaded. The S3 bucket must be owned by the same AWS
-     *        account that you're using to manage Amazon GameLift. It also must in the same region that you want to
-     *        create a new build in. Before calling <code>CreateBuild</code> with this location, you must allow Amazon
-     *        GameLift to access your Amazon S3 bucket (see <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     *        >Create a Build with Files in Amazon S3</a>).
+     *        Information indicating where your game build files are stored. Use this parameter only when creating a
+     *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *        S3 bucket name and key, as well as a role ARN that you set up to allow Amazon GameLift to access your
+     *        Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
      */
 
     public void setStorageLocation(S3Location storageLocation) {
@@ -179,20 +174,16 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Amazon S3 location of the game build files to be uploaded. The S3 bucket must be owned by the same AWS account
-     * that you're using to manage Amazon GameLift. It also must in the same region that you want to create a new build
-     * in. Before calling <code>CreateBuild</code> with this location, you must allow Amazon GameLift to access your
-     * Amazon S3 bucket (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     * >Create a Build with Files in Amazon S3</a>).
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3
+     * bucket must be in the same region that you want to create a new build in.
      * </p>
      * 
-     * @return Amazon S3 location of the game build files to be uploaded. The S3 bucket must be owned by the same AWS
-     *         account that you're using to manage Amazon GameLift. It also must in the same region that you want to
-     *         create a new build in. Before calling <code>CreateBuild</code> with this location, you must allow Amazon
-     *         GameLift to access your Amazon S3 bucket (see <a href=
-     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     *         >Create a Build with Files in Amazon S3</a>).
+     * @return Information indicating where your game build files are stored. Use this parameter only when creating a
+     *         build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *         S3 bucket name and key, as well as a role ARN that you set up to allow Amazon GameLift to access your
+     *         Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
      */
 
     public S3Location getStorageLocation() {
@@ -201,21 +192,17 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Amazon S3 location of the game build files to be uploaded. The S3 bucket must be owned by the same AWS account
-     * that you're using to manage Amazon GameLift. It also must in the same region that you want to create a new build
-     * in. Before calling <code>CreateBuild</code> with this location, you must allow Amazon GameLift to access your
-     * Amazon S3 bucket (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     * >Create a Build with Files in Amazon S3</a>).
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3
+     * bucket must be in the same region that you want to create a new build in.
      * </p>
      * 
      * @param storageLocation
-     *        Amazon S3 location of the game build files to be uploaded. The S3 bucket must be owned by the same AWS
-     *        account that you're using to manage Amazon GameLift. It also must in the same region that you want to
-     *        create a new build in. Before calling <code>CreateBuild</code> with this location, you must allow Amazon
-     *        GameLift to access your Amazon S3 bucket (see <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
-     *        >Create a Build with Files in Amazon S3</a>).
+     *        Information indicating where your game build files are stored. Use this parameter only when creating a
+     *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *        S3 bucket name and key, as well as a role ARN that you set up to allow Amazon GameLift to access your
+     *        Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,13 +215,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
      * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system.
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @param operatingSystem
      *        Operating system that the game server binaries are built to run on. This value determines the type of
      *        fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *        all must run on the same operating system.
+     *        all must run on the same operating system. If an operating system is not specified when creating a build,
+     *        Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @see OperatingSystem
      */
 
@@ -246,12 +235,14 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
      * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system.
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @return Operating system that the game server binaries are built to run on. This value determines the type of
      *         fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *         all must run on the same operating system.
+     *         all must run on the same operating system. If an operating system is not specified when creating a build,
+     *         Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @see OperatingSystem
      */
 
@@ -263,13 +254,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
      * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system.
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @param operatingSystem
      *        Operating system that the game server binaries are built to run on. This value determines the type of
      *        fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *        all must run on the same operating system.
+     *        all must run on the same operating system. If an operating system is not specified when creating a build,
+     *        Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -283,13 +276,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
      * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system.
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @param operatingSystem
      *        Operating system that the game server binaries are built to run on. This value determines the type of
      *        fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *        all must run on the same operating system.
+     *        all must run on the same operating system. If an operating system is not specified when creating a build,
+     *        Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @see OperatingSystem
      */
 
@@ -301,13 +296,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
      * resources that you can use for this build. If your game build contains multiple executables, they all must run on
-     * the same operating system.
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @param operatingSystem
      *        Operating system that the game server binaries are built to run on. This value determines the type of
      *        fleet resources that you can use for this build. If your game build contains multiple executables, they
-     *        all must run on the same operating system.
+     *        all must run on the same operating system. If an operating system is not specified when creating a build,
+     *        Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */

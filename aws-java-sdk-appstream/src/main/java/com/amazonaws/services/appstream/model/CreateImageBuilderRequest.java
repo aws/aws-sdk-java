@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,69 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A unique name for the image builder.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The name of the image used to create the builder.
+     * </p>
+     */
     private String imageName;
-
+    /**
+     * <p>
+     * The instance type to use when launching the image builder.
+     * </p>
+     */
     private String instanceType;
-
+    /**
+     * <p>
+     * The description for display.
+     * </p>
+     */
     private String description;
-
+    /**
+     * <p>
+     * The image builder name for display.
+     * </p>
+     */
     private String displayName;
-
+    /**
+     * <p>
+     * The VPC configuration for the image builder. You can specify only one subnet.
+     * </p>
+     */
     private VpcConfig vpcConfig;
-
+    /**
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     */
     private Boolean enableDefaultInternetAccess;
-
+    /**
+     * <p>
+     * The information needed to join a Microsoft Active Directory domain.
+     * </p>
+     */
     private DomainJoinInfo domainJoinInfo;
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream
+     * 2.0 agent, specify [LATEST].
+     * </p>
+     */
+    private String appstreamAgentVersion;
 
     /**
+     * <p>
+     * A unique name for the image builder.
+     * </p>
+     * 
      * @param name
+     *        A unique name for the image builder.
      */
 
     public void setName(String name) {
@@ -50,7 +95,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * A unique name for the image builder.
+     * </p>
+     * 
+     * @return A unique name for the image builder.
      */
 
     public String getName() {
@@ -58,7 +107,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * A unique name for the image builder.
+     * </p>
+     * 
      * @param name
+     *        A unique name for the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +122,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the image used to create the builder.
+     * </p>
+     * 
      * @param imageName
+     *        The name of the image used to create the builder.
      */
 
     public void setImageName(String imageName) {
@@ -76,7 +135,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the image used to create the builder.
+     * </p>
+     * 
+     * @return The name of the image used to create the builder.
      */
 
     public String getImageName() {
@@ -84,7 +147,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the image used to create the builder.
+     * </p>
+     * 
      * @param imageName
+     *        The name of the image used to create the builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,7 +162,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The instance type to use when launching the image builder.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance type to use when launching the image builder.
      */
 
     public void setInstanceType(String instanceType) {
@@ -102,7 +175,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The instance type to use when launching the image builder.
+     * </p>
+     * 
+     * @return The instance type to use when launching the image builder.
      */
 
     public String getInstanceType() {
@@ -110,7 +187,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The instance type to use when launching the image builder.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance type to use when launching the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +202,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The description for display.
+     * </p>
+     * 
      * @param description
+     *        The description for display.
      */
 
     public void setDescription(String description) {
@@ -128,7 +215,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The description for display.
+     * </p>
+     * 
+     * @return The description for display.
      */
 
     public String getDescription() {
@@ -136,7 +227,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The description for display.
+     * </p>
+     * 
      * @param description
+     *        The description for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,7 +242,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The image builder name for display.
+     * </p>
+     * 
      * @param displayName
+     *        The image builder name for display.
      */
 
     public void setDisplayName(String displayName) {
@@ -154,7 +255,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The image builder name for display.
+     * </p>
+     * 
+     * @return The image builder name for display.
      */
 
     public String getDisplayName() {
@@ -162,7 +267,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The image builder name for display.
+     * </p>
+     * 
      * @param displayName
+     *        The image builder name for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,7 +282,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The VPC configuration for the image builder. You can specify only one subnet.
+     * </p>
+     * 
      * @param vpcConfig
+     *        The VPC configuration for the image builder. You can specify only one subnet.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -180,7 +295,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The VPC configuration for the image builder. You can specify only one subnet.
+     * </p>
+     * 
+     * @return The VPC configuration for the image builder. You can specify only one subnet.
      */
 
     public VpcConfig getVpcConfig() {
@@ -188,7 +307,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The VPC configuration for the image builder. You can specify only one subnet.
+     * </p>
+     * 
      * @param vpcConfig
+     *        The VPC configuration for the image builder. You can specify only one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,7 +322,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     * 
      * @param enableDefaultInternetAccess
+     *        Enables or disables default internet access for the image builder.
      */
 
     public void setEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
@@ -206,7 +335,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     * 
+     * @return Enables or disables default internet access for the image builder.
      */
 
     public Boolean getEnableDefaultInternetAccess() {
@@ -214,7 +347,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     * 
      * @param enableDefaultInternetAccess
+     *        Enables or disables default internet access for the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,7 +362,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     * 
+     * @return Enables or disables default internet access for the image builder.
      */
 
     public Boolean isEnableDefaultInternetAccess() {
@@ -232,7 +374,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The information needed to join a Microsoft Active Directory domain.
+     * </p>
+     * 
      * @param domainJoinInfo
+     *        The information needed to join a Microsoft Active Directory domain.
      */
 
     public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
@@ -240,7 +387,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The information needed to join a Microsoft Active Directory domain.
+     * </p>
+     * 
+     * @return The information needed to join a Microsoft Active Directory domain.
      */
 
     public DomainJoinInfo getDomainJoinInfo() {
@@ -248,12 +399,63 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The information needed to join a Microsoft Active Directory domain.
+     * </p>
+     * 
      * @param domainJoinInfo
+     *        The information needed to join a Microsoft Active Directory domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateImageBuilderRequest withDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
         setDomainJoinInfo(domainJoinInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream
+     * 2.0 agent, specify [LATEST].
+     * </p>
+     * 
+     * @param appstreamAgentVersion
+     *        The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the
+     *        AppStream 2.0 agent, specify [LATEST].
+     */
+
+    public void setAppstreamAgentVersion(String appstreamAgentVersion) {
+        this.appstreamAgentVersion = appstreamAgentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream
+     * 2.0 agent, specify [LATEST].
+     * </p>
+     * 
+     * @return The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the
+     *         AppStream 2.0 agent, specify [LATEST].
+     */
+
+    public String getAppstreamAgentVersion() {
+        return this.appstreamAgentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream
+     * 2.0 agent, specify [LATEST].
+     * </p>
+     * 
+     * @param appstreamAgentVersion
+     *        The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the
+     *        AppStream 2.0 agent, specify [LATEST].
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageBuilderRequest withAppstreamAgentVersion(String appstreamAgentVersion) {
+        setAppstreamAgentVersion(appstreamAgentVersion);
         return this;
     }
 
@@ -283,7 +485,9 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
         if (getEnableDefaultInternetAccess() != null)
             sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess()).append(",");
         if (getDomainJoinInfo() != null)
-            sb.append("DomainJoinInfo: ").append(getDomainJoinInfo());
+            sb.append("DomainJoinInfo: ").append(getDomainJoinInfo()).append(",");
+        if (getAppstreamAgentVersion() != null)
+            sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -330,6 +534,10 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getDomainJoinInfo() != null && other.getDomainJoinInfo().equals(this.getDomainJoinInfo()) == false)
             return false;
+        if (other.getAppstreamAgentVersion() == null ^ this.getAppstreamAgentVersion() == null)
+            return false;
+        if (other.getAppstreamAgentVersion() != null && other.getAppstreamAgentVersion().equals(this.getAppstreamAgentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -346,6 +554,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
+        hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * </p>
      */
     private String id;
@@ -72,6 +72,25 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> binaryMediaTypes;
     /**
      * <p>
+     * A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable (null)
+     * compression on an API. When compression is enabled, compression or decompression are not applied on the payload
+     * if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+     * </p>
+     */
+    private Integer minimumCompressionSize;
+    /**
+     * <p>
+     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * <ul>
+     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li>
+     * </ul>
+     * </p>
+     */
+    private String apiKeySource;
+    /**
+     * <p>
      * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
      * </p>
      */
@@ -79,11 +98,11 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * </p>
      * 
      * @param id
-     *        The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     *        The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      */
 
     public void setId(String id) {
@@ -92,10 +111,10 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * </p>
      * 
-     * @return The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * @return The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      */
 
     public String getId() {
@@ -104,11 +123,11 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * </p>
      * 
      * @param id
-     *        The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     *        The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,6 +446,160 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable (null)
+     * compression on an API. When compression is enabled, compression or decompression are not applied on the payload
+     * if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+     * </p>
+     * 
+     * @param minimumCompressionSize
+     *        A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable
+     *        (null) compression on an API. When compression is enabled, compression or decompression are not applied on
+     *        the payload if the payload size is smaller than this value. Setting it to zero allows compression for any
+     *        payload size.
+     */
+
+    public void setMinimumCompressionSize(Integer minimumCompressionSize) {
+        this.minimumCompressionSize = minimumCompressionSize;
+    }
+
+    /**
+     * <p>
+     * A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable (null)
+     * compression on an API. When compression is enabled, compression or decompression are not applied on the payload
+     * if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+     * </p>
+     * 
+     * @return A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable
+     *         (null) compression on an API. When compression is enabled, compression or decompression are not applied
+     *         on the payload if the payload size is smaller than this value. Setting it to zero allows compression for
+     *         any payload size.
+     */
+
+    public Integer getMinimumCompressionSize() {
+        return this.minimumCompressionSize;
+    }
+
+    /**
+     * <p>
+     * A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable (null)
+     * compression on an API. When compression is enabled, compression or decompression are not applied on the payload
+     * if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+     * </p>
+     * 
+     * @param minimumCompressionSize
+     *        A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable
+     *        (null) compression on an API. When compression is enabled, compression or decompression are not applied on
+     *        the payload if the payload size is smaller than this value. Setting it to zero allows compression for any
+     *        payload size.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestApi withMinimumCompressionSize(Integer minimumCompressionSize) {
+        setMinimumCompressionSize(minimumCompressionSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * <ul>
+     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param apiKeySource
+     *        The source of the API key for metring requests according to a usage plan. Valid values are
+     *        <ul>
+     *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     *        authorizer.</li>
+     *        </ul>
+     * @see ApiKeySourceType
+     */
+
+    public void setApiKeySource(String apiKeySource) {
+        this.apiKeySource = apiKeySource;
+    }
+
+    /**
+     * <p>
+     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * <ul>
+     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li>
+     * </ul>
+     * </p>
+     * 
+     * @return The source of the API key for metring requests according to a usage plan. Valid values are
+     *         <ul>
+     *         <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     *         <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     *         authorizer.</li>
+     *         </ul>
+     * @see ApiKeySourceType
+     */
+
+    public String getApiKeySource() {
+        return this.apiKeySource;
+    }
+
+    /**
+     * <p>
+     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * <ul>
+     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param apiKeySource
+     *        The source of the API key for metring requests according to a usage plan. Valid values are
+     *        <ul>
+     *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     *        authorizer.</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApiKeySourceType
+     */
+
+    public RestApi withApiKeySource(String apiKeySource) {
+        setApiKeySource(apiKeySource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * <ul>
+     * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param apiKeySource
+     *        The source of the API key for metring requests according to a usage plan. Valid values are
+     *        <ul>
+     *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
+     *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
+     *        authorizer.</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApiKeySourceType
+     */
+
+    public RestApi withApiKeySource(ApiKeySourceType apiKeySource) {
+        this.apiKeySource = apiKeySource.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
      * </p>
      * 
@@ -490,6 +663,10 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
             sb.append("Warnings: ").append(getWarnings()).append(",");
         if (getBinaryMediaTypes() != null)
             sb.append("BinaryMediaTypes: ").append(getBinaryMediaTypes()).append(",");
+        if (getMinimumCompressionSize() != null)
+            sb.append("MinimumCompressionSize: ").append(getMinimumCompressionSize()).append(",");
+        if (getApiKeySource() != null)
+            sb.append("ApiKeySource: ").append(getApiKeySource()).append(",");
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration());
         sb.append("}");
@@ -534,6 +711,14 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBinaryMediaTypes() != null && other.getBinaryMediaTypes().equals(this.getBinaryMediaTypes()) == false)
             return false;
+        if (other.getMinimumCompressionSize() == null ^ this.getMinimumCompressionSize() == null)
+            return false;
+        if (other.getMinimumCompressionSize() != null && other.getMinimumCompressionSize().equals(this.getMinimumCompressionSize()) == false)
+            return false;
+        if (other.getApiKeySource() == null ^ this.getApiKeySource() == null)
+            return false;
+        if (other.getApiKeySource() != null && other.getApiKeySource().equals(this.getApiKeySource()) == false)
+            return false;
         if (other.getEndpointConfiguration() == null ^ this.getEndpointConfiguration() == null)
             return false;
         if (other.getEndpointConfiguration() != null && other.getEndpointConfiguration().equals(this.getEndpointConfiguration()) == false)
@@ -553,6 +738,8 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         hashCode = prime * hashCode + ((getBinaryMediaTypes() == null) ? 0 : getBinaryMediaTypes().hashCode());
+        hashCode = prime * hashCode + ((getMinimumCompressionSize() == null) ? 0 : getMinimumCompressionSize().hashCode());
+        hashCode = prime * hashCode + ((getApiKeySource() == null) ? 0 : getApiKeySource().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         return hashCode;
     }

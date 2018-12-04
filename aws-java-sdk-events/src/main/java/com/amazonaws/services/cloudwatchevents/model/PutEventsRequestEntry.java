@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,8 +56,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
     private String detailType;
     /**
      * <p>
-     * In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      */
     private String detail;
@@ -268,13 +267,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
      * @param detail
-     *        In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints
-     *        are imposed on its contents.
+     *        A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *        subobjects.
      */
 
     public void setDetail(String detail) {
@@ -283,12 +281,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
-     * @return In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints
-     *         are imposed on its contents.
+     * @return A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *         subobjects.
      */
 
     public String getDetail() {
@@ -297,13 +294,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are
-     * imposed on its contents.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
      * @param detail
-     *        In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints
-     *        are imposed on its contents.
+     *        A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *        subobjects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

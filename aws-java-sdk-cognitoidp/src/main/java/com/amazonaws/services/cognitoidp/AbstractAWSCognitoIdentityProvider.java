@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,6 +118,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public AdminListUserAuthEventsResult adminListUserAuthEvents(AdminListUserAuthEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminRemoveUserFromGroupResult adminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,7 +138,17 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public AdminSetUserMFAPreferenceResult adminSetUserMFAPreference(AdminSetUserMFAPreferenceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminSetUserSettingsResult adminSetUserSettings(AdminSetUserSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AdminUpdateAuthEventFeedbackResult adminUpdateAuthEventFeedback(AdminUpdateAuthEventFeedbackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +164,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public AdminUserGlobalSignOutResult adminUserGlobalSignOut(AdminUserGlobalSignOutRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateSoftwareTokenResult associateSoftwareToken(AssociateSoftwareTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -258,6 +278,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public DescribeRiskConfigurationResult describeRiskConfiguration(DescribeRiskConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeUserImportJobResult describeUserImportJob(DescribeUserImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -308,6 +333,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public GetSigningCertificateResult getSigningCertificate(GetSigningCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUICustomizationResult getUICustomization(GetUICustomizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -319,6 +349,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public GetUserAttributeVerificationCodeResult getUserAttributeVerificationCode(GetUserAttributeVerificationCodeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetUserPoolMfaConfigResult getUserPoolMfaConfig(GetUserPoolMfaConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -388,7 +423,22 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public SetRiskConfigurationResult setRiskConfiguration(SetRiskConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetUICustomizationResult setUICustomization(SetUICustomizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetUserMFAPreferenceResult setUserMFAPreference(SetUserMFAPreferenceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetUserPoolMfaConfigResult setUserPoolMfaConfig(SetUserPoolMfaConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -409,6 +459,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public StopUserImportJobResult stopUserImportJob(StopUserImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAuthEventFeedbackResult updateAuthEventFeedback(UpdateAuthEventFeedbackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -444,6 +499,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public UpdateUserPoolClientResult updateUserPoolClient(UpdateUserPoolClientRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public VerifySoftwareTokenResult verifySoftwareToken(VerifySoftwareTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

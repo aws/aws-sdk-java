@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DescribeVpcEndpointServicesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of supported AWS services.
+     * A list of supported services.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> serviceNames;
@@ -47,10 +47,10 @@ public class DescribeVpcEndpointServicesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of supported AWS services.
+     * A list of supported services.
      * </p>
      * 
-     * @return A list of supported AWS services.
+     * @return A list of supported services.
      */
 
     public java.util.List<String> getServiceNames() {
@@ -62,11 +62,11 @@ public class DescribeVpcEndpointServicesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of supported AWS services.
+     * A list of supported services.
      * </p>
      * 
      * @param serviceNames
-     *        A list of supported AWS services.
+     *        A list of supported services.
      */
 
     public void setServiceNames(java.util.Collection<String> serviceNames) {
@@ -80,7 +80,7 @@ public class DescribeVpcEndpointServicesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of supported AWS services.
+     * A list of supported services.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +89,7 @@ public class DescribeVpcEndpointServicesResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param serviceNames
-     *        A list of supported AWS services.
+     *        A list of supported services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class DescribeVpcEndpointServicesResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of supported AWS services.
+     * A list of supported services.
      * </p>
      * 
      * @param serviceNames
-     *        A list of supported AWS services.
+     *        A list of supported services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

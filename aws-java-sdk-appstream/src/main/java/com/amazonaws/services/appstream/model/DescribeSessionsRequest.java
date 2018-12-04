@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the stack.
+     * The name of the stack. This value is case-sensitive.
      * </p>
      */
     private String stackName;
     /**
      * <p>
-     * The name of the fleet.
+     * The name of the fleet. This value is case-sensitive.
      * </p>
      */
     private String fleetName;
@@ -66,11 +66,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the stack.
+     * The name of the stack. This value is case-sensitive.
      * </p>
      * 
      * @param stackName
-     *        The name of the stack.
+     *        The name of the stack. This value is case-sensitive.
      */
 
     public void setStackName(String stackName) {
@@ -79,10 +79,10 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the stack.
+     * The name of the stack. This value is case-sensitive.
      * </p>
      * 
-     * @return The name of the stack.
+     * @return The name of the stack. This value is case-sensitive.
      */
 
     public String getStackName() {
@@ -91,11 +91,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the stack.
+     * The name of the stack. This value is case-sensitive.
      * </p>
      * 
      * @param stackName
-     *        The name of the stack.
+     *        The name of the stack. This value is case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +106,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the fleet.
+     * The name of the fleet. This value is case-sensitive.
      * </p>
      * 
      * @param fleetName
-     *        The name of the fleet.
+     *        The name of the fleet. This value is case-sensitive.
      */
 
     public void setFleetName(String fleetName) {
@@ -119,10 +119,10 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the fleet.
+     * The name of the fleet. This value is case-sensitive.
      * </p>
      * 
-     * @return The name of the fleet.
+     * @return The name of the fleet. This value is case-sensitive.
      */
 
     public String getFleetName() {
@@ -131,11 +131,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the fleet.
+     * The name of the fleet. This value is case-sensitive.
      * </p>
      * 
      * @param fleetName
-     *        The name of the fleet.
+     *        The name of the fleet. This value is case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,11 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
 
     /** Sets whether the endpoints create a segment when they are imported. */
     private Boolean defineSegment;
-    /** A unique, custom ID assigned to the IAM role that restricts who can assume the role. */
+    /**
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
+     */
     private String externalId;
     /**
      * The format of the files that contain the endpoint definitions. Valid values: CSV, JSON
@@ -97,10 +101,14 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      * 
      * @param externalId
-     *        A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     *        DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *        Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
+     *        for IAM roles assumed by Amazon Pinpoint.
      */
 
     public void setExternalId(String externalId) {
@@ -108,9 +116,13 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      * 
-     * @return A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     * @return DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *         Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
+     *         for IAM roles assumed by Amazon Pinpoint.
      */
 
     public String getExternalId() {
@@ -118,10 +130,14 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      * 
      * @param externalId
-     *        A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     *        DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *        Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
+     *        for IAM roles assumed by Amazon Pinpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

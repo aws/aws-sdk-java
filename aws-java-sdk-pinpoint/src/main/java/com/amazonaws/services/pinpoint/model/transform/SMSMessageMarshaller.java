@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class SMSMessageMarshaller {
             .marshallLocationName("Body").build();
     private static final MarshallingInfo<String> MESSAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageType").build();
+    private static final MarshallingInfo<String> ORIGINATIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OriginationNumber").build();
     private static final MarshallingInfo<String> SENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SenderId").build();
     private static final MarshallingInfo<Map> SUBSTITUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -56,6 +58,7 @@ public class SMSMessageMarshaller {
         try {
             protocolMarshaller.marshall(sMSMessage.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(sMSMessage.getMessageType(), MESSAGETYPE_BINDING);
+            protocolMarshaller.marshall(sMSMessage.getOriginationNumber(), ORIGINATIONNUMBER_BINDING);
             protocolMarshaller.marshall(sMSMessage.getSenderId(), SENDERID_BINDING);
             protocolMarshaller.marshall(sMSMessage.getSubstitutions(), SUBSTITUTIONS_BINDING);
         } catch (Exception e) {

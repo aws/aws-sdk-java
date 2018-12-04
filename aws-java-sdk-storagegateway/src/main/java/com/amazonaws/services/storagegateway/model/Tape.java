@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,7 +75,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
     private Double progress;
     /**
      * <p>
-     * The size, in bytes, of data written to the virtual tape.
+     * The size, in bytes, of data stored on the virtual tape.
      * </p>
      * <note>
      * <p>
@@ -385,7 +385,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in bytes, of data written to the virtual tape.
+     * The size, in bytes, of data stored on the virtual tape.
      * </p>
      * <note>
      * <p>
@@ -394,7 +394,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param tapeUsedInBytes
-     *        The size, in bytes, of data written to the virtual tape.</p> <note>
+     *        The size, in bytes, of data stored on the virtual tape.</p> <note>
      *        <p>
      *        This value is not available for tapes created prior to May 13, 2015.
      *        </p>
@@ -406,7 +406,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in bytes, of data written to the virtual tape.
+     * The size, in bytes, of data stored on the virtual tape.
      * </p>
      * <note>
      * <p>
@@ -414,7 +414,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return The size, in bytes, of data written to the virtual tape.</p> <note>
+     * @return The size, in bytes, of data stored on the virtual tape.</p> <note>
      *         <p>
      *         This value is not available for tapes created prior to May 13, 2015.
      *         </p>
@@ -426,7 +426,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in bytes, of data written to the virtual tape.
+     * The size, in bytes, of data stored on the virtual tape.
      * </p>
      * <note>
      * <p>
@@ -435,7 +435,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param tapeUsedInBytes
-     *        The size, in bytes, of data written to the virtual tape.</p> <note>
+     *        The size, in bytes, of data stored on the virtual tape.</p> <note>
      *        <p>
      *        This value is not available for tapes created prior to May 13, 2015.
      *        </p>

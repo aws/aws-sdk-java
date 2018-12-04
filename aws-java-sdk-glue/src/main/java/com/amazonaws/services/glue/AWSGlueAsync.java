@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -159,6 +159,37 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Deletes a specified batch of versions of a table.
+     * </p>
+     * 
+     * @param batchDeleteTableVersionRequest
+     * @return A Java Future containing the result of the BatchDeleteTableVersion operation returned by the service.
+     * @sample AWSGlueAsync.BatchDeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteTableVersionResult> batchDeleteTableVersionAsync(BatchDeleteTableVersionRequest batchDeleteTableVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specified batch of versions of a table.
+     * </p>
+     * 
+     * @param batchDeleteTableVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteTableVersion operation returned by the service.
+     * @sample AWSGlueAsyncHandler.BatchDeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteTableVersionResult> batchDeleteTableVersionAsync(BatchDeleteTableVersionRequest batchDeleteTableVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteTableVersionRequest, BatchDeleteTableVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves partitions in a batch request.
      * </p>
      * 
@@ -190,7 +221,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Stops a batch of job runs for a given job.
+     * Stops one or more job runs for a specified Job.
      * </p>
      * 
      * @param batchStopJobRunRequest
@@ -203,7 +234,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Stops a batch of job runs for a given job.
+     * Stops one or more job runs for a specified Job.
      * </p>
      * 
      * @param batchStopJobRunRequest
@@ -221,7 +252,9 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Creates a <code>Classifier</code> in the user's account.
+     * Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an
+     * <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on which field of the request is
+     * present.
      * </p>
      * 
      * @param createClassifierRequest
@@ -234,7 +267,9 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Creates a <code>Classifier</code> in the user's account.
+     * Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an
+     * <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on which field of the request is
+     * present.
      * </p>
      * 
      * @param createClassifierRequest
@@ -283,8 +318,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Creates a new <code>Crawler</code> with specified targets, role, configuration, and optional schedule. At least
-     * one crawl target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.
+     * Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl
+     * target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.
      * </p>
      * 
      * @param createCrawlerRequest
@@ -297,8 +332,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Creates a new <code>Crawler</code> with specified targets, role, configuration, and optional schedule. At least
-     * one crawl target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.
+     * Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl
+     * target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.
      * </p>
      * 
      * @param createCrawlerRequest
@@ -440,7 +475,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Transforms a directed acyclic graph (DAG) into a Python script.
+     * Transforms a directed acyclic graph (DAG) into code.
      * </p>
      * 
      * @param createScriptRequest
@@ -453,7 +488,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Transforms a directed acyclic graph (DAG) into a Python script.
+     * Transforms a directed acyclic graph (DAG) into code.
      * </p>
      * 
      * @param createScriptRequest
@@ -566,7 +601,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Removes a <code>Classifier</code> from the metadata store.
+     * Removes a classifier from the Data Catalog.
      * </p>
      * 
      * @param deleteClassifierRequest
@@ -579,7 +614,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Removes a <code>Classifier</code> from the metadata store.
+     * Removes a classifier from the Data Catalog.
      * </p>
      * 
      * @param deleteClassifierRequest
@@ -628,8 +663,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Removes a specified <code>Crawler</code> from the metadata store, unless the <code>Crawler</code> state is
-     * <code>RUNNING</code>.
+     * Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.
      * </p>
      * 
      * @param deleteCrawlerRequest
@@ -642,8 +676,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Removes a specified <code>Crawler</code> from the metadata store, unless the <code>Crawler</code> state is
-     * <code>RUNNING</code>.
+     * Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.
      * </p>
      * 
      * @param deleteCrawlerRequest
@@ -723,7 +756,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified job.
+     * Deletes a specified job. If the job is not found, no exception is thrown.
      * </p>
      * 
      * @param deleteJobRequest
@@ -736,7 +769,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified job.
+     * Deletes a specified job. If the job is not found, no exception is thrown.
      * </p>
      * 
      * @param deleteJobRequest
@@ -816,7 +849,38 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified trigger.
+     * Deletes a specified version of a table.
+     * </p>
+     * 
+     * @param deleteTableVersionRequest
+     * @return A Java Future containing the result of the DeleteTableVersion operation returned by the service.
+     * @sample AWSGlueAsync.DeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTableVersionResult> deleteTableVersionAsync(DeleteTableVersionRequest deleteTableVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specified version of a table.
+     * </p>
+     * 
+     * @param deleteTableVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTableVersion operation returned by the service.
+     * @sample AWSGlueAsyncHandler.DeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTableVersionResult> deleteTableVersionAsync(DeleteTableVersionRequest deleteTableVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTableVersionRequest, DeleteTableVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified trigger. If the trigger is not found, no exception is thrown.
      * </p>
      * 
      * @param deleteTriggerRequest
@@ -829,7 +893,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified trigger.
+     * Deletes a specified trigger. If the trigger is not found, no exception is thrown.
      * </p>
      * 
      * @param deleteTriggerRequest
@@ -911,7 +975,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Retrieve a <code>Classifier</code> by name.
+     * Retrieve a classifier by name.
      * </p>
      * 
      * @param getClassifierRequest
@@ -924,7 +988,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Retrieve a <code>Classifier</code> by name.
+     * Retrieve a classifier by name.
      * </p>
      * 
      * @param getClassifierRequest
@@ -942,7 +1006,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Lists all Classifier objects in the metadata store.
+     * Lists all classifier objects in the Data Catalog.
      * </p>
      * 
      * @param getClassifiersRequest
@@ -955,7 +1019,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Lists all Classifier objects in the metadata store.
+     * Lists all classifier objects in the Data Catalog.
      * </p>
      * 
      * @param getClassifiersRequest
@@ -1035,7 +1099,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Retrieves metadata for a specified <code>Crawler</code>.
+     * Retrieves metadata for a specified crawler.
      * </p>
      * 
      * @param getCrawlerRequest
@@ -1048,7 +1112,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Retrieves metadata for a specified <code>Crawler</code>.
+     * Retrieves metadata for a specified crawler.
      * </p>
      * 
      * @param getCrawlerRequest
@@ -1097,7 +1161,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Retrieves metadata for all <code>Crawlers</code> defined in the customer account.
+     * Retrieves metadata for all crawlers defined in the customer account.
      * </p>
      * 
      * @param getCrawlersRequest
@@ -1110,7 +1174,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Retrieves metadata for all <code>Crawlers</code> defined in the customer account.
+     * Retrieves metadata for all crawlers defined in the customer account.
      * </p>
      * 
      * @param getCrawlersRequest
@@ -1500,7 +1564,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Gets a Python script to perform a specified mapping.
+     * Gets code to perform a specified mapping.
      * </p>
      * 
      * @param getPlanRequest
@@ -1513,7 +1577,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Gets a Python script to perform a specified mapping.
+     * Gets code to perform a specified mapping.
      * </p>
      * 
      * @param getPlanRequest
@@ -1559,6 +1623,37 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<GetTableResult> getTableAsync(GetTableRequest getTableRequest,
             com.amazonaws.handlers.AsyncHandler<GetTableRequest, GetTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a specified version of a table.
+     * </p>
+     * 
+     * @param getTableVersionRequest
+     * @return A Java Future containing the result of the GetTableVersion operation returned by the service.
+     * @sample AWSGlueAsync.GetTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableVersionResult> getTableVersionAsync(GetTableVersionRequest getTableVersionRequest);
+
+    /**
+     * <p>
+     * Retrieves a specified version of a table.
+     * </p>
+     * 
+     * @param getTableVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTableVersion operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableVersionResult> getTableVersionAsync(GetTableVersionRequest getTableVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTableVersionRequest, GetTableVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1810,8 +1905,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Starts a crawl using the specified <code>Crawler</code>, regardless of what is scheduled. If the
-     * <code>Crawler</code> is already running, does nothing.
+     * Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running,
+     * does nothing.
      * </p>
      * 
      * @param startCrawlerRequest
@@ -1824,8 +1919,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Starts a crawl using the specified <code>Crawler</code>, regardless of what is scheduled. If the
-     * <code>Crawler</code> is already running, does nothing.
+     * Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running,
+     * does nothing.
      * </p>
      * 
      * @param startCrawlerRequest
@@ -1907,7 +2002,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Starts an existing trigger.
+     * Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+     * Jobs</a> for information about how different types of trigger are started.
      * </p>
      * 
      * @param startTriggerRequest
@@ -1920,7 +2016,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Starts an existing trigger.
+     * Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+     * Jobs</a> for information about how different types of trigger are started.
      * </p>
      * 
      * @param startTriggerRequest
@@ -1938,7 +2035,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * If the specified <code>Crawler</code> is running, stops the crawl.
+     * If the specified crawler is running, stops the crawl.
      * </p>
      * 
      * @param stopCrawlerRequest
@@ -1951,7 +2048,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * If the specified <code>Crawler</code> is running, stops the crawl.
+     * If the specified crawler is running, stops the crawl.
      * </p>
      * 
      * @param stopCrawlerRequest
@@ -2033,7 +2130,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Modifies an existing <code>Classifier</code>.
+     * Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>, or
+     * <code>JsonClassifier</code>, depending on which field is present).
      * </p>
      * 
      * @param updateClassifierRequest
@@ -2046,7 +2144,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Modifies an existing <code>Classifier</code>.
+     * Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>, or
+     * <code>JsonClassifier</code>, depending on which field is present).
      * </p>
      * 
      * @param updateClassifierRequest
@@ -2095,8 +2194,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Updates a <code>Crawler</code>. If a <code>Crawler</code> is running, you must stop it using
-     * <code>StopCrawler</code> before updating it.
+     * Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.
      * </p>
      * 
      * @param updateCrawlerRequest
@@ -2109,8 +2207,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Updates a <code>Crawler</code>. If a <code>Crawler</code> is running, you must stop it using
-     * <code>StopCrawler</code> before updating it.
+     * Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.
      * </p>
      * 
      * @param updateCrawlerRequest
@@ -2128,7 +2225,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Updates the schedule of a crawler using a Cron expression.
+     * Updates the schedule of a crawler using a <code>cron</code> expression.
      * </p>
      * 
      * @param updateCrawlerScheduleRequest
@@ -2141,7 +2238,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Updates the schedule of a crawler using a Cron expression.
+     * Updates the schedule of a crawler using a <code>cron</code> expression.
      * </p>
      * 
      * @param updateCrawlerScheduleRequest

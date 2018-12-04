@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes Spot instance placement.
+ * Describes Spot Instance placement.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotPlacement" target="_top">AWS API
@@ -31,14 +31,14 @@ public class SpotPlacement implements Serializable, Cloneable {
      * The Availability Zone.
      * </p>
      * <p>
-     * [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example,
+     * [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example,
      * "us-west-2a, us-west-2b".
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
-     * The name of the placement group (for cluster instances).
+     * The name of the placement group.
      * </p>
      */
     private String groupName;
@@ -46,7 +46,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
-     * instances.
+     * Instances.
      * </p>
      */
     private String tenancy;
@@ -65,7 +65,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone.</p>
      *        <p>
-     *        [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example,
+     *        [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example,
      *        "us-west-2a, us-west-2b".
      */
     public SpotPlacement(String availabilityZone) {
@@ -77,14 +77,14 @@ public class SpotPlacement implements Serializable, Cloneable {
      * The Availability Zone.
      * </p>
      * <p>
-     * [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example,
+     * [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example,
      * "us-west-2a, us-west-2b".
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone.</p>
      *        <p>
-     *        [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example,
+     *        [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example,
      *        "us-west-2a, us-west-2b".
      */
 
@@ -97,13 +97,13 @@ public class SpotPlacement implements Serializable, Cloneable {
      * The Availability Zone.
      * </p>
      * <p>
-     * [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example,
+     * [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example,
      * "us-west-2a, us-west-2b".
      * </p>
      * 
      * @return The Availability Zone.</p>
      *         <p>
-     *         [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example,
+     *         [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example,
      *         "us-west-2a, us-west-2b".
      */
 
@@ -116,14 +116,14 @@ public class SpotPlacement implements Serializable, Cloneable {
      * The Availability Zone.
      * </p>
      * <p>
-     * [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example,
+     * [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example,
      * "us-west-2a, us-west-2b".
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone.</p>
      *        <p>
-     *        [Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example,
+     *        [Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example,
      *        "us-west-2a, us-west-2b".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -135,11 +135,11 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group (for cluster instances).
+     * The name of the placement group.
      * </p>
      * 
      * @param groupName
-     *        The name of the placement group (for cluster instances).
+     *        The name of the placement group.
      */
 
     public void setGroupName(String groupName) {
@@ -148,10 +148,10 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group (for cluster instances).
+     * The name of the placement group.
      * </p>
      * 
-     * @return The name of the placement group (for cluster instances).
+     * @return The name of the placement group.
      */
 
     public String getGroupName() {
@@ -160,11 +160,11 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group (for cluster instances).
+     * The name of the placement group.
      * </p>
      * 
      * @param groupName
-     *        The name of the placement group (for cluster instances).
+     *        The name of the placement group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,13 +177,13 @@ public class SpotPlacement implements Serializable, Cloneable {
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
-     * instances.
+     * Instances.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        Spot instances.
+     *        Spot Instances.
      * @see Tenancy
      */
 
@@ -195,12 +195,12 @@ public class SpotPlacement implements Serializable, Cloneable {
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
-     * instances.
+     * Instances.
      * </p>
      * 
      * @return The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *         <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *         Spot instances.
+     *         Spot Instances.
      * @see Tenancy
      */
 
@@ -212,13 +212,13 @@ public class SpotPlacement implements Serializable, Cloneable {
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
-     * instances.
+     * Instances.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        Spot instances.
+     *        Spot Instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */
@@ -232,13 +232,13 @@ public class SpotPlacement implements Serializable, Cloneable {
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
-     * instances.
+     * Instances.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        Spot instances.
+     *        Spot Instances.
      * @see Tenancy
      */
 
@@ -250,13 +250,13 @@ public class SpotPlacement implements Serializable, Cloneable {
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot
-     * instances.
+     * Instances.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        Spot instances.
+     *        Spot Instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class StopCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to stop.
+     * Name of the crawler to stop.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to stop.
+     * Name of the crawler to stop.
      * </p>
      * 
      * @param name
-     *        Name of the <code>Crawler</code> to stop.
+     *        Name of the crawler to stop.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class StopCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to stop.
+     * Name of the crawler to stop.
      * </p>
      * 
-     * @return Name of the <code>Crawler</code> to stop.
+     * @return Name of the crawler to stop.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class StopCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to stop.
+     * Name of the crawler to stop.
      * </p>
      * 
      * @param name
-     *        Name of the <code>Crawler</code> to stop.
+     *        Name of the crawler to stop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

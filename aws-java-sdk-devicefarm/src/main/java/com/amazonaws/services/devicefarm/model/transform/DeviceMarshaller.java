@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class DeviceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manufacturer").build();
     private static final MarshallingInfo<String> MODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("model").build();
+    private static final MarshallingInfo<String> MODELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("modelId").build();
     private static final MarshallingInfo<String> FORMFACTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("formFactor").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -84,6 +86,7 @@ public class DeviceMarshaller {
             protocolMarshaller.marshall(device.getName(), NAME_BINDING);
             protocolMarshaller.marshall(device.getManufacturer(), MANUFACTURER_BINDING);
             protocolMarshaller.marshall(device.getModel(), MODEL_BINDING);
+            protocolMarshaller.marshall(device.getModelId(), MODELID_BINDING);
             protocolMarshaller.marshall(device.getFormFactor(), FORMFACTOR_BINDING);
             protocolMarshaller.marshall(device.getPlatform(), PLATFORM_BINDING);
             protocolMarshaller.marshall(device.getOs(), OS_BINDING);

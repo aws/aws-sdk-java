@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,25 +25,24 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The summary metadata about the specified product.
+     * Summary information about the product view.
      * </p>
      */
     private ProductViewSummary productViewSummary;
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      */
     private java.util.List<ProvisioningArtifact> provisioningArtifacts;
 
     /**
      * <p>
-     * The summary metadata about the specified product.
+     * Summary information about the product view.
      * </p>
      * 
      * @param productViewSummary
-     *        The summary metadata about the specified product.
+     *        Summary information about the product view.
      */
 
     public void setProductViewSummary(ProductViewSummary productViewSummary) {
@@ -52,10 +51,10 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The summary metadata about the specified product.
+     * Summary information about the product view.
      * </p>
      * 
-     * @return The summary metadata about the specified product.
+     * @return Summary information about the product view.
      */
 
     public ProductViewSummary getProductViewSummary() {
@@ -64,11 +63,11 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The summary metadata about the specified product.
+     * Summary information about the product view.
      * </p>
      * 
      * @param productViewSummary
-     *        The summary metadata about the specified product.
+     *        Summary information about the product view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,12 +78,10 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      * 
-     * @return A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     *         parameter represent the ways the specified product can be provisioned.
+     * @return Information about the provisioning artifacts for the specified product.
      */
 
     public java.util.List<ProvisioningArtifact> getProvisioningArtifacts() {
@@ -93,13 +90,11 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      * 
      * @param provisioningArtifacts
-     *        A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     *        parameter represent the ways the specified product can be provisioned.
+     *        Information about the provisioning artifacts for the specified product.
      */
 
     public void setProvisioningArtifacts(java.util.Collection<ProvisioningArtifact> provisioningArtifacts) {
@@ -113,8 +108,7 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,8 +117,7 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param provisioningArtifacts
-     *        A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     *        parameter represent the ways the specified product can be provisioned.
+     *        Information about the provisioning artifacts for the specified product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,13 +133,11 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      * 
      * @param provisioningArtifacts
-     *        A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     *        parameter represent the ways the specified product can be provisioned.
+     *        Information about the provisioning artifacts for the specified product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

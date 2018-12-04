@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,8 +47,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointType;
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, DYNAMODB, MONGODB, SYBASE, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      */
     private String engineName;
@@ -296,13 +296,13 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, DYNAMODB, MONGODB, SYBASE, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     *        POSTGRES, MARIADB, AURORA, REDSHIFT, S3, DYNAMODB, MONGODB, SYBASE, and SQLSERVER.
+     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     *        postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -311,12 +311,12 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, DYNAMODB, MONGODB, SYBASE, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
-     * @return The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     *         POSTGRES, MARIADB, AURORA, REDSHIFT, S3, DYNAMODB, MONGODB, SYBASE, and SQLSERVER.
+     * @return The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     *         postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public String getEngineName() {
@@ -325,13 +325,13 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, DYNAMODB, MONGODB, SYBASE, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     *        POSTGRES, MARIADB, AURORA, REDSHIFT, S3, DYNAMODB, MONGODB, SYBASE, and SQLSERVER.
+     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     *        postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

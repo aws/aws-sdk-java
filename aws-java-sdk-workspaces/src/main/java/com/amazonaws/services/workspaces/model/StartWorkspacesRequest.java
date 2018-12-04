@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,17 @@ public class StartWorkspacesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The requests.
+     * The WorkSpaces to start.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StartRequest> startWorkspaceRequests;
 
     /**
      * <p>
-     * The requests.
+     * The WorkSpaces to start.
      * </p>
      * 
-     * @return The requests.
+     * @return The WorkSpaces to start.
      */
 
     public java.util.List<StartRequest> getStartWorkspaceRequests() {
@@ -49,11 +49,11 @@ public class StartWorkspacesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The requests.
+     * The WorkSpaces to start.
      * </p>
      * 
      * @param startWorkspaceRequests
-     *        The requests.
+     *        The WorkSpaces to start.
      */
 
     public void setStartWorkspaceRequests(java.util.Collection<StartRequest> startWorkspaceRequests) {
@@ -67,7 +67,7 @@ public class StartWorkspacesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The requests.
+     * The WorkSpaces to start.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class StartWorkspacesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param startWorkspaceRequests
-     *        The requests.
+     *        The WorkSpaces to start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class StartWorkspacesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The requests.
+     * The WorkSpaces to start.
      * </p>
      * 
      * @param startWorkspaceRequests
-     *        The requests.
+     *        The WorkSpaces to start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

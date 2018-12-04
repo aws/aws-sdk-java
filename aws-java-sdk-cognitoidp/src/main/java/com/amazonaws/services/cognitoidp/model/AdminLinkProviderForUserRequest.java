@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,15 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      * identity provider attribute) signs in.
      * </p>
      * <p>
-     * The <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must match the username for the user
-     * in the user pool. The <code>ProviderAttributeName</code> will always be ignored.
+     * For a native username + password user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the
+     * provider-specific <code>user_id</code>.
+     * </p>
+     * <p>
+     * The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+     * </p>
+     * <p>
+     * The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.
      * </p>
      */
     private ProviderUserIdentifierType destinationUser;
@@ -117,8 +124,15 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      * identity provider attribute) signs in.
      * </p>
      * <p>
-     * The <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must match the username for the user
-     * in the user pool. The <code>ProviderAttributeName</code> will always be ignored.
+     * For a native username + password user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the
+     * provider-specific <code>user_id</code>.
+     * </p>
+     * <p>
+     * The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+     * </p>
+     * <p>
+     * The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.
      * </p>
      * 
      * @param destinationUser
@@ -127,8 +141,15 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      *        user). If the user doesn't exist, an exception is thrown. This is the user that is returned when the new
      *        user (with the linked identity provider attribute) signs in.</p>
      *        <p>
-     *        The <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must match the username for
-     *        the user in the user pool. The <code>ProviderAttributeName</code> will always be ignored.
+     *        For a native username + password user, the <code>ProviderAttributeValue</code> for the
+     *        <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be
+     *        the provider-specific <code>user_id</code>.
+     *        </p>
+     *        <p>
+     *        The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+     *        </p>
+     *        <p>
+     *        The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.
      */
 
     public void setDestinationUser(ProviderUserIdentifierType destinationUser) {
@@ -143,8 +164,15 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      * identity provider attribute) signs in.
      * </p>
      * <p>
-     * The <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must match the username for the user
-     * in the user pool. The <code>ProviderAttributeName</code> will always be ignored.
+     * For a native username + password user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the
+     * provider-specific <code>user_id</code>.
+     * </p>
+     * <p>
+     * The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+     * </p>
+     * <p>
+     * The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.
      * </p>
      * 
      * @return The existing user in the user pool to be linked to the external identity provider user account. Can be a
@@ -152,8 +180,15 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      *         user). If the user doesn't exist, an exception is thrown. This is the user that is returned when the new
      *         user (with the linked identity provider attribute) signs in.</p>
      *         <p>
-     *         The <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must match the username for
-     *         the user in the user pool. The <code>ProviderAttributeName</code> will always be ignored.
+     *         For a native username + password user, the <code>ProviderAttributeValue</code> for the
+     *         <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be
+     *         the provider-specific <code>user_id</code>.
+     *         </p>
+     *         <p>
+     *         The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+     *         </p>
+     *         <p>
+     *         The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.
      */
 
     public ProviderUserIdentifierType getDestinationUser() {
@@ -168,8 +203,15 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      * identity provider attribute) signs in.
      * </p>
      * <p>
-     * The <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must match the username for the user
-     * in the user pool. The <code>ProviderAttributeName</code> will always be ignored.
+     * For a native username + password user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the
+     * provider-specific <code>user_id</code>.
+     * </p>
+     * <p>
+     * The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+     * </p>
+     * <p>
+     * The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.
      * </p>
      * 
      * @param destinationUser
@@ -178,8 +220,15 @@ public class AdminLinkProviderForUserRequest extends com.amazonaws.AmazonWebServ
      *        user). If the user doesn't exist, an exception is thrown. This is the user that is returned when the new
      *        user (with the linked identity provider attribute) signs in.</p>
      *        <p>
-     *        The <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> must match the username for
-     *        the user in the user pool. The <code>ProviderAttributeName</code> will always be ignored.
+     *        For a native username + password user, the <code>ProviderAttributeValue</code> for the
+     *        <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be
+     *        the provider-specific <code>user_id</code>.
+     *        </p>
+     *        <p>
+     *        The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+     *        </p>
+     *        <p>
+     *        The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

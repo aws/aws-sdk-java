@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,12 +52,14 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             request.addParameter("TemplateURL", StringUtils.fromString(createStackRequest.getTemplateURL()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) createStackRequest
-                .getParameters();
-        if (parametersList.isEmpty() && !parametersList.isAutoConstruct()) {
+        if (createStackRequest.getParameters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<Parameter>) createStackRequest.getParameters()).isAutoConstruct()) {
             request.addParameter("Parameters", "");
         }
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!createStackRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) createStackRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) createStackRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
@@ -76,6 +78,11 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
                     request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
                             StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
                 }
+
+                if (parametersListValue.getResolvedValue() != null) {
+                    request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
+                            StringUtils.fromString(parametersListValue.getResolvedValue()));
+                }
                 parametersListIndex++;
             }
         }
@@ -87,12 +94,14 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
         RollbackConfiguration rollbackConfiguration = createStackRequest.getRollbackConfiguration();
         if (rollbackConfiguration != null) {
 
-            com.amazonaws.internal.SdkInternalList<RollbackTrigger> rollbackTriggersList = (com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration
-                    .getRollbackTriggers();
-            if (rollbackTriggersList.isEmpty() && !rollbackTriggersList.isAutoConstruct()) {
+            if (rollbackConfiguration.getRollbackTriggers().isEmpty()
+                    && !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
                 request.addParameter("RollbackConfiguration.RollbackTriggers", "");
             }
-            if (!rollbackTriggersList.isEmpty() || !rollbackTriggersList.isAutoConstruct()) {
+            if (!rollbackConfiguration.getRollbackTriggers().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<RollbackTrigger> rollbackTriggersList = (com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration
+                        .getRollbackTriggers();
                 int rollbackTriggersListIndex = 1;
 
                 for (RollbackTrigger rollbackTriggersListValue : rollbackTriggersList) {
@@ -120,12 +129,14 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             request.addParameter("TimeoutInMinutes", StringUtils.fromInteger(createStackRequest.getTimeoutInMinutes()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> notificationARNsList = (com.amazonaws.internal.SdkInternalList<String>) createStackRequest
-                .getNotificationARNs();
-        if (notificationARNsList.isEmpty() && !notificationARNsList.isAutoConstruct()) {
+        if (createStackRequest.getNotificationARNs().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createStackRequest.getNotificationARNs()).isAutoConstruct()) {
             request.addParameter("NotificationARNs", "");
         }
-        if (!notificationARNsList.isEmpty() || !notificationARNsList.isAutoConstruct()) {
+        if (!createStackRequest.getNotificationARNs().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createStackRequest.getNotificationARNs()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> notificationARNsList = (com.amazonaws.internal.SdkInternalList<String>) createStackRequest
+                    .getNotificationARNs();
             int notificationARNsListIndex = 1;
 
             for (String notificationARNsListValue : notificationARNsList) {
@@ -136,11 +147,14 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) createStackRequest.getCapabilities();
-        if (capabilitiesList.isEmpty() && !capabilitiesList.isAutoConstruct()) {
+        if (createStackRequest.getCapabilities().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createStackRequest.getCapabilities()).isAutoConstruct()) {
             request.addParameter("Capabilities", "");
         }
-        if (!capabilitiesList.isEmpty() || !capabilitiesList.isAutoConstruct()) {
+        if (!createStackRequest.getCapabilities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createStackRequest.getCapabilities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) createStackRequest
+                    .getCapabilities();
             int capabilitiesListIndex = 1;
 
             for (String capabilitiesListValue : capabilitiesList) {
@@ -151,12 +165,14 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) createStackRequest
-                .getResourceTypes();
-        if (resourceTypesList.isEmpty() && !resourceTypesList.isAutoConstruct()) {
+        if (createStackRequest.getResourceTypes().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createStackRequest.getResourceTypes()).isAutoConstruct()) {
             request.addParameter("ResourceTypes", "");
         }
-        if (!resourceTypesList.isEmpty() || !resourceTypesList.isAutoConstruct()) {
+        if (!createStackRequest.getResourceTypes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createStackRequest.getResourceTypes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) createStackRequest
+                    .getResourceTypes();
             int resourceTypesListIndex = 1;
 
             for (String resourceTypesListValue : resourceTypesList) {
@@ -183,11 +199,11 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             request.addParameter("StackPolicyURL", StringUtils.fromString(createStackRequest.getStackPolicyURL()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createStackRequest.getTags();
-        if (tagsList.isEmpty() && !tagsList.isAutoConstruct()) {
+        if (createStackRequest.getTags().isEmpty() && !((com.amazonaws.internal.SdkInternalList<Tag>) createStackRequest.getTags()).isAutoConstruct()) {
             request.addParameter("Tags", "");
         }
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createStackRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createStackRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createStackRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

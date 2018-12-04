@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,6 +140,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSubnetIDException").withModeledClass(
                                     com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.PreconditionFailedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RequestTooLargeException").withModeledClass(
                                     com.amazonaws.services.lambda.model.RequestTooLargeException.class))
@@ -365,11 +368,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws PolicyLengthExceededException
      *         Lambda function access policy is limited to 20 KB.
      * @throws TooManyRequestsException
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.AddPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission" target="_top">AWS API
      *      Documentation</a>
@@ -395,6 +401,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new AddPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -432,8 +439,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.CreateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias" target="_top">AWS API
@@ -460,6 +466,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -516,8 +523,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws ResourceConflictException
      *         The resource already exists.
      * @throws TooManyRequestsException
@@ -550,6 +556,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(createEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -590,8 +597,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws ResourceNotFoundException
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
@@ -626,6 +632,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new CreateFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -658,8 +665,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.DeleteAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias" target="_top">AWS API
@@ -686,6 +692,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -721,8 +728,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.DeleteEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"
@@ -750,6 +756,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(deleteEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -798,8 +805,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws ResourceConflictException
      *         The resource already exists.
      * @sample AWSLambda.DeleteFunction
@@ -827,12 +833,74 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new DeleteFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes concurrent execution limits from this function. For more information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param deleteFunctionConcurrencyRequest
+     * @return Result of the DeleteFunctionConcurrency operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws TooManyRequestsException
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @sample AWSLambda.DeleteFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFunctionConcurrencyResult deleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFunctionConcurrency(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFunctionConcurrencyResult executeDeleteFunctionConcurrency(DeleteFunctionConcurrencyRequest deleteFunctionConcurrencyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFunctionConcurrencyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFunctionConcurrencyRequest> request = null;
+        Response<DeleteFunctionConcurrencyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFunctionConcurrencyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteFunctionConcurrencyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionConcurrencyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFunctionConcurrencyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -883,6 +951,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -919,8 +988,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.GetAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias" target="_top">AWS API
@@ -947,6 +1015,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -981,8 +1050,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.GetEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping" target="_top">AWS
@@ -1009,6 +1077,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetEventSourceMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1055,8 +1124,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction" target="_top">AWS API
      *      Documentation</a>
@@ -1082,6 +1150,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1126,8 +1195,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetFunctionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1154,6 +1222,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(getFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1197,8 +1266,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy" target="_top">AWS API
      *      Documentation</a>
@@ -1224,6 +1292,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1258,6 +1327,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * <p>
      * This operation requires permission for the <code>lambda:InvokeFunction</code> action.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TooManyRequestsException</code> noted below will return the following:
+     * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no functions with reserved
+     * concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds
+     * the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will
+     * be returned when a function with reserved concurrency exceeds its configured concurrency limit.
+     * </p>
+     * </note>
      * 
      * @param invokeRequest
      * @return Result of the Invoke operation returned by the service.
@@ -1277,8 +1355,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws EC2UnexpectedException
      *         AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda function.
      * @throws SubnetIPAddressLimitReachedException
@@ -1336,6 +1413,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new InvokeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1403,6 +1481,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new InvokeAsyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeAsyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1439,8 +1518,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListAliases
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases" target="_top">AWS API
@@ -1467,6 +1545,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1512,8 +1591,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListEventSourceMappings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings" target="_top">AWS
@@ -1541,6 +1619,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(listEventSourceMappingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1586,8 +1665,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.ListFunctions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions" target="_top">AWS API
      *      Documentation</a>
@@ -1613,6 +1691,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListFunctionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFunctionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1649,8 +1728,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
@@ -1677,6 +1755,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1710,8 +1789,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListVersionsByFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction" target="_top">AWS
@@ -1738,6 +1816,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListVersionsByFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVersionsByFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1774,12 +1853,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.PublishVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion" target="_top">AWS API
      *      Documentation</a>
@@ -1805,12 +1887,77 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new PublishVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<PublishVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PublishVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's
+     * total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent
+     * executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you
+     * have a total of 900 available to allocate to individual functions. For more information, see
+     * <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param putFunctionConcurrencyRequest
+     * @return Result of the PutFunctionConcurrency operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.PutFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutFunctionConcurrencyResult putFunctionConcurrency(PutFunctionConcurrencyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutFunctionConcurrency(request);
+    }
+
+    @SdkInternalApi
+    final PutFunctionConcurrencyResult executePutFunctionConcurrency(PutFunctionConcurrencyRequest putFunctionConcurrencyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putFunctionConcurrencyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutFunctionConcurrencyRequest> request = null;
+        Response<PutFunctionConcurrencyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutFunctionConcurrencyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putFunctionConcurrencyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutFunctionConcurrencyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutFunctionConcurrencyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1849,9 +1996,12 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission" target="_top">AWS API
      *      Documentation</a>
@@ -1877,6 +2027,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1910,8 +2061,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
@@ -1938,6 +2088,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1969,8 +2120,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @sample AWSLambda.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
@@ -1997,6 +2147,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2033,9 +2184,12 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.UpdateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias" target="_top">AWS API
      *      Documentation</a>
@@ -2061,6 +2215,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2108,8 +2263,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @throws ResourceConflictException
      *         The resource already exists.
@@ -2139,6 +2293,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(updateEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2181,12 +2336,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.UpdateFunctionCode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode" target="_top">AWS API
      *      Documentation</a>
@@ -2212,6 +2370,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new UpdateFunctionCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFunctionCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2254,11 +2413,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
      * @throws ResourceConflictException
      *         The resource already exists.
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.UpdateFunctionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -2285,6 +2447,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(updateFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

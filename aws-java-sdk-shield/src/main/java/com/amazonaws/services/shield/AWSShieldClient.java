@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -288,7 +288,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
     /**
      * <p>
      * Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution,
-     * Elastic Load Balancing load balancer, or an Amazon Route 53 hosted zone.
+     * Elastic Load Balancing load balancer, Elastic IP Address, or an Amazon Route 53 hosted zone.
      * </p>
      * 
      * @param createProtectionRequest
@@ -302,7 +302,12 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws LimitsExceededException
-     *         Exception that indicates that the operation would exceed a limit.
+     *         Exception that indicates that the operation would exceed a limit.</p>
+     *         <p>
+     *         <code>Type</code> is the type of limit that would be exceeded.
+     *         </p>
+     *         <p>
+     *         <code>Limit</code> is the threshold that would be exceeded.
      * @throws ResourceAlreadyExistsException
      *         Exception indicating the specified resource already exists.
      * @throws OptimisticLockException
@@ -335,6 +340,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new CreateProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -388,6 +394,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new CreateSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -444,6 +451,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DeleteProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -462,7 +470,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
-     * Removes AWS Shield Advanced from an account.
+     * Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year subscription commitment. You
+     * cannot delete a subscription prior to the completion of that commitment.
      * </p>
      * 
      * @param deleteSubscriptionRequest
@@ -471,8 +480,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws LockedSubscriptionException
-     *         Exception that indicates that the subscription has been modified by another client. You can retry the
-     *         request.
+     *         Exception that indicates that the subscription you are trying to delete has not yet completed the 1-year
+     *         commitment. You cannot delete this subscription.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DeleteSubscription
@@ -500,6 +509,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DeleteSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -553,6 +563,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DescribeAttackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAttackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -606,6 +617,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DescribeProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -659,12 +671,65 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DescribeSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.
+     * </p>
+     * 
+     * @param getSubscriptionStateRequest
+     * @return Result of the GetSubscriptionState operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @sample AWSShield.GetSubscriptionState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSubscriptionStateResult getSubscriptionState(GetSubscriptionStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSubscriptionState(request);
+    }
+
+    @SdkInternalApi
+    final GetSubscriptionStateResult executeGetSubscriptionState(GetSubscriptionStateRequest getSubscriptionStateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSubscriptionStateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSubscriptionStateRequest> request = null;
+        Response<GetSubscriptionStateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSubscriptionStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSubscriptionStateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSubscriptionStateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSubscriptionStateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -714,6 +779,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new ListAttacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -767,6 +833,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new ListProtectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

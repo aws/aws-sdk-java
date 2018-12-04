@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,18 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private MinimumHealthyHosts minimumHealthyHosts;
+    /**
+     * <p>
+     * The configuration that specifies how the deployment traffic will be routed.
+     * </p>
+     */
+    private TrafficRoutingConfig trafficRoutingConfig;
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * </p>
+     */
+    private String computePlatform;
 
     /**
      * <p>
@@ -290,6 +302,105 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The configuration that specifies how the deployment traffic will be routed.
+     * </p>
+     * 
+     * @param trafficRoutingConfig
+     *        The configuration that specifies how the deployment traffic will be routed.
+     */
+
+    public void setTrafficRoutingConfig(TrafficRoutingConfig trafficRoutingConfig) {
+        this.trafficRoutingConfig = trafficRoutingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies how the deployment traffic will be routed.
+     * </p>
+     * 
+     * @return The configuration that specifies how the deployment traffic will be routed.
+     */
+
+    public TrafficRoutingConfig getTrafficRoutingConfig() {
+        return this.trafficRoutingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies how the deployment traffic will be routed.
+     * </p>
+     * 
+     * @param trafficRoutingConfig
+     *        The configuration that specifies how the deployment traffic will be routed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentConfigRequest withTrafficRoutingConfig(TrafficRoutingConfig trafficRoutingConfig) {
+        setTrafficRoutingConfig(trafficRoutingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(String computePlatform) {
+        this.computePlatform = computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * </p>
+     * 
+     * @return The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * @see ComputePlatform
+     */
+
+    public String getComputePlatform() {
+        return this.computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public CreateDeploymentConfigRequest withComputePlatform(String computePlatform) {
+        setComputePlatform(computePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>&gt;).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public CreateDeploymentConfigRequest withComputePlatform(ComputePlatform computePlatform) {
+        this.computePlatform = computePlatform.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -303,7 +414,11 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
         if (getDeploymentConfigName() != null)
             sb.append("DeploymentConfigName: ").append(getDeploymentConfigName()).append(",");
         if (getMinimumHealthyHosts() != null)
-            sb.append("MinimumHealthyHosts: ").append(getMinimumHealthyHosts());
+            sb.append("MinimumHealthyHosts: ").append(getMinimumHealthyHosts()).append(",");
+        if (getTrafficRoutingConfig() != null)
+            sb.append("TrafficRoutingConfig: ").append(getTrafficRoutingConfig()).append(",");
+        if (getComputePlatform() != null)
+            sb.append("ComputePlatform: ").append(getComputePlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +441,14 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getMinimumHealthyHosts() != null && other.getMinimumHealthyHosts().equals(this.getMinimumHealthyHosts()) == false)
             return false;
+        if (other.getTrafficRoutingConfig() == null ^ this.getTrafficRoutingConfig() == null)
+            return false;
+        if (other.getTrafficRoutingConfig() != null && other.getTrafficRoutingConfig().equals(this.getTrafficRoutingConfig()) == false)
+            return false;
+        if (other.getComputePlatform() == null ^ this.getComputePlatform() == null)
+            return false;
+        if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
+            return false;
         return true;
     }
 
@@ -336,6 +459,8 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode());
         hashCode = prime * hashCode + ((getMinimumHealthyHosts() == null) ? 0 : getMinimumHealthyHosts().hashCode());
+        hashCode = prime * hashCode + ((getTrafficRoutingConfig() == null) ? 0 : getTrafficRoutingConfig().hashCode());
+        hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         return hashCode;
     }
 

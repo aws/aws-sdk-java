@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private String volumeId;
+    /**
+     * <p>
+     * The tags to apply to the snapshot during creation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * Default constructor for CreateSnapshotRequest object. Callers should use the setter or fluent setter (with...)
@@ -142,6 +148,79 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * The tags to apply to the snapshot during creation.
+     * </p>
+     * 
+     * @return The tags to apply to the snapshot during creation.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the snapshot during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the snapshot during creation.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the snapshot during creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the snapshot during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSnapshotRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the snapshot during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the snapshot during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSnapshotRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -166,7 +245,9 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId());
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -189,6 +270,10 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -199,6 +284,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception raised when the service encounters throttled communication with upstream dependencies or is overloaded with
- * requests.
+ * Exception raised when there is an internal, configuration, or dependency error encountered.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,35 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the details of an Amazon RDS DB instance.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateDBInstance</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteDBInstance</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ModifyDBInstance</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StopDBInstance</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StartDBInstance</a>
- * </p>
- * </li>
- * </ul>
  * <p>
  * This data type is used as a response element in the <a>DescribeDBInstances</a> action.
  * </p>
@@ -119,7 +92,7 @@ public class DBInstance implements Serializable, Cloneable {
     private Endpoint endpoint;
     /**
      * <p>
-     * Specifies the allocated storage size specified in gigabytes.
+     * Specifies the allocated storage size specified in gibibytes.
      * </p>
      */
     private Integer allocatedStorage;
@@ -328,14 +301,14 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the KMS key for the DB instance is accessed.
+     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
+     * entries whenever the AWS KMS key for the DB instance is accessed.
      * </p>
      */
     private String dbiResourceId;
@@ -372,7 +345,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String enhancedMonitoringResourceArn;
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch Logs.
+     * The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
      * </p>
      */
     private String monitoringRoleArn;
@@ -401,8 +374,8 @@ public class DBInstance implements Serializable, Cloneable {
     private String timezone;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -428,17 +401,23 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean iAMDatabaseAuthenticationEnabled;
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance; otherwise false.
+     * True if Performance Insights is enabled for the DB instance, and otherwise false.
      * </p>
      */
     private Boolean performanceInsightsEnabled;
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
+    /**
+     * <p>
+     * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> enabledCloudwatchLogsExports;
 
     /**
      * <p>
@@ -836,11 +815,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gigabytes.
+     * Specifies the allocated storage size specified in gibibytes.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size specified in gigabytes.
+     *        Specifies the allocated storage size specified in gibibytes.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -849,10 +828,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gigabytes.
+     * Specifies the allocated storage size specified in gibibytes.
      * </p>
      * 
-     * @return Specifies the allocated storage size specified in gigabytes.
+     * @return Specifies the allocated storage size specified in gibibytes.
      */
 
     public Integer getAllocatedStorage() {
@@ -861,11 +840,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gigabytes.
+     * Specifies the allocated storage size specified in gibibytes.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size specified in gigabytes.
+     *        Specifies the allocated storage size specified in gibibytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2537,11 +2516,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2550,10 +2529,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.
+     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      */
 
     public String getKmsKeyId() {
@@ -2562,11 +2541,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB instance.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2577,13 +2556,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the KMS key for the DB instance is accessed.
+     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
+     * entries whenever the AWS KMS key for the DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
-     *        The region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail
-     *        log entries whenever the KMS key for the DB instance is accessed.
+     *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
+     *        CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -2592,12 +2571,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the KMS key for the DB instance is accessed.
+     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
+     * entries whenever the AWS KMS key for the DB instance is accessed.
      * </p>
      * 
-     * @return The region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail
-     *         log entries whenever the KMS key for the DB instance is accessed.
+     * @return The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
+     *         CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
      */
 
     public String getDbiResourceId() {
@@ -2606,13 +2585,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the KMS key for the DB instance is accessed.
+     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
+     * entries whenever the AWS KMS key for the DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
-     *        The region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail
-     *        log entries whenever the KMS key for the DB instance is accessed.
+     *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
+     *        CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2877,11 +2856,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch Logs.
+     * The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param monitoringRoleArn
-     *        The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch Logs.
+     *        The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
      */
 
     public void setMonitoringRoleArn(String monitoringRoleArn) {
@@ -2890,10 +2869,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch Logs.
+     * The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
      * </p>
      * 
-     * @return The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch Logs.
+     * @return The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
      */
 
     public String getMonitoringRoleArn() {
@@ -2902,11 +2881,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch Logs.
+     * The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param monitoringRoleArn
-     *        The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch Logs.
+     *        The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3067,8 +3046,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -3092,7 +3071,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </ul>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *        otherwise false.</p>
      *        <p>
      *        IAM database authentication can be enabled for the following database engines
@@ -3121,8 +3100,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -3145,7 +3124,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *         otherwise false.</p>
      *         <p>
      *         IAM database authentication can be enabled for the following database engines
@@ -3174,8 +3153,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -3199,7 +3178,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </ul>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *        otherwise false.</p>
      *        <p>
      *        IAM database authentication can be enabled for the following database engines
@@ -3230,8 +3209,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -3254,7 +3233,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *         otherwise false.</p>
      *         <p>
      *         IAM database authentication can be enabled for the following database engines
@@ -3283,11 +3262,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance; otherwise false.
+     * True if Performance Insights is enabled for the DB instance, and otherwise false.
      * </p>
      * 
      * @param performanceInsightsEnabled
-     *        True if Performance Insights is enabled for the DB instance; otherwise false.
+     *        True if Performance Insights is enabled for the DB instance, and otherwise false.
      */
 
     public void setPerformanceInsightsEnabled(Boolean performanceInsightsEnabled) {
@@ -3296,10 +3275,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance; otherwise false.
+     * True if Performance Insights is enabled for the DB instance, and otherwise false.
      * </p>
      * 
-     * @return True if Performance Insights is enabled for the DB instance; otherwise false.
+     * @return True if Performance Insights is enabled for the DB instance, and otherwise false.
      */
 
     public Boolean getPerformanceInsightsEnabled() {
@@ -3308,11 +3287,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance; otherwise false.
+     * True if Performance Insights is enabled for the DB instance, and otherwise false.
      * </p>
      * 
      * @param performanceInsightsEnabled
-     *        True if Performance Insights is enabled for the DB instance; otherwise false.
+     *        True if Performance Insights is enabled for the DB instance, and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3323,10 +3302,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance; otherwise false.
+     * True if Performance Insights is enabled for the DB instance, and otherwise false.
      * </p>
      * 
-     * @return True if Performance Insights is enabled for the DB instance; otherwise false.
+     * @return True if Performance Insights is enabled for the DB instance, and otherwise false.
      */
 
     public Boolean isPerformanceInsightsEnabled() {
@@ -3335,13 +3314,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3350,12 +3329,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
-     * @return The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *         Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3364,18 +3343,91 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBInstance withPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
         setPerformanceInsightsKMSKeyId(performanceInsightsKMSKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @return A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     */
+
+    public java.util.List<String> getEnabledCloudwatchLogsExports() {
+        if (enabledCloudwatchLogsExports == null) {
+            enabledCloudwatchLogsExports = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return enabledCloudwatchLogsExports;
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     */
+
+    public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
+        if (enabledCloudwatchLogsExports == null) {
+            this.enabledCloudwatchLogsExports = null;
+            return;
+        }
+
+        this.enabledCloudwatchLogsExports = new com.amazonaws.internal.SdkInternalList<String>(enabledCloudwatchLogsExports);
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnabledCloudwatchLogsExports(java.util.Collection)} or
+     * {@link #withEnabledCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withEnabledCloudwatchLogsExports(String... enabledCloudwatchLogsExports) {
+        if (this.enabledCloudwatchLogsExports == null) {
+            setEnabledCloudwatchLogsExports(new com.amazonaws.internal.SdkInternalList<String>(enabledCloudwatchLogsExports.length));
+        }
+        for (String ele : enabledCloudwatchLogsExports) {
+            this.enabledCloudwatchLogsExports.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
+        setEnabledCloudwatchLogsExports(enabledCloudwatchLogsExports);
         return this;
     }
 
@@ -3491,7 +3543,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getPerformanceInsightsEnabled() != null)
             sb.append("PerformanceInsightsEnabled: ").append(getPerformanceInsightsEnabled()).append(",");
         if (getPerformanceInsightsKMSKeyId() != null)
-            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId());
+            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
+        if (getEnabledCloudwatchLogsExports() != null)
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
         sb.append("}");
         return sb.toString();
     }
@@ -3715,6 +3769,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getPerformanceInsightsKMSKeyId() != null && other.getPerformanceInsightsKMSKeyId().equals(this.getPerformanceInsightsKMSKeyId()) == false)
             return false;
+        if (other.getEnabledCloudwatchLogsExports() == null ^ this.getEnabledCloudwatchLogsExports() == null)
+            return false;
+        if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
+            return false;
         return true;
     }
 
@@ -3774,6 +3832,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsEnabled() == null) ? 0 : getPerformanceInsightsEnabled().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
+        hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
         return hashCode;
     }
 

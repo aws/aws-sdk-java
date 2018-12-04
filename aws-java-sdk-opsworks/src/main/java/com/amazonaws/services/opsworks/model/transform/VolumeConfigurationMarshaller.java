@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class VolumeConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeType").build();
     private static final MarshallingInfo<Integer> IOPS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Iops").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Encrypted").build();
 
     private static final VolumeConfigurationMarshaller instance = new VolumeConfigurationMarshaller();
 
@@ -62,6 +64,7 @@ public class VolumeConfigurationMarshaller {
             protocolMarshaller.marshall(volumeConfiguration.getSize(), SIZE_BINDING);
             protocolMarshaller.marshall(volumeConfiguration.getVolumeType(), VOLUMETYPE_BINDING);
             protocolMarshaller.marshall(volumeConfiguration.getIops(), IOPS_BINDING);
+            protocolMarshaller.marshall(volumeConfiguration.getEncrypted(), ENCRYPTED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class AwsVpcConfigurationMarshaller {
             .marshallLocationName("subnets").build();
     private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroups").build();
+    private static final MarshallingInfo<String> ASSIGNPUBLICIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assignPublicIp").build();
 
     private static final AwsVpcConfigurationMarshaller instance = new AwsVpcConfigurationMarshaller();
 
@@ -51,6 +53,7 @@ public class AwsVpcConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(awsVpcConfiguration.getSubnets(), SUBNETS_BINDING);
             protocolMarshaller.marshall(awsVpcConfiguration.getSecurityGroups(), SECURITYGROUPS_BINDING);
+            protocolMarshaller.marshall(awsVpcConfiguration.getAssignPublicIp(), ASSIGNPUBLICIP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

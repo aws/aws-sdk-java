@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
     private String stateMachineArn;
     /**
      * <p>
-     * The date the state machine was created.
+     * The date the state machine is created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -78,11 +78,11 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The date the state machine was created.
+     * The date the state machine is created.
      * </p>
      * 
      * @param creationDate
-     *        The date the state machine was created.
+     *        The date the state machine is created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -91,10 +91,10 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The date the state machine was created.
+     * The date the state machine is created.
      * </p>
      * 
-     * @return The date the state machine was created.
+     * @return The date the state machine is created.
      */
 
     public java.util.Date getCreationDate() {
@@ -103,11 +103,11 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The date the state machine was created.
+     * The date the state machine is created.
      * </p>
      * 
      * @param creationDate
-     *        The date the state machine was created.
+     *        The date the state machine is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

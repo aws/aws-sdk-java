@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteImageBuilderResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the image builder.
+     * </p>
+     */
     private ImageBuilder imageBuilder;
 
     /**
+     * <p>
+     * Information about the image builder.
+     * </p>
+     * 
      * @param imageBuilder
+     *        Information about the image builder.
      */
 
     public void setImageBuilder(ImageBuilder imageBuilder) {
@@ -34,7 +44,11 @@ public class DeleteImageBuilderResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the image builder.
+     * </p>
+     * 
+     * @return Information about the image builder.
      */
 
     public ImageBuilder getImageBuilder() {
@@ -42,7 +56,12 @@ public class DeleteImageBuilderResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * Information about the image builder.
+     * </p>
+     * 
      * @param imageBuilder
+     *        Information about the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -328,45 +328,45 @@ public class ClientConfiguration {
     }
 
     public ClientConfiguration(ClientConfiguration other) {
-        this.connectionTimeout = other.connectionTimeout;
-        this.maxConnections = other.maxConnections;
-        this.maxErrorRetry = other.maxErrorRetry;
-        this.retryPolicy = other.retryPolicy;
-        this.throttleRetries = other.throttleRetries;
-        this.localAddress = other.localAddress;
-        this.protocol = other.protocol;
-        this.proxyDomain = other.proxyDomain;
-        this.proxyHost = other.proxyHost;
-        this.proxyPassword = other.proxyPassword;
-        this.proxyPort = other.proxyPort;
-        this.proxyUsername = other.proxyUsername;
-        this.proxyWorkstation = other.proxyWorkstation;
-        this.nonProxyHosts = other.nonProxyHosts;
-        this.proxyAuthenticationMethods = other.proxyAuthenticationMethods;
-        this.preemptiveBasicProxyAuth = other.preemptiveBasicProxyAuth;
-        this.socketTimeout = other.socketTimeout;
-        this.requestTimeout = other.requestTimeout;
-        this.clientExecutionTimeout = other.clientExecutionTimeout;
-        this.userAgentPrefix = other.userAgentPrefix;
-        this.userAgentSuffix = other.userAgentSuffix;
-        this.useReaper = other.useReaper;
-        this.useGzip = other.useGzip;
-        this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
-        this.socketSendBufferSizeHint = other.socketSendBufferSizeHint;
-        this.signerOverride = other.signerOverride;
-        this.responseMetadataCacheSize = other.responseMetadataCacheSize;
-        this.dnsResolver = other.dnsResolver;
-        this.useExpectContinue = other.useExpectContinue;
-        this.apacheHttpClientConfig = new ApacheHttpClientConfig(other.apacheHttpClientConfig);
-        this.cacheResponseMetadata = other.cacheResponseMetadata;
-        this.connectionTTL = other.connectionTTL;
-        this.connectionMaxIdleMillis = other.connectionMaxIdleMillis;
-        this.validateAfterInactivityMillis = other.validateAfterInactivityMillis;
-        this.tcpKeepAlive = other.tcpKeepAlive;
-        this.secureRandom = other.secureRandom;
+        this.connectionTimeout = other.getConnectionTimeout();
+        this.maxConnections = other.getMaxConnections();
+        this.maxErrorRetry = other.getMaxErrorRetry();
+        this.retryPolicy = other.getRetryPolicy();
+        this.throttleRetries = other.useThrottledRetries();
+        this.localAddress = other.getLocalAddress();
+        this.protocol = other.getProtocol();
+        this.proxyDomain = other.getProxyDomain();
+        this.proxyHost = other.getProxyHost();
+        this.proxyPassword = other.getProxyPassword();
+        this.proxyPort = other.getProxyPort();
+        this.proxyUsername = other.getProxyUsername();
+        this.proxyWorkstation = other.getProxyWorkstation();
+        this.nonProxyHosts = other.getNonProxyHosts();
+        this.proxyAuthenticationMethods = other.getProxyAuthenticationMethods();
+        this.preemptiveBasicProxyAuth = other.isPreemptiveBasicProxyAuth();
+        this.socketTimeout = other.getSocketTimeout();
+        this.requestTimeout = other.getRequestTimeout();
+        this.clientExecutionTimeout = other.getClientExecutionTimeout();
+        this.userAgentPrefix = other.getUserAgentPrefix();
+        this.userAgentSuffix = other.getUserAgentSuffix();
+        this.useReaper = other.useReaper();
+        this.useGzip = other.useGzip();
+        this.socketSendBufferSizeHint = other.getSocketBufferSizeHints()[0];
+        this.socketReceiveBufferSizeHint = other.getSocketBufferSizeHints()[1];
+        this.signerOverride = other.getSignerOverride();
+        this.responseMetadataCacheSize = other.getResponseMetadataCacheSize();
+        this.dnsResolver = other.getDnsResolver();
+        this.useExpectContinue = other.isUseExpectContinue();
+        this.apacheHttpClientConfig = new ApacheHttpClientConfig(other.getApacheHttpClientConfig());
+        this.cacheResponseMetadata = other.getCacheResponseMetadata();
+        this.connectionTTL = other.getConnectionTTL();
+        this.connectionMaxIdleMillis = other.getConnectionMaxIdleMillis();
+        this.validateAfterInactivityMillis = other.getValidateAfterInactivityMillis();
+        this.tcpKeepAlive = other.useTcpKeepAlive();
+        this.secureRandom = other.getSecureRandom();
         this.headers.clear();
-        this.headers.putAll(other.headers);
-        this.maxConsecutiveRetriesBeforeThrottling = other.maxConsecutiveRetriesBeforeThrottling;
+        this.headers.putAll(other.getHeaders());
+        this.maxConsecutiveRetriesBeforeThrottling = other.getMaxConsecutiveRetriesBeforeThrottling();
     }
 
     /**

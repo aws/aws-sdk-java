@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a single type of moderated content found in an image. Each type of moderated content has a
- * label within a hierarchical taxonomy. For more information, see <a>image-moderation</a>.
+ * Provides information about a single type of moderated content found in an image or video. Each type of moderated
+ * content has a label within a hierarchical taxonomy. For more information, see <a>moderation</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

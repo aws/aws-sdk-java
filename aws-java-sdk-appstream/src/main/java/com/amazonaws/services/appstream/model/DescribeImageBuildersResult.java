@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeImageBuildersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the image builders.
+     * </p>
+     */
     private java.util.List<ImageBuilder> imageBuilders;
-
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * Information about the image builders.
+     * </p>
+     * 
+     * @return Information about the image builders.
      */
 
     public java.util.List<ImageBuilder> getImageBuilders() {
@@ -36,7 +50,12 @@ public class DescribeImageBuildersResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Information about the image builders.
+     * </p>
+     * 
      * @param imageBuilders
+     *        Information about the image builders.
      */
 
     public void setImageBuilders(java.util.Collection<ImageBuilder> imageBuilders) {
@@ -50,12 +69,16 @@ public class DescribeImageBuildersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Information about the image builders.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setImageBuilders(java.util.Collection)} or {@link #withImageBuilders(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param imageBuilders
+     *        Information about the image builders.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +93,12 @@ public class DescribeImageBuildersResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Information about the image builders.
+     * </p>
+     * 
      * @param imageBuilders
+     *        Information about the image builders.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +108,14 @@ public class DescribeImageBuildersResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +123,13 @@ public class DescribeImageBuildersResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
      */
 
     public String getNextToken() {
@@ -96,7 +137,14 @@ public class DescribeImageBuildersResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A container for information about the user pool type.
+ * A container for information about the user pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType" target="_top">AWS API
@@ -42,13 +42,13 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * A container for the policies associated with a user pool.
+     * The policies associated with the user pool.
      * </p>
      */
     private UserPoolPolicyType policies;
     /**
      * <p>
-     * A container for the AWS Lambda triggers associated with a user pool.
+     * The AWS Lambda triggers associated with tue user pool.
      * </p>
      */
     private LambdaConfigType lambdaConfig;
@@ -194,10 +194,22 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private String emailConfigurationFailure;
     /**
      * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
      * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      */
     private AdminCreateUserConfigType adminCreateUserConfig;
+    /**
+     * <p>
+     * The user pool add-ons.
+     * </p>
+     */
+    private UserPoolAddOnsType userPoolAddOns;
 
     /**
      * <p>
@@ -281,11 +293,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container for the policies associated with a user pool.
+     * The policies associated with the user pool.
      * </p>
      * 
      * @param policies
-     *        A container for the policies associated with a user pool.
+     *        The policies associated with the user pool.
      */
 
     public void setPolicies(UserPoolPolicyType policies) {
@@ -294,10 +306,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container for the policies associated with a user pool.
+     * The policies associated with the user pool.
      * </p>
      * 
-     * @return A container for the policies associated with a user pool.
+     * @return The policies associated with the user pool.
      */
 
     public UserPoolPolicyType getPolicies() {
@@ -306,11 +318,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container for the policies associated with a user pool.
+     * The policies associated with the user pool.
      * </p>
      * 
      * @param policies
-     *        A container for the policies associated with a user pool.
+     *        The policies associated with the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,11 +333,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container for the AWS Lambda triggers associated with a user pool.
+     * The AWS Lambda triggers associated with tue user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        A container for the AWS Lambda triggers associated with a user pool.
+     *        The AWS Lambda triggers associated with tue user pool.
      */
 
     public void setLambdaConfig(LambdaConfigType lambdaConfig) {
@@ -334,10 +346,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container for the AWS Lambda triggers associated with a user pool.
+     * The AWS Lambda triggers associated with tue user pool.
      * </p>
      * 
-     * @return A container for the AWS Lambda triggers associated with a user pool.
+     * @return The AWS Lambda triggers associated with tue user pool.
      */
 
     public LambdaConfigType getLambdaConfig() {
@@ -346,11 +358,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container for the AWS Lambda triggers associated with a user pool.
+     * The AWS Lambda triggers associated with tue user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        A container for the AWS Lambda triggers associated with a user pool.
+     *        The AWS Lambda triggers associated with tue user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1639,6 +1651,46 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @param domain
+     *        Holds the domain prefix if the user pool has a domain associated with it.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @return Holds the domain prefix if the user pool has a domain associated with it.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @param domain
+     *        Holds the domain prefix if the user pool has a domain associated with it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
@@ -1674,6 +1726,46 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     public UserPoolType withAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
         setAdminCreateUserConfig(adminCreateUserConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user pool add-ons.
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        The user pool add-ons.
+     */
+
+    public void setUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        this.userPoolAddOns = userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * The user pool add-ons.
+     * </p>
+     * 
+     * @return The user pool add-ons.
+     */
+
+    public UserPoolAddOnsType getUserPoolAddOns() {
+        return this.userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * The user pool add-ons.
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        The user pool add-ons.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        setUserPoolAddOns(userPoolAddOns);
         return this;
     }
 
@@ -1736,8 +1828,12 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             sb.append("SmsConfigurationFailure: ").append(getSmsConfigurationFailure()).append(",");
         if (getEmailConfigurationFailure() != null)
             sb.append("EmailConfigurationFailure: ").append(getEmailConfigurationFailure()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getAdminCreateUserConfig() != null)
-            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig());
+            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
+        if (getUserPoolAddOns() != null)
+            sb.append("UserPoolAddOns: ").append(getUserPoolAddOns());
         sb.append("}");
         return sb.toString();
     }
@@ -1848,9 +1944,17 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEmailConfigurationFailure() != null && other.getEmailConfigurationFailure().equals(this.getEmailConfigurationFailure()) == false)
             return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
         if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
             return false;
         if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
+            return false;
+        if (other.getUserPoolAddOns() == null ^ this.getUserPoolAddOns() == null)
+            return false;
+        if (other.getUserPoolAddOns() != null && other.getUserPoolAddOns().equals(this.getUserPoolAddOns()) == false)
             return false;
         return true;
     }
@@ -1884,7 +1988,9 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUserPoolTags() == null) ? 0 : getUserPoolTags().hashCode());
         hashCode = prime * hashCode + ((getSmsConfigurationFailure() == null) ? 0 : getSmsConfigurationFailure().hashCode());
         hashCode = prime * hashCode + ((getEmailConfigurationFailure() == null) ? 0 : getEmailConfigurationFailure().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
         return hashCode;
     }
 

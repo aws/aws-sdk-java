@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class TaskOverrideMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerOverrides").build();
     private static final MarshallingInfo<String> TASKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskRoleArn").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRoleArn").build();
 
     private static final TaskOverrideMarshaller instance = new TaskOverrideMarshaller();
 
@@ -51,6 +53,7 @@ public class TaskOverrideMarshaller {
         try {
             protocolMarshaller.marshall(taskOverride.getContainerOverrides(), CONTAINEROVERRIDES_BINDING);
             protocolMarshaller.marshall(taskOverride.getTaskRoleArn(), TASKROLEARN_BINDING);
+            protocolMarshaller.marshall(taskOverride.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

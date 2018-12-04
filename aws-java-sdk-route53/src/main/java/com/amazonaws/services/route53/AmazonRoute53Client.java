@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -245,6 +245,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     private void init() {
         exceptionUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTrafficPolicyVersionsForCurrentPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IncompatibleVersionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchTrafficPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTrafficPoliciesExceptionUnmarshaller());
@@ -252,6 +253,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         exceptionUnmarshallers.add(new NoSuchHostedZoneExceptionUnmarshaller());
         exceptionUnmarshallers.add(new QueryLoggingConfigAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new VPCAssociationNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new HostedZoneNotPrivateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PublicZoneVPCAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchGeoLocationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientCloudWatchLogsResourcePolicyExceptionUnmarshaller());
@@ -347,7 +349,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         relationship (example.com and test.example.com) can't have any common name servers. You tried to create a
      *         hosted zone that has the same name as an existing hosted zone or that's the parent or child of an
      *         existing hosted zone, and you specified a delegation set that shares one or more name servers with the
-     *         existing hosted zone.
+     *         existing hosted zone. For more information, see <a>CreateReusableDelegationSet</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -359,7 +361,12 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         </p>
      *         </li>
      * @throws LimitsExceededException
-     *         The limits specified for a resource have been exceeded.
+     *         This operation can't be completed either because the current account has reached the limit on reusable
+     *         delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that
+     *         you can associate with a private hosted zone. To get the current limit on the number of reusable
+     *         delegation sets, see <a>GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that
+     *         you can associate with a private hosted zone, see <a>GetHostedZoneLimit</a>. To request a higher limit,
+     *         <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
      * @sample AmazonRoute53.AssociateVPCWithHostedZone
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone"
      *      target="_top">AWS API Documentation</a>
@@ -385,6 +392,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new AssociateVPCWithHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(associateVPCWithHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -544,6 +552,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ChangeResourceRecordSetsRequestMarshaller().marshall(super.beforeMarshalling(changeResourceRecordSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -611,6 +620,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ChangeTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(changeTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -679,12 +689,25 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *        A complex type that contains the health check request information.
      * @return Result of the CreateHealthCheck operation returned by the service.
      * @throws TooManyHealthChecksException
-     *         You have reached the maximum number of active health checks for an AWS account. The default limit is 100.
-     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
-     *         Support Center.
+     *         This health check can't be created because the current account has reached the limit on the number of
+     *         active health checks.</p>
+     *         <p>
+     *         For information about default limits, see <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the
+     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         For information about how to get the current limit for an account, see <a>GetAccountLimit</a>. To request
+     *         a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support
+     *         Center.
+     *         </p>
+     *         <p>
+     *         You have reached the maximum number of active health checks for an AWS account. To request a higher
+     *         limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
      * @throws HealthCheckAlreadyExistsException
      *         The health check you're attempting to create already exists. Amazon Route 53 returns this error when you
-     *         submit a request that has the following values:</p>
+     *         submit a request that has the following values:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -725,6 +748,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(createHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -801,8 +825,24 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         The hosted zone you're trying to create already exists. Amazon Route 53 returns this error when a hosted
      *         zone has already been created with the specified <code>CallerReference</code>.
      * @throws TooManyHostedZonesException
-     *         This hosted zone can't be created because the hosted zone limit is exceeded. To request a limit increase,
-     *         go to the Amazon Route 53 <a href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
+     *         This operation can't be completed either because the current account has reached the limit on the number
+     *         of hosted zones or because you've reached the limit on the number of hosted zones that can be associated
+     *         with a reusable delegation set.</p>
+     *         <p>
+     *         For information about default limits, see <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the
+     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         To get the current limit on hosted zones that can be created by an account, see <a>GetAccountLimit</a>.
+     *         </p>
+     *         <p>
+     *         To get the current limit on hosted zones that can be associated with a reusable delegation set, see
+     *         <a>GetReusableDelegationSetLimit</a>.
+     *         </p>
+     *         <p>
+     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
+     *         Support Center.
      * @throws InvalidVPCIdException
      *         The VPC ID that you specified either isn't a valid ID or the current account is not authorized to access
      *         this VPC.
@@ -814,7 +854,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         Route 53 has reached that limit. If you own the domain name and Amazon Route 53 generates this error,
      *         contact Customer Support.
      * @throws ConflictingDomainExistsException
-     *         The cause of this error depends on whether you're trying to create a public or a private hosted zone:</p>
+     *         The cause of this error depends on whether you're trying to create a public or a private hosted zone:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -822,7 +863,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         relationship (example.com and test.example.com) can't have any common name servers. You tried to create a
      *         hosted zone that has the same name as an existing hosted zone or that's the parent or child of an
      *         existing hosted zone, and you specified a delegation set that shares one or more name servers with the
-     *         existing hosted zone.
+     *         existing hosted zone. For more information, see <a>CreateReusableDelegationSet</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -862,6 +903,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(createHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1103,6 +1145,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateQueryLoggingConfigRequestMarshaller().marshall(super.beforeMarshalling(createQueryLoggingConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1123,25 +1166,92 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * Creates a delegation set (a group of four name servers) that can be reused by multiple hosted zones. If a hosted
      * zoned ID is specified, <code>CreateReusableDelegationSet</code> marks the delegation set associated with that
-     * zone as reusable
+     * zone as reusable.
      * </p>
      * <note>
      * <p>
-     * A reusable delegation set can't be associated with a private hosted zone.
+     * You can't associate a reusable delegation set with a private hosted zone.
      * </p>
      * </note>
      * <p>
-     * For information on how to use a reusable delegation set to configure white label name servers, see <a
+     * For information about using a reusable delegation set to configure white label name servers, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring White
      * Label Name Servers</a>.
      * </p>
+     * <p>
+     * The process for migrating existing hosted zones to use a reusable delegation set is comparable to the process for
+     * configuring white label name servers. You need to perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create a reusable delegation set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Recreate hosted zones, and reduce the TTL to 60 seconds or less.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Recreate resource record sets in the new hosted zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the registrar's name servers to use the name servers for the new hosted zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Monitor traffic for the website or application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change TTLs back to their original values.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you want to migrate existing hosted zones to use a reusable delegation set, the existing hosted zones can't
+     * use any of the name servers that are assigned to the reusable delegation set. If one or more hosted zones do use
+     * one or more name servers that are assigned to the reusable delegation set, you can do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For small numbers of hosted zones—up to a few hundred—it's relatively easy to create reusable delegation sets
+     * until you get one that has four name servers that don't overlap with any of the name servers in your hosted
+     * zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For larger numbers of hosted zones, the easiest solution is to use more than one reusable delegation set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For larger numbers of hosted zones, you can also migrate hosted zones that have overlapping name servers to
+     * hosted zones that don't have overlapping name servers, then migrate the hosted zones again to use the reusable
+     * delegation set.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createReusableDelegationSetRequest
      * @return Result of the CreateReusableDelegationSet operation returned by the service.
      * @throws DelegationSetAlreadyCreatedException
      *         A delegation set with the same owner and caller reference combination has already been created.
      * @throws LimitsExceededException
-     *         The limits specified for a resource have been exceeded.
+     *         This operation can't be completed either because the current account has reached the limit on reusable
+     *         delegation sets that it can create or because you've reached the limit on the number of Amazon VPCs that
+     *         you can associate with a private hosted zone. To get the current limit on the number of reusable
+     *         delegation sets, see <a>GetAccountLimit</a>. To get the current limit on the number of Amazon VPCs that
+     *         you can associate with a private hosted zone, see <a>GetHostedZoneLimit</a>. To request a higher limit,
+     *         <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
@@ -1180,6 +1290,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateReusableDelegationSetRequestMarshaller().marshall(super.beforeMarshalling(createReusableDelegationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1208,9 +1319,19 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws TooManyTrafficPoliciesException
-     *         You've created the maximum number of traffic policies that can be created for the current AWS account.
-     *         You can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
-     *         Us</a> page.
+     *         This traffic policy can't be created because the current account has reached the limit on the number of
+     *         traffic policies.</p>
+     *         <p>
+     *         For information about default limits, see <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the
+     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         To get the current limit for an account, see <a>GetAccountLimit</a>.
+     *         </p>
+     *         <p>
+     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
+     *         Support Center.
      * @throws TrafficPolicyAlreadyExistsException
      *         A traffic policy that has the same value for <code>Name</code> already exists.
      * @throws InvalidTrafficPolicyDocumentException
@@ -1241,6 +1362,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1275,9 +1397,19 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws TooManyTrafficPolicyInstancesException
-     *         You've created the maximum number of traffic policy instances that can be created for the current AWS
-     *         account. You can request an increase to the limit on the <a
-     *         href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
+     *         This traffic policy instance can't be created because the current account has reached the limit on the
+     *         number of traffic policy instances.</p>
+     *         <p>
+     *         For information about default limits, see <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the
+     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         For information about how to get the current limit for an account, see <a>GetAccountLimit</a>.
+     *         </p>
+     *         <p>
+     *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
+     *         Support Center.
      * @throws NoSuchTrafficPolicyException
      *         No traffic policy exists with the specified ID.
      * @throws TrafficPolicyInstanceAlreadyExistsException
@@ -1307,6 +1439,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1341,6 +1474,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         No traffic policy exists with the specified ID.
      * @throws InvalidInputException
      *         The input is not valid.
+     * @throws TooManyTrafficPolicyVersionsForCurrentPolicyException
+     *         This traffic policy version can't be created because you've reached the limit of 1000 on the number of
+     *         versions that you can create for the current traffic policy.</p>
+     *         <p>
+     *         To create more traffic policy versions, you can use <a>GetTrafficPolicy</a> to get the traffic policy
+     *         document for a specified traffic policy version, and then use <a>CreateTrafficPolicy</a> to create a new
+     *         traffic policy using the traffic policy document.
      * @throws ConcurrentModificationException
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
@@ -1372,6 +1512,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateTrafficPolicyVersionRequestMarshaller().marshall(super.beforeMarshalling(createTrafficPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1449,6 +1590,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new CreateVPCAssociationAuthorizationRequestMarshaller().marshall(super.beforeMarshalling(createVPCAssociationAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1514,6 +1656,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(deleteHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1614,6 +1757,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(deleteHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1673,6 +1817,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteQueryLoggingConfigRequestMarshaller().marshall(super.beforeMarshalling(deleteQueryLoggingConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1741,6 +1886,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteReusableDelegationSetRequestMarshaller().marshall(super.beforeMarshalling(deleteReusableDelegationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1799,6 +1945,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1863,6 +2010,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficPolicyInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1936,6 +2084,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DeleteVPCAssociationAuthorizationRequestMarshaller().marshall(super.beforeMarshalling(deleteVPCAssociationAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2009,12 +2158,73 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new DisassociateVPCFromHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(disassociateVPCFromHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DisassociateVPCFromHostedZoneResult> responseHandler = new StaxResponseHandler<DisassociateVPCFromHostedZoneResult>(
                     new DisassociateVPCFromHostedZoneResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the specified limit for the current account, for example, the maximum number of health checks that you can
+     * create using the account.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getAccountLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return Result of the GetAccountLimit operation returned by the service.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @sample AmazonRoute53.GetAccountLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAccountLimitResult getAccountLimit(GetAccountLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountLimit(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountLimitResult executeGetAccountLimit(GetAccountLimitRequest getAccountLimitRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccountLimitRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccountLimitRequest> request = null;
+        Response<GetAccountLimitResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccountLimitRequestMarshaller().marshall(super.beforeMarshalling(getAccountLimitRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAccountLimitResult> responseHandler = new StaxResponseHandler<GetAccountLimitResult>(
+                    new GetAccountLimitResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2075,6 +2285,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetChangeRequestMarshaller().marshall(super.beforeMarshalling(getChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2125,6 +2336,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetCheckerIpRangesRequestMarshaller().marshall(super.beforeMarshalling(getCheckerIpRangesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2203,6 +2415,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetGeoLocationRequestMarshaller().marshall(super.beforeMarshalling(getGeoLocationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2263,6 +2476,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(getHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2312,6 +2526,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHealthCheckCountRequestMarshaller().marshall(super.beforeMarshalling(getHealthCheckCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2371,6 +2586,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHealthCheckLastFailureReasonRequestMarshaller().marshall(super.beforeMarshalling(getHealthCheckLastFailureReasonRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2424,6 +2640,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHealthCheckStatusRequestMarshaller().marshall(super.beforeMarshalling(getHealthCheckStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2477,6 +2694,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHostedZoneRequestMarshaller().marshall(super.beforeMarshalling(getHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2527,6 +2745,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetHostedZoneCountRequestMarshaller().marshall(super.beforeMarshalling(getHostedZoneCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2546,6 +2765,70 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     @Override
     public GetHostedZoneCountResult getHostedZoneCount() {
         return getHostedZoneCount(new GetHostedZoneCountRequest());
+    }
+
+    /**
+     * <p>
+     * Gets the specified limit for a specified hosted zone, for example, the maximum number of records that you can
+     * create in the hosted zone.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getHostedZoneLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return Result of the GetHostedZoneLimit operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws HostedZoneNotPrivateException
+     *         The specified hosted zone is a public hosted zone, not a private hosted zone.
+     * @sample AmazonRoute53.GetHostedZoneLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetHostedZoneLimitResult getHostedZoneLimit(GetHostedZoneLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHostedZoneLimit(request);
+    }
+
+    @SdkInternalApi
+    final GetHostedZoneLimitResult executeGetHostedZoneLimit(GetHostedZoneLimitRequest getHostedZoneLimitRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getHostedZoneLimitRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetHostedZoneLimitRequest> request = null;
+        Response<GetHostedZoneLimitResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetHostedZoneLimitRequestMarshaller().marshall(super.beforeMarshalling(getHostedZoneLimitRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetHostedZoneLimitResult> responseHandler = new StaxResponseHandler<GetHostedZoneLimitResult>(
+                    new GetHostedZoneLimitResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2588,6 +2871,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetQueryLoggingConfigRequestMarshaller().marshall(super.beforeMarshalling(getQueryLoggingConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2644,12 +2928,74 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetReusableDelegationSetRequestMarshaller().marshall(super.beforeMarshalling(getReusableDelegationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<GetReusableDelegationSetResult> responseHandler = new StaxResponseHandler<GetReusableDelegationSetResult>(
                     new GetReusableDelegationSetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the maximum number of hosted zones that you can associate with the specified reusable delegation set.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getReusableDelegationSetLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return Result of the GetReusableDelegationSetLimit operation returned by the service.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws NoSuchDelegationSetException
+     *         A reusable delegation set with the specified ID does not exist.
+     * @sample AmazonRoute53.GetReusableDelegationSetLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetReusableDelegationSetLimitResult getReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReusableDelegationSetLimit(request);
+    }
+
+    @SdkInternalApi
+    final GetReusableDelegationSetLimitResult executeGetReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest getReusableDelegationSetLimitRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getReusableDelegationSetLimitRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetReusableDelegationSetLimitRequest> request = null;
+        Response<GetReusableDelegationSetLimitResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetReusableDelegationSetLimitRequestMarshaller().marshall(super.beforeMarshalling(getReusableDelegationSetLimitRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetReusableDelegationSetLimitResult> responseHandler = new StaxResponseHandler<GetReusableDelegationSetLimitResult>(
+                    new GetReusableDelegationSetLimitResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2697,6 +3043,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetTrafficPolicyRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2761,6 +3108,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2810,6 +3158,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new GetTrafficPolicyInstanceCountRequestMarshaller().marshall(super.beforeMarshalling(getTrafficPolicyInstanceCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2872,6 +3221,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListGeoLocationsRequestMarshaller().marshall(super.beforeMarshalling(listGeoLocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2930,6 +3280,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListHealthChecksRequestMarshaller().marshall(super.beforeMarshalling(listHealthChecksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2996,6 +3347,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListHostedZonesRequestMarshaller().marshall(super.beforeMarshalling(listHostedZonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3120,6 +3472,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListHostedZonesByNameRequestMarshaller().marshall(super.beforeMarshalling(listHostedZonesByNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3186,6 +3539,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListQueryLoggingConfigsRequestMarshaller().marshall(super.beforeMarshalling(listQueryLoggingConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3295,6 +3649,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListResourceRecordSetsRequestMarshaller().marshall(super.beforeMarshalling(listResourceRecordSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3346,6 +3701,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListReusableDelegationSetsRequestMarshaller().marshall(super.beforeMarshalling(listReusableDelegationSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3419,6 +3775,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3487,6 +3844,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTagsForResourcesRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3540,6 +3898,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTrafficPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3610,6 +3969,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTrafficPolicyInstancesRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPolicyInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3683,6 +4043,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(listTrafficPolicyInstancesByHostedZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3751,6 +4112,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                         .marshall(super.beforeMarshalling(listTrafficPolicyInstancesByPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3807,6 +4169,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListTrafficPolicyVersionsRequestMarshaller().marshall(super.beforeMarshalling(listTrafficPolicyVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3868,6 +4231,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new ListVPCAssociationAuthorizationsRequestMarshaller().marshall(super.beforeMarshalling(listVPCAssociationAuthorizationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3925,6 +4289,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new TestDNSAnswerRequestMarshaller().marshall(super.beforeMarshalling(testDNSAnswerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3985,6 +4350,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new UpdateHealthCheckRequestMarshaller().marshall(super.beforeMarshalling(updateHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4038,6 +4404,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new UpdateHostedZoneCommentRequestMarshaller().marshall(super.beforeMarshalling(updateHostedZoneCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4094,6 +4461,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new UpdateTrafficPolicyCommentRequestMarshaller().marshall(super.beforeMarshalling(updateTrafficPolicyCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4186,6 +4554,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request = new UpdateTrafficPolicyInstanceRequestMarshaller().marshall(super.beforeMarshalling(updateTrafficPolicyInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

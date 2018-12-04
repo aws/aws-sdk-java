@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -120,6 +120,30 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Copies the image within the same region or to a new region within the same AWS account. Note that any tags you
+     * added to the image will not be copied.
+     * </p>
+     * 
+     * @param copyImageRequest
+     * @return Result of the CopyImage operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
+     * @sample AmazonAppStream.CopyImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CopyImageResult copyImage(CopyImageRequest copyImageRequest);
+
+    /**
+     * <p>
      * Creates a directory configuration.
      * </p>
      * 
@@ -165,6 +189,13 @@ public interface AmazonAppStream {
     CreateFleetResult createFleet(CreateFleetRequest createFleetRequest);
 
     /**
+     * <p>
+     * Creates an image builder.
+     * </p>
+     * <p>
+     * The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.
+     * </p>
+     * 
      * @param createImageBuilderRequest
      * @return Result of the CreateImageBuilder operation returned by the service.
      * @throws LimitExceededException
@@ -190,6 +221,10 @@ public interface AmazonAppStream {
     CreateImageBuilderResult createImageBuilder(CreateImageBuilderRequest createImageBuilderRequest);
 
     /**
+     * <p>
+     * Creates a URL to start an image builder streaming session.
+     * </p>
+     * 
      * @param createImageBuilderStreamingURLRequest
      * @return Result of the CreateImageBuilderStreamingURL operation returned by the service.
      * @throws OperationNotPermittedException
@@ -230,9 +265,6 @@ public interface AmazonAppStream {
     /**
      * <p>
      * Creates a URL to start a streaming session for the specified user.
-     * </p>
-     * <p>
-     * By default, the URL is valid only for one minute from the time that it is generated.
      * </p>
      * 
      * @param createStreamingURLRequest
@@ -288,6 +320,11 @@ public interface AmazonAppStream {
     DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest);
 
     /**
+     * <p>
+     * Deletes the specified image. You cannot delete an image that is currently in use. After you delete an image, you
+     * cannot provision new capacity using the image.
+     * </p>
+     * 
      * @param deleteImageRequest
      * @return Result of the DeleteImage operation returned by the service.
      * @throws ResourceInUseException
@@ -305,6 +342,10 @@ public interface AmazonAppStream {
     DeleteImageResult deleteImage(DeleteImageRequest deleteImageRequest);
 
     /**
+     * <p>
+     * Deletes the specified image builder and releases the capacity.
+     * </p>
+     * 
      * @param deleteImageBuilderRequest
      * @return Result of the DeleteImageBuilder operation returned by the service.
      * @throws ResourceNotFoundException
@@ -341,7 +382,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Describes the specified directory configurations.
+     * Describes the specified directory configurations. Note that although the response syntax in this topic includes
+     * the account password, this password is not returned in the actual response.
      * </p>
      * 
      * @param describeDirectoryConfigsRequest
@@ -370,6 +412,10 @@ public interface AmazonAppStream {
     DescribeFleetsResult describeFleets(DescribeFleetsRequest describeFleetsRequest);
 
     /**
+     * <p>
+     * Describes the specified image builders or all image builders in the account.
+     * </p>
+     * 
      * @param describeImageBuildersRequest
      * @return Result of the DescribeImageBuilders operation returned by the service.
      * @throws ResourceNotFoundException
@@ -487,6 +533,27 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Lists the tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images,
+     * fleets, and stacks.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Starts the specified fleet.
      * </p>
      * 
@@ -507,6 +574,10 @@ public interface AmazonAppStream {
     StartFleetResult startFleet(StartFleetRequest startFleetRequest);
 
     /**
+     * <p>
+     * Starts the specified image builder.
+     * </p>
+     * 
      * @param startImageBuilderRequest
      * @return Result of the StartImageBuilder operation returned by the service.
      * @throws ResourceNotAvailableException
@@ -515,6 +586,8 @@ public interface AmazonAppStream {
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
      * @sample AmazonAppStream.StartImageBuilder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder" target="_top">AWS
      *      API Documentation</a>
@@ -539,6 +612,10 @@ public interface AmazonAppStream {
     StopFleetResult stopFleet(StopFleetRequest stopFleetRequest);
 
     /**
+     * <p>
+     * Stops the specified image builder.
+     * </p>
+     * 
      * @param stopImageBuilderRequest
      * @return Result of the StopImageBuilder operation returned by the service.
      * @throws ResourceNotFoundException
@@ -552,6 +629,60 @@ public interface AmazonAppStream {
      *      Documentation</a>
      */
     StopImageBuilderResult stopImageBuilder(StopImageBuilderRequest stopImageBuilderRequest);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image
+     * builders, images, fleets, and stacks.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this
+     * operation updates its value.
+     * </p>
+     * <p>
+     * To list the current tags for your resources, use <a>ListTagsForResource</a>. To disassociate tags from your
+     * resources, use <a>UntagResource</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified tags from the specified AppStream 2.0 resource.
+     * </p>
+     * <p>
+     * To list the current tags for your resources, use <a>ListTagsForResource</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

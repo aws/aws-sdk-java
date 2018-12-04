@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,9 @@ public enum InvalidInputExceptionReason {
     INVALID_NEXT_TOKEN("INVALID_NEXT_TOKEN"),
     MAX_LIMIT_EXCEEDED_FILTER("MAX_LIMIT_EXCEEDED_FILTER"),
     MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS("MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS"),
-    INVALID_FULL_NAME_TARGET("INVALID_FULL_NAME_TARGET");
+    INVALID_FULL_NAME_TARGET("INVALID_FULL_NAME_TARGET"),
+    UNRECOGNIZED_SERVICE_PRINCIPAL("UNRECOGNIZED_SERVICE_PRINCIPAL"),
+    INVALID_ROLE_NAME("INVALID_ROLE_NAME");
 
     private String value;
 

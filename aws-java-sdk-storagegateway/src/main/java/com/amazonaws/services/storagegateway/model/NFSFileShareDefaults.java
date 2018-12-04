@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Describes file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default,
  * have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that
  * represent files and folders are assigned these default Unix permissions. This operation is only supported in the file
- * gateway architecture.
+ * gateway type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareDefaults"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class ConfirmForgotPasswordRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfirmationCode").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Password").build();
+    private static final MarshallingInfo<StructuredPojo> ANALYTICSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> USERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextData").build();
 
     private static final ConfirmForgotPasswordRequestMarshaller instance = new ConfirmForgotPasswordRequestMarshaller();
 
@@ -59,6 +63,8 @@ public class ConfirmForgotPasswordRequestMarshaller {
             protocolMarshaller.marshall(confirmForgotPasswordRequest.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(confirmForgotPasswordRequest.getConfirmationCode(), CONFIRMATIONCODE_BINDING);
             protocolMarshaller.marshall(confirmForgotPasswordRequest.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getUserContextData(), USERCONTEXTDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

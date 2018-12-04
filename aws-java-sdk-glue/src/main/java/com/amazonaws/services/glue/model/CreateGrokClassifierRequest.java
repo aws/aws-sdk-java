@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a Grok classifier for CreateClassifier to create.
+ * Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGrokClassifierRequest" target="_top">AWS
@@ -30,14 +30,14 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and so
-     * forth.
+     * An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon
+     * CloudWatch Logs, and so on.
      * </p>
      */
     private String classification;
     /**
      * <p>
-     * The name of the new Classifier.
+     * The name of the new classifier.
      * </p>
      */
     private String name;
@@ -49,20 +49,20 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
     private String grokPattern;
     /**
      * <p>
-     * Custom grok patterns used by this classifier.
+     * Optional custom grok patterns used by this classifier.
      * </p>
      */
     private String customPatterns;
 
     /**
      * <p>
-     * The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and so
-     * forth.
+     * An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon
+     * CloudWatch Logs, and so on.
      * </p>
      * 
      * @param classification
-     *        The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and
-     *        so forth.
+     *        An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon
+     *        CloudWatch Logs, and so on.
      */
 
     public void setClassification(String classification) {
@@ -71,12 +71,12 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and so
-     * forth.
+     * An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon
+     * CloudWatch Logs, and so on.
      * </p>
      * 
-     * @return The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and
-     *         so forth.
+     * @return An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs,
+     *         Amazon CloudWatch Logs, and so on.
      */
 
     public String getClassification() {
@@ -85,13 +85,13 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and so
-     * forth.
+     * An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon
+     * CloudWatch Logs, and so on.
      * </p>
      * 
      * @param classification
-     *        The type of result that the classifier matches, such as Twitter Json, Omniture logs, Cloudwatch logs, and
-     *        so forth.
+     *        An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon
+     *        CloudWatch Logs, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the new Classifier.
+     * The name of the new classifier.
      * </p>
      * 
      * @param name
-     *        The name of the new Classifier.
+     *        The name of the new classifier.
      */
 
     public void setName(String name) {
@@ -115,10 +115,10 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the new Classifier.
+     * The name of the new classifier.
      * </p>
      * 
-     * @return The name of the new Classifier.
+     * @return The name of the new classifier.
      */
 
     public String getName() {
@@ -127,11 +127,11 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the new Classifier.
+     * The name of the new classifier.
      * </p>
      * 
      * @param name
-     *        The name of the new Classifier.
+     *        The name of the new classifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Custom grok patterns used by this classifier.
+     * Optional custom grok patterns used by this classifier.
      * </p>
      * 
      * @param customPatterns
-     *        Custom grok patterns used by this classifier.
+     *        Optional custom grok patterns used by this classifier.
      */
 
     public void setCustomPatterns(String customPatterns) {
@@ -195,10 +195,10 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Custom grok patterns used by this classifier.
+     * Optional custom grok patterns used by this classifier.
      * </p>
      * 
-     * @return Custom grok patterns used by this classifier.
+     * @return Optional custom grok patterns used by this classifier.
      */
 
     public String getCustomPatterns() {
@@ -207,11 +207,11 @@ public class CreateGrokClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Custom grok patterns used by this classifier.
+     * Optional custom grok patterns used by this classifier.
      * </p>
      * 
      * @param customPatterns
-     *        Custom grok patterns used by this classifier.
+     *        Optional custom grok patterns used by this classifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

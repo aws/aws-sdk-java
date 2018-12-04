@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An attempt was made to modify a resource that is in an invalid state. Inspect the resource you are using for this
- * operation to ensure that all resource states are valid before retrying the operation.
+ * An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that
+ * they are in valid states before retrying the operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

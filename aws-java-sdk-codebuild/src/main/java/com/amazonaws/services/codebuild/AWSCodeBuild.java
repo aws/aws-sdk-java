@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -262,7 +262,7 @@ public interface AWSCodeBuild {
      * if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild
      * console, clear the Webhook box. For more information, see step 9 in <a
      * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
-     * Build Project’s Settings</a>.
+     * Build Project's Settings</a>.
      * </p>
      * </important>
      * 
@@ -317,6 +317,23 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     DeleteWebhookResult deleteWebhook(DeleteWebhookRequest deleteWebhookRequest);
+
+    /**
+     * <p>
+     * Resets the cache for a project.
+     * </p>
+     * 
+     * @param invalidateProjectCacheRequest
+     * @return Result of the InvalidateProjectCache operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.InvalidateProjectCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    InvalidateProjectCacheResult invalidateProjectCache(InvalidateProjectCacheRequest invalidateProjectCacheRequest);
 
     /**
      * <p>

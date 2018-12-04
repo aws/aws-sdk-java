@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,8 +59,8 @@ public class UpdateReceiptRuleRequestMarshaller implements Marshaller<Request<Up
                 request.addParameter("Rule.TlsPolicy", StringUtils.fromString(rule.getTlsPolicy()));
             }
 
-            com.amazonaws.internal.SdkInternalList<String> recipientsList = (com.amazonaws.internal.SdkInternalList<String>) rule.getRecipients();
-            if (!recipientsList.isEmpty() || !recipientsList.isAutoConstruct()) {
+            if (!rule.getRecipients().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) rule.getRecipients()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> recipientsList = (com.amazonaws.internal.SdkInternalList<String>) rule.getRecipients();
                 int recipientsListIndex = 1;
 
                 for (String recipientsListValue : recipientsList) {
@@ -71,8 +71,8 @@ public class UpdateReceiptRuleRequestMarshaller implements Marshaller<Request<Up
                 }
             }
 
-            com.amazonaws.internal.SdkInternalList<ReceiptAction> actionsList = (com.amazonaws.internal.SdkInternalList<ReceiptAction>) rule.getActions();
-            if (!actionsList.isEmpty() || !actionsList.isAutoConstruct()) {
+            if (!rule.getActions().isEmpty() || !((com.amazonaws.internal.SdkInternalList<ReceiptAction>) rule.getActions()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<ReceiptAction> actionsList = (com.amazonaws.internal.SdkInternalList<ReceiptAction>) rule.getActions();
                 int actionsListIndex = 1;
 
                 for (ReceiptAction actionsListValue : actionsList) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.List<FaceMatch> faceMatches;
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     */
+    private String faceModelVersion;
 
     /**
      * <p>
@@ -188,6 +194,49 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @param faceModelVersion
+     *        Version number of the face detection model associated with the input collection (<code>CollectionId</code>
+     *        ).
+     */
+
+    public void setFaceModelVersion(String faceModelVersion) {
+        this.faceModelVersion = faceModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @return Version number of the face detection model associated with the input collection (
+     *         <code>CollectionId</code>).
+     */
+
+    public String getFaceModelVersion() {
+        return this.faceModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @param faceModelVersion
+     *        Version number of the face detection model associated with the input collection (<code>CollectionId</code>
+     *        ).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchFacesByImageResult withFaceModelVersion(String faceModelVersion) {
+        setFaceModelVersion(faceModelVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -203,7 +252,9 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
         if (getSearchedFaceConfidence() != null)
             sb.append("SearchedFaceConfidence: ").append(getSearchedFaceConfidence()).append(",");
         if (getFaceMatches() != null)
-            sb.append("FaceMatches: ").append(getFaceMatches());
+            sb.append("FaceMatches: ").append(getFaceMatches()).append(",");
+        if (getFaceModelVersion() != null)
+            sb.append("FaceModelVersion: ").append(getFaceModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +281,10 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getFaceMatches() != null && other.getFaceMatches().equals(this.getFaceMatches()) == false)
             return false;
+        if (other.getFaceModelVersion() == null ^ this.getFaceModelVersion() == null)
+            return false;
+        if (other.getFaceModelVersion() != null && other.getFaceModelVersion().equals(this.getFaceModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -241,6 +296,7 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getSearchedFaceBoundingBox() == null) ? 0 : getSearchedFaceBoundingBox().hashCode());
         hashCode = prime * hashCode + ((getSearchedFaceConfidence() == null) ? 0 : getSearchedFaceConfidence().hashCode());
         hashCode = prime * hashCode + ((getFaceMatches() == null) ? 0 : getFaceMatches().hashCode());
+        hashCode = prime * hashCode + ((getFaceModelVersion() == null) ? 0 : getFaceModelVersion().hashCode());
         return hashCode;
     }
 

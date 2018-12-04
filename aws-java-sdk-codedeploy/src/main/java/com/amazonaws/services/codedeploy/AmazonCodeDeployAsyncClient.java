@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,14 +32,14 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>AWS CodeDeploy</fullname>
  * <p>
- * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances or on-premises
- * instances running in your own facility.
+ * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises
+ * instances running in your own facility, or serverless AWS Lambda functions.
  * </p>
  * <p>
- * You can deploy a nearly unlimited variety of application content, such as code, web and configuration files,
- * executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy application content stored in
- * Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing
- * code before you can use AWS CodeDeploy.
+ * You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, code, web and
+ * configuration files, executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy
+ * application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to
+ * make changes to your existing code before you can use AWS CodeDeploy.
  * </p>
  * <p>
  * AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application
@@ -62,8 +62,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Deployment group</b>: A set of individual instances. A deployment group contains individually tagged instances,
- * Amazon EC2 instances in Auto Scaling groups, or both.
+ * <b>Deployment group</b>: A set of individual instances or CodeDeploy Lambda applications. A Lambda deployment group
+ * contains a group of applications. An EC2/On-premises deployment group contains individually tagged instances, Amazon
+ * EC2 instances in Auto Scaling groups, or both.
  * </p>
  * </li>
  * <li>
@@ -74,22 +75,25 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Deployment</b>: The process, and the components involved in the process, of installing content on one or more
- * instances.
+ * <b>Deployment</b>: The process and the components used in the process of updating a Lambda function or of installing
+ * content on one or more instances.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Application revisions</b>: An archive file containing source content—source code, web pages, executable files, and
- * deployment scripts—along with an application specification file (AppSpec file). Revisions are stored in Amazon S3
- * buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its
- * ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.
+ * <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file that specifies the Lambda
+ * function to update and one or more functions to validate deployment lifecycle events. For an EC2/On-premises
+ * deployment, this is an archive file containing source content—source code, web pages, executable files, and
+ * deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For
+ * Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub,
+ * a revision is uniquely identified by its commit ID.
  * </p>
  * </li>
  * </ul>
  * <p>
- * This guide also contains information to help you get details about the instances in your deployments and to make
- * on-premises instances available for AWS CodeDeploy deployments.
+ * This guide also contains information to help you get details about the instances in your deployments, to make
+ * on-premises instances available for AWS CodeDeploy deployments, and to get details about a Lambda function
+ * deployment.
  * </p>
  * <p>
  * <b>AWS CodeDeploy Information Resources</b>
@@ -891,6 +895,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest request) {
+
+        return deleteGitHubAccountTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(final DeleteGitHubAccountTokenRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGitHubAccountTokenRequest, DeleteGitHubAccountTokenResult> asyncHandler) {
+        final DeleteGitHubAccountTokenRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGitHubAccountTokenResult>() {
+            @Override
+            public DeleteGitHubAccountTokenResult call() throws Exception {
+                DeleteGitHubAccountTokenResult result = null;
+
+                try {
+                    result = executeDeleteGitHubAccountToken(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(DeregisterOnPremisesInstanceRequest request) {
 
         return deregisterOnPremisesInstanceAsync(request, null);
@@ -1508,6 +1545,41 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
             com.amazonaws.handlers.AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult> asyncHandler) {
 
         return listOnPremisesInstancesAsync(new ListOnPremisesInstancesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest request) {
+
+        return putLifecycleEventHookExecutionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            final PutLifecycleEventHookExecutionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutLifecycleEventHookExecutionStatusRequest, PutLifecycleEventHookExecutionStatusResult> asyncHandler) {
+        final PutLifecycleEventHookExecutionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutLifecycleEventHookExecutionStatusResult>() {
+            @Override
+            public PutLifecycleEventHookExecutionStatusResult call() throws Exception {
+                PutLifecycleEventHookExecutionStatusResult result = null;
+
+                try {
+                    result = executePutLifecycleEventHookExecutionStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

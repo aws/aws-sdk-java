@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * </p>
      */
     private String name;
+
+    private com.amazonaws.internal.SdkInternalList<SupportedPlatform> supportedPlatforms;
 
     /**
      * <p>
@@ -74,6 +76,61 @@ public class AvailabilityZone implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<SupportedPlatform> getSupportedPlatforms() {
+        if (supportedPlatforms == null) {
+            supportedPlatforms = new com.amazonaws.internal.SdkInternalList<SupportedPlatform>();
+        }
+        return supportedPlatforms;
+    }
+
+    /**
+     * @param supportedPlatforms
+     */
+
+    public void setSupportedPlatforms(java.util.Collection<SupportedPlatform> supportedPlatforms) {
+        if (supportedPlatforms == null) {
+            this.supportedPlatforms = null;
+            return;
+        }
+
+        this.supportedPlatforms = new com.amazonaws.internal.SdkInternalList<SupportedPlatform>(supportedPlatforms);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedPlatforms(java.util.Collection)} or {@link #withSupportedPlatforms(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedPlatforms
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withSupportedPlatforms(SupportedPlatform... supportedPlatforms) {
+        if (this.supportedPlatforms == null) {
+            setSupportedPlatforms(new com.amazonaws.internal.SdkInternalList<SupportedPlatform>(supportedPlatforms.length));
+        }
+        for (SupportedPlatform ele : supportedPlatforms) {
+            this.supportedPlatforms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param supportedPlatforms
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withSupportedPlatforms(java.util.Collection<SupportedPlatform> supportedPlatforms) {
+        setSupportedPlatforms(supportedPlatforms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -85,7 +142,9 @@ public class AvailabilityZone implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getSupportedPlatforms() != null)
+            sb.append("SupportedPlatforms: ").append(getSupportedPlatforms());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +163,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getSupportedPlatforms() == null ^ this.getSupportedPlatforms() == null)
+            return false;
+        if (other.getSupportedPlatforms() != null && other.getSupportedPlatforms().equals(this.getSupportedPlatforms()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +176,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSupportedPlatforms() == null) ? 0 : getSupportedPlatforms().hashCode());
         return hashCode;
     }
 

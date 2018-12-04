@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class DeleteCertificateRequestMarshaller {
 
     private static final MarshallingInfo<String> CERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("certificateId").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("forceDelete").build();
 
     private static final DeleteCertificateRequestMarshaller instance = new DeleteCertificateRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteCertificateRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteCertificateRequest.getCertificateId(), CERTIFICATEID_BINDING);
+            protocolMarshaller.marshall(deleteCertificateRequest.getForceDelete(), FORCEDELETE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

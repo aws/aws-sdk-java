@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,6 +81,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * <p>
      * <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not
      * exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     * <a>UpdateAccountSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.
      * </p>
      * </li>
      * <li>
@@ -176,6 +188,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     * <a>UpdateAccountSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was
      * invalid. See the error message for additional information.
      * </p>
@@ -246,6 +270,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      *        <p>
      *        <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does
      *        not exist.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     *        <a>UpdateAccountSendingEnabled</a> operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using
+     *        the <a>UpdateConfigurationSetSendingEnabled</a> operation.
      *        </p>
      *        </li>
      *        <li>
@@ -331,6 +367,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     * <a>UpdateAccountSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was
      * invalid. See the error message for additional information.
      * </p>
@@ -400,6 +448,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      *         <p>
      *         <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does
      *         not exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     *         <a>UpdateAccountSendingEnabled</a> operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using
+     *         the <a>UpdateConfigurationSetSendingEnabled</a> operation.
      *         </p>
      *         </li>
      *         <li>
@@ -486,6 +546,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     * <a>UpdateAccountSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was
      * invalid. See the error message for additional information.
      * </p>
@@ -556,6 +628,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      *        <p>
      *        <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does
      *        not exist.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     *        <a>UpdateAccountSendingEnabled</a> operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using
+     *        the <a>UpdateConfigurationSetSendingEnabled</a> operation.
      *        </p>
      *        </li>
      *        <li>
@@ -643,6 +727,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     * <a>UpdateAccountSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was
      * invalid. See the error message for additional information.
      * </p>
@@ -713,6 +809,18 @@ public class BulkEmailDestinationStatus implements Serializable, Cloneable {
      *        <p>
      *        <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does
      *        not exist.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the
+     *        <a>UpdateAccountSendingEnabled</a> operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using
+     *        the <a>UpdateConfigurationSetSendingEnabled</a> operation.
      *        </p>
      *        </li>
      *        <li>

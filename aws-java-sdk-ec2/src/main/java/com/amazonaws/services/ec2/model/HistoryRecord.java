@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an event in the history of the Spot fleet request.
+ * Describes an event in the history of the Spot Fleet request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HistoryRecord" target="_top">AWS API
@@ -39,12 +39,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - An error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot Fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -115,12 +115,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - An error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot Fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -140,12 +140,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>error</code> - An error with the Spot fleet request.
+     *        <code>error</code> - An error with the Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -172,12 +172,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - An error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot Fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -196,12 +196,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>error</code> - An error with the Spot fleet request.
+     *         <code>error</code> - An error with the Spot Fleet request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     *         <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      *         </p>
      *         </li>
      *         <li>
@@ -228,12 +228,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - An error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot Fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -253,12 +253,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>error</code> - An error with the Spot fleet request.
+     *        <code>error</code> - An error with the Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -287,12 +287,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - An error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot Fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -312,12 +312,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>error</code> - An error with the Spot fleet request.
+     *        <code>error</code> - An error with the Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -344,12 +344,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - An error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot Fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -369,12 +369,12 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>error</code> - An error with the Spot fleet request.
+     *        <code>error</code> - An error with the Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
+     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>

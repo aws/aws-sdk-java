@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,23 +25,23 @@ public class ListTagOptionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOptions.
      * </p>
      */
     private java.util.List<TagOptionDetail> tagOptionDetails;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      */
     private String pageToken;
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOptions.
      * </p>
      * 
-     * @return The resulting detailed TagOption information.
+     * @return Information about the TagOptions.
      */
 
     public java.util.List<TagOptionDetail> getTagOptionDetails() {
@@ -50,11 +50,11 @@ public class ListTagOptionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOptions.
      * </p>
      * 
      * @param tagOptionDetails
-     *        The resulting detailed TagOption information.
+     *        Information about the TagOptions.
      */
 
     public void setTagOptionDetails(java.util.Collection<TagOptionDetail> tagOptionDetails) {
@@ -68,7 +68,7 @@ public class ListTagOptionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOptions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListTagOptionsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param tagOptionDetails
-     *        The resulting detailed TagOption information.
+     *        Information about the TagOptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListTagOptionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOptions.
      * </p>
      * 
      * @param tagOptionDetails
-     *        The resulting detailed TagOption information.
+     *        Information about the TagOptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,12 +108,11 @@ public class ListTagOptionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public void setPageToken(String pageToken) {
@@ -122,11 +121,10 @@ public class ListTagOptionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
-     *         <code>PageSize</code>.
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public String getPageToken() {
@@ -135,12 +133,11 @@ public class ListTagOptionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

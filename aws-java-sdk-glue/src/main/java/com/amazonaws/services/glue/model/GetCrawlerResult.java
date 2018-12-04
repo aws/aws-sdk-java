@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class GetCrawlerResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The metadata for the specified <code>Crawler</code>.
+     * The metadata for the specified crawler.
      * </p>
      */
     private Crawler crawler;
 
     /**
      * <p>
-     * The metadata for the specified <code>Crawler</code>.
+     * The metadata for the specified crawler.
      * </p>
      * 
      * @param crawler
-     *        The metadata for the specified <code>Crawler</code>.
+     *        The metadata for the specified crawler.
      */
 
     public void setCrawler(Crawler crawler) {
@@ -45,10 +45,10 @@ public class GetCrawlerResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The metadata for the specified <code>Crawler</code>.
+     * The metadata for the specified crawler.
      * </p>
      * 
-     * @return The metadata for the specified <code>Crawler</code>.
+     * @return The metadata for the specified crawler.
      */
 
     public Crawler getCrawler() {
@@ -57,11 +57,11 @@ public class GetCrawlerResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The metadata for the specified <code>Crawler</code>.
+     * The metadata for the specified crawler.
      * </p>
      * 
      * @param crawler
-     *        The metadata for the specified <code>Crawler</code>.
+     *        The metadata for the specified crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,11 +123,11 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private String checksum;
     /**
      * <p>
-     * If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so that it
-     * can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build it.
+     * If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it
+     * can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.
      * </p>
      * <p>
-     * If you don't specify this value, the default value is <code>Save</code>.
+     * If you don't specify this value, the default value is <code>BUILD</code>.
      * </p>
      */
     private String processBehavior;
@@ -165,6 +165,8 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      */
     private Boolean childDirected;
+
+    private Boolean createVersion;
 
     /**
      * <p>
@@ -809,19 +811,19 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so that it
-     * can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build it.
+     * If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it
+     * can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.
      * </p>
      * <p>
-     * If you don't specify this value, the default value is <code>Save</code>.
+     * If you don't specify this value, the default value is <code>BUILD</code>.
      * </p>
      * 
      * @param processBehavior
-     *        If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so
-     *        that it can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build
-     *        it. </p>
+     *        If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so
+     *        that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't
+     *        build it. </p>
      *        <p>
-     *        If you don't specify this value, the default value is <code>Save</code>.
+     *        If you don't specify this value, the default value is <code>BUILD</code>.
      * @see ProcessBehavior
      */
 
@@ -831,18 +833,18 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so that it
-     * can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build it.
+     * If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it
+     * can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.
      * </p>
      * <p>
-     * If you don't specify this value, the default value is <code>Save</code>.
+     * If you don't specify this value, the default value is <code>BUILD</code>.
      * </p>
      * 
-     * @return If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so
-     *         that it can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't
+     * @return If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so
+     *         that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't
      *         build it. </p>
      *         <p>
-     *         If you don't specify this value, the default value is <code>Save</code>.
+     *         If you don't specify this value, the default value is <code>BUILD</code>.
      * @see ProcessBehavior
      */
 
@@ -852,19 +854,19 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so that it
-     * can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build it.
+     * If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it
+     * can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.
      * </p>
      * <p>
-     * If you don't specify this value, the default value is <code>Save</code>.
+     * If you don't specify this value, the default value is <code>BUILD</code>.
      * </p>
      * 
      * @param processBehavior
-     *        If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so
-     *        that it can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build
-     *        it. </p>
+     *        If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so
+     *        that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't
+     *        build it. </p>
      *        <p>
-     *        If you don't specify this value, the default value is <code>Save</code>.
+     *        If you don't specify this value, the default value is <code>BUILD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessBehavior
      */
@@ -876,19 +878,19 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so that it
-     * can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build it.
+     * If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it
+     * can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.
      * </p>
      * <p>
-     * If you don't specify this value, the default value is <code>Save</code>.
+     * If you don't specify this value, the default value is <code>BUILD</code>.
      * </p>
      * 
      * @param processBehavior
-     *        If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so
-     *        that it can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build
-     *        it. </p>
+     *        If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so
+     *        that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't
+     *        build it. </p>
      *        <p>
-     *        If you don't specify this value, the default value is <code>Save</code>.
+     *        If you don't specify this value, the default value is <code>BUILD</code>.
      * @see ProcessBehavior
      */
 
@@ -898,19 +900,19 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so that it
-     * can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build it.
+     * If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it
+     * can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.
      * </p>
      * <p>
-     * If you don't specify this value, the default value is <code>Save</code>.
+     * If you don't specify this value, the default value is <code>BUILD</code>.
      * </p>
      * 
      * @param processBehavior
-     *        If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon Lex builds the bot so
-     *        that it can be run. If you set the element to <code>Save</code>Amazon Lex saves the bot, but doesn't build
-     *        it. </p>
+     *        If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so
+     *        that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't
+     *        build it. </p>
      *        <p>
-     *        If you don't specify this value, the default value is <code>Save</code>.
+     *        If you don't specify this value, the default value is <code>BUILD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessBehavior
      */
@@ -1225,6 +1227,40 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
+     * @param createVersion
+     */
+
+    public void setCreateVersion(Boolean createVersion) {
+        this.createVersion = createVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getCreateVersion() {
+        return this.createVersion;
+    }
+
+    /**
+     * @param createVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotRequest withCreateVersion(Boolean createVersion) {
+        setCreateVersion(createVersion);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isCreateVersion() {
+        return this.createVersion;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1256,7 +1292,9 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         if (getLocale() != null)
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getChildDirected() != null)
-            sb.append("ChildDirected: ").append(getChildDirected());
+            sb.append("ChildDirected: ").append(getChildDirected()).append(",");
+        if (getCreateVersion() != null)
+            sb.append("CreateVersion: ").append(getCreateVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1315,6 +1353,10 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
             return false;
         if (other.getChildDirected() != null && other.getChildDirected().equals(this.getChildDirected()) == false)
             return false;
+        if (other.getCreateVersion() == null ^ this.getCreateVersion() == null)
+            return false;
+        if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1334,6 +1376,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getProcessBehavior() == null) ? 0 : getProcessBehavior().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
+        hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
         return hashCode;
     }
 

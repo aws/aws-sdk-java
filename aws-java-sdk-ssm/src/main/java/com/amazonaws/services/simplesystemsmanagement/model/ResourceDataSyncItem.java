@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,12 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Date syncCreatedTime;
+    /**
+     * <p>
+     * The status message details reported by the last sync.
+     * </p>
+     */
+    private String lastSyncStatusMessage;
 
     /**
      * <p>
@@ -339,6 +345,46 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The status message details reported by the last sync.
+     * </p>
+     * 
+     * @param lastSyncStatusMessage
+     *        The status message details reported by the last sync.
+     */
+
+    public void setLastSyncStatusMessage(String lastSyncStatusMessage) {
+        this.lastSyncStatusMessage = lastSyncStatusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message details reported by the last sync.
+     * </p>
+     * 
+     * @return The status message details reported by the last sync.
+     */
+
+    public String getLastSyncStatusMessage() {
+        return this.lastSyncStatusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message details reported by the last sync.
+     * </p>
+     * 
+     * @param lastSyncStatusMessage
+     *        The status message details reported by the last sync.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataSyncItem withLastSyncStatusMessage(String lastSyncStatusMessage) {
+        setLastSyncStatusMessage(lastSyncStatusMessage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -360,7 +406,9 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
         if (getLastStatus() != null)
             sb.append("LastStatus: ").append(getLastStatus()).append(",");
         if (getSyncCreatedTime() != null)
-            sb.append("SyncCreatedTime: ").append(getSyncCreatedTime());
+            sb.append("SyncCreatedTime: ").append(getSyncCreatedTime()).append(",");
+        if (getLastSyncStatusMessage() != null)
+            sb.append("LastSyncStatusMessage: ").append(getLastSyncStatusMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +447,10 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
             return false;
         if (other.getSyncCreatedTime() != null && other.getSyncCreatedTime().equals(this.getSyncCreatedTime()) == false)
             return false;
+        if (other.getLastSyncStatusMessage() == null ^ this.getLastSyncStatusMessage() == null)
+            return false;
+        if (other.getLastSyncStatusMessage() != null && other.getLastSyncStatusMessage().equals(this.getLastSyncStatusMessage()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +465,7 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getLastSuccessfulSyncTime() == null) ? 0 : getLastSuccessfulSyncTime().hashCode());
         hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
         hashCode = prime * hashCode + ((getSyncCreatedTime() == null) ? 0 : getSyncCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastSyncStatusMessage() == null) ? 0 : getLastSyncStatusMessage().hashCode());
         return hashCode;
     }
 

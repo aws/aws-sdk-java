@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,53 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The endpoint type.
+     * </p>
+     */
+    private String endpointType;
+
+    /**
+     * <p>
+     * The endpoint type.
+     * </p>
+     * 
+     * @param endpointType
+     *        The endpoint type.
+     */
+
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+    }
+
+    /**
+     * <p>
+     * The endpoint type.
+     * </p>
+     * 
+     * @return The endpoint type.
+     */
+
+    public String getEndpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * <p>
+     * The endpoint type.
+     * </p>
+     * 
+     * @param endpointType
+     *        The endpoint type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointRequest withEndpointType(String endpointType) {
+        setEndpointType(endpointType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -36,6 +83,8 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEndpointType() != null)
+            sb.append("EndpointType: ").append(getEndpointType());
         sb.append("}");
         return sb.toString();
     }
@@ -50,6 +99,10 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof DescribeEndpointRequest == false)
             return false;
         DescribeEndpointRequest other = (DescribeEndpointRequest) obj;
+        if (other.getEndpointType() == null ^ this.getEndpointType() == null)
+            return false;
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
+            return false;
         return true;
     }
 
@@ -58,6 +111,7 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,8 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private String containerPath;
     /**
      * <p>
-     * The explicit permissions to provide to the container for the device. By default, the container will be able to
-     * <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     * The explicit permissions to provide to the container for the device. By default, the container has permissions
+     * for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> permissions;
@@ -129,12 +129,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The explicit permissions to provide to the container for the device. By default, the container will be able to
-     * <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     * The explicit permissions to provide to the container for the device. By default, the container has permissions
+     * for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * </p>
      * 
-     * @return The explicit permissions to provide to the container for the device. By default, the container will be
-     *         able to <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     * @return The explicit permissions to provide to the container for the device. By default, the container has
+     *         permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * @see DeviceCgroupPermission
      */
 
@@ -147,13 +147,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The explicit permissions to provide to the container for the device. By default, the container will be able to
-     * <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     * The explicit permissions to provide to the container for the device. By default, the container has permissions
+     * for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * </p>
      * 
      * @param permissions
-     *        The explicit permissions to provide to the container for the device. By default, the container will be
-     *        able to <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     *        The explicit permissions to provide to the container for the device. By default, the container has
+     *        permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * @see DeviceCgroupPermission
      */
 
@@ -168,8 +168,8 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The explicit permissions to provide to the container for the device. By default, the container will be able to
-     * <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     * The explicit permissions to provide to the container for the device. By default, the container has permissions
+     * for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -178,8 +178,8 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param permissions
-     *        The explicit permissions to provide to the container for the device. By default, the container will be
-     *        able to <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     *        The explicit permissions to provide to the container for the device. By default, the container has
+     *        permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceCgroupPermission
      */
@@ -196,13 +196,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The explicit permissions to provide to the container for the device. By default, the container will be able to
-     * <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     * The explicit permissions to provide to the container for the device. By default, the container has permissions
+     * for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * </p>
      * 
      * @param permissions
-     *        The explicit permissions to provide to the container for the device. By default, the container will be
-     *        able to <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     *        The explicit permissions to provide to the container for the device. By default, the container has
+     *        permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceCgroupPermission
      */
@@ -214,13 +214,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The explicit permissions to provide to the container for the device. By default, the container will be able to
-     * <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     * The explicit permissions to provide to the container for the device. By default, the container has permissions
+     * for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * </p>
      * 
      * @param permissions
-     *        The explicit permissions to provide to the container for the device. By default, the container will be
-     *        able to <code>read</code>, <code>write</code>, and <code>mknod</code> the device.
+     *        The explicit permissions to provide to the container for the device. By default, the container has
+     *        permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceCgroupPermission
      */

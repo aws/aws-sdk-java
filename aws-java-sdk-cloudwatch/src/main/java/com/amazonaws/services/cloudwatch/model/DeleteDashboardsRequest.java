@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,17 @@ public class DeleteDashboardsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The dashboards to be deleted.
+     * The dashboards to be deleted. This parameter is required.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> dashboardNames;
 
     /**
      * <p>
-     * The dashboards to be deleted.
+     * The dashboards to be deleted. This parameter is required.
      * </p>
      * 
-     * @return The dashboards to be deleted.
+     * @return The dashboards to be deleted. This parameter is required.
      */
 
     public java.util.List<String> getDashboardNames() {
@@ -49,11 +49,11 @@ public class DeleteDashboardsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The dashboards to be deleted.
+     * The dashboards to be deleted. This parameter is required.
      * </p>
      * 
      * @param dashboardNames
-     *        The dashboards to be deleted.
+     *        The dashboards to be deleted. This parameter is required.
      */
 
     public void setDashboardNames(java.util.Collection<String> dashboardNames) {
@@ -67,7 +67,7 @@ public class DeleteDashboardsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The dashboards to be deleted.
+     * The dashboards to be deleted. This parameter is required.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class DeleteDashboardsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param dashboardNames
-     *        The dashboards to be deleted.
+     *        The dashboards to be deleted. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class DeleteDashboardsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The dashboards to be deleted.
+     * The dashboards to be deleted. This parameter is required.
      * </p>
      * 
      * @param dashboardNames
-     *        The dashboards to be deleted.
+     *        The dashboards to be deleted. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

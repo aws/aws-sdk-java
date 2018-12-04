@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
     private String storageType;
     /**
      * <p>
-     * The valid range of storage in gigabytes. For example, 100 to 6144.
+     * The valid range of storage in gibibytes. For example, 100 to 16384.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Range> storageSize;
@@ -47,7 +47,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Range> provisionedIops;
     /**
      * <p>
-     * The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means that
+     * The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that
      * provisioned IOPS can be between 3 and 10 times storage.
      * </p>
      */
@@ -95,10 +95,10 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of storage in gigabytes. For example, 100 to 6144.
+     * The valid range of storage in gibibytes. For example, 100 to 16384.
      * </p>
      * 
-     * @return The valid range of storage in gigabytes. For example, 100 to 6144.
+     * @return The valid range of storage in gibibytes. For example, 100 to 16384.
      */
 
     public java.util.List<Range> getStorageSize() {
@@ -110,11 +110,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of storage in gigabytes. For example, 100 to 6144.
+     * The valid range of storage in gibibytes. For example, 100 to 16384.
      * </p>
      * 
      * @param storageSize
-     *        The valid range of storage in gigabytes. For example, 100 to 6144.
+     *        The valid range of storage in gibibytes. For example, 100 to 16384.
      */
 
     public void setStorageSize(java.util.Collection<Range> storageSize) {
@@ -128,7 +128,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of storage in gigabytes. For example, 100 to 6144.
+     * The valid range of storage in gibibytes. For example, 100 to 16384.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param storageSize
-     *        The valid range of storage in gigabytes. For example, 100 to 6144.
+     *        The valid range of storage in gibibytes. For example, 100 to 16384.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of storage in gigabytes. For example, 100 to 6144.
+     * The valid range of storage in gibibytes. For example, 100 to 16384.
      * </p>
      * 
      * @param storageSize
-     *        The valid range of storage in gigabytes. For example, 100 to 6144.
+     *        The valid range of storage in gibibytes. For example, 100 to 16384.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +241,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means that
+     * The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that
      * provisioned IOPS can be between 3 and 10 times storage.
      * </p>
      * 
-     * @return The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means
+     * @return The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means
      *         that provisioned IOPS can be between 3 and 10 times storage.
      */
 
@@ -258,12 +258,12 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means that
+     * The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that
      * provisioned IOPS can be between 3 and 10 times storage.
      * </p>
      * 
      * @param iopsToStorageRatio
-     *        The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means
+     *        The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means
      *        that provisioned IOPS can be between 3 and 10 times storage.
      */
 
@@ -278,7 +278,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means that
+     * The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that
      * provisioned IOPS can be between 3 and 10 times storage.
      * </p>
      * <p>
@@ -288,7 +288,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
      * </p>
      * 
      * @param iopsToStorageRatio
-     *        The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means
+     *        The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means
      *        that provisioned IOPS can be between 3 and 10 times storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -305,12 +305,12 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means that
+     * The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that
      * provisioned IOPS can be between 3 and 10 times storage.
      * </p>
      * 
      * @param iopsToStorageRatio
-     *        The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example, 3-10, which means
+     *        The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means
      *        that provisioned IOPS can be between 3 and 10 times storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

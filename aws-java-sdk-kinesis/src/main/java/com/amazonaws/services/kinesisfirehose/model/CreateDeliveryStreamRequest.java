@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,12 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private ElasticsearchDestinationConfiguration elasticsearchDestinationConfiguration;
+    /**
+     * <p>
+     * The destination in Splunk. You can specify only one destination.
+     * </p>
+     */
+    private SplunkDestinationConfiguration splunkDestinationConfiguration;
 
     /**
      * <p>
@@ -497,6 +503,46 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The destination in Splunk. You can specify only one destination.
+     * </p>
+     * 
+     * @param splunkDestinationConfiguration
+     *        The destination in Splunk. You can specify only one destination.
+     */
+
+    public void setSplunkDestinationConfiguration(SplunkDestinationConfiguration splunkDestinationConfiguration) {
+        this.splunkDestinationConfiguration = splunkDestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination in Splunk. You can specify only one destination.
+     * </p>
+     * 
+     * @return The destination in Splunk. You can specify only one destination.
+     */
+
+    public SplunkDestinationConfiguration getSplunkDestinationConfiguration() {
+        return this.splunkDestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination in Splunk. You can specify only one destination.
+     * </p>
+     * 
+     * @param splunkDestinationConfiguration
+     *        The destination in Splunk. You can specify only one destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withSplunkDestinationConfiguration(SplunkDestinationConfiguration splunkDestinationConfiguration) {
+        setSplunkDestinationConfiguration(splunkDestinationConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -520,7 +566,9 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (getRedshiftDestinationConfiguration() != null)
             sb.append("RedshiftDestinationConfiguration: ").append(getRedshiftDestinationConfiguration()).append(",");
         if (getElasticsearchDestinationConfiguration() != null)
-            sb.append("ElasticsearchDestinationConfiguration: ").append(getElasticsearchDestinationConfiguration());
+            sb.append("ElasticsearchDestinationConfiguration: ").append(getElasticsearchDestinationConfiguration()).append(",");
+        if (getSplunkDestinationConfiguration() != null)
+            sb.append("SplunkDestinationConfiguration: ").append(getSplunkDestinationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -567,6 +615,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getElasticsearchDestinationConfiguration() != null
                 && other.getElasticsearchDestinationConfiguration().equals(this.getElasticsearchDestinationConfiguration()) == false)
             return false;
+        if (other.getSplunkDestinationConfiguration() == null ^ this.getSplunkDestinationConfiguration() == null)
+            return false;
+        if (other.getSplunkDestinationConfiguration() != null
+                && other.getSplunkDestinationConfiguration().equals(this.getSplunkDestinationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -582,6 +635,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getExtendedS3DestinationConfiguration() == null) ? 0 : getExtendedS3DestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRedshiftDestinationConfiguration() == null) ? 0 : getRedshiftDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchDestinationConfiguration() == null) ? 0 : getElasticsearchDestinationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSplunkDestinationConfiguration() == null) ? 0 : getSplunkDestinationConfiguration().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class StackMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").build();
     private static final MarshallingInfo<List> STORAGECONNECTORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageConnectors").build();
+    private static final MarshallingInfo<String> REDIRECTURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedirectURL").build();
     private static final MarshallingInfo<List> STACKERRORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("StackErrors").build();
 
@@ -65,6 +67,7 @@ public class StackMarshaller {
             protocolMarshaller.marshall(stack.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(stack.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(stack.getStorageConnectors(), STORAGECONNECTORS_BINDING);
+            protocolMarshaller.marshall(stack.getRedirectURL(), REDIRECTURL_BINDING);
             protocolMarshaller.marshall(stack.getStackErrors(), STACKERRORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

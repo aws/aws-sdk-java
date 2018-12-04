@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Error information about the last crawl, if an error occurred.
+     * If an error occurred, the error information about the last crawl.
      * </p>
      */
     private String errorMessage;
@@ -126,11 +126,11 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error information about the last crawl, if an error occurred.
+     * If an error occurred, the error information about the last crawl.
      * </p>
      * 
      * @param errorMessage
-     *        Error information about the last crawl, if an error occurred.
+     *        If an error occurred, the error information about the last crawl.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -139,10 +139,10 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error information about the last crawl, if an error occurred.
+     * If an error occurred, the error information about the last crawl.
      * </p>
      * 
-     * @return Error information about the last crawl, if an error occurred.
+     * @return If an error occurred, the error information about the last crawl.
      */
 
     public String getErrorMessage() {
@@ -151,11 +151,11 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error information about the last crawl, if an error occurred.
+     * If an error occurred, the error information about the last crawl.
      * </p>
      * 
      * @param errorMessage
-     *        Error information about the last crawl, if an error occurred.
+     *        If an error occurred, the error information about the last crawl.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

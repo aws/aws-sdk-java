@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
     private String sourceArn;
     /**
      * <p>
-     * The REPLY-TO email address.
+     * The destination to which the receiver of the email should reply to.
      * </p>
      */
     private String replyToEmailAddress;
@@ -83,11 +83,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The REPLY-TO email address.
+     * The destination to which the receiver of the email should reply to.
      * </p>
      * 
      * @param replyToEmailAddress
-     *        The REPLY-TO email address.
+     *        The destination to which the receiver of the email should reply to.
      */
 
     public void setReplyToEmailAddress(String replyToEmailAddress) {
@@ -96,10 +96,10 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The REPLY-TO email address.
+     * The destination to which the receiver of the email should reply to.
      * </p>
      * 
-     * @return The REPLY-TO email address.
+     * @return The destination to which the receiver of the email should reply to.
      */
 
     public String getReplyToEmailAddress() {
@@ -108,11 +108,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The REPLY-TO email address.
+     * The destination to which the receiver of the email should reply to.
      * </p>
      * 
      * @param replyToEmailAddress
-     *        The REPLY-TO email address.
+     *        The destination to which the receiver of the email should reply to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

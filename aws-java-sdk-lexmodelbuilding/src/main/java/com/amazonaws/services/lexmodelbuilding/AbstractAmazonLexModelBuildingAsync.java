@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -327,6 +327,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     }
 
     @Override
+    public java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest request) {
+
+        return getImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetImportRequest, GetImportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIntentResult> getIntentAsync(GetIntentRequest request) {
 
         return getIntentAsync(request, null);
@@ -465,6 +478,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     @Override
     public java.util.concurrent.Future<PutSlotTypeResult> putSlotTypeAsync(PutSlotTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<PutSlotTypeRequest, PutSlotTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request) {
+
+        return startImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

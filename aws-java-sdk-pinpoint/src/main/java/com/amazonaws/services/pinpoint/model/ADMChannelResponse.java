@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,13 +26,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ADMChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Application id */
+    /** The ID of the application to which the channel applies. */
     private String applicationId;
     /** When was this segment created */
     private String creationDate;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /** If the channel is registered with a credential for authentication. */
+    /**
+     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
+     * attributes.
+     */
     private Boolean hasCredential;
     /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
@@ -48,10 +52,10 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     private Integer version;
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      * 
      * @param applicationId
-     *        Application id
+     *        The ID of the application to which the channel applies.
      */
 
     public void setApplicationId(String applicationId) {
@@ -59,9 +63,9 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      * 
-     * @return Application id
+     * @return The ID of the application to which the channel applies.
      */
 
     public String getApplicationId() {
@@ -69,10 +73,10 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      * 
      * @param applicationId
-     *        Application id
+     *        The ID of the application to which the channel applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,10 +164,14 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
+     * attributes.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
+     *        authenticate push notifications with ADM. Provide your credentials by setting the ClientId and
+     *        ClientSecret attributes.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -171,9 +179,13 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
+     * attributes.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials
+     *         to authenticate push notifications with ADM. Provide your credentials by setting the ClientId and
+     *         ClientSecret attributes.
      */
 
     public Boolean getHasCredential() {
@@ -181,10 +193,14 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
+     * attributes.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
+     *        authenticate push notifications with ADM. Provide your credentials by setting the ClientId and
+     *        ClientSecret attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,9 +210,13 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
+     * attributes.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials
+     *         to authenticate push notifications with ADM. Provide your credentials by setting the ClientId and
+     *         ClientSecret attributes.
      */
 
     public Boolean isHasCredential() {

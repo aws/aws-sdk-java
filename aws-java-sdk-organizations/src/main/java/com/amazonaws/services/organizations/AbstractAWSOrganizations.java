@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -128,7 +128,17 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
+    public DisableAWSServiceAccessResult disableAWSServiceAccess(DisableAWSServiceAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisablePolicyTypeResult disablePolicyType(DisablePolicyTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableAWSServiceAccessResult enableAWSServiceAccess(EnableAWSServiceAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +159,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
 
     @Override
     public LeaveOrganizationResult leaveOrganization(LeaveOrganizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAWSServiceAccessForOrganizationResult listAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

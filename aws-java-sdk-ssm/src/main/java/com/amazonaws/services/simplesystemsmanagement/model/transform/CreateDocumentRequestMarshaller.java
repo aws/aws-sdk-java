@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,10 @@ public class CreateDocumentRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DOCUMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentType").build();
+    private static final MarshallingInfo<String> DOCUMENTFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentFormat").build();
+    private static final MarshallingInfo<String> TARGETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetType").build();
 
     private static final CreateDocumentRequestMarshaller instance = new CreateDocumentRequestMarshaller();
 
@@ -53,6 +57,8 @@ public class CreateDocumentRequestMarshaller {
             protocolMarshaller.marshall(createDocumentRequest.getContent(), CONTENT_BINDING);
             protocolMarshaller.marshall(createDocumentRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createDocumentRequest.getDocumentType(), DOCUMENTTYPE_BINDING);
+            protocolMarshaller.marshall(createDocumentRequest.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
+            protocolMarshaller.marshall(createDocumentRequest.getTargetType(), TARGETTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

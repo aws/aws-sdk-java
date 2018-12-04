@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,8 @@ public class InstancesCountMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShuttingDown").build();
     private static final MarshallingInfo<Integer> STARTFAILED_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartFailed").build();
+    private static final MarshallingInfo<Integer> STOPFAILED_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StopFailed").build();
     private static final MarshallingInfo<Integer> STOPPED_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Stopped").build();
     private static final MarshallingInfo<Integer> STOPPING_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -96,6 +98,7 @@ public class InstancesCountMarshaller {
             protocolMarshaller.marshall(instancesCount.getSetupFailed(), SETUPFAILED_BINDING);
             protocolMarshaller.marshall(instancesCount.getShuttingDown(), SHUTTINGDOWN_BINDING);
             protocolMarshaller.marshall(instancesCount.getStartFailed(), STARTFAILED_BINDING);
+            protocolMarshaller.marshall(instancesCount.getStopFailed(), STOPFAILED_BINDING);
             protocolMarshaller.marshall(instancesCount.getStopped(), STOPPED_BINDING);
             protocolMarshaller.marshall(instancesCount.getStopping(), STOPPING_BINDING);
             protocolMarshaller.marshall(instancesCount.getTerminated(), TERMINATED_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,8 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </p>
  * <p>
  * <p>
- * With Application Auto Scaling, you can automatically scale your AWS resources. The experience is similar to that of
- * <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish
- * the following tasks:
+ * With Application Auto Scaling, you can configure automatic scaling for your scalable AWS resources. You can use
+ * Application Auto Scaling to accomplish the following tasks:
  * </p>
  * <ul>
  * <li>
@@ -39,6 +38,11 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * <li>
  * <p>
  * Scale your resources in response to CloudWatch alarms
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Schedule one-time or recurring scaling actions
  * </p>
  * </li>
  * <li>
@@ -55,7 +59,7 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * <p>
  * Amazon ECS services. For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Auto Scaling</a>
- * in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * </li>
  * <li>
@@ -86,7 +90,26 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * Capacity Automatically with DynamoDB Auto Scaling</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Amazon Aurora Replicas. For more information, see <a
+ * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Amazon Aurora
+ * Auto Scaling with Aurora Replicas</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon SageMaker endpoints. For more information, see <a
+ * href="http://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically Scaling Amazon
+ * SageMaker Models</a>.
+ * </p>
+ * </li>
  * </ul>
+ * <p>
+ * To configure automatic scaling for multiple resources across multiple services, use AWS Auto Scaling to create a
+ * scaling plan for your application. For more information, see <a href="http://aws.amazon.com/autoscaling">AWS Auto
+ * Scaling</a>.
+ * </p>
  * <p>
  * For a list of supported regions, see <a
  * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS Regions and Endpoints: Application
@@ -217,7 +240,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
 
     /**
      * <p>
-     * Provides descriptive information about the scalable targets in the specified namespace.
+     * Gets information about the scalable targets in the specified namespace.
      * </p>
      * <p>
      * You can filter the results using the <code>ResourceIds</code> and <code>ScalableDimension</code> parameters.
@@ -237,7 +260,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
 
     /**
      * <p>
-     * Provides descriptive information about the scalable targets in the specified namespace.
+     * Gets information about the scalable targets in the specified namespace.
      * </p>
      * <p>
      * You can filter the results using the <code>ResourceIds</code> and <code>ScalableDimension</code> parameters.
@@ -413,8 +436,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <p>
      * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scaling policy
-     * applies to the scalable target identified by those three attributes. You cannot create a scaling policy without
-     * first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * applies to the scalable target identified by those three attributes. You cannot create a scaling policy until you
+     * register the scalable target using <a>RegisterScalableTarget</a>.
      * </p>
      * <p>
      * To update a policy, specify its policy name and the parameters that you want to change. Any parameters that you
@@ -439,8 +462,8 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <p>
      * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scaling policy
-     * applies to the scalable target identified by those three attributes. You cannot create a scaling policy without
-     * first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * applies to the scalable target identified by those three attributes. You cannot create a scaling policy until you
+     * register the scalable target using <a>RegisterScalableTarget</a>.
      * </p>
      * <p>
      * To update a policy, specify its policy name and the parameters that you want to change. Any parameters that you
@@ -471,7 +494,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * <p>
      * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scheduled
      * action applies to the scalable target identified by those three attributes. You cannot create a scheduled action
-     * without first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * until you register the scalable target using <a>RegisterScalableTarget</a>.
      * </p>
      * <p>
      * To update an action, specify its name and the parameters that you want to change. If you don't specify start and
@@ -498,7 +521,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * <p>
      * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scheduled
      * action applies to the scalable target identified by those three attributes. You cannot create a scheduled action
-     * without first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * until you register the scalable target using <a>RegisterScalableTarget</a>.
      * </p>
      * <p>
      * To update an action, specify its name and the parameters that you want to change. If you don't specify start and
@@ -527,12 +550,12 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * <p>
      * Registers or updates a scalable target. A scalable target is a resource that Application Auto Scaling can scale
      * out or scale in. After you have registered a scalable target, you can use this operation to update the minimum
-     * and maximum values for your scalable dimension.
+     * and maximum values for its scalable dimension.
      * </p>
      * <p>
      * After you register a scalable target, you can create and apply scaling policies using <a>PutScalingPolicy</a>.
-     * You can view the scaling policies for a service namespace using <a>DescribeScalableTargets</a>. If you are no
-     * longer using a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
+     * You can view the scaling policies for a service namespace using <a>DescribeScalableTargets</a>. If you no longer
+     * need a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
      * </p>
      * 
      * @param registerScalableTargetRequest
@@ -547,12 +570,12 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * <p>
      * Registers or updates a scalable target. A scalable target is a resource that Application Auto Scaling can scale
      * out or scale in. After you have registered a scalable target, you can use this operation to update the minimum
-     * and maximum values for your scalable dimension.
+     * and maximum values for its scalable dimension.
      * </p>
      * <p>
      * After you register a scalable target, you can create and apply scaling policies using <a>PutScalingPolicy</a>.
-     * You can view the scaling policies for a service namespace using <a>DescribeScalableTargets</a>. If you are no
-     * longer using a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
+     * You can view the scaling policies for a service namespace using <a>DescribeScalableTargets</a>. If you no longer
+     * need a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
      * </p>
      * 
      * @param registerScalableTargetRequest

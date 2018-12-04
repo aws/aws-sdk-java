@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,20 +19,20 @@ import javax.annotation.Generated;
  * The requested operation failed because you provided invalid values for one or more of the request parameters. This
  * exception includes a reason that contains additional information about the violated limit:
  * </p>
+ * <note>
+ * <p>
+ * Some of the reasons in the following list might not be applicable to this specific API or operation:
+ * </p>
+ * </note>
  * <ul>
  * <li>
  * <p>
- * INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a party.
+ * IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
  * </p>
  * </li>
  * <li>
  * <p>
- * INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
- * </p>
- * </li>
- * <li>
- * <p>
- * INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+ * INPUT_REQUIRED: You must include a value for all required parameters.
  * </p>
  * </li>
  * <li>
@@ -48,6 +48,48 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a party.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call of the
+ * operation.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_ROLE_NAME: You provided a role name that is not valid. A role name can’t begin with the reserved prefix
+ * 'AWSServiceRoleFor'.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
  * </p>
  * </li>
  * <li>
@@ -68,37 +110,6 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
- * </p>
- * </li>
- * <li>
- * <p>
- * IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
- * </p>
- * </li>
- * <li>
- * <p>
- * INVALID_PATTERN: You provided a value that doesn't match the required pattern.
- * </p>
- * </li>
- * <li>
- * <p>
- * INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
- * </p>
- * </li>
- * <li>
- * <p>
- * INPUT_REQUIRED: You must include a value for all required parameters.
- * </p>
- * </li>
- * <li>
- * <p>
- * INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call of the
- * operation.
- * </p>
- * </li>
- * <li>
- * <p>
- * MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
  * </p>
  * </li>
  * <li>

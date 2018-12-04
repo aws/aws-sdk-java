@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Contains the results of the <a>RebuildWorkspaces</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces" target="_top">AWS API
  *      Documentation</a>
@@ -28,17 +25,17 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpaces that could not be rebuilt.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest> failedRequests;
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpaces that could not be rebuilt.
      * </p>
      * 
-     * @return An array of structures representing any WorkSpaces that could not be rebuilt.
+     * @return Information about the WorkSpaces that could not be rebuilt.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -50,11 +47,11 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpaces that could not be rebuilt.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures representing any WorkSpaces that could not be rebuilt.
+     *        Information about the WorkSpaces that could not be rebuilt.
      */
 
     public void setFailedRequests(java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
@@ -68,7 +65,7 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpaces that could not be rebuilt.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +74,7 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures representing any WorkSpaces that could not be rebuilt.
+     *        Information about the WorkSpaces that could not be rebuilt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +90,11 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpaces that could not be rebuilt.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures representing any WorkSpaces that could not be rebuilt.
+     *        Information about the WorkSpaces that could not be rebuilt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

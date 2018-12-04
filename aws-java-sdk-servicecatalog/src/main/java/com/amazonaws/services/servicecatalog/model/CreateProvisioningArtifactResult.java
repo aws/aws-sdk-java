@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,13 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      */
     private ProvisioningArtifactDetail provisioningArtifactDetail;
     /**
      * <p>
-     * Additional information about the creation request for the provisioning artifact.
+     * The URL of the CloudFormation template in Amazon S3, in JSON format.
      * </p>
      */
     private java.util.Map<String, String> info;
@@ -44,11 +44,11 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactDetail
-     *        The resulting detailed provisioning artifact information.
+     *        Information about the provisioning artifact.
      */
 
     public void setProvisioningArtifactDetail(ProvisioningArtifactDetail provisioningArtifactDetail) {
@@ -57,10 +57,10 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
-     * @return The resulting detailed provisioning artifact information.
+     * @return Information about the provisioning artifact.
      */
 
     public ProvisioningArtifactDetail getProvisioningArtifactDetail() {
@@ -69,11 +69,11 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactDetail
-     *        The resulting detailed provisioning artifact information.
+     *        Information about the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the creation request for the provisioning artifact.
+     * The URL of the CloudFormation template in Amazon S3, in JSON format.
      * </p>
      * 
-     * @return Additional information about the creation request for the provisioning artifact.
+     * @return The URL of the CloudFormation template in Amazon S3, in JSON format.
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -96,11 +96,11 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the creation request for the provisioning artifact.
+     * The URL of the CloudFormation template in Amazon S3, in JSON format.
      * </p>
      * 
      * @param info
-     *        Additional information about the creation request for the provisioning artifact.
+     *        The URL of the CloudFormation template in Amazon S3, in JSON format.
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -109,11 +109,11 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the creation request for the provisioning artifact.
+     * The URL of the CloudFormation template in Amazon S3, in JSON format.
      * </p>
      * 
      * @param info
-     *        Additional information about the creation request for the provisioning artifact.
+     *        The URL of the CloudFormation template in Amazon S3, in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

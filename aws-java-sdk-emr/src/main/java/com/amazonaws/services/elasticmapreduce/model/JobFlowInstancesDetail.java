@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
     private String masterInstanceType;
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      */
     private String masterPublicDnsName;
@@ -181,11 +182,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The DNS name of the master node.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      */
 
     public void setMasterPublicDnsName(String masterPublicDnsName) {
@@ -194,10 +197,12 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
-     * @return The DNS name of the master node.
+     * @return The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On
+     *         a public subnet, this is the public DNS name.
      */
 
     public String getMasterPublicDnsName() {
@@ -206,11 +211,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The DNS name of the master node.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

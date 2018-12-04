@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1061,6 +1061,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeEnableDirectory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppliedSchemaVersionResult> getAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest request) {
+
+        return getAppliedSchemaVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppliedSchemaVersionResult> getAppliedSchemaVersionAsync(final GetAppliedSchemaVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAppliedSchemaVersionRequest, GetAppliedSchemaVersionResult> asyncHandler) {
+        final GetAppliedSchemaVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAppliedSchemaVersionResult>() {
+            @Override
+            public GetAppliedSchemaVersionResult call() throws Exception {
+                GetAppliedSchemaVersionResult result = null;
+
+                try {
+                    result = executeGetAppliedSchemaVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2183,6 +2216,72 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeUpdateTypedLinkFacet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeAppliedSchemaResult> upgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest request) {
+
+        return upgradeAppliedSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeAppliedSchemaResult> upgradeAppliedSchemaAsync(final UpgradeAppliedSchemaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpgradeAppliedSchemaRequest, UpgradeAppliedSchemaResult> asyncHandler) {
+        final UpgradeAppliedSchemaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpgradeAppliedSchemaResult>() {
+            @Override
+            public UpgradeAppliedSchemaResult call() throws Exception {
+                UpgradeAppliedSchemaResult result = null;
+
+                try {
+                    result = executeUpgradeAppliedSchema(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradePublishedSchemaResult> upgradePublishedSchemaAsync(UpgradePublishedSchemaRequest request) {
+
+        return upgradePublishedSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradePublishedSchemaResult> upgradePublishedSchemaAsync(final UpgradePublishedSchemaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpgradePublishedSchemaRequest, UpgradePublishedSchemaResult> asyncHandler) {
+        final UpgradePublishedSchemaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpgradePublishedSchemaResult>() {
+            @Override
+            public UpgradePublishedSchemaResult call() throws Exception {
+                UpgradePublishedSchemaResult result = null;
+
+                try {
+                    result = executeUpgradePublishedSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

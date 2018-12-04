@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -175,9 +175,10 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * </p>
      * <p>
      * If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an
-     * external destination (such as an Amazon Kinesis stream or a Firehose delivery stream), you add the relevant
-     * configuration to your application using this operation. You can configure one or more outputs for your
-     * application. Each output configuration maps an in-application stream and an external destination.
+     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an Amazon
+     * Lambda function), you add the relevant configuration to your application using this operation. You can configure
+     * one or more outputs for your application. Each output configuration maps an in-application stream and an external
+     * destination.
      * </p>
      * <p>
      * You can use one of the output configurations to deliver data from your in-application error stream to an external
@@ -212,9 +213,10 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * </p>
      * <p>
      * If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an
-     * external destination (such as an Amazon Kinesis stream or a Firehose delivery stream), you add the relevant
-     * configuration to your application using this operation. You can configure one or more outputs for your
-     * application. Each output configuration maps an in-application stream and an external destination.
+     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an Amazon
+     * Lambda function), you add the relevant configuration to your application using this operation. You can configure
+     * one or more outputs for your application. Each output configuration maps an in-application stream and an external
+     * destination.
      * </p>
      * <p>
      * You can use one of the output configurations to deliver data from your in-application error stream to an external
@@ -318,7 +320,7 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
     /**
      * <p>
      * Creates an Amazon Kinesis Analytics application. You can configure each application with one streaming source as
-     * input, application code to process the input, and up to five streaming destinations where you want Amazon Kinesis
+     * input, application code to process the input, and up to three destinations where you want Amazon Kinesis
      * Analytics to write the output data from your application. For an overview, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How it Works</a>.
      * </p>
@@ -333,7 +335,7 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * </p>
      * <p>
      * In the output configuration, you can configure the application to write data from in-application streams created
-     * in your applications to up to five streaming destinations.
+     * in your applications to up to three destinations.
      * </p>
      * <p>
      * To read data from your source stream or write data to destination streams, Amazon Kinesis Analytics needs your
@@ -357,7 +359,7 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
     /**
      * <p>
      * Creates an Amazon Kinesis Analytics application. You can configure each application with one streaming source as
-     * input, application code to process the input, and up to five streaming destinations where you want Amazon Kinesis
+     * input, application code to process the input, and up to three destinations where you want Amazon Kinesis
      * Analytics to write the output data from your application. For an overview, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How it Works</a>.
      * </p>
@@ -372,7 +374,7 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * </p>
      * <p>
      * In the output configuration, you can configure the application to write data from in-application streams created
-     * in your applications to up to five streaming destinations.
+     * in your applications to up to three destinations.
      * </p>
      * <p>
      * To read data from your source stream or write data to destination streams, Amazon Kinesis Analytics needs your
@@ -661,8 +663,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
     /**
      * <p>
      * Infers a schema by evaluating sample records on the specified streaming source (Amazon Kinesis stream or Amazon
-     * Kinesis Firehose delivery stream). In the response, the operation returns the inferred schema and also the sample
-     * records that the operation used to infer the schema.
+     * Kinesis Firehose delivery stream) or S3 object. In the response, the operation returns the inferred schema and
+     * also the sample records that the operation used to infer the schema.
      * </p>
      * <p>
      * You can use the inferred schema when configuring a streaming source for your application. For conceptual
@@ -686,8 +688,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
     /**
      * <p>
      * Infers a schema by evaluating sample records on the specified streaming source (Amazon Kinesis stream or Amazon
-     * Kinesis Firehose delivery stream). In the response, the operation returns the inferred schema and also the sample
-     * records that the operation used to infer the schema.
+     * Kinesis Firehose delivery stream) or S3 object. In the response, the operation returns the inferred schema and
+     * also the sample records that the operation used to infer the schema.
      * </p>
      * <p>
      * You can use the inferred schema when configuring a streaming source for your application. For conceptual

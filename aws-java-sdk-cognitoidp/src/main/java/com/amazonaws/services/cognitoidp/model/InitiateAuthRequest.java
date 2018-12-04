@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -63,6 +69,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -85,9 +98,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-     * (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required),
-     * <code>DEVICE_KEY</code>
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
      * <li>
@@ -112,6 +124,19 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String clientId;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private UserContextDataType userContextData;
 
     /**
      * <p>
@@ -127,6 +152,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
      * to be used for next challenge execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -150,6 +181,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>CUSTOM_AUTH</code>: Custom authentication flow.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
@@ -168,6 +206,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
      *        variables to be used for next challenge execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *        the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -189,6 +233,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
+     *        is not found in the user pool.
      *        </p>
      *        </li>
      *        </ul>
@@ -217,6 +268,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -238,6 +295,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>CUSTOM_AUTH</code>: Custom authentication flow.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
@@ -255,6 +319,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
      *         variables to be used for next challenge execution.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *         the next challenge or tokens.
      *         </p>
      *         </li>
      *         </ul>
@@ -276,6 +346,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *         If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the
+     *         USERNAME is not found in the user pool.
      *         </p>
      *         </li>
      *         </ul>
@@ -304,6 +381,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -323,6 +406,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -345,6 +435,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        variables to be used for next challenge execution.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *        the next challenge or tokens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Valid values include:
@@ -364,6 +460,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
+     *        is not found in the user pool.
      *        </p>
      *        </li>
      *        </ul>
@@ -394,6 +497,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -413,6 +522,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -435,6 +551,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        variables to be used for next challenge execution.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *        the next challenge or tokens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Valid values include:
@@ -454,6 +576,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
+     *        is not found in the user pool.
      *        </p>
      *        </li>
      *        </ul>
@@ -482,6 +611,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -501,6 +636,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -523,6 +665,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        variables to be used for next challenge execution.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *        the next challenge or tokens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Valid values include:
@@ -542,6 +690,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>CUSTOM_AUTH</code>: Custom authentication flow.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
+     *        is not found in the user pool.
      *        </p>
      *        </li>
      *        </ul>
@@ -570,9 +725,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-     * (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required),
-     * <code>DEVICE_KEY</code>
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
      * <li>
@@ -595,9 +749,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     *         For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
      *         <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-     *         <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code>
+     *         <code>DEVICE_KEY</code>
      *         </p>
      *         </li>
      *         <li>
@@ -626,9 +780,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-     * (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required),
-     * <code>DEVICE_KEY</code>
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
      * <li>
@@ -652,9 +805,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
      *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-     *        <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code>
+     *        <code>DEVICE_KEY</code>
      *        </p>
      *        </li>
      *        <li>
@@ -683,9 +836,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-     * (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required),
-     * <code>DEVICE_KEY</code>
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
      * <li>
@@ -709,9 +861,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
      *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-     *        <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code>
+     *        <code>DEVICE_KEY</code>
      *        </p>
      *        </li>
      *        <li>
@@ -858,6 +1010,92 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InitiateAuthRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setUserContextData(UserContextDataType userContextData) {
+        this.userContextData = userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public UserContextDataType getUserContextData() {
+        return this.userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InitiateAuthRequest withUserContextData(UserContextDataType userContextData) {
+        setUserContextData(userContextData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -875,7 +1113,11 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getClientMetadata() != null)
             sb.append("ClientMetadata: ").append(getClientMetadata()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: ").append(getClientId());
+            sb.append("ClientId: ").append(getClientId()).append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
+        if (getUserContextData() != null)
+            sb.append("UserContextData: ").append(getUserContextData());
         sb.append("}");
         return sb.toString();
     }
@@ -906,6 +1148,14 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
             return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
+            return false;
+        if (other.getUserContextData() == null ^ this.getUserContextData() == null)
+            return false;
+        if (other.getUserContextData() != null && other.getUserContextData().equals(this.getUserContextData()) == false)
+            return false;
         return true;
     }
 
@@ -918,6 +1168,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getAuthParameters() == null) ? 0 : getAuthParameters().hashCode());
         hashCode = prime * hashCode + ((getClientMetadata() == null) ? 0 : getClientMetadata().hashCode());
         hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
+        hashCode = prime * hashCode + ((getUserContextData() == null) ? 0 : getUserContextData().hashCode());
         return hashCode;
     }
 

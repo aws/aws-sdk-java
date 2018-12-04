@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class ListPortfoliosResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * List of detailed portfolio information objects.
+     * Information about the portfolios.
      * </p>
      */
     private java.util.List<PortfolioDetail> portfolioDetails;
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * List of detailed portfolio information objects.
+     * Information about the portfolios.
      * </p>
      * 
-     * @return List of detailed portfolio information objects.
+     * @return Information about the portfolios.
      */
 
     public java.util.List<PortfolioDetail> getPortfolioDetails() {
@@ -51,11 +51,11 @@ public class ListPortfoliosResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * List of detailed portfolio information objects.
+     * Information about the portfolios.
      * </p>
      * 
      * @param portfolioDetails
-     *        List of detailed portfolio information objects.
+     *        Information about the portfolios.
      */
 
     public void setPortfolioDetails(java.util.Collection<PortfolioDetail> portfolioDetails) {
@@ -69,7 +69,7 @@ public class ListPortfoliosResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * List of detailed portfolio information objects.
+     * Information about the portfolios.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListPortfoliosResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param portfolioDetails
-     *        List of detailed portfolio information objects.
+     *        Information about the portfolios.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListPortfoliosResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * List of detailed portfolio information objects.
+     * Information about the portfolios.
      * </p>
      * 
      * @param portfolioDetails
-     *        List of detailed portfolio information objects.
+     *        Information about the portfolios.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class ListPortfoliosResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -124,12 +124,12 @@ public class ListPortfoliosResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
-     * @return The page token to use to retrieve the next page of results for this operation. If there are no more
-     *         pages, this value is null.
+     * @return The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *         is null.
      */
 
     public String getNextPageToken() {
@@ -138,13 +138,13 @@ public class ListPortfoliosResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

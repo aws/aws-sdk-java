@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed provisioning artifact information.
+ * Information about a provisioning artifact (also known as a version) for a product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactDetail"
@@ -30,49 +30,65 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name assigned to the provisioning artifact.
+     * The name of the provisioning artifact.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The text description of the provisioning artifact.
+     * The description of the provisioning artifact.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
-     * products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     */
+    private Boolean active;
 
     /**
      * <p>
-     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param id
-     *        The identifier of the provisioning artifact. This is sometimes referred to as the product version.
+     *        The identifier of the provisioning artifact.
      */
 
     public void setId(String id) {
@@ -81,10 +97,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
-     * @return The identifier of the provisioning artifact. This is sometimes referred to as the product version.
+     * @return The identifier of the provisioning artifact.
      */
 
     public String getId() {
@@ -93,11 +109,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param id
-     *        The identifier of the provisioning artifact. This is sometimes referred to as the product version.
+     *        The identifier of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +124,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
      * @param name
-     *        The name assigned to the provisioning artifact.
+     *        The name of the provisioning artifact.
      */
 
     public void setName(String name) {
@@ -121,10 +137,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
-     * @return The name assigned to the provisioning artifact.
+     * @return The name of the provisioning artifact.
      */
 
     public String getName() {
@@ -133,11 +149,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
      * @param name
-     *        The name assigned to the provisioning artifact.
+     *        The name of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +164,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The text description of the provisioning artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the provisioning artifact.
+     *        The description of the provisioning artifact.
      */
 
     public void setDescription(String description) {
@@ -161,10 +177,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The text description of the provisioning artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
-     * @return The text description of the provisioning artifact.
+     * @return The description of the provisioning artifact.
      */
 
     public String getDescription() {
@@ -173,11 +189,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The text description of the provisioning artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the provisioning artifact.
+     *        The description of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,24 +204,44 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
-     * products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact. The following provisioning artifact types are used by AWS
-     *        Marketplace products:</p>
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -215,23 +251,43 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
-     * products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the provisioning artifact. The following provisioning artifact types are used by AWS
-     *         Marketplace products:</p>
+     * @return The type of provisioning artifact.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         <code>MARKETPLACE_AMI</code> - AMI products.
+     *         <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *         <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *         </p>
+     *         </li>
      * @see ProvisioningArtifactType
      */
 
@@ -241,24 +297,44 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
-     * products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact. The following provisioning artifact types are used by AWS
-     *        Marketplace products:</p>
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
@@ -270,24 +346,44 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
-     * products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact. The following provisioning artifact types are used by AWS
-     *        Marketplace products:</p>
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -297,24 +393,44 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
-     * products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact. The following provisioning artifact types are used by AWS
-     *        Marketplace products:</p>
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
@@ -326,11 +442,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -339,10 +455,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -351,17 +467,69 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProvisioningArtifactDetail withCreatedTime(java.util.Date createdTime) {
         setCreatedTime(createdTime);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     * 
+     * @param active
+     *        Indicates whether the product version is active.
+     */
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     * 
+     * @return Indicates whether the product version is active.
+     */
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     * 
+     * @param active
+     *        Indicates whether the product version is active.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisioningArtifactDetail withActive(Boolean active) {
+        setActive(active);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     * 
+     * @return Indicates whether the product version is active.
+     */
+
+    public Boolean isActive() {
+        return this.active;
     }
 
     /**
@@ -384,7 +552,9 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getActive() != null)
+            sb.append("Active: ").append(getActive());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +589,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getActive() == null ^ this.getActive() == null)
+            return false;
+        if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
+            return false;
         return true;
     }
 
@@ -432,6 +606,7 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         return hashCode;
     }
 

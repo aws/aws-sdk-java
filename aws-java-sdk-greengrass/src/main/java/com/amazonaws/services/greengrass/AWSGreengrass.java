@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -245,6 +245,48 @@ public interface AWSGreengrass {
     CreateLoggerDefinitionVersionResult createLoggerDefinitionVersion(CreateLoggerDefinitionVersionRequest createLoggerDefinitionVersionRequest);
 
     /**
+     * Creates a resource definition which contains a list of resources to be used in a group. You can create an initial
+     * version of the definition by providing a list of resources now, or use ``CreateResourceDefinitionVersion`` later.
+     * 
+     * @param createResourceDefinitionRequest
+     * @return Result of the CreateResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.CreateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateResourceDefinitionResult createResourceDefinition(CreateResourceDefinitionRequest createResourceDefinitionRequest);
+
+    /**
+     * Create a version of a resource definition that has already been defined.
+     * 
+     * @param createResourceDefinitionVersionRequest
+     * @return Result of the CreateResourceDefinitionVersion operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.CreateResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateResourceDefinitionVersionResult createResourceDefinitionVersion(CreateResourceDefinitionVersionRequest createResourceDefinitionVersionRequest);
+
+    /**
+     * Creates an Iot Job that will trigger your Greengrass Cores to update the software they are running.
+     * 
+     * @param createSoftwareUpdateJobRequest
+     * @return Result of the CreateSoftwareUpdateJob operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @sample AWSGreengrass.CreateSoftwareUpdateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSoftwareUpdateJobResult createSoftwareUpdateJob(CreateSoftwareUpdateJobRequest createSoftwareUpdateJobRequest);
+
+    /**
      * Creates a subscription definition. You may optionally provide the initial version of the subscription definition
      * or use ``CreateSubscriptionDefinitionVersion`` at a later time.
      * 
@@ -336,6 +378,19 @@ public interface AWSGreengrass {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteLoggerDefinitionResult deleteLoggerDefinition(DeleteLoggerDefinitionRequest deleteLoggerDefinitionRequest);
+
+    /**
+     * Deletes a resource definition.
+     * 
+     * @param deleteResourceDefinitionRequest
+     * @return Result of the DeleteResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.DeleteResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteResourceDefinitionResult deleteResourceDefinition(DeleteResourceDefinitionRequest deleteResourceDefinitionRequest);
 
     /**
      * Deletes a subscription definition. The subscription definition must not have been used in a deployment.
@@ -584,6 +639,32 @@ public interface AWSGreengrass {
     GetLoggerDefinitionVersionResult getLoggerDefinitionVersion(GetLoggerDefinitionVersionRequest getLoggerDefinitionVersionRequest);
 
     /**
+     * Retrieves information about a resource definition, such as its creation time and latest version.
+     * 
+     * @param getResourceDefinitionRequest
+     * @return Result of the GetResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.GetResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourceDefinitionResult getResourceDefinition(GetResourceDefinitionRequest getResourceDefinitionRequest);
+
+    /**
+     * Retrieves information about a resource definition version, such as which resources are included in the version.
+     * 
+     * @param getResourceDefinitionVersionRequest
+     * @return Result of the GetResourceDefinitionVersion operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.GetResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourceDefinitionVersionResult getResourceDefinitionVersion(GetResourceDefinitionVersionRequest getResourceDefinitionVersionRequest);
+
+    /**
      * Retrieves the service role that is attached to the account.
      * 
      * @param getServiceRoleForAccountRequest
@@ -771,6 +852,30 @@ public interface AWSGreengrass {
     ListLoggerDefinitionsResult listLoggerDefinitions(ListLoggerDefinitionsRequest listLoggerDefinitionsRequest);
 
     /**
+     * Lists the versions of a resource definition.
+     * 
+     * @param listResourceDefinitionVersionsRequest
+     * @return Result of the ListResourceDefinitionVersions operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.ListResourceDefinitionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourceDefinitionVersionsResult listResourceDefinitionVersions(ListResourceDefinitionVersionsRequest listResourceDefinitionVersionsRequest);
+
+    /**
+     * Retrieves a list of resource definitions.
+     * 
+     * @param listResourceDefinitionsRequest
+     * @return Result of the ListResourceDefinitions operation returned by the service.
+     * @sample AWSGreengrass.ListResourceDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourceDefinitionsResult listResourceDefinitions(ListResourceDefinitionsRequest listResourceDefinitionsRequest);
+
+    /**
      * Lists the versions of a subscription definition.
      * 
      * @param listSubscriptionDefinitionVersionsRequest
@@ -906,6 +1011,19 @@ public interface AWSGreengrass {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateLoggerDefinitionResult updateLoggerDefinition(UpdateLoggerDefinitionRequest updateLoggerDefinitionRequest);
+
+    /**
+     * Updates a resource definition.
+     * 
+     * @param updateResourceDefinitionRequest
+     * @return Result of the UpdateResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.UpdateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateResourceDefinitionResult updateResourceDefinition(UpdateResourceDefinitionRequest updateResourceDefinitionRequest);
 
     /**
      * Updates a subscription definition.

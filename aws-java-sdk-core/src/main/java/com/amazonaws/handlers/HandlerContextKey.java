@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,8 +43,16 @@ import com.amazonaws.auth.AWSCredentials;
  * </pre>
  */
 public class HandlerContextKey<T> {
-    /** The key under which the request credentials are set. */
+
+    /**
+     * The key under which the request credentials are set.
+     **/
     public static final HandlerContextKey<AWSCredentials> AWS_CREDENTIALS = new HandlerContextKey<AWSCredentials>("AWSCredentials");
+
+    /**
+     * The region used to sign the request.
+     */
+    public static final HandlerContextKey<String> SIGNING_REGION = new HandlerContextKey<String>("SigningRegion");
 
     private final String name;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class UserStorageMetadata implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The amount of storage utilized, in bytes.
+     * The amount of storage used, in bytes.
      * </p>
      */
     private Long storageUtilizedInBytes;
@@ -43,11 +43,11 @@ public class UserStorageMetadata implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The amount of storage utilized, in bytes.
+     * The amount of storage used, in bytes.
      * </p>
      * 
      * @param storageUtilizedInBytes
-     *        The amount of storage utilized, in bytes.
+     *        The amount of storage used, in bytes.
      */
 
     public void setStorageUtilizedInBytes(Long storageUtilizedInBytes) {
@@ -56,10 +56,10 @@ public class UserStorageMetadata implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The amount of storage utilized, in bytes.
+     * The amount of storage used, in bytes.
      * </p>
      * 
-     * @return The amount of storage utilized, in bytes.
+     * @return The amount of storage used, in bytes.
      */
 
     public Long getStorageUtilizedInBytes() {
@@ -68,11 +68,11 @@ public class UserStorageMetadata implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The amount of storage utilized, in bytes.
+     * The amount of storage used, in bytes.
      * </p>
      * 
      * @param storageUtilizedInBytes
-     *        The amount of storage utilized, in bytes.
+     *        The amount of storage used, in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

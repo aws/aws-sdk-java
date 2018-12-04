@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     * <code>Type</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     * <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating
+     * or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used
+     * instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * </li>
      * <li>
@@ -176,8 +179,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     * <code>Type</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     * <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating
+     * or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used
+     * instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * </li>
      * <li>
@@ -200,8 +206,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     *         <code>Type</code>
+     *         <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     *         <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
+     *         updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     *         <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is
+     *         used instead of <code>ActivatedRule|OverrideAction</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -231,8 +240,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     * <code>Type</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     * <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating
+     * or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used
+     * instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * </li>
      * <li>
@@ -256,8 +268,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     *        <code>Type</code>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     *        <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
+     *        updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     *        <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is
+     *        used instead of <code>ActivatedRule|OverrideAction</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -292,8 +307,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     * <code>Type</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     * <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating
+     * or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used
+     * instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * </li>
      * <li>
@@ -322,8 +340,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     *        <code>Type</code>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     *        <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
+     *        updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     *        <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is
+     *        used instead of <code>ActivatedRule|OverrideAction</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -360,8 +381,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     * <code>Type</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     * <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating
+     * or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used
+     * instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * </li>
      * <li>
@@ -385,8 +409,11 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
-     *        <code>Type</code>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
+     *        <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
+     *        updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     *        <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is
+     *        used instead of <code>ActivatedRule|OverrideAction</code>.
      *        </p>
      *        </li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class GetLifecyclePolicyResult extends com.amazonaws.AmazonWebServiceResu
     private String repositoryName;
     /**
      * <p>
-     * The JSON repository policy text.
+     * The JSON lifecycle policy text.
      * </p>
      */
     private String lifecyclePolicyText;
@@ -130,11 +130,11 @@ public class GetLifecyclePolicyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The JSON repository policy text.
+     * The JSON lifecycle policy text.
      * </p>
      * 
      * @param lifecyclePolicyText
-     *        The JSON repository policy text.
+     *        The JSON lifecycle policy text.
      */
 
     public void setLifecyclePolicyText(String lifecyclePolicyText) {
@@ -143,10 +143,10 @@ public class GetLifecyclePolicyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The JSON repository policy text.
+     * The JSON lifecycle policy text.
      * </p>
      * 
-     * @return The JSON repository policy text.
+     * @return The JSON lifecycle policy text.
      */
 
     public String getLifecyclePolicyText() {
@@ -155,11 +155,11 @@ public class GetLifecyclePolicyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The JSON repository policy text.
+     * The JSON lifecycle policy text.
      * </p>
      * 
      * @param lifecyclePolicyText
-     *        The JSON repository policy text.
+     *        The JSON lifecycle policy text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

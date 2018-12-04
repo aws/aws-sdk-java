@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class GetCrawlersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of Crawlers to return on each call.
+     * The number of crawlers to return on each call.
      * </p>
      */
     private Integer maxResults;
@@ -40,11 +40,11 @@ public class GetCrawlersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of Crawlers to return on each call.
+     * The number of crawlers to return on each call.
      * </p>
      * 
      * @param maxResults
-     *        The number of Crawlers to return on each call.
+     *        The number of crawlers to return on each call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -53,10 +53,10 @@ public class GetCrawlersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of Crawlers to return on each call.
+     * The number of crawlers to return on each call.
      * </p>
      * 
-     * @return The number of Crawlers to return on each call.
+     * @return The number of crawlers to return on each call.
      */
 
     public Integer getMaxResults() {
@@ -65,11 +65,11 @@ public class GetCrawlersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of Crawlers to return on each call.
+     * The number of crawlers to return on each call.
      * </p>
      * 
      * @param maxResults
-     *        The number of Crawlers to return on each call.
+     *        The number of crawlers to return on each call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

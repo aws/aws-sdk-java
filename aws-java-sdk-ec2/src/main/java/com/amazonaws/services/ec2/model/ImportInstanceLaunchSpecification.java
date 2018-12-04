@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,8 +60,8 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
-     * >Instance Types</a> in the VM Import/Export User Guide.
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.
      * </p>
      */
     private String instanceType;
@@ -91,9 +91,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     private String subnetId;
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data to make available to the instance.
      * </p>
      */
     private UserData userData;
@@ -443,13 +441,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
-     * >Instance Types</a> in the VM Import/Export User Guide.
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information about the instance types that you can import, see <a href=
-     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *        The instance type. For more information about the instance types that you can import, see <a
+     *        href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
@@ -461,12 +459,12 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
-     * >Instance Types</a> in the VM Import/Export User Guide.
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @return The instance type. For more information about the instance types that you can import, see <a
-     *         href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *         href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *         >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
@@ -478,13 +476,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
-     * >Instance Types</a> in the VM Import/Export User Guide.
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information about the instance types that you can import, see <a href=
-     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *        The instance type. For more information about the instance types that you can import, see <a
+     *        href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
@@ -498,13 +496,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
-     * >Instance Types</a> in the VM Import/Export User Guide.
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information about the instance types that you can import, see <a href=
-     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *        The instance type. For more information about the instance types that you can import, see <a
+     *        href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
@@ -516,13 +514,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
-     * >Instance Types</a> in the VM Import/Export User Guide.
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. For more information about the instance types that you can import, see <a href=
-     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *        The instance type. For more information about the instance types that you can import, see <a
+     *        href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
@@ -707,15 +705,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data to make available to the instance.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
+     *        The Base64-encoded user data to make available to the instance.
      */
 
     public void setUserData(UserData userData) {
@@ -724,14 +718,10 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data to make available to the instance.
      * </p>
      * 
-     * @return The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     *         Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *         Base64-encoded text.
+     * @return The Base64-encoded user data to make available to the instance.
      */
 
     public UserData getUserData() {
@@ -740,15 +730,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data to make available to the instance.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
+     *        The Base64-encoded user data to make available to the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

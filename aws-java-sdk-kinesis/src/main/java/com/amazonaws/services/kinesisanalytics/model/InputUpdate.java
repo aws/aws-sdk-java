@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,15 +48,15 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
     private InputProcessingConfigurationUpdate inputProcessingConfigurationUpdate;
     /**
      * <p>
-     * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
-     * ARN.
+     * If an Amazon Kinesis stream is the streaming source to be updated, provides an updated stream Amazon Resource
+     * Name (ARN) and IAM role ARN.
      * </p>
      */
     private KinesisStreamsInputUpdate kinesisStreamsInputUpdate;
     /**
      * <p>
      * If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream
-     * Amazon Resource Name (ARN) and IAM role ARN.
+     * ARN and IAM role ARN.
      * </p>
      */
     private KinesisFirehoseInputUpdate kinesisFirehoseInputUpdate;
@@ -200,13 +200,13 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
-     * ARN.
+     * If an Amazon Kinesis stream is the streaming source to be updated, provides an updated stream Amazon Resource
+     * Name (ARN) and IAM role ARN.
      * </p>
      * 
      * @param kinesisStreamsInputUpdate
-     *        If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM
-     *        role ARN.
+     *        If an Amazon Kinesis stream is the streaming source to be updated, provides an updated stream Amazon
+     *        Resource Name (ARN) and IAM role ARN.
      */
 
     public void setKinesisStreamsInputUpdate(KinesisStreamsInputUpdate kinesisStreamsInputUpdate) {
@@ -215,12 +215,12 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
-     * ARN.
+     * If an Amazon Kinesis stream is the streaming source to be updated, provides an updated stream Amazon Resource
+     * Name (ARN) and IAM role ARN.
      * </p>
      * 
-     * @return If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM
-     *         role ARN.
+     * @return If an Amazon Kinesis stream is the streaming source to be updated, provides an updated stream Amazon
+     *         Resource Name (ARN) and IAM role ARN.
      */
 
     public KinesisStreamsInputUpdate getKinesisStreamsInputUpdate() {
@@ -229,13 +229,13 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
-     * ARN.
+     * If an Amazon Kinesis stream is the streaming source to be updated, provides an updated stream Amazon Resource
+     * Name (ARN) and IAM role ARN.
      * </p>
      * 
      * @param kinesisStreamsInputUpdate
-     *        If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM
-     *        role ARN.
+     *        If an Amazon Kinesis stream is the streaming source to be updated, provides an updated stream Amazon
+     *        Resource Name (ARN) and IAM role ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,12 +247,12 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream
-     * Amazon Resource Name (ARN) and IAM role ARN.
+     * ARN and IAM role ARN.
      * </p>
      * 
      * @param kinesisFirehoseInputUpdate
      *        If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated
-     *        stream Amazon Resource Name (ARN) and IAM role ARN.
+     *        stream ARN and IAM role ARN.
      */
 
     public void setKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate kinesisFirehoseInputUpdate) {
@@ -262,11 +262,11 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream
-     * Amazon Resource Name (ARN) and IAM role ARN.
+     * ARN and IAM role ARN.
      * </p>
      * 
      * @return If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated
-     *         stream Amazon Resource Name (ARN) and IAM role ARN.
+     *         stream ARN and IAM role ARN.
      */
 
     public KinesisFirehoseInputUpdate getKinesisFirehoseInputUpdate() {
@@ -276,12 +276,12 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated stream
-     * Amazon Resource Name (ARN) and IAM role ARN.
+     * ARN and IAM role ARN.
      * </p>
      * 
      * @param kinesisFirehoseInputUpdate
      *        If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated, provides an updated
-     *        stream Amazon Resource Name (ARN) and IAM role ARN.
+     *        stream ARN and IAM role ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

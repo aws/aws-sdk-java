@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
             request.addParameter("Namespace", StringUtils.fromString(putMetricDataRequest.getNamespace()));
         }
 
-        com.amazonaws.internal.SdkInternalList<MetricDatum> metricDataList = (com.amazonaws.internal.SdkInternalList<MetricDatum>) putMetricDataRequest
-                .getMetricData();
-        if (!metricDataList.isEmpty() || !metricDataList.isAutoConstruct()) {
+        if (!putMetricDataRequest.getMetricData().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<MetricDatum>) putMetricDataRequest.getMetricData()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<MetricDatum> metricDataList = (com.amazonaws.internal.SdkInternalList<MetricDatum>) putMetricDataRequest
+                    .getMetricData();
             int metricDataListIndex = 1;
 
             for (MetricDatum metricDataListValue : metricDataList) {
@@ -56,9 +57,10 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
                             StringUtils.fromString(metricDataListValue.getMetricName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) metricDataListValue
-                        .getDimensions();
-                if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {
+                if (!metricDataListValue.getDimensions().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<Dimension>) metricDataListValue.getDimensions()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) metricDataListValue
+                            .getDimensions();
                     int dimensionsListIndex = 1;
 
                     for (Dimension dimensionsListValue : dimensionsList) {

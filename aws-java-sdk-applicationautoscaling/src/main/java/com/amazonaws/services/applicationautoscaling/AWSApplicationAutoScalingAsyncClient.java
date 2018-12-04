@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,9 +31,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * With Application Auto Scaling, you can automatically scale your AWS resources. The experience is similar to that of
- * <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish
- * the following tasks:
+ * With Application Auto Scaling, you can configure automatic scaling for your scalable AWS resources. You can use
+ * Application Auto Scaling to accomplish the following tasks:
  * </p>
  * <ul>
  * <li>
@@ -44,6 +43,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * Scale your resources in response to CloudWatch alarms
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Schedule one-time or recurring scaling actions
  * </p>
  * </li>
  * <li>
@@ -60,7 +64,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Amazon ECS services. For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Auto Scaling</a>
- * in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * </li>
  * <li>
@@ -91,7 +95,26 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Capacity Automatically with DynamoDB Auto Scaling</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Amazon Aurora Replicas. For more information, see <a
+ * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Amazon Aurora
+ * Auto Scaling with Aurora Replicas</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon SageMaker endpoints. For more information, see <a
+ * href="http://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically Scaling Amazon
+ * SageMaker Models</a>.
+ * </p>
+ * </li>
  * </ul>
+ * <p>
+ * To configure automatic scaling for multiple resources across multiple services, use AWS Auto Scaling to create a
+ * scaling plan for your application. For more information, see <a href="http://aws.amazon.com/autoscaling">AWS Auto
+ * Scaling</a>.
+ * </p>
  * <p>
  * For a list of supported regions, see <a
  * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS Regions and Endpoints: Application

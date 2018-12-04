@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,8 +53,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the Amazon Machine Image
      * (AMI) to use when launching Amazon EC2 instances in the job flow. For details about the AMI versions currently
      * supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported
-     * in EMR</a> in the <i>Amazon EMR Developer Guide</i>.
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported in EMR</a> in
+     * the <i>Amazon EMR Developer Guide</i>.
      * </p>
      * <p>
      * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20), you
@@ -102,9 +102,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
-     * Party Applications with Amazon EMR</a>. Currently supported values are:
+     * A list of strings that indicates third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently
+     * supported values are:
      * </p>
      * <ul>
      * <li>
@@ -130,8 +130,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
      * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-     * Developer Guide</a>. Supported values are:
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -282,6 +282,14 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String repoUpgradeOnBoot;
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     */
+    private KerberosAttributes kerberosAttributes;
 
     /**
      * Default constructor for RunJobFlowRequest object. Callers should use the setter or fluent setter (with...)
@@ -436,8 +444,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the Amazon Machine Image
      * (AMI) to use when launching Amazon EC2 instances in the job flow. For details about the AMI versions currently
      * supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported
-     * in EMR</a> in the <i>Amazon EMR Developer Guide</i>.
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported in EMR</a> in
+     * the <i>Amazon EMR Developer Guide</i>.
      * </p>
      * <p>
      * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20), you
@@ -457,8 +465,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        determined by the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the
      *        Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. For details about
      *        the AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     *        href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions
-     *        Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     *        href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported in
+     *        EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      *        <p>
      *        If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20),
      *        you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version
@@ -483,8 +491,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the Amazon Machine Image
      * (AMI) to use when launching Amazon EC2 instances in the job flow. For details about the AMI versions currently
      * supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported
-     * in EMR</a> in the <i>Amazon EMR Developer Guide</i>.
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported in EMR</a> in
+     * the <i>Amazon EMR Developer Guide</i>.
      * </p>
      * <p>
      * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20), you
@@ -503,8 +511,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         determined by the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the
      *         Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. For details about
      *         the AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     *         href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions
-     *         Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     *         href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported in
+     *         EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      *         <p>
      *         If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and
      *         0.20), you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
@@ -529,8 +537,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the Amazon Machine Image
      * (AMI) to use when launching Amazon EC2 instances in the job flow. For details about the AMI versions currently
      * supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported
-     * in EMR</a> in the <i>Amazon EMR Developer Guide</i>.
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported in EMR</a> in
+     * the <i>Amazon EMR Developer Guide</i>.
      * </p>
      * <p>
      * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20), you
@@ -550,8 +558,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        determined by the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the
      *        Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. For details about
      *        the AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     *        href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions
-     *        Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
+     *        href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported in
+     *        EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      *        <p>
      *        If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20),
      *        you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version
@@ -811,9 +819,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
-     * Party Applications with Amazon EMR</a>. Currently supported values are:
+     * A list of strings that indicates third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently
+     * supported values are:
      * </p>
      * <ul>
      * <li>
@@ -833,9 +841,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         </note>
      *         <p>
-     *         A list of strings that indicates third-party software to use. For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     *         Third Party Applications with Amazon EMR</a>. Currently supported values are:
+     *         A list of strings that indicates third-party software to use. For more information, see the <a
+     *         href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>.
+     *         Currently supported values are:
      *         </p>
      *         <ul>
      *         <li>
@@ -864,9 +872,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
-     * Party Applications with Amazon EMR</a>. Currently supported values are:
+     * A list of strings that indicates third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently
+     * supported values are:
      * </p>
      * <ul>
      * <li>
@@ -887,9 +895,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
+     *        A list of strings that indicates third-party software to use. For more information, see the <a
+     *        href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>.
+     *        Currently supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -920,9 +928,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
-     * Party Applications with Amazon EMR</a>. Currently supported values are:
+     * A list of strings that indicates third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently
+     * supported values are:
      * </p>
      * <ul>
      * <li>
@@ -948,9 +956,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
+     *        A list of strings that indicates third-party software to use. For more information, see the <a
+     *        href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>.
+     *        Currently supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -983,9 +991,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
-     * Party Applications with Amazon EMR</a>. Currently supported values are:
+     * A list of strings that indicates third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently
+     * supported values are:
      * </p>
      * <ul>
      * <li>
@@ -1006,9 +1014,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
+     *        A list of strings that indicates third-party software to use. For more information, see the <a
+     *        href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>.
+     *        Currently supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -1039,8 +1047,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
      * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-     * Developer Guide</a>. Supported values are:
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -1095,8 +1103,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         argument list. EMR accepts and forwards the argument list to the corresponding installation script as
      *         bootstrap action arguments. For more information, see
      *         "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
-     *         EMR Developer Guide</a>. Supported values are:
+     *         href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>.
+     *         Supported values are:
      *         </p>
      *         <ul>
      *         <li>
@@ -1159,8 +1167,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
      * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-     * Developer Guide</a>. Supported values are:
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -1216,8 +1224,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        argument list. EMR accepts and forwards the argument list to the corresponding installation script as
      *        bootstrap action arguments. For more information, see
      *        "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
-     *        EMR Developer Guide</a>. Supported values are:
+     *        href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>.
+     *        Supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -1282,8 +1290,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
      * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-     * Developer Guide</a>. Supported values are:
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -1344,8 +1352,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        argument list. EMR accepts and forwards the argument list to the corresponding installation script as
      *        bootstrap action arguments. For more information, see
      *        "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
-     *        EMR Developer Guide</a>. Supported values are:
+     *        href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>.
+     *        Supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -1412,8 +1420,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
      * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-     * Developer Guide</a>. Supported values are:
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -1469,8 +1477,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        argument list. EMR accepts and forwards the argument list to the corresponding installation script as
      *        bootstrap action arguments. For more information, see
      *        "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
-     *        EMR Developer Guide</a>. Supported values are:
+     *        href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>.
+     *        Supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -2433,6 +2441,61 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param kerberosAttributes
+     *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *        configuration. For more information see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *        Authentication</a> in the <i>EMR Management Guide</i>.
+     */
+
+    public void setKerberosAttributes(KerberosAttributes kerberosAttributes) {
+        this.kerberosAttributes = kerberosAttributes;
+    }
+
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @return Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *         configuration. For more information see <a
+     *         href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *         Authentication</a> in the <i>EMR Management Guide</i>.
+     */
+
+    public KerberosAttributes getKerberosAttributes() {
+        return this.kerberosAttributes;
+    }
+
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param kerberosAttributes
+     *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *        configuration. For more information see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *        Authentication</a> in the <i>EMR Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withKerberosAttributes(KerberosAttributes kerberosAttributes) {
+        setKerberosAttributes(kerberosAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2486,7 +2549,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getEbsRootVolumeSize() != null)
             sb.append("EbsRootVolumeSize: ").append(getEbsRootVolumeSize()).append(",");
         if (getRepoUpgradeOnBoot() != null)
-            sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot());
+            sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot()).append(",");
+        if (getKerberosAttributes() != null)
+            sb.append("KerberosAttributes: ").append(getKerberosAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -2589,6 +2654,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getRepoUpgradeOnBoot() != null && other.getRepoUpgradeOnBoot().equals(this.getRepoUpgradeOnBoot()) == false)
             return false;
+        if (other.getKerberosAttributes() == null ^ this.getKerberosAttributes() == null)
+            return false;
+        if (other.getKerberosAttributes() != null && other.getKerberosAttributes().equals(this.getKerberosAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -2619,6 +2688,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getCustomAmiId() == null) ? 0 : getCustomAmiId().hashCode());
         hashCode = prime * hashCode + ((getEbsRootVolumeSize() == null) ? 0 : getEbsRootVolumeSize().hashCode());
         hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
+        hashCode = prime * hashCode + ((getKerberosAttributes() == null) ? 0 : getKerberosAttributes().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,11 +25,11 @@ import com.amazonaws.services.autoscaling.model.*;
  * {@link com.amazonaws.services.autoscaling.AbstractAmazonAutoScalingAsync} instead.
  * </p>
  * <p>
- * <fullname>Auto Scaling</fullname>
+ * <fullname>Amazon EC2 Auto Scaling</fullname>
  * <p>
- * Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined policies,
- * schedules, and health checks. Use this service in conjunction with the Amazon CloudWatch and Elastic Load Balancing
- * services.
+ * Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined
+ * policies, schedules, and health checks. Use this service in conjunction with the AWS Auto Scaling, Amazon CloudWatch,
+ * and Elastic Load Balancing services.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -329,8 +329,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Creates an Auto Scaling group with the specified name and attributes.
      * </p>
      * <p>
-     * If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For
-     * information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.
+     * If you exceed your maximum limit of Auto Scaling groups, the call fails. For information about viewing this
+     * limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
@@ -351,8 +353,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Creates an Auto Scaling group with the specified name and attributes.
      * </p>
      * <p>
-     * If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For
-     * information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.
+     * If you exceed your maximum limit of Auto Scaling groups, the call fails. For information about viewing this
+     * limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
@@ -378,8 +382,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Creates a launch configuration.
      * </p>
      * <p>
-     * If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails.
-     * For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.
+     * If you exceed your maximum limit of launch configurations, the call fails. For information about viewing this
+     * limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
@@ -401,8 +407,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Creates a launch configuration.
      * </p>
      * <p>
-     * If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails.
-     * For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.
+     * If you exceed your maximum limit of launch configurations, the call fails. For information about viewing this
+     * limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
@@ -760,8 +768,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * <p>
      * For information about requesting an increase in these limits, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeAccountLimitsRequest
@@ -778,8 +786,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * <p>
      * For information about requesting an increase in these limits, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeAccountLimitsRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public enum PinpointActions implements Action {
     CreateApp("pinpoint:CreateApp"),
     /** Action for the CreateCampaign operation. */
     CreateCampaign("pinpoint:CreateCampaign"),
+    /** Action for the CreateExportJob operation. */
+    CreateExportJob("pinpoint:CreateExportJob"),
     /** Action for the CreateImportJob operation. */
     CreateImportJob("pinpoint:CreateImportJob"),
     /** Action for the CreateSegment operation. */
@@ -51,6 +53,8 @@ public enum PinpointActions implements Action {
     DeleteCampaign("pinpoint:DeleteCampaign"),
     /** Action for the DeleteEmailChannel operation. */
     DeleteEmailChannel("pinpoint:DeleteEmailChannel"),
+    /** Action for the DeleteEndpoint operation. */
+    DeleteEndpoint("pinpoint:DeleteEndpoint"),
     /** Action for the DeleteEventStream operation. */
     DeleteEventStream("pinpoint:DeleteEventStream"),
     /** Action for the DeleteGcmChannel operation. */
@@ -93,6 +97,10 @@ public enum PinpointActions implements Action {
     GetEndpoint("pinpoint:GetEndpoint"),
     /** Action for the GetEventStream operation. */
     GetEventStream("pinpoint:GetEventStream"),
+    /** Action for the GetExportJob operation. */
+    GetExportJob("pinpoint:GetExportJob"),
+    /** Action for the GetExportJobs operation. */
+    GetExportJobs("pinpoint:GetExportJobs"),
     /** Action for the GetGcmChannel operation. */
     GetGcmChannel("pinpoint:GetGcmChannel"),
     /** Action for the GetImportJob operation. */
@@ -101,6 +109,8 @@ public enum PinpointActions implements Action {
     GetImportJobs("pinpoint:GetImportJobs"),
     /** Action for the GetSegment operation. */
     GetSegment("pinpoint:GetSegment"),
+    /** Action for the GetSegmentExportJobs operation. */
+    GetSegmentExportJobs("pinpoint:GetSegmentExportJobs"),
     /** Action for the GetSegmentImportJobs operation. */
     GetSegmentImportJobs("pinpoint:GetSegmentImportJobs"),
     /** Action for the GetSegmentVersion operation. */

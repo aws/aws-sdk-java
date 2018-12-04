@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains default WorkSpace creation information.
+ * Information about defaults used to create a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultWorkspaceCreationProperties"
@@ -30,42 +30,42 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specifies if the directory is enabled for Amazon WorkDocs.
+     * Indicates whether the directory is enabled for Amazon WorkDocs.
      * </p>
      */
     private Boolean enableWorkDocs;
     /**
      * <p>
-     * A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     * The public IP address to attach to all WorkSpaces that are created or rebuilt.
      * </p>
      */
     private Boolean enableInternetAccess;
     /**
      * <p>
-     * The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.
+     * The organizational unit (OU) in the directory for the WorkSpace machine accounts.
      * </p>
      */
     private String defaultOu;
     /**
      * <p>
-     * The identifier of any custom security groups that are applied to the WorkSpaces when they are created.
+     * The identifier of any security groups to apply to WorkSpaces when they are created.
      * </p>
      */
     private String customSecurityGroupId;
     /**
      * <p>
-     * The WorkSpace user is an administrator on the WorkSpace.
+     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      */
     private Boolean userEnabledAsLocalAdministrator;
 
     /**
      * <p>
-     * Specifies if the directory is enabled for Amazon WorkDocs.
+     * Indicates whether the directory is enabled for Amazon WorkDocs.
      * </p>
      * 
      * @param enableWorkDocs
-     *        Specifies if the directory is enabled for Amazon WorkDocs.
+     *        Indicates whether the directory is enabled for Amazon WorkDocs.
      */
 
     public void setEnableWorkDocs(Boolean enableWorkDocs) {
@@ -74,10 +74,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specifies if the directory is enabled for Amazon WorkDocs.
+     * Indicates whether the directory is enabled for Amazon WorkDocs.
      * </p>
      * 
-     * @return Specifies if the directory is enabled for Amazon WorkDocs.
+     * @return Indicates whether the directory is enabled for Amazon WorkDocs.
      */
 
     public Boolean getEnableWorkDocs() {
@@ -86,11 +86,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specifies if the directory is enabled for Amazon WorkDocs.
+     * Indicates whether the directory is enabled for Amazon WorkDocs.
      * </p>
      * 
      * @param enableWorkDocs
-     *        Specifies if the directory is enabled for Amazon WorkDocs.
+     *        Indicates whether the directory is enabled for Amazon WorkDocs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,10 +101,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specifies if the directory is enabled for Amazon WorkDocs.
+     * Indicates whether the directory is enabled for Amazon WorkDocs.
      * </p>
      * 
-     * @return Specifies if the directory is enabled for Amazon WorkDocs.
+     * @return Indicates whether the directory is enabled for Amazon WorkDocs.
      */
 
     public Boolean isEnableWorkDocs() {
@@ -113,11 +113,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     * The public IP address to attach to all WorkSpaces that are created or rebuilt.
      * </p>
      * 
      * @param enableInternetAccess
-     *        A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     *        The public IP address to attach to all WorkSpaces that are created or rebuilt.
      */
 
     public void setEnableInternetAccess(Boolean enableInternetAccess) {
@@ -126,10 +126,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     * The public IP address to attach to all WorkSpaces that are created or rebuilt.
      * </p>
      * 
-     * @return A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     * @return The public IP address to attach to all WorkSpaces that are created or rebuilt.
      */
 
     public Boolean getEnableInternetAccess() {
@@ -138,11 +138,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     * The public IP address to attach to all WorkSpaces that are created or rebuilt.
      * </p>
      * 
      * @param enableInternetAccess
-     *        A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     *        The public IP address to attach to all WorkSpaces that are created or rebuilt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,10 +153,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     * The public IP address to attach to all WorkSpaces that are created or rebuilt.
      * </p>
      * 
-     * @return A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+     * @return The public IP address to attach to all WorkSpaces that are created or rebuilt.
      */
 
     public Boolean isEnableInternetAccess() {
@@ -165,11 +165,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.
+     * The organizational unit (OU) in the directory for the WorkSpace machine accounts.
      * </p>
      * 
      * @param defaultOu
-     *        The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.
+     *        The organizational unit (OU) in the directory for the WorkSpace machine accounts.
      */
 
     public void setDefaultOu(String defaultOu) {
@@ -178,10 +178,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.
+     * The organizational unit (OU) in the directory for the WorkSpace machine accounts.
      * </p>
      * 
-     * @return The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.
+     * @return The organizational unit (OU) in the directory for the WorkSpace machine accounts.
      */
 
     public String getDefaultOu() {
@@ -190,11 +190,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.
+     * The organizational unit (OU) in the directory for the WorkSpace machine accounts.
      * </p>
      * 
      * @param defaultOu
-     *        The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.
+     *        The organizational unit (OU) in the directory for the WorkSpace machine accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +205,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The identifier of any custom security groups that are applied to the WorkSpaces when they are created.
+     * The identifier of any security groups to apply to WorkSpaces when they are created.
      * </p>
      * 
      * @param customSecurityGroupId
-     *        The identifier of any custom security groups that are applied to the WorkSpaces when they are created.
+     *        The identifier of any security groups to apply to WorkSpaces when they are created.
      */
 
     public void setCustomSecurityGroupId(String customSecurityGroupId) {
@@ -218,10 +218,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The identifier of any custom security groups that are applied to the WorkSpaces when they are created.
+     * The identifier of any security groups to apply to WorkSpaces when they are created.
      * </p>
      * 
-     * @return The identifier of any custom security groups that are applied to the WorkSpaces when they are created.
+     * @return The identifier of any security groups to apply to WorkSpaces when they are created.
      */
 
     public String getCustomSecurityGroupId() {
@@ -230,11 +230,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The identifier of any custom security groups that are applied to the WorkSpaces when they are created.
+     * The identifier of any security groups to apply to WorkSpaces when they are created.
      * </p>
      * 
      * @param customSecurityGroupId
-     *        The identifier of any custom security groups that are applied to the WorkSpaces when they are created.
+     *        The identifier of any security groups to apply to WorkSpaces when they are created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +245,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The WorkSpace user is an administrator on the WorkSpace.
+     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      * 
      * @param userEnabledAsLocalAdministrator
-     *        The WorkSpace user is an administrator on the WorkSpace.
+     *        Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      */
 
     public void setUserEnabledAsLocalAdministrator(Boolean userEnabledAsLocalAdministrator) {
@@ -258,10 +258,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The WorkSpace user is an administrator on the WorkSpace.
+     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      * 
-     * @return The WorkSpace user is an administrator on the WorkSpace.
+     * @return Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      */
 
     public Boolean getUserEnabledAsLocalAdministrator() {
@@ -270,11 +270,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The WorkSpace user is an administrator on the WorkSpace.
+     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      * 
      * @param userEnabledAsLocalAdministrator
-     *        The WorkSpace user is an administrator on the WorkSpace.
+     *        Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,10 +285,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The WorkSpace user is an administrator on the WorkSpace.
+     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      * 
-     * @return The WorkSpace user is an administrator on the WorkSpace.
+     * @return Indicates whether the WorkSpace user is an administrator on the WorkSpace.
      */
 
     public Boolean isUserEnabledAsLocalAdministrator() {

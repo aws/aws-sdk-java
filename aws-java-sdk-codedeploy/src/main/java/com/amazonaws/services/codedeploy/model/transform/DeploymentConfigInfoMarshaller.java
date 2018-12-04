@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,10 @@ public class DeploymentConfigInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumHealthyHosts").build();
     private static final MarshallingInfo<java.util.Date> CREATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createTime").build();
+    private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
+    private static final MarshallingInfo<StructuredPojo> TRAFFICROUTINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trafficRoutingConfig").build();
 
     private static final DeploymentConfigInfoMarshaller instance = new DeploymentConfigInfoMarshaller();
 
@@ -56,6 +60,8 @@ public class DeploymentConfigInfoMarshaller {
             protocolMarshaller.marshall(deploymentConfigInfo.getDeploymentConfigName(), DEPLOYMENTCONFIGNAME_BINDING);
             protocolMarshaller.marshall(deploymentConfigInfo.getMinimumHealthyHosts(), MINIMUMHEALTHYHOSTS_BINDING);
             protocolMarshaller.marshall(deploymentConfigInfo.getCreateTime(), CREATETIME_BINDING);
+            protocolMarshaller.marshall(deploymentConfigInfo.getComputePlatform(), COMPUTEPLATFORM_BINDING);
+            protocolMarshaller.marshall(deploymentConfigInfo.getTrafficRoutingConfig(), TRAFFICROUTINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

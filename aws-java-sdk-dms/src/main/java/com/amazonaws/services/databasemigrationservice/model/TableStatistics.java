@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,75 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String tableState;
+    /**
+     * <p>
+     * The number of records that have yet to be validated.
+     * </p>
+     */
+    private Long validationPendingRecords;
+    /**
+     * <p>
+     * The number of records that failed validation.
+     * </p>
+     */
+    private Long validationFailedRecords;
+    /**
+     * <p>
+     * The number of records that could not be validated.
+     * </p>
+     */
+    private Long validationSuspendedRecords;
+    /**
+     * <p>
+     * The validation state of the table.
+     * </p>
+     * <p>
+     * The parameter can have the following values
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Not enabled—Validation is not enabled for the table in the migration task.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pending records—Some records in the table are waiting for validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Mismatched records—Some records in the table do not match between the source and target.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Suspended records—Some records in the table could not be validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * No primary key—The table could not be validated because it had no primary key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Table error—The table was not validated because it was in an error state and some data was not migrated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Validated—All rows in the table were validated. If the table is updated, the status can change from Validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Error—The table could not be validated because of an unexpected error.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String validationState;
 
     /**
      * <p>
@@ -573,6 +642,436 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The number of records that have yet to be validated.
+     * </p>
+     * 
+     * @param validationPendingRecords
+     *        The number of records that have yet to be validated.
+     */
+
+    public void setValidationPendingRecords(Long validationPendingRecords) {
+        this.validationPendingRecords = validationPendingRecords;
+    }
+
+    /**
+     * <p>
+     * The number of records that have yet to be validated.
+     * </p>
+     * 
+     * @return The number of records that have yet to be validated.
+     */
+
+    public Long getValidationPendingRecords() {
+        return this.validationPendingRecords;
+    }
+
+    /**
+     * <p>
+     * The number of records that have yet to be validated.
+     * </p>
+     * 
+     * @param validationPendingRecords
+     *        The number of records that have yet to be validated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withValidationPendingRecords(Long validationPendingRecords) {
+        setValidationPendingRecords(validationPendingRecords);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of records that failed validation.
+     * </p>
+     * 
+     * @param validationFailedRecords
+     *        The number of records that failed validation.
+     */
+
+    public void setValidationFailedRecords(Long validationFailedRecords) {
+        this.validationFailedRecords = validationFailedRecords;
+    }
+
+    /**
+     * <p>
+     * The number of records that failed validation.
+     * </p>
+     * 
+     * @return The number of records that failed validation.
+     */
+
+    public Long getValidationFailedRecords() {
+        return this.validationFailedRecords;
+    }
+
+    /**
+     * <p>
+     * The number of records that failed validation.
+     * </p>
+     * 
+     * @param validationFailedRecords
+     *        The number of records that failed validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withValidationFailedRecords(Long validationFailedRecords) {
+        setValidationFailedRecords(validationFailedRecords);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of records that could not be validated.
+     * </p>
+     * 
+     * @param validationSuspendedRecords
+     *        The number of records that could not be validated.
+     */
+
+    public void setValidationSuspendedRecords(Long validationSuspendedRecords) {
+        this.validationSuspendedRecords = validationSuspendedRecords;
+    }
+
+    /**
+     * <p>
+     * The number of records that could not be validated.
+     * </p>
+     * 
+     * @return The number of records that could not be validated.
+     */
+
+    public Long getValidationSuspendedRecords() {
+        return this.validationSuspendedRecords;
+    }
+
+    /**
+     * <p>
+     * The number of records that could not be validated.
+     * </p>
+     * 
+     * @param validationSuspendedRecords
+     *        The number of records that could not be validated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withValidationSuspendedRecords(Long validationSuspendedRecords) {
+        setValidationSuspendedRecords(validationSuspendedRecords);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The validation state of the table.
+     * </p>
+     * <p>
+     * The parameter can have the following values
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Not enabled—Validation is not enabled for the table in the migration task.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pending records—Some records in the table are waiting for validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Mismatched records—Some records in the table do not match between the source and target.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Suspended records—Some records in the table could not be validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * No primary key—The table could not be validated because it had no primary key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Table error—The table was not validated because it was in an error state and some data was not migrated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Validated—All rows in the table were validated. If the table is updated, the status can change from Validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Error—The table could not be validated because of an unexpected error.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param validationState
+     *        The validation state of the table.</p>
+     *        <p>
+     *        The parameter can have the following values
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Not enabled—Validation is not enabled for the table in the migration task.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Pending records—Some records in the table are waiting for validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Mismatched records—Some records in the table do not match between the source and target.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Suspended records—Some records in the table could not be validated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        No primary key—The table could not be validated because it had no primary key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Table error—The table was not validated because it was in an error state and some data was not migrated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Validated—All rows in the table were validated. If the table is updated, the status can change from
+     *        Validated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Error—The table could not be validated because of an unexpected error.
+     *        </p>
+     *        </li>
+     */
+
+    public void setValidationState(String validationState) {
+        this.validationState = validationState;
+    }
+
+    /**
+     * <p>
+     * The validation state of the table.
+     * </p>
+     * <p>
+     * The parameter can have the following values
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Not enabled—Validation is not enabled for the table in the migration task.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pending records—Some records in the table are waiting for validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Mismatched records—Some records in the table do not match between the source and target.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Suspended records—Some records in the table could not be validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * No primary key—The table could not be validated because it had no primary key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Table error—The table was not validated because it was in an error state and some data was not migrated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Validated—All rows in the table were validated. If the table is updated, the status can change from Validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Error—The table could not be validated because of an unexpected error.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The validation state of the table.</p>
+     *         <p>
+     *         The parameter can have the following values
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Not enabled—Validation is not enabled for the table in the migration task.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Pending records—Some records in the table are waiting for validation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Mismatched records—Some records in the table do not match between the source and target.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Suspended records—Some records in the table could not be validated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         No primary key—The table could not be validated because it had no primary key.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Table error—The table was not validated because it was in an error state and some data was not migrated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Validated—All rows in the table were validated. If the table is updated, the status can change from
+     *         Validated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Error—The table could not be validated because of an unexpected error.
+     *         </p>
+     *         </li>
+     */
+
+    public String getValidationState() {
+        return this.validationState;
+    }
+
+    /**
+     * <p>
+     * The validation state of the table.
+     * </p>
+     * <p>
+     * The parameter can have the following values
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Not enabled—Validation is not enabled for the table in the migration task.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pending records—Some records in the table are waiting for validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Mismatched records—Some records in the table do not match between the source and target.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Suspended records—Some records in the table could not be validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * No primary key—The table could not be validated because it had no primary key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Table error—The table was not validated because it was in an error state and some data was not migrated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Validated—All rows in the table were validated. If the table is updated, the status can change from Validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Error—The table could not be validated because of an unexpected error.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param validationState
+     *        The validation state of the table.</p>
+     *        <p>
+     *        The parameter can have the following values
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Not enabled—Validation is not enabled for the table in the migration task.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Pending records—Some records in the table are waiting for validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Mismatched records—Some records in the table do not match between the source and target.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Suspended records—Some records in the table could not be validated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        No primary key—The table could not be validated because it had no primary key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Table error—The table was not validated because it was in an error state and some data was not migrated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Validated—All rows in the table were validated. If the table is updated, the status can change from
+     *        Validated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Error—The table could not be validated because of an unexpected error.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withValidationState(String validationState) {
+        setValidationState(validationState);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -604,7 +1103,15 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
         if (getLastUpdateTime() != null)
             sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
         if (getTableState() != null)
-            sb.append("TableState: ").append(getTableState());
+            sb.append("TableState: ").append(getTableState()).append(",");
+        if (getValidationPendingRecords() != null)
+            sb.append("ValidationPendingRecords: ").append(getValidationPendingRecords()).append(",");
+        if (getValidationFailedRecords() != null)
+            sb.append("ValidationFailedRecords: ").append(getValidationFailedRecords()).append(",");
+        if (getValidationSuspendedRecords() != null)
+            sb.append("ValidationSuspendedRecords: ").append(getValidationSuspendedRecords()).append(",");
+        if (getValidationState() != null)
+            sb.append("ValidationState: ").append(getValidationState());
         sb.append("}");
         return sb.toString();
     }
@@ -663,6 +1170,22 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTableState() != null && other.getTableState().equals(this.getTableState()) == false)
             return false;
+        if (other.getValidationPendingRecords() == null ^ this.getValidationPendingRecords() == null)
+            return false;
+        if (other.getValidationPendingRecords() != null && other.getValidationPendingRecords().equals(this.getValidationPendingRecords()) == false)
+            return false;
+        if (other.getValidationFailedRecords() == null ^ this.getValidationFailedRecords() == null)
+            return false;
+        if (other.getValidationFailedRecords() != null && other.getValidationFailedRecords().equals(this.getValidationFailedRecords()) == false)
+            return false;
+        if (other.getValidationSuspendedRecords() == null ^ this.getValidationSuspendedRecords() == null)
+            return false;
+        if (other.getValidationSuspendedRecords() != null && other.getValidationSuspendedRecords().equals(this.getValidationSuspendedRecords()) == false)
+            return false;
+        if (other.getValidationState() == null ^ this.getValidationState() == null)
+            return false;
+        if (other.getValidationState() != null && other.getValidationState().equals(this.getValidationState()) == false)
+            return false;
         return true;
     }
 
@@ -682,6 +1205,10 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getFullLoadErrorRows() == null) ? 0 : getFullLoadErrorRows().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getTableState() == null) ? 0 : getTableState().hashCode());
+        hashCode = prime * hashCode + ((getValidationPendingRecords() == null) ? 0 : getValidationPendingRecords().hashCode());
+        hashCode = prime * hashCode + ((getValidationFailedRecords() == null) ? 0 : getValidationFailedRecords().hashCode());
+        hashCode = prime * hashCode + ((getValidationSuspendedRecords() == null) ? 0 : getValidationSuspendedRecords().hashCode());
+        hashCode = prime * hashCode + ((getValidationState() == null) ? 0 : getValidationState().hashCode());
         return hashCode;
     }
 

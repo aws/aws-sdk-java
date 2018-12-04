@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,10 @@ public class GroupVersion implements Serializable, Cloneable, StructuredPojo {
     private String deviceDefinitionVersionArn;
     /** Function definition version arn for this group. */
     private String functionDefinitionVersionArn;
-    /** Logger definitionv ersion arn for this group. */
+    /** Logger definition version arn for this group. */
     private String loggerDefinitionVersionArn;
+    /** Resource definition version arn for this group. */
+    private String resourceDefinitionVersionArn;
     /** Subscription definition version arn for this group. */
     private String subscriptionDefinitionVersionArn;
 
@@ -140,10 +142,10 @@ public class GroupVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      * 
      * @param loggerDefinitionVersionArn
-     *        Logger definitionv ersion arn for this group.
+     *        Logger definition version arn for this group.
      */
 
     public void setLoggerDefinitionVersionArn(String loggerDefinitionVersionArn) {
@@ -151,9 +153,9 @@ public class GroupVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      * 
-     * @return Logger definitionv ersion arn for this group.
+     * @return Logger definition version arn for this group.
      */
 
     public String getLoggerDefinitionVersionArn() {
@@ -161,15 +163,49 @@ public class GroupVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      * 
      * @param loggerDefinitionVersionArn
-     *        Logger definitionv ersion arn for this group.
+     *        Logger definition version arn for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GroupVersion withLoggerDefinitionVersionArn(String loggerDefinitionVersionArn) {
         setLoggerDefinitionVersionArn(loggerDefinitionVersionArn);
+        return this;
+    }
+
+    /**
+     * Resource definition version arn for this group.
+     * 
+     * @param resourceDefinitionVersionArn
+     *        Resource definition version arn for this group.
+     */
+
+    public void setResourceDefinitionVersionArn(String resourceDefinitionVersionArn) {
+        this.resourceDefinitionVersionArn = resourceDefinitionVersionArn;
+    }
+
+    /**
+     * Resource definition version arn for this group.
+     * 
+     * @return Resource definition version arn for this group.
+     */
+
+    public String getResourceDefinitionVersionArn() {
+        return this.resourceDefinitionVersionArn;
+    }
+
+    /**
+     * Resource definition version arn for this group.
+     * 
+     * @param resourceDefinitionVersionArn
+     *        Resource definition version arn for this group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GroupVersion withResourceDefinitionVersionArn(String resourceDefinitionVersionArn) {
+        setResourceDefinitionVersionArn(resourceDefinitionVersionArn);
         return this;
     }
 
@@ -226,6 +262,8 @@ public class GroupVersion implements Serializable, Cloneable, StructuredPojo {
             sb.append("FunctionDefinitionVersionArn: ").append(getFunctionDefinitionVersionArn()).append(",");
         if (getLoggerDefinitionVersionArn() != null)
             sb.append("LoggerDefinitionVersionArn: ").append(getLoggerDefinitionVersionArn()).append(",");
+        if (getResourceDefinitionVersionArn() != null)
+            sb.append("ResourceDefinitionVersionArn: ").append(getResourceDefinitionVersionArn()).append(",");
         if (getSubscriptionDefinitionVersionArn() != null)
             sb.append("SubscriptionDefinitionVersionArn: ").append(getSubscriptionDefinitionVersionArn());
         sb.append("}");
@@ -258,6 +296,10 @@ public class GroupVersion implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLoggerDefinitionVersionArn() != null && other.getLoggerDefinitionVersionArn().equals(this.getLoggerDefinitionVersionArn()) == false)
             return false;
+        if (other.getResourceDefinitionVersionArn() == null ^ this.getResourceDefinitionVersionArn() == null)
+            return false;
+        if (other.getResourceDefinitionVersionArn() != null && other.getResourceDefinitionVersionArn().equals(this.getResourceDefinitionVersionArn()) == false)
+            return false;
         if (other.getSubscriptionDefinitionVersionArn() == null ^ this.getSubscriptionDefinitionVersionArn() == null)
             return false;
         if (other.getSubscriptionDefinitionVersionArn() != null
@@ -275,6 +317,7 @@ public class GroupVersion implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDeviceDefinitionVersionArn() == null) ? 0 : getDeviceDefinitionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getFunctionDefinitionVersionArn() == null) ? 0 : getFunctionDefinitionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getLoggerDefinitionVersionArn() == null) ? 0 : getLoggerDefinitionVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceDefinitionVersionArn() == null) ? 0 : getResourceDefinitionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getSubscriptionDefinitionVersionArn() == null) ? 0 : getSubscriptionDefinitionVersionArn().hashCode());
         return hashCode;
     }

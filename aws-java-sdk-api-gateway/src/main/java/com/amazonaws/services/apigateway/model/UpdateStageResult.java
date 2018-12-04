@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String clientCertificateId;
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
      * Gateway.
      * </p>
      */
@@ -89,6 +89,24 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String documentationVersion;
+    /**
+     * <p>
+     * Settings for logging access in this stage.
+     * </p>
+     */
+    private AccessLogSettings accessLogSettings;
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     */
+    private CanarySettings canarySettings;
+    /**
+     * <p>
+     * A collection of Tags associated with a given resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * The timestamp when the stage was created.
@@ -184,13 +202,13 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
      * Gateway.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *        Amazon API Gateway.
+     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *        Gateway.
      */
 
     public void setStageName(String stageName) {
@@ -199,12 +217,12 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
      * Gateway.
      * </p>
      * 
-     * @return The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *         Amazon API Gateway.
+     * @return The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *         Gateway.
      */
 
     public String getStageName() {
@@ -213,13 +231,13 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
      * Gateway.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *        Amazon API Gateway.
+     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *        Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -618,6 +636,147 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * Settings for logging access in this stage.
+     * </p>
+     * 
+     * @param accessLogSettings
+     *        Settings for logging access in this stage.
+     */
+
+    public void setAccessLogSettings(AccessLogSettings accessLogSettings) {
+        this.accessLogSettings = accessLogSettings;
+    }
+
+    /**
+     * <p>
+     * Settings for logging access in this stage.
+     * </p>
+     * 
+     * @return Settings for logging access in this stage.
+     */
+
+    public AccessLogSettings getAccessLogSettings() {
+        return this.accessLogSettings;
+    }
+
+    /**
+     * <p>
+     * Settings for logging access in this stage.
+     * </p>
+     * 
+     * @param accessLogSettings
+     *        Settings for logging access in this stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withAccessLogSettings(AccessLogSettings accessLogSettings) {
+        setAccessLogSettings(accessLogSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @param canarySettings
+     *        Settings for the canary deployment in this stage.
+     */
+
+    public void setCanarySettings(CanarySettings canarySettings) {
+        this.canarySettings = canarySettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @return Settings for the canary deployment in this stage.
+     */
+
+    public CanarySettings getCanarySettings() {
+        return this.canarySettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @param canarySettings
+     *        Settings for the canary deployment in this stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withCanarySettings(CanarySettings canarySettings) {
+        setCanarySettings(canarySettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of Tags associated with a given resource.
+     * </p>
+     * 
+     * @return A collection of Tags associated with a given resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A collection of Tags associated with a given resource.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of Tags associated with a given resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A collection of Tags associated with a given resource.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of Tags associated with a given resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public UpdateStageResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp when the stage was created.
      * </p>
      * 
@@ -727,6 +886,12 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("Variables: ").append(getVariables()).append(",");
         if (getDocumentationVersion() != null)
             sb.append("DocumentationVersion: ").append(getDocumentationVersion()).append(",");
+        if (getAccessLogSettings() != null)
+            sb.append("AccessLogSettings: ").append(getAccessLogSettings()).append(",");
+        if (getCanarySettings() != null)
+            sb.append("CanarySettings: ").append(getCanarySettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getLastUpdatedDate() != null)
@@ -785,6 +950,18 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getDocumentationVersion() != null && other.getDocumentationVersion().equals(this.getDocumentationVersion()) == false)
             return false;
+        if (other.getAccessLogSettings() == null ^ this.getAccessLogSettings() == null)
+            return false;
+        if (other.getAccessLogSettings() != null && other.getAccessLogSettings().equals(this.getAccessLogSettings()) == false)
+            return false;
+        if (other.getCanarySettings() == null ^ this.getCanarySettings() == null)
+            return false;
+        if (other.getCanarySettings() != null && other.getCanarySettings().equals(this.getCanarySettings()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -811,6 +988,9 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getMethodSettings() == null) ? 0 : getMethodSettings().hashCode());
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
+        hashCode = prime * hashCode + ((getAccessLogSettings() == null) ? 0 : getAccessLogSettings().hashCode());
+        hashCode = prime * hashCode + ((getCanarySettings() == null) ? 0 : getCanarySettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         return hashCode;

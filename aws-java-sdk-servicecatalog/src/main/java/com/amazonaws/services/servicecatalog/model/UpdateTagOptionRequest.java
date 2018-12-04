@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateTagOptionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the constraint to update.
+     * The TagOption identifier.
      * </p>
      */
     private String id;
@@ -46,11 +46,11 @@ public class UpdateTagOptionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the constraint to update.
+     * The TagOption identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the constraint to update.
+     *        The TagOption identifier.
      */
 
     public void setId(String id) {
@@ -59,10 +59,10 @@ public class UpdateTagOptionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the constraint to update.
+     * The TagOption identifier.
      * </p>
      * 
-     * @return The identifier of the constraint to update.
+     * @return The TagOption identifier.
      */
 
     public String getId() {
@@ -71,11 +71,11 @@ public class UpdateTagOptionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the constraint to update.
+     * The TagOption identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the constraint to update.
+     *        The TagOption identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -185,7 +185,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
 
     @Override
     public void log() {
-        if (latencyLogger.isInfoEnabled()) {
+        if (latencyLogger.isDebugEnabled()) {
             StringBuilder builder = new StringBuilder();
 
             for (Entry<String, List<Object>> entry : properties.entrySet()) {
@@ -200,7 +200,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
                     .getSubMeasurementsByName().entrySet()) {
                 keyValueFormat(entry.getKey(), entry.getValue(), builder);
             }
-            latencyLogger.info(builder.toString());
+            latencyLogger.debug(builder.toString());
         }
     }
 

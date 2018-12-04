@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An object representing a constraint on task placement. For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement
- * Constraints</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementConstraint" target="_top">AWS API
@@ -33,8 +33,8 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
-     * running on a different container instance. Use <code>memberOf</code> to restrict selection to a group of valid
-     * candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
+     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * </p>
      */
     private String type;
@@ -43,7 +43,7 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the
      * constraint type is <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String expression;
@@ -51,14 +51,14 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
-     * running on a different container instance. Use <code>memberOf</code> to restrict selection to a group of valid
-     * candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
+     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * </p>
      * 
      * @param type
      *        The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
-     *        is running on a different container instance. Use <code>memberOf</code> to restrict selection to a group
-     *        of valid candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     *        is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
+     *        group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * @see PlacementConstraintType
      */
 
@@ -69,13 +69,13 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
-     * running on a different container instance. Use <code>memberOf</code> to restrict selection to a group of valid
-     * candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
+     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * </p>
      * 
      * @return The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
-     *         is running on a different container instance. Use <code>memberOf</code> to restrict selection to a group
-     *         of valid candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     *         is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
+     *         group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * @see PlacementConstraintType
      */
 
@@ -86,14 +86,14 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
-     * running on a different container instance. Use <code>memberOf</code> to restrict selection to a group of valid
-     * candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
+     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * </p>
      * 
      * @param type
      *        The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
-     *        is running on a different container instance. Use <code>memberOf</code> to restrict selection to a group
-     *        of valid candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     *        is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
+     *        group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementConstraintType
      */
@@ -106,14 +106,14 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
-     * running on a different container instance. Use <code>memberOf</code> to restrict selection to a group of valid
-     * candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
+     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * </p>
      * 
      * @param type
      *        The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
-     *        is running on a different container instance. Use <code>memberOf</code> to restrict selection to a group
-     *        of valid candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     *        is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
+     *        group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * @see PlacementConstraintType
      */
 
@@ -124,14 +124,14 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
-     * running on a different container instance. Use <code>memberOf</code> to restrict selection to a group of valid
-     * candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
+     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * </p>
      * 
      * @param type
      *        The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
-     *        is running on a different container instance. Use <code>memberOf</code> to restrict selection to a group
-     *        of valid candidates. Note that <code>distinctInstance</code> is not supported in task definitions.
+     *        is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
+     *        group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementConstraintType
      */
@@ -146,14 +146,14 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the
      * constraint type is <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
      *        A cluster query language expression to apply to the constraint. Note you cannot specify an expression if
      *        the constraint type is <code>distinctInstance</code>. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setExpression(String expression) {
@@ -165,13 +165,13 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the
      * constraint type is <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return A cluster query language expression to apply to the constraint. Note you cannot specify an expression if
      *         the constraint type is <code>distinctInstance</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *         Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getExpression() {
@@ -183,14 +183,14 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the
      * constraint type is <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
      *        A cluster query language expression to apply to the constraint. Note you cannot specify an expression if
      *        the constraint type is <code>distinctInstance</code>. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,10 +47,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      */
@@ -215,10 +214,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -232,11 +230,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <note>
      *        <p>
      *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *        one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *        provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will
-     *        have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *        runtime.
+     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
+     *        for each region that contains functions written in the Node v0.10.42 runtime.
      *        </p>
      * @see Runtime
      */
@@ -257,10 +253,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -273,11 +268,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <note>
      *         <p>
      *         Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *         runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *         one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *         provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will
-     *         have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *         runtime.
+     *         runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *         will result in an invalid parameter error being returned. Note that you will have to follow this
+     *         procedure for each region that contains functions written in the Node v0.10.42 runtime.
      *         </p>
      * @see Runtime
      */
@@ -298,10 +291,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -315,11 +307,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <note>
      *        <p>
      *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *        one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *        provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will
-     *        have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *        runtime.
+     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
+     *        for each region that contains functions written in the Node v0.10.42 runtime.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
@@ -342,10 +332,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -359,11 +348,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <note>
      *        <p>
      *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *        one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *        provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will
-     *        have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *        runtime.
+     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
+     *        for each region that contains functions written in the Node v0.10.42 runtime.
      *        </p>
      * @see Runtime
      */
@@ -384,10 +371,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -401,11 +387,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <note>
      *        <p>
      *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *        one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *        provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will
-     *        have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *        runtime.
+     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
+     *        for each region that contains functions written in the Node v0.10.42 runtime.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime

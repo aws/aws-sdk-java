@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,10 +78,9 @@
  * <p>
  * We welcome your feedback. Send your comments to <a
  * href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a> or post your feedback and
- * questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support
- * forum</a>. If you don't have access to the forum, send a request for access to the email address, along with your
- * forum user ID. For more information about the AWS support forums, see <a
- * href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
+ * questions in the <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support forum</a>.
+ * For more information about the AWS support forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
+ * Help</a>.
  * </p>
  * <p>
  * <b>Endpoint to Call When Using the CLI or the AWS API</b>

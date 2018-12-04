@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,8 +51,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for
-     * example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this
-     * stream on your behalf.
+     * example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read
+     * this stream on your behalf.
      * </p>
      * <p>
      * To create the in-application stream, you need to specify a schema to transform your data into a schematized
@@ -63,21 +63,22 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.List<Input> inputs;
     /**
      * <p>
-     * You can configure application output to write data from any of the in-application streams to up to five
+     * You can configure application output to write data from any of the in-application streams to up to three
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * destinations, or any combination of the three.
      * </p>
      * <p>
-     * In the configuration, you specify the in-application stream name, the destination stream Amazon Resource Name
-     * (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics
-     * can assume to write to the destination stream on your behalf.
+     * In the configuration, you specify the in-application stream name, the destination stream or Lambda function
+     * Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.
      * </p>
      * <p>
-     * In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format of data
-     * in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can
-     * assume to write to this stream on your behalf.
+     * In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations,
+     * you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.
      * </p>
      */
     private java.util.List<Output> outputs;
@@ -94,7 +95,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
      * SQL statement that reads data from one in-application stream, generates a running average of the number of
      * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
-     * inforamtion about the typical pattern, see <a
+     * information about the typical pattern, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
@@ -200,8 +201,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for
-     * example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this
-     * stream on your behalf.
+     * example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read
+     * this stream on your behalf.
      * </p>
      * <p>
      * To create the in-application stream, you need to specify a schema to transform your data into a schematized
@@ -218,8 +219,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </p>
      *         <p>
      *         For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream
-     *         (for example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume
-     *         to read this stream on your behalf.
+     *         (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can
+     *         assume to read this stream on your behalf.
      *         </p>
      *         <p>
      *         To create the in-application stream, you need to specify a schema to transform your data into a
@@ -242,8 +243,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for
-     * example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this
-     * stream on your behalf.
+     * example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read
+     * this stream on your behalf.
      * </p>
      * <p>
      * To create the in-application stream, you need to specify a schema to transform your data into a schematized
@@ -260,7 +261,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for
-     *        example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume to
+     *        example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to
      *        read this stream on your behalf.
      *        </p>
      *        <p>
@@ -289,8 +290,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for
-     * example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this
-     * stream on your behalf.
+     * example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read
+     * this stream on your behalf.
      * </p>
      * <p>
      * To create the in-application stream, you need to specify a schema to transform your data into a schematized
@@ -312,7 +313,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for
-     *        example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume to
+     *        example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to
      *        read this stream on your behalf.
      *        </p>
      *        <p>
@@ -343,8 +344,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for
-     * example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this
-     * stream on your behalf.
+     * example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read
+     * this stream on your behalf.
      * </p>
      * <p>
      * To create the in-application stream, you need to specify a schema to transform your data into a schematized
@@ -361,7 +362,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for
-     *        example, JSON, CSV, etc). You also must provide an IAM role that Amazon Kinesis Analytics can assume to
+     *        example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to
      *        read this stream on your behalf.
      *        </p>
      *        <p>
@@ -378,37 +379,41 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * You can configure application output to write data from any of the in-application streams to up to five
+     * You can configure application output to write data from any of the in-application streams to up to three
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * destinations, or any combination of the three.
      * </p>
      * <p>
-     * In the configuration, you specify the in-application stream name, the destination stream Amazon Resource Name
-     * (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics
-     * can assume to write to the destination stream on your behalf.
+     * In the configuration, you specify the in-application stream name, the destination stream or Lambda function
+     * Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.
      * </p>
      * <p>
-     * In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format of data
-     * in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can
-     * assume to write to this stream on your behalf.
+     * In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations,
+     * you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.
      * </p>
      * 
-     * @return You can configure application output to write data from any of the in-application streams to up to five
+     * @return You can configure application output to write data from any of the in-application streams to up to three
      *         destinations.</p>
      *         <p>
-     *         These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     *         These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     *         destinations, or any combination of the three.
      *         </p>
      *         <p>
-     *         In the configuration, you specify the in-application stream name, the destination stream Amazon Resource
-     *         Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon
-     *         Kinesis Analytics can assume to write to the destination stream on your behalf.
+     *         In the configuration, you specify the in-application stream name, the destination stream or Lambda
+     *         function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an
+     *         IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function
+     *         on your behalf.
      *         </p>
      *         <p>
-     *         In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format
-     *         of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis
-     *         Analytics can assume to write to this stream on your behalf.
+     *         In the output configuration, you also provide the output stream or Lambda function ARN. For stream
+     *         destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must
+     *         provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on
+     *         your behalf.
      */
 
     public java.util.List<Output> getOutputs() {
@@ -417,38 +422,42 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * You can configure application output to write data from any of the in-application streams to up to five
+     * You can configure application output to write data from any of the in-application streams to up to three
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * destinations, or any combination of the three.
      * </p>
      * <p>
-     * In the configuration, you specify the in-application stream name, the destination stream Amazon Resource Name
-     * (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics
-     * can assume to write to the destination stream on your behalf.
+     * In the configuration, you specify the in-application stream name, the destination stream or Lambda function
+     * Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.
      * </p>
      * <p>
-     * In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format of data
-     * in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can
-     * assume to write to this stream on your behalf.
+     * In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations,
+     * you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.
      * </p>
      * 
      * @param outputs
-     *        You can configure application output to write data from any of the in-application streams to up to five
+     *        You can configure application output to write data from any of the in-application streams to up to three
      *        destinations.</p>
      *        <p>
-     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     *        destinations, or any combination of the three.
      *        </p>
      *        <p>
-     *        In the configuration, you specify the in-application stream name, the destination stream Amazon Resource
-     *        Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis
-     *        Analytics can assume to write to the destination stream on your behalf.
+     *        In the configuration, you specify the in-application stream name, the destination stream or Lambda
+     *        function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM
+     *        role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on
+     *        your behalf.
      *        </p>
      *        <p>
-     *        In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format
-     *        of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis
-     *        Analytics can assume to write to this stream on your behalf.
+     *        In the output configuration, you also provide the output stream or Lambda function ARN. For stream
+     *        destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide
+     *        an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your
+     *        behalf.
      */
 
     public void setOutputs(java.util.Collection<Output> outputs) {
@@ -462,21 +471,22 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * You can configure application output to write data from any of the in-application streams to up to five
+     * You can configure application output to write data from any of the in-application streams to up to three
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * destinations, or any combination of the three.
      * </p>
      * <p>
-     * In the configuration, you specify the in-application stream name, the destination stream Amazon Resource Name
-     * (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics
-     * can assume to write to the destination stream on your behalf.
+     * In the configuration, you specify the in-application stream name, the destination stream or Lambda function
+     * Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.
      * </p>
      * <p>
-     * In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format of data
-     * in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can
-     * assume to write to this stream on your behalf.
+     * In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations,
+     * you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -485,20 +495,23 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param outputs
-     *        You can configure application output to write data from any of the in-application streams to up to five
+     *        You can configure application output to write data from any of the in-application streams to up to three
      *        destinations.</p>
      *        <p>
-     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     *        destinations, or any combination of the three.
      *        </p>
      *        <p>
-     *        In the configuration, you specify the in-application stream name, the destination stream Amazon Resource
-     *        Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis
-     *        Analytics can assume to write to the destination stream on your behalf.
+     *        In the configuration, you specify the in-application stream name, the destination stream or Lambda
+     *        function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM
+     *        role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on
+     *        your behalf.
      *        </p>
      *        <p>
-     *        In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format
-     *        of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis
-     *        Analytics can assume to write to this stream on your behalf.
+     *        In the output configuration, you also provide the output stream or Lambda function ARN. For stream
+     *        destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide
+     *        an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your
+     *        behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,38 +527,42 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * You can configure application output to write data from any of the in-application streams to up to five
+     * You can configure application output to write data from any of the in-application streams to up to three
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * destinations, or any combination of the three.
      * </p>
      * <p>
-     * In the configuration, you specify the in-application stream name, the destination stream Amazon Resource Name
-     * (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics
-     * can assume to write to the destination stream on your behalf.
+     * In the configuration, you specify the in-application stream name, the destination stream or Lambda function
+     * Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.
      * </p>
      * <p>
-     * In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format of data
-     * in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can
-     * assume to write to this stream on your behalf.
+     * In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations,
+     * you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
+     * Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.
      * </p>
      * 
      * @param outputs
-     *        You can configure application output to write data from any of the in-application streams to up to five
+     *        You can configure application output to write data from any of the in-application streams to up to three
      *        destinations.</p>
      *        <p>
-     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, or both.
+     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     *        destinations, or any combination of the three.
      *        </p>
      *        <p>
-     *        In the configuration, you specify the in-application stream name, the destination stream Amazon Resource
-     *        Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis
-     *        Analytics can assume to write to the destination stream on your behalf.
+     *        In the configuration, you specify the in-application stream name, the destination stream or Lambda
+     *        function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM
+     *        role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on
+     *        your behalf.
      *        </p>
      *        <p>
-     *        In the output configuration, you also provide the output stream Amazon Resource Name (ARN) and the format
-     *        of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis
-     *        Analytics can assume to write to this stream on your behalf.
+     *        In the output configuration, you also provide the output stream or Lambda function ARN. For stream
+     *        destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide
+     *        an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your
+     *        behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -649,7 +666,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
      * SQL statement that reads data from one in-application stream, generates a running average of the number of
      * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
-     * inforamtion about the typical pattern, see <a
+     * information about the typical pattern, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
@@ -666,7 +683,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        One or more SQL statements that read input data, transform it, and generate output. For example, you can
      *        write a SQL statement that reads data from one in-application stream, generates a running average of the
      *        number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using
-     *        pumps. For more inforamtion about the typical pattern, see <a
+     *        pumps. For more information about the typical pattern, see <a
      *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
      *        Code</a>. </p>
      *        <p>
@@ -688,7 +705,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
      * SQL statement that reads data from one in-application stream, generates a running average of the number of
      * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
-     * inforamtion about the typical pattern, see <a
+     * information about the typical pattern, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
@@ -704,7 +721,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * @return One or more SQL statements that read input data, transform it, and generate output. For example, you can
      *         write a SQL statement that reads data from one in-application stream, generates a running average of the
      *         number of advertisement clicks by vendor, and insert resulting rows in another in-application stream
-     *         using pumps. For more inforamtion about the typical pattern, see <a
+     *         using pumps. For more information about the typical pattern, see <a
      *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
      *         Code</a>. </p>
      *         <p>
@@ -726,7 +743,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
      * SQL statement that reads data from one in-application stream, generates a running average of the number of
      * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
-     * inforamtion about the typical pattern, see <a
+     * information about the typical pattern, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
@@ -743,7 +760,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        One or more SQL statements that read input data, transform it, and generate output. For example, you can
      *        write a SQL statement that reads data from one in-application stream, generates a running average of the
      *        number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using
-     *        pumps. For more inforamtion about the typical pattern, see <a
+     *        pumps. For more information about the typical pattern, see <a
      *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
      *        Code</a>. </p>
      *        <p>

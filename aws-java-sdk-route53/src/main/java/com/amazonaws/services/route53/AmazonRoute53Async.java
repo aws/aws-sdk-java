@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -958,18 +958,80 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Creates a delegation set (a group of four name servers) that can be reused by multiple hosted zones. If a hosted
      * zoned ID is specified, <code>CreateReusableDelegationSet</code> marks the delegation set associated with that
-     * zone as reusable
+     * zone as reusable.
      * </p>
      * <note>
      * <p>
-     * A reusable delegation set can't be associated with a private hosted zone.
+     * You can't associate a reusable delegation set with a private hosted zone.
      * </p>
      * </note>
      * <p>
-     * For information on how to use a reusable delegation set to configure white label name servers, see <a
+     * For information about using a reusable delegation set to configure white label name servers, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring White
      * Label Name Servers</a>.
      * </p>
+     * <p>
+     * The process for migrating existing hosted zones to use a reusable delegation set is comparable to the process for
+     * configuring white label name servers. You need to perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create a reusable delegation set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Recreate hosted zones, and reduce the TTL to 60 seconds or less.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Recreate resource record sets in the new hosted zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the registrar's name servers to use the name servers for the new hosted zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Monitor traffic for the website or application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change TTLs back to their original values.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you want to migrate existing hosted zones to use a reusable delegation set, the existing hosted zones can't
+     * use any of the name servers that are assigned to the reusable delegation set. If one or more hosted zones do use
+     * one or more name servers that are assigned to the reusable delegation set, you can do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For small numbers of hosted zones—up to a few hundred—it's relatively easy to create reusable delegation sets
+     * until you get one that has four name servers that don't overlap with any of the name servers in your hosted
+     * zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For larger numbers of hosted zones, the easiest solution is to use more than one reusable delegation set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For larger numbers of hosted zones, you can also migrate hosted zones that have overlapping name servers to
+     * hosted zones that don't have overlapping name servers, then migrate the hosted zones again to use the reusable
+     * delegation set.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createReusableDelegationSetRequest
      * @return A Java Future containing the result of the CreateReusableDelegationSet operation returned by the service.
@@ -984,18 +1046,80 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Creates a delegation set (a group of four name servers) that can be reused by multiple hosted zones. If a hosted
      * zoned ID is specified, <code>CreateReusableDelegationSet</code> marks the delegation set associated with that
-     * zone as reusable
+     * zone as reusable.
      * </p>
      * <note>
      * <p>
-     * A reusable delegation set can't be associated with a private hosted zone.
+     * You can't associate a reusable delegation set with a private hosted zone.
      * </p>
      * </note>
      * <p>
-     * For information on how to use a reusable delegation set to configure white label name servers, see <a
+     * For information about using a reusable delegation set to configure white label name servers, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring White
      * Label Name Servers</a>.
      * </p>
+     * <p>
+     * The process for migrating existing hosted zones to use a reusable delegation set is comparable to the process for
+     * configuring white label name servers. You need to perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create a reusable delegation set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Recreate hosted zones, and reduce the TTL to 60 seconds or less.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Recreate resource record sets in the new hosted zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the registrar's name servers to use the name servers for the new hosted zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Monitor traffic for the website or application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change TTLs back to their original values.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you want to migrate existing hosted zones to use a reusable delegation set, the existing hosted zones can't
+     * use any of the name servers that are assigned to the reusable delegation set. If one or more hosted zones do use
+     * one or more name servers that are assigned to the reusable delegation set, you can do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For small numbers of hosted zones—up to a few hundred—it's relatively easy to create reusable delegation sets
+     * until you get one that has four name servers that don't overlap with any of the name servers in your hosted
+     * zones.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For larger numbers of hosted zones, the easiest solution is to use more than one reusable delegation set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For larger numbers of hosted zones, you can also migrate hosted zones that have overlapping name servers to
+     * hosted zones that don't have overlapping name servers, then migrate the hosted zones again to use the reusable
+     * delegation set.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createReusableDelegationSetRequest
      * @param asyncHandler
@@ -1655,6 +1779,55 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Gets the specified limit for the current account, for example, the maximum number of health checks that you can
+     * create using the account.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getAccountLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return A Java Future containing the result of the GetAccountLimit operation returned by the service.
+     * @sample AmazonRoute53Async.GetAccountLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(GetAccountLimitRequest getAccountLimitRequest);
+
+    /**
+     * <p>
+     * Gets the specified limit for the current account, for example, the maximum number of health checks that you can
+     * create using the account.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getAccountLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccountLimit operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.GetAccountLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(GetAccountLimitRequest getAccountLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccountLimitRequest, GetAccountLimitResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the current status of a change batch request. The status is one of the following values:
      * </p>
      * <ul>
@@ -2086,6 +2259,55 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Gets the specified limit for a specified hosted zone, for example, the maximum number of records that you can
+     * create in the hosted zone.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getHostedZoneLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return A Java Future containing the result of the GetHostedZoneLimit operation returned by the service.
+     * @sample AmazonRoute53Async.GetHostedZoneLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(GetHostedZoneLimitRequest getHostedZoneLimitRequest);
+
+    /**
+     * <p>
+     * Gets the specified limit for a specified hosted zone, for example, the maximum number of records that you can
+     * create in the hosted zone.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getHostedZoneLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetHostedZoneLimit operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.GetHostedZoneLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(GetHostedZoneLimitRequest getHostedZoneLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetHostedZoneLimitRequest, GetHostedZoneLimitResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a specified configuration for DNS query logging.
      * </p>
      * <p>
@@ -2157,6 +2379,57 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      */
     java.util.concurrent.Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(GetReusableDelegationSetRequest getReusableDelegationSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the maximum number of hosted zones that you can associate with the specified reusable delegation set.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getReusableDelegationSetLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return A Java Future containing the result of the GetReusableDelegationSetLimit operation returned by the
+     *         service.
+     * @sample AmazonRoute53Async.GetReusableDelegationSetLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(
+            GetReusableDelegationSetLimitRequest getReusableDelegationSetLimitRequest);
+
+    /**
+     * <p>
+     * Gets the maximum number of hosted zones that you can associate with the specified reusable delegation set.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getReusableDelegationSetLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetReusableDelegationSetLimit operation returned by the
+     *         service.
+     * @sample AmazonRoute53AsyncHandler.GetReusableDelegationSetLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(
+            GetReusableDelegationSetLimitRequest getReusableDelegationSetLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetLimitRequest, GetReusableDelegationSetLimitResult> asyncHandler);
 
     /**
      * <p>

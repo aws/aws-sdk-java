@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an Amazon Glacier job.
+ * Contains the description of an Amazon Glacier job.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -31,44 +31,46 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String jobId;
     /**
      * <p>
-     * The job description you provided when you initiated the job.
+     * The job description provided when initiating the job.
      * </p>
      */
     private String jobDescription;
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      */
     private String action;
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the archive ID requested for download. Otherwise, this field is null.
+     * The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * </p>
      */
     private String archiveId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the vault from which the archive retrieval was requested.
+     * The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * </p>
      */
     private String vaultARN;
     /**
      * <p>
-     * The UTC date when the job was created. A string representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".
+     * The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.
      * </p>
      */
     private String creationDate;
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      */
     private Boolean completed;
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      */
     private String statusCode;
@@ -80,63 +82,68 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String statusMessage;
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the size in bytes of the archive being requested for download. For the
-     * InventoryRetrieval job, the value is null.
+     * For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an
+     * inventory retrieval or select job, this value is null.
      * </p>
      */
     private Long archiveSizeInBytes;
     /**
      * <p>
-     * For an InventoryRetrieval job, this is the size in bytes of the inventory requested for download. For the
-     * ArchiveRetrieval job, the value is null.
+     * For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an
+     * archive retrieval or select job, this value is null.
      * </p>
      */
     private Long inventorySizeInBytes;
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) topic that receives notification.
+     * An Amazon SNS topic that receives notification.
      * </p>
      */
     private String sNSTopic;
     /**
      * <p>
-     * The UTC time that the archive retrieval request completed. While the job is in progress, the value will be null.
+     * The UTC time that the job request completed. While the job is in progress, the value is null.
      * </p>
      */
     private String completionDate;
     /**
      * <p>
-     * For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null.
+     * For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.
      * </p>
      * <p>
-     * The SHA256 tree hash value for the requested range of an archive. If the Initiate a Job request for an archive
-     * specified a tree-hash aligned range, then this field returns a value.
+     * The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     * archive specified a tree-hash aligned range, then this field returns a value.
      * </p>
      * <p>
-     * For the specific case when the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash
-     * value.
+     * If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      * </p>
      * <p>
-     * This field is null in the following situations:
+     * This field is null for the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Archive retrieval jobs that specify a range that is not tree-hash aligned.
+     * Archive retrieval jobs that specify a range that is not tree-hash aligned
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Archival jobs that specify a range that is equal to the whole archive and the job status is InProgress.
+     * Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     * <code>InProgress</code>
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Inventory jobs.
+     * Inventory jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Select jobs
      * </p>
      * </li>
      * </ul>
@@ -144,23 +151,23 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String sHA256TreeHash;
     /**
      * <p>
-     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval jobs, this field is
-     * null.
+     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this
+     * field is null.
      * </p>
      */
     private String archiveSHA256TreeHash;
     /**
      * <p>
-     * The retrieved byte range for archive retrieval jobs in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If no
-     * range was specified in the archive retrieval, then the whole archive is retrieved and <i>StartByteValue</i>
-     * equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval jobs this field
-     * is null.
+     * The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no
+     * range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory
+     * retrieval or select jobs, this field is null.
      * </p>
      */
     private String retrievalByteRange;
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      */
@@ -171,6 +178,24 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private InventoryRetrievalJobDescription inventoryRetrievalParameters;
+    /**
+     * <p>
+     * Contains the job output location.
+     * </p>
+     */
+    private String jobOutputPath;
+    /**
+     * <p>
+     * Contains the parameters used for a select.
+     * </p>
+     */
+    private SelectParameters selectParameters;
+    /**
+     * <p>
+     * Contains the location where the data from the select job is stored.
+     * </p>
+     */
+    private OutputLocation outputLocation;
 
     /**
      * <p>
@@ -214,11 +239,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job description you provided when you initiated the job.
+     * The job description provided when initiating the job.
      * </p>
      * 
      * @param jobDescription
-     *        The job description you provided when you initiated the job.
+     *        The job description provided when initiating the job.
      */
 
     public void setJobDescription(String jobDescription) {
@@ -227,10 +252,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job description you provided when you initiated the job.
+     * The job description provided when initiating the job.
      * </p>
      * 
-     * @return The job description you provided when you initiated the job.
+     * @return The job description provided when initiating the job.
      */
 
     public String getJobDescription() {
@@ -239,11 +264,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job description you provided when you initiated the job.
+     * The job description provided when initiating the job.
      * </p>
      * 
      * @param jobDescription
-     *        The job description you provided when you initiated the job.
+     *        The job description provided when initiating the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +279,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
      * @param action
-     *        The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     *        The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *        <code>Select</code>.
      * @see ActionCode
      */
 
@@ -268,10 +295,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
-     * @return The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * @return The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *         <code>Select</code>.
      * @see ActionCode
      */
 
@@ -281,11 +310,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
      * @param action
-     *        The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     *        The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *        <code>Select</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCode
      */
@@ -297,11 +328,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
      * @param action
-     *        The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     *        The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *        <code>Select</code>.
      * @see ActionCode
      */
 
@@ -311,11 +344,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     * The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     * <code>Select</code>.
      * </p>
      * 
      * @param action
-     *        The job type. It is either ArchiveRetrieval or InventoryRetrieval.
+     *        The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or
+     *        <code>Select</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCode
      */
@@ -327,11 +362,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the archive ID requested for download. Otherwise, this field is null.
+     * The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * </p>
      * 
      * @param archiveId
-     *        For an ArchiveRetrieval job, this is the archive ID requested for download. Otherwise, this field is null.
+     *        The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      */
 
     public void setArchiveId(String archiveId) {
@@ -340,11 +375,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the archive ID requested for download. Otherwise, this field is null.
+     * The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * </p>
      * 
-     * @return For an ArchiveRetrieval job, this is the archive ID requested for download. Otherwise, this field is
-     *         null.
+     * @return The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      */
 
     public String getArchiveId() {
@@ -353,11 +387,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the archive ID requested for download. Otherwise, this field is null.
+     * The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * </p>
      * 
      * @param archiveId
-     *        For an ArchiveRetrieval job, this is the archive ID requested for download. Otherwise, this field is null.
+     *        The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,11 +402,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the vault from which the archive retrieval was requested.
+     * The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * </p>
      * 
      * @param vaultARN
-     *        The Amazon Resource Name (ARN) of the vault from which the archive retrieval was requested.
+     *        The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      */
 
     public void setVaultARN(String vaultARN) {
@@ -381,10 +415,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the vault from which the archive retrieval was requested.
+     * The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the vault from which the archive retrieval was requested.
+     * @return The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      */
 
     public String getVaultARN() {
@@ -393,11 +427,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the vault from which the archive retrieval was requested.
+     * The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * </p>
      * 
      * @param vaultARN
-     *        The Amazon Resource Name (ARN) of the vault from which the archive retrieval was requested.
+     *        The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,13 +442,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The UTC date when the job was created. A string representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".
+     * The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.
      * </p>
      * 
      * @param creationDate
-     *        The UTC date when the job was created. A string representation of ISO 8601 date format, for example,
-     *        "2012-03-20T17:03:43.221Z".
+     *        The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for
+     *        example <code>"2012-03-20T17:03:43.221Z"</code>.
      */
 
     public void setCreationDate(String creationDate) {
@@ -423,12 +457,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The UTC date when the job was created. A string representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".
+     * The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.
      * </p>
      * 
-     * @return The UTC date when the job was created. A string representation of ISO 8601 date format, for example,
-     *         "2012-03-20T17:03:43.221Z".
+     * @return The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for
+     *         example <code>"2012-03-20T17:03:43.221Z"</code>.
      */
 
     public String getCreationDate() {
@@ -437,13 +471,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The UTC date when the job was created. A string representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".
+     * The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.
      * </p>
      * 
      * @param creationDate
-     *        The UTC date when the job was created. A string representation of ISO 8601 date format, for example,
-     *        "2012-03-20T17:03:43.221Z".
+     *        The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for
+     *        example <code>"2012-03-20T17:03:43.221Z"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,11 +488,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      * 
      * @param completed
-     *        The job status. When a job is completed, you get the job's output.
+     *        The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      */
 
     public void setCompleted(Boolean completed) {
@@ -467,10 +501,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      * 
-     * @return The job status. When a job is completed, you get the job's output.
+     * @return The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      */
 
     public Boolean getCompleted() {
@@ -479,11 +513,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      * 
      * @param completed
-     *        The job status. When a job is completed, you get the job's output.
+     *        The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,10 +528,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The job status. When a job is completed, you get the job's output.
+     * The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      * </p>
      * 
-     * @return The job status. When a job is completed, you get the job's output.
+     * @return The job status. When a job is completed, you get the job's output using Get Job Output (GET output).
      */
 
     public Boolean isCompleted() {
@@ -506,11 +540,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
      * @param statusCode
-     *        The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     *        The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
+     *        indicates the status of the job.
      * @see StatusCode
      */
 
@@ -520,10 +556,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
-     * @return The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     * @return The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
+     *         indicates the status of the job.
      * @see StatusCode
      */
 
@@ -533,11 +571,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
      * @param statusCode
-     *        The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     *        The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
+     *        indicates the status of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusCode
      */
@@ -549,11 +589,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
      * @param statusCode
-     *        The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     *        The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
+     *        indicates the status of the job.
      * @see StatusCode
      */
 
@@ -563,11 +605,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     * The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the
+     * status of the job.
      * </p>
      * 
      * @param statusCode
-     *        The status code can be InProgress, Succeeded, or Failed, and indicates the status of the job.
+     *        The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and
+     *        indicates the status of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusCode
      */
@@ -619,13 +663,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the size in bytes of the archive being requested for download. For the
-     * InventoryRetrieval job, the value is null.
+     * For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an
+     * inventory retrieval or select job, this value is null.
      * </p>
      * 
      * @param archiveSizeInBytes
-     *        For an ArchiveRetrieval job, this is the size in bytes of the archive being requested for download. For
-     *        the InventoryRetrieval job, the value is null.
+     *        For an archive retrieval job, this value is the size in bytes of the archive being requested for download.
+     *        For an inventory retrieval or select job, this value is null.
      */
 
     public void setArchiveSizeInBytes(Long archiveSizeInBytes) {
@@ -634,12 +678,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the size in bytes of the archive being requested for download. For the
-     * InventoryRetrieval job, the value is null.
+     * For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an
+     * inventory retrieval or select job, this value is null.
      * </p>
      * 
-     * @return For an ArchiveRetrieval job, this is the size in bytes of the archive being requested for download. For
-     *         the InventoryRetrieval job, the value is null.
+     * @return For an archive retrieval job, this value is the size in bytes of the archive being requested for
+     *         download. For an inventory retrieval or select job, this value is null.
      */
 
     public Long getArchiveSizeInBytes() {
@@ -648,13 +692,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, this is the size in bytes of the archive being requested for download. For the
-     * InventoryRetrieval job, the value is null.
+     * For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an
+     * inventory retrieval or select job, this value is null.
      * </p>
      * 
      * @param archiveSizeInBytes
-     *        For an ArchiveRetrieval job, this is the size in bytes of the archive being requested for download. For
-     *        the InventoryRetrieval job, the value is null.
+     *        For an archive retrieval job, this value is the size in bytes of the archive being requested for download.
+     *        For an inventory retrieval or select job, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,13 +709,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an InventoryRetrieval job, this is the size in bytes of the inventory requested for download. For the
-     * ArchiveRetrieval job, the value is null.
+     * For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an
+     * archive retrieval or select job, this value is null.
      * </p>
      * 
      * @param inventorySizeInBytes
-     *        For an InventoryRetrieval job, this is the size in bytes of the inventory requested for download. For the
-     *        ArchiveRetrieval job, the value is null.
+     *        For an inventory retrieval job, this value is the size in bytes of the inventory requested for download.
+     *        For an archive retrieval or select job, this value is null.
      */
 
     public void setInventorySizeInBytes(Long inventorySizeInBytes) {
@@ -680,12 +724,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an InventoryRetrieval job, this is the size in bytes of the inventory requested for download. For the
-     * ArchiveRetrieval job, the value is null.
+     * For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an
+     * archive retrieval or select job, this value is null.
      * </p>
      * 
-     * @return For an InventoryRetrieval job, this is the size in bytes of the inventory requested for download. For the
-     *         ArchiveRetrieval job, the value is null.
+     * @return For an inventory retrieval job, this value is the size in bytes of the inventory requested for download.
+     *         For an archive retrieval or select job, this value is null.
      */
 
     public Long getInventorySizeInBytes() {
@@ -694,13 +738,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an InventoryRetrieval job, this is the size in bytes of the inventory requested for download. For the
-     * ArchiveRetrieval job, the value is null.
+     * For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an
+     * archive retrieval or select job, this value is null.
      * </p>
      * 
      * @param inventorySizeInBytes
-     *        For an InventoryRetrieval job, this is the size in bytes of the inventory requested for download. For the
-     *        ArchiveRetrieval job, the value is null.
+     *        For an inventory retrieval job, this value is the size in bytes of the inventory requested for download.
+     *        For an archive retrieval or select job, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -711,11 +755,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) topic that receives notification.
+     * An Amazon SNS topic that receives notification.
      * </p>
      * 
      * @param sNSTopic
-     *        An Amazon Simple Notification Service (Amazon SNS) topic that receives notification.
+     *        An Amazon SNS topic that receives notification.
      */
 
     public void setSNSTopic(String sNSTopic) {
@@ -724,10 +768,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) topic that receives notification.
+     * An Amazon SNS topic that receives notification.
      * </p>
      * 
-     * @return An Amazon Simple Notification Service (Amazon SNS) topic that receives notification.
+     * @return An Amazon SNS topic that receives notification.
      */
 
     public String getSNSTopic() {
@@ -736,11 +780,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) topic that receives notification.
+     * An Amazon SNS topic that receives notification.
      * </p>
      * 
      * @param sNSTopic
-     *        An Amazon Simple Notification Service (Amazon SNS) topic that receives notification.
+     *        An Amazon SNS topic that receives notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,12 +795,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The UTC time that the archive retrieval request completed. While the job is in progress, the value will be null.
+     * The UTC time that the job request completed. While the job is in progress, the value is null.
      * </p>
      * 
      * @param completionDate
-     *        The UTC time that the archive retrieval request completed. While the job is in progress, the value will be
-     *        null.
+     *        The UTC time that the job request completed. While the job is in progress, the value is null.
      */
 
     public void setCompletionDate(String completionDate) {
@@ -765,11 +808,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The UTC time that the archive retrieval request completed. While the job is in progress, the value will be null.
+     * The UTC time that the job request completed. While the job is in progress, the value is null.
      * </p>
      * 
-     * @return The UTC time that the archive retrieval request completed. While the job is in progress, the value will
-     *         be null.
+     * @return The UTC time that the job request completed. While the job is in progress, the value is null.
      */
 
     public String getCompletionDate() {
@@ -778,12 +820,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The UTC time that the archive retrieval request completed. While the job is in progress, the value will be null.
+     * The UTC time that the job request completed. While the job is in progress, the value is null.
      * </p>
      * 
      * @param completionDate
-     *        The UTC time that the archive retrieval request completed. While the job is in progress, the value will be
-     *        null.
+     *        The UTC time that the job request completed. While the job is in progress, the value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -794,72 +835,83 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null.
+     * For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.
      * </p>
      * <p>
-     * The SHA256 tree hash value for the requested range of an archive. If the Initiate a Job request for an archive
-     * specified a tree-hash aligned range, then this field returns a value.
+     * The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     * archive specified a tree-hash aligned range, then this field returns a value.
      * </p>
      * <p>
-     * For the specific case when the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash
-     * value.
+     * If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      * </p>
      * <p>
-     * This field is null in the following situations:
+     * This field is null for the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Archive retrieval jobs that specify a range that is not tree-hash aligned.
+     * Archive retrieval jobs that specify a range that is not tree-hash aligned
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Archival jobs that specify a range that is equal to the whole archive and the job status is InProgress.
+     * Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     * <code>InProgress</code>
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Inventory jobs.
+     * Inventory jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Select jobs
      * </p>
      * </li>
      * </ul>
      * 
      * @param sHA256TreeHash
-     *        For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null.</p>
+     *        For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is
+     *        null.</p>
      *        <p>
-     *        The SHA256 tree hash value for the requested range of an archive. If the Initiate a Job request for an
+     *        The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
      *        archive specified a tree-hash aligned range, then this field returns a value.
      *        </p>
      *        <p>
-     *        For the specific case when the whole archive is retrieved, this value is the same as the
-     *        ArchiveSHA256TreeHash value.
+     *        If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      *        </p>
      *        <p>
-     *        This field is null in the following situations:
+     *        This field is null for the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Archive retrieval jobs that specify a range that is not tree-hash aligned.
+     *        Archive retrieval jobs that specify a range that is not tree-hash aligned
      *        </p>
      *        </li>
      *        </ul>
      *        <ul>
      *        <li>
      *        <p>
-     *        Archival jobs that specify a range that is equal to the whole archive and the job status is InProgress.
+     *        Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     *        <code>InProgress</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <ul>
      *        <li>
      *        <p>
-     *        Inventory jobs.
+     *        Inventory jobs
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Select jobs
      *        </p>
      *        </li>
      */
@@ -870,71 +922,82 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null.
+     * For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.
      * </p>
      * <p>
-     * The SHA256 tree hash value for the requested range of an archive. If the Initiate a Job request for an archive
-     * specified a tree-hash aligned range, then this field returns a value.
+     * The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     * archive specified a tree-hash aligned range, then this field returns a value.
      * </p>
      * <p>
-     * For the specific case when the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash
-     * value.
+     * If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      * </p>
      * <p>
-     * This field is null in the following situations:
+     * This field is null for the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Archive retrieval jobs that specify a range that is not tree-hash aligned.
+     * Archive retrieval jobs that specify a range that is not tree-hash aligned
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Archival jobs that specify a range that is equal to the whole archive and the job status is InProgress.
+     * Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     * <code>InProgress</code>
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Inventory jobs.
+     * Inventory jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Select jobs
      * </p>
      * </li>
      * </ul>
      * 
-     * @return For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null.</p>
+     * @return For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is
+     *         null.</p>
      *         <p>
-     *         The SHA256 tree hash value for the requested range of an archive. If the Initiate a Job request for an
-     *         archive specified a tree-hash aligned range, then this field returns a value.
+     *         The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for
+     *         an archive specified a tree-hash aligned range, then this field returns a value.
      *         </p>
      *         <p>
-     *         For the specific case when the whole archive is retrieved, this value is the same as the
-     *         ArchiveSHA256TreeHash value.
+     *         If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      *         </p>
      *         <p>
-     *         This field is null in the following situations:
+     *         This field is null for the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Archive retrieval jobs that specify a range that is not tree-hash aligned.
+     *         Archive retrieval jobs that specify a range that is not tree-hash aligned
      *         </p>
      *         </li>
      *         </ul>
      *         <ul>
      *         <li>
      *         <p>
-     *         Archival jobs that specify a range that is equal to the whole archive and the job status is InProgress.
+     *         Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     *         <code>InProgress</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <ul>
      *         <li>
      *         <p>
-     *         Inventory jobs.
+     *         Inventory jobs
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Select jobs
      *         </p>
      *         </li>
      */
@@ -945,72 +1008,83 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null.
+     * For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.
      * </p>
      * <p>
-     * The SHA256 tree hash value for the requested range of an archive. If the Initiate a Job request for an archive
-     * specified a tree-hash aligned range, then this field returns a value.
+     * The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
+     * archive specified a tree-hash aligned range, then this field returns a value.
      * </p>
      * <p>
-     * For the specific case when the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash
-     * value.
+     * If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      * </p>
      * <p>
-     * This field is null in the following situations:
+     * This field is null for the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Archive retrieval jobs that specify a range that is not tree-hash aligned.
+     * Archive retrieval jobs that specify a range that is not tree-hash aligned
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Archival jobs that specify a range that is equal to the whole archive and the job status is InProgress.
+     * Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     * <code>InProgress</code>
      * </p>
      * </li>
      * </ul>
      * <ul>
      * <li>
      * <p>
-     * Inventory jobs.
+     * Inventory jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Select jobs
      * </p>
      * </li>
      * </ul>
      * 
      * @param sHA256TreeHash
-     *        For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null.</p>
+     *        For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is
+     *        null.</p>
      *        <p>
-     *        The SHA256 tree hash value for the requested range of an archive. If the Initiate a Job request for an
+     *        The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an
      *        archive specified a tree-hash aligned range, then this field returns a value.
      *        </p>
      *        <p>
-     *        For the specific case when the whole archive is retrieved, this value is the same as the
-     *        ArchiveSHA256TreeHash value.
+     *        If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.
      *        </p>
      *        <p>
-     *        This field is null in the following situations:
+     *        This field is null for the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Archive retrieval jobs that specify a range that is not tree-hash aligned.
+     *        Archive retrieval jobs that specify a range that is not tree-hash aligned
      *        </p>
      *        </li>
      *        </ul>
      *        <ul>
      *        <li>
      *        <p>
-     *        Archival jobs that specify a range that is equal to the whole archive and the job status is InProgress.
+     *        Archival jobs that specify a range that is equal to the whole archive, when the job status is
+     *        <code>InProgress</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <ul>
      *        <li>
      *        <p>
-     *        Inventory jobs.
+     *        Inventory jobs
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Select jobs
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1023,13 +1097,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval jobs, this field is
-     * null.
+     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this
+     * field is null.
      * </p>
      * 
      * @param archiveSHA256TreeHash
-     *        The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval jobs, this
-     *        field is null.
+     *        The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select
+     *        jobs, this field is null.
      */
 
     public void setArchiveSHA256TreeHash(String archiveSHA256TreeHash) {
@@ -1038,12 +1112,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval jobs, this field is
-     * null.
+     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this
+     * field is null.
      * </p>
      * 
-     * @return The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval jobs, this
-     *         field is null.
+     * @return The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select
+     *         jobs, this field is null.
      */
 
     public String getArchiveSHA256TreeHash() {
@@ -1052,13 +1126,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval jobs, this field is
-     * null.
+     * The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this
+     * field is null.
      * </p>
      * 
      * @param archiveSHA256TreeHash
-     *        The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval jobs, this
-     *        field is null.
+     *        The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select
+     *        jobs, this field is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1069,17 +1143,17 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The retrieved byte range for archive retrieval jobs in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If no
-     * range was specified in the archive retrieval, then the whole archive is retrieved and <i>StartByteValue</i>
-     * equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval jobs this field
-     * is null.
+     * The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no
+     * range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory
+     * retrieval or select jobs, this field is null.
      * </p>
      * 
      * @param retrievalByteRange
-     *        The retrieved byte range for archive retrieval jobs in the form
-     *        "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified in the archive retrieval, then the
-     *        whole archive is retrieved and <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of
-     *        the archive minus 1. For inventory retrieval jobs this field is null.
+     *        The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>.
+     *        If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     *        <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For
+     *        inventory retrieval or select jobs, this field is null.
      */
 
     public void setRetrievalByteRange(String retrievalByteRange) {
@@ -1088,16 +1162,16 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The retrieved byte range for archive retrieval jobs in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If no
-     * range was specified in the archive retrieval, then the whole archive is retrieved and <i>StartByteValue</i>
-     * equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval jobs this field
-     * is null.
+     * The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no
+     * range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory
+     * retrieval or select jobs, this field is null.
      * </p>
      * 
      * @return The retrieved byte range for archive retrieval jobs in the form
-     *         "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified in the archive retrieval, then the
-     *         whole archive is retrieved and <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of
-     *         the archive minus 1. For inventory retrieval jobs this field is null.
+     *         <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the
+     *         whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals
+     *         the size of the archive minus 1. For inventory retrieval or select jobs, this field is null.
      */
 
     public String getRetrievalByteRange() {
@@ -1106,17 +1180,17 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The retrieved byte range for archive retrieval jobs in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If no
-     * range was specified in the archive retrieval, then the whole archive is retrieved and <i>StartByteValue</i>
-     * equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval jobs this field
-     * is null.
+     * The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no
+     * range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory
+     * retrieval or select jobs, this field is null.
      * </p>
      * 
      * @param retrievalByteRange
-     *        The retrieved byte range for archive retrieval jobs in the form
-     *        "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified in the archive retrieval, then the
-     *        whole archive is retrieved and <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of
-     *        the archive minus 1. For inventory retrieval jobs this field is null.
+     *        The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>.
+     *        If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case,
+     *        <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For
+     *        inventory retrieval or select jobs, this field is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1127,12 +1201,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
      * @param tier
-     *        The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *        The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      */
 
@@ -1142,11 +1216,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
-     * @return The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * @return The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      *         <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      */
 
@@ -1156,12 +1230,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
      * @param tier
-     *        The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *        The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1212,6 +1286,126 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Contains the job output location.
+     * </p>
+     * 
+     * @param jobOutputPath
+     *        Contains the job output location.
+     */
+
+    public void setJobOutputPath(String jobOutputPath) {
+        this.jobOutputPath = jobOutputPath;
+    }
+
+    /**
+     * <p>
+     * Contains the job output location.
+     * </p>
+     * 
+     * @return Contains the job output location.
+     */
+
+    public String getJobOutputPath() {
+        return this.jobOutputPath;
+    }
+
+    /**
+     * <p>
+     * Contains the job output location.
+     * </p>
+     * 
+     * @param jobOutputPath
+     *        Contains the job output location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withJobOutputPath(String jobOutputPath) {
+        setJobOutputPath(jobOutputPath);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the parameters used for a select.
+     * </p>
+     * 
+     * @param selectParameters
+     *        Contains the parameters used for a select.
+     */
+
+    public void setSelectParameters(SelectParameters selectParameters) {
+        this.selectParameters = selectParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the parameters used for a select.
+     * </p>
+     * 
+     * @return Contains the parameters used for a select.
+     */
+
+    public SelectParameters getSelectParameters() {
+        return this.selectParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the parameters used for a select.
+     * </p>
+     * 
+     * @param selectParameters
+     *        Contains the parameters used for a select.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withSelectParameters(SelectParameters selectParameters) {
+        setSelectParameters(selectParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the location where the data from the select job is stored.
+     * </p>
+     * 
+     * @param outputLocation
+     *        Contains the location where the data from the select job is stored.
+     */
+
+    public void setOutputLocation(OutputLocation outputLocation) {
+        this.outputLocation = outputLocation;
+    }
+
+    /**
+     * <p>
+     * Contains the location where the data from the select job is stored.
+     * </p>
+     * 
+     * @return Contains the location where the data from the select job is stored.
+     */
+
+    public OutputLocation getOutputLocation() {
+        return this.outputLocation;
+    }
+
+    /**
+     * <p>
+     * Contains the location where the data from the select job is stored.
+     * </p>
+     * 
+     * @param outputLocation
+     *        Contains the location where the data from the select job is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withOutputLocation(OutputLocation outputLocation) {
+        setOutputLocation(outputLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1257,7 +1451,13 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getTier() != null)
             sb.append("Tier: ").append(getTier()).append(",");
         if (getInventoryRetrievalParameters() != null)
-            sb.append("InventoryRetrievalParameters: ").append(getInventoryRetrievalParameters());
+            sb.append("InventoryRetrievalParameters: ").append(getInventoryRetrievalParameters()).append(",");
+        if (getJobOutputPath() != null)
+            sb.append("JobOutputPath: ").append(getJobOutputPath()).append(",");
+        if (getSelectParameters() != null)
+            sb.append("SelectParameters: ").append(getSelectParameters()).append(",");
+        if (getOutputLocation() != null)
+            sb.append("OutputLocation: ").append(getOutputLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -1344,6 +1544,18 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getInventoryRetrievalParameters() != null && other.getInventoryRetrievalParameters().equals(this.getInventoryRetrievalParameters()) == false)
             return false;
+        if (other.getJobOutputPath() == null ^ this.getJobOutputPath() == null)
+            return false;
+        if (other.getJobOutputPath() != null && other.getJobOutputPath().equals(this.getJobOutputPath()) == false)
+            return false;
+        if (other.getSelectParameters() == null ^ this.getSelectParameters() == null)
+            return false;
+        if (other.getSelectParameters() != null && other.getSelectParameters().equals(this.getSelectParameters()) == false)
+            return false;
+        if (other.getOutputLocation() == null ^ this.getOutputLocation() == null)
+            return false;
+        if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
+            return false;
         return true;
     }
 
@@ -1370,6 +1582,9 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getRetrievalByteRange() == null) ? 0 : getRetrievalByteRange().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getInventoryRetrievalParameters() == null) ? 0 : getInventoryRetrievalParameters().hashCode());
+        hashCode = prime * hashCode + ((getJobOutputPath() == null) ? 0 : getJobOutputPath().hashCode());
+        hashCode = prime * hashCode + ((getSelectParameters() == null) ? 0 : getSelectParameters().hashCode());
+        hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
         return hashCode;
     }
 

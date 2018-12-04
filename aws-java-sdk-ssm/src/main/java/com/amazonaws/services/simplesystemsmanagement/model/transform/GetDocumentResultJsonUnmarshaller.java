@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,10 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
                 if (context.testExpression("DocumentType", targetDepth)) {
                     context.nextToken();
                     getDocumentResult.setDocumentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DocumentFormat", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

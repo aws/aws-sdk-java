@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,11 +75,9 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
     private String challengeName;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the <a
-     * href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
+     * determines that the caller needs to go through another challenge, they return a session with other challenge
+     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      */
     private String session;
@@ -593,19 +591,16 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the <a
-     * href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
+     * determines that the caller needs to go through another challenge, they return a session with other challenge
+     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If the <a
-     *        href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     *        href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call determines that the caller
-     *        needs to go through another challenge, they return a session with other challenge parameters. This session
-     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     *        The session which should be passed both ways in challenge-response calls to the service. If the or API
+     *        call determines that the caller needs to go through another challenge, they return a session with other
+     *        challenge parameters. This session should be passed as it is to the next
+     *        <code>RespondToAuthChallenge</code> API call.
      */
 
     public void setSession(String session) {
@@ -614,18 +609,15 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the <a
-     * href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
+     * determines that the caller needs to go through another challenge, they return a session with other challenge
+     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. If the <a
-     *         href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     *         href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call determines that the caller
-     *         needs to go through another challenge, they return a session with other challenge parameters. This
-     *         session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * @return The session which should be passed both ways in challenge-response calls to the service. If the or API
+     *         call determines that the caller needs to go through another challenge, they return a session with other
+     *         challenge parameters. This session should be passed as it is to the next
+     *         <code>RespondToAuthChallenge</code> API call.
      */
 
     public String getSession() {
@@ -634,19 +626,16 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the <a
-     * href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     * href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call determines that the caller needs to go
-     * through another challenge, they return a session with other challenge parameters. This session should be passed
-     * as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
+     * determines that the caller needs to go through another challenge, they return a session with other challenge
+     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If the <a
-     *        href="API_InitiateAuth.html">InitiateAuth</a> or <a
-     *        href="API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> API call determines that the caller
-     *        needs to go through another challenge, they return a session with other challenge parameters. This session
-     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     *        The session which should be passed both ways in challenge-response calls to the service. If the or API
+     *        call determines that the caller needs to go through another challenge, they return a session with other
+     *        challenge parameters. This session should be passed as it is to the next
+     *        <code>RespondToAuthChallenge</code> API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

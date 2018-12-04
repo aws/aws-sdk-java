@@ -125,7 +125,9 @@
   "exceptionClass": {
     "mainTemplate" : "/templates/common/model-exception-class.ftl"
   },
-  "exceptionUnmarshaller": {},
+  "exceptionUnmarshaller": {
+    "mainTemplate" : "/templates/query/exception-unmarshaller.ftl"
+  },
   "policyActionClass" : {
     "mainTemplate" : "/templates/common/auth-policy-action-class.ftl"
   },

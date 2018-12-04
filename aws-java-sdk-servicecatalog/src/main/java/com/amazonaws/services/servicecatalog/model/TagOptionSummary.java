@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The TagOption summary key-value pair.
+ * Summary information about a TagOption.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TagOptionSummary" target="_top">AWS
@@ -30,24 +30,24 @@ public class TagOptionSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The TagOptionSummary key.
+     * The TagOption key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The TagOptionSummary value.
+     * The TagOption value.
      * </p>
      */
     private java.util.List<String> values;
 
     /**
      * <p>
-     * The TagOptionSummary key.
+     * The TagOption key.
      * </p>
      * 
      * @param key
-     *        The TagOptionSummary key.
+     *        The TagOption key.
      */
 
     public void setKey(String key) {
@@ -56,10 +56,10 @@ public class TagOptionSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The TagOptionSummary key.
+     * The TagOption key.
      * </p>
      * 
-     * @return The TagOptionSummary key.
+     * @return The TagOption key.
      */
 
     public String getKey() {
@@ -68,11 +68,11 @@ public class TagOptionSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The TagOptionSummary key.
+     * The TagOption key.
      * </p>
      * 
      * @param key
-     *        The TagOptionSummary key.
+     *        The TagOption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class TagOptionSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The TagOptionSummary value.
+     * The TagOption value.
      * </p>
      * 
-     * @return The TagOptionSummary value.
+     * @return The TagOption value.
      */
 
     public java.util.List<String> getValues() {
@@ -95,11 +95,11 @@ public class TagOptionSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The TagOptionSummary value.
+     * The TagOption value.
      * </p>
      * 
      * @param values
-     *        The TagOptionSummary value.
+     *        The TagOption value.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -113,7 +113,7 @@ public class TagOptionSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The TagOptionSummary value.
+     * The TagOption value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class TagOptionSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param values
-     *        The TagOptionSummary value.
+     *        The TagOption value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class TagOptionSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The TagOptionSummary value.
+     * The TagOption value.
      * </p>
      * 
      * @param values
-     *        The TagOptionSummary value.
+     *        The TagOption value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

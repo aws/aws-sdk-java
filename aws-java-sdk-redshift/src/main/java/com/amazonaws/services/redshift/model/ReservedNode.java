@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -121,6 +121,8 @@ public class ReservedNode implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
+
+    private String reservedNodeOfferingType;
 
     /**
      * <p>
@@ -765,6 +767,46 @@ public class ReservedNode implements Serializable, Cloneable {
     }
 
     /**
+     * @param reservedNodeOfferingType
+     * @see ReservedNodeOfferingType
+     */
+
+    public void setReservedNodeOfferingType(String reservedNodeOfferingType) {
+        this.reservedNodeOfferingType = reservedNodeOfferingType;
+    }
+
+    /**
+     * @return
+     * @see ReservedNodeOfferingType
+     */
+
+    public String getReservedNodeOfferingType() {
+        return this.reservedNodeOfferingType;
+    }
+
+    /**
+     * @param reservedNodeOfferingType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReservedNodeOfferingType
+     */
+
+    public ReservedNode withReservedNodeOfferingType(String reservedNodeOfferingType) {
+        setReservedNodeOfferingType(reservedNodeOfferingType);
+        return this;
+    }
+
+    /**
+     * @param reservedNodeOfferingType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReservedNodeOfferingType
+     */
+
+    public ReservedNode withReservedNodeOfferingType(ReservedNodeOfferingType reservedNodeOfferingType) {
+        this.reservedNodeOfferingType = reservedNodeOfferingType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -798,7 +840,9 @@ public class ReservedNode implements Serializable, Cloneable {
         if (getOfferingType() != null)
             sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: ").append(getRecurringCharges());
+            sb.append("RecurringCharges: ").append(getRecurringCharges()).append(",");
+        if (getReservedNodeOfferingType() != null)
+            sb.append("ReservedNodeOfferingType: ").append(getReservedNodeOfferingType());
         sb.append("}");
         return sb.toString();
     }
@@ -861,6 +905,10 @@ public class ReservedNode implements Serializable, Cloneable {
             return false;
         if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
+        if (other.getReservedNodeOfferingType() == null ^ this.getReservedNodeOfferingType() == null)
+            return false;
+        if (other.getReservedNodeOfferingType() != null && other.getReservedNodeOfferingType().equals(this.getReservedNodeOfferingType()) == false)
+            return false;
         return true;
     }
 
@@ -881,6 +929,7 @@ public class ReservedNode implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
         hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
+        hashCode = prime * hashCode + ((getReservedNodeOfferingType() == null) ? 0 : getReservedNodeOfferingType().hashCode());
         return hashCode;
     }
 

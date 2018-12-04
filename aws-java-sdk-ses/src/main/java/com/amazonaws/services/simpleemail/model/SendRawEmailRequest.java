@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,19 +34,24 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address
      * in the raw text of the message. (You can also specify both.)
      * </p>
-     * <p>
-     * By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME
-     * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     * </p>
      * <note>
+     * <p>
+     * Amazon SES does not support the SMTPUTF8 extension, as described in<a
+     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email
+     * address (the part of the email address that precedes the @ sign) may only contain <a
+     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
+     * part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using
+     * Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also
+     * known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME
+     * encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
+     * encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+     * </p>
+     * </note>
      * <p>
      * If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and
      * complaints will be sent to this email address. This takes precedence over any Return-Path header that you might
      * include in the raw text of the message.
      * </p>
-     * </note>
      */
     private String source;
     /**
@@ -244,35 +249,45 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address
      * in the raw text of the message. (You can also specify both.)
      * </p>
-     * <p>
-     * By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME
-     * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     * </p>
      * <note>
+     * <p>
+     * Amazon SES does not support the SMTPUTF8 extension, as described in<a
+     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email
+     * address (the part of the email address that precedes the @ sign) may only contain <a
+     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
+     * part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using
+     * Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also
+     * known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME
+     * encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
+     * encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+     * </p>
+     * </note>
      * <p>
      * If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and
      * complaints will be sent to this email address. This takes precedence over any Return-Path header that you might
      * include in the raw text of the message.
      * </p>
-     * </note>
      * 
      * @param source
      *        The identity's email address. If you do not provide a value for this parameter, you must specify a "From"
-     *        address in the raw text of the message. (You can also specify both.)</p>
+     *        address in the raw text of the message. (You can also specify both.)</p> <note>
      *        <p>
-     *        By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must
-     *        use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the
-     *        following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     *        href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     *        Amazon SES does not support the SMTPUTF8 extension, as described in<a
+     *        href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source
+     *        email address (the part of the email address that precedes the @ sign) may only contain <a
+     *        href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
+     *        part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded
+     *        using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender
+     *        name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be
+     *        encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC
+     *        2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>
+     *        .
      *        </p>
-     *        <note>
+     *        </note>
      *        <p>
      *        If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and
      *        complaints will be sent to this email address. This takes precedence over any Return-Path header that you
      *        might include in the raw text of the message.
-     *        </p>
      */
 
     public void setSource(String source) {
@@ -284,34 +299,44 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address
      * in the raw text of the message. (You can also specify both.)
      * </p>
-     * <p>
-     * By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME
-     * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     * </p>
      * <note>
+     * <p>
+     * Amazon SES does not support the SMTPUTF8 extension, as described in<a
+     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email
+     * address (the part of the email address that precedes the @ sign) may only contain <a
+     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
+     * part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using
+     * Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also
+     * known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME
+     * encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
+     * encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+     * </p>
+     * </note>
      * <p>
      * If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and
      * complaints will be sent to this email address. This takes precedence over any Return-Path header that you might
      * include in the raw text of the message.
      * </p>
-     * </note>
      * 
      * @return The identity's email address. If you do not provide a value for this parameter, you must specify a "From"
-     *         address in the raw text of the message. (You can also specify both.)</p>
+     *         address in the raw text of the message. (You can also specify both.)</p> <note>
      *         <p>
-     *         By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must
-     *         use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the
-     *         following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     *         href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     *         Amazon SES does not support the SMTPUTF8 extension, as described in<a
+     *         href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a
+     *         source email address (the part of the email address that precedes the @ sign) may only contain <a
+     *         href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the
+     *         <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be
+     *         encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.
+     *         The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These
+     *         characters must be encoded using MIME encoded-word syntax, as described in <a
+     *         href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following
+     *         form: <code>=?charset?encoding?encoded-text?=</code>.
      *         </p>
-     *         <note>
+     *         </note>
      *         <p>
      *         If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and
      *         complaints will be sent to this email address. This takes precedence over any Return-Path header that you
      *         might include in the raw text of the message.
-     *         </p>
      */
 
     public String getSource() {
@@ -323,35 +348,45 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address
      * in the raw text of the message. (You can also specify both.)
      * </p>
-     * <p>
-     * By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME
-     * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     * </p>
      * <note>
+     * <p>
+     * Amazon SES does not support the SMTPUTF8 extension, as described in<a
+     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email
+     * address (the part of the email address that precedes the @ sign) may only contain <a
+     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
+     * part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using
+     * Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also
+     * known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME
+     * encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
+     * encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+     * </p>
+     * </note>
      * <p>
      * If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and
      * complaints will be sent to this email address. This takes precedence over any Return-Path header that you might
      * include in the raw text of the message.
      * </p>
-     * </note>
      * 
      * @param source
      *        The identity's email address. If you do not provide a value for this parameter, you must specify a "From"
-     *        address in the raw text of the message. (You can also specify both.)</p>
+     *        address in the raw text of the message. (You can also specify both.)</p> <note>
      *        <p>
-     *        By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must
-     *        use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the
-     *        following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     *        href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     *        Amazon SES does not support the SMTPUTF8 extension, as described in<a
+     *        href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source
+     *        email address (the part of the email address that precedes the @ sign) may only contain <a
+     *        href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
+     *        part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded
+     *        using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender
+     *        name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be
+     *        encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC
+     *        2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>
+     *        .
      *        </p>
-     *        <note>
+     *        </note>
      *        <p>
      *        If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and
      *        complaints will be sent to this email address. This takes precedence over any Return-Path header that you
      *        might include in the raw text of the message.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,10 @@ public class UpdateTagsForResourceRequestMarshaller implements Marshaller<Reques
             request.addParameter("ResourceArn", StringUtils.fromString(updateTagsForResourceRequest.getResourceArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsToAddList = (com.amazonaws.internal.SdkInternalList<Tag>) updateTagsForResourceRequest.getTagsToAdd();
-        if (!tagsToAddList.isEmpty() || !tagsToAddList.isAutoConstruct()) {
+        if (!updateTagsForResourceRequest.getTagsToAdd().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) updateTagsForResourceRequest.getTagsToAdd()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsToAddList = (com.amazonaws.internal.SdkInternalList<Tag>) updateTagsForResourceRequest
+                    .getTagsToAdd();
             int tagsToAddListIndex = 1;
 
             for (Tag tagsToAddListValue : tagsToAddList) {
@@ -61,9 +63,10 @@ public class UpdateTagsForResourceRequestMarshaller implements Marshaller<Reques
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) updateTagsForResourceRequest
-                .getTagsToRemove();
-        if (!tagsToRemoveList.isEmpty() || !tagsToRemoveList.isAutoConstruct()) {
+        if (!updateTagsForResourceRequest.getTagsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateTagsForResourceRequest.getTagsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) updateTagsForResourceRequest
+                    .getTagsToRemove();
             int tagsToRemoveListIndex = 1;
 
             for (String tagsToRemoveListValue : tagsToRemoveList) {

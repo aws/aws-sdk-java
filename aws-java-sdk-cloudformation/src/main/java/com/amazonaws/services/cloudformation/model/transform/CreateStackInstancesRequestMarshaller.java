@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,12 +45,14 @@ public class CreateStackInstancesRequestMarshaller implements Marshaller<Request
             request.addParameter("StackSetName", StringUtils.fromString(createStackInstancesRequest.getStackSetName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> accountsList = (com.amazonaws.internal.SdkInternalList<String>) createStackInstancesRequest
-                .getAccounts();
-        if (accountsList.isEmpty() && !accountsList.isAutoConstruct()) {
+        if (createStackInstancesRequest.getAccounts().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createStackInstancesRequest.getAccounts()).isAutoConstruct()) {
             request.addParameter("Accounts", "");
         }
-        if (!accountsList.isEmpty() || !accountsList.isAutoConstruct()) {
+        if (!createStackInstancesRequest.getAccounts().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createStackInstancesRequest.getAccounts()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> accountsList = (com.amazonaws.internal.SdkInternalList<String>) createStackInstancesRequest
+                    .getAccounts();
             int accountsListIndex = 1;
 
             for (String accountsListValue : accountsList) {
@@ -61,11 +63,14 @@ public class CreateStackInstancesRequestMarshaller implements Marshaller<Request
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> regionsList = (com.amazonaws.internal.SdkInternalList<String>) createStackInstancesRequest.getRegions();
-        if (regionsList.isEmpty() && !regionsList.isAutoConstruct()) {
+        if (createStackInstancesRequest.getRegions().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createStackInstancesRequest.getRegions()).isAutoConstruct()) {
             request.addParameter("Regions", "");
         }
-        if (!regionsList.isEmpty() || !regionsList.isAutoConstruct()) {
+        if (!createStackInstancesRequest.getRegions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createStackInstancesRequest.getRegions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> regionsList = (com.amazonaws.internal.SdkInternalList<String>) createStackInstancesRequest
+                    .getRegions();
             int regionsListIndex = 1;
 
             for (String regionsListValue : regionsList) {
@@ -76,15 +81,52 @@ public class CreateStackInstancesRequestMarshaller implements Marshaller<Request
             }
         }
 
+        if (createStackInstancesRequest.getParameterOverrides().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<Parameter>) createStackInstancesRequest.getParameterOverrides()).isAutoConstruct()) {
+            request.addParameter("ParameterOverrides", "");
+        }
+        if (!createStackInstancesRequest.getParameterOverrides().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) createStackInstancesRequest.getParameterOverrides()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parameterOverridesList = (com.amazonaws.internal.SdkInternalList<Parameter>) createStackInstancesRequest
+                    .getParameterOverrides();
+            int parameterOverridesListIndex = 1;
+
+            for (Parameter parameterOverridesListValue : parameterOverridesList) {
+
+                if (parameterOverridesListValue.getParameterKey() != null) {
+                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ParameterKey",
+                            StringUtils.fromString(parameterOverridesListValue.getParameterKey()));
+                }
+
+                if (parameterOverridesListValue.getParameterValue() != null) {
+                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ParameterValue",
+                            StringUtils.fromString(parameterOverridesListValue.getParameterValue()));
+                }
+
+                if (parameterOverridesListValue.getUsePreviousValue() != null) {
+                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".UsePreviousValue",
+                            StringUtils.fromBoolean(parameterOverridesListValue.getUsePreviousValue()));
+                }
+
+                if (parameterOverridesListValue.getResolvedValue() != null) {
+                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ResolvedValue",
+                            StringUtils.fromString(parameterOverridesListValue.getResolvedValue()));
+                }
+                parameterOverridesListIndex++;
+            }
+        }
+
         StackSetOperationPreferences operationPreferences = createStackInstancesRequest.getOperationPreferences();
         if (operationPreferences != null) {
 
-            com.amazonaws.internal.SdkInternalList<String> regionOrderList = (com.amazonaws.internal.SdkInternalList<String>) operationPreferences
-                    .getRegionOrder();
-            if (regionOrderList.isEmpty() && !regionOrderList.isAutoConstruct()) {
+            if (operationPreferences.getRegionOrder().isEmpty()
+                    && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
                 request.addParameter("OperationPreferences.RegionOrder", "");
             }
-            if (!regionOrderList.isEmpty() || !regionOrderList.isAutoConstruct()) {
+            if (!operationPreferences.getRegionOrder().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> regionOrderList = (com.amazonaws.internal.SdkInternalList<String>) operationPreferences
+                        .getRegionOrder();
                 int regionOrderListIndex = 1;
 
                 for (String regionOrderListValue : regionOrderList) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,19 @@ public class AliasConfiguration implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
+     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * </p>
+     */
+    private AliasRoutingConfiguration routingConfig;
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
@@ -228,6 +241,92 @@ public class AliasConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
+     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
+     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     */
+
+    public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        this.routingConfig = routingConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
+     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * </p>
+     * 
+     * @return Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
+     *         traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     */
+
+    public AliasRoutingConfiguration getRoutingConfig() {
+        return this.routingConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
+     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
+     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AliasConfiguration withRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        setRoutingConfig(routingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        Represents the latest updated revision of the function or alias.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @return Represents the latest updated revision of the function or alias.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        Represents the latest updated revision of the function or alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AliasConfiguration withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -245,7 +344,11 @@ public class AliasConfiguration implements Serializable, Cloneable, StructuredPo
         if (getFunctionVersion() != null)
             sb.append("FunctionVersion: ").append(getFunctionVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getRoutingConfig() != null)
+            sb.append("RoutingConfig: ").append(getRoutingConfig()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -276,6 +379,14 @@ public class AliasConfiguration implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getRoutingConfig() == null ^ this.getRoutingConfig() == null)
+            return false;
+        if (other.getRoutingConfig() != null && other.getRoutingConfig().equals(this.getRoutingConfig()) == false)
+            return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
         return true;
     }
 
@@ -288,6 +399,8 @@ public class AliasConfiguration implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRoutingConfig() == null) ? 0 : getRoutingConfig().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 

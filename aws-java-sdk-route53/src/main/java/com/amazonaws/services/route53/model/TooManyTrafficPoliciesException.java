@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,20 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You've created the maximum number of traffic policies that can be created for the current AWS account. You can
- * request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
+ * This traffic policy can't be created because the current account has reached the limit on the number of traffic
+ * policies.
+ * </p>
+ * <p>
+ * For information about default limits, see <a
+ * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route
+ * 53 Developer Guide</i>.
+ * </p>
+ * <p>
+ * To get the current limit for an account, see <a>GetAccountLimit</a>.
+ * </p>
+ * <p>
+ * To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support
+ * Center.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

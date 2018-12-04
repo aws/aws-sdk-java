@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -112,10 +112,9 @@ public class AWSOpsWorksWaiters {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
-                .withAcceptors(new InstanceStopped.IsStoppedMatcher(), new InstanceStopped.IsBootingMatcher(), new InstanceStopped.IsOnlineMatcher(),
-                        new InstanceStopped.IsPendingMatcher(), new InstanceStopped.IsRebootingMatcher(), new InstanceStopped.IsRequestedMatcher(),
-                        new InstanceStopped.IsRunning_setupMatcher(), new InstanceStopped.IsSetup_failedMatcher(), new InstanceStopped.IsStart_failedMatcher(),
-                        new InstanceStopped.IsStop_failedMatcher())
+                .withAcceptors(new InstanceStopped.IsStoppedMatcher(), new InstanceStopped.IsBootingMatcher(), new InstanceStopped.IsPendingMatcher(),
+                        new InstanceStopped.IsRebootingMatcher(), new InstanceStopped.IsRequestedMatcher(), new InstanceStopped.IsRunning_setupMatcher(),
+                        new InstanceStopped.IsSetup_failedMatcher(), new InstanceStopped.IsStart_failedMatcher(), new InstanceStopped.IsStop_failedMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }

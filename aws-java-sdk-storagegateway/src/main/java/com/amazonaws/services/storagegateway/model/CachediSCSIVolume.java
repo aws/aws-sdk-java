@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,17 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date createdDate;
+    /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     */
+    private Long volumeUsedInBytes;
 
     /**
      * <p>
@@ -468,6 +479,71 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
+     * @param volumeUsedInBytes
+     *        The size of the data stored on the volume in bytes.</p> <note>
+     *        <p>
+     *        This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     *        </p>
+     */
+
+    public void setVolumeUsedInBytes(Long volumeUsedInBytes) {
+        this.volumeUsedInBytes = volumeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
+     * @return The size of the data stored on the volume in bytes.</p> <note>
+     *         <p>
+     *         This value is not available for volumes created prior to May 13, 2015, until you store data on the
+     *         volume.
+     *         </p>
+     */
+
+    public Long getVolumeUsedInBytes() {
+        return this.volumeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
+     * @param volumeUsedInBytes
+     *        The size of the data stored on the volume in bytes.</p> <note>
+     *        <p>
+     *        This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CachediSCSIVolume withVolumeUsedInBytes(Long volumeUsedInBytes) {
+        setVolumeUsedInBytes(volumeUsedInBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -495,7 +571,9 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
         if (getVolumeiSCSIAttributes() != null)
             sb.append("VolumeiSCSIAttributes: ").append(getVolumeiSCSIAttributes()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: ").append(getCreatedDate());
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
+        if (getVolumeUsedInBytes() != null)
+            sb.append("VolumeUsedInBytes: ").append(getVolumeUsedInBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -546,6 +624,10 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
+        if (other.getVolumeUsedInBytes() == null ^ this.getVolumeUsedInBytes() == null)
+            return false;
+        if (other.getVolumeUsedInBytes() != null && other.getVolumeUsedInBytes().equals(this.getVolumeUsedInBytes()) == false)
+            return false;
         return true;
     }
 
@@ -563,6 +645,7 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getSourceSnapshotId() == null) ? 0 : getSourceSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getVolumeiSCSIAttributes() == null) ? 0 : getVolumeiSCSIAttributes().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getVolumeUsedInBytes() == null) ? 0 : getVolumeUsedInBytes().hashCode());
         return hashCode;
     }
 

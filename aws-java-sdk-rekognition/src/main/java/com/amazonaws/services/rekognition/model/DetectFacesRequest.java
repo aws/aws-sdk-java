@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,8 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The image in which you want to detect faces. You can specify a blob or an S3 object.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      */
     private Image image;
@@ -43,11 +44,13 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The image in which you want to detect faces. You can specify a blob or an S3 object.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
      * @param image
-     *        The image in which you want to detect faces. You can specify a blob or an S3 object.
+     *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     *        operations, passing base64-encoded image bytes is not supported.
      */
 
     public void setImage(Image image) {
@@ -56,10 +59,12 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The image in which you want to detect faces. You can specify a blob or an S3 object.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
-     * @return The image in which you want to detect faces. You can specify a blob or an S3 object.
+     * @return The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
+     *         Rekognition operations, passing base64-encoded image bytes is not supported.
      */
 
     public Image getImage() {
@@ -68,11 +73,13 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The image in which you want to detect faces. You can specify a blob or an S3 object.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
      * @param image
-     *        The image in which you want to detect faces. You can specify a blob or an S3 object.
+     *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     *        operations, passing base64-encoded image bytes is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

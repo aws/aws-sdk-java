@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,14 +31,18 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /** The ID of the application associated with the endpoint. */
     private String applicationId;
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
-     * when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array of values. For example, an
+     * attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these attributes
+     * as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * 
+     * The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console does not
+     * display attributes that include these characters in the name. This limitation does not apply to attribute values.
      */
     private java.util.Map<String, java.util.List<String>> attributes;
     /**
      * The channel type.
      * 
-     * Valid values: GCM | APNS | SMS | EMAIL
+     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     private String channelType;
     /**
@@ -152,11 +156,20 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
-     * when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array of values. For example, an
+     * attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these attributes
+     * as selection criteria when you create a segment of users to engage with a messaging campaign.
      * 
-     * @return Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *         criteria when you create a segment.
+     * The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console does not
+     * display attributes that include these characters in the name. This limitation does not apply to attribute values.
+     * 
+     * @return Custom attributes that describe the endpoint by associating a name with an array of values. For example,
+     *         an attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these
+     *         attributes as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * 
+     *         The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console
+     *         does not display attributes that include these characters in the name. This limitation does not apply to
+     *         attribute values.
      */
 
     public java.util.Map<String, java.util.List<String>> getAttributes() {
@@ -164,12 +177,21 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
-     * when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array of values. For example, an
+     * attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these attributes
+     * as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * 
+     * The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console does not
+     * display attributes that include these characters in the name. This limitation does not apply to attribute values.
      * 
      * @param attributes
-     *        Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *        criteria when you create a segment.
+     *        Custom attributes that describe the endpoint by associating a name with an array of values. For example,
+     *        an attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these
+     *        attributes as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * 
+     *        The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console
+     *        does not display attributes that include these characters in the name. This limitation does not apply to
+     *        attribute values.
      */
 
     public void setAttributes(java.util.Map<String, java.util.List<String>> attributes) {
@@ -177,12 +199,21 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
-     * when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array of values. For example, an
+     * attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these attributes
+     * as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * 
+     * The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console does not
+     * display attributes that include these characters in the name. This limitation does not apply to attribute values.
      * 
      * @param attributes
-     *        Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection
-     *        criteria when you create a segment.
+     *        Custom attributes that describe the endpoint by associating a name with an array of values. For example,
+     *        an attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these
+     *        attributes as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * 
+     *        The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console
+     *        does not display attributes that include these characters in the name. This limitation does not apply to
+     *        attribute values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,12 +246,12 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * The channel type.
      * 
-     * Valid values: GCM | APNS | SMS | EMAIL
+     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * 
      * @param channelType
      *        The channel type.
      * 
-     *        Valid values: GCM | APNS | SMS | EMAIL
+     *        Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * @see ChannelType
      */
 
@@ -231,11 +262,11 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * The channel type.
      * 
-     * Valid values: GCM | APNS | SMS | EMAIL
+     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * 
      * @return The channel type.
      * 
-     *         Valid values: GCM | APNS | SMS | EMAIL
+     *         Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * @see ChannelType
      */
 
@@ -246,12 +277,12 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * The channel type.
      * 
-     * Valid values: GCM | APNS | SMS | EMAIL
+     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * 
      * @param channelType
      *        The channel type.
      * 
-     *        Valid values: GCM | APNS | SMS | EMAIL
+     *        Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -264,12 +295,12 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * The channel type.
      * 
-     * Valid values: GCM | APNS | SMS | EMAIL
+     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * 
      * @param channelType
      *        The channel type.
      * 
-     *        Valid values: GCM | APNS | SMS | EMAIL
+     *        Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * @see ChannelType
      */
 
@@ -280,12 +311,12 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * The channel type.
      * 
-     * Valid values: GCM | APNS | SMS | EMAIL
+     * Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * 
      * @param channelType
      *        The channel type.
      * 
-     *        Valid values: GCM | APNS | SMS | EMAIL
+     *        Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */

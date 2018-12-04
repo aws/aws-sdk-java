@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code> and
+     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
      * <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric
      * type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter
      * must be specified in the format:
@@ -177,7 +177,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code> and
+     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
      * <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric
      * type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter
      * must be specified in the format:
@@ -216,7 +216,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code> and
+     *        For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
      *        <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the
      *        metric type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,
      *        the parameter must be specified in the format:
@@ -260,7 +260,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code> and
+     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
      * <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric
      * type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter
      * must be specified in the format:
@@ -298,7 +298,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code> and
+     *         For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
      *         <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with
      *         the metric type is the Auto Scaling group. For predefined metric type
      *         <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the format:
@@ -342,7 +342,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code> and
+     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
      * <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric
      * type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter
      * must be specified in the format:
@@ -381,7 +381,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code> and
+     *        For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
      *        <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the
      *        metric type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,
      *        the parameter must be specified in the format:

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,8 +24,9 @@ public enum RegionName {
     UsEast2("us-east-2"),
     UsWest1("us-west-1"),
     UsWest2("us-west-2"),
-    EuWest1("eu-west-1"),
     EuCentral1("eu-central-1"),
+    EuWest1("eu-west-1"),
+    EuWest2("eu-west-2"),
     ApSouth1("ap-south-1"),
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),

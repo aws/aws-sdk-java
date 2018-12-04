@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Describes the reason why the last image builder state change occurred.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageBuilderStateChangeReason"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImageBuilderStateChangeReason implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The state change reason code.
+     * </p>
+     */
     private String code;
-
+    /**
+     * <p>
+     * The state change reason message.
+     * </p>
+     */
     private String message;
 
     /**
+     * <p>
+     * The state change reason code.
+     * </p>
+     * 
      * @param code
+     *        The state change reason code.
      * @see ImageBuilderStateChangeReasonCode
      */
 
@@ -39,7 +56,11 @@ public class ImageBuilderStateChangeReason implements Serializable, Cloneable, S
     }
 
     /**
-     * @return
+     * <p>
+     * The state change reason code.
+     * </p>
+     * 
+     * @return The state change reason code.
      * @see ImageBuilderStateChangeReasonCode
      */
 
@@ -48,7 +69,12 @@ public class ImageBuilderStateChangeReason implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The state change reason code.
+     * </p>
+     * 
      * @param code
+     *        The state change reason code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageBuilderStateChangeReasonCode
      */
@@ -59,7 +85,12 @@ public class ImageBuilderStateChangeReason implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The state change reason code.
+     * </p>
+     * 
      * @param code
+     *        The state change reason code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageBuilderStateChangeReasonCode
      */
@@ -70,7 +101,12 @@ public class ImageBuilderStateChangeReason implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The state change reason message.
+     * </p>
+     * 
      * @param message
+     *        The state change reason message.
      */
 
     public void setMessage(String message) {
@@ -78,7 +114,11 @@ public class ImageBuilderStateChangeReason implements Serializable, Cloneable, S
     }
 
     /**
-     * @return
+     * <p>
+     * The state change reason message.
+     * </p>
+     * 
+     * @return The state change reason message.
      */
 
     public String getMessage() {
@@ -86,7 +126,12 @@ public class ImageBuilderStateChangeReason implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The state change reason message.
+     * </p>
+     * 
      * @param message
+     *        The state change reason message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

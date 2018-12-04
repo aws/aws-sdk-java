@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     private String containerArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task.
+     * The ARN of the task.
      * </p>
      */
     private String taskArn;
@@ -77,6 +77,13 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NetworkInterface> networkInterfaces;
+    /**
+     * <p>
+     * The health status of the container. If health checks are not configured for this container in its task
+     * definition, then it reports health status as <code>UNKNOWN</code>.
+     * </p>
+     */
+    private String healthStatus;
 
     /**
      * <p>
@@ -120,11 +127,11 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task.
+     * The ARN of the task.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task.
+     *        The ARN of the task.
      */
 
     public void setTaskArn(String taskArn) {
@@ -133,10 +140,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task.
+     * The ARN of the task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task.
+     * @return The ARN of the task.
      */
 
     public String getTaskArn() {
@@ -145,11 +152,11 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task.
+     * The ARN of the task.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task.
+     *        The ARN of the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,6 +478,73 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The health status of the container. If health checks are not configured for this container in its task
+     * definition, then it reports health status as <code>UNKNOWN</code>.
+     * </p>
+     * 
+     * @param healthStatus
+     *        The health status of the container. If health checks are not configured for this container in its task
+     *        definition, then it reports health status as <code>UNKNOWN</code>.
+     * @see HealthStatus
+     */
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
+    /**
+     * <p>
+     * The health status of the container. If health checks are not configured for this container in its task
+     * definition, then it reports health status as <code>UNKNOWN</code>.
+     * </p>
+     * 
+     * @return The health status of the container. If health checks are not configured for this container in its task
+     *         definition, then it reports health status as <code>UNKNOWN</code>.
+     * @see HealthStatus
+     */
+
+    public String getHealthStatus() {
+        return this.healthStatus;
+    }
+
+    /**
+     * <p>
+     * The health status of the container. If health checks are not configured for this container in its task
+     * definition, then it reports health status as <code>UNKNOWN</code>.
+     * </p>
+     * 
+     * @param healthStatus
+     *        The health status of the container. If health checks are not configured for this container in its task
+     *        definition, then it reports health status as <code>UNKNOWN</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HealthStatus
+     */
+
+    public Container withHealthStatus(String healthStatus) {
+        setHealthStatus(healthStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The health status of the container. If health checks are not configured for this container in its task
+     * definition, then it reports health status as <code>UNKNOWN</code>.
+     * </p>
+     * 
+     * @param healthStatus
+     *        The health status of the container. If health checks are not configured for this container in its task
+     *        definition, then it reports health status as <code>UNKNOWN</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HealthStatus
+     */
+
+    public Container withHealthStatus(HealthStatus healthStatus) {
+        this.healthStatus = healthStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -496,7 +570,9 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         if (getNetworkBindings() != null)
             sb.append("NetworkBindings: ").append(getNetworkBindings()).append(",");
         if (getNetworkInterfaces() != null)
-            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces());
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
+        if (getHealthStatus() != null)
+            sb.append("HealthStatus: ").append(getHealthStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -543,6 +619,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
             return false;
+        if (other.getHealthStatus() == null ^ this.getHealthStatus() == null)
+            return false;
+        if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
+            return false;
         return true;
     }
 
@@ -559,6 +639,7 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getNetworkBindings() == null) ? 0 : getNetworkBindings().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         return hashCode;
     }
 

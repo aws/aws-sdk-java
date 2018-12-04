@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,24 +72,25 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     private String endpoint;
     /**
      * <p>
-     * The engine type of the server. The valid value in this release is <code>Chef</code>.
+     * The engine type of the server. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.
      * </p>
      */
     private String engine;
     /**
      * <p>
-     * The engine model of the server. The valid value in this release is <code>Single</code>.
+     * The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and
+     * <code>Single</code> for Chef.
      * </p>
      */
     private String engineModel;
     /**
      * <p>
      * The response of a createServer() request returns the master credential to access the server in EngineAttributes.
-     * These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned only as part of the result
-     * of createServer().
+     * These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of
+     * createServer().
      * </p>
      * <p class="title">
-     * <b>Attributes returned in a createServer response:</b>
+     * <b>Attributes returned in a createServer response for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -106,12 +107,30 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes returned in a createServer response for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including
+     * a README and a required private key. Save this file, unzip it, and then change to the directory where you've
+     * unzipped the file contents.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     * Enterprise console after the server is online.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<EngineAttribute> engineAttributes;
     /**
      * <p>
-     * The engine version of the server. Because Chef is the engine available in this release, the valid value for
-     * EngineVersion is <code>12</code>.
+     * The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
+     * <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
      * </p>
      */
     private String engineVersion;
@@ -505,11 +524,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine type of the server. The valid value in this release is <code>Chef</code>.
+     * The engine type of the server. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.
      * </p>
      * 
      * @param engine
-     *        The engine type of the server. The valid value in this release is <code>Chef</code>.
+     *        The engine type of the server. Valid values in this release include <code>Chef</code> and
+     *        <code>Puppet</code>.
      */
 
     public void setEngine(String engine) {
@@ -518,10 +538,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine type of the server. The valid value in this release is <code>Chef</code>.
+     * The engine type of the server. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.
      * </p>
      * 
-     * @return The engine type of the server. The valid value in this release is <code>Chef</code>.
+     * @return The engine type of the server. Valid values in this release include <code>Chef</code> and
+     *         <code>Puppet</code>.
      */
 
     public String getEngine() {
@@ -530,11 +551,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine type of the server. The valid value in this release is <code>Chef</code>.
+     * The engine type of the server. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.
      * </p>
      * 
      * @param engine
-     *        The engine type of the server. The valid value in this release is <code>Chef</code>.
+     *        The engine type of the server. Valid values in this release include <code>Chef</code> and
+     *        <code>Puppet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -545,11 +567,13 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine model of the server. The valid value in this release is <code>Single</code>.
+     * The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and
+     * <code>Single</code> for Chef.
      * </p>
      * 
      * @param engineModel
-     *        The engine model of the server. The valid value in this release is <code>Single</code>.
+     *        The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet
+     *        and <code>Single</code> for Chef.
      */
 
     public void setEngineModel(String engineModel) {
@@ -558,10 +582,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine model of the server. The valid value in this release is <code>Single</code>.
+     * The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and
+     * <code>Single</code> for Chef.
      * </p>
      * 
-     * @return The engine model of the server. The valid value in this release is <code>Single</code>.
+     * @return The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet
+     *         and <code>Single</code> for Chef.
      */
 
     public String getEngineModel() {
@@ -570,11 +596,13 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine model of the server. The valid value in this release is <code>Single</code>.
+     * The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and
+     * <code>Single</code> for Chef.
      * </p>
      * 
      * @param engineModel
-     *        The engine model of the server. The valid value in this release is <code>Single</code>.
+     *        The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet
+     *        and <code>Single</code> for Chef.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -586,11 +614,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The response of a createServer() request returns the master credential to access the server in EngineAttributes.
-     * These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned only as part of the result
-     * of createServer().
+     * These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of
+     * createServer().
      * </p>
      * <p class="title">
-     * <b>Attributes returned in a createServer response:</b>
+     * <b>Attributes returned in a createServer response for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -607,12 +635,30 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes returned in a createServer response for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including
+     * a README and a required private key. Save this file, unzip it, and then change to the directory where you've
+     * unzipped the file contents.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     * Enterprise console after the server is online.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The response of a createServer() request returns the master credential to access the server in
-     *         EngineAttributes. These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned
-     *         only as part of the result of createServer(). </p>
+     *         EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of
+     *         the result of createServer(). </p>
      *         <p class="title">
-     *         <b>Attributes returned in a createServer response:</b>
+     *         <b>Attributes returned in a createServer response for Chef</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -629,6 +675,24 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      *         Knife commands.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p class="title">
+     *         <b>Attributes returned in a createServer response for Puppet</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit,
+     *         including a README and a required private key. Save this file, unzip it, and then change to the directory
+     *         where you've unzipped the file contents.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     *         Enterprise console after the server is online.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<EngineAttribute> getEngineAttributes() {
@@ -638,11 +702,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The response of a createServer() request returns the master credential to access the server in EngineAttributes.
-     * These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned only as part of the result
-     * of createServer().
+     * These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of
+     * createServer().
      * </p>
      * <p class="title">
-     * <b>Attributes returned in a createServer response:</b>
+     * <b>Attributes returned in a createServer response for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -659,13 +723,31 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes returned in a createServer response for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including
+     * a README and a required private key. Save this file, unzip it, and then change to the directory where you've
+     * unzipped the file contents.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     * Enterprise console after the server is online.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineAttributes
      *        The response of a createServer() request returns the master credential to access the server in
-     *        EngineAttributes. These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned
-     *        only as part of the result of createServer(). </p>
+     *        EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of
+     *        the result of createServer(). </p>
      *        <p class="title">
-     *        <b>Attributes returned in a createServer response:</b>
+     *        <b>Attributes returned in a createServer response for Chef</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -680,6 +762,24 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      *        includes a README, a configuration file, and the required RSA private key. Save this file, unzip it, and
      *        then change to the directory where you've unzipped the file contents. From this directory, you can run
      *        Knife commands.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attributes returned in a createServer response for Puppet</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit,
+     *        including a README and a required private key. Save this file, unzip it, and then change to the directory
+     *        where you've unzipped the file contents.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     *        Enterprise console after the server is online.
      *        </p>
      *        </li>
      */
@@ -696,11 +796,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The response of a createServer() request returns the master credential to access the server in EngineAttributes.
-     * These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned only as part of the result
-     * of createServer().
+     * These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of
+     * createServer().
      * </p>
      * <p class="title">
-     * <b>Attributes returned in a createServer response:</b>
+     * <b>Attributes returned in a createServer response for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -717,6 +817,24 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes returned in a createServer response for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including
+     * a README and a required private key. Save this file, unzip it, and then change to the directory where you've
+     * unzipped the file contents.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     * Enterprise console after the server is online.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEngineAttributes(java.util.Collection)} or {@link #withEngineAttributes(java.util.Collection)} if you
@@ -725,10 +843,10 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param engineAttributes
      *        The response of a createServer() request returns the master credential to access the server in
-     *        EngineAttributes. These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned
-     *        only as part of the result of createServer(). </p>
+     *        EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of
+     *        the result of createServer(). </p>
      *        <p class="title">
-     *        <b>Attributes returned in a createServer response:</b>
+     *        <b>Attributes returned in a createServer response for Chef</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -743,6 +861,24 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      *        includes a README, a configuration file, and the required RSA private key. Save this file, unzip it, and
      *        then change to the directory where you've unzipped the file contents. From this directory, you can run
      *        Knife commands.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attributes returned in a createServer response for Puppet</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit,
+     *        including a README and a required private key. Save this file, unzip it, and then change to the directory
+     *        where you've unzipped the file contents.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     *        Enterprise console after the server is online.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -761,11 +897,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The response of a createServer() request returns the master credential to access the server in EngineAttributes.
-     * These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned only as part of the result
-     * of createServer().
+     * These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of
+     * createServer().
      * </p>
      * <p class="title">
-     * <b>Attributes returned in a createServer response:</b>
+     * <b>Attributes returned in a createServer response for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -782,13 +918,31 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes returned in a createServer response for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including
+     * a README and a required private key. Save this file, unzip it, and then change to the directory where you've
+     * unzipped the file contents.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     * Enterprise console after the server is online.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineAttributes
      *        The response of a createServer() request returns the master credential to access the server in
-     *        EngineAttributes. These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned
-     *        only as part of the result of createServer(). </p>
+     *        EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of
+     *        the result of createServer(). </p>
      *        <p class="title">
-     *        <b>Attributes returned in a createServer response:</b>
+     *        <b>Attributes returned in a createServer response for Chef</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -805,6 +959,24 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      *        Knife commands.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attributes returned in a createServer response for Puppet</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit,
+     *        including a README and a required private key. Save this file, unzip it, and then change to the directory
+     *        where you've unzipped the file contents.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet
+     *        Enterprise console after the server is online.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -815,13 +987,13 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine version of the server. Because Chef is the engine available in this release, the valid value for
-     * EngineVersion is <code>12</code>.
+     * The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
+     * <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
-     *        The engine version of the server. Because Chef is the engine available in this release, the valid value
-     *        for EngineVersion is <code>12</code>.
+     *        The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
+     *        <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -830,12 +1002,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine version of the server. Because Chef is the engine available in this release, the valid value for
-     * EngineVersion is <code>12</code>.
+     * The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
+     * <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
      * </p>
      * 
-     * @return The engine version of the server. Because Chef is the engine available in this release, the valid value
-     *         for EngineVersion is <code>12</code>.
+     * @return The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
+     *         <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
      */
 
     public String getEngineVersion() {
@@ -844,13 +1016,13 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The engine version of the server. Because Chef is the engine available in this release, the valid value for
-     * EngineVersion is <code>12</code>.
+     * The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
+     * <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
-     *        The engine version of the server. Because Chef is the engine available in this release, the valid value
-     *        for EngineVersion is <code>12</code>.
+     *        The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
+     *        <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

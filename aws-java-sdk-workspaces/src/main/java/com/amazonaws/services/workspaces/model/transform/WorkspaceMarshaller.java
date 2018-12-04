@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -55,6 +56,8 @@ public class WorkspaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootVolumeEncryptionEnabled").build();
     private static final MarshallingInfo<StructuredPojo> WORKSPACEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkspaceProperties").build();
+    private static final MarshallingInfo<List> MODIFICATIONSTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModificationStates").build();
 
     private static final WorkspaceMarshaller instance = new WorkspaceMarshaller();
 
@@ -86,6 +89,7 @@ public class WorkspaceMarshaller {
             protocolMarshaller.marshall(workspace.getUserVolumeEncryptionEnabled(), USERVOLUMEENCRYPTIONENABLED_BINDING);
             protocolMarshaller.marshall(workspace.getRootVolumeEncryptionEnabled(), ROOTVOLUMEENCRYPTIONENABLED_BINDING);
             protocolMarshaller.marshall(workspace.getWorkspaceProperties(), WORKSPACEPROPERTIES_BINDING);
+            protocolMarshaller.marshall(workspace.getModificationStates(), MODIFICATIONSTATES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

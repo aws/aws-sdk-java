@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,21 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public CreateResourceDefinitionResult createResourceDefinition(CreateResourceDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateResourceDefinitionVersionResult createResourceDefinitionVersion(CreateResourceDefinitionVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSoftwareUpdateJobResult createSoftwareUpdateJob(CreateSoftwareUpdateJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSubscriptionDefinitionResult createSubscriptionDefinition(CreateSubscriptionDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +144,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
 
     @Override
     public DeleteLoggerDefinitionResult deleteLoggerDefinition(DeleteLoggerDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResourceDefinitionResult deleteResourceDefinition(DeleteResourceDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,6 +243,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public GetResourceDefinitionResult getResourceDefinition(GetResourceDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourceDefinitionVersionResult getResourceDefinitionVersion(GetResourceDefinitionVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetServiceRoleForAccountResult getServiceRoleForAccount(GetServiceRoleForAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -298,6 +328,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public ListResourceDefinitionVersionsResult listResourceDefinitionVersions(ListResourceDefinitionVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceDefinitionsResult listResourceDefinitions(ListResourceDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSubscriptionDefinitionVersionsResult listSubscriptionDefinitionVersions(ListSubscriptionDefinitionVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -344,6 +384,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
 
     @Override
     public UpdateLoggerDefinitionResult updateLoggerDefinition(UpdateLoggerDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateResourceDefinitionResult updateResourceDefinition(UpdateResourceDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

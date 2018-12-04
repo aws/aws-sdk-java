@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,6 +118,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Boolean allowedOAuthFlowsUserPoolClient;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+     * </p>
+     */
+    private AnalyticsConfigurationType analyticsConfiguration;
 
     /**
      * <p>
@@ -1045,6 +1051,46 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+     * </p>
+     * 
+     * @param analyticsConfiguration
+     *        The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+     */
+
+    public void setAnalyticsConfiguration(AnalyticsConfigurationType analyticsConfiguration) {
+        this.analyticsConfiguration = analyticsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+     */
+
+    public AnalyticsConfigurationType getAnalyticsConfiguration() {
+        return this.analyticsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+     * </p>
+     * 
+     * @param analyticsConfiguration
+     *        The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolClientRequest withAnalyticsConfiguration(AnalyticsConfigurationType analyticsConfiguration) {
+        setAnalyticsConfiguration(analyticsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1082,7 +1128,9 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
         if (getAllowedOAuthScopes() != null)
             sb.append("AllowedOAuthScopes: ").append(getAllowedOAuthScopes()).append(",");
         if (getAllowedOAuthFlowsUserPoolClient() != null)
-            sb.append("AllowedOAuthFlowsUserPoolClient: ").append(getAllowedOAuthFlowsUserPoolClient());
+            sb.append("AllowedOAuthFlowsUserPoolClient: ").append(getAllowedOAuthFlowsUserPoolClient()).append(",");
+        if (getAnalyticsConfiguration() != null)
+            sb.append("AnalyticsConfiguration: ").append(getAnalyticsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1154,6 +1202,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getAllowedOAuthFlowsUserPoolClient() != null
                 && other.getAllowedOAuthFlowsUserPoolClient().equals(this.getAllowedOAuthFlowsUserPoolClient()) == false)
             return false;
+        if (other.getAnalyticsConfiguration() == null ^ this.getAnalyticsConfiguration() == null)
+            return false;
+        if (other.getAnalyticsConfiguration() != null && other.getAnalyticsConfiguration().equals(this.getAnalyticsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1176,6 +1228,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAllowedOAuthFlows() == null) ? 0 : getAllowedOAuthFlows().hashCode());
         hashCode = prime * hashCode + ((getAllowedOAuthScopes() == null) ? 0 : getAllowedOAuthScopes().hashCode());
         hashCode = prime * hashCode + ((getAllowedOAuthFlowsUserPoolClient() == null) ? 0 : getAllowedOAuthFlowsUserPoolClient().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsConfiguration() == null) ? 0 : getAnalyticsConfiguration().hashCode());
         return hashCode;
     }
 

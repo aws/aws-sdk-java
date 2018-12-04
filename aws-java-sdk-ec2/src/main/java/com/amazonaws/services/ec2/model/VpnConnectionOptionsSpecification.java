@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,8 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
+     * that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -46,7 +47,8 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
+     * that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -54,7 +56,8 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
      * 
      * @param staticRoutesOnly
      *        Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a
-     *        device that does not support BGP, you must specify <code>true</code>.</p>
+     *        device that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a>
+     *        to create a static route.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -66,14 +69,16 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
+     * that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @return Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a
-     *         device that does not support BGP, you must specify <code>true</code>.</p>
+     *         device that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a>
+     *         to create a static route.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -85,7 +90,8 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
+     * that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -93,7 +99,8 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
      * 
      * @param staticRoutesOnly
      *        Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a
-     *        device that does not support BGP, you must specify <code>true</code>.</p>
+     *        device that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a>
+     *        to create a static route.</p>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -107,14 +114,16 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
+     * that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @return Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a
-     *         device that does not support BGP, you must specify <code>true</code>.</p>
+     *         device that does not support BGP, you must specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a>
+     *         to create a static route.</p>
      *         <p>
      *         Default: <code>false</code>
      */

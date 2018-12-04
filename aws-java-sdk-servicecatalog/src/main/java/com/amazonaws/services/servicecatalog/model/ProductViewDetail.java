@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed product view information.
+ * Information about a product view.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewDetail" target="_top">AWS
@@ -30,45 +30,53 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The summary metadata about the specified product view.
+     * Summary information about the product view.
      * </p>
      */
     private ProductViewSummary productViewSummary;
     /**
      * <p>
-     * Current status of the product.
+     * The status of the product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>AVAILABLE</code> - Product is available for use.
+     * <code>AVAILABLE</code> - The product is ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * <code>CREATING</code> - Product creation has started; the product is not ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - Action on product failed.
+     * <code>FAILED</code> - An action failed.
      * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
      * <p>
-     * The ARN associated with the product.
+     * The ARN of the product.
      * </p>
      */
     private String productARN;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
 
     /**
      * <p>
-     * The summary metadata about the specified product view.
+     * Summary information about the product view.
      * </p>
      * 
      * @param productViewSummary
-     *        The summary metadata about the specified product view.
+     *        Summary information about the product view.
      */
 
     public void setProductViewSummary(ProductViewSummary productViewSummary) {
@@ -77,10 +85,10 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The summary metadata about the specified product view.
+     * Summary information about the product view.
      * </p>
      * 
-     * @return The summary metadata about the specified product view.
+     * @return Summary information about the product view.
      */
 
     public ProductViewSummary getProductViewSummary() {
@@ -89,11 +97,11 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The summary metadata about the specified product view.
+     * Summary information about the product view.
      * </p>
      * 
      * @param productViewSummary
-     *        The summary metadata about the specified product view.
+     *        Summary information about the product view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,28 +112,44 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Current status of the product.
+     * The status of the product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>AVAILABLE</code> - Product is available for use.
+     * <code>AVAILABLE</code> - The product is ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * <code>CREATING</code> - Product creation has started; the product is not ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - Action on product failed.
+     * <code>FAILED</code> - An action failed.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        Current status of the product.</p>
+     *        The status of the product.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>AVAILABLE</code> - Product is available for use.
+     *        <code>AVAILABLE</code> - The product is ready for use.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>CREATING</code> - Creation of product started, not ready for use.
+     *        <code>CREATING</code> - Product creation has started; the product is not ready for use.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>FAILED</code> - Action on product failed.
+     *        <code>FAILED</code> - An action failed.
+     *        </p>
+     *        </li>
      * @see Status
      */
 
@@ -135,27 +159,43 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Current status of the product.
+     * The status of the product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>AVAILABLE</code> - Product is available for use.
+     * <code>AVAILABLE</code> - The product is ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * <code>CREATING</code> - Product creation has started; the product is not ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - Action on product failed.
+     * <code>FAILED</code> - An action failed.
      * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Current status of the product.</p>
+     * @return The status of the product.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         <code>AVAILABLE</code> - Product is available for use.
+     *         <code>AVAILABLE</code> - The product is ready for use.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         <code>CREATING</code> - Creation of product started, not ready for use.
+     *         <code>CREATING</code> - Product creation has started; the product is not ready for use.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         <code>FAILED</code> - Action on product failed.
+     *         <code>FAILED</code> - An action failed.
+     *         </p>
+     *         </li>
      * @see Status
      */
 
@@ -165,28 +205,44 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Current status of the product.
+     * The status of the product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>AVAILABLE</code> - Product is available for use.
+     * <code>AVAILABLE</code> - The product is ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * <code>CREATING</code> - Product creation has started; the product is not ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - Action on product failed.
+     * <code>FAILED</code> - An action failed.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        Current status of the product.</p>
+     *        The status of the product.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>AVAILABLE</code> - Product is available for use.
+     *        <code>AVAILABLE</code> - The product is ready for use.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>CREATING</code> - Creation of product started, not ready for use.
+     *        <code>CREATING</code> - Product creation has started; the product is not ready for use.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>FAILED</code> - Action on product failed.
+     *        <code>FAILED</code> - An action failed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -198,28 +254,44 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Current status of the product.
+     * The status of the product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>AVAILABLE</code> - Product is available for use.
+     * <code>AVAILABLE</code> - The product is ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * <code>CREATING</code> - Product creation has started; the product is not ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - Action on product failed.
+     * <code>FAILED</code> - An action failed.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        Current status of the product.</p>
+     *        The status of the product.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>AVAILABLE</code> - Product is available for use.
+     *        <code>AVAILABLE</code> - The product is ready for use.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>CREATING</code> - Creation of product started, not ready for use.
+     *        <code>CREATING</code> - Product creation has started; the product is not ready for use.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>FAILED</code> - Action on product failed.
+     *        <code>FAILED</code> - An action failed.
+     *        </p>
+     *        </li>
      * @see Status
      */
 
@@ -229,28 +301,44 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Current status of the product.
+     * The status of the product.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>AVAILABLE</code> - Product is available for use.
+     * <code>AVAILABLE</code> - The product is ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * <code>CREATING</code> - Product creation has started; the product is not ready for use.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>FAILED</code> - Action on product failed.
+     * <code>FAILED</code> - An action failed.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        Current status of the product.</p>
+     *        The status of the product.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>AVAILABLE</code> - Product is available for use.
+     *        <code>AVAILABLE</code> - The product is ready for use.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>CREATING</code> - Creation of product started, not ready for use.
+     *        <code>CREATING</code> - Product creation has started; the product is not ready for use.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>FAILED</code> - Action on product failed.
+     *        <code>FAILED</code> - An action failed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -262,11 +350,11 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN associated with the product.
+     * The ARN of the product.
      * </p>
      * 
      * @param productARN
-     *        The ARN associated with the product.
+     *        The ARN of the product.
      */
 
     public void setProductARN(String productARN) {
@@ -275,10 +363,10 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN associated with the product.
+     * The ARN of the product.
      * </p>
      * 
-     * @return The ARN associated with the product.
+     * @return The ARN of the product.
      */
 
     public String getProductARN() {
@@ -287,11 +375,11 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN associated with the product.
+     * The ARN of the product.
      * </p>
      * 
      * @param productARN
-     *        The ARN associated with the product.
+     *        The ARN of the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,11 +390,11 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -315,10 +403,10 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -327,11 +415,11 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

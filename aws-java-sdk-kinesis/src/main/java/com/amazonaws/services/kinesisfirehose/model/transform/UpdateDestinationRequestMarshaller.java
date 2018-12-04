@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class UpdateDestinationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftDestinationUpdate").build();
     private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHDESTINATIONUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchDestinationUpdate").build();
+    private static final MarshallingInfo<StructuredPojo> SPLUNKDESTINATIONUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SplunkDestinationUpdate").build();
 
     private static final UpdateDestinationRequestMarshaller instance = new UpdateDestinationRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class UpdateDestinationRequestMarshaller {
             protocolMarshaller.marshall(updateDestinationRequest.getExtendedS3DestinationUpdate(), EXTENDEDS3DESTINATIONUPDATE_BINDING);
             protocolMarshaller.marshall(updateDestinationRequest.getRedshiftDestinationUpdate(), REDSHIFTDESTINATIONUPDATE_BINDING);
             protocolMarshaller.marshall(updateDestinationRequest.getElasticsearchDestinationUpdate(), ELASTICSEARCHDESTINATIONUPDATE_BINDING);
+            protocolMarshaller.marshall(updateDestinationRequest.getSplunkDestinationUpdate(), SPLUNKDESTINATIONUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

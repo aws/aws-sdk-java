@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,13 @@ public class GetHealthCheckLastFailureReasonRequest extends com.amazonaws.Amazon
      * The ID for the health check for which you want the last failure reason. When you created the health check,
      * <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
+     * <note>
+     * <p>
+     * If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53
+     * console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated
+     * health check.
+     * </p>
+     * </note>
      */
     private String healthCheckId;
 
@@ -41,10 +48,23 @@ public class GetHealthCheckLastFailureReasonRequest extends com.amazonaws.Amazon
      * The ID for the health check for which you want the last failure reason. When you created the health check,
      * <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
+     * <note>
+     * <p>
+     * If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53
+     * console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated
+     * health check.
+     * </p>
+     * </note>
      * 
      * @param healthCheckId
      *        The ID for the health check for which you want the last failure reason. When you created the health check,
-     *        <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
+     *        <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code>
+     *        element.</p> <note>
+     *        <p>
+     *        If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53
+     *        console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a
+     *        calculated health check.
+     *        </p>
      */
 
     public void setHealthCheckId(String healthCheckId) {
@@ -56,10 +76,22 @@ public class GetHealthCheckLastFailureReasonRequest extends com.amazonaws.Amazon
      * The ID for the health check for which you want the last failure reason. When you created the health check,
      * <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
+     * <note>
+     * <p>
+     * If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53
+     * console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated
+     * health check.
+     * </p>
+     * </note>
      * 
      * @return The ID for the health check for which you want the last failure reason. When you created the health
      *         check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code>
-     *         element.
+     *         element.</p> <note>
+     *         <p>
+     *         If you want to get the last failure reason for a calculated health check, you must use the Amazon Route
+     *         53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a
+     *         calculated health check.
+     *         </p>
      */
 
     public String getHealthCheckId() {
@@ -71,10 +103,23 @@ public class GetHealthCheckLastFailureReasonRequest extends com.amazonaws.Amazon
      * The ID for the health check for which you want the last failure reason. When you created the health check,
      * <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
+     * <note>
+     * <p>
+     * If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53
+     * console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated
+     * health check.
+     * </p>
+     * </note>
      * 
      * @param healthCheckId
      *        The ID for the health check for which you want the last failure reason. When you created the health check,
-     *        <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
+     *        <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code>
+     *        element.</p> <note>
+     *        <p>
+     *        If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53
+     *        console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a
+     *        calculated health check.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

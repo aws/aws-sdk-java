@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,14 +79,40 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * </p>
      */
     private WafAction action;
     /**
      * <p>
-     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
-     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
-     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
+     * </p>
+     * <p>
+     * Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code>
+     * to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to
+     * test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> will then override any block action specified by individual rules contained within the
+     * group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted
+     * requests using <a>GetSampledRequests</a>.
+     * </p>
+     * <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * </p>
+     */
+    private WafOverrideAction overrideAction;
+    /**
+     * <p>
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR. Although
+     * this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type,
+     * the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist.
      * </p>
      */
     private String type;
@@ -245,6 +271,11 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * </p>
      * 
      * @param action
      *        Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
@@ -266,6 +297,11 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *        then continues to inspect the web request based on the remaining rules in the web ACL.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      */
 
     public void setAction(WafAction action) {
@@ -295,6 +331,11 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * </p>
      * 
      * @return Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
      *         <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
@@ -315,6 +356,12 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *         then continues to inspect the web request based on the remaining rules in the web ACL.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code>
+     *         to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other
+     *         update requests, <code>ActivatedRule|Action</code> is used instead of
+     *         <code>ActivatedRule|OverrideAction</code>.
      */
 
     public WafAction getAction() {
@@ -344,6 +391,11 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * </p>
      * 
      * @param action
      *        Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
@@ -365,6 +417,11 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *        then continues to inspect the web request based on the remaining rules in the web ACL.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,17 +432,142 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
-     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
-     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
+     * </p>
+     * <p>
+     * Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code>
+     * to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to
+     * test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> will then override any block action specified by individual rules contained within the
+     * group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted
+     * requests using <a>GetSampledRequests</a>.
+     * </p>
+     * <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * </p>
+     * 
+     * @param overrideAction
+     *        Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     *        <p>
+     *        Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
+     *        <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any
+     *        individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.
+     *        However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     *        <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual
+     *        rules contained within the group. Instead of blocking matching requests, those requests will be counted.
+     *        You can view a record of counted requests using <a>GetSampledRequests</a>.
+     *        </p>
+     *        <p>
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     */
+
+    public void setOverrideAction(WafOverrideAction overrideAction) {
+        this.overrideAction = overrideAction;
+    }
+
+    /**
+     * <p>
+     * Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
+     * </p>
+     * <p>
+     * Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code>
+     * to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to
+     * test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> will then override any block action specified by individual rules contained within the
+     * group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted
+     * requests using <a>GetSampledRequests</a>.
+     * </p>
+     * <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * </p>
+     * 
+     * @return Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     *         <p>
+     *         Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
+     *         <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any
+     *         individual rule in the <code>RuleGroup</code> matches the request and is configured to block that
+     *         request. However if you first want to test the <code>RuleGroup</code>, set the
+     *         <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any
+     *         block action specified by individual rules contained within the group. Instead of blocking matching
+     *         requests, those requests will be counted. You can view a record of counted requests using
+     *         <a>GetSampledRequests</a>.
+     *         </p>
+     *         <p>
+     *         <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code>
+     *         to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other
+     *         update requests, <code>ActivatedRule|Action</code> is used instead of
+     *         <code>ActivatedRule|OverrideAction</code>.
+     */
+
+    public WafOverrideAction getOverrideAction() {
+        return this.overrideAction;
+    }
+
+    /**
+     * <p>
+     * Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
+     * </p>
+     * <p>
+     * Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code>
+     * to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to
+     * test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> will then override any block action specified by individual rules contained within the
+     * group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted
+     * requests using <a>GetSampledRequests</a>.
+     * </p>
+     * <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * </p>
+     * 
+     * @param overrideAction
+     *        Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     *        <p>
+     *        Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
+     *        <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any
+     *        individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.
+     *        However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to
+     *        <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual
+     *        rules contained within the group. Instead of blocking matching requests, those requests will be counted.
+     *        You can view a record of counted requests using <a>GetSampledRequests</a>.
+     *        </p>
+     *        <p>
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivatedRule withOverrideAction(WafOverrideAction overrideAction) {
+        setOverrideAction(overrideAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR. Although
+     * this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type,
+     * the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist.
      * </p>
      * 
      * @param type
-     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
-     *        defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if
-     *        you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request
-     *        will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.
+     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined
+     *        by <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     *        Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without
+     *        setting the type, the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR
+     *        rule with the specified ID, which does not exist.
      * @see WafRuleType
      */
 
@@ -395,17 +577,18 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
-     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
-     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR. Although
+     * this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type,
+     * the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist.
      * </p>
      * 
-     * @return The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
-     *         defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that
-     *         if you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
-     *         request will fail because the request tries to add a REGULAR rule with the specified ID, which does not
-     *         exist.
+     * @return The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as
+     *         defined by <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is
+     *         REGULAR. Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL
+     *         without setting the type, the <a>UpdateWebACL</a> request will fail because the request tries to add a
+     *         REGULAR rule with the specified ID, which does not exist.
      * @see WafRuleType
      */
 
@@ -415,17 +598,19 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
-     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
-     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR. Although
+     * this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type,
+     * the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist.
      * </p>
      * 
      * @param type
-     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
-     *        defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if
-     *        you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request
-     *        will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.
+     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined
+     *        by <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     *        Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without
+     *        setting the type, the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR
+     *        rule with the specified ID, which does not exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WafRuleType
      */
@@ -437,17 +622,19 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
-     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
-     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR. Although
+     * this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type,
+     * the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist.
      * </p>
      * 
      * @param type
-     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
-     *        defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if
-     *        you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request
-     *        will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.
+     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined
+     *        by <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     *        Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without
+     *        setting the type, the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR
+     *        rule with the specified ID, which does not exist.
      * @see WafRuleType
      */
 
@@ -457,17 +644,19 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
-     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
-     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
-     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR. Although
+     * this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type,
+     * the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule with the specified ID,
+     * which does not exist.
      * </p>
      * 
      * @param type
-     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
-     *        defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if
-     *        you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request
-     *        will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.
+     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>, as defined
+     *        by <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>. The default is REGULAR.
+     *        Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without
+     *        setting the type, the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR
+     *        rule with the specified ID, which does not exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WafRuleType
      */
@@ -494,6 +683,8 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
             sb.append("RuleId: ").append(getRuleId()).append(",");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
+        if (getOverrideAction() != null)
+            sb.append("OverrideAction: ").append(getOverrideAction()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -522,6 +713,10 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
+        if (other.getOverrideAction() == null ^ this.getOverrideAction() == null)
+            return false;
+        if (other.getOverrideAction() != null && other.getOverrideAction().equals(this.getOverrideAction()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -537,6 +732,7 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getRuleId() == null) ? 0 : getRuleId().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getOverrideAction() == null) ? 0 : getOverrideAction().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

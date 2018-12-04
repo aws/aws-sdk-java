@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String filter;
@@ -45,8 +45,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -128,14 +127,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param filter
      *        You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *        statements. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setFilter(String filter) {
@@ -147,13 +146,13 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *         statements. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *         Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getFilter() {
@@ -165,14 +164,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param filter
      *        You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *        statements. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,8 +184,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -198,8 +196,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code>
      *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to return.</p> <note>
+     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code>
+     *        value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -214,8 +212,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -226,8 +223,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code>
      *         request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *         Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *         This value is <code>null</code> when there are no more results to return.</p> <note>
+     *         Pagination continues from the end of the previous results that returned the <code>nextToken</code>
+     *         value.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -242,8 +239,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -255,8 +251,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code>
      *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to return.</p> <note>
+     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code>
+     *        value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.

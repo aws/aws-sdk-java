@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class AddResourcePermissionsRequestMarshaller {
             .marshallLocationName("ResourceId").build();
     private static final MarshallingInfo<List> PRINCIPALS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Principals").build();
+    private static final MarshallingInfo<StructuredPojo> NOTIFICATIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationOptions").build();
 
     private static final AddResourcePermissionsRequestMarshaller instance = new AddResourcePermissionsRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class AddResourcePermissionsRequestMarshaller {
             protocolMarshaller.marshall(addResourcePermissionsRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(addResourcePermissionsRequest.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(addResourcePermissionsRequest.getPrincipals(), PRINCIPALS_BINDING);
+            protocolMarshaller.marshall(addResourcePermissionsRequest.getNotificationOptions(), NOTIFICATIONOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

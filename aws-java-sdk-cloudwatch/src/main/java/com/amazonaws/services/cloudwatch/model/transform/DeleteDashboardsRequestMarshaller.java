@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,10 @@ public class DeleteDashboardsRequestMarshaller implements Marshaller<Request<Del
         request.addParameter("Version", "2010-08-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> dashboardNamesList = (com.amazonaws.internal.SdkInternalList<String>) deleteDashboardsRequest
-                .getDashboardNames();
-        if (!dashboardNamesList.isEmpty() || !dashboardNamesList.isAutoConstruct()) {
+        if (!deleteDashboardsRequest.getDashboardNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) deleteDashboardsRequest.getDashboardNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> dashboardNamesList = (com.amazonaws.internal.SdkInternalList<String>) deleteDashboardsRequest
+                    .getDashboardNames();
             int dashboardNamesListIndex = 1;
 
             for (String dashboardNamesListValue : dashboardNamesList) {

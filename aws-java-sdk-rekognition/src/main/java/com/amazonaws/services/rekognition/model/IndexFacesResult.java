@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      */
     private java.util.List<FaceRecord> faceRecords;
@@ -40,14 +40,20 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </note>
      */
     private String orientationCorrection;
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     */
+    private String faceModelVersion;
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      * 
      * @return An array of faces detected and added to the collection. For more information, see
-     *         <a>howitworks-index-faces</a>.
+     *         <a>collections-index-faces</a>.
      */
 
     public java.util.List<FaceRecord> getFaceRecords() {
@@ -56,12 +62,12 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      * 
      * @param faceRecords
      *        An array of faces detected and added to the collection. For more information, see
-     *        <a>howitworks-index-faces</a>.
+     *        <a>collections-index-faces</a>.
      */
 
     public void setFaceRecords(java.util.Collection<FaceRecord> faceRecords) {
@@ -75,7 +81,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +91,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * 
      * @param faceRecords
      *        An array of faces detected and added to the collection. For more information, see
-     *        <a>howitworks-index-faces</a>.
+     *        <a>collections-index-faces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,12 +107,12 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      * 
      * @param faceRecords
      *        An array of faces detected and added to the collection. For more information, see
-     *        <a>howitworks-index-faces</a>.
+     *        <a>collections-index-faces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,6 +285,49 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @param faceModelVersion
+     *        Version number of the face detection model associated with the input collection (<code>CollectionId</code>
+     *        ).
+     */
+
+    public void setFaceModelVersion(String faceModelVersion) {
+        this.faceModelVersion = faceModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @return Version number of the face detection model associated with the input collection (
+     *         <code>CollectionId</code>).
+     */
+
+    public String getFaceModelVersion() {
+        return this.faceModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @param faceModelVersion
+     *        Version number of the face detection model associated with the input collection (<code>CollectionId</code>
+     *        ).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IndexFacesResult withFaceModelVersion(String faceModelVersion) {
+        setFaceModelVersion(faceModelVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -292,7 +341,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getFaceRecords() != null)
             sb.append("FaceRecords: ").append(getFaceRecords()).append(",");
         if (getOrientationCorrection() != null)
-            sb.append("OrientationCorrection: ").append(getOrientationCorrection());
+            sb.append("OrientationCorrection: ").append(getOrientationCorrection()).append(",");
+        if (getFaceModelVersion() != null)
+            sb.append("FaceModelVersion: ").append(getFaceModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +366,10 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getOrientationCorrection() != null && other.getOrientationCorrection().equals(this.getOrientationCorrection()) == false)
             return false;
+        if (other.getFaceModelVersion() == null ^ this.getFaceModelVersion() == null)
+            return false;
+        if (other.getFaceModelVersion() != null && other.getFaceModelVersion().equals(this.getFaceModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -325,6 +380,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
         hashCode = prime * hashCode + ((getFaceRecords() == null) ? 0 : getFaceRecords().hashCode());
         hashCode = prime * hashCode + ((getOrientationCorrection() == null) ? 0 : getOrientationCorrection().hashCode());
+        hashCode = prime * hashCode + ((getFaceModelVersion() == null) ? 0 : getFaceModelVersion().hashCode());
         return hashCode;
     }
 

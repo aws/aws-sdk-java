@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,9 +47,8 @@ public class DescribeTargetHealthRequestMarshaller implements Marshaller<Request
             request.addParameter("TargetGroupArn", StringUtils.fromString(describeTargetHealthRequest.getTargetGroupArn()));
         }
 
-        java.util.List<TargetDescription> targetsList = describeTargetHealthRequest.getTargets();
-
-        if (targetsList != null) {
+        if (describeTargetHealthRequest.getTargets() != null) {
+            java.util.List<TargetDescription> targetsList = describeTargetHealthRequest.getTargets();
             if (targetsList.isEmpty()) {
                 request.addParameter("Targets", "");
             } else {

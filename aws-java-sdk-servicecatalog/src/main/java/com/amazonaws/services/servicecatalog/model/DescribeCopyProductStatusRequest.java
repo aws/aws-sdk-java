@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class DescribeCopyProductStatusRequest extends com.amazonaws.AmazonWebSer
     private String acceptLanguage;
     /**
      * <p>
-     * The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * </p>
      */
     private String copyProductToken;
@@ -196,11 +196,11 @@ public class DescribeCopyProductStatusRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * </p>
      * 
      * @param copyProductToken
-     *        The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     *        The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      */
 
     public void setCopyProductToken(String copyProductToken) {
@@ -209,10 +209,10 @@ public class DescribeCopyProductStatusRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * </p>
      * 
-     * @return The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * @return The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      */
 
     public String getCopyProductToken() {
@@ -221,11 +221,11 @@ public class DescribeCopyProductStatusRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * </p>
      * 
      * @param copyProductToken
-     *        The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     *        The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

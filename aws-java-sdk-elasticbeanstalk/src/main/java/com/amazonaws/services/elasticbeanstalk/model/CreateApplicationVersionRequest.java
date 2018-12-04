@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,9 +85,16 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     private Boolean autoCreateApplication;
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     * application's configuration files, like proxy server or Docker configuration.
+     * </p>
+     * </note>
      */
     private Boolean process;
 
@@ -498,14 +505,26 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     * application's configuration files, like proxy server or Docker configuration.
+     * </p>
+     * </note>
      * 
      * @param process
-     *        Preprocesses and validates the environment manifest and configuration files in the source bundle.
-     *        Validating configuration files can identify issues prior to deploying the application version to an
-     *        environment.
+     *        Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     *        <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
+     *        configuration files can identify issues prior to deploying the application version to an environment.</p>
+     *        <note>
+     *        <p>
+     *        The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     *        application's configuration files, like proxy server or Docker configuration.
+     *        </p>
      */
 
     public void setProcess(Boolean process) {
@@ -514,13 +533,25 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     * application's configuration files, like proxy server or Docker configuration.
+     * </p>
+     * </note>
      * 
-     * @return Preprocesses and validates the environment manifest and configuration files in the source bundle.
-     *         Validating configuration files can identify issues prior to deploying the application version to an
-     *         environment.
+     * @return Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     *         <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
+     *         configuration files can identify issues prior to deploying the application version to an environment.</p>
+     *         <note>
+     *         <p>
+     *         The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     *         application's configuration files, like proxy server or Docker configuration.
+     *         </p>
      */
 
     public Boolean getProcess() {
@@ -529,14 +560,26 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     * application's configuration files, like proxy server or Docker configuration.
+     * </p>
+     * </note>
      * 
      * @param process
-     *        Preprocesses and validates the environment manifest and configuration files in the source bundle.
-     *        Validating configuration files can identify issues prior to deploying the application version to an
-     *        environment.
+     *        Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     *        <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
+     *        configuration files can identify issues prior to deploying the application version to an environment.</p>
+     *        <note>
+     *        <p>
+     *        The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     *        application's configuration files, like proxy server or Docker configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -547,13 +590,25 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest and configuration files in the source bundle. Validating
+     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     * application's configuration files, like proxy server or Docker configuration.
+     * </p>
+     * </note>
      * 
-     * @return Preprocesses and validates the environment manifest and configuration files in the source bundle.
-     *         Validating configuration files can identify issues prior to deploying the application version to an
-     *         environment.
+     * @return Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     *         <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
+     *         configuration files can identify issues prior to deploying the application version to an environment.</p>
+     *         <note>
+     *         <p>
+     *         The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
+     *         application's configuration files, like proxy server or Docker configuration.
+     *         </p>
      */
 
     public Boolean isProcess() {

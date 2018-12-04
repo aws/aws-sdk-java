@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,24 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String action;
+    /**
+     * <p>
+     * The timeout seconds of the step.
+     * </p>
+     */
+    private Long timeoutSeconds;
+    /**
+     * <p>
+     * The action to take if the step fails. The default value is Abort.
+     * </p>
+     */
+    private String onFailure;
+    /**
+     * <p>
+     * The maximum number of tries to run the action of the step. The default value is 1.
+     * </p>
+     */
+    private Integer maxAttempts;
     /**
      * <p>
      * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
@@ -97,6 +115,18 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private FailureDetails failureDetails;
+    /**
+     * <p>
+     * The unique ID of a step execution.
+     * </p>
+     */
+    private String stepExecutionId;
+    /**
+     * <p>
+     * A user-specified list of parameters to override when executing a step.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> overriddenParameters;
 
     /**
      * <p>
@@ -175,6 +205,126 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     public StepExecution withAction(String action) {
         setAction(action);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timeout seconds of the step.
+     * </p>
+     * 
+     * @param timeoutSeconds
+     *        The timeout seconds of the step.
+     */
+
+    public void setTimeoutSeconds(Long timeoutSeconds) {
+        this.timeoutSeconds = timeoutSeconds;
+    }
+
+    /**
+     * <p>
+     * The timeout seconds of the step.
+     * </p>
+     * 
+     * @return The timeout seconds of the step.
+     */
+
+    public Long getTimeoutSeconds() {
+        return this.timeoutSeconds;
+    }
+
+    /**
+     * <p>
+     * The timeout seconds of the step.
+     * </p>
+     * 
+     * @param timeoutSeconds
+     *        The timeout seconds of the step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withTimeoutSeconds(Long timeoutSeconds) {
+        setTimeoutSeconds(timeoutSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action to take if the step fails. The default value is Abort.
+     * </p>
+     * 
+     * @param onFailure
+     *        The action to take if the step fails. The default value is Abort.
+     */
+
+    public void setOnFailure(String onFailure) {
+        this.onFailure = onFailure;
+    }
+
+    /**
+     * <p>
+     * The action to take if the step fails. The default value is Abort.
+     * </p>
+     * 
+     * @return The action to take if the step fails. The default value is Abort.
+     */
+
+    public String getOnFailure() {
+        return this.onFailure;
+    }
+
+    /**
+     * <p>
+     * The action to take if the step fails. The default value is Abort.
+     * </p>
+     * 
+     * @param onFailure
+     *        The action to take if the step fails. The default value is Abort.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withOnFailure(String onFailure) {
+        setOnFailure(onFailure);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of tries to run the action of the step. The default value is 1.
+     * </p>
+     * 
+     * @param maxAttempts
+     *        The maximum number of tries to run the action of the step. The default value is 1.
+     */
+
+    public void setMaxAttempts(Integer maxAttempts) {
+        this.maxAttempts = maxAttempts;
+    }
+
+    /**
+     * <p>
+     * The maximum number of tries to run the action of the step. The default value is 1.
+     * </p>
+     * 
+     * @return The maximum number of tries to run the action of the step. The default value is 1.
+     */
+
+    public Integer getMaxAttempts() {
+        return this.maxAttempts;
+    }
+
+    /**
+     * <p>
+     * The maximum number of tries to run the action of the step. The default value is 1.
+     * </p>
+     * 
+     * @param maxAttempts
+     *        The maximum number of tries to run the action of the step. The default value is 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withMaxAttempts(Integer maxAttempts) {
+        setMaxAttempts(maxAttempts);
         return this;
     }
 
@@ -636,6 +786,107 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The unique ID of a step execution.
+     * </p>
+     * 
+     * @param stepExecutionId
+     *        The unique ID of a step execution.
+     */
+
+    public void setStepExecutionId(String stepExecutionId) {
+        this.stepExecutionId = stepExecutionId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of a step execution.
+     * </p>
+     * 
+     * @return The unique ID of a step execution.
+     */
+
+    public String getStepExecutionId() {
+        return this.stepExecutionId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of a step execution.
+     * </p>
+     * 
+     * @param stepExecutionId
+     *        The unique ID of a step execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withStepExecutionId(String stepExecutionId) {
+        setStepExecutionId(stepExecutionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A user-specified list of parameters to override when executing a step.
+     * </p>
+     * 
+     * @return A user-specified list of parameters to override when executing a step.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getOverriddenParameters() {
+        return overriddenParameters;
+    }
+
+    /**
+     * <p>
+     * A user-specified list of parameters to override when executing a step.
+     * </p>
+     * 
+     * @param overriddenParameters
+     *        A user-specified list of parameters to override when executing a step.
+     */
+
+    public void setOverriddenParameters(java.util.Map<String, java.util.List<String>> overriddenParameters) {
+        this.overriddenParameters = overriddenParameters;
+    }
+
+    /**
+     * <p>
+     * A user-specified list of parameters to override when executing a step.
+     * </p>
+     * 
+     * @param overriddenParameters
+     *        A user-specified list of parameters to override when executing a step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withOverriddenParameters(java.util.Map<String, java.util.List<String>> overriddenParameters) {
+        setOverriddenParameters(overriddenParameters);
+        return this;
+    }
+
+    public StepExecution addOverriddenParametersEntry(String key, java.util.List<String> value) {
+        if (null == this.overriddenParameters) {
+            this.overriddenParameters = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.overriddenParameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.overriddenParameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into OverriddenParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution clearOverriddenParametersEntries() {
+        this.overriddenParameters = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -650,6 +901,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
             sb.append("StepName: ").append(getStepName()).append(",");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
+        if (getTimeoutSeconds() != null)
+            sb.append("TimeoutSeconds: ").append(getTimeoutSeconds()).append(",");
+        if (getOnFailure() != null)
+            sb.append("OnFailure: ").append(getOnFailure()).append(",");
+        if (getMaxAttempts() != null)
+            sb.append("MaxAttempts: ").append(getMaxAttempts()).append(",");
         if (getExecutionStartTime() != null)
             sb.append("ExecutionStartTime: ").append(getExecutionStartTime()).append(",");
         if (getExecutionEndTime() != null)
@@ -667,7 +924,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         if (getFailureMessage() != null)
             sb.append("FailureMessage: ").append(getFailureMessage()).append(",");
         if (getFailureDetails() != null)
-            sb.append("FailureDetails: ").append(getFailureDetails());
+            sb.append("FailureDetails: ").append(getFailureDetails()).append(",");
+        if (getStepExecutionId() != null)
+            sb.append("StepExecutionId: ").append(getStepExecutionId()).append(",");
+        if (getOverriddenParameters() != null)
+            sb.append("OverriddenParameters: ").append(getOverriddenParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -689,6 +950,18 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+            return false;
+        if (other.getTimeoutSeconds() == null ^ this.getTimeoutSeconds() == null)
+            return false;
+        if (other.getTimeoutSeconds() != null && other.getTimeoutSeconds().equals(this.getTimeoutSeconds()) == false)
+            return false;
+        if (other.getOnFailure() == null ^ this.getOnFailure() == null)
+            return false;
+        if (other.getOnFailure() != null && other.getOnFailure().equals(this.getOnFailure()) == false)
+            return false;
+        if (other.getMaxAttempts() == null ^ this.getMaxAttempts() == null)
+            return false;
+        if (other.getMaxAttempts() != null && other.getMaxAttempts().equals(this.getMaxAttempts()) == false)
             return false;
         if (other.getExecutionStartTime() == null ^ this.getExecutionStartTime() == null)
             return false;
@@ -726,6 +999,14 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFailureDetails() != null && other.getFailureDetails().equals(this.getFailureDetails()) == false)
             return false;
+        if (other.getStepExecutionId() == null ^ this.getStepExecutionId() == null)
+            return false;
+        if (other.getStepExecutionId() != null && other.getStepExecutionId().equals(this.getStepExecutionId()) == false)
+            return false;
+        if (other.getOverriddenParameters() == null ^ this.getOverriddenParameters() == null)
+            return false;
+        if (other.getOverriddenParameters() != null && other.getOverriddenParameters().equals(this.getOverriddenParameters()) == false)
+            return false;
         return true;
     }
 
@@ -736,6 +1017,9 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getStepName() == null) ? 0 : getStepName().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutSeconds() == null) ? 0 : getTimeoutSeconds().hashCode());
+        hashCode = prime * hashCode + ((getOnFailure() == null) ? 0 : getOnFailure().hashCode());
+        hashCode = prime * hashCode + ((getMaxAttempts() == null) ? 0 : getMaxAttempts().hashCode());
         hashCode = prime * hashCode + ((getExecutionStartTime() == null) ? 0 : getExecutionStartTime().hashCode());
         hashCode = prime * hashCode + ((getExecutionEndTime() == null) ? 0 : getExecutionEndTime().hashCode());
         hashCode = prime * hashCode + ((getStepStatus() == null) ? 0 : getStepStatus().hashCode());
@@ -745,6 +1029,8 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResponse() == null) ? 0 : getResponse().hashCode());
         hashCode = prime * hashCode + ((getFailureMessage() == null) ? 0 : getFailureMessage().hashCode());
         hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
+        hashCode = prime * hashCode + ((getStepExecutionId() == null) ? 0 : getStepExecutionId().hashCode());
+        hashCode = prime * hashCode + ((getOverriddenParameters() == null) ? 0 : getOverriddenParameters().hashCode());
         return hashCode;
     }
 

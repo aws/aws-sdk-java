@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Long expectedVersion;
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      */
     private Boolean removeThingType;
@@ -271,11 +271,11 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      * 
      * @param removeThingType
-     *        Remove a thing type association. If <b>true</b>, the assocation is removed.
+     *        Remove a thing type association. If <b>true</b>, the association is removed.
      */
 
     public void setRemoveThingType(Boolean removeThingType) {
@@ -284,10 +284,10 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      * 
-     * @return Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * @return Remove a thing type association. If <b>true</b>, the association is removed.
      */
 
     public Boolean getRemoveThingType() {
@@ -296,11 +296,11 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      * 
      * @param removeThingType
-     *        Remove a thing type association. If <b>true</b>, the assocation is removed.
+     *        Remove a thing type association. If <b>true</b>, the association is removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,10 +311,10 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      * 
-     * @return Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * @return Remove a thing type association. If <b>true</b>, the association is removed.
      */
 
     public Boolean isRemoveThingType() {

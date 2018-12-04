@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data for the instance.
      * </p>
      */
     private String userData;
@@ -130,15 +128,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data for the instance.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
+     *        The Base64-encoded user data for the instance.
      */
 
     public void setUserData(String userData) {
@@ -147,14 +141,10 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data for the instance.
      * </p>
      * 
-     * @return The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     *         Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *         Base64-encoded text.
+     * @return The Base64-encoded user data for the instance.
      */
 
     public String getUserData() {
@@ -163,15 +153,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data for the instance.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
+     *        The Base64-encoded user data for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

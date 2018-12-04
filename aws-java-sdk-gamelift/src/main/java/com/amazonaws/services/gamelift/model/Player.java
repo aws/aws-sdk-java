@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,8 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
     private String playerId;
     /**
      * <p>
-     * Collection of name:value pairs containing player information for use in matchmaking. Player attribute names need
-     * to match <i>playerAttributes</i> names in the rule set being used. Example:
+     * Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
+     * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
      */
@@ -105,13 +105,13 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collection of name:value pairs containing player information for use in matchmaking. Player attribute names need
-     * to match <i>playerAttributes</i> names in the rule set being used. Example:
+     * Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
+     * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
      * 
-     * @return Collection of name:value pairs containing player information for use in matchmaking. Player attribute
-     *         names need to match <i>playerAttributes</i> names in the rule set being used. Example:
+     * @return Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys
+     *         must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      *         <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      */
 
@@ -121,14 +121,14 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collection of name:value pairs containing player information for use in matchmaking. Player attribute names need
-     * to match <i>playerAttributes</i> names in the rule set being used. Example:
+     * Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
+     * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
      * 
      * @param playerAttributes
-     *        Collection of name:value pairs containing player information for use in matchmaking. Player attribute
-     *        names need to match <i>playerAttributes</i> names in the rule set being used. Example:
+     *        Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys
+     *        must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      *        <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      */
 
@@ -138,14 +138,14 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collection of name:value pairs containing player information for use in matchmaking. Player attribute names need
-     * to match <i>playerAttributes</i> names in the rule set being used. Example:
+     * Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
+     * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
      * 
      * @param playerAttributes
-     *        Collection of name:value pairs containing player information for use in matchmaking. Player attribute
-     *        names need to match <i>playerAttributes</i> names in the rule set being used. Example:
+     *        Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys
+     *        must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      *        <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

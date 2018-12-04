@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class StartCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to start.
+     * Name of the crawler to start.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to start.
+     * Name of the crawler to start.
      * </p>
      * 
      * @param name
-     *        Name of the <code>Crawler</code> to start.
+     *        Name of the crawler to start.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class StartCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to start.
+     * Name of the crawler to start.
      * </p>
      * 
-     * @return Name of the <code>Crawler</code> to start.
+     * @return Name of the crawler to start.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class StartCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to start.
+     * Name of the crawler to start.
      * </p>
      * 
      * @param name
-     *        Name of the <code>Crawler</code> to start.
+     *        Name of the crawler to start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

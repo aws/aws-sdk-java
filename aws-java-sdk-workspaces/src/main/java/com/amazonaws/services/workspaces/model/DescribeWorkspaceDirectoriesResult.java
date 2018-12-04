@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Contains the results of the <a>DescribeWorkspaceDirectories</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories"
  *      target="_top">AWS API Documentation</a>
@@ -28,25 +25,24 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of structures that contain information about the directories.
+     * Information about the directories.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<WorkspaceDirectory> directories;
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of structures that contain information about the directories.
+     * Information about the directories.
      * </p>
      * 
-     * @return An array of structures that contain information about the directories.
+     * @return Information about the directories.
      */
 
     public java.util.List<WorkspaceDirectory> getDirectories() {
@@ -58,11 +54,11 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of structures that contain information about the directories.
+     * Information about the directories.
      * </p>
      * 
      * @param directories
-     *        An array of structures that contain information about the directories.
+     *        Information about the directories.
      */
 
     public void setDirectories(java.util.Collection<WorkspaceDirectory> directories) {
@@ -76,7 +72,7 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of structures that contain information about the directories.
+     * Information about the directories.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +81,7 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param directories
-     *        An array of structures that contain information about the directories.
+     *        Information about the directories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +97,11 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of structures that contain information about the directories.
+     * Information about the directories.
      * </p>
      * 
      * @param directories
-     *        An array of structures that contain information about the directories.
+     *        Information about the directories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,15 +112,13 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *        subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *        must be used within that time frame.
+     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
+     *        token is valid for one day and must be used within that time frame.
      */
 
     public void setNextToken(String nextToken) {
@@ -133,14 +127,12 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *         subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *         must be used within that time frame.
+     * @return The token to use to retrieve the next set of results, or null if there are no more results available.
+     *         This token is valid for one day and must be used within that time frame.
      */
 
     public String getNextToken() {
@@ -149,15 +141,13 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *        subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *        must be used within that time frame.
+     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
+     *        token is valid for one day and must be used within that time frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

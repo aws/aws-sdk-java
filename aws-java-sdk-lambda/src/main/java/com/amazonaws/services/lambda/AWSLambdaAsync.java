@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -423,6 +423,39 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Removes concurrent execution limits from this function. For more information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param deleteFunctionConcurrencyRequest
+     * @return A Java Future containing the result of the DeleteFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsync.DeleteFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionConcurrencyResult> deleteFunctionConcurrencyAsync(
+            DeleteFunctionConcurrencyRequest deleteFunctionConcurrencyRequest);
+
+    /**
+     * <p>
+     * Removes concurrent execution limits from this function. For more information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param deleteFunctionConcurrencyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.DeleteFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionConcurrencyResult> deleteFunctionConcurrencyAsync(
+            DeleteFunctionConcurrencyRequest deleteFunctionConcurrencyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionConcurrencyRequest, DeleteFunctionConcurrencyResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a customer's account settings.
      * </p>
      * <p>
@@ -721,6 +754,15 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * This operation requires permission for the <code>lambda:InvokeFunction</code> action.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TooManyRequestsException</code> noted below will return the following:
+     * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no functions with reserved
+     * concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds
+     * the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will
+     * be returned when a function with reserved concurrency exceeds its configured concurrency limit.
+     * </p>
+     * </note>
      * 
      * @param invokeRequest
      * @return A Java Future containing the result of the Invoke operation returned by the service.
@@ -748,6 +790,15 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * This operation requires permission for the <code>lambda:InvokeFunction</code> action.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TooManyRequestsException</code> noted below will return the following:
+     * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no functions with reserved
+     * concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds
+     * the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will
+     * be returned when a function with reserved concurrency exceeds its configured concurrency limit.
+     * </p>
+     * </note>
      * 
      * @param invokeRequest
      * @param asyncHandler
@@ -1098,6 +1149,45 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(PublishVersionRequest publishVersionRequest,
             com.amazonaws.handlers.AsyncHandler<PublishVersionRequest, PublishVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's
+     * total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent
+     * executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you
+     * have a total of 900 available to allocate to individual functions. For more information, see
+     * <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param putFunctionConcurrencyRequest
+     * @return A Java Future containing the result of the PutFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsync.PutFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFunctionConcurrencyResult> putFunctionConcurrencyAsync(PutFunctionConcurrencyRequest putFunctionConcurrencyRequest);
+
+    /**
+     * <p>
+     * Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's
+     * total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent
+     * executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you
+     * have a total of 900 available to allocate to individual functions. For more information, see
+     * <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param putFunctionConcurrencyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.PutFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFunctionConcurrencyResult> putFunctionConcurrencyAsync(PutFunctionConcurrencyRequest putFunctionConcurrencyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutFunctionConcurrencyRequest, PutFunctionConcurrencyResult> asyncHandler);
 
     /**
      * <p>

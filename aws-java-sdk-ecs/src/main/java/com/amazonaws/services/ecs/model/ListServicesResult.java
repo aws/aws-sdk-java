@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each service associated with the specified cluster.
+     * The list of full ARN entries for each service associated with the specified cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> serviceArns;
@@ -40,11 +40,10 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each service associated with the specified cluster.
+     * The list of full ARN entries for each service associated with the specified cluster.
      * </p>
      * 
-     * @return The list of full Amazon Resource Name (ARN) entries for each service associated with the specified
-     *         cluster.
+     * @return The list of full ARN entries for each service associated with the specified cluster.
      */
 
     public java.util.List<String> getServiceArns() {
@@ -56,12 +55,11 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each service associated with the specified cluster.
+     * The list of full ARN entries for each service associated with the specified cluster.
      * </p>
      * 
      * @param serviceArns
-     *        The list of full Amazon Resource Name (ARN) entries for each service associated with the specified
-     *        cluster.
+     *        The list of full ARN entries for each service associated with the specified cluster.
      */
 
     public void setServiceArns(java.util.Collection<String> serviceArns) {
@@ -75,7 +73,7 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each service associated with the specified cluster.
+     * The list of full ARN entries for each service associated with the specified cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,8 +82,7 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param serviceArns
-     *        The list of full Amazon Resource Name (ARN) entries for each service associated with the specified
-     *        cluster.
+     *        The list of full ARN entries for each service associated with the specified cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,12 +98,11 @@ public class ListServicesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of full Amazon Resource Name (ARN) entries for each service associated with the specified cluster.
+     * The list of full ARN entries for each service associated with the specified cluster.
      * </p>
      * 
      * @param serviceArns
-     *        The list of full Amazon Resource Name (ARN) entries for each service associated with the specified
-     *        cluster.
+     *        The list of full ARN entries for each service associated with the specified cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

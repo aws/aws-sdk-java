@@ -233,6 +233,12 @@ public class CustomizationConfig {
      */
     private List<String> skipClientMethodForOperations = Collections.emptyList();
 
+    /**
+     * Overrides the Content-Type header for the protocol. For Rest-JSON we send empty content type
+     * which causes some problems with API Gateway fronted services in certain scenarios.
+     */
+    private String contentTypeOverride;
+
     private CustomizationConfig(){
     }
 
@@ -557,6 +563,14 @@ public class CustomizationConfig {
 
     public void setSkipClientMethodForOperations(List<String> skipClientMethodForOperations) {
         this.skipClientMethodForOperations = skipClientMethodForOperations;
+    }
+
+    public String getContentTypeOverride() {
+        return contentTypeOverride;
+    }
+
+    public void setContentTypeOverride(String contentTypeOverride) {
+        this.contentTypeOverride = contentTypeOverride;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,10 @@ import com.amazonaws.services.migrationhub.model.transform.*;
  * Client for accessing AWS Migration Hub. All service calls made using this client are blocking, and will not return
  * until the service call completes.
  * <p>
- * <p/>
+ * <p>
+ * The AWS Migration Hub API methods help to obtain server and application migration status and integrate your
+ * resource-specific migration tool by providing a programmatic interface to Migration Hub.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -154,13 +157,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param associateCreatedArtifactRequest
      * @return Result of the AssociateCreatedArtifact operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -199,6 +200,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(associateCreatedArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -224,13 +226,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param associateDiscoveredResourceRequest
      * @return Result of the AssociateDiscoveredResource operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -242,7 +242,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      *         or data type.
      * @throws PolicyErrorException
      *         Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due
-     *         to a misconfigured policy or the <code>ADSCaller</code> role is missing or not configured correctly.
+     *         to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured
+     *         correctly.
      * @throws ResourceNotFoundException
      *         Exception raised when the request references a resource (ADS configuration, update stream, migration
      *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
@@ -272,6 +273,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(associateDiscoveredResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -300,13 +302,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param createProgressUpdateStreamRequest
      * @return Result of the CreateProgressUpdateStream operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -342,6 +342,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(createProgressUpdateStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -373,8 +374,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * </li>
      * <li>
      * <p>
-     * The call will return, and a background process will asynchronously be doing the actual delete of the stream and
-     * all of its resources (tasks, associated resources, resource attributes, created artifacts).
+     * The call will return, and a background process will asynchronously delete the stream and all of its resources
+     * (tasks, associated resources, resource attributes, created artifacts).
      * </p>
      * </li>
      * <li>
@@ -401,13 +402,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param deleteProgressUpdateStreamRequest
      * @return Result of the DeleteProgressUpdateStream operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -446,6 +445,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(deleteProgressUpdateStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -471,19 +471,18 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param describeApplicationStateRequest
      * @return Result of the DescribeApplicationState operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws PolicyErrorException
      *         Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due
-     *         to a misconfigured policy or the <code>ADSCaller</code> role is missing or not configured correctly.
+     *         to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured
+     *         correctly.
      * @throws ResourceNotFoundException
      *         Exception raised when the request references a resource (ADS configuration, update stream, migration
      *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
@@ -513,6 +512,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(describeApplicationStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -538,13 +538,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param describeMigrationTaskRequest
      * @return Result of the DescribeMigrationTask operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
@@ -576,6 +574,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new DescribeMigrationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMigrationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -621,13 +620,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param disassociateCreatedArtifactRequest
      * @return Result of the DisassociateCreatedArtifact operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -666,6 +663,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(disassociateCreatedArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -691,13 +689,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param disassociateDiscoveredResourceRequest
      * @return Result of the DisassociateDiscoveredResource operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -736,6 +732,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(disassociateDiscoveredResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -766,13 +763,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param importMigrationTaskRequest
      * @return Result of the ImportMigrationTask operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -810,6 +805,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new ImportMigrationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importMigrationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -853,13 +849,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param listCreatedArtifactsRequest
      * @return Result of the ListCreatedArtifacts operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
@@ -891,6 +885,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new ListCreatedArtifactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCreatedArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -915,13 +910,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param listDiscoveredResourcesRequest
      * @return Result of the ListDiscoveredResources operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
@@ -954,6 +947,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -997,19 +991,18 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param listMigrationTasksRequest
      * @return Result of the ListMigrationTasks operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws PolicyErrorException
      *         Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due
-     *         to a misconfigured policy or the <code>ADSCaller</code> role is missing or not configured correctly.
+     *         to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured
+     *         correctly.
      * @throws ResourceNotFoundException
      *         Exception raised when the request references a resource (ADS configuration, update stream, migration
      *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
@@ -1038,6 +1031,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new ListMigrationTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMigrationTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1062,13 +1056,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param listProgressUpdateStreamsRequest
      * @return Result of the ListProgressUpdateStreams operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
@@ -1098,6 +1090,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listProgressUpdateStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1125,13 +1118,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param notifyApplicationStateRequest
      * @return Result of the NotifyApplicationState operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -1143,7 +1134,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      *         or data type.
      * @throws PolicyErrorException
      *         Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due
-     *         to a misconfigured policy or the <code>ADSCaller</code> role is missing or not configured correctly.
+     *         to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured
+     *         correctly.
      * @throws ResourceNotFoundException
      *         Exception raised when the request references a resource (ADS configuration, update stream, migration
      *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
@@ -1172,6 +1164,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new NotifyApplicationStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(notifyApplicationStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1215,13 +1208,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @param notifyMigrationTaskStateRequest
      * @return Result of the NotifyMigrationTaskState operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -1260,6 +1251,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(notifyMigrationTaskStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1284,28 +1276,36 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * <code>PutResourceAttributes</code> returns.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * Keep in mind that subsequent calls to PutResourceAttributes will override previously stored attributes. For
      * example, if it is first called with a MAC address, but later, it is desired to <i>add</i> an IP address, it will
      * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overiding the MAC address.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Note the instructions regarding the special use case of the <code>ResourceAttributeList</code> parameter when
+     * specifying any "VM" related value.
+     * </p>
+     * </li>
+     * </ul>
      * </important> <note>
      * <p>
      * Because this is an asynchronous call, it will always return 200, whether an association occurs or not. To confirm
-     * if an association was found based on the provided details, call <code>ListAssociatedResource</code>.
+     * if an association was found based on the provided details, call <code>ListDiscoveredResources</code>.
      * </p>
      * </note>
      * 
      * @param putResourceAttributesRequest
      * @return Result of the PutResourceAttributes operation returned by the service.
      * @throws AccessDeniedException
-     *         Exception raised when the account making the call is not whitelisted or there are other authentication
-     *         errors.
+     *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws ServiceUnavailableException
-     *         Exception raised when the service encounters throttled communication with upstream dependencies or is
-     *         overloaded with requests.
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
      *         Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to
      *         "true".
@@ -1343,6 +1343,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new PutResourceAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourceAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

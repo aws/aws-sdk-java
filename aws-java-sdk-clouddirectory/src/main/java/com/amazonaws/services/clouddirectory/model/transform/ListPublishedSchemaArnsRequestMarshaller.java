@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListPublishedSchemaArnsRequestMarshaller {
 
+    private static final MarshallingInfo<String> SCHEMAARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SchemaArn").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +50,7 @@ public class ListPublishedSchemaArnsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listPublishedSchemaArnsRequest.getSchemaArn(), SCHEMAARN_BINDING);
             protocolMarshaller.marshall(listPublishedSchemaArnsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listPublishedSchemaArnsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

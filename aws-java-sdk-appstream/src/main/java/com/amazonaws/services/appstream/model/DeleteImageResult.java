@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteImageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the image.
+     * </p>
+     */
     private Image image;
 
     /**
+     * <p>
+     * Information about the image.
+     * </p>
+     * 
      * @param image
+     *        Information about the image.
      */
 
     public void setImage(Image image) {
@@ -34,7 +44,11 @@ public class DeleteImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the image.
+     * </p>
+     * 
+     * @return Information about the image.
      */
 
     public Image getImage() {
@@ -42,7 +56,12 @@ public class DeleteImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Information about the image.
+     * </p>
+     * 
      * @param image
+     *        Information about the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

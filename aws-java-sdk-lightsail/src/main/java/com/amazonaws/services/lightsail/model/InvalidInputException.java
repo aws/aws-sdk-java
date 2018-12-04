@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * </p>
  * <note>
  * <p>
- * Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region configuration to
- * us-east-1 to create, view, or edit these resources.
+ * Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+ * configuration to us-east-1 to create, view, or edit these resources.
  * </p>
  * </note>
  */

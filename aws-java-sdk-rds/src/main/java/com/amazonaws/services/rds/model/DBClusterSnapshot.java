@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,20 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the details for an Amazon RDS DB cluster snapshot
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateDBClusterSnapshot</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteDBClusterSnapshot</a>
- * </p>
- * </li>
- * </ul>
  * <p>
  * This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.
  * </p>
@@ -73,7 +61,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private String engine;
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      */
     private Integer allocatedStorage;
@@ -139,7 +127,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      */
     private String kmsKeyId;
@@ -152,14 +140,14 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     /**
      * <p>
      * If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the
-     * source DB cluster snapshot; otherwise, a null value.
+     * source DB cluster snapshot, otherwise, a null value.
      * </p>
      */
     private String sourceDBClusterSnapshotArn;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -399,11 +387,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size in gigabytes (GB).
+     *        Specifies the allocated storage size in gibibytes (GiB).
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -412,10 +400,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
-     * @return Specifies the allocated storage size in gigabytes (GB).
+     * @return Specifies the allocated storage size in gibibytes (GiB).
      */
 
     public Integer getAllocatedStorage() {
@@ -424,11 +412,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size in gigabytes (GB).
+     *        Specifies the allocated storage size in gibibytes (GiB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -851,11 +839,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
+     *        snapshot.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -864,10 +853,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
+     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
+     *         snapshot.
      */
 
     public String getKmsKeyId() {
@@ -876,11 +866,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster snapshot.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
+     *        snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -932,12 +923,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     /**
      * <p>
      * If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the
-     * source DB cluster snapshot; otherwise, a null value.
+     * source DB cluster snapshot, otherwise, a null value.
      * </p>
      * 
      * @param sourceDBClusterSnapshotArn
      *        If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN)
-     *        for the source DB cluster snapshot; otherwise, a null value.
+     *        for the source DB cluster snapshot, otherwise, a null value.
      */
 
     public void setSourceDBClusterSnapshotArn(String sourceDBClusterSnapshotArn) {
@@ -947,11 +938,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     /**
      * <p>
      * If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the
-     * source DB cluster snapshot; otherwise, a null value.
+     * source DB cluster snapshot, otherwise, a null value.
      * </p>
      * 
      * @return If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN)
-     *         for the source DB cluster snapshot; otherwise, a null value.
+     *         for the source DB cluster snapshot, otherwise, a null value.
      */
 
     public String getSourceDBClusterSnapshotArn() {
@@ -961,12 +952,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     /**
      * <p>
      * If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the
-     * source DB cluster snapshot; otherwise, a null value.
+     * source DB cluster snapshot, otherwise, a null value.
      * </p>
      * 
      * @param sourceDBClusterSnapshotArn
      *        If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN)
-     *        for the source DB cluster snapshot; otherwise, a null value.
+     *        for the source DB cluster snapshot, otherwise, a null value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -977,12 +968,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *        otherwise false.
      */
 
@@ -992,11 +983,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *         otherwise false.
      */
 
@@ -1006,12 +997,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *        otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1023,11 +1014,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *         otherwise false.
      */
 

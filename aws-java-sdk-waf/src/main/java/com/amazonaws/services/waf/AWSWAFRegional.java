@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -977,6 +977,56 @@ public interface AWSWAFRegional {
 
     /**
      * <p>
+     * Creates a <code>RuleGroup</code>. A rule group is a collection of predefined rules that you add to a web ACL. You
+     * use <a>UpdateRuleGroup</a> to add rules to the rule group.
+     * </p>
+     * <p>
+     * Rule groups are subject to the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Three rule groups per account. You can request an increase to this limit by contacting customer support.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * One rule group per web ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ten rules per rule group.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRuleGroupRequest
+     * @return Result of the CreateRuleGroup operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFDisallowedNameException
+     *         The name specified is invalid.
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
+     * @sample AWSWAFRegional.CreateRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRuleGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateRuleGroupResult createRuleGroup(CreateRuleGroupRequest createRuleGroupRequest);
+
+    /**
+     * <p>
      * Creates a <code>SizeConstraintSet</code>. You then use <a>UpdateSizeConstraintSet</a> to identify the part of a
      * web request that you want AWS WAF to check for length, such as the length of the <code>User-Agent</code> header
      * or the length of the query string. For example, you can create a <code>SizeConstraintSet</code> that matches any
@@ -1727,6 +1777,29 @@ public interface AWSWAFRegional {
 
     /**
      * <p>
+     * Permanently deletes an IAM policy from the specified RuleGroup.
+     * </p>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * 
+     * @param deletePermissionPolicyRequest
+     * @return Result of the DeletePermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAFRegional.DeletePermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeletePermissionPolicyResult deletePermissionPolicy(DeletePermissionPolicyRequest deletePermissionPolicyRequest);
+
+    /**
+     * <p>
      * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
      * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
      * </p>
@@ -2046,6 +2119,89 @@ public interface AWSWAFRegional {
      *      Documentation</a>
      */
     DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used in any
+     * <code>WebACL</code> objects or if it still includes any rules.
+     * </p>
+     * <p>
+     * If you just want to remove a <code>RuleGroup</code> from a <code>WebACL</code>, use <a>UpdateWebACL</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RuleGroup</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RuleGroup</code> to remove rules, if any. For more information, see <a>UpdateRuleGroup</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRuleGroup</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRuleGroup</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRuleGroupRequest
+     * @return Result of the DeleteRuleGroup operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that is still in use. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     * @throws WAFNonEmptyEntityException
+     *         The operation failed because you tried to delete an object that isn't empty. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
+     *         or other predicates.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+     *         objects.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFRegional.DeleteRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRuleGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteRuleGroupResult deleteRuleGroup(DeleteRuleGroupRequest deleteRuleGroupRequest);
 
     /**
      * <p>
@@ -2595,6 +2751,23 @@ public interface AWSWAFRegional {
 
     /**
      * <p>
+     * Returns the IAM policy attached to the RuleGroup.
+     * </p>
+     * 
+     * @param getPermissionPolicyRequest
+     * @return Result of the GetPermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAFRegional.GetPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPermissionPolicyResult getPermissionPolicy(GetPermissionPolicyRequest getPermissionPolicyRequest);
+
+    /**
+     * <p>
      * Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you included in the
      * <code>GetRateBasedRule</code> request.
      * </p>
@@ -2751,6 +2924,27 @@ public interface AWSWAFRegional {
      *      Documentation</a>
      */
     GetRuleResult getRule(GetRuleRequest getRuleRequest);
+
+    /**
+     * <p>
+     * Returns the <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you included in the
+     * <code>GetRuleGroup</code> request.
+     * </p>
+     * <p>
+     * To view the rules in a rule group, use <a>ListActivatedRulesInRuleGroup</a>.
+     * </p>
+     * 
+     * @param getRuleGroupRequest
+     * @return Result of the GetRuleGroup operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAFRegional.GetRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetRuleGroupResult getRuleGroup(GetRuleGroupRequest getRuleGroupRequest);
 
     /**
      * <p>
@@ -2938,6 +3132,78 @@ public interface AWSWAFRegional {
 
     /**
      * <p>
+     * Returns an array of <a>ActivatedRule</a> objects.
+     * </p>
+     * 
+     * @param listActivatedRulesInRuleGroupRequest
+     * @return Result of the ListActivatedRulesInRuleGroup operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFRegional.ListActivatedRulesInRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListActivatedRulesInRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListActivatedRulesInRuleGroupResult listActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest listActivatedRulesInRuleGroupRequest);
+
+    /**
+     * <p>
      * Returns an array of <a>ByteMatchSetSummary</a> objects.
      * </p>
      * 
@@ -3066,6 +3332,21 @@ public interface AWSWAFRegional {
 
     /**
      * <p>
+     * Returns an array of <a>RuleGroup</a> objects.
+     * </p>
+     * 
+     * @param listRuleGroupsRequest
+     * @return Result of the ListRuleGroups operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSWAFRegional.ListRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRuleGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRuleGroupsResult listRuleGroups(ListRuleGroupsRequest listRuleGroupsRequest);
+
+    /**
+     * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
      * 
@@ -3121,6 +3402,23 @@ public interface AWSWAFRegional {
 
     /**
      * <p>
+     * Returns an array of <a>RuleGroup</a> objects that you are subscribed to.
+     * </p>
+     * 
+     * @param listSubscribedRuleGroupsRequest
+     * @return Result of the ListSubscribedRuleGroups operation returned by the service.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSWAFRegional.ListSubscribedRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSubscribedRuleGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSubscribedRuleGroupsResult listSubscribedRuleGroups(ListSubscribedRuleGroupsRequest listSubscribedRuleGroupsRequest);
+
+    /**
+     * <p>
      * Returns an array of <a>WebACLSummary</a> objects in the response.
      * </p>
      * 
@@ -3155,6 +3453,127 @@ public interface AWSWAFRegional {
      *      API Documentation</a>
      */
     ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest listXssMatchSetsRequest);
+
+    /**
+     * <p>
+     * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
+     * across accounts.
+     * </p>
+     * <p>
+     * The <code>PutPermissionPolicy</code> is subject to the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Effect</code> must specify <code>Allow</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
+     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy cannot include a <code>Resource</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your policy must be composed using IAM Policy version 2012-10-17.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+     * Policies</a>.
+     * </p>
+     * <p>
+     * An example of a valid policy parameter is shown in the Examples section below.
+     * </p>
+     * 
+     * @param putPermissionPolicyRequest
+     * @return Result of the PutPermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidPermissionPolicyException
+     *         The operation failed because the specified policy is not in the proper format. </p>
+     *         <p>
+     *         The policy is subject to the following restrictions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Effect</code> must specify <code>Allow</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or
+     *         <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The policy cannot include a <code>Resource</code> parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The user making the request must be the owner of the RuleGroup.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your policy must be composed using IAM Policy version 2012-10-17.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFRegional.PutPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest putPermissionPolicyRequest);
 
     /**
      * <p>
@@ -4053,7 +4472,7 @@ public interface AWSWAFRegional {
 
     /**
      * <p>
-     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexMatchSet</a>. For each
+     * Inserts or deletes <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
      * <code>RegexMatchSetUpdate</code> object, you specify the following values:
      * </p>
      * <ul>
@@ -4065,7 +4484,7 @@ public interface AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
+     * The part of a web request that you want AWS WAF to inspectupdate, such as a query string or the value of the
      * <code>User-Agent</code> header.
      * </p>
      * </li>
@@ -4208,19 +4627,18 @@ public interface AWSWAFRegional {
 
     /**
      * <p>
-     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexPatternSet</a>. For each
-     * <code>RegexPatternSet</code> object, you specify the following values:
+     * Inserts or deletes <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
+     * <code>RegexPatternString</code> object, you specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Whether to insert or delete the object from the array. If you want to change a <code>RegexPatternSet</code>
-     * object, you delete the existing object and add a new one.
+     * Whether to insert or delete the <code>RegexPatternString</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The regular expression pattern that you want AWS WAF to look for. For more information, see
+     * The regular expression pattern that you want to insert or delete. For more information, see
      * <a>RegexPatternSet</a>.
      * </p>
      * </li>
@@ -4290,6 +4708,8 @@ public interface AWSWAFRegional {
      *         that you can create for an AWS account. For more information, see <a
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
      * @throws WAFNonexistentContainerException
      *         The operation failed because you tried to add an object to or delete an object from another object that
      *         doesn't exist. For example:</p>
@@ -4588,6 +5008,192 @@ public interface AWSWAFRegional {
      *      Documentation</a>
      */
     UpdateRuleResult updateRule(UpdateRuleRequest updateRuleRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.
+     * </p>
+     * <p>
+     * You can only insert <code>REGULAR</code> rules into a rule group.
+     * </p>
+     * <p>
+     * You can have a maximum of ten rules per rule group.
+     * </p>
+     * <p>
+     * To create and configure a <code>RuleGroup</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>. See
+     * <a>CreateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRuleGroup</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>. See <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you want to replace one <code>Rule</code> with another, you delete the existing one and add the new one.
+     * </p>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateRuleGroupRequest
+     * @return Result of the UpdateRuleGroup operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentContainerException
+     *         The operation failed because you tried to add an object to or delete an object from another object that
+     *         doesn't exist. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that
+     *         doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a
+     *         <code>Rule</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a
+     *         <code>ByteMatchSet</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in
+     *         the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified
+     *         <code>IPSet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
+     *         in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
+     *         specified <code>IPSet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFRegional.UpdateRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRuleGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateRuleGroupResult updateRuleGroup(UpdateRuleGroupRequest updateRuleGroupRequest);
 
     /**
      * <p>
@@ -5254,6 +5860,8 @@ public interface AWSWAFRegional {
      *         that you can create for an AWS account. For more information, see <a
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFSubscriptionNotFoundException
+     *         The specified subscription does not exist.
      * @sample AWSWAFRegional.UpdateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateWebACL" target="_top">AWS API
      *      Documentation</a>

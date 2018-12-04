@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The summary metadata about the specified product.
+ * Summary information about a product view.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewSummary" target="_top">AWS
@@ -73,10 +73,9 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
     private String distributor;
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      */
     private Boolean hasDefaultPath;
@@ -424,17 +423,16 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param hasDefaultPath
-     *        A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     *        <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
-     *        between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     *        <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     *        Indicates whether the product has a default path. If the product does not have a default path, call
+     *        <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required,
+     *        and the output of <a>ProductViewSummary</a> can be used directly with
+     *        <a>DescribeProvisioningParameters</a>.
      */
 
     public void setHasDefaultPath(Boolean hasDefaultPath) {
@@ -443,16 +441,15 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
-     * @return A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     *         <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
-     *         between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     *         <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     * @return Indicates whether the product has a default path. If the product does not have a default path, call
+     *         <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required,
+     *         and the output of <a>ProductViewSummary</a> can be used directly with
+     *         <a>DescribeProvisioningParameters</a>.
      */
 
     public Boolean getHasDefaultPath() {
@@ -461,17 +458,16 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param hasDefaultPath
-     *        A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     *        <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
-     *        between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     *        <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     *        Indicates whether the product has a default path. If the product does not have a default path, call
+     *        <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required,
+     *        and the output of <a>ProductViewSummary</a> can be used directly with
+     *        <a>DescribeProvisioningParameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,16 +478,15 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
-     * @return A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     *         <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
-     *         between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     *         <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     * @return Indicates whether the product has a default path. If the product does not have a default path, call
+     *         <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required,
+     *         and the output of <a>ProductViewSummary</a> can be used directly with
+     *         <a>DescribeProvisioningParameters</a>.
      */
 
     public Boolean isHasDefaultPath() {

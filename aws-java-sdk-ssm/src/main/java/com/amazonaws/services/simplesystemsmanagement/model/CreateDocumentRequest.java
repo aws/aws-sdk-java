@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A valid JSON string.
+     * A valid JSON or YAML string.
      * </p>
      */
     private String content;
@@ -35,6 +35,29 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A name for the Systems Manager document.
      * </p>
+     * <important>
+     * <p>
+     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * prefixes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aws</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amazon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amzn</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      */
     private String name;
     /**
@@ -43,14 +66,32 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String documentType;
+    /**
+     * <p>
+     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     */
+    private String documentFormat;
+    /**
+     * <p>
+     * Specify a target type to define the kinds of resources the document can run on. For example, to run a document on
+     * EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can
+     * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
+     * of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     */
+    private String targetType;
 
     /**
      * <p>
-     * A valid JSON string.
+     * A valid JSON or YAML string.
      * </p>
      * 
      * @param content
-     *        A valid JSON string.
+     *        A valid JSON or YAML string.
      */
 
     public void setContent(String content) {
@@ -59,10 +100,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A valid JSON string.
+     * A valid JSON or YAML string.
      * </p>
      * 
-     * @return A valid JSON string.
+     * @return A valid JSON or YAML string.
      */
 
     public String getContent() {
@@ -71,11 +112,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A valid JSON string.
+     * A valid JSON or YAML string.
      * </p>
      * 
      * @param content
-     *        A valid JSON string.
+     *        A valid JSON or YAML string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,9 +129,53 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A name for the Systems Manager document.
      * </p>
+     * <important>
+     * <p>
+     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * prefixes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aws</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amazon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amzn</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param name
-     *        A name for the Systems Manager document.
+     *        A name for the Systems Manager document.</p> <important>
+     *        <p>
+     *        Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
+     *        document prefixes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aws</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>amazon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>amzn</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setName(String name) {
@@ -101,8 +186,52 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A name for the Systems Manager document.
      * </p>
+     * <important>
+     * <p>
+     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * prefixes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aws</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amazon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amzn</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
-     * @return A name for the Systems Manager document.
+     * @return A name for the Systems Manager document.</p> <important>
+     *         <p>
+     *         Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
+     *         document prefixes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>aws</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>amazon</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>amzn</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getName() {
@@ -113,9 +242,53 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A name for the Systems Manager document.
      * </p>
+     * <important>
+     * <p>
+     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * prefixes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aws</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amazon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amzn</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param name
-     *        A name for the Systems Manager document.
+     *        A name for the Systems Manager document.</p> <important>
+     *        <p>
+     *        Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
+     *        document prefixes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aws</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>amazon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>amzn</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,6 +371,159 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *        default format.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(String documentFormat) {
+        this.documentFormat = documentFormat;
+    }
+
+    /**
+     * <p>
+     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @return Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *         default format.
+     * @see DocumentFormat
+     */
+
+    public String getDocumentFormat() {
+        return this.documentFormat;
+    }
+
+    /**
+     * <p>
+     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *        default format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public CreateDocumentRequest withDocumentFormat(String documentFormat) {
+        setDocumentFormat(documentFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *        default format.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(DocumentFormat documentFormat) {
+        withDocumentFormat(documentFormat);
+    }
+
+    /**
+     * <p>
+     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *        default format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public CreateDocumentRequest withDocumentFormat(DocumentFormat documentFormat) {
+        this.documentFormat = documentFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify a target type to define the kinds of resources the document can run on. For example, to run a document on
+     * EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can
+     * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
+     * of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param targetType
+     *        Specify a target type to define the kinds of resources the document can run on. For example, to run a
+     *        document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/'
+     *        the document can run on all types of resources. If you don't specify a value, the document can't run on
+     *        any resources. For a list of valid resource types, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
+    }
+
+    /**
+     * <p>
+     * Specify a target type to define the kinds of resources the document can run on. For example, to run a document on
+     * EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can
+     * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
+     * of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @return Specify a target type to define the kinds of resources the document can run on. For example, to run a
+     *         document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of
+     *         '/' the document can run on all types of resources. If you don't specify a value, the document can't run
+     *         on any resources. For a list of valid resource types, see <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *         Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    /**
+     * <p>
+     * Specify a target type to define the kinds of resources the document can run on. For example, to run a document on
+     * EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can
+     * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
+     * of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param targetType
+     *        Specify a target type to define the kinds of resources the document can run on. For example, to run a
+     *        document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/'
+     *        the document can run on all types of resources. If you don't specify a value, the document can't run on
+     *        any resources. For a list of valid resource types, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDocumentRequest withTargetType(String targetType) {
+        setTargetType(targetType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -213,7 +539,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDocumentType() != null)
-            sb.append("DocumentType: ").append(getDocumentType());
+            sb.append("DocumentType: ").append(getDocumentType()).append(",");
+        if (getDocumentFormat() != null)
+            sb.append("DocumentFormat: ").append(getDocumentFormat()).append(",");
+        if (getTargetType() != null)
+            sb.append("TargetType: ").append(getTargetType());
         sb.append("}");
         return sb.toString();
     }
@@ -240,6 +570,14 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDocumentType() != null && other.getDocumentType().equals(this.getDocumentType()) == false)
             return false;
+        if (other.getDocumentFormat() == null ^ this.getDocumentFormat() == null)
+            return false;
+        if (other.getDocumentFormat() != null && other.getDocumentFormat().equals(this.getDocumentFormat()) == false)
+            return false;
+        if (other.getTargetType() == null ^ this.getTargetType() == null)
+            return false;
+        if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +589,8 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
+        hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
+        hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         return hashCode;
     }
 

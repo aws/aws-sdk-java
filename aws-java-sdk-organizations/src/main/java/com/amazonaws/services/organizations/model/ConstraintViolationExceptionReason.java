@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public enum ConstraintViolationExceptionReason {
     MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED("MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED"),
     ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"),
     MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE"),
-    MASTER_ACCOUNT_MISSING_CONTACT_INFO("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
+    MASTER_ACCOUNT_MISSING_CONTACT_INFO("MASTER_ACCOUNT_MISSING_CONTACT_INFO"),
+    ORGANIZATION_NOT_IN_ALL_FEATURES_MODE("ORGANIZATION_NOT_IN_ALL_FEATURES_MODE");
 
     private String value;
 

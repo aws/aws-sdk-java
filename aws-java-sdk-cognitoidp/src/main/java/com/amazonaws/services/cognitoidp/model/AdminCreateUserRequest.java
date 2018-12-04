@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,9 +45,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
      * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
-     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * attributes that you specify as required (in or in the <b>Attributes</b> tab of the console) must be supplied
+     * either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response
+     * to your welcome message).
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
@@ -60,7 +60,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
-     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     * can also do this by calling .)
      * </p>
      * <ul>
      * <li>
@@ -238,9 +238,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
      * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
-     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * attributes that you specify as required (in or in the <b>Attributes</b> tab of the console) must be supplied
+     * either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response
+     * to your welcome message).
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
@@ -253,7 +253,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
-     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     * can also do this by calling .)
      * </p>
      * <ul>
      * <li>
@@ -274,10 +274,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return An array of name-value pairs that contain user attributes and attribute values to be set for the user to
      *         be created. You can create a user without specifying any attributes other than <code>Username</code>.
-     *         However, any attributes that you specify as required (in <a
-     *         href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be
-     *         supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she
-     *         signs up in response to your welcome message).</p>
+     *         However, any attributes that you specify as required (in or in the <b>Attributes</b> tab of the console)
+     *         must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or
+     *         she signs up in response to your welcome message).</p>
      *         <p>
      *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      *         </p>
@@ -289,8 +288,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      *         <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>.
-     *         (You can also do this by calling <a
-     *         href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     *         (You can also do this by calling .)
      *         </p>
      *         <ul>
      *         <li>
@@ -317,9 +315,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
      * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
-     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * attributes that you specify as required (in or in the <b>Attributes</b> tab of the console) must be supplied
+     * either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response
+     * to your welcome message).
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
@@ -332,7 +330,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
-     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     * can also do this by calling .)
      * </p>
      * <ul>
      * <li>
@@ -354,10 +352,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * @param userAttributes
      *        An array of name-value pairs that contain user attributes and attribute values to be set for the user to
      *        be created. You can create a user without specifying any attributes other than <code>Username</code>.
-     *        However, any attributes that you specify as required (in <a
-     *        href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be
-     *        supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs
-     *        up in response to your welcome message).</p>
+     *        However, any attributes that you specify as required (in or in the <b>Attributes</b> tab of the console)
+     *        must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or
+     *        she signs up in response to your welcome message).</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      *        </p>
@@ -369,8 +366,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      *        <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>.
-     *        (You can also do this by calling <a
-     *        href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     *        (You can also do this by calling .)
      *        </p>
      *        <ul>
      *        <li>
@@ -402,9 +398,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
      * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
-     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * attributes that you specify as required (in or in the <b>Attributes</b> tab of the console) must be supplied
+     * either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response
+     * to your welcome message).
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
@@ -417,7 +413,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
-     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     * can also do this by calling .)
      * </p>
      * <ul>
      * <li>
@@ -444,10 +440,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * @param userAttributes
      *        An array of name-value pairs that contain user attributes and attribute values to be set for the user to
      *        be created. You can create a user without specifying any attributes other than <code>Username</code>.
-     *        However, any attributes that you specify as required (in <a
-     *        href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be
-     *        supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs
-     *        up in response to your welcome message).</p>
+     *        However, any attributes that you specify as required (in or in the <b>Attributes</b> tab of the console)
+     *        must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or
+     *        she signs up in response to your welcome message).</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      *        </p>
@@ -459,8 +454,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      *        <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>.
-     *        (You can also do this by calling <a
-     *        href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     *        (You can also do this by calling .)
      *        </p>
      *        <ul>
      *        <li>
@@ -494,9 +488,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
      * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
-     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
-     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
-     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * attributes that you specify as required (in or in the <b>Attributes</b> tab of the console) must be supplied
+     * either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response
+     * to your welcome message).
      * </p>
      * <p>
      * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
@@ -509,7 +503,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
-     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     * can also do this by calling .)
      * </p>
      * <ul>
      * <li>
@@ -531,10 +525,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * @param userAttributes
      *        An array of name-value pairs that contain user attributes and attribute values to be set for the user to
      *        be created. You can create a user without specifying any attributes other than <code>Username</code>.
-     *        However, any attributes that you specify as required (in <a
-     *        href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be
-     *        supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs
-     *        up in response to your welcome message).</p>
+     *        However, any attributes that you specify as required (in or in the <b>Attributes</b> tab of the console)
+     *        must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or
+     *        she signs up in response to your welcome message).</p>
      *        <p>
      *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      *        </p>
@@ -546,8 +539,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
      *        <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>.
-     *        (You can also do this by calling <a
-     *        href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
+     *        (You can also do this by calling .)
      *        </p>
      *        <ul>
      *        <li>

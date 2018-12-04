@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      */
     private PortfolioDetail portfolioDetail;
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The resulting detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
      * @param portfolioDetail
-     *        The resulting detailed portfolio information.
+     *        Information about the portfolio.
      */
 
     public void setPortfolioDetail(PortfolioDetail portfolioDetail) {
@@ -51,10 +51,10 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
-     * @return The resulting detailed portfolio information.
+     * @return Information about the portfolio.
      */
 
     public PortfolioDetail getPortfolioDetail() {
@@ -63,11 +63,11 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
      * @param portfolioDetail
-     *        The resulting detailed portfolio information.
+     *        Information about the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
-     * @return Tags associated with the portfolio.
+     * @return Information about the tags associated with the portfolio.
      */
 
     public java.util.List<Tag> getTags() {
@@ -90,11 +90,11 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the portfolio.
+     *        Information about the tags associated with the portfolio.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -108,7 +108,7 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param tags
-     *        Tags associated with the portfolio.
+     *        Information about the tags associated with the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the portfolio.
+     *        Information about the tags associated with the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

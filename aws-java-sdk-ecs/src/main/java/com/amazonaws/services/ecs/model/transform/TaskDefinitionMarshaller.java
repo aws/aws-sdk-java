@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class TaskDefinitionMarshaller {
             .marshallLocationName("family").build();
     private static final MarshallingInfo<String> TASKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskRoleArn").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRoleArn").build();
     private static final MarshallingInfo<String> NETWORKMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkMode").build();
     private static final MarshallingInfo<Integer> REVISION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +50,14 @@ public class TaskDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requiresAttributes").build();
     private static final MarshallingInfo<List> PLACEMENTCONSTRAINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementConstraints").build();
+    private static final MarshallingInfo<List> COMPATIBILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("compatibilities").build();
+    private static final MarshallingInfo<List> REQUIRESCOMPATIBILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requiresCompatibilities").build();
+    private static final MarshallingInfo<String> CPU_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cpu").build();
+    private static final MarshallingInfo<String> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("memory").build();
 
     private static final TaskDefinitionMarshaller instance = new TaskDefinitionMarshaller();
 
@@ -69,12 +79,17 @@ public class TaskDefinitionMarshaller {
             protocolMarshaller.marshall(taskDefinition.getContainerDefinitions(), CONTAINERDEFINITIONS_BINDING);
             protocolMarshaller.marshall(taskDefinition.getFamily(), FAMILY_BINDING);
             protocolMarshaller.marshall(taskDefinition.getTaskRoleArn(), TASKROLEARN_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(taskDefinition.getNetworkMode(), NETWORKMODE_BINDING);
             protocolMarshaller.marshall(taskDefinition.getRevision(), REVISION_BINDING);
             protocolMarshaller.marshall(taskDefinition.getVolumes(), VOLUMES_BINDING);
             protocolMarshaller.marshall(taskDefinition.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(taskDefinition.getRequiresAttributes(), REQUIRESATTRIBUTES_BINDING);
             protocolMarshaller.marshall(taskDefinition.getPlacementConstraints(), PLACEMENTCONSTRAINTS_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getCompatibilities(), COMPATIBILITIES_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getRequiresCompatibilities(), REQUIRESCOMPATIBILITIES_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getCpu(), CPU_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getMemory(), MEMORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

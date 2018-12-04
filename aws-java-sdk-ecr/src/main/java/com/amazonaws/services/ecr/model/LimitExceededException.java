@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * The operation did not succeed because it would have exceeded a service limit for your account. For more information,
  * see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default Service
- * Limits</a> in the Amazon EC2 Container Registry User Guide.
+ * Limits</a> in the Amazon Elastic Container Registry User Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

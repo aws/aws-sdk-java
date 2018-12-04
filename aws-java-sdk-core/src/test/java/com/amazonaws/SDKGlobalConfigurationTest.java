@@ -15,6 +15,7 @@
 
 package com.amazonaws;
 
+import static com.amazonaws.SDKGlobalConfiguration.AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -27,6 +28,7 @@ public class SDKGlobalConfigurationTest {
     @After
     public void tearDown() {
         System.clearProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY);
+        System.clearProperty(AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY);
     }
 
     /**
@@ -57,8 +59,20 @@ public class SDKGlobalConfigurationTest {
     }
 
     @Test
-    public void disableCertChecking_PropertySetToFalseMixedCase_TurnsOffCertChecking() {
-        System.setProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY, "FaLsE");
-        assertFalse(SDKGlobalConfiguration.isCertCheckingDisabled());
+    public void disableEc2Metadata_PropertySetToFalse_turnOnEc2Metadata() {
+        System.setProperty(AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY, "false");
+        assertFalse(SDKGlobalConfiguration.isEc2MetadataDisabled());
+    }
+
+    @Test
+    public void disableEc2Metadata_PropertySetToAnything_turnOnEc2Metadata() {
+        System.setProperty(AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY, "anything");
+        assertFalse(SDKGlobalConfiguration.isEc2MetadataDisabled());
+    }
+
+    @Test
+    public void disableEc2Metadata_PropertySetToTrueMixedCase_turnOffEc2Metadata() {
+        System.setProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY, "tRuE");
+        assertTrue(SDKGlobalConfiguration.isCertCheckingDisabled());
     }
 }

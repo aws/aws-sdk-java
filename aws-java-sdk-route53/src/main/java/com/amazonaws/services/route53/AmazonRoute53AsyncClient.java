@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -872,6 +872,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(GetAccountLimitRequest request) {
+
+        return getAccountLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(final GetAccountLimitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccountLimitRequest, GetAccountLimitResult> asyncHandler) {
+        final GetAccountLimitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccountLimitResult>() {
+            @Override
+            public GetAccountLimitResult call() throws Exception {
+                GetAccountLimitResult result = null;
+
+                try {
+                    result = executeGetAccountLimit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetChangeResult> getChangeAsync(GetChangeRequest request) {
 
         return getChangeAsync(request, null);
@@ -1263,6 +1296,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(GetHostedZoneLimitRequest request) {
+
+        return getHostedZoneLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(final GetHostedZoneLimitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetHostedZoneLimitRequest, GetHostedZoneLimitResult> asyncHandler) {
+        final GetHostedZoneLimitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetHostedZoneLimitResult>() {
+            @Override
+            public GetHostedZoneLimitResult call() throws Exception {
+                GetHostedZoneLimitResult result = null;
+
+                try {
+                    result = executeGetHostedZoneLimit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetQueryLoggingConfigResult> getQueryLoggingConfigAsync(GetQueryLoggingConfigRequest request) {
 
         return getQueryLoggingConfigAsync(request, null);
@@ -1313,6 +1379,40 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = executeGetReusableDelegationSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(GetReusableDelegationSetLimitRequest request) {
+
+        return getReusableDelegationSetLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(
+            final GetReusableDelegationSetLimitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetLimitRequest, GetReusableDelegationSetLimitResult> asyncHandler) {
+        final GetReusableDelegationSetLimitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetReusableDelegationSetLimitResult>() {
+            @Override
+            public GetReusableDelegationSetLimitResult call() throws Exception {
+                GetReusableDelegationSetLimitResult result = null;
+
+                try {
+                    result = executeGetReusableDelegationSetLimit(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

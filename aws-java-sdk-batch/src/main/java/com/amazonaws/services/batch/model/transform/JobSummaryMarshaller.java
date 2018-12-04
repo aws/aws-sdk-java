@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,20 @@ public class JobSummaryMarshaller {
             .marshallLocationName("jobId").build();
     private static final MarshallingInfo<String> JOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobName").build();
+    private static final MarshallingInfo<Long> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("createdAt").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
+    private static final MarshallingInfo<Long> STARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("startedAt").build();
+    private static final MarshallingInfo<Long> STOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stoppedAt").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("container").build();
+    private static final MarshallingInfo<StructuredPojo> ARRAYPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayProperties").build();
 
     private static final JobSummaryMarshaller instance = new JobSummaryMarshaller();
 
@@ -50,6 +64,13 @@ public class JobSummaryMarshaller {
         try {
             protocolMarshaller.marshall(jobSummary.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(jobSummary.getJobName(), JOBNAME_BINDING);
+            protocolMarshaller.marshall(jobSummary.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(jobSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(jobSummary.getStatusReason(), STATUSREASON_BINDING);
+            protocolMarshaller.marshall(jobSummary.getStartedAt(), STARTEDAT_BINDING);
+            protocolMarshaller.marshall(jobSummary.getStoppedAt(), STOPPEDAT_BINDING);
+            protocolMarshaller.marshall(jobSummary.getContainer(), CONTAINER_BINDING);
+            protocolMarshaller.marshall(jobSummary.getArrayProperties(), ARRAYPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

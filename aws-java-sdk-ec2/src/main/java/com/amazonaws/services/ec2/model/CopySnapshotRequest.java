@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,20 +61,53 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private Boolean encrypted;
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when creating the snapshot copy. This
-     * parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default
-     * CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
-     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. The action will eventually fail.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The pre-signed URL that facilitates copying an encrypted snapshot. This parameter is only required when copying
-     * an encrypted snapshot with the Amazon EC2 Query API; it is available as an optional parameter in all other cases.
+     * The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API; it is
+     * available as an optional parameter in all other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
+     * </p>
+     * <p>
      * The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
      * include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are
@@ -321,24 +354,82 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when creating the snapshot copy. This
-     * parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default
-     * CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
-     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. The action will eventually fail.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when creating the snapshot copy. This
-     *        parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the
-     *        default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the
-     *        region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
-     *        ID. For example,
-     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     *        specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is
-     *        specified, the <code>Encrypted</code> flag must also be set.
+     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *        the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
+     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        <code>Encrypted</code> flag must also be set. </p>
+     *        <p>
+     *        The CMK identifier may be provided in any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key alias
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region
+     *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
+     *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *        even though you provided an invalid identifier. The action will eventually fail.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -347,23 +438,82 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when creating the snapshot copy. This
-     * parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default
-     * CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
-     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. The action will eventually fail.
      * </p>
      * 
-     * @return The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when creating the snapshot copy. This
-     *         parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the
-     *         default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the
-     *         region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
-     *         ID. For example,
-     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     *         specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code>
-     *         is specified, the <code>Encrypted</code> flag must also be set.
+     * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *         the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
+     *         parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set. </p>
+     *         <p>
+     *         The CMK identifier may be provided in any of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Key ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Key alias
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *         the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *         example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the
+     *         region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the
+     *         CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *         even though you provided an invalid identifier. The action will eventually fail.
      */
 
     public String getKmsKeyId() {
@@ -372,24 +522,82 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when creating the snapshot copy. This
-     * parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default
-     * CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
-     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. The action will eventually fail.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when creating the snapshot copy. This
-     *        parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the
-     *        default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the
-     *        region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
-     *        ID. For example,
-     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     *        specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is
-     *        specified, the <code>Encrypted</code> flag must also be set.
+     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *        the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
+     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        <code>Encrypted</code> flag must also be set. </p>
+     *        <p>
+     *        The CMK identifier may be provided in any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key alias
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region
+     *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
+     *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *        even though you provided an invalid identifier. The action will eventually fail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,8 +608,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The pre-signed URL that facilitates copying an encrypted snapshot. This parameter is only required when copying
-     * an encrypted snapshot with the Amazon EC2 Query API; it is available as an optional parameter in all other cases.
+     * The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API; it is
+     * available as an optional parameter in all other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
+     * </p>
+     * <p>
      * The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
      * include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are
@@ -413,11 +624,13 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param presignedUrl
-     *        The pre-signed URL that facilitates copying an encrypted snapshot. This parameter is only required when
-     *        copying an encrypted snapshot with the Amazon EC2 Query API; it is available as an optional parameter in
-     *        all other cases. The <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     *        <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>
-     *        , and <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be signed using AWS
+     *        The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API;
+     *        it is available as an optional parameter in all other cases. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
+     *        <p>
+     *        The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
+     *        action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     *        <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be signed using AWS
      *        Signature Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
      *        parameter uses the same logic that is described in <a
      *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests
@@ -432,8 +645,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The pre-signed URL that facilitates copying an encrypted snapshot. This parameter is only required when copying
-     * an encrypted snapshot with the Amazon EC2 Query API; it is available as an optional parameter in all other cases.
+     * The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API; it is
+     * available as an optional parameter in all other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
+     * </p>
+     * <p>
      * The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
      * include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are
@@ -444,13 +660,15 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * and the snapshot will move to an <code>error</code> state.
      * </p>
      * 
-     * @return The pre-signed URL that facilitates copying an encrypted snapshot. This parameter is only required when
-     *         copying an encrypted snapshot with the Amazon EC2 Query API; it is available as an optional parameter in
-     *         all other cases. The <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     *         <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>,
-     *         <code>SourceSnapshotId</code>, and <code>DestinationRegion</code> parameters. The
-     *         <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are stored
-     *         in Amazon S3, the signing algorithm for this parameter uses the same logic that is described in <a
+     * @return The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query
+     *         API; it is available as an optional parameter in all other cases. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
+     *         <p>
+     *         The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
+     *         action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     *         <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be signed using AWS
+     *         Signature Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
+     *         parameter uses the same logic that is described in <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      *         Requests by Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service
      *         API Reference</i>. An invalid or improperly signed <code>PresignedUrl</code> will cause the copy
@@ -463,8 +681,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The pre-signed URL that facilitates copying an encrypted snapshot. This parameter is only required when copying
-     * an encrypted snapshot with the Amazon EC2 Query API; it is available as an optional parameter in all other cases.
+     * The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API; it is
+     * available as an optional parameter in all other cases. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
+     * </p>
+     * <p>
      * The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
      * include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are
@@ -476,11 +697,13 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param presignedUrl
-     *        The pre-signed URL that facilitates copying an encrypted snapshot. This parameter is only required when
-     *        copying an encrypted snapshot with the Amazon EC2 Query API; it is available as an optional parameter in
-     *        all other cases. The <code>PresignedUrl</code> should use the snapshot source endpoint, the
-     *        <code>CopySnapshot</code> action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>
-     *        , and <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be signed using AWS
+     *        The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API;
+     *        it is available as an optional parameter in all other cases. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
+     *        <p>
+     *        The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
+     *        action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
+     *        <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be signed using AWS
      *        Signature Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
      *        parameter uses the same logic that is described in <a
      *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests

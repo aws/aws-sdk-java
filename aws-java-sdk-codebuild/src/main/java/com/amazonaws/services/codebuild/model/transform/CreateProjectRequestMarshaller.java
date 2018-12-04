@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class CreateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
     private static final MarshallingInfo<StructuredPojo> ARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifacts").build();
+    private static final MarshallingInfo<StructuredPojo> CACHE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cache").build();
     private static final MarshallingInfo<StructuredPojo> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environment").build();
     private static final MarshallingInfo<String> SERVICEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -46,6 +48,10 @@ public class CreateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionKey").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
+    private static final MarshallingInfo<Boolean> BADGEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("badgeEnabled").build();
 
     private static final CreateProjectRequestMarshaller instance = new CreateProjectRequestMarshaller();
 
@@ -67,11 +73,14 @@ public class CreateProjectRequestMarshaller {
             protocolMarshaller.marshall(createProjectRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getArtifacts(), ARTIFACTS_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getCache(), CACHE_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getServiceRole(), SERVICEROLE_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getTimeoutInMinutes(), TIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getBadgeEnabled(), BADGEENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

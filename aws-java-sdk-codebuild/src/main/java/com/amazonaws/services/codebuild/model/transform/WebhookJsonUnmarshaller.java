@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,14 @@ public class WebhookJsonUnmarshaller implements Unmarshaller<Webhook, JsonUnmars
                 if (context.testExpression("url", targetDepth)) {
                     context.nextToken();
                     webhook.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("payloadUrl", targetDepth)) {
+                    context.nextToken();
+                    webhook.setPayloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("secret", targetDepth)) {
+                    context.nextToken();
+                    webhook.setSecret(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

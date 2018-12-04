@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,14 +18,14 @@ import javax.annotation.Generated;
  * <p>
  * Performing this operation violates a minimum or maximum value limit. For example, attempting to removing the last SCP
  * from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an
- * account, OU, or root. This exception includes a reason that contains additional information about the violated limit.
+ * account, OU, or root. This exception includes a reason that contains additional information about the violated limit:
  * </p>
+ * <p/>
  * <note>
  * <p>
  * Some of the reasons in the following list might not be applicable to this specific API or operation:
  * </p>
  * </note>
- * <p/>
  * <ul>
  * <li>
  * <p>

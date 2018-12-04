@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,7 +95,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on the
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -483,7 +483,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on the
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -509,7 +509,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a
+     *         <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a
      *         two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *         size of all the items in the table, plus the size of all attributes projected into all of the local
      *         secondary indexes on the table. Use this estimate to measure whether a local secondary index is
@@ -543,7 +543,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on the
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -570,7 +570,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a
+     *        <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a
      *        two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *        size of all the items in the table, plus the size of all attributes projected into all of the local
      *        secondary indexes on the table. Use this estimate to measure whether a local secondary index is
@@ -604,7 +604,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on the
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -631,7 +631,7 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in GB. This is a
+     *        <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a
      *        two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *        size of all the items in the table, plus the size of all attributes projected into all of the local
      *        secondary indexes on the table. Use this estimate to measure whether a local secondary index is

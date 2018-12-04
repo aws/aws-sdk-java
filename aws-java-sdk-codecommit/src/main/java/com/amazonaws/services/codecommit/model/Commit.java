@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
     private String treeId;
     /**
      * <p>
-     * The parent list for the specified commit.
+     * A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      * </p>
      */
     private java.util.List<String> parents;
@@ -161,10 +161,10 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parent list for the specified commit.
+     * A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      * </p>
      * 
-     * @return The parent list for the specified commit.
+     * @return A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      */
 
     public java.util.List<String> getParents() {
@@ -173,11 +173,11 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parent list for the specified commit.
+     * A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      * </p>
      * 
      * @param parents
-     *        The parent list for the specified commit.
+     *        A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      */
 
     public void setParents(java.util.Collection<String> parents) {
@@ -191,7 +191,7 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parent list for the specified commit.
+     * A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -200,7 +200,7 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param parents
-     *        The parent list for the specified commit.
+     *        A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,11 +216,11 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parent list for the specified commit.
+     * A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      * </p>
      * 
      * @param parents
-     *        The parent list for the specified commit.
+     *        A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

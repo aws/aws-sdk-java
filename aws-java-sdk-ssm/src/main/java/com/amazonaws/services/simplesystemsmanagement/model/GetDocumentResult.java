@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,12 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String documentType;
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     */
+    private String documentFormat;
 
     /**
      * <p>
@@ -242,6 +248,79 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(String documentFormat) {
+        this.documentFormat = documentFormat;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @return The document format, either JSON or YAML.
+     * @see DocumentFormat
+     */
+
+    public String getDocumentFormat() {
+        return this.documentFormat;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public GetDocumentResult withDocumentFormat(String documentFormat) {
+        setDocumentFormat(documentFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(DocumentFormat documentFormat) {
+        withDocumentFormat(documentFormat);
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public GetDocumentResult withDocumentFormat(DocumentFormat documentFormat) {
+        this.documentFormat = documentFormat.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -259,7 +338,9 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getContent() != null)
             sb.append("Content: ").append(getContent()).append(",");
         if (getDocumentType() != null)
-            sb.append("DocumentType: ").append(getDocumentType());
+            sb.append("DocumentType: ").append(getDocumentType()).append(",");
+        if (getDocumentFormat() != null)
+            sb.append("DocumentFormat: ").append(getDocumentFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -290,6 +371,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getDocumentType() != null && other.getDocumentType().equals(this.getDocumentType()) == false)
             return false;
+        if (other.getDocumentFormat() == null ^ this.getDocumentFormat() == null)
+            return false;
+        if (other.getDocumentFormat() != null && other.getDocumentFormat().equals(this.getDocumentFormat()) == false)
+            return false;
         return true;
     }
 
@@ -302,6 +387,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
+        hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,12 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
 
     /** The maximum number of messages that the campaign can send daily. */
     private Integer daily;
-    /** The maximum duration of a campaign from the scheduled start. Must be a minimum of 60 seconds. */
-    private Integer maximumDuration;
     /**
-     * The maximum number of messages per second that the campaign will send. This is a best effort maximum cap and can
-     * go as high as 20000 and as low as 50
+     * The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This
+     * duration begins at the scheduled start time for the campaign. The minimum value is 60.
      */
+    private Integer maximumDuration;
+    /** The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is 20000. */
     private Integer messagesPerSecond;
     /** The maximum total number of messages that the campaign can send. */
     private Integer total;
@@ -73,10 +73,12 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum duration of a campaign from the scheduled start. Must be a minimum of 60 seconds.
+     * The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This
+     * duration begins at the scheduled start time for the campaign. The minimum value is 60.
      * 
      * @param maximumDuration
-     *        The maximum duration of a campaign from the scheduled start. Must be a minimum of 60 seconds.
+     *        The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This
+     *        duration begins at the scheduled start time for the campaign. The minimum value is 60.
      */
 
     public void setMaximumDuration(Integer maximumDuration) {
@@ -84,9 +86,11 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum duration of a campaign from the scheduled start. Must be a minimum of 60 seconds.
+     * The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This
+     * duration begins at the scheduled start time for the campaign. The minimum value is 60.
      * 
-     * @return The maximum duration of a campaign from the scheduled start. Must be a minimum of 60 seconds.
+     * @return The length of time (in seconds) that the campaign can run before it ends and message deliveries stop.
+     *         This duration begins at the scheduled start time for the campaign. The minimum value is 60.
      */
 
     public Integer getMaximumDuration() {
@@ -94,10 +98,12 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum duration of a campaign from the scheduled start. Must be a minimum of 60 seconds.
+     * The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This
+     * duration begins at the scheduled start time for the campaign. The minimum value is 60.
      * 
      * @param maximumDuration
-     *        The maximum duration of a campaign from the scheduled start. Must be a minimum of 60 seconds.
+     *        The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This
+     *        duration begins at the scheduled start time for the campaign. The minimum value is 60.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,12 +113,11 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum number of messages per second that the campaign will send. This is a best effort maximum cap and can
-     * go as high as 20000 and as low as 50
+     * The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is 20000.
      * 
      * @param messagesPerSecond
-     *        The maximum number of messages per second that the campaign will send. This is a best effort maximum cap
-     *        and can go as high as 20000 and as low as 50
+     *        The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is
+     *        20000.
      */
 
     public void setMessagesPerSecond(Integer messagesPerSecond) {
@@ -120,11 +125,10 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum number of messages per second that the campaign will send. This is a best effort maximum cap and can
-     * go as high as 20000 and as low as 50
+     * The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is 20000.
      * 
-     * @return The maximum number of messages per second that the campaign will send. This is a best effort maximum cap
-     *         and can go as high as 20000 and as low as 50
+     * @return The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is
+     *         20000.
      */
 
     public Integer getMessagesPerSecond() {
@@ -132,12 +136,11 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum number of messages per second that the campaign will send. This is a best effort maximum cap and can
-     * go as high as 20000 and as low as 50
+     * The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is 20000.
      * 
      * @param messagesPerSecond
-     *        The maximum number of messages per second that the campaign will send. This is a best effort maximum cap
-     *        and can go as high as 20000 and as low as 50
+     *        The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is
+     *        20000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

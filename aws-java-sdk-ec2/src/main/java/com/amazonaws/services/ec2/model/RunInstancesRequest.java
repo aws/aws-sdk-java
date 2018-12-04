@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance
+     * and must be specified here or in a launch template.
      * </p>
      */
     private String imageId;
@@ -257,7 +258,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String privateIpAddress;
     /**
      * <p>
-     * An Elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> elasticGpuSpecification;
@@ -268,6 +269,31 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
+     * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
+     * override the same parameters in the launch template.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
+    /**
+     * <p>
+     * The market (purchasing) option for the instances.
+     * </p>
+     */
+    private InstanceMarketOptionsRequest instanceMarketOptions;
+    /**
+     * <p>
+     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     */
+    private CreditSpecificationRequest creditSpecification;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -281,7 +307,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an
+     *        instance and must be specified here or in a launch template.
      * @param minCount
      *        The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2
      *        can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
@@ -398,11 +425,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance
+     * and must be specified here or in a launch template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an
+     *        instance and must be specified here or in a launch template.
      */
 
     public void setImageId(String imageId) {
@@ -411,10 +440,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance
+     * and must be specified here or in a launch template.
      * </p>
      * 
-     * @return The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     * @return The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an
+     *         instance and must be specified here or in a launch template.
      */
 
     public String getImageId() {
@@ -423,11 +454,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance
+     * and must be specified here or in a launch template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
+     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an
+     *        instance and must be specified here or in a launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2086,10 +2119,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An Elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance.
      * </p>
      * 
-     * @return An Elastic GPU to associate with the instance.
+     * @return An elastic GPU to associate with the instance.
      */
 
     public java.util.List<ElasticGpuSpecification> getElasticGpuSpecification() {
@@ -2101,11 +2134,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An Elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance.
      * </p>
      * 
      * @param elasticGpuSpecification
-     *        An Elastic GPU to associate with the instance.
+     *        An elastic GPU to associate with the instance.
      */
 
     public void setElasticGpuSpecification(java.util.Collection<ElasticGpuSpecification> elasticGpuSpecification) {
@@ -2119,7 +2152,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An Elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2128,7 +2161,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param elasticGpuSpecification
-     *        An Elastic GPU to associate with the instance.
+     *        An elastic GPU to associate with the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2144,11 +2177,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An Elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance.
      * </p>
      * 
      * @param elasticGpuSpecification
-     *        An Elastic GPU to associate with the instance.
+     *        An elastic GPU to associate with the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2239,6 +2272,168 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
+     * override the same parameters in the launch template.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
+     *        override the same parameters in the launch template.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
+     * override the same parameters in the launch template.
+     * </p>
+     * 
+     * @return The launch template to use to launch the instances. Any parameters that you specify in
+     *         <a>RunInstances</a> override the same parameters in the launch template.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
+     * override the same parameters in the launch template.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
+     *        override the same parameters in the launch template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The market (purchasing) option for the instances.
+     * </p>
+     * 
+     * @param instanceMarketOptions
+     *        The market (purchasing) option for the instances.
+     */
+
+    public void setInstanceMarketOptions(InstanceMarketOptionsRequest instanceMarketOptions) {
+        this.instanceMarketOptions = instanceMarketOptions;
+    }
+
+    /**
+     * <p>
+     * The market (purchasing) option for the instances.
+     * </p>
+     * 
+     * @return The market (purchasing) option for the instances.
+     */
+
+    public InstanceMarketOptionsRequest getInstanceMarketOptions() {
+        return this.instanceMarketOptions;
+    }
+
+    /**
+     * <p>
+     * The market (purchasing) option for the instances.
+     * </p>
+     * 
+     * @param instanceMarketOptions
+     *        The market (purchasing) option for the instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withInstanceMarketOptions(InstanceMarketOptionsRequest instanceMarketOptions) {
+        setInstanceMarketOptions(instanceMarketOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @param creditSpecification
+     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     *        <code>unlimited</code>. To change this attribute after launch, use
+     *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Default: <code>standard</code>
+     */
+
+    public void setCreditSpecification(CreditSpecificationRequest creditSpecification) {
+        this.creditSpecification = creditSpecification;
+    }
+
+    /**
+     * <p>
+     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @return The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     *         <code>unlimited</code>. To change this attribute after launch, use
+     *         <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
+     *         <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         Default: <code>standard</code>
+     */
+
+    public CreditSpecificationRequest getCreditSpecification() {
+        return this.creditSpecification;
+    }
+
+    /**
+     * <p>
+     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @param creditSpecification
+     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     *        <code>unlimited</code>. To change this attribute after launch, use
+     *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Default: <code>standard</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withCreditSpecification(CreditSpecificationRequest creditSpecification) {
+        setCreditSpecification(creditSpecification);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2311,7 +2506,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getElasticGpuSpecification() != null)
             sb.append("ElasticGpuSpecification: ").append(getElasticGpuSpecification()).append(",");
         if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications());
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
+        if (getInstanceMarketOptions() != null)
+            sb.append("InstanceMarketOptions: ").append(getInstanceMarketOptions()).append(",");
+        if (getCreditSpecification() != null)
+            sb.append("CreditSpecification: ").append(getCreditSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -2431,6 +2632,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
+            return false;
+        if (other.getInstanceMarketOptions() == null ^ this.getInstanceMarketOptions() == null)
+            return false;
+        if (other.getInstanceMarketOptions() != null && other.getInstanceMarketOptions().equals(this.getInstanceMarketOptions()) == false)
+            return false;
+        if (other.getCreditSpecification() == null ^ this.getCreditSpecification() == null)
+            return false;
+        if (other.getCreditSpecification() != null && other.getCreditSpecification().equals(this.getCreditSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -2465,6 +2678,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getElasticGpuSpecification() == null) ? 0 : getElasticGpuSpecification().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getInstanceMarketOptions() == null) ? 0 : getInstanceMarketOptions().hashCode());
+        hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
         return hashCode;
     }
 

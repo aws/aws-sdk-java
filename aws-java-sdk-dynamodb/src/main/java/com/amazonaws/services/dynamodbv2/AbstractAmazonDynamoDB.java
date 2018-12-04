@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,16 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public CreateBackupResult createBackup(CreateBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGlobalTableResult createGlobalTable(CreateGlobalTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTableResult createTable(CreateTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,6 +83,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
             java.util.List<KeySchemaElement> keySchema, ProvisionedThroughput provisionedThroughput) {
         return createTable(new CreateTableRequest().withAttributeDefinitions(attributeDefinitions).withTableName(tableName).withKeySchema(keySchema)
                 .withProvisionedThroughput(provisionedThroughput));
+    }
+
+    @Override
+    public DeleteBackupResult deleteBackup(DeleteBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -98,6 +113,21 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public DeleteTableResult deleteTable(String tableName) {
         return deleteTable(new DeleteTableRequest().withTableName(tableName));
+    }
+
+    @Override
+    public DescribeBackupResult describeBackup(DescribeBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeContinuousBackupsResult describeContinuousBackups(DescribeContinuousBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeGlobalTableResult describeGlobalTable(DescribeGlobalTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -133,6 +163,16 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public GetItemResult getItem(String tableName, java.util.Map<String, AttributeValue> key, Boolean consistentRead) {
         return getItem(new GetItemRequest().withTableName(tableName).withKey(key).withConsistentRead(consistentRead));
+    }
+
+    @Override
+    public ListBackupsResult listBackups(ListBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGlobalTablesResult listGlobalTables(ListGlobalTablesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -186,6 +226,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public RestoreTableFromBackupResult restoreTableFromBackup(RestoreTableFromBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ScanResult scan(ScanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -212,6 +257,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGlobalTableResult updateGlobalTable(UpdateGlobalTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

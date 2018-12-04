@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,16 +33,16 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     private String serverName;
     /**
      * <p>
-     * The name of the Chef client node.
+     * The name of the client node.
      * </p>
      */
     private String nodeName;
     /**
      * <p>
-     * Engine attributes used for disassociating the node.
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b>
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -97,11 +97,11 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Chef client node.
+     * The name of the client node.
      * </p>
      * 
      * @param nodeName
-     *        The name of the Chef client node.
+     *        The name of the client node.
      */
 
     public void setNodeName(String nodeName) {
@@ -110,10 +110,10 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Chef client node.
+     * The name of the client node.
      * </p>
      * 
-     * @return The name of the Chef client node.
+     * @return The name of the client node.
      */
 
     public String getNodeName() {
@@ -122,11 +122,11 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Chef client node.
+     * The name of the client node.
      * </p>
      * 
      * @param nodeName
-     *        The name of the Chef client node.
+     *        The name of the client node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,10 +137,10 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Engine attributes used for disassociating the node.
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b>
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -151,9 +151,9 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return Engine attributes used for disassociating the node. </p>
+     * @return Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
      *         <p class="title">
-     *         <b>Attributes accepted in a DisassociateNode request:</b>
+     *         <b>Attributes required in a DisassociateNode request for Chef</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -170,10 +170,10 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Engine attributes used for disassociating the node.
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b>
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -185,9 +185,9 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param engineAttributes
-     *        Engine attributes used for disassociating the node. </p>
+     *        Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
      *        <p class="title">
-     *        <b>Attributes accepted in a DisassociateNode request:</b>
+     *        <b>Attributes required in a DisassociateNode request for Chef</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -209,10 +209,10 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Engine attributes used for disassociating the node.
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b>
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -229,9 +229,9 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param engineAttributes
-     *        Engine attributes used for disassociating the node. </p>
+     *        Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
      *        <p class="title">
-     *        <b>Attributes accepted in a DisassociateNode request:</b>
+     *        <b>Attributes required in a DisassociateNode request for Chef</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -255,10 +255,10 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Engine attributes used for disassociating the node.
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b>
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -270,9 +270,9 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param engineAttributes
-     *        Engine attributes used for disassociating the node. </p>
+     *        Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
      *        <p class="title">
-     *        <b>Attributes accepted in a DisassociateNode request:</b>
+     *        <b>Attributes required in a DisassociateNode request for Chef</b>
      *        </p>
      *        <ul>
      *        <li>

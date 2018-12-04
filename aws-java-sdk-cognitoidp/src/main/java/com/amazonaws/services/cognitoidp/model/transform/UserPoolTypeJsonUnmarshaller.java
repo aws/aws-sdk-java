@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,9 +146,17 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setEmailConfigurationFailure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Domain", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AdminCreateUserConfig", targetDepth)) {
                     context.nextToken();
                     userPoolType.setAdminCreateUserConfig(AdminCreateUserConfigTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("UserPoolAddOns", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setUserPoolAddOns(UserPoolAddOnsTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

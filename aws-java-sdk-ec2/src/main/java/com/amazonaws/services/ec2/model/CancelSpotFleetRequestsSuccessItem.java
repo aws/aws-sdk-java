@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a Spot fleet request that was successfully canceled.
+ * Describes a Spot Fleet request that was successfully canceled.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequestsSuccessItem"
@@ -28,30 +28,30 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The current state of the Spot fleet request.
+     * The current state of the Spot Fleet request.
      * </p>
      */
     private String currentSpotFleetRequestState;
     /**
      * <p>
-     * The previous state of the Spot fleet request.
+     * The previous state of the Spot Fleet request.
      * </p>
      */
     private String previousSpotFleetRequestState;
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      */
     private String spotFleetRequestId;
 
     /**
      * <p>
-     * The current state of the Spot fleet request.
+     * The current state of the Spot Fleet request.
      * </p>
      * 
      * @param currentSpotFleetRequestState
-     *        The current state of the Spot fleet request.
+     *        The current state of the Spot Fleet request.
      * @see BatchState
      */
 
@@ -61,10 +61,10 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The current state of the Spot fleet request.
+     * The current state of the Spot Fleet request.
      * </p>
      * 
-     * @return The current state of the Spot fleet request.
+     * @return The current state of the Spot Fleet request.
      * @see BatchState
      */
 
@@ -74,11 +74,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The current state of the Spot fleet request.
+     * The current state of the Spot Fleet request.
      * </p>
      * 
      * @param currentSpotFleetRequestState
-     *        The current state of the Spot fleet request.
+     *        The current state of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchState
      */
@@ -90,11 +90,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The current state of the Spot fleet request.
+     * The current state of the Spot Fleet request.
      * </p>
      * 
      * @param currentSpotFleetRequestState
-     *        The current state of the Spot fleet request.
+     *        The current state of the Spot Fleet request.
      * @see BatchState
      */
 
@@ -104,11 +104,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The current state of the Spot fleet request.
+     * The current state of the Spot Fleet request.
      * </p>
      * 
      * @param currentSpotFleetRequestState
-     *        The current state of the Spot fleet request.
+     *        The current state of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchState
      */
@@ -120,11 +120,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The previous state of the Spot fleet request.
+     * The previous state of the Spot Fleet request.
      * </p>
      * 
      * @param previousSpotFleetRequestState
-     *        The previous state of the Spot fleet request.
+     *        The previous state of the Spot Fleet request.
      * @see BatchState
      */
 
@@ -134,10 +134,10 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The previous state of the Spot fleet request.
+     * The previous state of the Spot Fleet request.
      * </p>
      * 
-     * @return The previous state of the Spot fleet request.
+     * @return The previous state of the Spot Fleet request.
      * @see BatchState
      */
 
@@ -147,11 +147,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The previous state of the Spot fleet request.
+     * The previous state of the Spot Fleet request.
      * </p>
      * 
      * @param previousSpotFleetRequestState
-     *        The previous state of the Spot fleet request.
+     *        The previous state of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchState
      */
@@ -163,11 +163,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The previous state of the Spot fleet request.
+     * The previous state of the Spot Fleet request.
      * </p>
      * 
      * @param previousSpotFleetRequestState
-     *        The previous state of the Spot fleet request.
+     *        The previous state of the Spot Fleet request.
      * @see BatchState
      */
 
@@ -177,11 +177,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The previous state of the Spot fleet request.
+     * The previous state of the Spot Fleet request.
      * </p>
      * 
      * @param previousSpotFleetRequestState
-     *        The previous state of the Spot fleet request.
+     *        The previous state of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchState
      */
@@ -193,11 +193,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      */
 
     public void setSpotFleetRequestId(String spotFleetRequestId) {
@@ -206,10 +206,10 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @return The ID of the Spot fleet request.
+     * @return The ID of the Spot Fleet request.
      */
 
     public String getSpotFleetRequestId() {
@@ -218,11 +218,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -263,9 +263,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         exceptionUnmarshallers.add(new InvalidRenderingParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MessageRejectedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidCloudWatchDestinationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AccountSendingPausedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RuleSetDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnsTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConfigurationSetSendingPausedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EventDestinationDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLambdaFunctionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TemplateDoesNotExistExceptionUnmarshaller());
@@ -274,15 +276,20 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         exceptionUnmarshallers.add(new CannotDeleteExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrackingOptionsAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ConfigurationSetAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CustomVerificationEmailInvalidContentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTemplateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MailFromDomainNotVerifiedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ConfigurationSetDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ProductionAccessNotGrantedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTrackingOptionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrackingOptionsDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EventDestinationAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FromEmailAddressNotVerifiedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RuleDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidConfigurationSetExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CustomVerificationEmailTemplateDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CustomVerificationEmailTemplateAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -348,6 +355,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CloneReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(cloneReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -416,6 +424,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(createConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +511,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(createConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -579,12 +589,84 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(createConfigurationSetTrackingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<CreateConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetTrackingOptionsResult>(
                     new CreateConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createCustomVerificationEmailTemplateRequest
+     *        Represents a request to create a custom verification email template.
+     * @return Result of the CreateCustomVerificationEmailTemplate operation returned by the service.
+     * @throws CustomVerificationEmailTemplateAlreadyExistsException
+     *         Indicates that a custom verification email template with the name you specified already exists.
+     * @throws FromEmailAddressNotVerifiedException
+     *         Indicates that the sender address specified for a custom verification email is not verified, and is
+     *         therefore not eligible to send the custom verification email.
+     * @throws CustomVerificationEmailInvalidContentException
+     *         Indicates that custom verification email template provided content is invalid.
+     * @throws LimitExceededException
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
+     * @sample AmazonSimpleEmailService.CreateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCustomVerificationEmailTemplateResult createCustomVerificationEmailTemplate(CreateCustomVerificationEmailTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCustomVerificationEmailTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateCustomVerificationEmailTemplateResult executeCreateCustomVerificationEmailTemplate(
+            CreateCustomVerificationEmailTemplateRequest createCustomVerificationEmailTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCustomVerificationEmailTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCustomVerificationEmailTemplateRequest> request = null;
+        Response<CreateCustomVerificationEmailTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCustomVerificationEmailTemplateRequestMarshaller().marshall(super
+                        .beforeMarshalling(createCustomVerificationEmailTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<CreateCustomVerificationEmailTemplateResult>(
+                    new CreateCustomVerificationEmailTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -645,6 +727,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateReceiptFilterRequestMarshaller().marshall(super.beforeMarshalling(createReceiptFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -731,6 +814,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateReceiptRuleRequestMarshaller().marshall(super.beforeMarshalling(createReceiptRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -797,6 +881,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(createReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -862,6 +947,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateTemplateRequestMarshaller().marshall(super.beforeMarshalling(createTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -922,6 +1008,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(deleteConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -987,6 +1074,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1056,12 +1144,73 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteConfigurationSetTrackingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DeleteConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetTrackingOptionsResult>(
                     new DeleteConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteCustomVerificationEmailTemplateRequest
+     *        Represents a request to delete an existing custom verification email template.
+     * @return Result of the DeleteCustomVerificationEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailService.DeleteCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCustomVerificationEmailTemplateResult deleteCustomVerificationEmailTemplate(DeleteCustomVerificationEmailTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCustomVerificationEmailTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCustomVerificationEmailTemplateResult executeDeleteCustomVerificationEmailTemplate(
+            DeleteCustomVerificationEmailTemplateRequest deleteCustomVerificationEmailTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCustomVerificationEmailTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCustomVerificationEmailTemplateRequest> request = null;
+        Response<DeleteCustomVerificationEmailTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCustomVerificationEmailTemplateRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteCustomVerificationEmailTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<DeleteCustomVerificationEmailTemplateResult>(
+                    new DeleteCustomVerificationEmailTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1108,6 +1257,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteIdentityRequestMarshaller().marshall(super.beforeMarshalling(deleteIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1175,6 +1325,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteIdentityPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteIdentityPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1235,6 +1386,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteReceiptFilterRequestMarshaller().marshall(super.beforeMarshalling(deleteReceiptFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1297,6 +1449,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteReceiptRuleRequestMarshaller().marshall(super.beforeMarshalling(deleteReceiptRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1364,6 +1517,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(deleteReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1418,6 +1572,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteTemplateRequestMarshaller().marshall(super.beforeMarshalling(deleteTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1468,6 +1623,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteVerifiedEmailAddressRequestMarshaller().marshall(super.beforeMarshalling(deleteVerifiedEmailAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1528,6 +1684,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DescribeActiveReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(describeActiveReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1587,6 +1744,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DescribeConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1651,6 +1809,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DescribeReceiptRuleRequestMarshaller().marshall(super.beforeMarshalling(describeReceiptRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1713,12 +1872,127 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DescribeReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(describeReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DescribeReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DescribeReceiptRuleSetResult>(
                     new DescribeReceiptRuleSetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the email sending status of the Amazon SES account.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getAccountSendingEnabledRequest
+     * @return Result of the GetAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailService.GetAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAccountSendingEnabledResult getAccountSendingEnabled(GetAccountSendingEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountSendingEnabled(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountSendingEnabledResult executeGetAccountSendingEnabled(GetAccountSendingEnabledRequest getAccountSendingEnabledRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccountSendingEnabledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccountSendingEnabledRequest> request = null;
+        Response<GetAccountSendingEnabledResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccountSendingEnabledRequestMarshaller().marshall(super.beforeMarshalling(getAccountSendingEnabledRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<GetAccountSendingEnabledResult>(
+                    new GetAccountSendingEnabledResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the custom email verification template for the template name you specify.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getCustomVerificationEmailTemplateRequest
+     *        Represents a request to retrieve an existing custom verification email template.
+     * @return Result of the GetCustomVerificationEmailTemplate operation returned by the service.
+     * @throws CustomVerificationEmailTemplateDoesNotExistException
+     *         Indicates that a custom verification email template with the name you specified does not exist.
+     * @sample AmazonSimpleEmailService.GetCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCustomVerificationEmailTemplateResult getCustomVerificationEmailTemplate(GetCustomVerificationEmailTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCustomVerificationEmailTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetCustomVerificationEmailTemplateResult executeGetCustomVerificationEmailTemplate(
+            GetCustomVerificationEmailTemplateRequest getCustomVerificationEmailTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCustomVerificationEmailTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCustomVerificationEmailTemplateRequest> request = null;
+        Response<GetCustomVerificationEmailTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCustomVerificationEmailTemplateRequestMarshaller()
+                        .marshall(super.beforeMarshalling(getCustomVerificationEmailTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<GetCustomVerificationEmailTemplateResult>(
+                    new GetCustomVerificationEmailTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1799,6 +2073,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetIdentityDkimAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityDkimAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1856,6 +2131,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(getIdentityMailFromDomainAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1918,6 +2194,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetIdentityNotificationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityNotificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1987,6 +2264,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetIdentityPoliciesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2060,6 +2338,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetIdentityVerificationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityVerificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2111,6 +2390,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetSendQuotaRequestMarshaller().marshall(super.beforeMarshalling(getSendQuotaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2168,6 +2448,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetSendStatisticsRequestMarshaller().marshall(super.beforeMarshalling(getSendStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2227,6 +2508,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetTemplateRequestMarshaller().marshall(super.beforeMarshalling(getTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2288,12 +2570,77 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListConfigurationSetsRequestMarshaller().marshall(super.beforeMarshalling(listConfigurationSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<ListConfigurationSetsResult> responseHandler = new StaxResponseHandler<ListConfigurationSetsResult>(
                     new ListConfigurationSetsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the existing custom verification email templates for your account.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listCustomVerificationEmailTemplatesRequest
+     *        Represents a request to list the existing custom verification email templates for your account.</p>
+     *        <p>
+     *        For more information about custom verification email templates, see <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     *        Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * @return Result of the ListCustomVerificationEmailTemplates operation returned by the service.
+     * @sample AmazonSimpleEmailService.ListCustomVerificationEmailTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCustomVerificationEmailTemplatesResult listCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCustomVerificationEmailTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListCustomVerificationEmailTemplatesResult executeListCustomVerificationEmailTemplates(
+            ListCustomVerificationEmailTemplatesRequest listCustomVerificationEmailTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCustomVerificationEmailTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCustomVerificationEmailTemplatesRequest> request = null;
+        Response<ListCustomVerificationEmailTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCustomVerificationEmailTemplatesRequestMarshaller().marshall(super
+                        .beforeMarshalling(listCustomVerificationEmailTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListCustomVerificationEmailTemplatesResult> responseHandler = new StaxResponseHandler<ListCustomVerificationEmailTemplatesResult>(
+                    new ListCustomVerificationEmailTemplatesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2342,6 +2689,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListIdentitiesRequestMarshaller().marshall(super.beforeMarshalling(listIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2416,6 +2764,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListIdentityPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listIdentityPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2476,6 +2825,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListReceiptFiltersRequestMarshaller().marshall(super.beforeMarshalling(listReceiptFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2538,6 +2888,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListReceiptRuleSetsRequestMarshaller().marshall(super.beforeMarshalling(listReceiptRuleSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2589,6 +2940,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListTemplatesRequestMarshaller().marshall(super.beforeMarshalling(listTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2637,6 +2989,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListVerifiedEmailAddressesRequestMarshaller().marshall(super.beforeMarshalling(listVerifiedEmailAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2712,6 +3065,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new PutIdentityPolicyRequestMarshaller().marshall(super.beforeMarshalling(putIdentityPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2782,6 +3136,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ReorderReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(reorderReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2847,6 +3202,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendBounceRequestMarshaller().marshall(super.beforeMarshalling(sendBounceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2924,6 +3280,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Indicates that the configuration set does not exist.
      * @throws TemplateDoesNotExistException
      *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendBulkTemplatedEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail" target="_top">AWS
      *      API Documentation</a>
@@ -2949,12 +3316,85 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendBulkTemplatedEmailRequestMarshaller().marshall(super.beforeMarshalling(sendBulkTemplatedEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<SendBulkTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendBulkTemplatedEmailResult>(
                     new SendBulkTemplatedEmailResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. As a
+     * result of executing this operation, a customized verification email is sent to the specified address.
+     * </p>
+     * <p>
+     * To use this operation, you must first create a custom verification email template. For more information about
+     * creating and using custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param sendCustomVerificationEmailRequest
+     *        Represents a request to send a custom verification email to a specified recipient.
+     * @return Result of the SendCustomVerificationEmail operation returned by the service.
+     * @throws MessageRejectedException
+     *         Indicates that the action failed, and the message could not be sent. Check the error stack for more
+     *         information about what caused the error.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws CustomVerificationEmailTemplateDoesNotExistException
+     *         Indicates that a custom verification email template with the name you specified does not exist.
+     * @throws FromEmailAddressNotVerifiedException
+     *         Indicates that the sender address specified for a custom verification email is not verified, and is
+     *         therefore not eligible to send the custom verification email.
+     * @throws ProductionAccessNotGrantedException
+     *         Indicates that the account has not been granted production access.
+     * @sample AmazonSimpleEmailService.SendCustomVerificationEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendCustomVerificationEmailResult sendCustomVerificationEmail(SendCustomVerificationEmailRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendCustomVerificationEmail(request);
+    }
+
+    @SdkInternalApi
+    final SendCustomVerificationEmailResult executeSendCustomVerificationEmail(SendCustomVerificationEmailRequest sendCustomVerificationEmailRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendCustomVerificationEmailRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendCustomVerificationEmailRequest> request = null;
+        Response<SendCustomVerificationEmailResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendCustomVerificationEmailRequestMarshaller().marshall(super.beforeMarshalling(sendCustomVerificationEmailRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<SendCustomVerificationEmailResult> responseHandler = new StaxResponseHandler<SendCustomVerificationEmailResult>(
+                    new SendCustomVerificationEmailResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3032,6 +3472,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Guide</a>.
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail" target="_top">AWS API
      *      Documentation</a>
@@ -3057,6 +3508,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendEmailRequestMarshaller().marshall(super.beforeMarshalling(sendEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3195,6 +3647,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Guide</a>.
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendRawEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail" target="_top">AWS API
      *      Documentation</a>
@@ -3220,6 +3683,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendRawEmailRequestMarshaller().marshall(super.beforeMarshalling(sendRawEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3303,6 +3767,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Indicates that the configuration set does not exist.
      * @throws TemplateDoesNotExistException
      *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendTemplatedEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail" target="_top">AWS API
      *      Documentation</a>
@@ -3328,6 +3803,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendTemplatedEmailRequestMarshaller().marshall(super.beforeMarshalling(sendTemplatedEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3396,6 +3872,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetActiveReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(setActiveReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3473,6 +3950,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetIdentityDkimEnabledRequestMarshaller().marshall(super.beforeMarshalling(setIdentityDkimEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3542,6 +4020,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(setIdentityFeedbackForwardingEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3604,6 +4083,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(setIdentityHeadersInNotificationsEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3666,6 +4146,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetIdentityMailFromDomainRequestMarshaller().marshall(super.beforeMarshalling(setIdentityMailFromDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3734,6 +4215,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetIdentityNotificationTopicRequestMarshaller().marshall(super.beforeMarshalling(setIdentityNotificationTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3798,6 +4280,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetReceiptRulePositionRequestMarshaller().marshall(super.beforeMarshalling(setReceiptRulePositionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3858,12 +4341,69 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new TestRenderTemplateRequestMarshaller().marshall(super.beforeMarshalling(testRenderTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<TestRenderTemplateResult> responseHandler = new StaxResponseHandler<TestRenderTemplateResult>(
                     new TestRenderTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables or disables email sending across your entire Amazon SES account. You can use this operation in
+     * conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account when
+     * reputation metrics (such as your bounce on complaint rate) reach certain thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateAccountSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for your entire Amazon SES
+     *        account.
+     * @return Result of the UpdateAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailService.UpdateAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAccountSendingEnabledResult updateAccountSendingEnabled(UpdateAccountSendingEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccountSendingEnabled(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccountSendingEnabledResult executeUpdateAccountSendingEnabled(UpdateAccountSendingEnabledRequest updateAccountSendingEnabledRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccountSendingEnabledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccountSendingEnabledRequest> request = null;
+        Response<UpdateAccountSendingEnabledResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccountSendingEnabledRequestMarshaller().marshall(super.beforeMarshalling(updateAccountSendingEnabledRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateAccountSendingEnabledResult>(
+                    new UpdateAccountSendingEnabledResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3936,12 +4476,134 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(updateConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<UpdateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetEventDestinationResult>(
                     new UpdateConfigurationSetEventDestinationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set.
+     * Reputation metrics include bounce and complaint rates. These metrics are published to Amazon CloudWatch. By using
+     * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a certain threshold.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetReputationMetricsEnabledRequest
+     *        Represents a request to modify the reputation metric publishing settings for a configuration set.
+     * @return Result of the UpdateConfigurationSetReputationMetricsEnabled operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.UpdateConfigurationSetReputationMetricsEnabled
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateConfigurationSetReputationMetricsEnabledResult updateConfigurationSetReputationMetricsEnabled(
+            UpdateConfigurationSetReputationMetricsEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfigurationSetReputationMetricsEnabled(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfigurationSetReputationMetricsEnabledResult executeUpdateConfigurationSetReputationMetricsEnabled(
+            UpdateConfigurationSetReputationMetricsEnabledRequest updateConfigurationSetReputationMetricsEnabledRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConfigurationSetReputationMetricsEnabledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConfigurationSetReputationMetricsEnabledRequest> request = null;
+        Response<UpdateConfigurationSetReputationMetricsEnabledResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateConfigurationSetReputationMetricsEnabledRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult>(
+                    new UpdateConfigurationSetReputationMetricsEnabledResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables or disables email sending for messages sent using a specific configuration set. You can use this
+     * operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set
+     * when the reputation metrics for that configuration set (such as your bounce on complaint rate) reach certain
+     * thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for a specific configuration set.
+     * @return Result of the UpdateConfigurationSetSendingEnabled operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.UpdateConfigurationSetSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateConfigurationSetSendingEnabledResult updateConfigurationSetSendingEnabled(UpdateConfigurationSetSendingEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfigurationSetSendingEnabled(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfigurationSetSendingEnabledResult executeUpdateConfigurationSetSendingEnabled(
+            UpdateConfigurationSetSendingEnabledRequest updateConfigurationSetSendingEnabledRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConfigurationSetSendingEnabledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConfigurationSetSendingEnabledRequest> request = null;
+        Response<UpdateConfigurationSetSendingEnabledResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConfigurationSetSendingEnabledRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateConfigurationSetSendingEnabledRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult>(
+                    new UpdateConfigurationSetSendingEnabledResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4013,12 +4675,80 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(updateConfigurationSetTrackingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<UpdateConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetTrackingOptionsResult>(
                     new UpdateConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateCustomVerificationEmailTemplateRequest
+     *        Represents a request to update an existing custom verification email template.
+     * @return Result of the UpdateCustomVerificationEmailTemplate operation returned by the service.
+     * @throws CustomVerificationEmailTemplateDoesNotExistException
+     *         Indicates that a custom verification email template with the name you specified does not exist.
+     * @throws FromEmailAddressNotVerifiedException
+     *         Indicates that the sender address specified for a custom verification email is not verified, and is
+     *         therefore not eligible to send the custom verification email.
+     * @throws CustomVerificationEmailInvalidContentException
+     *         Indicates that custom verification email template provided content is invalid.
+     * @sample AmazonSimpleEmailService.UpdateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCustomVerificationEmailTemplateResult updateCustomVerificationEmailTemplate(UpdateCustomVerificationEmailTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCustomVerificationEmailTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCustomVerificationEmailTemplateResult executeUpdateCustomVerificationEmailTemplate(
+            UpdateCustomVerificationEmailTemplateRequest updateCustomVerificationEmailTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCustomVerificationEmailTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCustomVerificationEmailTemplateRequest> request = null;
+        Response<UpdateCustomVerificationEmailTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCustomVerificationEmailTemplateRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateCustomVerificationEmailTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<UpdateCustomVerificationEmailTemplateResult>(
+                    new UpdateCustomVerificationEmailTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4097,6 +4827,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new UpdateReceiptRuleRequestMarshaller().marshall(super.beforeMarshalling(updateReceiptRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4155,6 +4886,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new UpdateTemplateRequestMarshaller().marshall(super.beforeMarshalling(updateTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4221,6 +4953,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new VerifyDomainDkimRequestMarshaller().marshall(super.beforeMarshalling(verifyDomainDkimRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4280,6 +5013,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new VerifyDomainIdentityRequestMarshaller().marshall(super.beforeMarshalling(verifyDomainIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4332,6 +5066,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new VerifyEmailAddressRequestMarshaller().marshall(super.beforeMarshalling(verifyEmailAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4350,8 +5085,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. This
-     * operation causes a confirmation email message to be sent to the specified address.
+     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. As a
+     * result of executing this operation, a verification email is sent to the specified address.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -4388,6 +5123,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new VerifyEmailIdentityRequestMarshaller().marshall(super.beforeMarshalling(verifyEmailIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

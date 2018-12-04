@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class WriteApplicationSettingsRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CAMPAIGNHOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CampaignHook").build();
     private static final MarshallingInfo<StructuredPojo> LIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Limits").build();
     private static final MarshallingInfo<StructuredPojo> QUIETTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class WriteApplicationSettingsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(writeApplicationSettingsRequest.getCampaignHook(), CAMPAIGNHOOK_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getQuietTime(), QUIETTIME_BINDING);
         } catch (Exception e) {

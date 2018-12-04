@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,10 +51,9 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private String roleArn;
     /**
      * <p>
-     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You
-     * must use JSON dot notation, not bracket notation. For more information, see <a
-     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     * Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
+     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
+     * Data Interchange Format</a>.
      * </p>
      */
     private String input;
@@ -95,6 +94,20 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private EcsParameters ecsParameters;
+    /**
+     * <p>
+     * Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For more
+     * information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+     * in the <i>AWS Batch User Guide</i>.
+     * </p>
+     */
+    private BatchParameters batchParameters;
+    /**
+     * <p>
+     * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     */
+    private SqsParameters sqsParameters;
 
     /**
      * <p>
@@ -224,17 +237,15 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You
-     * must use JSON dot notation, not bracket notation. For more information, see <a
-     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     * Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
+     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
+     * Data Interchange Format</a>.
      * </p>
      * 
      * @param input
      *        Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target.
-     *        You must use JSON dot notation, not bracket notation. For more information, see <a
-     *        href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     *        Format</a>.
+     *        For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object
+     *        Notation (JSON) Data Interchange Format</a>.
      */
 
     public void setInput(String input) {
@@ -243,16 +254,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You
-     * must use JSON dot notation, not bracket notation. For more information, see <a
-     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     * Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
+     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
+     * Data Interchange Format</a>.
      * </p>
      * 
      * @return Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the
-     *         target. You must use JSON dot notation, not bracket notation. For more information, see <a
-     *         href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     *         Format</a>.
+     *         target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript
+     *         Object Notation (JSON) Data Interchange Format</a>.
      */
 
     public String getInput() {
@@ -261,17 +270,15 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You
-     * must use JSON dot notation, not bracket notation. For more information, see <a
-     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     * Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
+     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
+     * Data Interchange Format</a>.
      * </p>
      * 
      * @param input
      *        Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target.
-     *        You must use JSON dot notation, not bracket notation. For more information, see <a
-     *        href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     *        Format</a>.
+     *        For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object
+     *        Notation (JSON) Data Interchange Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,6 +531,101 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For more
+     * information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+     * in the <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @param batchParameters
+     *        Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For
+     *        more information about AWS Batch, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
+     *        Guide</i>.
+     */
+
+    public void setBatchParameters(BatchParameters batchParameters) {
+        this.batchParameters = batchParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For more
+     * information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+     * in the <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @return Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For
+     *         more information about AWS Batch, see <a
+     *         href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
+     *         Guide</i>.
+     */
+
+    public BatchParameters getBatchParameters() {
+        return this.batchParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For more
+     * information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+     * in the <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @param batchParameters
+     *        Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For
+     *        more information about AWS Batch, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withBatchParameters(BatchParameters batchParameters) {
+        setBatchParameters(batchParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     * 
+     * @param sqsParameters
+     *        Contains the message group ID to use when the target is a FIFO queue.
+     */
+
+    public void setSqsParameters(SqsParameters sqsParameters) {
+        this.sqsParameters = sqsParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     * 
+     * @return Contains the message group ID to use when the target is a FIFO queue.
+     */
+
+    public SqsParameters getSqsParameters() {
+        return this.sqsParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     * 
+     * @param sqsParameters
+     *        Contains the message group ID to use when the target is a FIFO queue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withSqsParameters(SqsParameters sqsParameters) {
+        setSqsParameters(sqsParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -551,7 +653,11 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         if (getRunCommandParameters() != null)
             sb.append("RunCommandParameters: ").append(getRunCommandParameters()).append(",");
         if (getEcsParameters() != null)
-            sb.append("EcsParameters: ").append(getEcsParameters());
+            sb.append("EcsParameters: ").append(getEcsParameters()).append(",");
+        if (getBatchParameters() != null)
+            sb.append("BatchParameters: ").append(getBatchParameters()).append(",");
+        if (getSqsParameters() != null)
+            sb.append("SqsParameters: ").append(getSqsParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -602,6 +708,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEcsParameters() != null && other.getEcsParameters().equals(this.getEcsParameters()) == false)
             return false;
+        if (other.getBatchParameters() == null ^ this.getBatchParameters() == null)
+            return false;
+        if (other.getBatchParameters() != null && other.getBatchParameters().equals(this.getBatchParameters()) == false)
+            return false;
+        if (other.getSqsParameters() == null ^ this.getSqsParameters() == null)
+            return false;
+        if (other.getSqsParameters() != null && other.getSqsParameters().equals(this.getSqsParameters()) == false)
+            return false;
         return true;
     }
 
@@ -619,6 +733,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getKinesisParameters() == null) ? 0 : getKinesisParameters().hashCode());
         hashCode = prime * hashCode + ((getRunCommandParameters() == null) ? 0 : getRunCommandParameters().hashCode());
         hashCode = prime * hashCode + ((getEcsParameters() == null) ? 0 : getEcsParameters().hashCode());
+        hashCode = prime * hashCode + ((getBatchParameters() == null) ? 0 : getBatchParameters().hashCode());
+        hashCode = prime * hashCode + ((getSqsParameters() == null) ? 0 : getSqsParameters().hashCode());
         return hashCode;
     }
 

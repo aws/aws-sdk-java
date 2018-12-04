@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,8 @@ public class StorediSCSIVolumeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeiSCSIAttributes").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").build();
+    private static final MarshallingInfo<Long> VOLUMEUSEDINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeUsedInBytes").build();
 
     private static final StorediSCSIVolumeMarshaller instance = new StorediSCSIVolumeMarshaller();
 
@@ -77,6 +79,7 @@ public class StorediSCSIVolumeMarshaller {
             protocolMarshaller.marshall(storediSCSIVolume.getPreservedExistingData(), PRESERVEDEXISTINGDATA_BINDING);
             protocolMarshaller.marshall(storediSCSIVolume.getVolumeiSCSIAttributes(), VOLUMEISCSIATTRIBUTES_BINDING);
             protocolMarshaller.marshall(storediSCSIVolume.getCreatedDate(), CREATEDDATE_BINDING);
+            protocolMarshaller.marshall(storediSCSIVolume.getVolumeUsedInBytes(), VOLUMEUSEDINBYTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

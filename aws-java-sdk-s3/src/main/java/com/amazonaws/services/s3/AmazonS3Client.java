@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
@@ -91,6 +92,7 @@ import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
 import com.amazonaws.services.s3.internal.S3QueryStringSigner;
 import com.amazonaws.services.s3.internal.S3RequestEndpointResolver;
 import com.amazonaws.services.s3.internal.S3RequesterChargedHeaderHandler;
+import com.amazonaws.services.s3.internal.S3RestoreOutputPathHeaderHandler;
 import com.amazonaws.services.s3.internal.S3Signer;
 import com.amazonaws.services.s3.internal.S3StringResponseHandler;
 import com.amazonaws.services.s3.internal.S3V4AuthErrorRetryStrategy;
@@ -214,6 +216,8 @@ import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
+import com.amazonaws.services.s3.model.RestoreObjectResult;
+import com.amazonaws.services.s3.model.RestoreRequestType;
 import com.amazonaws.services.s3.model.S3AccelerateUnsupported;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
@@ -3350,40 +3354,43 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     @Override
     public void restoreObject(RestoreObjectRequest restoreObjectRequest)
-            throws AmazonServiceException {
+        throws AmazonServiceException {
+        restoreObjectV2(restoreObjectRequest);
+    }
+
+    @Override
+    public RestoreObjectResult restoreObjectV2(RestoreObjectRequest restoreObjectRequest)
+        throws AmazonServiceException {
+
         restoreObjectRequest = beforeClientExecution(restoreObjectRequest);
         String bucketName = restoreObjectRequest.getBucketName();
         String key = restoreObjectRequest.getKey();
-        String versionId = restoreObjectRequest.getVersionId();
-        int expirationIndays = restoreObjectRequest.getExpirationInDays();
+        int expirationInDays = restoreObjectRequest.getExpirationInDays();
 
-        rejectNull(bucketName, "The bucket name parameter must be specified when copying a glacier object");
-        rejectNull(key, "The key parameter must be specified when copying a glacier object");
-        if (expirationIndays == -1) {
-            throw new IllegalArgumentException("The expiration in days parameter must be specified when copying a glacier object");
+        rejectNull(bucketName, "The bucket name parameter must be specified when restoring a glacier object");
+        rejectNull(key, "The key parameter must be specified when restoring a glacier object");
+
+        if (restoreObjectRequest.getOutputLocation() != null) {
+            rejectNull(restoreObjectRequest.getType(), "The restore request type must be specified with restores that specify OutputLocation");
+
+            if (RestoreRequestType.SELECT.toString().equals(restoreObjectRequest.getType())) {
+                rejectNull(restoreObjectRequest.getSelectParameters(),
+                           "The select parameters must be specified when restoring a glacier object with SELECT restore request type");
+            }
+        } else if (expirationInDays == -1) {
+            throw new IllegalArgumentException("The expiration in days parameter must be specified when restoring a glacier object without OutputLocation");
         }
 
-        Request<RestoreObjectRequest> request = createRequest(bucketName, key, restoreObjectRequest, HttpMethodName.POST);
-        request.addParameter("restore", null);
-        if (versionId != null) {
-            request.addParameter("versionId", versionId);
-        }
+        Request<RestoreObjectRequest> request =
+            createRestoreObjectRequest(restoreObjectRequest);
 
-        populateRequesterPaysHeader(request, restoreObjectRequest.isRequesterPays());
+        @SuppressWarnings("unchecked")
+        ResponseHeaderHandlerChain<RestoreObjectResult> responseHandler = new ResponseHeaderHandlerChain<RestoreObjectResult>(
+            new Unmarshallers.RestoreObjectResultUnmarshaller(),
+            new S3RequesterChargedHeaderHandler<RestoreObjectResult>(),
+            new S3RestoreOutputPathHeaderHandler<RestoreObjectResult>());
 
-        byte[] content = RequestXmlFactory.convertToXmlByteArray(restoreObjectRequest);
-        request.addHeader("Content-Length", String.valueOf(content.length));
-        request.addHeader("Content-Type", "application/xml");
-        request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch (Exception e) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
-
-        invoke(request, voidResponseHandler, bucketName, key);
+        return invoke(request, responseHandler, bucketName, key);
     }
 
     @Override
@@ -3571,6 +3578,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 if (region != null) {
                      // If cache contains the region for the bucket, create an endpoint for the region and
                      // update the request with that endpoint.
+                     request.addHandlerContext(HandlerContextKey.SIGNING_REGION, region);
                      resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
                      return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, region);
                 } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
@@ -4195,6 +4203,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return createRequest(bucketName, key, originalRequest, httpMethod, endpoint);
     }
 
+    // NOTE: New uses of this method are discouraged and flagged at build time.
+    // Be careful not to change its signature.
     protected <X extends AmazonWebServiceRequest> Request<X> createRequest(String bucketName, String key, X originalRequest, HttpMethodName httpMethod, URI endpoint) {
         // If the underlying AmazonS3Client has enabled accelerate mode and the original
         // request operation is accelerate mode supported, then the request will use the
@@ -4214,6 +4224,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED,
                 Boolean.valueOf(clientOptions.isPayloadSigningEnabled()));
         resolveRequestEndpoint(request, bucketName, key, endpoint);
+        request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
 
         return request;
     }
@@ -5134,5 +5145,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 throw new AmazonClientException("Couldn't compute md5 sum", e);
             }
         }
+    }
+
+    private Request<RestoreObjectRequest> createRestoreObjectRequest(RestoreObjectRequest restoreObjectRequest) {
+        String bucketName = restoreObjectRequest.getBucketName();
+        String key = restoreObjectRequest.getKey();
+        String versionId = restoreObjectRequest.getVersionId();
+
+        Request<RestoreObjectRequest> request = createRequest(
+            bucketName, key, restoreObjectRequest, HttpMethodName.POST);
+        request.addParameter("restore", null);
+        if (versionId != null) {
+            request.addParameter("versionId", versionId);
+        }
+
+        populateRequesterPaysHeader(request, restoreObjectRequest.isRequesterPays());
+        byte[] content = RequestXmlFactory.convertToXmlByteArray(restoreObjectRequest);
+        setContent(request, content, "application/xml", true);
+        return request;
     }
 }

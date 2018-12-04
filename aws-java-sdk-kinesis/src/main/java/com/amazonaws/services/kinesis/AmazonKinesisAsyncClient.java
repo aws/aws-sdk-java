@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
- * <fullname>Amazon Kinesis Streams Service API Reference</fullname>
+ * <fullname>Amazon Kinesis Data Streams Service API Reference</fullname>
  * <p>
- * Amazon Kinesis Streams is a managed service that scales elastically for real time processing of streaming big data.
+ * Amazon Kinesis Data Streams is a managed service that scales elastically for real-time processing of streaming big
+ * data.
  * </p>
  */
 @ThreadSafe
@@ -560,6 +561,39 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStreamSummaryResult> describeStreamSummaryAsync(DescribeStreamSummaryRequest request) {
+
+        return describeStreamSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamSummaryResult> describeStreamSummaryAsync(final DescribeStreamSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStreamSummaryRequest, DescribeStreamSummaryResult> asyncHandler) {
+        final DescribeStreamSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStreamSummaryResult>() {
+            @Override
+            public DescribeStreamSummaryResult call() throws Exception {
+                DescribeStreamSummaryResult result = null;
+
+                try {
+                    result = executeDescribeStreamSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableEnhancedMonitoringResult> disableEnhancedMonitoringAsync(DisableEnhancedMonitoringRequest request) {
 
         return disableEnhancedMonitoringAsync(request, null);
@@ -760,6 +794,39 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements Ama
 
                 try {
                     result = executeIncreaseStreamRetentionPeriod(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListShardsResult> listShardsAsync(ListShardsRequest request) {
+
+        return listShardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListShardsResult> listShardsAsync(final ListShardsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListShardsRequest, ListShardsResult> asyncHandler) {
+        final ListShardsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListShardsResult>() {
+            @Override
+            public ListShardsResult call() throws Exception {
+                ListShardsResult result = null;
+
+                try {
+                    result = executeListShards(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

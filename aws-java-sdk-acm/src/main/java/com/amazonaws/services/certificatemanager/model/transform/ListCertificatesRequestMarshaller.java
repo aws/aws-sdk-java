@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class ListCertificatesRequestMarshaller {
 
     private static final MarshallingInfo<List> CERTIFICATESTATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateStatuses").build();
+    private static final MarshallingInfo<StructuredPojo> INCLUDES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Includes").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -52,6 +54,7 @@ public class ListCertificatesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listCertificatesRequest.getCertificateStatuses(), CERTIFICATESTATUSES_BINDING);
+            protocolMarshaller.marshall(listCertificatesRequest.getIncludes(), INCLUDES_BINDING);
             protocolMarshaller.marshall(listCertificatesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listCertificatesRequest.getMaxItems(), MAXITEMS_BINDING);
         } catch (Exception e) {

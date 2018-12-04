@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -197,6 +197,8 @@ public enum RDSActions implements Action {
     RestoreDBClusterToPointInTime("rds:RestoreDBClusterToPointInTime"),
     /** Action for the RestoreDBInstanceFromDBSnapshot operation. */
     RestoreDBInstanceFromDBSnapshot("rds:RestoreDBInstanceFromDBSnapshot"),
+    /** Action for the RestoreDBInstanceFromS3 operation. */
+    RestoreDBInstanceFromS3("rds:RestoreDBInstanceFromS3"),
     /** Action for the RestoreDBInstanceToPointInTime operation. */
     RestoreDBInstanceToPointInTime("rds:RestoreDBInstanceToPointInTime"),
     /** Action for the RevokeDBSecurityGroupIngress operation. */

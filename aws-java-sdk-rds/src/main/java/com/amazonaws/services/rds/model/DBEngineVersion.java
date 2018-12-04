@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,25 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Timezone> supportedTimezones;
+    /**
+     * <p>
+     * The types of logs that the database engine has available for export to CloudWatch Logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> exportableLogTypes;
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports exporting the log types specified by
+     * ExportableLogTypes to CloudWatch Logs.
+     * </p>
+     */
+    private Boolean supportsLogExportsToCloudwatchLogs;
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     */
+    private Boolean supportsReadReplica;
 
     /**
      * <p>
@@ -566,6 +585,191 @@ public class DBEngineVersion implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The types of logs that the database engine has available for export to CloudWatch Logs.
+     * </p>
+     * 
+     * @return The types of logs that the database engine has available for export to CloudWatch Logs.
+     */
+
+    public java.util.List<String> getExportableLogTypes() {
+        if (exportableLogTypes == null) {
+            exportableLogTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return exportableLogTypes;
+    }
+
+    /**
+     * <p>
+     * The types of logs that the database engine has available for export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param exportableLogTypes
+     *        The types of logs that the database engine has available for export to CloudWatch Logs.
+     */
+
+    public void setExportableLogTypes(java.util.Collection<String> exportableLogTypes) {
+        if (exportableLogTypes == null) {
+            this.exportableLogTypes = null;
+            return;
+        }
+
+        this.exportableLogTypes = new com.amazonaws.internal.SdkInternalList<String>(exportableLogTypes);
+    }
+
+    /**
+     * <p>
+     * The types of logs that the database engine has available for export to CloudWatch Logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExportableLogTypes(java.util.Collection)} or {@link #withExportableLogTypes(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param exportableLogTypes
+     *        The types of logs that the database engine has available for export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withExportableLogTypes(String... exportableLogTypes) {
+        if (this.exportableLogTypes == null) {
+            setExportableLogTypes(new com.amazonaws.internal.SdkInternalList<String>(exportableLogTypes.length));
+        }
+        for (String ele : exportableLogTypes) {
+            this.exportableLogTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The types of logs that the database engine has available for export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param exportableLogTypes
+     *        The types of logs that the database engine has available for export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withExportableLogTypes(java.util.Collection<String> exportableLogTypes) {
+        setExportableLogTypes(exportableLogTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports exporting the log types specified by
+     * ExportableLogTypes to CloudWatch Logs.
+     * </p>
+     * 
+     * @param supportsLogExportsToCloudwatchLogs
+     *        A value that indicates whether the engine version supports exporting the log types specified by
+     *        ExportableLogTypes to CloudWatch Logs.
+     */
+
+    public void setSupportsLogExportsToCloudwatchLogs(Boolean supportsLogExportsToCloudwatchLogs) {
+        this.supportsLogExportsToCloudwatchLogs = supportsLogExportsToCloudwatchLogs;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports exporting the log types specified by
+     * ExportableLogTypes to CloudWatch Logs.
+     * </p>
+     * 
+     * @return A value that indicates whether the engine version supports exporting the log types specified by
+     *         ExportableLogTypes to CloudWatch Logs.
+     */
+
+    public Boolean getSupportsLogExportsToCloudwatchLogs() {
+        return this.supportsLogExportsToCloudwatchLogs;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports exporting the log types specified by
+     * ExportableLogTypes to CloudWatch Logs.
+     * </p>
+     * 
+     * @param supportsLogExportsToCloudwatchLogs
+     *        A value that indicates whether the engine version supports exporting the log types specified by
+     *        ExportableLogTypes to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsLogExportsToCloudwatchLogs(Boolean supportsLogExportsToCloudwatchLogs) {
+        setSupportsLogExportsToCloudwatchLogs(supportsLogExportsToCloudwatchLogs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the engine version supports exporting the log types specified by
+     * ExportableLogTypes to CloudWatch Logs.
+     * </p>
+     * 
+     * @return A value that indicates whether the engine version supports exporting the log types specified by
+     *         ExportableLogTypes to CloudWatch Logs.
+     */
+
+    public Boolean isSupportsLogExportsToCloudwatchLogs() {
+        return this.supportsLogExportsToCloudwatchLogs;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     * 
+     * @param supportsReadReplica
+     *        Indicates whether the database engine version supports read replicas.
+     */
+
+    public void setSupportsReadReplica(Boolean supportsReadReplica) {
+        this.supportsReadReplica = supportsReadReplica;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     * 
+     * @return Indicates whether the database engine version supports read replicas.
+     */
+
+    public Boolean getSupportsReadReplica() {
+        return this.supportsReadReplica;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     * 
+     * @param supportsReadReplica
+     *        Indicates whether the database engine version supports read replicas.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsReadReplica(Boolean supportsReadReplica) {
+        setSupportsReadReplica(supportsReadReplica);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     * 
+     * @return Indicates whether the database engine version supports read replicas.
+     */
+
+    public Boolean isSupportsReadReplica() {
+        return this.supportsReadReplica;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -593,7 +797,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (getValidUpgradeTarget() != null)
             sb.append("ValidUpgradeTarget: ").append(getValidUpgradeTarget()).append(",");
         if (getSupportedTimezones() != null)
-            sb.append("SupportedTimezones: ").append(getSupportedTimezones());
+            sb.append("SupportedTimezones: ").append(getSupportedTimezones()).append(",");
+        if (getExportableLogTypes() != null)
+            sb.append("ExportableLogTypes: ").append(getExportableLogTypes()).append(",");
+        if (getSupportsLogExportsToCloudwatchLogs() != null)
+            sb.append("SupportsLogExportsToCloudwatchLogs: ").append(getSupportsLogExportsToCloudwatchLogs()).append(",");
+        if (getSupportsReadReplica() != null)
+            sb.append("SupportsReadReplica: ").append(getSupportsReadReplica());
         sb.append("}");
         return sb.toString();
     }
@@ -644,6 +854,19 @@ public class DBEngineVersion implements Serializable, Cloneable {
             return false;
         if (other.getSupportedTimezones() != null && other.getSupportedTimezones().equals(this.getSupportedTimezones()) == false)
             return false;
+        if (other.getExportableLogTypes() == null ^ this.getExportableLogTypes() == null)
+            return false;
+        if (other.getExportableLogTypes() != null && other.getExportableLogTypes().equals(this.getExportableLogTypes()) == false)
+            return false;
+        if (other.getSupportsLogExportsToCloudwatchLogs() == null ^ this.getSupportsLogExportsToCloudwatchLogs() == null)
+            return false;
+        if (other.getSupportsLogExportsToCloudwatchLogs() != null
+                && other.getSupportsLogExportsToCloudwatchLogs().equals(this.getSupportsLogExportsToCloudwatchLogs()) == false)
+            return false;
+        if (other.getSupportsReadReplica() == null ^ this.getSupportsReadReplica() == null)
+            return false;
+        if (other.getSupportsReadReplica() != null && other.getSupportsReadReplica().equals(this.getSupportsReadReplica()) == false)
+            return false;
         return true;
     }
 
@@ -661,6 +884,9 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportedCharacterSets() == null) ? 0 : getSupportedCharacterSets().hashCode());
         hashCode = prime * hashCode + ((getValidUpgradeTarget() == null) ? 0 : getValidUpgradeTarget().hashCode());
         hashCode = prime * hashCode + ((getSupportedTimezones() == null) ? 0 : getSupportedTimezones().hashCode());
+        hashCode = prime * hashCode + ((getExportableLogTypes() == null) ? 0 : getExportableLogTypes().hashCode());
+        hashCode = prime * hashCode + ((getSupportsLogExportsToCloudwatchLogs() == null) ? 0 : getSupportsLogExportsToCloudwatchLogs().hashCode());
+        hashCode = prime * hashCode + ((getSupportsReadReplica() == null) ? 0 : getSupportsReadReplica().hashCode());
         return hashCode;
     }
 

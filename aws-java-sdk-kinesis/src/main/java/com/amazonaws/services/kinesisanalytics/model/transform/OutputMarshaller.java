@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class OutputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisStreamsOutput").build();
     private static final MarshallingInfo<StructuredPojo> KINESISFIREHOSEOUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisFirehoseOutput").build();
+    private static final MarshallingInfo<StructuredPojo> LAMBDAOUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LambdaOutput").build();
     private static final MarshallingInfo<StructuredPojo> DESTINATIONSCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationSchema").build();
 
@@ -55,6 +57,7 @@ public class OutputMarshaller {
             protocolMarshaller.marshall(output.getName(), NAME_BINDING);
             protocolMarshaller.marshall(output.getKinesisStreamsOutput(), KINESISSTREAMSOUTPUT_BINDING);
             protocolMarshaller.marshall(output.getKinesisFirehoseOutput(), KINESISFIREHOSEOUTPUT_BINDING);
+            protocolMarshaller.marshall(output.getLambdaOutput(), LAMBDAOUTPUT_BINDING);
             protocolMarshaller.marshall(output.getDestinationSchema(), DESTINATIONSCHEMA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,12 +25,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateImageBuilderStreamingURLRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The
+     * default is 3600 seconds.
+     * </p>
+     */
     private Long validity;
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      */
 
     public void setName(String name) {
@@ -38,7 +53,11 @@ public class CreateImageBuilderStreamingURLRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
+     * @return The name of the image builder.
      */
 
     public String getName() {
@@ -46,7 +65,12 @@ public class CreateImageBuilderStreamingURLRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +80,14 @@ public class CreateImageBuilderStreamingURLRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The
+     * default is 3600 seconds.
+     * </p>
+     * 
      * @param validity
+     *        The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
+     *        The default is 3600 seconds.
      */
 
     public void setValidity(Long validity) {
@@ -64,7 +95,13 @@ public class CreateImageBuilderStreamingURLRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The
+     * default is 3600 seconds.
+     * </p>
+     * 
+     * @return The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
+     *         The default is 3600 seconds.
      */
 
     public Long getValidity() {
@@ -72,7 +109,14 @@ public class CreateImageBuilderStreamingURLRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The
+     * default is 3600 seconds.
+     * </p>
+     * 
      * @param validity
+     *        The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
+     *        The default is 3600 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

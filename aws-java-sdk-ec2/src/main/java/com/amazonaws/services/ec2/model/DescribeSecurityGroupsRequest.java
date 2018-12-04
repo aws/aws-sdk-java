@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -205,7 +205,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this parameter is not
+     * specified, then all results are returned.
      * </p>
      */
     private Integer maxResults;
@@ -1660,12 +1661,14 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this parameter is not
+     * specified, then all results are returned.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        request with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     *        request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this
+     *        parameter is not specified, then all results are returned.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -1675,11 +1678,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this parameter is not
+     * specified, then all results are returned.
      * </p>
      * 
      * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         request with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     *         request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this
+     *         parameter is not specified, then all results are returned.
      */
 
     public Integer getMaxResults() {
@@ -1689,12 +1694,14 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this parameter is not
+     * specified, then all results are returned.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        request with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     *        request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this
+     *        parameter is not specified, then all results are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

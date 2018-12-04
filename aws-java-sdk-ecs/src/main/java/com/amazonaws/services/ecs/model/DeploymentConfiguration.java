@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,9 +41,9 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The lower limit (as a percentage of the service's <code>desiredCount</code>) of the number of running tasks that
-     * must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum healthy tasks during
-     * a deployment is the <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100, rounded up to
-     * the nearest integer value.
+     * must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum number of healthy
+     * tasks during a deployment is the <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100,
+     * rounded up to the nearest integer value.
      * </p>
      */
     private Integer minimumHealthyPercent;
@@ -109,15 +109,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The lower limit (as a percentage of the service's <code>desiredCount</code>) of the number of running tasks that
-     * must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum healthy tasks during
-     * a deployment is the <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100, rounded up to
-     * the nearest integer value.
+     * must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum number of healthy
+     * tasks during a deployment is the <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100,
+     * rounded up to the nearest integer value.
      * </p>
      * 
      * @param minimumHealthyPercent
      *        The lower limit (as a percentage of the service's <code>desiredCount</code>) of the number of running
      *        tasks that must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum
-     *        healthy tasks during a deployment is the <code>desiredCount</code> multiplied by
+     *        number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by
      *        <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
      */
 
@@ -128,14 +128,14 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The lower limit (as a percentage of the service's <code>desiredCount</code>) of the number of running tasks that
-     * must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum healthy tasks during
-     * a deployment is the <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100, rounded up to
-     * the nearest integer value.
+     * must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum number of healthy
+     * tasks during a deployment is the <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100,
+     * rounded up to the nearest integer value.
      * </p>
      * 
      * @return The lower limit (as a percentage of the service's <code>desiredCount</code>) of the number of running
      *         tasks that must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum
-     *         healthy tasks during a deployment is the <code>desiredCount</code> multiplied by
+     *         number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by
      *         <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
      */
 
@@ -146,15 +146,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The lower limit (as a percentage of the service's <code>desiredCount</code>) of the number of running tasks that
-     * must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum healthy tasks during
-     * a deployment is the <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100, rounded up to
-     * the nearest integer value.
+     * must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum number of healthy
+     * tasks during a deployment is the <code>desiredCount</code> multiplied by <code>minimumHealthyPercent</code>/100,
+     * rounded up to the nearest integer value.
      * </p>
      * 
      * @param minimumHealthyPercent
      *        The lower limit (as a percentage of the service's <code>desiredCount</code>) of the number of running
      *        tasks that must remain in the <code>RUNNING</code> state in a service during a deployment. The minimum
-     *        healthy tasks during a deployment is the <code>desiredCount</code> multiplied by
+     *        number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by
      *        <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

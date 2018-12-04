@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,32 +28,12 @@ import com.amazonaws.services.servicecatalog.model.*;
  * <p>
  * <fullname>AWS Service Catalog</fullname>
  * <p>
- * <b>Overview</b>
- * </p>
- * <p>
- * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows organizations to create and manage
- * catalogs of IT services that are approved for use on AWS. This documentation provides reference material for the AWS
- * Service Catalog end user API. To get the most out of this documentation, be familiar with the terminology discussed
- * in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
+ * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage
+ * catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be
+ * familiar with the terminology discussed in <a
+ * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
  * Concepts</a>.
  * </p>
- * <p>
- * <i>Additional Resources</i>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">AWS Service Catalog
- * Administrator Guide</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/introduction.html">AWS Service Catalog User
- * Guide</a>
- * </p>
- * </li>
- * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSServiceCatalog {
@@ -119,18 +99,18 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Accepts an offer to share a portfolio.
+     * Accepts an offer to share the specified portfolio.
      * </p>
      * 
      * @param acceptPortfolioShareRequest
      * @return Result of the AcceptPortfolioShare operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @sample AWSServiceCatalog.AcceptPortfolioShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare"
      *      target="_top">AWS API Documentation</a>
@@ -145,12 +125,12 @@ public interface AWSServiceCatalog {
      * @param associatePrincipalWithPortfolioRequest
      * @return Result of the AssociatePrincipalWithPortfolio operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @sample AWSServiceCatalog.AssociatePrincipalWithPortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio"
      *      target="_top">AWS API Documentation</a>
@@ -159,18 +139,18 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Associates a product with a portfolio.
+     * Associates the specified product with the specified portfolio.
      * </p>
      * 
      * @param associateProductWithPortfolioRequest
      * @return Result of the AssociateProductWithPortfolio operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @sample AWSServiceCatalog.AssociateProductWithPortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio"
      *      target="_top">AWS API Documentation</a>
@@ -179,7 +159,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Associate a TagOption identifier with a resource identifier.
+     * Associate the specified TagOption with the specified portfolio or product.
      * </p>
      * 
      * @param associateTagOptionWithResourceRequest
@@ -191,15 +171,15 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @throws DuplicateResourceException
      *         The specified resource is a duplicate.
      * @throws InvalidStateException
-     *         An attempt was made to modify a resource that is in an invalid state. Inspect the resource you are using
-     *         for this operation to ensure that all resource states are valid before retrying the operation.
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
      * @sample AWSServiceCatalog.AssociateTagOptionWithResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource"
      *      target="_top">AWS API Documentation</a>
@@ -211,7 +191,7 @@ public interface AWSServiceCatalog {
      * Copies the specified source product to the specified target product or a new product.
      * </p>
      * <p>
-     * You can copy the product to the same account or another account. You can copy the product to the same region or
+     * You can copy a product to the same account or another account. You can copy a product to the same region or
      * another region.
      * </p>
      * <p>
@@ -224,7 +204,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.CopyProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct" target="_top">AWS API
      *      Documentation</a>
@@ -233,8 +213,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
+     * Creates a constraint.
      * </p>
      * 
      * @param createConstraintRequest
@@ -242,10 +221,10 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @throws DuplicateResourceException
      *         The specified resource is a duplicate.
      * @sample AWSServiceCatalog.CreateConstraint
@@ -256,16 +235,16 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new portfolio.
+     * Creates a portfolio.
      * </p>
      * 
      * @param createPortfolioRequest
      * @return Result of the CreatePortfolio operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @throws TagOptionNotMigratedException
      *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
      *         for this account. Please use the AWS console to perform the migration process before retrying the
@@ -278,7 +257,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new portfolio share.
+     * Shares the specified portfolio with the specified account.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -286,10 +265,10 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.CreatePortfolioShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"
      *      target="_top">AWS API Documentation</a>
@@ -298,16 +277,16 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new product.
+     * Creates a product.
      * </p>
      * 
      * @param createProductRequest
      * @return Result of the CreateProduct operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @throws TagOptionNotMigratedException
      *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
      *         for this account. Please use the AWS console to perform the migration process before retrying the
@@ -320,8 +299,39 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Create a new provisioning artifact for the specified product. This operation does not work with a product that
-     * has been shared with you.
+     * Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified
+     * (when updating a provisioned product) when the plan is executed.
+     * </p>
+     * <p>
+     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, the
+     * product status must be AVAILBLE or TAINTED.
+     * </p>
+     * <p>
+     * To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify
+     * the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.
+     * </p>
+     * 
+     * @param createProvisionedProductPlanRequest
+     * @return Result of the CreateProvisionedProductPlan operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @sample AWSServiceCatalog.CreateProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateProvisionedProductPlanResult createProvisionedProductPlan(CreateProvisionedProductPlanRequest createProvisionedProductPlanRequest);
+
+    /**
+     * <p>
+     * Creates a provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot create a provisioning artifact for a product that was shared with you.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -329,10 +339,10 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @sample AWSServiceCatalog.CreateProvisioningArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact"
      *      target="_top">AWS API Documentation</a>
@@ -341,7 +351,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Create a new TagOption.
+     * Creates a TagOption.
      * </p>
      * 
      * @param createTagOptionRequest
@@ -353,8 +363,8 @@ public interface AWSServiceCatalog {
      * @throws DuplicateResourceException
      *         The specified resource is a duplicate.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @sample AWSServiceCatalog.CreateTagOption
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption" target="_top">AWS
      *      API Documentation</a>
@@ -371,7 +381,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.DeleteConstraint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint"
      *      target="_top">AWS API Documentation</a>
@@ -380,8 +390,11 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified portfolio. This operation does not work with a portfolio that has been shared with you or
-     * if it has products, users, constraints, or shared accounts associated with it.
+     * Deletes the specified portfolio.
+     * </p>
+     * <p>
+     * You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or
+     * shared accounts.
      * </p>
      * 
      * @param deletePortfolioRequest
@@ -389,10 +402,9 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceInUseException
-     *         The operation was requested against a resource that is currently in use. Free the resource from use and
-     *         retry the operation.
+     *         A resource that is currently in use. Ensure that the resource is not in use and retry the operation.
      * @throws TagOptionNotMigratedException
      *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
      *         for this account. Please use the AWS console to perform the migration process before retrying the
@@ -405,7 +417,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified portfolio share.
+     * Stops sharing the specified portfolio with the specified account.
      * </p>
      * 
      * @param deletePortfolioShareRequest
@@ -420,8 +432,10 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified product. This operation does not work with a product that has been shared with you or is
-     * associated with a portfolio.
+     * Deletes the specified product.
+     * </p>
+     * <p>
+     * You cannot delete a product if it was shared with you or is associated with a portfolio.
      * </p>
      * 
      * @param deleteProductRequest
@@ -429,10 +443,9 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ResourceInUseException
-     *         The operation was requested against a resource that is currently in use. Free the resource from use and
-     *         retry the operation.
+     *         A resource that is currently in use. Ensure that the resource is not in use and retry the operation.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws TagOptionNotMigratedException
      *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
      *         for this account. Please use the AWS console to perform the migration process before retrying the
@@ -445,9 +458,28 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified provisioning artifact. This operation does not work on a provisioning artifact associated
-     * with a product that has been shared with you, or on the last provisioning artifact associated with a product (a
-     * product must have at least one provisioning artifact).
+     * Deletes the specified plan.
+     * </p>
+     * 
+     * @param deleteProvisionedProductPlanRequest
+     * @return Result of the DeleteProvisionedProductPlan operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DeleteProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteProvisionedProductPlanResult deleteProvisionedProductPlan(DeleteProvisionedProductPlanRequest deleteProvisionedProductPlanRequest);
+
+    /**
+     * <p>
+     * Deletes the specified provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete
+     * the last provisioning artifact for a product, because a product must have at least one provisioning artifact.
      * </p>
      * 
      * @param deleteProvisioningArtifactRequest
@@ -455,10 +487,9 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ResourceInUseException
-     *         The operation was requested against a resource that is currently in use. Free the resource from use and
-     *         retry the operation.
+     *         A resource that is currently in use. Ensure that the resource is not in use and retry the operation.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.DeleteProvisioningArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact"
      *      target="_top">AWS API Documentation</a>
@@ -467,7 +498,31 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information for a specified constraint.
+     * Deletes the specified TagOption.
+     * </p>
+     * <p>
+     * You cannot delete a TagOption if it is associated with a product or portfolio.
+     * </p>
+     * 
+     * @param deleteTagOptionRequest
+     * @return Result of the DeleteTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceInUseException
+     *         A resource that is currently in use. Ensure that the resource is not in use and retry the operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DeleteTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteTagOptionResult deleteTagOption(DeleteTagOptionRequest deleteTagOptionRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified constraint.
      * </p>
      * 
      * @param describeConstraintRequest
@@ -482,7 +537,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Describes the status of the specified copy product operation.
+     * Gets the status of the specified copy product operation.
      * </p>
      * 
      * @param describeCopyProductStatusRequest
@@ -497,7 +552,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information and any tags associated with the specified portfolio.
+     * Gets information about the specified portfolio.
      * </p>
      * 
      * @param describePortfolioRequest
@@ -512,11 +567,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product.
-     * </p>
-     * <p>
-     * This operation is functionally identical to <a>DescribeProductView</a> except that it takes as input
-     * <code>ProductId</code> instead of <code>ProductViewId</code>.
+     * Gets information about the specified product.
      * </p>
      * 
      * @param describeProductRequest
@@ -524,7 +575,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.DescribeProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct" target="_top">AWS
      *      API Documentation</a>
@@ -533,7 +584,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product, run with administrator access.
+     * Gets information about the specified product. This operation is run with administrator access.
      * </p>
      * 
      * @param describeProductAsAdminRequest
@@ -548,11 +599,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product.
-     * </p>
-     * <p>
-     * This operation is functionally identical to <a>DescribeProduct</a> except that it takes as input
-     * <code>ProductViewId</code> instead of <code>ProductId</code>.
+     * Gets information about the specified product.
      * </p>
      * 
      * @param describeProductViewRequest
@@ -560,7 +607,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.DescribeProductView
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView"
      *      target="_top">AWS API Documentation</a>
@@ -569,7 +616,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieve detailed information about the provisioned product.
+     * Gets information about the specified provisioned product.
      * </p>
      * 
      * @param describeProvisionedProductRequest
@@ -584,7 +631,24 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information about the specified provisioning artifact.
+     * Gets information about the resource changes for the specified plan.
+     * </p>
+     * 
+     * @param describeProvisionedProductPlanRequest
+     * @return Result of the DescribeProvisionedProductPlan operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.DescribeProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeProvisionedProductPlanResult describeProvisionedProductPlan(DescribeProvisionedProductPlanRequest describeProvisionedProductPlanRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified provisioning artifact (also known as a version) for the specified product.
      * </p>
      * 
      * @param describeProvisioningArtifactRequest
@@ -599,24 +663,21 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Provides information about parameters required to provision a specified product in a specified manner. Use this
-     * operation to obtain the list of <code>ProvisioningArtifactParameters</code> parameters available to call the
-     * <a>ProvisionProduct</a> operation for the specified product.
+     * Gets information about the configuration required to provision the specified product using the specified
+     * provisioning artifact.
      * </p>
      * <p>
      * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
-     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to the
-     * <code>ProvisionProduct</code> operation, do not include conflicted TagOption keys as tags. Calls to
-     * <code>ProvisionProduct</code> with empty TagOption values cause the error
-     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to
-     * <code>ProvisionProduct</code> with conflicted TagOption keys automatically tag the provisioned product with the
-     * conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
+     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to
+     * <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this causes the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned
+     * product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
      * </p>
      * 
      * @param describeProvisioningParametersRequest
      * @return Result of the DescribeProvisioningParameters operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DescribeProvisioningParameters
@@ -627,8 +688,11 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves a paginated list of the full details of a specific request. Use this operation after calling a request
-     * operation (<a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
+     * Gets information about the specified request operation.
+     * </p>
+     * <p>
+     * Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
+     * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
      * </p>
      * 
      * @param describeRecordRequest
@@ -643,7 +707,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Describes a TagOption.
+     * Gets information about the specified TagOption.
      * </p>
      * 
      * @param describeTagOptionRequest
@@ -668,7 +732,7 @@ public interface AWSServiceCatalog {
      * @param disassociatePrincipalFromPortfolioRequest
      * @return Result of the DisassociatePrincipalFromPortfolio operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.DisassociatePrincipalFromPortfolio
@@ -689,10 +753,9 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ResourceInUseException
-     *         The operation was requested against a resource that is currently in use. Free the resource from use and
-     *         retry the operation.
+     *         A resource that is currently in use. Ensure that the resource is not in use and retry the operation.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.DisassociateProductFromPortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio"
      *      target="_top">AWS API Documentation</a>
@@ -701,7 +764,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Disassociates a TagOption from a resource.
+     * Disassociates the specified TagOption from the specified resource.
      * </p>
      * 
      * @param disassociateTagOptionFromResourceRequest
@@ -720,13 +783,33 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists details of all portfolios for which sharing was accepted by this account.
+     * Provisions or modifies a product based on the resource changes for the specified plan.
+     * </p>
+     * 
+     * @param executeProvisionedProductPlanRequest
+     * @return Result of the ExecuteProvisionedProductPlan operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @sample AWSServiceCatalog.ExecuteProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExecuteProvisionedProductPlanResult executeProvisionedProductPlan(ExecuteProvisionedProductPlanRequest executeProvisionedProductPlanRequest);
+
+    /**
+     * <p>
+     * Lists all portfolios for which sharing was accepted by this account.
      * </p>
      * 
      * @param listAcceptedPortfolioSharesRequest
      * @return Result of the ListAcceptedPortfolioShares operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListAcceptedPortfolioShares
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares"
      *      target="_top">AWS API Documentation</a>
@@ -735,7 +818,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed constraint information for the specified portfolio and product.
+     * Lists the constraints for the specified portfolio and product.
      * </p>
      * 
      * @param listConstraintsForPortfolioRequest
@@ -743,7 +826,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListConstraintsForPortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio"
      *      target="_top">AWS API Documentation</a>
@@ -752,14 +835,14 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all paths to a specified product. A path is how the user has access to a specified
-     * product, and is necessary when provisioning a product. A path also determines the constraints put on the product.
+     * Lists the paths to the specified product. A path is how the user has access to a specified product, and is
+     * necessary when provisioning a product. A path also determines the constraints put on the product.
      * </p>
      * 
      * @param listLaunchPathsRequest
      * @return Result of the ListLaunchPaths operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.ListLaunchPaths
@@ -770,7 +853,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists the account IDs that have been authorized sharing of the specified portfolio.
+     * Lists the account IDs that have access to the specified portfolio.
      * </p>
      * 
      * @param listPortfolioAccessRequest
@@ -791,7 +874,7 @@ public interface AWSServiceCatalog {
      * @param listPortfoliosRequest
      * @return Result of the ListPortfolios operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListPortfolios
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios" target="_top">AWS
      *      API Documentation</a>
@@ -806,7 +889,7 @@ public interface AWSServiceCatalog {
      * @param listPortfoliosForProductRequest
      * @return Result of the ListPortfoliosForProduct operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.ListPortfoliosForProduct
@@ -825,7 +908,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListPrincipalsForPortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio"
      *      target="_top">AWS API Documentation</a>
@@ -834,7 +917,24 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists all provisioning artifacts associated with the specified product.
+     * Lists the plans for the specified provisioned product or all plans to which the user has access.
+     * </p>
+     * 
+     * @param listProvisionedProductPlansRequest
+     * @return Result of the ListProvisionedProductPlans operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.ListProvisionedProductPlans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListProvisionedProductPlansResult listProvisionedProductPlans(ListProvisionedProductPlansRequest listProvisionedProductPlansRequest);
+
+    /**
+     * <p>
+     * Lists all provisioning artifacts (also known as versions) for the specified product.
      * </p>
      * 
      * @param listProvisioningArtifactsRequest
@@ -842,7 +942,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListProvisioningArtifacts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts"
      *      target="_top">AWS API Documentation</a>
@@ -851,14 +951,13 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all performed requests, in the form of RecordDetails objects that are filtered as
-     * specified.
+     * Lists the specified requests or all performed requests.
      * </p>
      * 
      * @param listRecordHistoryRequest
      * @return Result of the ListRecordHistory operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListRecordHistory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory"
      *      target="_top">AWS API Documentation</a>
@@ -867,7 +966,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists resources associated with a TagOption.
+     * Lists the resources associated with the specified TagOption.
      * </p>
      * 
      * @param listResourcesForTagOptionRequest
@@ -879,7 +978,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListResourcesForTagOption
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption"
      *      target="_top">AWS API Documentation</a>
@@ -888,7 +987,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists detailed TagOptions information.
+     * Lists the specified TagOptions or all TagOptions.
      * </p>
      * 
      * @param listTagOptionsRequest
@@ -898,7 +997,7 @@ public interface AWSServiceCatalog {
      *         for this account. Please use the AWS console to perform the migration process before retrying the
      *         operation.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListTagOptions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions" target="_top">AWS
      *      API Documentation</a>
@@ -907,23 +1006,23 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
-     * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
-     * stack and all the underlying resources that come with it.
+     * Provisions the specified product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation. The error
-     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" indicates that your
-     * request contains a tag which has a tag key but no corresponding tag value (value is empty or null). Your call may
-     * have included values returned from a <code>DescribeProvisioningParameters</code> call that resulted in a
-     * TagOption key with an empty list. This happens when TagOption keys are in conflict. For more information, see
-     * <a>DescribeProvisioningParameters</a>.
+     * A provisioned product is a resourced instance of a product. For example, provisioning a product based on a
+     * CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of
+     * this request using <a>DescribeRecord</a>.
+     * </p>
+     * <p>
+     * If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not
+     * include conflicted keys as tags, or this causes the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
      * </p>
      * 
      * @param provisionProductRequest
      * @return Result of the ProvisionProduct operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws DuplicateResourceException
@@ -936,7 +1035,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Rejects an offer to share a portfolio.
+     * Rejects an offer to share the specified portfolio.
      * </p>
      * 
      * @param rejectPortfolioShareRequest
@@ -951,13 +1050,16 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all the ProvisionedProduct objects that are currently available (not terminated).
+     * Lists the provisioned products that are available (not terminated).
+     * </p>
+     * <p>
+     * To use additional filtering, see <a>SearchProvisionedProducts</a>.
      * </p>
      * 
      * @param scanProvisionedProductsRequest
      * @return Result of the ScanProvisionedProducts operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ScanProvisionedProducts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts"
      *      target="_top">AWS API Documentation</a>
@@ -966,16 +1068,13 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list all of the <code>Products</code> objects to which the caller has access.
-     * </p>
-     * <p>
-     * The output of this operation can be used as input for other operations, such as <a>DescribeProductView</a>.
+     * Gets information about the products to which the caller has access.
      * </p>
      * 
      * @param searchProductsRequest
      * @return Result of the SearchProducts operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.SearchProducts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts" target="_top">AWS
      *      API Documentation</a>
@@ -984,9 +1083,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves summary and status information about all products created within the caller's account. If a portfolio
-     * ID is provided, this operation retrieves information for only those products that are associated with the
-     * specified portfolio.
+     * Gets information about the products for the specified portfolio or all products.
      * </p>
      * 
      * @param searchProductsAsAdminRequest
@@ -994,7 +1091,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.SearchProductsAsAdmin
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin"
      *      target="_top">AWS API Documentation</a>
@@ -1003,14 +1100,28 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests termination of an existing ProvisionedProduct object. If there are <code>Tags</code> associated with the
-     * object, they are terminated when the ProvisionedProduct object is terminated.
+     * Gets information about the provisioned products that meet the specified criteria.
+     * </p>
+     * 
+     * @param searchProvisionedProductsRequest
+     * @return Result of the SearchProvisionedProducts operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.SearchProvisionedProducts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchProvisionedProductsResult searchProvisionedProducts(SearchProvisionedProductsRequest searchProvisionedProductsRequest);
+
+    /**
+     * <p>
+     * Terminates the specified provisioned product.
      * </p>
      * <p>
-     * This operation does not delete any records associated with the ProvisionedProduct object.
+     * This operation does not delete any records associated with the provisioned product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * You can check the status of this request using <a>DescribeRecord</a>.
      * </p>
      * 
      * @param terminateProvisionedProductRequest
@@ -1025,7 +1136,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing constraint.
+     * Updates the specified constraint.
      * </p>
      * 
      * @param updateConstraintRequest
@@ -1033,7 +1144,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.UpdateConstraint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint"
      *      target="_top">AWS API Documentation</a>
@@ -1042,19 +1153,21 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates the specified portfolio's details. This operation does not work with a product that has been shared with
-     * you.
+     * Updates the specified portfolio.
+     * </p>
+     * <p>
+     * You cannot update a product that was shared with you.
      * </p>
      * 
      * @param updatePortfolioRequest
      * @return Result of the UpdatePortfolio operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws LimitExceededException
-     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
-     *         increase the service limits and retry the operation.
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
      * @throws TagOptionNotMigratedException
      *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
      *         for this account. Please use the AWS console to perform the migration process before retrying the
@@ -1067,7 +1180,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing product.
+     * Updates the specified product.
      * </p>
      * 
      * @param updateProductRequest
@@ -1075,7 +1188,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws TagOptionNotMigratedException
      *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
      *         for this account. Please use the AWS console to perform the migration process before retrying the
@@ -1088,19 +1201,21 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests updates to the configuration of an existing ProvisionedProduct object. If there are tags associated with
-     * the object, they cannot be updated or added with this operation. Depending on the specific updates requested,
-     * this operation may update with no interruption, with some interruption, or replace the ProvisionedProduct object
-     * entirely.
+     * Requests updates to the configuration of the specified provisioned product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates
+     * requested, this operation can update with no interruption, with some interruption, or replace the provisioned
+     * product entirely.
+     * </p>
+     * <p>
+     * You can check the status of this request using <a>DescribeRecord</a>.
      * </p>
      * 
      * @param updateProvisionedProductRequest
      * @return Result of the UpdateProvisionedProduct operation returned by the service.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AWSServiceCatalog.UpdateProvisionedProduct
@@ -1111,8 +1226,10 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing provisioning artifact's information. This operation does not work on a provisioning artifact
-     * associated with a product that has been shared with you.
+     * Updates the specified provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot update a provisioning artifact for a product that was shared with you.
      * </p>
      * 
      * @param updateProvisioningArtifactRequest
@@ -1120,7 +1237,7 @@ public interface AWSServiceCatalog {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.UpdateProvisioningArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact"
      *      target="_top">AWS API Documentation</a>
@@ -1129,7 +1246,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing TagOption.
+     * Updates the specified TagOption.
      * </p>
      * 
      * @param updateTagOptionRequest
@@ -1143,7 +1260,7 @@ public interface AWSServiceCatalog {
      * @throws DuplicateResourceException
      *         The specified resource is a duplicate.
      * @throws InvalidParametersException
-     *         One or more parameters provided to the operation are invalid.
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.UpdateTagOption
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption" target="_top">AWS
      *      API Documentation</a>

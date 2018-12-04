@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ThingTypeDefinitionMarshaller {
 
     private static final MarshallingInfo<String> THINGTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingTypeName").build();
+    private static final MarshallingInfo<String> THINGTYPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingTypeArn").build();
     private static final MarshallingInfo<StructuredPojo> THINGTYPEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingTypeProperties").build();
     private static final MarshallingInfo<StructuredPojo> THINGTYPEMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -51,6 +53,7 @@ public class ThingTypeDefinitionMarshaller {
 
         try {
             protocolMarshaller.marshall(thingTypeDefinition.getThingTypeName(), THINGTYPENAME_BINDING);
+            protocolMarshaller.marshall(thingTypeDefinition.getThingTypeArn(), THINGTYPEARN_BINDING);
             protocolMarshaller.marshall(thingTypeDefinition.getThingTypeProperties(), THINGTYPEPROPERTIES_BINDING);
             protocolMarshaller.marshall(thingTypeDefinition.getThingTypeMetadata(), THINGTYPEMETADATA_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * functions replicated from that region will be returned.
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     * <code>ALL</code>: Will return all functions from any region. If specified, you also must specify a valid
      * FunctionVersion parameter.
      * </p>
      */
@@ -51,7 +51,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Valid value:
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
      * (Amazon Resource Names).
      * </p>
      */
@@ -83,7 +83,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * functions replicated from that region will be returned.
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     * <code>ALL</code>: Will return all functions from any region. If specified, you also must specify a valid
      * FunctionVersion parameter.
      * </p>
      * 
@@ -98,7 +98,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        only functions replicated from that region will be returned.
      *        </p>
      *        <p>
-     *        <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     *        <code>ALL</code>: Will return all functions from any region. If specified, you also must specify a valid
      *        FunctionVersion parameter.
      */
 
@@ -118,7 +118,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * functions replicated from that region will be returned.
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     * <code>ALL</code>: Will return all functions from any region. If specified, you also must specify a valid
      * FunctionVersion parameter.
      * </p>
      * 
@@ -132,7 +132,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         only functions replicated from that region will be returned.
      *         </p>
      *         <p>
-     *         <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     *         <code>ALL</code>: Will return all functions from any region. If specified, you also must specify a valid
      *         FunctionVersion parameter.
      */
 
@@ -152,7 +152,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * functions replicated from that region will be returned.
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     * <code>ALL</code>: Will return all functions from any region. If specified, you also must specify a valid
      * FunctionVersion parameter.
      * </p>
      * 
@@ -167,7 +167,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        only functions replicated from that region will be returned.
      *        </p>
      *        <p>
-     *        <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     *        <code>ALL</code>: Will return all functions from any region. If specified, you also must specify a valid
      *        FunctionVersion parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -185,7 +185,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Valid value:
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
      * (Amazon Resource Names).
      * </p>
      * 
@@ -196,8 +196,8 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Valid value:
      *        </p>
      *        <p>
-     *        <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
-     *        qualified ARNs (Amazon Resource Names).
+     *        <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified
+     *        ARNs (Amazon Resource Names).
      * @see FunctionVersion
      */
 
@@ -213,7 +213,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Valid value:
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
      * (Amazon Resource Names).
      * </p>
      * 
@@ -223,7 +223,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Valid value:
      *         </p>
      *         <p>
-     *         <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
+     *         <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully
      *         qualified ARNs (Amazon Resource Names).
      * @see FunctionVersion
      */
@@ -240,7 +240,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Valid value:
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
      * (Amazon Resource Names).
      * </p>
      * 
@@ -251,8 +251,8 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Valid value:
      *        </p>
      *        <p>
-     *        <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
-     *        qualified ARNs (Amazon Resource Names).
+     *        <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified
+     *        ARNs (Amazon Resource Names).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionVersion
      */
@@ -270,7 +270,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Valid value:
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
      * (Amazon Resource Names).
      * </p>
      * 
@@ -281,8 +281,8 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Valid value:
      *        </p>
      *        <p>
-     *        <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
-     *        qualified ARNs (Amazon Resource Names).
+     *        <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified
+     *        ARNs (Amazon Resource Names).
      * @see FunctionVersion
      */
 
@@ -298,7 +298,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Valid value:
      * </p>
      * <p>
-     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
      * (Amazon Resource Names).
      * </p>
      * 
@@ -309,8 +309,8 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Valid value:
      *        </p>
      *        <p>
-     *        <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
-     *        qualified ARNs (Amazon Resource Names).
+     *        <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which will have fully qualified
+     *        ARNs (Amazon Resource Names).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionVersion
      */

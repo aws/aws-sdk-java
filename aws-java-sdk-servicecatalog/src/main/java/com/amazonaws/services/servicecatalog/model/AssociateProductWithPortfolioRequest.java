@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class AssociateProductWithPortfolioRequest extends com.amazonaws.AmazonWe
     private String portfolioId;
     /**
      * <p>
-     * The identifier of the source portfolio to use with this association.
+     * The identifier of the source portfolio.
      * </p>
      */
     private String sourcePortfolioId;
@@ -288,11 +288,11 @@ public class AssociateProductWithPortfolioRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier of the source portfolio to use with this association.
+     * The identifier of the source portfolio.
      * </p>
      * 
      * @param sourcePortfolioId
-     *        The identifier of the source portfolio to use with this association.
+     *        The identifier of the source portfolio.
      */
 
     public void setSourcePortfolioId(String sourcePortfolioId) {
@@ -301,10 +301,10 @@ public class AssociateProductWithPortfolioRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier of the source portfolio to use with this association.
+     * The identifier of the source portfolio.
      * </p>
      * 
-     * @return The identifier of the source portfolio to use with this association.
+     * @return The identifier of the source portfolio.
      */
 
     public String getSourcePortfolioId() {
@@ -313,11 +313,11 @@ public class AssociateProductWithPortfolioRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier of the source portfolio to use with this association.
+     * The identifier of the source portfolio.
      * </p>
      * 
      * @param sourcePortfolioId
-     *        The identifier of the source portfolio to use with this association.
+     *        The identifier of the source portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

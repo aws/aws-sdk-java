@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -49,6 +49,8 @@ public class PutMethodRequestMarshaller {
             .marshallLocationName("requestModels").build();
     private static final MarshallingInfo<String> REQUESTVALIDATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestValidatorId").build();
+    private static final MarshallingInfo<List> AUTHORIZATIONSCOPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizationScopes").build();
 
     private static final PutMethodRequestMarshaller instance = new PutMethodRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class PutMethodRequestMarshaller {
             protocolMarshaller.marshall(putMethodRequest.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(putMethodRequest.getRequestModels(), REQUESTMODELS_BINDING);
             protocolMarshaller.marshall(putMethodRequest.getRequestValidatorId(), REQUESTVALIDATORID_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getAuthorizationScopes(), AUTHORIZATIONSCOPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,19 +27,18 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     * further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means to use
-     * the default.
+     * The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further
+     * pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * This is only an upper limit. The actual number of results returned per call might be fewer than the specified
      * maximum.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
      * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
      * arguments unchanged.
      * </p>
@@ -51,21 +50,20 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     * further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means to use
-     * the default.
+     * The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further
+     * pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * This is only an upper limit. The actual number of results returned per call might be fewer than the specified
      * maximum.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     *        further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means
-     *        to use the default.</p>
+     *        The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain
+     *        further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses
+     *        the default.</p>
      *        <p>
-     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *        This is only an upper limit. The actual number of results returned per call might be fewer than the
      *        specified maximum.
      */
 
@@ -75,20 +73,19 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     * further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means to use
-     * the default.
+     * The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further
+     * pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * This is only an upper limit. The actual number of results returned per call might be fewer than the specified
      * maximum.
      * </p>
      * 
-     * @return The maximum number of results that will be returned per call. <code>nextToken</code> can be used to
-     *         obtain further pages of results. The default is 100 and the maximum allowed page size is 100. A value of
-     *         0 means to use the default.</p>
+     * @return The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain
+     *         further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses
+     *         the default.</p>
      *         <p>
-     *         This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *         This is only an upper limit. The actual number of results returned per call might be fewer than the
      *         specified maximum.
      */
 
@@ -98,21 +95,20 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     * further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means to use
-     * the default.
+     * The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further
+     * pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.
      * </p>
      * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
+     * This is only an upper limit. The actual number of results returned per call might be fewer than the specified
      * maximum.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     *        further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means
-     *        to use the default.</p>
+     *        The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain
+     *        further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses
+     *        the default.</p>
      *        <p>
-     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
+     *        This is only an upper limit. The actual number of results returned per call might be fewer than the
      *        specified maximum.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -124,7 +120,7 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
      * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
      * arguments unchanged.
      * </p>
@@ -133,7 +129,7 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param nextToken
-     *        If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve
+     *        If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
      *        the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all
      *        other arguments unchanged.</p>
      *        <p>
@@ -146,7 +142,7 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
      * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
      * arguments unchanged.
      * </p>
@@ -154,9 +150,9 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The configured <code>maxResults</code> determines how many results can be returned in a single call.
      * </p>
      * 
-     * @return If a <code>nextToken</code> was returned by a previous call, there are more results available. To
-     *         retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>
-     *         . Keep all other arguments unchanged.</p>
+     * @return If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
+     *         the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep
+     *         all other arguments unchanged.</p>
      *         <p>
      *         The configured <code>maxResults</code> determines how many results can be returned in a single call.
      */
@@ -167,7 +163,7 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
      * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
      * arguments unchanged.
      * </p>
@@ -176,7 +172,7 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param nextToken
-     *        If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve
+     *        If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
      *        the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all
      *        other arguments unchanged.</p>
      *        <p>

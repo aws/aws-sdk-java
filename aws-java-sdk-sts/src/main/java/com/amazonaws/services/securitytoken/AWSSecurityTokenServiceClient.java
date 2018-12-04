@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -381,7 +381,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * user is in a different account than the role, then the user's administrator must attach a policy that allows the
      * user to call AssumeRole on the ARN of the role in the other account. If the user is in the same account as the
      * role, then you can either attach a policy to the user (identical to the previous different account user), or you
-     * can add the user as a principal directly in the role's trust policy
+     * can add the user as a principal directly in the role's trust policy. In this case, the trust policy acts as the
+     * only resource-based policy in IAM, and users in the same account as the role do not need explicit permission to
+     * assume the role. For more information about trust policies and resource-based policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>Using MFA with AssumeRole</b>
@@ -446,6 +450,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -599,6 +604,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleWithSAMLRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleWithSAMLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -720,9 +726,9 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * </li>
      * <li>
      * <p>
-     * <a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation with Mobile Applications</a>.
-     * This article discusses web identity federation and shows an example of how to use web identity federation to get
-     * access to content in Amazon S3.
+     * <a href="http://aws.amazon.com/articles/web-identity-federation-with-mobile-applications">Web Identity Federation
+     * with Mobile Applications</a>. This article discusses web identity federation and shows an example of how to use
+     * web identity federation to get access to content in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -782,6 +788,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleWithWebIdentityRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleWithWebIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -884,6 +891,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new DecodeAuthorizationMessageRequestMarshaller().marshall(super.beforeMarshalling(decodeAuthorizationMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -932,6 +940,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetCallerIdentityRequestMarshaller().marshall(super.beforeMarshalling(getCallerIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1090,6 +1099,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetFederationTokenRequestMarshaller().marshall(super.beforeMarshalling(getFederationTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1197,6 +1207,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetSessionTokenRequestMarshaller().marshall(super.beforeMarshalling(getSessionTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

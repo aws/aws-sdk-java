@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ApplicationInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("linkedToGitHub").build();
     private static final MarshallingInfo<String> GITHUBACCOUNTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gitHubAccountName").build();
+    private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
 
     private static final ApplicationInfoMarshaller instance = new ApplicationInfoMarshaller();
 
@@ -59,6 +61,7 @@ public class ApplicationInfoMarshaller {
             protocolMarshaller.marshall(applicationInfo.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(applicationInfo.getLinkedToGitHub(), LINKEDTOGITHUB_BINDING);
             protocolMarshaller.marshall(applicationInfo.getGitHubAccountName(), GITHUBACCOUNTNAME_BINDING);
+            protocolMarshaller.marshall(applicationInfo.getComputePlatform(), COMPUTEPLATFORM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

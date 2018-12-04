@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,8 @@ public enum Route53Actions implements Action {
     DeleteVPCAssociationAuthorization("route53:DeleteVPCAssociationAuthorization"),
     /** Action for the DisassociateVPCFromHostedZone operation. */
     DisassociateVPCFromHostedZone("route53:DisassociateVPCFromHostedZone"),
+    /** Action for the GetAccountLimit operation. */
+    GetAccountLimit("route53:GetAccountLimit"),
     /** Action for the GetChange operation. */
     GetChange("route53:GetChange"),
     /** Action for the GetCheckerIpRanges operation. */
@@ -81,10 +83,14 @@ public enum Route53Actions implements Action {
     GetHostedZone("route53:GetHostedZone"),
     /** Action for the GetHostedZoneCount operation. */
     GetHostedZoneCount("route53:GetHostedZoneCount"),
+    /** Action for the GetHostedZoneLimit operation. */
+    GetHostedZoneLimit("route53:GetHostedZoneLimit"),
     /** Action for the GetQueryLoggingConfig operation. */
     GetQueryLoggingConfig("route53:GetQueryLoggingConfig"),
     /** Action for the GetReusableDelegationSet operation. */
     GetReusableDelegationSet("route53:GetReusableDelegationSet"),
+    /** Action for the GetReusableDelegationSetLimit operation. */
+    GetReusableDelegationSetLimit("route53:GetReusableDelegationSetLimit"),
     /** Action for the GetTrafficPolicy operation. */
     GetTrafficPolicy("route53:GetTrafficPolicy"),
     /** Action for the GetTrafficPolicyInstance operation. */

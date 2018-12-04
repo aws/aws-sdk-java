@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the directory configurations.
+     * Information about the directory configurations. Note that although the response syntax in this topic includes the
+     * account password, this password is not returned in the actual response.
      * </p>
      */
     private java.util.List<DirectoryConfig> directoryConfigs;
@@ -39,10 +40,12 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the directory configurations.
+     * Information about the directory configurations. Note that although the response syntax in this topic includes the
+     * account password, this password is not returned in the actual response.
      * </p>
      * 
-     * @return Information about the directory configurations.
+     * @return Information about the directory configurations. Note that although the response syntax in this topic
+     *         includes the account password, this password is not returned in the actual response.
      */
 
     public java.util.List<DirectoryConfig> getDirectoryConfigs() {
@@ -51,11 +54,13 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the directory configurations.
+     * Information about the directory configurations. Note that although the response syntax in this topic includes the
+     * account password, this password is not returned in the actual response.
      * </p>
      * 
      * @param directoryConfigs
-     *        Information about the directory configurations.
+     *        Information about the directory configurations. Note that although the response syntax in this topic
+     *        includes the account password, this password is not returned in the actual response.
      */
 
     public void setDirectoryConfigs(java.util.Collection<DirectoryConfig> directoryConfigs) {
@@ -69,7 +74,8 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the directory configurations.
+     * Information about the directory configurations. Note that although the response syntax in this topic includes the
+     * account password, this password is not returned in the actual response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +84,8 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param directoryConfigs
-     *        Information about the directory configurations.
+     *        Information about the directory configurations. Note that although the response syntax in this topic
+     *        includes the account password, this password is not returned in the actual response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +101,13 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the directory configurations.
+     * Information about the directory configurations. Note that although the response syntax in this topic includes the
+     * account password, this password is not returned in the actual response.
      * </p>
      * 
      * @param directoryConfigs
-     *        Information about the directory configurations.
+     *        Information about the directory configurations. Note that although the response syntax in this topic
+     *        includes the account password, this password is not returned in the actual response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

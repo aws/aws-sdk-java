@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,18 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private UpdateGrokClassifierRequest grokClassifier;
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object with updated fields.
+     * </p>
+     */
+    private UpdateXMLClassifierRequest xMLClassifier;
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object with updated fields.
+     * </p>
+     */
+    private UpdateJsonClassifierRequest jsonClassifier;
 
     /**
      * <p>
@@ -73,6 +85,86 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * An <code>XMLClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @param xMLClassifier
+     *        An <code>XMLClassifier</code> object with updated fields.
+     */
+
+    public void setXMLClassifier(UpdateXMLClassifierRequest xMLClassifier) {
+        this.xMLClassifier = xMLClassifier;
+    }
+
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @return An <code>XMLClassifier</code> object with updated fields.
+     */
+
+    public UpdateXMLClassifierRequest getXMLClassifier() {
+        return this.xMLClassifier;
+    }
+
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @param xMLClassifier
+     *        An <code>XMLClassifier</code> object with updated fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateClassifierRequest withXMLClassifier(UpdateXMLClassifierRequest xMLClassifier) {
+        setXMLClassifier(xMLClassifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @param jsonClassifier
+     *        A <code>JsonClassifier</code> object with updated fields.
+     */
+
+    public void setJsonClassifier(UpdateJsonClassifierRequest jsonClassifier) {
+        this.jsonClassifier = jsonClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @return A <code>JsonClassifier</code> object with updated fields.
+     */
+
+    public UpdateJsonClassifierRequest getJsonClassifier() {
+        return this.jsonClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @param jsonClassifier
+     *        A <code>JsonClassifier</code> object with updated fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateClassifierRequest withJsonClassifier(UpdateJsonClassifierRequest jsonClassifier) {
+        setJsonClassifier(jsonClassifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -84,7 +176,11 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGrokClassifier() != null)
-            sb.append("GrokClassifier: ").append(getGrokClassifier());
+            sb.append("GrokClassifier: ").append(getGrokClassifier()).append(",");
+        if (getXMLClassifier() != null)
+            sb.append("XMLClassifier: ").append(getXMLClassifier()).append(",");
+        if (getJsonClassifier() != null)
+            sb.append("JsonClassifier: ").append(getJsonClassifier());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +199,14 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getGrokClassifier() != null && other.getGrokClassifier().equals(this.getGrokClassifier()) == false)
             return false;
+        if (other.getXMLClassifier() == null ^ this.getXMLClassifier() == null)
+            return false;
+        if (other.getXMLClassifier() != null && other.getXMLClassifier().equals(this.getXMLClassifier()) == false)
+            return false;
+        if (other.getJsonClassifier() == null ^ this.getJsonClassifier() == null)
+            return false;
+        if (other.getJsonClassifier() != null && other.getJsonClassifier().equals(this.getJsonClassifier()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +216,8 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGrokClassifier() == null) ? 0 : getGrokClassifier().hashCode());
+        hashCode = prime * hashCode + ((getXMLClassifier() == null) ? 0 : getXMLClassifier().hashCode());
+        hashCode = prime * hashCode + ((getJsonClassifier() == null) ? 0 : getJsonClassifier().hashCode());
         return hashCode;
     }
 

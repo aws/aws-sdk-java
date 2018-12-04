@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,23 +18,51 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of DescribeSubscribersForNotification
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeSubscribersForNotificationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The name of the budget whose subscribers you want descriptions of.
+     * </p>
+     */
     private String budgetName;
-
+    /**
+     * <p>
+     * The notification whose subscribers you want to list.
+     * </p>
+     */
     private Notification notification;
-
+    /**
+     * <p>
+     * Optional integer. Specifies the maximum number of results to return in response.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The pagination token that indicates the next set of results to retrieve.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.
      */
 
     public void setAccountId(String accountId) {
@@ -42,7 +70,11 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.
      */
 
     public String getAccountId() {
@@ -50,7 +82,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +97,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The name of the budget whose subscribers you want descriptions of.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget whose subscribers you want descriptions of.
      */
 
     public void setBudgetName(String budgetName) {
@@ -68,7 +110,11 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the budget whose subscribers you want descriptions of.
+     * </p>
+     * 
+     * @return The name of the budget whose subscribers you want descriptions of.
      */
 
     public String getBudgetName() {
@@ -76,7 +122,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The name of the budget whose subscribers you want descriptions of.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget whose subscribers you want descriptions of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +137,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The notification whose subscribers you want to list.
+     * </p>
+     * 
      * @param notification
+     *        The notification whose subscribers you want to list.
      */
 
     public void setNotification(Notification notification) {
@@ -94,7 +150,11 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
-     * @return
+     * <p>
+     * The notification whose subscribers you want to list.
+     * </p>
+     * 
+     * @return The notification whose subscribers you want to list.
      */
 
     public Notification getNotification() {
@@ -102,7 +162,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The notification whose subscribers you want to list.
+     * </p>
+     * 
      * @param notification
+     *        The notification whose subscribers you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +177,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * Optional integer. Specifies the maximum number of results to return in response.
+     * </p>
+     * 
      * @param maxResults
+     *        Optional integer. Specifies the maximum number of results to return in response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -120,7 +190,11 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
-     * @return
+     * <p>
+     * Optional integer. Specifies the maximum number of results to return in response.
+     * </p>
+     * 
+     * @return Optional integer. Specifies the maximum number of results to return in response.
      */
 
     public Integer getMaxResults() {
@@ -128,7 +202,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * Optional integer. Specifies the maximum number of results to return in response.
+     * </p>
+     * 
      * @param maxResults
+     *        Optional integer. Specifies the maximum number of results to return in response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +217,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The pagination token that indicates the next set of results to retrieve.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token that indicates the next set of results to retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -146,7 +230,11 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token that indicates the next set of results to retrieve.
+     * </p>
+     * 
+     * @return The pagination token that indicates the next set of results to retrieve.
      */
 
     public String getNextToken() {
@@ -154,7 +242,12 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The pagination token that indicates the next set of results to retrieve.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token that indicates the next set of results to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

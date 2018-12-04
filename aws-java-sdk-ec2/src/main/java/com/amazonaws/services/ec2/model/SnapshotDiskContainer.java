@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      */
     private String format;
@@ -100,13 +100,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     *        Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      */
 
     public void setFormat(String format) {
@@ -118,12 +118,12 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @return The format of the disk image being imported.</p>
      *         <p>
-     *         Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     *         Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      */
 
     public String getFormat() {
@@ -135,13 +135,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     *        Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

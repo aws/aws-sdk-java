@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * The name of the image used by the fleet.
+     * The name of the image used to create the fleet.
      * </p>
      */
     private String imageName;
@@ -145,7 +145,27 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      */
     private String instanceType;
-
+    /**
+     * <p>
+     * The fleet type.
+     * </p>
+     * <dl>
+     * <dt>ALWAYS_ON</dt>
+     * <dd>
+     * <p>
+     * Provides users with instant-on access to their apps. You are charged for all running instances in your fleet,
+     * even if no users are streaming apps.
+     * </p>
+     * </dd>
+     * <dt>ON_DEMAND</dt>
+     * <dd>
+     * <p>
+     * Provide users with access to applications after they connect, which takes one to two minutes. You are charged for
+     * instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.
+     * </p>
+     * </dd>
+     * </dl>
+     */
     private String fleetType;
     /**
      * <p>
@@ -175,13 +195,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer disconnectTimeoutInSeconds;
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The fleet name displayed to end users.
+     * The fleet name for display.
      * </p>
      */
     private String displayName;
@@ -193,7 +213,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean enableDefaultInternetAccess;
     /**
      * <p>
-     * The information needed for streaming instances to join a domain.
+     * The information needed to join a Microsoft Active Directory domain.
      * </p>
      */
     private DomainJoinInfo domainJoinInfo;
@@ -240,11 +260,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the image used by the fleet.
+     * The name of the image used to create the fleet.
      * </p>
      * 
      * @param imageName
-     *        The name of the image used by the fleet.
+     *        The name of the image used to create the fleet.
      */
 
     public void setImageName(String imageName) {
@@ -253,10 +273,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the image used by the fleet.
+     * The name of the image used to create the fleet.
      * </p>
      * 
-     * @return The name of the image used by the fleet.
+     * @return The name of the image used to create the fleet.
      */
 
     public String getImageName() {
@@ -265,11 +285,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the image used by the fleet.
+     * The name of the image used to create the fleet.
      * </p>
      * 
      * @param imageName
-     *        The name of the image used by the fleet.
+     *        The name of the image used to create the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -928,7 +948,44 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The fleet type.
+     * </p>
+     * <dl>
+     * <dt>ALWAYS_ON</dt>
+     * <dd>
+     * <p>
+     * Provides users with instant-on access to their apps. You are charged for all running instances in your fleet,
+     * even if no users are streaming apps.
+     * </p>
+     * </dd>
+     * <dt>ON_DEMAND</dt>
+     * <dd>
+     * <p>
+     * Provide users with access to applications after they connect, which takes one to two minutes. You are charged for
+     * instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
      * @param fleetType
+     *        The fleet type.</p>
+     *        <dl>
+     *        <dt>ALWAYS_ON</dt>
+     *        <dd>
+     *        <p>
+     *        Provides users with instant-on access to their apps. You are charged for all running instances in your
+     *        fleet, even if no users are streaming apps.
+     *        </p>
+     *        </dd>
+     *        <dt>ON_DEMAND</dt>
+     *        <dd>
+     *        <p>
+     *        Provide users with access to applications after they connect, which takes one to two minutes. You are
+     *        charged for instance streaming when users are connected and a small hourly fee for instances that are not
+     *        streaming apps.
+     *        </p>
+     *        </dd>
      * @see FleetType
      */
 
@@ -937,7 +994,43 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The fleet type.
+     * </p>
+     * <dl>
+     * <dt>ALWAYS_ON</dt>
+     * <dd>
+     * <p>
+     * Provides users with instant-on access to their apps. You are charged for all running instances in your fleet,
+     * even if no users are streaming apps.
+     * </p>
+     * </dd>
+     * <dt>ON_DEMAND</dt>
+     * <dd>
+     * <p>
+     * Provide users with access to applications after they connect, which takes one to two minutes. You are charged for
+     * instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The fleet type.</p>
+     *         <dl>
+     *         <dt>ALWAYS_ON</dt>
+     *         <dd>
+     *         <p>
+     *         Provides users with instant-on access to their apps. You are charged for all running instances in your
+     *         fleet, even if no users are streaming apps.
+     *         </p>
+     *         </dd>
+     *         <dt>ON_DEMAND</dt>
+     *         <dd>
+     *         <p>
+     *         Provide users with access to applications after they connect, which takes one to two minutes. You are
+     *         charged for instance streaming when users are connected and a small hourly fee for instances that are not
+     *         streaming apps.
+     *         </p>
+     *         </dd>
      * @see FleetType
      */
 
@@ -946,7 +1039,44 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The fleet type.
+     * </p>
+     * <dl>
+     * <dt>ALWAYS_ON</dt>
+     * <dd>
+     * <p>
+     * Provides users with instant-on access to their apps. You are charged for all running instances in your fleet,
+     * even if no users are streaming apps.
+     * </p>
+     * </dd>
+     * <dt>ON_DEMAND</dt>
+     * <dd>
+     * <p>
+     * Provide users with access to applications after they connect, which takes one to two minutes. You are charged for
+     * instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
      * @param fleetType
+     *        The fleet type.</p>
+     *        <dl>
+     *        <dt>ALWAYS_ON</dt>
+     *        <dd>
+     *        <p>
+     *        Provides users with instant-on access to their apps. You are charged for all running instances in your
+     *        fleet, even if no users are streaming apps.
+     *        </p>
+     *        </dd>
+     *        <dt>ON_DEMAND</dt>
+     *        <dd>
+     *        <p>
+     *        Provide users with access to applications after they connect, which takes one to two minutes. You are
+     *        charged for instance streaming when users are connected and a small hourly fee for instances that are not
+     *        streaming apps.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -957,7 +1087,44 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The fleet type.
+     * </p>
+     * <dl>
+     * <dt>ALWAYS_ON</dt>
+     * <dd>
+     * <p>
+     * Provides users with instant-on access to their apps. You are charged for all running instances in your fleet,
+     * even if no users are streaming apps.
+     * </p>
+     * </dd>
+     * <dt>ON_DEMAND</dt>
+     * <dd>
+     * <p>
+     * Provide users with access to applications after they connect, which takes one to two minutes. You are charged for
+     * instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
      * @param fleetType
+     *        The fleet type.</p>
+     *        <dl>
+     *        <dt>ALWAYS_ON</dt>
+     *        <dd>
+     *        <p>
+     *        Provides users with instant-on access to their apps. You are charged for all running instances in your
+     *        fleet, even if no users are streaming apps.
+     *        </p>
+     *        </dd>
+     *        <dt>ON_DEMAND</dt>
+     *        <dd>
+     *        <p>
+     *        Provide users with access to applications after they connect, which takes one to two minutes. You are
+     *        charged for instance streaming when users are connected and a small hourly fee for instances that are not
+     *        streaming apps.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1141,11 +1308,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users.
+     *        The description for display.
      */
 
     public void setDescription(String description) {
@@ -1154,10 +1321,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
-     * @return The description displayed to end users.
+     * @return The description for display.
      */
 
     public String getDescription() {
@@ -1166,11 +1333,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users.
+     *        The description for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1181,11 +1348,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The fleet name displayed to end users.
+     * The fleet name for display.
      * </p>
      * 
      * @param displayName
-     *        The fleet name displayed to end users.
+     *        The fleet name for display.
      */
 
     public void setDisplayName(String displayName) {
@@ -1194,10 +1361,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The fleet name displayed to end users.
+     * The fleet name for display.
      * </p>
      * 
-     * @return The fleet name displayed to end users.
+     * @return The fleet name for display.
      */
 
     public String getDisplayName() {
@@ -1206,11 +1373,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The fleet name displayed to end users.
+     * The fleet name for display.
      * </p>
      * 
      * @param displayName
-     *        The fleet name displayed to end users.
+     *        The fleet name for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1273,11 +1440,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The information needed for streaming instances to join a domain.
+     * The information needed to join a Microsoft Active Directory domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed for streaming instances to join a domain.
+     *        The information needed to join a Microsoft Active Directory domain.
      */
 
     public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
@@ -1286,10 +1453,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The information needed for streaming instances to join a domain.
+     * The information needed to join a Microsoft Active Directory domain.
      * </p>
      * 
-     * @return The information needed for streaming instances to join a domain.
+     * @return The information needed to join a Microsoft Active Directory domain.
      */
 
     public DomainJoinInfo getDomainJoinInfo() {
@@ -1298,11 +1465,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The information needed for streaming instances to join a domain.
+     * The information needed to join a Microsoft Active Directory domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed for streaming instances to join a domain.
+     *        The information needed to join a Microsoft Active Directory domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

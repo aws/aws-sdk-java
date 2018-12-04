@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * The short name or full ARN of the cluster that hosts the container.
      * </p>
      */
     private String cluster;
@@ -70,11 +70,11 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * The short name or full ARN of the cluster that hosts the container.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     *        The short name or full ARN of the cluster that hosts the container.
      */
 
     public void setCluster(String cluster) {
@@ -83,10 +83,10 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * The short name or full ARN of the cluster that hosts the container.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * @return The short name or full ARN of the cluster that hosts the container.
      */
 
     public String getCluster() {
@@ -95,11 +95,11 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * The short name or full ARN of the cluster that hosts the container.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     *        The short name or full ARN of the cluster that hosts the container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,8 +15,10 @@
 
 package com.amazonaws.codegen;
 
+import static com.amazonaws.codegen.internal.Utils.createInputShapeMarshaller;
+import static com.amazonaws.codegen.internal.Utils.unCapitialize;
+
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.intermediate.Metadata;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeType;
@@ -25,13 +27,8 @@ import com.amazonaws.codegen.model.service.Input;
 import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.naming.NamingStrategy;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.amazonaws.codegen.internal.Constants.REQUEST_CLASS_SUFFIX;
-import static com.amazonaws.codegen.internal.Utils.createInputShapeMarshaller;
-import static com.amazonaws.codegen.internal.Utils.unCapitialize;
 
 /**
  * This class adds empty input shapes to those operations which doesn't accept any input params. It
@@ -71,7 +68,7 @@ final class AddEmptyInputShape implements IntermediateModelShapeProcessor {
 
             Input input = operation.getInput();
             if (input == null) {
-                final String inputShape = operationName + REQUEST_CLASS_SUFFIX;
+                final String inputShape = namingStrategy.getRequestClassName(operationName);
                 final OperationModel operationModel = javaOperationMap.get(operationName);
 
                 operationModel.setInput(new VariableModel(unCapitialize(inputShape), inputShape));

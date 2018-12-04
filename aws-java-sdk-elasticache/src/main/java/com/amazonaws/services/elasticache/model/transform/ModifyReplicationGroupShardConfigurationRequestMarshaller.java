@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,16 +55,20 @@ public class ModifyReplicationGroupShardConfigurationRequestMarshaller implement
             request.addParameter("ApplyImmediately", StringUtils.fromBoolean(modifyReplicationGroupShardConfigurationRequest.getApplyImmediately()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ReshardingConfiguration> reshardingConfigurationList = (com.amazonaws.internal.SdkInternalList<ReshardingConfiguration>) modifyReplicationGroupShardConfigurationRequest
-                .getReshardingConfiguration();
-        if (!reshardingConfigurationList.isEmpty() || !reshardingConfigurationList.isAutoConstruct()) {
+        if (!modifyReplicationGroupShardConfigurationRequest.getReshardingConfiguration().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ReshardingConfiguration>) modifyReplicationGroupShardConfigurationRequest
+                        .getReshardingConfiguration()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ReshardingConfiguration> reshardingConfigurationList = (com.amazonaws.internal.SdkInternalList<ReshardingConfiguration>) modifyReplicationGroupShardConfigurationRequest
+                    .getReshardingConfiguration();
             int reshardingConfigurationListIndex = 1;
 
             for (ReshardingConfiguration reshardingConfigurationListValue : reshardingConfigurationList) {
 
-                com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue
-                        .getPreferredAvailabilityZones();
-                if (!preferredAvailabilityZonesList.isEmpty() || !preferredAvailabilityZonesList.isAutoConstruct()) {
+                if (!reshardingConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue.getPreferredAvailabilityZones())
+                                .isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue
+                            .getPreferredAvailabilityZones();
                     int preferredAvailabilityZonesListIndex = 1;
 
                     for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
@@ -80,9 +84,11 @@ public class ModifyReplicationGroupShardConfigurationRequestMarshaller implement
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> nodeGroupsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupShardConfigurationRequest
-                .getNodeGroupsToRemove();
-        if (!nodeGroupsToRemoveList.isEmpty() || !nodeGroupsToRemoveList.isAutoConstruct()) {
+        if (!modifyReplicationGroupShardConfigurationRequest.getNodeGroupsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupShardConfigurationRequest.getNodeGroupsToRemove())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> nodeGroupsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupShardConfigurationRequest
+                    .getNodeGroupsToRemove();
             int nodeGroupsToRemoveListIndex = 1;
 
             for (String nodeGroupsToRemoveListValue : nodeGroupsToRemoveList) {

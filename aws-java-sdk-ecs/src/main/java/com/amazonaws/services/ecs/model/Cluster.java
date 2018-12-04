@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,54 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer activeServicesCount;
+    /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<KeyValuePair> statistics;
 
     /**
      * <p>
@@ -395,6 +443,411 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Additional information about your clusters that are separated by launch type, including:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         runningEC2TasksCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RunningFargateTasksCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         pendingEC2TasksCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         pendingFargateTasksCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         activeEC2ServiceCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         activeFargateServiceCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         drainingEC2ServiceCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         drainingFargateServiceCount
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<KeyValuePair> getStatistics() {
+        if (statistics == null) {
+            statistics = new com.amazonaws.internal.SdkInternalList<KeyValuePair>();
+        }
+        return statistics;
+    }
+
+    /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statistics
+     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        runningEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RunningFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeFargateServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingFargateServiceCount
+     *        </p>
+     *        </li>
+     */
+
+    public void setStatistics(java.util.Collection<KeyValuePair> statistics) {
+        if (statistics == null) {
+            this.statistics = null;
+            return;
+        }
+
+        this.statistics = new com.amazonaws.internal.SdkInternalList<KeyValuePair>(statistics);
+    }
+
+    /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStatistics(java.util.Collection)} or {@link #withStatistics(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param statistics
+     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        runningEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RunningFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeFargateServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingFargateServiceCount
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withStatistics(KeyValuePair... statistics) {
+        if (this.statistics == null) {
+            setStatistics(new com.amazonaws.internal.SdkInternalList<KeyValuePair>(statistics.length));
+        }
+        for (KeyValuePair ele : statistics) {
+            this.statistics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statistics
+     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        runningEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RunningFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeFargateServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingFargateServiceCount
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withStatistics(java.util.Collection<KeyValuePair> statistics) {
+        setStatistics(statistics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -418,7 +871,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getPendingTasksCount() != null)
             sb.append("PendingTasksCount: ").append(getPendingTasksCount()).append(",");
         if (getActiveServicesCount() != null)
-            sb.append("ActiveServicesCount: ").append(getActiveServicesCount());
+            sb.append("ActiveServicesCount: ").append(getActiveServicesCount()).append(",");
+        if (getStatistics() != null)
+            sb.append("Statistics: ").append(getStatistics());
         sb.append("}");
         return sb.toString();
     }
@@ -462,6 +917,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getActiveServicesCount() != null && other.getActiveServicesCount().equals(this.getActiveServicesCount()) == false)
             return false;
+        if (other.getStatistics() == null ^ this.getStatistics() == null)
+            return false;
+        if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false)
+            return false;
         return true;
     }
 
@@ -477,6 +936,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode());
         hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode());
         hashCode = prime * hashCode + ((getActiveServicesCount() == null) ? 0 : getActiveServicesCount().hashCode());
+        hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         return hashCode;
     }
 

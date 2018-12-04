@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances
-     * in the peer VPC.
+     * If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried
+     * from instances in the peer VPC.
      * </p>
      */
     private Boolean allowDnsResolutionFromRemoteVpc;
@@ -50,13 +50,13 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances
-     * in the peer VPC.
+     * If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried
+     * from instances in the peer VPC.
      * </p>
      * 
      * @param allowDnsResolutionFromRemoteVpc
-     *        If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from
-     *        instances in the peer VPC.
+     *        If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when
+     *        queried from instances in the peer VPC.
      */
 
     public void setAllowDnsResolutionFromRemoteVpc(Boolean allowDnsResolutionFromRemoteVpc) {
@@ -65,12 +65,12 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances
-     * in the peer VPC.
+     * If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried
+     * from instances in the peer VPC.
      * </p>
      * 
-     * @return If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from
-     *         instances in the peer VPC.
+     * @return If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when
+     *         queried from instances in the peer VPC.
      */
 
     public Boolean getAllowDnsResolutionFromRemoteVpc() {
@@ -79,13 +79,13 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances
-     * in the peer VPC.
+     * If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried
+     * from instances in the peer VPC.
      * </p>
      * 
      * @param allowDnsResolutionFromRemoteVpc
-     *        If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from
-     *        instances in the peer VPC.
+     *        If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when
+     *        queried from instances in the peer VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,12 +96,12 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances
-     * in the peer VPC.
+     * If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried
+     * from instances in the peer VPC.
      * </p>
      * 
-     * @return If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from
-     *         instances in the peer VPC.
+     * @return If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when
+     *         queried from instances in the peer VPC.
      */
 
     public Boolean isAllowDnsResolutionFromRemoteVpc() {

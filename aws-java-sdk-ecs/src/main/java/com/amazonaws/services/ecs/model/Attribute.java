@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon
  * ECS data model by adding custom metadata to your resources. For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
- * >Attributes</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Attribute" target="_top">AWS API
@@ -48,7 +48,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of the target with which to attach the attribute. This parameter is required if you use the short form
-     * ID for a resource instead of the full Amazon Resource Name (ARN).
+     * ID for a resource instead of the full ARN.
      * </p>
      */
     private String targetType;
@@ -154,12 +154,12 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of the target with which to attach the attribute. This parameter is required if you use the short form
-     * ID for a resource instead of the full Amazon Resource Name (ARN).
+     * ID for a resource instead of the full ARN.
      * </p>
      * 
      * @param targetType
      *        The type of the target with which to attach the attribute. This parameter is required if you use the short
-     *        form ID for a resource instead of the full Amazon Resource Name (ARN).
+     *        form ID for a resource instead of the full ARN.
      * @see TargetType
      */
 
@@ -170,11 +170,11 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of the target with which to attach the attribute. This parameter is required if you use the short form
-     * ID for a resource instead of the full Amazon Resource Name (ARN).
+     * ID for a resource instead of the full ARN.
      * </p>
      * 
      * @return The type of the target with which to attach the attribute. This parameter is required if you use the
-     *         short form ID for a resource instead of the full Amazon Resource Name (ARN).
+     *         short form ID for a resource instead of the full ARN.
      * @see TargetType
      */
 
@@ -185,12 +185,12 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of the target with which to attach the attribute. This parameter is required if you use the short form
-     * ID for a resource instead of the full Amazon Resource Name (ARN).
+     * ID for a resource instead of the full ARN.
      * </p>
      * 
      * @param targetType
      *        The type of the target with which to attach the attribute. This parameter is required if you use the short
-     *        form ID for a resource instead of the full Amazon Resource Name (ARN).
+     *        form ID for a resource instead of the full ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetType
      */
@@ -203,12 +203,12 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of the target with which to attach the attribute. This parameter is required if you use the short form
-     * ID for a resource instead of the full Amazon Resource Name (ARN).
+     * ID for a resource instead of the full ARN.
      * </p>
      * 
      * @param targetType
      *        The type of the target with which to attach the attribute. This parameter is required if you use the short
-     *        form ID for a resource instead of the full Amazon Resource Name (ARN).
+     *        form ID for a resource instead of the full ARN.
      * @see TargetType
      */
 
@@ -219,12 +219,12 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of the target with which to attach the attribute. This parameter is required if you use the short form
-     * ID for a resource instead of the full Amazon Resource Name (ARN).
+     * ID for a resource instead of the full ARN.
      * </p>
      * 
      * @param targetType
      *        The type of the target with which to attach the attribute. This parameter is required if you use the short
-     *        form ID for a resource instead of the full Amazon Resource Name (ARN).
+     *        form ID for a resource instead of the full ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetType
      */

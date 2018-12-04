@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A name for the placement group.
+     * A name for the placement group. Must be unique within the scope of your account for the region.
      * </p>
      * <p>
      * Constraints: Up to 255 ASCII characters
@@ -56,7 +56,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * methods to initialize any additional object members.
      * 
      * @param groupName
-     *        A name for the placement group.</p>
+     *        A name for the placement group. Must be unique within the scope of your account for the region.</p>
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      * @param strategy
@@ -72,7 +72,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * methods to initialize any additional object members.
      * 
      * @param groupName
-     *        A name for the placement group.</p>
+     *        A name for the placement group. Must be unique within the scope of your account for the region.</p>
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      * @param strategy
@@ -85,14 +85,14 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A name for the placement group.
+     * A name for the placement group. Must be unique within the scope of your account for the region.
      * </p>
      * <p>
      * Constraints: Up to 255 ASCII characters
      * </p>
      * 
      * @param groupName
-     *        A name for the placement group.</p>
+     *        A name for the placement group. Must be unique within the scope of your account for the region.</p>
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      */
@@ -103,13 +103,13 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A name for the placement group.
+     * A name for the placement group. Must be unique within the scope of your account for the region.
      * </p>
      * <p>
      * Constraints: Up to 255 ASCII characters
      * </p>
      * 
-     * @return A name for the placement group.</p>
+     * @return A name for the placement group. Must be unique within the scope of your account for the region.</p>
      *         <p>
      *         Constraints: Up to 255 ASCII characters
      */
@@ -120,14 +120,14 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A name for the placement group.
+     * A name for the placement group. Must be unique within the scope of your account for the region.
      * </p>
      * <p>
      * Constraints: Up to 255 ASCII characters
      * </p>
      * 
      * @param groupName
-     *        A name for the placement group.</p>
+     *        A name for the placement group. Must be unique within the scope of your account for the region.</p>
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      * @return Returns a reference to this object so that method calls can be chained together.

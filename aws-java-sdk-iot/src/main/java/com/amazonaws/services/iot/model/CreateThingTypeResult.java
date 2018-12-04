@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class CreateThingTypeResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String thingTypeArn;
+    /**
+     * <p>
+     * The thing type ID.
+     * </p>
+     */
+    private String thingTypeId;
 
     /**
      * <p>
@@ -117,6 +123,46 @@ public class CreateThingTypeResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The thing type ID.
+     * </p>
+     * 
+     * @param thingTypeId
+     *        The thing type ID.
+     */
+
+    public void setThingTypeId(String thingTypeId) {
+        this.thingTypeId = thingTypeId;
+    }
+
+    /**
+     * <p>
+     * The thing type ID.
+     * </p>
+     * 
+     * @return The thing type ID.
+     */
+
+    public String getThingTypeId() {
+        return this.thingTypeId;
+    }
+
+    /**
+     * <p>
+     * The thing type ID.
+     * </p>
+     * 
+     * @param thingTypeId
+     *        The thing type ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateThingTypeResult withThingTypeId(String thingTypeId) {
+        setThingTypeId(thingTypeId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -130,7 +176,9 @@ public class CreateThingTypeResult extends com.amazonaws.AmazonWebServiceResult<
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getThingTypeArn() != null)
-            sb.append("ThingTypeArn: ").append(getThingTypeArn());
+            sb.append("ThingTypeArn: ").append(getThingTypeArn()).append(",");
+        if (getThingTypeId() != null)
+            sb.append("ThingTypeId: ").append(getThingTypeId());
         sb.append("}");
         return sb.toString();
     }
@@ -153,6 +201,10 @@ public class CreateThingTypeResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getThingTypeArn() != null && other.getThingTypeArn().equals(this.getThingTypeArn()) == false)
             return false;
+        if (other.getThingTypeId() == null ^ this.getThingTypeId() == null)
+            return false;
+        if (other.getThingTypeId() != null && other.getThingTypeId().equals(this.getThingTypeId()) == false)
+            return false;
         return true;
     }
 
@@ -163,6 +215,7 @@ public class CreateThingTypeResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
         hashCode = prime * hashCode + ((getThingTypeArn() == null) ? 0 : getThingTypeArn().hashCode());
+        hashCode = prime * hashCode + ((getThingTypeId() == null) ? 0 : getThingTypeId().hashCode());
         return hashCode;
     }
 

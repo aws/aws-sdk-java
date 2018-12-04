@@ -121,7 +121,7 @@ public class DefaultNamingStrategy implements NamingStrategy {
 
     @Override
     public String getJavaClassName(String shapeName) {
-        return Arrays.stream(shapeName.split("[._-]|\\W")).map(Utils::capitialize).collect(Collectors.joining());
+        return Arrays.stream(shapeName.split("[._-]|\\W")).filter(StringUtils::hasValue).map(Utils::capitialize).collect(Collectors.joining());
     }
 
     @Override

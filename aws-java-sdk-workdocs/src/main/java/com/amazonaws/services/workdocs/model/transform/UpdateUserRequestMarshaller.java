@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class UpdateUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeZoneId").build();
     private static final MarshallingInfo<String> LOCALE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Locale").build();
+    private static final MarshallingInfo<String> GRANTPOWERUSERPRIVILEGES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GrantPoweruserPrivileges").build();
 
     private static final UpdateUserRequestMarshaller instance = new UpdateUserRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class UpdateUserRequestMarshaller {
             protocolMarshaller.marshall(updateUserRequest.getStorageRule(), STORAGERULE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getTimeZoneId(), TIMEZONEID_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getLocale(), LOCALE_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getGrantPoweruserPrivileges(), GRANTPOWERUSERPRIVILEGES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

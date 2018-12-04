@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -264,8 +264,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates an Application Load Balancer or a Network Load Balancer.
      * </p>
      * <p>
-     * When you create a load balancer, you can specify security groups, subnets, IP address type, and tags. Otherwise,
-     * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+     * When you create a load balancer, you can specify security groups, public subnets, IP address type, and tags.
+     * Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
      * <a>AddTags</a>.
      * </p>
      * <p>
@@ -305,8 +305,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates an Application Load Balancer or a Network Load Balancer.
      * </p>
      * <p>
-     * When you create a load balancer, you can specify security groups, subnets, IP address type, and tags. Otherwise,
-     * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+     * When you create a load balancer, you can specify security groups, public subnets, IP address type, and tags.
+     * Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
      * <a>AddTags</a>.
      * </p>
      * <p>
@@ -1547,7 +1547,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Enables the Availability Zone for the specified subnets for the specified Application Load Balancer. The
+     * Enables the Availability Zone for the specified public subnets for the specified Application Load Balancer. The
      * specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
@@ -1564,7 +1564,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Enables the Availability Zone for the specified subnets for the specified Application Load Balancer. The
+     * Enables the Availability Zone for the specified public subnets for the specified Application Load Balancer. The
      * specified subnets replace the previously enabled subnets.
      * </p>
      * <p>

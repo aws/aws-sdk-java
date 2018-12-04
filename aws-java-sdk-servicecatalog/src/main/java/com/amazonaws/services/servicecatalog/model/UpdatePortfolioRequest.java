@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
     private String acceptLanguage;
     /**
      * <p>
-     * The identifier of the portfolio for the update request.
+     * The portfolio identifier.
      * </p>
      */
     private String id;
@@ -62,7 +62,7 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
     private String displayName;
     /**
      * <p>
-     * The updated text description of the portfolio.
+     * The updated description of the portfolio.
      * </p>
      */
     private String description;
@@ -74,13 +74,13 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
     private String providerName;
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the portfolio.
+     * The tags to add.
      * </p>
      */
     private java.util.List<Tag> addTags;
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the portfolio.
+     * The tags to remove.
      * </p>
      */
     private java.util.List<String> removeTags;
@@ -226,11 +226,11 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the portfolio for the update request.
+     * The portfolio identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the portfolio for the update request.
+     *        The portfolio identifier.
      */
 
     public void setId(String id) {
@@ -239,10 +239,10 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the portfolio for the update request.
+     * The portfolio identifier.
      * </p>
      * 
-     * @return The identifier of the portfolio for the update request.
+     * @return The portfolio identifier.
      */
 
     public String getId() {
@@ -251,11 +251,11 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the portfolio for the update request.
+     * The portfolio identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the portfolio for the update request.
+     *        The portfolio identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +306,11 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated text description of the portfolio.
+     * The updated description of the portfolio.
      * </p>
      * 
      * @param description
-     *        The updated text description of the portfolio.
+     *        The updated description of the portfolio.
      */
 
     public void setDescription(String description) {
@@ -319,10 +319,10 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated text description of the portfolio.
+     * The updated description of the portfolio.
      * </p>
      * 
-     * @return The updated text description of the portfolio.
+     * @return The updated description of the portfolio.
      */
 
     public String getDescription() {
@@ -331,11 +331,11 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The updated text description of the portfolio.
+     * The updated description of the portfolio.
      * </p>
      * 
      * @param description
-     *        The updated text description of the portfolio.
+     *        The updated description of the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,10 +386,10 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the portfolio.
+     * The tags to add.
      * </p>
      * 
-     * @return Tags to add to the existing list of tags associated with the portfolio.
+     * @return The tags to add.
      */
 
     public java.util.List<Tag> getAddTags() {
@@ -398,11 +398,11 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the portfolio.
+     * The tags to add.
      * </p>
      * 
      * @param addTags
-     *        Tags to add to the existing list of tags associated with the portfolio.
+     *        The tags to add.
      */
 
     public void setAddTags(java.util.Collection<Tag> addTags) {
@@ -416,7 +416,7 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the portfolio.
+     * The tags to add.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -425,7 +425,7 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param addTags
-     *        Tags to add to the existing list of tags associated with the portfolio.
+     *        The tags to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,11 +441,11 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the portfolio.
+     * The tags to add.
      * </p>
      * 
      * @param addTags
-     *        Tags to add to the existing list of tags associated with the portfolio.
+     *        The tags to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,10 +456,10 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the portfolio.
+     * The tags to remove.
      * </p>
      * 
-     * @return Tags to remove from the existing list of tags associated with the portfolio.
+     * @return The tags to remove.
      */
 
     public java.util.List<String> getRemoveTags() {
@@ -468,11 +468,11 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the portfolio.
+     * The tags to remove.
      * </p>
      * 
      * @param removeTags
-     *        Tags to remove from the existing list of tags associated with the portfolio.
+     *        The tags to remove.
      */
 
     public void setRemoveTags(java.util.Collection<String> removeTags) {
@@ -486,7 +486,7 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the portfolio.
+     * The tags to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -495,7 +495,7 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param removeTags
-     *        Tags to remove from the existing list of tags associated with the portfolio.
+     *        The tags to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -511,11 +511,11 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the portfolio.
+     * The tags to remove.
      * </p>
      * 
      * @param removeTags
-     *        Tags to remove from the existing list of tags associated with the portfolio.
+     *        The tags to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

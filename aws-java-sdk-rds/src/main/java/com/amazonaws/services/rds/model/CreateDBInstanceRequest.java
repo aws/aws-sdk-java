@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -186,7 +186,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     * The amount of storage (in gibibytes) to allocate for the DB instance.
      * </p>
      * <p>
      * Type: Integer
@@ -207,12 +207,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -230,12 +230,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -253,12 +253,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -276,12 +276,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -354,8 +354,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
-     * availability for your engine, see <a
+     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
      * </p>
@@ -374,7 +374,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-postgresql</code>
      * </p>
      * </li>
      * <li>
@@ -585,7 +595,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String masterUsername;
     /**
      * <p>
-     * The password for the master user. Can be any printable ASCII character except "/", """, or "@".
+     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -653,7 +663,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance is created in. For information on regions and Availability
+     * The EC2 Availability Zone that the DB instance is created in. For information on AWS Regions and Availability
      * Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
@@ -665,7 +675,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     * Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
      * </p>
      */
@@ -681,21 +691,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBSubnetGroupName;
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>.
+     * The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     * >Amazon RDS Maintenance Window</a>.
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week.
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -765,8 +774,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>.
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     * >The Backup Window</a>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -776,8 +785,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * information, see <a>CreateDBCluster</a>.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
      * > Adjusting the Preferred DB Instance Maintenance Window</a>.
      * </p>
@@ -792,7 +801,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -883,7 +892,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer port;
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
      * MultiAZ parameter is set to true.
      * </p>
      */
@@ -909,17 +918,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.1.23</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>10.1.19</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)
+     * <code>10.2.11</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -927,22 +926,60 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.0.31</code> (supported in all AWS regions)
+     * <code>10.1.26</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.28</code> (supported in all AWS regions)
+     * <code>10.1.23</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.24</code> (supported in all AWS regions)
+     * <code>10.1.19</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.32</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.31</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.28</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Microsoft SQL Server 2017</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -952,12 +989,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -967,17 +1009,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions except
+     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS Regions except
      * ca-central-1 and eu-west-2)
      * </p>
      * </li>
@@ -988,23 +1030,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)
      * </p>
      * </li>
@@ -1015,19 +1057,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
@@ -1051,9 +1093,32 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>5.7.16</code> (supported in all AWS regions)
      * </p>
      * </li>
+     * </ul>
+     * <p/>
+     * <ul>
      * <li>
      * <p>
-     * <code>5.7.11</code> (supported in all AWS regions)
+     * <code>5.6.37</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -1061,50 +1126,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>5.6.37</code> (supported in all AWS regions)
+     * <code>5.5.57</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.35</code> (supported in all AWS regions)
+     * <code>5.5.54</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.34</code> (supported in all AWS regions)
+     * <code>5.5.53</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.29</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
-     * <p/>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>5.5.57</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.54</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.53</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.46</code> (supported in all AWS regions)
+     * <code>5.5.46</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -1229,7 +1266,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     * <b>Version 10.1</b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
@@ -1272,11 +1314,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance.
+     * instance. For information about valid Iops values, see see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
+     * IOPS Storage to Improve Performance</a>.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an
-     * integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <code>Iops</code>
+     * Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance. Must also be an
+     * integer multiple of 1000. For example, if the size of your DB instance is 500 GiB, then your <code>Iops</code>
      * value can be 2000, 3000, 4000, or 5000.
      * </p>
      */
@@ -1286,8 +1330,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      */
     private String optionGroupName;
@@ -1357,19 +1401,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      */
     private String storageType;
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      */
     private String tdeCredentialArn;
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      */
     private String tdeCredentialPassword;
@@ -1391,7 +1435,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB instance.
+     * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -1421,7 +1465,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String domain;
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      */
@@ -1442,10 +1486,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer monitoringInterval;
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">
-     * Setting Up and Enabling Enhanced Monitoring</a>.
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
+     * example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go
+     * to <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling"
+     * >Setting Up and Enabling Enhanced Monitoring</a>.
      * </p>
      * <p>
      * If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
@@ -1484,7 +1529,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String timezone;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -1519,17 +1564,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean enableIAMDatabaseAuthentication;
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      */
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
 
     /**
      * Default constructor for CreateDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
@@ -1567,7 +1618,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        Example: <code>mydbinstance</code>
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     *        The amount of storage (in gibibytes) to allocate for the DB instance.
      *        </p>
      *        <p>
      *        Type: Integer
@@ -1588,12 +1639,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -1611,12 +1662,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -1634,12 +1685,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -1657,12 +1708,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -1731,7 +1782,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the Amazon RDS User Guide.
@@ -1746,7 +1797,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code>
+     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-postgresql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1948,7 +2009,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        </li>
      * @param masterUserPassword
-     *        The password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
+     *        The password for the master user. The password can include any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -2951,7 +3013,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     * The amount of storage (in gibibytes) to allocate for the DB instance.
      * </p>
      * <p>
      * Type: Integer
@@ -2972,12 +3034,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -2995,12 +3057,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3018,12 +3080,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3041,12 +3103,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3116,7 +3178,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
+     *        The amount of storage (in gibibytes) to allocate for the DB instance.</p>
      *        <p>
      *        Type: Integer
      *        </p>
@@ -3136,12 +3198,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3159,12 +3221,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3182,12 +3244,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3205,12 +3267,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3285,7 +3347,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     * The amount of storage (in gibibytes) to allocate for the DB instance.
      * </p>
      * <p>
      * Type: Integer
@@ -3306,12 +3368,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3329,12 +3391,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3352,12 +3414,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3375,12 +3437,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3449,7 +3511,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
+     * @return The amount of storage (in gibibytes) to allocate for the DB instance.</p>
      *         <p>
      *         Type: Integer
      *         </p>
@@ -3469,12 +3531,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *         </p>
      *         </li>
      *         <li>
@@ -3492,12 +3554,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *         </p>
      *         </li>
      *         <li>
@@ -3515,12 +3577,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *         </p>
      *         </li>
      *         <li>
@@ -3538,12 +3600,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *         </p>
      *         </li>
      *         <li>
@@ -3618,7 +3680,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of storage (in gigabytes) to be initially allocated for the database instance.
+     * The amount of storage (in gibibytes) to allocate for the DB instance.
      * </p>
      * <p>
      * Type: Integer
@@ -3639,12 +3701,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3662,12 +3724,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3685,12 +3747,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3708,12 +3770,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3783,7 +3845,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
+     *        The amount of storage (in gibibytes) to allocate for the DB instance.</p>
      *        <p>
      *        Type: Integer
      *        </p>
@@ -3803,12 +3865,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3826,12 +3888,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3849,12 +3911,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3872,12 +3934,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3955,15 +4017,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
-     * availability for your engine, see <a
+     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
      * </p>
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the Amazon RDS User Guide.
@@ -3976,14 +4038,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
-     * availability for your engine, see <a
+     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
      * </p>
      * 
      * @return The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *         instance classes are available in all regions, or for all database engines. For the full list of DB
+     *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *         instance classes, and availability for your engine, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the Amazon RDS User Guide.
@@ -3996,15 +4058,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
-     * availability for your engine, see <a
+     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
      * </p>
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the Amazon RDS User Guide.
@@ -4029,7 +4091,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-postgresql</code>
      * </p>
      * </li>
      * <li>
@@ -4100,7 +4172,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code>
+     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-postgresql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -4177,7 +4259,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-postgresql</code>
      * </p>
      * </li>
      * <li>
@@ -4247,7 +4339,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>aurora</code>
+     *         <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>aurora-postgresql</code>
      *         </p>
      *         </li>
      *         <li>
@@ -4324,7 +4426,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-postgresql</code>
      * </p>
      * </li>
      * <li>
@@ -4395,7 +4507,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code>
+     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-postgresql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -5352,7 +5474,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the master user. Can be any printable ASCII character except "/", """, or "@".
+     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5393,7 +5515,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
+     *        The password for the master user. The password can include any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -5438,7 +5561,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the master user. Can be any printable ASCII character except "/", """, or "@".
+     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5478,7 +5601,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Constraints: Must contain from 8 to 128 characters.
      * </p>
      * 
-     * @return The password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
+     * @return The password for the master user. The password can include any printable ASCII character except "/",
+     *         """, or "@".</p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
@@ -5523,7 +5647,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the master user. Can be any printable ASCII character except "/", """, or "@".
+     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5564,7 +5688,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
+     *        The password for the master user. The password can include any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -5853,7 +5978,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance is created in. For information on regions and Availability
+     * The EC2 Availability Zone that the DB instance is created in. For information on AWS Regions and Availability
      * Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
@@ -5865,12 +5990,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     * Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance is created in. For information on regions and
+     *        The EC2 Availability Zone that the DB instance is created in. For information on AWS Regions and
      *        Availability Zones, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>. </p>
@@ -5881,7 +6006,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
-     *        Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     *        Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
      *        <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
      */
 
@@ -5891,7 +6016,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance is created in. For information on regions and Availability
+     * The EC2 Availability Zone that the DB instance is created in. For information on AWS Regions and Availability
      * Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
@@ -5903,11 +6028,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     * Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
      * </p>
      * 
-     * @return The EC2 Availability Zone that the database instance is created in. For information on regions and
+     * @return The EC2 Availability Zone that the DB instance is created in. For information on AWS Regions and
      *         Availability Zones, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *         >Regions and Availability Zones</a>. </p>
@@ -5918,7 +6043,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Example: <code>us-east-1d</code>
      *         </p>
      *         <p>
-     *         Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     *         Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
      *         <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current
      *         endpoint.
      */
@@ -5929,7 +6054,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance is created in. For information on regions and Availability
+     * The EC2 Availability Zone that the DB instance is created in. For information on AWS Regions and Availability
      * Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
@@ -5941,12 +6066,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
-     * Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     * Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance is created in. For information on regions and
+     *        The EC2 Availability Zone that the DB instance is created in. For information on AWS Regions and
      *        Availability Zones, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>. </p>
@@ -5957,7 +6082,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
-     *        Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to
+     *        Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
      *        <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -6024,42 +6149,39 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>.
+     * The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     * >Amazon RDS Maintenance Window</a>.
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week.
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For
-     *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB Instance
-     *        Maintenance</a>. </p>
+     *        The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     *        >Amazon RDS Maintenance Window</a>. </p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
-     *        random day of the week. To see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        occurring on a random day of the week.
      *        </p>
      *        <p>
-     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
@@ -6071,41 +6193,38 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>.
+     * The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     * >Amazon RDS Maintenance Window</a>.
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week.
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
      * </p>
      * 
-     * @return The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For
-     *         more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB Instance
-     *         Maintenance</a>. </p>
+     * @return The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     *         >Amazon RDS Maintenance Window</a>. </p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
-     *         a random day of the week. To see the time blocks available, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *         occurring on a random day of the week.
      *         </p>
      *         <p>
-     *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *         </p>
      *         <p>
      *         Constraints: Minimum 30-minute window.
@@ -6117,42 +6236,39 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>.
+     * The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     * >Amazon RDS Maintenance Window</a>.
      * </p>
      * <p>
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week.
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For
-     *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB Instance
-     *        Maintenance</a>. </p>
+     *        The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     *        >Amazon RDS Maintenance Window</a>. </p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
-     *        random day of the week. To see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        occurring on a random day of the week.
      *        </p>
      *        <p>
-     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
@@ -6524,8 +6640,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>.
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     * >The Backup Window</a>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -6535,8 +6651,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * information, see <a>CreateDBCluster</a>.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
      * > Adjusting the Preferred DB Instance Maintenance Window</a>.
      * </p>
@@ -6551,7 +6667,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -6569,8 +6685,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
-     *        >DB Instance Backups</a>. </p>
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     *        >The Backup Window</a>. </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -6579,8 +6695,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        information, see <a>CreateDBCluster</a>.
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *        time blocks available, see <a href=
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *        see the time blocks available, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
      *        > Adjusting the Preferred DB Instance Maintenance Window</a>.
      *        </p>
@@ -6595,7 +6711,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Coordinated Time (UTC).
+     *        Must be in Universal Coordinated Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -6618,8 +6734,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>.
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     * >The Backup Window</a>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -6629,8 +6745,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * information, see <a>CreateDBCluster</a>.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
      * > Adjusting the Preferred DB Instance Maintenance Window</a>.
      * </p>
@@ -6645,7 +6761,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -6662,8 +6778,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The daily time range during which automated backups are created if automated backups are enabled, using
      *         the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
-     *         >DB Instance Backups</a>. </p>
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     *         >The Backup Window</a>. </p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
@@ -6672,8 +6788,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         more information, see <a>CreateDBCluster</a>.
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *         time blocks available, see <a href=
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *         see the time blocks available, see <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
      *         > Adjusting the Preferred DB Instance Maintenance Window</a>.
      *         </p>
@@ -6688,7 +6804,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Times should be in Universal Coordinated Time (UTC).
+     *         Must be in Universal Coordinated Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -6711,8 +6827,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>.
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     * >The Backup Window</a>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -6722,8 +6838,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * information, see <a>CreateDBCluster</a>.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
      * > Adjusting the Preferred DB Instance Maintenance Window</a>.
      * </p>
@@ -6738,7 +6854,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -6756,8 +6872,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html"
-     *        >DB Instance Backups</a>. </p>
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     *        >The Backup Window</a>. </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -6766,8 +6882,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        information, see <a>CreateDBCluster</a>.
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *        time blocks available, see <a href=
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *        see the time blocks available, see <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
      *        > Adjusting the Preferred DB Instance Maintenance Window</a>.
      *        </p>
@@ -6782,7 +6898,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Coordinated Time (UTC).
+     *        Must be in Universal Coordinated Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -7243,13 +7359,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
      * MultiAZ parameter is set to true.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if
-     *        the MultiAZ parameter is set to true.
+     *        Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
+     *        MultiAZ parameter is set to true.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -7258,11 +7374,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
      * MultiAZ parameter is set to true.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if
+     * @return Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if
      *         the MultiAZ parameter is set to true.
      */
 
@@ -7272,13 +7388,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
      * MultiAZ parameter is set to true.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if
-     *        the MultiAZ parameter is set to true.
+     *        Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
+     *        MultiAZ parameter is set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -7289,11 +7405,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the
+     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
      * MultiAZ parameter is set to true.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if
+     * @return Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if
      *         the MultiAZ parameter is set to true.
      */
 
@@ -7322,17 +7438,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.1.23</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>10.1.19</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)
+     * <code>10.2.11</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -7340,22 +7446,60 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.0.31</code> (supported in all AWS regions)
+     * <code>10.1.26</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.28</code> (supported in all AWS regions)
+     * <code>10.1.23</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.24</code> (supported in all AWS regions)
+     * <code>10.1.19</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.32</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.31</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.28</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Microsoft SQL Server 2017</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -7365,12 +7509,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -7380,17 +7529,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions except
+     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS Regions except
      * ca-central-1 and eu-west-2)
      * </p>
      * </li>
@@ -7401,23 +7550,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)
      * </p>
      * </li>
@@ -7428,19 +7577,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
@@ -7464,9 +7613,32 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>5.7.16</code> (supported in all AWS regions)
      * </p>
      * </li>
+     * </ul>
+     * <p/>
+     * <ul>
      * <li>
      * <p>
-     * <code>5.7.11</code> (supported in all AWS regions)
+     * <code>5.6.37</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -7474,50 +7646,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>5.6.37</code> (supported in all AWS regions)
+     * <code>5.5.57</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.35</code> (supported in all AWS regions)
+     * <code>5.5.54</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.34</code> (supported in all AWS regions)
+     * <code>5.5.53</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.29</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
-     * <p/>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>5.5.57</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.54</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.53</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.46</code> (supported in all AWS regions)
+     * <code>5.5.46</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -7642,7 +7786,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     * <b>Version 10.1</b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
@@ -7681,17 +7830,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>10.1.23</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>10.1.19</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>10.1.14</code> (supported in all regions except us-east-2)
+     *        <code>10.2.11</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -7699,22 +7838,60 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>10.0.31</code> (supported in all AWS regions)
+     *        <code>10.1.26</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.0.28</code> (supported in all AWS regions)
+     *        <code>10.1.23</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.0.24</code> (supported in all AWS regions)
+     *        <code>10.1.19</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     *        <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.0.32</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>10.0.31</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>10.0.28</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>10.0.24</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Microsoft SQL Server 2017</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -7724,12 +7901,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -7739,17 +7921,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions
+     *        <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS Regions
      *        except ca-central-1 and eu-west-2)
      *        </p>
      *        </li>
@@ -7760,23 +7942,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
@@ -7787,19 +7969,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
@@ -7823,9 +8005,32 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>5.7.16</code> (supported in all AWS regions)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
      *        <li>
      *        <p>
-     *        <code>5.7.11</code> (supported in all AWS regions)
+     *        <code>5.6.37</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.35</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.34</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.29</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -7833,50 +8038,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>5.6.37</code> (supported in all AWS regions)
+     *        <code>5.5.57</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5.6.35</code> (supported in all AWS regions)
+     *        <code>5.5.54</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5.6.34</code> (supported in all AWS regions)
+     *        <code>5.5.53</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5.6.29</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p/>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>5.5.57</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>5.5.54</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>5.5.53</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>5.5.46</code> (supported in all AWS regions)
+     *        <code>5.5.46</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -8010,7 +8187,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     *        <b>Version 10.1</b>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -8055,17 +8237,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.1.23</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>10.1.19</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)
+     * <code>10.2.11</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -8073,22 +8245,60 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.0.31</code> (supported in all AWS regions)
+     * <code>10.1.26</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.28</code> (supported in all AWS regions)
+     * <code>10.1.23</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.24</code> (supported in all AWS regions)
+     * <code>10.1.19</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.32</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.31</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.28</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Microsoft SQL Server 2017</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -8098,12 +8308,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -8113,17 +8328,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions except
+     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS Regions except
      * ca-central-1 and eu-west-2)
      * </p>
      * </li>
@@ -8134,23 +8349,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)
      * </p>
      * </li>
@@ -8161,19 +8376,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
@@ -8197,9 +8412,32 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>5.7.16</code> (supported in all AWS regions)
      * </p>
      * </li>
+     * </ul>
+     * <p/>
+     * <ul>
      * <li>
      * <p>
-     * <code>5.7.11</code> (supported in all AWS regions)
+     * <code>5.6.37</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -8207,50 +8445,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>5.6.37</code> (supported in all AWS regions)
+     * <code>5.5.57</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.35</code> (supported in all AWS regions)
+     * <code>5.5.54</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.34</code> (supported in all AWS regions)
+     * <code>5.5.53</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.29</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
-     * <p/>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>5.5.57</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.54</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.53</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.46</code> (supported in all AWS regions)
+     * <code>5.5.46</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -8375,7 +8585,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     * <b>Version 10.1</b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
@@ -8413,17 +8628,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>10.1.23</code> (supported in all AWS regions)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>10.1.19</code> (supported in all AWS regions)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>10.1.14</code> (supported in all regions except us-east-2)
+     *         <code>10.2.11</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         </ul>
@@ -8431,22 +8636,60 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>10.0.31</code> (supported in all AWS regions)
+     *         <code>10.1.26</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>10.0.28</code> (supported in all AWS regions)
+     *         <code>10.1.23</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>10.0.24</code> (supported in all AWS regions)
+     *         <code>10.1.19</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     *         <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>10.0.32</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>10.0.31</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>10.0.28</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>10.0.24</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Microsoft SQL Server 2017</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
      *         </p>
      *         </li>
      *         </ul>
@@ -8456,12 +8699,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     *         <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
+     *         <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
      *         </p>
      *         </li>
      *         </ul>
@@ -8471,17 +8719,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     *         <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
+     *         <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions
+     *         <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS Regions
      *         except ca-central-1 and eu-west-2)
      *         </p>
      *         </li>
@@ -8492,23 +8740,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     *         <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
+     *         <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
@@ -8519,19 +8767,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
@@ -8555,9 +8803,32 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <code>5.7.16</code> (supported in all AWS regions)
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p/>
+     *         <ul>
      *         <li>
      *         <p>
-     *         <code>5.7.11</code> (supported in all AWS regions)
+     *         <code>5.6.37</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.35</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.34</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.29</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
      *         </p>
      *         </li>
      *         </ul>
@@ -8565,50 +8836,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>5.6.37</code> (supported in all AWS regions)
+     *         <code>5.5.57</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>5.6.35</code> (supported in all AWS regions)
+     *         <code>5.5.54</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>5.6.34</code> (supported in all AWS regions)
+     *         <code>5.5.53</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>5.6.29</code> (supported in all AWS regions)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p/>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>5.5.57</code> (supported in all AWS regions)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>5.5.54</code> (supported in all AWS regions)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>5.5.53</code> (supported in all AWS regions)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>5.5.46</code> (supported in all AWS regions)
+     *         <code>5.5.46</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         </ul>
@@ -8742,7 +8985,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     *         <b>Version 10.1</b>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *         </p>
      *         </li>
      *         <li>
@@ -8787,17 +9035,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.1.23</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>10.1.19</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)
+     * <code>10.2.11</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -8805,22 +9043,60 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.0.31</code> (supported in all AWS regions)
+     * <code>10.1.26</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.28</code> (supported in all AWS regions)
+     * <code>10.1.23</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.24</code> (supported in all AWS regions)
+     * <code>10.1.19</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.32</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.31</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.28</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.24</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Microsoft SQL Server 2017</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -8830,12 +9106,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -8845,17 +9126,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions except
+     * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS Regions except
      * ca-central-1 and eu-west-2)
      * </p>
      * </li>
@@ -8866,23 +9147,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
+     * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)
      * </p>
      * </li>
@@ -8893,19 +9174,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)
      * </p>
      * </li>
@@ -8929,9 +9210,32 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>5.7.16</code> (supported in all AWS regions)
      * </p>
      * </li>
+     * </ul>
+     * <p/>
+     * <ul>
      * <li>
      * <p>
-     * <code>5.7.11</code> (supported in all AWS regions)
+     * <code>5.6.37</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -8939,50 +9243,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>5.6.37</code> (supported in all AWS regions)
+     * <code>5.5.57</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.35</code> (supported in all AWS regions)
+     * <code>5.5.54</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.34</code> (supported in all AWS regions)
+     * <code>5.5.53</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5.6.29</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
-     * <p/>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>5.5.57</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.54</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.53</code> (supported in all AWS regions)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>5.5.46</code> (supported in all AWS regions)
+     * <code>5.5.46</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
@@ -9107,7 +9383,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     * <b>Version 10.1</b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
@@ -9146,17 +9427,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>10.1.23</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>10.1.19</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>10.1.14</code> (supported in all regions except us-east-2)
+     *        <code>10.2.11</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -9164,22 +9435,60 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>10.0.31</code> (supported in all AWS regions)
+     *        <code>10.1.26</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.0.28</code> (supported in all AWS regions)
+     *        <code>10.1.23</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.0.24</code> (supported in all AWS regions)
+     *        <code>10.1.19</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     *        <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.0.32</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>10.0.31</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>10.0.28</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>10.0.24</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Microsoft SQL Server 2017</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -9189,12 +9498,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -9204,17 +9518,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions
+     *        <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS Regions
      *        except ca-central-1 and eu-west-2)
      *        </p>
      *        </li>
@@ -9225,23 +9539,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
+     *        <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
@@ -9252,19 +9566,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2,
      *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
@@ -9288,9 +9602,32 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>5.7.16</code> (supported in all AWS regions)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
      *        <li>
      *        <p>
-     *        <code>5.7.11</code> (supported in all AWS regions)
+     *        <code>5.6.37</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.35</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.34</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.29</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -9298,50 +9635,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>5.6.37</code> (supported in all AWS regions)
+     *        <code>5.5.57</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5.6.35</code> (supported in all AWS regions)
+     *        <code>5.5.54</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5.6.34</code> (supported in all AWS regions)
+     *        <code>5.5.53</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5.6.29</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p/>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>5.5.57</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>5.5.54</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>5.5.53</code> (supported in all AWS regions)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>5.5.46</code> (supported in all AWS regions)
+     *        <code>5.5.46</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -9475,7 +9784,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     *        <b>Version 10.1</b>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -9641,20 +9955,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance.
+     * instance. For information about valid Iops values, see see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
+     * IOPS Storage to Improve Performance</a>.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an
-     * integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <code>Iops</code>
+     * Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance. Must also be an
+     * integer multiple of 1000. For example, if the size of your DB instance is 500 GiB, then your <code>Iops</code>
      * value can be 2000, 3000, 4000, or 5000.
      * </p>
      * 
      * @param iops
      *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     *        instance.</p>
+     *        instance. For information about valid Iops values, see see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
+     *        Provisioned IOPS Storage to Improve Performance</a>. </p>
      *        <p>
-     *        Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be
-     *        an integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your
+     *        Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance. Must also be
+     *        an integer multiple of 1000. For example, if the size of your DB instance is 500 GiB, then your
      *        <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
      */
 
@@ -9665,19 +9983,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance.
+     * instance. For information about valid Iops values, see see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
+     * IOPS Storage to Improve Performance</a>.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an
-     * integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <code>Iops</code>
+     * Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance. Must also be an
+     * integer multiple of 1000. For example, if the size of your DB instance is 500 GiB, then your <code>Iops</code>
      * value can be 2000, 3000, 4000, or 5000.
      * </p>
      * 
      * @return The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     *         instance.</p>
+     *         instance. For information about valid Iops values, see see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
+     *         Provisioned IOPS Storage to Improve Performance</a>. </p>
      *         <p>
-     *         Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be
-     *         an integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your
+     *         Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance. Must also be
+     *         an integer multiple of 1000. For example, if the size of your DB instance is 500 GiB, then your
      *         <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
      */
 
@@ -9688,20 +10010,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance.
+     * instance. For information about valid Iops values, see see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
+     * IOPS Storage to Improve Performance</a>.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an
-     * integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <code>Iops</code>
+     * Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance. Must also be an
+     * integer multiple of 1000. For example, if the size of your DB instance is 500 GiB, then your <code>Iops</code>
      * value can be 2000, 3000, 4000, or 5000.
      * </p>
      * 
      * @param iops
      *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     *        instance.</p>
+     *        instance. For information about valid Iops values, see see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
+     *        Provisioned IOPS Storage to Improve Performance</a>. </p>
      *        <p>
-     *        Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be
-     *        an integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your
+     *        Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance. Must also be
+     *        an integer multiple of 1000. For example, if the size of your DB instance is 500 GiB, then your
      *        <code>Iops</code> value can be 2000, 3000, 4000, or 5000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -9716,15 +10042,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
      *        Indicates that the DB instance should be associated with the specified option group.</p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *        instance
      */
 
@@ -9737,14 +10063,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @return Indicates that the DB instance should be associated with the specified option group.</p>
      *         <p>
-     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *         option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *         option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *         instance
      */
 
@@ -9757,15 +10083,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
      *        Indicates that the DB instance should be associated with the specified option group.</p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *        instance
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -10225,7 +10551,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
@@ -10237,7 +10563,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      */
 
     public void setStorageType(String storageType) {
@@ -10255,7 +10581,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @return Specifies the storage type to be associated with the DB instance.</p>
@@ -10266,7 +10592,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *         </p>
      *         <p>
-     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
      *         <code>standard</code>
      */
 
@@ -10285,7 +10611,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
@@ -10297,7 +10623,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10308,11 +10634,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance for TDE encryption.
+     *        The ARN from the key store with which to associate the instance for TDE encryption.
      */
 
     public void setTdeCredentialArn(String tdeCredentialArn) {
@@ -10321,10 +10647,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
-     * @return The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * @return The ARN from the key store with which to associate the instance for TDE encryption.
      */
 
     public String getTdeCredentialArn() {
@@ -10333,11 +10659,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance for TDE encryption.
+     *        The ARN from the key store with which to associate the instance for TDE encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10348,11 +10674,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
      * @param tdeCredentialPassword
-     *        The password for the given ARN from the Key Store in order to access the device.
+     *        The password for the given ARN from the key store in order to access the device.
      */
 
     public void setTdeCredentialPassword(String tdeCredentialPassword) {
@@ -10361,10 +10687,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
-     * @return The password for the given ARN from the Key Store in order to access the device.
+     * @return The password for the given ARN from the key store in order to access the device.
      */
 
     public String getTdeCredentialPassword() {
@@ -10373,11 +10699,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
      * @param tdeCredentialPassword
-     *        The password for the given ARN from the Key Store in order to access the device.
+     *        The password for the given ARN from the key store in order to access the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10516,7 +10842,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB instance.
+     * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -10538,7 +10864,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier for an encrypted DB instance.</p>
+     *        The AWS KMS key identifier for an encrypted DB instance.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
      *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
@@ -10564,7 +10890,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB instance.
+     * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -10585,7 +10911,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Region.
      * </p>
      * 
-     * @return The KMS key identifier for an encrypted DB instance.</p>
+     * @return The AWS KMS key identifier for an encrypted DB instance.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
      *         a DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
@@ -10611,7 +10937,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB instance.
+     * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -10633,7 +10959,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier for an encrypted DB instance.</p>
+     *        The AWS KMS key identifier for an encrypted DB instance.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
      *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
@@ -10701,13 +11027,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
-     *        is false.
+     *        True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The
+     *        default is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -10716,12 +11042,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      * 
-     * @return True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
-     *         is false.
+     * @return True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The
+     *         default is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -10730,13 +11056,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
-     *        is false.
+     *        True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The
+     *        default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10747,12 +11073,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      * 
-     * @return True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
-     *         is false.
+     * @return True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The
+     *         default is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -10846,10 +11172,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">
-     * Setting Up and Enabling Enhanced Monitoring</a>.
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
+     * example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go
+     * to <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling"
+     * >Setting Up and Enabling Enhanced Monitoring</a>.
      * </p>
      * <p>
      * If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
@@ -10857,8 +11184,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param monitoringRoleArn
-     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
-     *        example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
+     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs.
+     *        For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
      *        role, go to <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling"
      *        >Setting Up and Enabling Enhanced Monitoring</a>.</p>
@@ -10873,19 +11200,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">
-     * Setting Up and Enabling Enhanced Monitoring</a>.
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
+     * example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go
+     * to <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling"
+     * >Setting Up and Enabling Enhanced Monitoring</a>.
      * </p>
      * <p>
      * If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
      * <code>MonitoringRoleArn</code> value.
      * </p>
      * 
-     * @return The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
-     *         example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
-     *         role, go to <a href=
+     * @return The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs.
+     *         For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a
+     *         monitoring role, go to <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling"
      *         >Setting Up and Enabling Enhanced Monitoring</a>.</p>
      *         <p>
@@ -10899,10 +11227,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">
-     * Setting Up and Enabling Enhanced Monitoring</a>.
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
+     * example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go
+     * to <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling"
+     * >Setting Up and Enabling Enhanced Monitoring</a>.
      * </p>
      * <p>
      * If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
@@ -10910,8 +11239,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param monitoringRoleArn
-     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
-     *        example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
+     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs.
+     *        For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
      *        role, go to <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling"
      *        >Setting Up and Enabling Enhanced Monitoring</a>.</p>
@@ -11111,7 +11440,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -11144,7 +11473,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false. </p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines:
@@ -11181,7 +11510,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -11213,7 +11542,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false. </p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines:
@@ -11250,7 +11579,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -11283,7 +11612,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false. </p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines:
@@ -11322,7 +11651,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -11354,7 +11683,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false. </p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines:
@@ -11391,11 +11720,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance; otherwise false.
+     *        True to enable Performance Insights for the DB instance, and otherwise false.
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -11404,10 +11733,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance; otherwise false.
+     * @return True to enable Performance Insights for the DB instance, and otherwise false.
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -11416,11 +11745,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance; otherwise false.
+     *        True to enable Performance Insights for the DB instance, and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -11431,10 +11760,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance; otherwise false.
+     * @return True to enable Performance Insights for the DB instance, and otherwise false.
      */
 
     public Boolean isEnablePerformanceInsights() {
@@ -11443,13 +11772,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -11458,12 +11787,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
-     * @return The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *         Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -11472,18 +11801,91 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
         setPerformanceInsightsKMSKeyId(performanceInsightsKMSKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     * 
+     * @return The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     */
+
+    public java.util.List<String> getEnableCloudwatchLogsExports() {
+        if (enableCloudwatchLogsExports == null) {
+            enableCloudwatchLogsExports = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return enableCloudwatchLogsExports;
+    }
+
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     */
+
+    public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
+        if (enableCloudwatchLogsExports == null) {
+            this.enableCloudwatchLogsExports = null;
+            return;
+        }
+
+        this.enableCloudwatchLogsExports = new com.amazonaws.internal.SdkInternalList<String>(enableCloudwatchLogsExports);
+    }
+
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnableCloudwatchLogsExports(java.util.Collection)} or
+     * {@link #withEnableCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withEnableCloudwatchLogsExports(String... enableCloudwatchLogsExports) {
+        if (this.enableCloudwatchLogsExports == null) {
+            setEnableCloudwatchLogsExports(new com.amazonaws.internal.SdkInternalList<String>(enableCloudwatchLogsExports.length));
+        }
+        for (String ele : enableCloudwatchLogsExports) {
+            this.enableCloudwatchLogsExports.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
+        setEnableCloudwatchLogsExports(enableCloudwatchLogsExports);
         return this;
     }
 
@@ -11579,7 +11981,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getEnablePerformanceInsights() != null)
             sb.append("EnablePerformanceInsights: ").append(getEnablePerformanceInsights()).append(",");
         if (getPerformanceInsightsKMSKeyId() != null)
-            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId());
+            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
+        if (getEnableCloudwatchLogsExports() != null)
+            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports());
         sb.append("}");
         return sb.toString();
     }
@@ -11759,6 +12163,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getPerformanceInsightsKMSKeyId() != null && other.getPerformanceInsightsKMSKeyId().equals(this.getPerformanceInsightsKMSKeyId()) == false)
             return false;
+        if (other.getEnableCloudwatchLogsExports() == null ^ this.getEnableCloudwatchLogsExports() == null)
+            return false;
+        if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
+            return false;
         return true;
     }
 
@@ -11808,6 +12216,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getEnablePerformanceInsights() == null) ? 0 : getEnablePerformanceInsights().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
+        hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         return hashCode;
     }
 

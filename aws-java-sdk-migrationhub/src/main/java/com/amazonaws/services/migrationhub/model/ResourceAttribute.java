@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,41 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Attribute associated with a resource.
  * </p>
+ * <p>
+ * Note the corresponding format required per type listed below:
+ * </p>
+ * <dl>
+ * <dt>IPV4</dt>
+ * <dd>
+ * <p>
+ * <code>x.x.x.x</code>
+ * </p>
+ * <p>
+ * <i>where x is an integer in the range [0,255]</i>
+ * </p>
+ * </dd>
+ * <dt>IPV6</dt>
+ * <dd>
+ * <p>
+ * <code>y : y : y : y : y : y : y : y</code>
+ * </p>
+ * <p>
+ * <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i>
+ * </p>
+ * </dd>
+ * <dt>MAC_ADDRESS</dt>
+ * <dd>
+ * <p>
+ * <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code>
+ * </p>
+ * </dd>
+ * <dt>FQDN</dt>
+ * <dd>
+ * <p>
+ * <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code>
+ * </p>
+ * </dd>
+ * </dl>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ResourceAttribute" target="_top">AWS
  *      API Documentation</a>

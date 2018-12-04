@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DescribeCopyProductStatusResult extends com.amazonaws.AmazonWebServ
     private String copyProductStatus;
     /**
      * <p>
-     * The ID of the copied product.
+     * The identifier of the copied product.
      * </p>
      */
     private String targetProductId;
@@ -103,11 +103,11 @@ public class DescribeCopyProductStatusResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the copied product.
+     * The identifier of the copied product.
      * </p>
      * 
      * @param targetProductId
-     *        The ID of the copied product.
+     *        The identifier of the copied product.
      */
 
     public void setTargetProductId(String targetProductId) {
@@ -116,10 +116,10 @@ public class DescribeCopyProductStatusResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the copied product.
+     * The identifier of the copied product.
      * </p>
      * 
-     * @return The ID of the copied product.
+     * @return The identifier of the copied product.
      */
 
     public String getTargetProductId() {
@@ -128,11 +128,11 @@ public class DescribeCopyProductStatusResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the copied product.
+     * The identifier of the copied product.
      * </p>
      * 
      * @param targetProductId
-     *        The ID of the copied product.
+     *        The identifier of the copied product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

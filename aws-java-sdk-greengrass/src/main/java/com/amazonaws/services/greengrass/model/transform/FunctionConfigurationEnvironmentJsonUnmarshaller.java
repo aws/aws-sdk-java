@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,15 @@ public class FunctionConfigurationEnvironmentJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccessSysfs", targetDepth)) {
+                    context.nextToken();
+                    functionConfigurationEnvironment.setAccessSysfs(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceAccessPolicies", targetDepth)) {
+                    context.nextToken();
+                    functionConfigurationEnvironment.setResourceAccessPolicies(new ListUnmarshaller<ResourceAccessPolicy>(ResourceAccessPolicyJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("Variables", targetDepth)) {
                     context.nextToken();
                     functionConfigurationEnvironment.setVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class GetClassifierResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The requested <code>Classifier</code>.
+     * The requested classifier.
      * </p>
      */
     private Classifier classifier;
 
     /**
      * <p>
-     * The requested <code>Classifier</code>.
+     * The requested classifier.
      * </p>
      * 
      * @param classifier
-     *        The requested <code>Classifier</code>.
+     *        The requested classifier.
      */
 
     public void setClassifier(Classifier classifier) {
@@ -45,10 +45,10 @@ public class GetClassifierResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The requested <code>Classifier</code>.
+     * The requested classifier.
      * </p>
      * 
-     * @return The requested <code>Classifier</code>.
+     * @return The requested classifier.
      */
 
     public Classifier getClassifier() {
@@ -57,11 +57,11 @@ public class GetClassifierResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The requested <code>Classifier</code>.
+     * The requested classifier.
      * </p>
      * 
      * @param classifier
-     *        The requested <code>Classifier</code>.
+     *        The requested classifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

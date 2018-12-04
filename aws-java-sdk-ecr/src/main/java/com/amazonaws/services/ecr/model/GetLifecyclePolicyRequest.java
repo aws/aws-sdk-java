@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class GetLifecyclePolicyRequest extends com.amazonaws.AmazonWebServiceReq
     private String registryId;
     /**
      * <p>
-     * The name of the repository with the policy to retrieve.
+     * The name of the repository.
      * </p>
      */
     private String repositoryName;
@@ -87,11 +87,11 @@ public class GetLifecyclePolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the repository with the policy to retrieve.
+     * The name of the repository.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository with the policy to retrieve.
+     *        The name of the repository.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -100,10 +100,10 @@ public class GetLifecyclePolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the repository with the policy to retrieve.
+     * The name of the repository.
      * </p>
      * 
-     * @return The name of the repository with the policy to retrieve.
+     * @return The name of the repository.
      */
 
     public String getRepositoryName() {
@@ -112,11 +112,11 @@ public class GetLifecyclePolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the repository with the policy to retrieve.
+     * The name of the repository.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository with the policy to retrieve.
+     *        The name of the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

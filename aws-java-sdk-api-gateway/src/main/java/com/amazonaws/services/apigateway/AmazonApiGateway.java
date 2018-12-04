@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,9 @@ import com.amazonaws.services.apigateway.model.*;
  * <p>
  * <fullname>Amazon API Gateway</fullname>
  * <p>
- * Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. Amazon
- * API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon
- * EC2, or other publicly addressable web services that are hosted outside of AWS.
+ * Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. API
+ * Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2,
+ * or other publicly addressable web services that are hosted outside of AWS.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -153,7 +153,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param createBasePathMappingRequest
-     *        Requests Amazon API Gateway to create a new <a>BasePathMapping</a> resource.
+     *        Requests API Gateway to create a new <a>BasePathMapping</a> resource.
      * @return Result of the CreateBasePathMapping operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -176,7 +176,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param createDeploymentRequest
-     *        Requests Amazon API Gateway to create a <a>Deployment</a> resource.
+     *        Requests API Gateway to create a <a>Deployment</a> resource.
      * @return Result of the CreateDeployment operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -315,7 +315,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param createResourceRequest
-     *        Requests Amazon API Gateway to create a <a>Resource</a> resource.
+     *        Requests API Gateway to create a <a>Resource</a> resource.
      * @return Result of the CreateResource operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -361,7 +361,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param createStageRequest
-     *        Requests Amazon API Gateway to create a <a>Stage</a> resource.
+     *        Requests API Gateway to create a <a>Stage</a> resource.
      * @return Result of the CreateStage operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -429,6 +429,29 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.CreateUsagePlanKey
      */
     CreateUsagePlanKeyResult createUsagePlanKey(CreateUsagePlanKeyRequest createUsagePlanKeyRequest);
+
+    /**
+     * <p>
+     * Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that typically
+     * takes 2-4 minutes to complete and become operational. The caller must have permissions to create and update VPC
+     * Endpoint services.
+     * </p>
+     * 
+     * @param createVpcLinkRequest
+     *        Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that
+     *        typically takes 2-4 minutes to complete and become operational. The caller must have permissions to create
+     *        and update VPC Endpoint services.
+     * @return Result of the CreateVpcLink operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.CreateVpcLink
+     */
+    CreateVpcLinkResult createVpcLink(CreateVpcLinkRequest createVpcLinkRequest);
 
     /**
      * <p>
@@ -524,7 +547,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param deleteDeploymentRequest
-     *        Requests Amazon API Gateway to delete a <a>Deployment</a> resource.
+     *        Requests API Gateway to delete a <a>Deployment</a> resource.
      * @return Result of the DeleteDeployment operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -802,7 +825,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param deleteStageRequest
-     *        Requests Amazon API Gateway to delete a <a>Stage</a> resource.
+     *        Requests API Gateway to delete a <a>Stage</a> resource.
      * @return Result of the DeleteStage operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -864,6 +887,27 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Deletes an existing <a>VpcLink</a> of a specified identifier.
+     * </p>
+     * 
+     * @param deleteVpcLinkRequest
+     *        Deletes an existing <a>VpcLink</a> of a specified identifier.
+     * @return Result of the DeleteVpcLink operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @sample AmazonApiGateway.DeleteVpcLink
+     */
+    DeleteVpcLinkResult deleteVpcLink(DeleteVpcLinkRequest deleteVpcLinkRequest);
+
+    /**
+     * <p>
      * Flushes all authorizer cache entries on a stage.
      * </p>
      * 
@@ -889,7 +933,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param flushStageCacheRequest
-     *        Requests Amazon API Gateway to flush a stage's cache.
+     *        Requests API Gateway to flush a stage's cache.
      * @return Result of the FlushStageCache operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -928,7 +972,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param getAccountRequest
-     *        Requests Amazon API Gateway to get information about the current <a>Account</a> resource.
+     *        Requests API Gateway to get information about the current <a>Account</a> resource.
      * @return Result of the GetAccount operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -1099,7 +1143,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param getDeploymentRequest
-     *        Requests Amazon API Gateway to get information about a <a>Deployment</a> resource.
+     *        Requests API Gateway to get information about a <a>Deployment</a> resource.
      * @return Result of the GetDeployment operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -1120,7 +1164,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param getDeploymentsRequest
-     *        Requests Amazon API Gateway to get information about a <a>Deployments</a> collection.
+     *        Requests API Gateway to get information about a <a>Deployments</a> collection.
      * @return Result of the GetDeployments operation returned by the service.
      * @throws BadRequestException
      *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
@@ -1283,13 +1327,13 @@ public interface AmazonApiGateway {
     /**
      * <p>
      * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any
-     * definitions for gateway responses, the result will be the Amazon API Gateway-generated default
-     * <a>GatewayResponses</a> collection for the supported response types.
+     * definitions for gateway responses, the result will be the API Gateway-generated default <a>GatewayResponses</a>
+     * collection for the supported response types.
      * </p>
      * 
      * @param getGatewayResponsesRequest
      *        Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added
-     *        any definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     *        any definitions for gateway responses, the result will be the API Gateway-generated default
      *        <a>GatewayResponses</a> collection for the supported response types.
      * @return Result of the GetGatewayResponses operation returned by the service.
      * @throws BadRequestException
@@ -1307,11 +1351,11 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
-     * Represents a get integration.
+     * Get the integration settings.
      * </p>
      * 
      * @param getIntegrationRequest
-     *        Represents a get integration request.
+     *        Represents a request to get the integration configuration.
      * @return Result of the GetIntegration operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -1607,7 +1651,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param getStageRequest
-     *        Requests Amazon API Gateway to get information about a <a>Stage</a> resource.
+     *        Requests API Gateway to get information about a <a>Stage</a> resource.
      * @return Result of the GetStage operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -1625,7 +1669,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param getStagesRequest
-     *        Requests Amazon API Gateway to get information about one or more <a>Stage</a> resources.
+     *        Requests API Gateway to get information about one or more <a>Stage</a> resources.
      * @return Result of the GetStages operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -1636,6 +1680,29 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.GetStages
      */
     GetStagesResult getStages(GetStagesRequest getStagesRequest);
+
+    /**
+     * <p>
+     * Gets the Tags collection for a given resource.
+     * </p>
+     * 
+     * @param getTagsRequest
+     *        Gets the Tags collection for a given resource.
+     * @return Result of the GetTags operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws LimitExceededException
+     *         The request exceeded the rate limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.GetTags
+     */
+    GetTagsResult getTags(GetTagsRequest getTagsRequest);
 
     /**
      * <p>
@@ -1746,6 +1813,43 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Gets a specified VPC link under the caller's account in a region.
+     * </p>
+     * 
+     * @param getVpcLinkRequest
+     *        Gets a specified VPC link under the caller's account in a region.
+     * @return Result of the GetVpcLink operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.GetVpcLink
+     */
+    GetVpcLinkResult getVpcLink(GetVpcLinkRequest getVpcLinkRequest);
+
+    /**
+     * <p>
+     * Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+     * </p>
+     * 
+     * @param getVpcLinksRequest
+     *        Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+     * @return Result of the GetVpcLinks operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.GetVpcLinks
+     */
+    GetVpcLinksResult getVpcLinks(GetVpcLinksRequest getVpcLinksRequest);
+
+    /**
+     * <p>
      * Import API keys from an external source, such as a CSV-formatted file.
      * </p>
      * 
@@ -1790,11 +1894,11 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
-     * A feature of the Amazon API Gateway control service for creating a new API from an external API definition file.
+     * A feature of the API Gateway control service for creating a new API from an external API definition file.
      * </p>
      * 
      * @param importRestApiRequest
-     *        A POST request to import an API to Amazon API Gateway using an input of an API definition file.
+     *        A POST request to import an API to API Gateway using an input of an API definition file.
      * @return Result of the ImportRestApi operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -1936,7 +2040,7 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
-     * A feature of the Amazon API Gateway control service for updating an existing API with an input of external API
+     * A feature of the API Gateway control service for updating an existing API with an input of external API
      * definitions. The update can take the form of merging the supplied definition into the existing API or overwriting
      * the existing API.
      * </p>
@@ -1960,6 +2064,31 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.PutRestApi
      */
     PutRestApiResult putRestApi(PutRestApiRequest putRestApiRequest);
+
+    /**
+     * <p>
+     * Adds or updates Tags on a gievn resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Adds or updates Tags on a gievn resource.
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws LimitExceededException
+     *         The request exceeded the rate limit. Retry after the specified time period.
+     * @throws ConflictException
+     *         The request configuration has conflicts. For details, see the accompanying error message.
+     * @sample AmazonApiGateway.TagResource
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
      * <p>
@@ -2010,11 +2139,34 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Removes Tags from a given resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Removes Tags from a given resource.
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws ConflictException
+     *         The request configuration has conflicts. For details, see the accompanying error message.
+     * @sample AmazonApiGateway.UntagResource
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Changes information about the current <a>Account</a> resource.
      * </p>
      * 
      * @param updateAccountRequest
-     *        Requests Amazon API Gateway to change information about the current <a>Account</a> resource.
+     *        Requests API Gateway to change information about the current <a>Account</a> resource.
      * @return Result of the UpdateAccount operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2125,7 +2277,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param updateDeploymentRequest
-     *        Requests Amazon API Gateway to change information about a <a>Deployment</a> resource.
+     *        Requests API Gateway to change information about a <a>Deployment</a> resource.
      * @return Result of the UpdateDeployment operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2417,7 +2569,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param updateStageRequest
-     *        Requests Amazon API Gateway to change information about a <a>Stage</a> resource.
+     *        Requests API Gateway to change information about a <a>Stage</a> resource.
      * @return Result of the UpdateStage operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2478,6 +2630,29 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.UpdateUsagePlan
      */
     UpdateUsagePlanResult updateUsagePlan(UpdateUsagePlanRequest updateUsagePlanRequest);
+
+    /**
+     * <p>
+     * Updates an existing <a>VpcLink</a> of a specified identifier.
+     * </p>
+     * 
+     * @param updateVpcLinkRequest
+     *        Updates an existing <a>VpcLink</a> of a specified identifier.
+     * @return Result of the UpdateVpcLink operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws ConflictException
+     *         The request configuration has conflicts. For details, see the accompanying error message.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.UpdateVpcLink
+     */
+    UpdateVpcLinkResult updateVpcLink(UpdateVpcLinkRequest updateVpcLinkRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

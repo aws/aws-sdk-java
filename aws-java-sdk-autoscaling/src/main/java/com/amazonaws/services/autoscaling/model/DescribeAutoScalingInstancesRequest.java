@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 50.
      * </p>
      */
     private Integer maxRecords;
@@ -128,12 +128,11 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 50.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is
-     *        100.
+     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is 50.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -142,11 +141,11 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 50.
      * </p>
      * 
      * @return The maximum number of items to return with this call. The default value is 50 and the maximum value is
-     *         100.
+     *         50.
      */
 
     public Integer getMaxRecords() {
@@ -155,12 +154,11 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 50.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is
-     *        100.
+     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

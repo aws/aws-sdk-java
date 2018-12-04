@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,45 +98,44 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable guide:
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Classic Load Balancers: <a
+     * Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
-     * >DescribeLoadBalancers</a>
+     * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Application and Network Load Balancers: <a
+     * Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     * >DescribeLoadBalancers</a>
+     * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or <code>CanonicalHostedZoneNameID</code>
-     * (for Application and Network Load Balancers). For more information, see the applicable guide:
+     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see
+     * the applicable guide:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Classic Load Balancers: <a
+     * Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
-     * >describe-load-balancers</a>
+     * >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Application and Network Load Balancers: <a
+     * Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html"
-     * >describe-load-balancers</a>
+     * >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
      * </ul>
@@ -420,46 +419,44 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable guide:
+     *        <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For
+     *        more information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Classic Load Balancers: <a href=
+     *        Classic Load Balancers: Use <a href=
      *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
-     *        >DescribeLoadBalancers</a>
+     *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Application and Network Load Balancers: <a href=
+     *        Application and Network Load Balancers: Use <a href=
      *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     *        >DescribeLoadBalancers</a>
+     *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     *        <code>CanonicalHostedZoneNameID</code> (for Application and Network Load Balancers). For more information,
-     *        see the applicable guide:
+     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more
+     *        information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Classic Load Balancers: <a
+     *        Classic Load Balancers: Use <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
-     *        >describe-load-balancers</a>
+     *        >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Application and Network Load Balancers: <a
+     *        Application and Network Load Balancers: Use <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html"
-     *        >describe-load-balancers</a>
+     *        >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -664,45 +661,44 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable guide:
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Classic Load Balancers: <a
+     * Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
-     * >DescribeLoadBalancers</a>
+     * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Application and Network Load Balancers: <a
+     * Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     * >DescribeLoadBalancers</a>
+     * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or <code>CanonicalHostedZoneNameID</code>
-     * (for Application and Network Load Balancers). For more information, see the applicable guide:
+     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see
+     * the applicable guide:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Classic Load Balancers: <a
+     * Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
-     * >describe-load-balancers</a>
+     * >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Application and Network Load Balancers: <a
+     * Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html"
-     * >describe-load-balancers</a>
+     * >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
      * </ul>
@@ -774,46 +770,44 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable guide:
+     *        <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For
+     *        more information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Classic Load Balancers: <a href=
+     *        Classic Load Balancers: Use <a href=
      *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
-     *        >DescribeLoadBalancers</a>
+     *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Application and Network Load Balancers: <a href=
+     *        Application and Network Load Balancers: Use <a href=
      *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     *        >DescribeLoadBalancers</a>
+     *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     *        <code>CanonicalHostedZoneNameID</code> (for Application and Network Load Balancers). For more information,
-     *        see the applicable guide:
+     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more
+     *        information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Classic Load Balancers: <a
+     *        Classic Load Balancers: Use <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
-     *        >describe-load-balancers</a>
+     *        >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Application and Network Load Balancers: <a
+     *        Application and Network Load Balancers: Use <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html"
-     *        >describe-load-balancers</a>
+     *        >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -889,45 +883,44 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable guide:
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Classic Load Balancers: <a
+     * Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
-     * >DescribeLoadBalancers</a>
+     * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Application and Network Load Balancers: <a
+     * Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     * >DescribeLoadBalancers</a>
+     * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or <code>CanonicalHostedZoneNameID</code>
-     * (for Application and Network Load Balancers). For more information, see the applicable guide:
+     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see
+     * the applicable guide:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Classic Load Balancers: <a
+     * Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
-     * >describe-load-balancers</a>
+     * >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Application and Network Load Balancers: <a
+     * Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html"
-     * >describe-load-balancers</a>
+     * >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
      * </ul>
@@ -998,46 +991,44 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     *         <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable guide:
+     *         <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value.
+     *         For more information, see the applicable guide:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Classic Load Balancers: <a href=
+     *         Classic Load Balancers: Use <a href=
      *         "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
-     *         >DescribeLoadBalancers</a>
+     *         >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Application and Network Load Balancers: <a href=
+     *         Application and Network Load Balancers: Use <a href=
      *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     *         >DescribeLoadBalancers</a>
+     *         >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of
-     *         <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     *         <code>CanonicalHostedZoneNameID</code> (for Application and Network Load Balancers). For more
+     *         <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more
      *         information, see the applicable guide:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Classic Load Balancers: <a
+     *         Classic Load Balancers: Use <a
      *         href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
-     *         >describe-load-balancers</a>
+     *         >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Application and Network Load Balancers: <a
+     *         Application and Network Load Balancers: Use <a
      *         href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html"
-     *         >describe-load-balancers</a>
+     *         >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -1113,45 +1104,44 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable guide:
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Classic Load Balancers: <a
+     * Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
-     * >DescribeLoadBalancers</a>
+     * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Application and Network Load Balancers: <a
+     * Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     * >DescribeLoadBalancers</a>
+     * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or <code>CanonicalHostedZoneNameID</code>
-     * (for Application and Network Load Balancers). For more information, see the applicable guide:
+     * <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see
+     * the applicable guide:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Classic Load Balancers: <a
+     * Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
-     * >describe-load-balancers</a>
+     * >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Application and Network Load Balancers: <a
+     * Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html"
-     * >describe-load-balancers</a>
+     * >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
      * </ul>
@@ -1223,46 +1213,44 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable guide:
+     *        <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For
+     *        more information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Classic Load Balancers: <a href=
+     *        Classic Load Balancers: Use <a href=
      *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
-     *        >DescribeLoadBalancers</a>
+     *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Application and Network Load Balancers: <a href=
+     *        Application and Network Load Balancers: Use <a href=
      *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     *        >DescribeLoadBalancers</a>
+     *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     *        <code>CanonicalHostedZoneNameID</code> (for Application and Network Load Balancers). For more information,
-     *        see the applicable guide:
+     *        <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more
+     *        information, see the applicable guide:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Classic Load Balancers: <a
+     *        Classic Load Balancers: Use <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
-     *        >describe-load-balancers</a>
+     *        >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Application and Network Load Balancers: <a
+     *        Application and Network Load Balancers: Use <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html"
-     *        >describe-load-balancers</a>
+     *        >describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
      *        </ul>

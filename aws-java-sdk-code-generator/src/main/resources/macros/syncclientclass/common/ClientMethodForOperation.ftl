@@ -1,4 +1,4 @@
-<#macro content metadata operationModel>
+<#macro content metadata operationModel customConfig>
 
     ${operationModel.getSyncDocumentation(metadata)!""}
     @Override
@@ -34,6 +34,7 @@
                     super.beforeMarshalling(${operationModel.input.variableName}));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -43,8 +44,15 @@
                 response = <@ClientInvokeMethodInvocation.content operationModel />
 
 
-                <#-- This macro is used in glacier for wrapping the response streams -->
+                <#if customConfig.serviceClientHoldInputStream
+                     && operationModel.outputShape??
+                     && operationModel.outputShape.hasStreamingMember>
+                    response.getAwsResponse().${operationModel.outputShape.payloadMember.setterMethodName}(
+                    new com.amazonaws.util.ServiceClientHolderInputStream(response.getAwsResponse().${operationModel.outputShape.payloadMember.getterMethodName}(),
+                                                     this));
 
+                </#if>
+                <#-- This macro is used in glacier for wrapping the response streams -->
                 <#if WrapResponseStreamMacro?has_content>
                     <@WrapResponseStreamMacro.content operationModel/>
                 </#if>

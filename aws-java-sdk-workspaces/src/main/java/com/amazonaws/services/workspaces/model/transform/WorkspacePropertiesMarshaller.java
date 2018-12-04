@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class WorkspacePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RunningMode").build();
     private static final MarshallingInfo<Integer> RUNNINGMODEAUTOSTOPTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RunningModeAutoStopTimeoutInMinutes").build();
+    private static final MarshallingInfo<Integer> ROOTVOLUMESIZEGIB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootVolumeSizeGib").build();
+    private static final MarshallingInfo<Integer> USERVOLUMESIZEGIB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserVolumeSizeGib").build();
+    private static final MarshallingInfo<String> COMPUTETYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeTypeName").build();
 
     private static final WorkspacePropertiesMarshaller instance = new WorkspacePropertiesMarshaller();
 
@@ -50,6 +56,9 @@ public class WorkspacePropertiesMarshaller {
         try {
             protocolMarshaller.marshall(workspaceProperties.getRunningMode(), RUNNINGMODE_BINDING);
             protocolMarshaller.marshall(workspaceProperties.getRunningModeAutoStopTimeoutInMinutes(), RUNNINGMODEAUTOSTOPTIMEOUTINMINUTES_BINDING);
+            protocolMarshaller.marshall(workspaceProperties.getRootVolumeSizeGib(), ROOTVOLUMESIZEGIB_BINDING);
+            protocolMarshaller.marshall(workspaceProperties.getUserVolumeSizeGib(), USERVOLUMESIZEGIB_BINDING);
+            protocolMarshaller.marshall(workspaceProperties.getComputeTypeName(), COMPUTETYPENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

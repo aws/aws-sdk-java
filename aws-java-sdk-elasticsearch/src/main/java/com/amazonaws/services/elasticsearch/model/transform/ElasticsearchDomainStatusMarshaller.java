@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,8 @@ public class ElasticsearchDomainStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
     private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCOptions").build();
+    private static final MarshallingInfo<StructuredPojo> ENCRYPTIONATRESTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAtRestOptions").build();
     private static final MarshallingInfo<Map> ADVANCEDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AdvancedOptions").build();
     private static final MarshallingInfo<Map> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -92,6 +94,7 @@ public class ElasticsearchDomainStatusMarshaller {
             protocolMarshaller.marshall(elasticsearchDomainStatus.getAccessPolicies(), ACCESSPOLICIES_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getVPCOptions(), VPCOPTIONS_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainStatus.getEncryptionAtRestOptions(), ENCRYPTIONATRESTOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
         } catch (Exception e) {

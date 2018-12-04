@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,8 +71,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Copies the input published schema into the <a>Directory</a> with the same name and version as that of the
-     * published schema .
+     * Copies the input published schema, at the specified version, into the <a>Directory</a> with the same name and
+     * version as that of the published schema.
      * </p>
      * 
      * @param applySchemaRequest
@@ -85,8 +85,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Copies the input published schema into the <a>Directory</a> with the same name and version as that of the
-     * published schema .
+     * Copies the input published schema, at the specified version, into the <a>Directory</a> with the same name and
+     * version as that of the published schema.
      * </p>
      * 
      * @param applySchemaRequest
@@ -287,8 +287,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Performs all the write operations in a batch. Either all the operations succeed or none. Batch writes supports
-     * only object-related operations.
+     * Performs all the write operations in a batch. Either all the operations succeed or none.
      * </p>
      * 
      * @param batchWriteRequest
@@ -301,8 +300,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Performs all the write operations in a batch. Either all the operations succeed or none. Batch writes supports
-     * only object-related operations.
+     * Performs all the write operations in a batch. Either all the operations succeed or none.
      * </p>
      * 
      * @param batchWriteRequest
@@ -917,6 +915,37 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Returns current applied schema version ARN, including the minor version in use.
+     * </p>
+     * 
+     * @param getAppliedSchemaVersionRequest
+     * @return A Java Future containing the result of the GetAppliedSchemaVersion operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.GetAppliedSchemaVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAppliedSchemaVersionResult> getAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest getAppliedSchemaVersionRequest);
+
+    /**
+     * <p>
+     * Returns current applied schema version ARN, including the minor version in use.
+     * </p>
+     * 
+     * @param getAppliedSchemaVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAppliedSchemaVersion operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.GetAppliedSchemaVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAppliedSchemaVersionResult> getAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest getAppliedSchemaVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAppliedSchemaVersionRequest, GetAppliedSchemaVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves metadata about a directory.
      * </p>
      * 
@@ -1086,7 +1115,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists schemas applied to a directory.
+     * Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided, lists the minor
+     * version.
      * </p>
      * 
      * @param listAppliedSchemaArnsRequest
@@ -1099,7 +1129,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists schemas applied to a directory.
+     * Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided, lists the minor
+     * version.
      * </p>
      * 
      * @param listAppliedSchemaArnsRequest
@@ -1117,7 +1148,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists indices attached to an object.
+     * Lists indices attached to the specified object.
      * </p>
      * 
      * @param listAttachedIndicesRequest
@@ -1130,7 +1161,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists indices attached to an object.
+     * Lists indices attached to the specified object.
      * </p>
      * 
      * @param listAttachedIndicesRequest
@@ -1311,7 +1342,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists objects attached to the specified index.
+     * Lists objects and indexed values attached to the index.
      * </p>
      * 
      * @param listIndexRequest
@@ -1324,7 +1355,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists objects attached to the specified index.
+     * Lists objects and indexed values attached to the index.
      * </p>
      * 
      * @param listIndexRequest
@@ -1585,7 +1616,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Retrieves each published schema Amazon Resource Name (ARN).
+     * Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided, lists the minor
+     * version.
      * </p>
      * 
      * @param listPublishedSchemaArnsRequest
@@ -1598,7 +1630,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Retrieves each published schema Amazon Resource Name (ARN).
+     * Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided, lists the minor
+     * version.
      * </p>
      * 
      * @param listPublishedSchemaArnsRequest
@@ -1766,9 +1799,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Publishes a development schema with a version. If description and attributes are specified,
-     * <code>PublishSchema</code> overrides the development schema description and attributes. If not, the development
-     * schema description and attributes are used.
+     * Publishes a development schema with a major version and a recommended minor version.
      * </p>
      * 
      * @param publishSchemaRequest
@@ -1781,9 +1812,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Publishes a development schema with a version. If description and attributes are specified,
-     * <code>PublishSchema</code> overrides the development schema description and attributes. If not, the development
-     * schema description and attributes are used.
+     * Publishes a development schema with a major version and a recommended minor version.
      * </p>
      * 
      * @param publishSchemaRequest
@@ -2088,5 +2117,77 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      */
     java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest updateTypedLinkFacetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTypedLinkFacetRequest, UpdateTypedLinkFacetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with schema updates found in
+     * <code>MinorVersion</code>. Backwards-compatible minor version upgrades are instantaneously available for readers
+     * on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given
+     * directory per call. To upgrade multiple directories from one schema, you would need to call this API on each
+     * directory.
+     * </p>
+     * 
+     * @param upgradeAppliedSchemaRequest
+     * @return A Java Future containing the result of the UpgradeAppliedSchema operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.UpgradeAppliedSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpgradeAppliedSchemaResult> upgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest upgradeAppliedSchemaRequest);
+
+    /**
+     * <p>
+     * Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with schema updates found in
+     * <code>MinorVersion</code>. Backwards-compatible minor version upgrades are instantaneously available for readers
+     * on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given
+     * directory per call. To upgrade multiple directories from one schema, you would need to call this API on each
+     * directory.
+     * </p>
+     * 
+     * @param upgradeAppliedSchemaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpgradeAppliedSchema operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.UpgradeAppliedSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpgradeAppliedSchemaResult> upgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest upgradeAppliedSchemaRequest,
+            com.amazonaws.handlers.AsyncHandler<UpgradeAppliedSchemaRequest, UpgradeAppliedSchemaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Upgrades a published schema under a new minor version revision using the current contents of
+     * <code>DevelopmentSchemaArn</code>.
+     * </p>
+     * 
+     * @param upgradePublishedSchemaRequest
+     * @return A Java Future containing the result of the UpgradePublishedSchema operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.UpgradePublishedSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpgradePublishedSchemaResult> upgradePublishedSchemaAsync(UpgradePublishedSchemaRequest upgradePublishedSchemaRequest);
+
+    /**
+     * <p>
+     * Upgrades a published schema under a new minor version revision using the current contents of
+     * <code>DevelopmentSchemaArn</code>.
+     * </p>
+     * 
+     * @param upgradePublishedSchemaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpgradePublishedSchema operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.UpgradePublishedSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpgradePublishedSchemaResult> upgradePublishedSchemaAsync(UpgradePublishedSchemaRequest upgradePublishedSchemaRequest,
+            com.amazonaws.handlers.AsyncHandler<UpgradePublishedSchemaRequest, UpgradePublishedSchemaResult> asyncHandler);
 
 }

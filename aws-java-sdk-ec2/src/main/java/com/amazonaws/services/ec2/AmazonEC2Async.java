@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,8 @@ import com.amazonaws.services.ec2.model.*;
  * <p>
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS)
- * cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy
- * applications faster.
+ * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the AWS Cloud. Using Amazon EC2
+ * eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -76,9 +75,48 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Accepts one or more interface VPC endpoint connection requests to your VPC endpoint service.
+     * </p>
+     * 
+     * @param acceptVpcEndpointConnectionsRequest
+     * @return A Java Future containing the result of the AcceptVpcEndpointConnections operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.AcceptVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptVpcEndpointConnectionsResult> acceptVpcEndpointConnectionsAsync(
+            AcceptVpcEndpointConnectionsRequest acceptVpcEndpointConnectionsRequest);
+
+    /**
+     * <p>
+     * Accepts one or more interface VPC endpoint connection requests to your VPC endpoint service.
+     * </p>
+     * 
+     * @param acceptVpcEndpointConnectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptVpcEndpointConnections operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.AcceptVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptVpcEndpointConnectionsResult> acceptVpcEndpointConnectionsAsync(
+            AcceptVpcEndpointConnectionsRequest acceptVpcEndpointConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptVpcEndpointConnectionsRequest, AcceptVpcEndpointConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the
      * <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use
      * <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering connection requests.
+     * </p>
+     * <p>
+     * For an inter-region VPC peering connection request, you must accept the VPC peering connection in the region of
+     * the accepter VPC.
      * </p>
      * 
      * @param acceptVpcPeeringConnectionRequest
@@ -96,6 +134,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the
      * <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use
      * <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering connection requests.
+     * </p>
+     * <p>
+     * For an inter-region VPC peering connection request, you must accept the VPC peering connection in the region of
+     * the accepter VPC.
      * </p>
      * 
      * @param acceptVpcPeeringConnectionRequest
@@ -1347,12 +1389,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Cancels the specified Spot fleet requests.
+     * Cancels the specified Spot Fleet requests.
      * </p>
      * <p>
-     * After you cancel a Spot fleet request, the Spot fleet launches no new Spot instances. You must specify whether
-     * the Spot fleet should also terminate its Spot instances. If you terminate the instances, the Spot fleet request
-     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot fleet request enters the
+     * After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances. You must specify whether
+     * the Spot Fleet should also terminate its Spot Instances. If you terminate the instances, the Spot Fleet request
+     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the
      * <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you
      * terminate them manually.
      * </p>
@@ -1368,12 +1410,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Cancels the specified Spot fleet requests.
+     * Cancels the specified Spot Fleet requests.
      * </p>
      * <p>
-     * After you cancel a Spot fleet request, the Spot fleet launches no new Spot instances. You must specify whether
-     * the Spot fleet should also terminate its Spot instances. If you terminate the instances, the Spot fleet request
-     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot fleet request enters the
+     * After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances. You must specify whether
+     * the Spot Fleet should also terminate its Spot Instances. If you terminate the instances, the Spot Fleet request
+     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the
      * <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you
      * terminate them manually.
      * </p>
@@ -1394,15 +1436,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Cancels one or more Spot instance requests. Spot instances are instances that Amazon EC2 starts on your behalf
-     * when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically sets the Spot price
-     * based on available Spot instance capacity and current Spot instance requests. For more information, see <a
+     * Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * Canceling a Spot instance request does not terminate running Spot instances associated with the request.
+     * Canceling a Spot Instance request does not terminate running Spot Instances associated with the request.
      * </p>
      * </important>
      * 
@@ -1418,15 +1459,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Cancels one or more Spot instance requests. Spot instances are instances that Amazon EC2 starts on your behalf
-     * when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically sets the Spot price
-     * based on available Spot instance capacity and current Spot instance requests. For more information, see <a
+     * Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * Canceling a Spot instance request does not terminate running Spot instances associated with the request.
+     * Canceling a Spot Instance request does not terminate running Spot Instances associated with the request.
      * </p>
      * </important>
      * 
@@ -2007,6 +2047,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * In your request, you must also specify an IAM role that has permission to publish logs to CloudWatch Logs.
      * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC Flow
+     * Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
      * 
      * @param createFlowLogsRequest
      *        Contains the parameters for CreateFlowLogs.
@@ -2027,6 +2071,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * In your request, you must also specify an IAM role that has permission to publish logs to CloudWatch Logs.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC Flow
+     * Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createFlowLogsRequest
@@ -2249,20 +2297,19 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public key and displays the
-     * private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#8 private
+     * private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#1 private
      * key. If a key with the specified name already exists, Amazon EC2 returns an error.
      * </p>
      * <p>
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
-     * The key pair returned to you is available only in the region in which you create it. To create a key pair that is
-     * available in all regions, use <a>ImportKeyPair</a>.
+     * The key pair returned to you is available only in the region in which you create it. If you prefer, you can
+     * create your own key pair using a third-party tool and upload it to any region using <a>ImportKeyPair</a>.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+     * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -2277,20 +2324,19 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public key and displays the
-     * private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#8 private
+     * private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#1 private
      * key. If a key with the specified name already exists, Amazon EC2 returns an error.
      * </p>
      * <p>
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
-     * The key pair returned to you is available only in the region in which you create it. To create a key pair that is
-     * available in all regions, use <a>ImportKeyPair</a>.
+     * The key pair returned to you is available only in the region in which you create it. If you prefer, you can
+     * create your own key pair using a third-party tool and upload it to any region using <a>ImportKeyPair</a>.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+     * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -2306,6 +2352,84 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<CreateKeyPairResult> createKeyPairAsync(CreateKeyPairRequest createKeyPairRequest,
             com.amazonaws.handlers.AsyncHandler<CreateKeyPairRequest, CreateKeyPairResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a launch template. A launch template contains the parameters to launch an instance. When you launch an
+     * instance using <a>RunInstances</a>, you can specify a launch template instead of providing the launch parameters
+     * in the request.
+     * </p>
+     * 
+     * @param createLaunchTemplateRequest
+     * @return A Java Future containing the result of the CreateLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2Async.CreateLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLaunchTemplateResult> createLaunchTemplateAsync(CreateLaunchTemplateRequest createLaunchTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a launch template. A launch template contains the parameters to launch an instance. When you launch an
+     * instance using <a>RunInstances</a>, you can specify a launch template instead of providing the launch parameters
+     * in the request.
+     * </p>
+     * 
+     * @param createLaunchTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLaunchTemplateResult> createLaunchTemplateAsync(CreateLaunchTemplateRequest createLaunchTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLaunchTemplateRequest, CreateLaunchTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new version for a launch template. You can specify an existing version of launch template from which to
+     * base the new version.
+     * </p>
+     * <p>
+     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * replace the numbering of launch template versions.
+     * </p>
+     * 
+     * @param createLaunchTemplateVersionRequest
+     * @return A Java Future containing the result of the CreateLaunchTemplateVersion operation returned by the service.
+     * @sample AmazonEC2Async.CreateLaunchTemplateVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLaunchTemplateVersionResult> createLaunchTemplateVersionAsync(
+            CreateLaunchTemplateVersionRequest createLaunchTemplateVersionRequest);
+
+    /**
+     * <p>
+     * Creates a new version for a launch template. You can specify an existing version of launch template from which to
+     * base the new version.
+     * </p>
+     * <p>
+     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * replace the numbering of launch template versions.
+     * </p>
+     * 
+     * @param createLaunchTemplateVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLaunchTemplateVersion operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateLaunchTemplateVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLaunchTemplateVersionResult> createLaunchTemplateVersionAsync(
+            CreateLaunchTemplateVersionRequest createLaunchTemplateVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLaunchTemplateVersionRequest, CreateLaunchTemplateVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -2550,13 +2674,18 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a placement group that you launch cluster instances into. Give the group a name that's unique within the
-     * scope of your account.
+     * Creates a placement group in which to launch instances. The strategy of the placement group determines how the
+     * instances are organized within the group.
      * </p>
      * <p>
-     * For more information about placement groups and cluster instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that
+     * benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances
+     * on distinct hardware.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createPlacementGroupRequest
@@ -2570,13 +2699,18 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a placement group that you launch cluster instances into. Give the group a name that's unique within the
-     * scope of your account.
+     * Creates a placement group in which to launch instances. The strategy of the placement group determines how the
+     * instances are organized within the group.
      * </p>
      * <p>
-     * For more information about placement groups and cluster instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that
+     * benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances
+     * on distinct hardware.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createPlacementGroupRequest
@@ -2939,6 +3073,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * remain protected.
      * </p>
      * <p>
+     * You can tag your snapshots during creation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * </p>
+     * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
      * Elastic Block Store</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
@@ -2982,6 +3120,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * remain protected.
      * </p>
      * <p>
+     * You can tag your snapshots during creation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * </p>
+     * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
      * Elastic Block Store</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
@@ -3004,7 +3146,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a data feed for Spot instances, enabling you to view Spot instance usage logs. You can create one data
+     * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
      * feed per AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3023,7 +3165,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a data feed for Spot instances, enabling you to view Spot instance usage logs. You can create one data
+     * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
      * feed per AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3341,19 +3483,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create a private connection
-     * between your VPC and another AWS service in your account. You can create a gateway endpoint or an interface
-     * endpoint.
+     * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
+     * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+     * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * A gateway endpoint serves as a target for a route in your route table for traffic destined for the AWS service.
-     * You can specify the VPC route tables that use the endpoint, and you can optionally specify an endpoint policy to
-     * attach to the endpoint that will control access to the service from your VPC.
+     * A <code>gateway</code> endpoint serves as a target for a route in your route table for traffic destined for the
+     * AWS service. You can specify an endpoint policy to attach to the endpoint that will control access to the service
+     * from your VPC. You can also specify the VPC route tables that use the endpoint.
      * </p>
      * <p>
-     * An interface endpoint is a network interface in your subnet with a private IP address that serves as an entry
-     * point for traffic destined to the AWS service. You can specify the subnets in which to create an endpoint, and
-     * the security groups to associate with the network interface.
+     * An <code>interface</code> endpoint is a network interface in your subnet that serves as an endpoint for
+     * communicating with the specified service. You can specify the subnets in which to create an endpoint, and the
+     * security groups to associate with the endpoint network interface.
+     * </p>
+     * <p>
+     * Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
      * </p>
      * 
      * @param createVpcEndpointRequest
@@ -3367,19 +3513,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create a private connection
-     * between your VPC and another AWS service in your account. You can create a gateway endpoint or an interface
-     * endpoint.
+     * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
+     * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+     * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * A gateway endpoint serves as a target for a route in your route table for traffic destined for the AWS service.
-     * You can specify the VPC route tables that use the endpoint, and you can optionally specify an endpoint policy to
-     * attach to the endpoint that will control access to the service from your VPC.
+     * A <code>gateway</code> endpoint serves as a target for a route in your route table for traffic destined for the
+     * AWS service. You can specify an endpoint policy to attach to the endpoint that will control access to the service
+     * from your VPC. You can also specify the VPC route tables that use the endpoint.
      * </p>
      * <p>
-     * An interface endpoint is a network interface in your subnet with a private IP address that serves as an entry
-     * point for traffic destined to the AWS service. You can specify the subnets in which to create an endpoint, and
-     * the security groups to associate with the network interface.
+     * An <code>interface</code> endpoint is a network interface in your subnet that serves as an endpoint for
+     * communicating with the specified service. You can specify the subnets in which to create an endpoint, and the
+     * security groups to associate with the endpoint network interface.
+     * </p>
+     * <p>
+     * Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
      * </p>
      * 
      * @param createVpcEndpointRequest
@@ -3398,17 +3548,118 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to
-     * create the connection. The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have
-     * overlapping CIDR blocks.
+     * Creates a connection notification for a specified VPC endpoint or VPC endpoint service. A connection notification
+     * notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more
+     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a Topic</a> in the
+     * <i>Amazon Simple Notification Service Developer Guide</i>.
      * </p>
      * <p>
-     * The owner of the peer VPC must accept the peering request to activate the peering connection. The VPC peering
+     * You can create a connection notification for interface endpoints only.
+     * </p>
+     * 
+     * @param createVpcEndpointConnectionNotificationRequest
+     * @return A Java Future containing the result of the CreateVpcEndpointConnectionNotification operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.CreateVpcEndpointConnectionNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVpcEndpointConnectionNotificationResult> createVpcEndpointConnectionNotificationAsync(
+            CreateVpcEndpointConnectionNotificationRequest createVpcEndpointConnectionNotificationRequest);
+
+    /**
+     * <p>
+     * Creates a connection notification for a specified VPC endpoint or VPC endpoint service. A connection notification
+     * notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more
+     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a Topic</a> in the
+     * <i>Amazon Simple Notification Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can create a connection notification for interface endpoints only.
+     * </p>
+     * 
+     * @param createVpcEndpointConnectionNotificationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVpcEndpointConnectionNotification operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.CreateVpcEndpointConnectionNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVpcEndpointConnectionNotificationResult> createVpcEndpointConnectionNotificationAsync(
+            CreateVpcEndpointConnectionNotificationRequest createVpcEndpointConnectionNotificationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcEndpointConnectionNotificationRequest, CreateVpcEndpointConnectionNotificationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles)
+     * can connect. Service consumers can create an interface VPC endpoint to connect to your service.
+     * </p>
+     * <p>
+     * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
+     * more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+     * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createVpcEndpointServiceConfigurationRequest
+     * @return A Java Future containing the result of the CreateVpcEndpointServiceConfiguration operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.CreateVpcEndpointServiceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVpcEndpointServiceConfigurationResult> createVpcEndpointServiceConfigurationAsync(
+            CreateVpcEndpointServiceConfigurationRequest createVpcEndpointServiceConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles)
+     * can connect. Service consumers can create an interface VPC endpoint to connect to your service.
+     * </p>
+     * <p>
+     * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
+     * more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+     * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createVpcEndpointServiceConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVpcEndpointServiceConfiguration operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.CreateVpcEndpointServiceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVpcEndpointServiceConfigurationResult> createVpcEndpointServiceConfigurationAsync(
+            CreateVpcEndpointServiceConfigurationRequest createVpcEndpointServiceConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcEndpointServiceConfigurationRequest, CreateVpcEndpointServiceConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which
+     * to create the connection. The accepter VPC can belong to another AWS account and can be in a different region to
+     * the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
+     * </p>
+     * <note>
+     * <p>
+     * Limitations and rules apply to a VPC peering connection. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations"
+     * >limitations</a> section in the <i>VPC Peering Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering
      * connection request expires after 7 days, after which it cannot be accepted or rejected.
      * </p>
      * <p>
-     * If you try to create a VPC peering connection between VPCs that have overlapping CIDR blocks, the VPC peering
-     * connection status goes to <code>failed</code>.
+     * If you create a VPC peering connection request between VPCs with overlapping CIDR blocks, the VPC peering
+     * connection has a status of <code>failed</code>.
      * </p>
      * 
      * @param createVpcPeeringConnectionRequest
@@ -3423,17 +3674,24 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to
-     * create the connection. The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have
-     * overlapping CIDR blocks.
+     * Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which
+     * to create the connection. The accepter VPC can belong to another AWS account and can be in a different region to
+     * the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
      * </p>
+     * <note>
      * <p>
-     * The owner of the peer VPC must accept the peering request to activate the peering connection. The VPC peering
+     * Limitations and rules apply to a VPC peering connection. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations"
+     * >limitations</a> section in the <i>VPC Peering Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering
      * connection request expires after 7 days, after which it cannot be accepted or rejected.
      * </p>
      * <p>
-     * If you try to create a VPC peering connection between VPCs that have overlapping CIDR blocks, the VPC peering
-     * connection status goes to <code>failed</code>.
+     * If you create a VPC peering connection request between VPCs with overlapping CIDR blocks, the VPC peering
+     * connection has a status of <code>failed</code>.
      * </p>
      * 
      * @param createVpcPeeringConnectionRequest
@@ -3876,6 +4134,76 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deletes a launch template. Deleting a launch template deletes all of its versions.
+     * </p>
+     * 
+     * @param deleteLaunchTemplateRequest
+     * @return A Java Future containing the result of the DeleteLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2Async.DeleteLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLaunchTemplateResult> deleteLaunchTemplateAsync(DeleteLaunchTemplateRequest deleteLaunchTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a launch template. Deleting a launch template deletes all of its versions.
+     * </p>
+     * 
+     * @param deleteLaunchTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLaunchTemplateResult> deleteLaunchTemplateAsync(DeleteLaunchTemplateRequest deleteLaunchTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLaunchTemplateRequest, DeleteLaunchTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes one or more versions of a launch template. You cannot delete the default version of a launch template;
+     * you must first assign a different version as the default. If the default version is the only version for the
+     * launch template, you must delete the entire launch template using <a>DeleteLaunchTemplate</a>.
+     * </p>
+     * 
+     * @param deleteLaunchTemplateVersionsRequest
+     * @return A Java Future containing the result of the DeleteLaunchTemplateVersions operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteLaunchTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLaunchTemplateVersionsResult> deleteLaunchTemplateVersionsAsync(
+            DeleteLaunchTemplateVersionsRequest deleteLaunchTemplateVersionsRequest);
+
+    /**
+     * <p>
+     * Deletes one or more versions of a launch template. You cannot delete the default version of a launch template;
+     * you must first assign a different version as the default. If the default version is the only version for the
+     * launch template, you must delete the entire launch template using <a>DeleteLaunchTemplate</a>.
+     * </p>
+     * 
+     * @param deleteLaunchTemplateVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLaunchTemplateVersions operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteLaunchTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLaunchTemplateVersionsResult> deleteLaunchTemplateVersionsAsync(
+            DeleteLaunchTemplateVersionsRequest deleteLaunchTemplateVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLaunchTemplateVersionsRequest, DeleteLaunchTemplateVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its Elastic IP address, but does not
      * release the address from your account. Deleting a NAT gateway does not delete any NAT gateway routes in your
      * route tables.
@@ -4056,9 +4384,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Deletes the specified placement group. You must terminate all instances in the placement group before you can
-     * delete the placement group. For more information about placement groups and cluster instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * delete the placement group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param deletePlacementGroupRequest
@@ -4073,9 +4401,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Deletes the specified placement group. You must terminate all instances in the placement group before you can
-     * delete the placement group. For more information about placement groups and cluster instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * delete the placement group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param deletePlacementGroupRequest
@@ -4268,7 +4596,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the data feed for Spot instances.
+     * Deletes the data feed for Spot Instances.
      * </p>
      * 
      * @param deleteSpotDatafeedSubscriptionRequest
@@ -4284,7 +4612,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the data feed for Spot instances.
+     * Deletes the data feed for Spot Instances.
      * </p>
      * 
      * @param deleteSpotDatafeedSubscriptionRequest
@@ -4493,6 +4821,80 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deletes one or more VPC endpoint connection notifications.
+     * </p>
+     * 
+     * @param deleteVpcEndpointConnectionNotificationsRequest
+     * @return A Java Future containing the result of the DeleteVpcEndpointConnectionNotifications operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.DeleteVpcEndpointConnectionNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVpcEndpointConnectionNotificationsResult> deleteVpcEndpointConnectionNotificationsAsync(
+            DeleteVpcEndpointConnectionNotificationsRequest deleteVpcEndpointConnectionNotificationsRequest);
+
+    /**
+     * <p>
+     * Deletes one or more VPC endpoint connection notifications.
+     * </p>
+     * 
+     * @param deleteVpcEndpointConnectionNotificationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVpcEndpointConnectionNotifications operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.DeleteVpcEndpointConnectionNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVpcEndpointConnectionNotificationsResult> deleteVpcEndpointConnectionNotificationsAsync(
+            DeleteVpcEndpointConnectionNotificationsRequest deleteVpcEndpointConnectionNotificationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcEndpointConnectionNotificationsRequest, DeleteVpcEndpointConnectionNotificationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes one or more VPC endpoint service configurations in your account. Before you delete the endpoint service
+     * configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code> interface endpoint
+     * connections that are attached to the service.
+     * </p>
+     * 
+     * @param deleteVpcEndpointServiceConfigurationsRequest
+     * @return A Java Future containing the result of the DeleteVpcEndpointServiceConfigurations operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.DeleteVpcEndpointServiceConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVpcEndpointServiceConfigurationsResult> deleteVpcEndpointServiceConfigurationsAsync(
+            DeleteVpcEndpointServiceConfigurationsRequest deleteVpcEndpointServiceConfigurationsRequest);
+
+    /**
+     * <p>
+     * Deletes one or more VPC endpoint service configurations in your account. Before you delete the endpoint service
+     * configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code> interface endpoint
+     * connections that are attached to the service.
+     * </p>
+     * 
+     * @param deleteVpcEndpointServiceConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVpcEndpointServiceConfigurations operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.DeleteVpcEndpointServiceConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVpcEndpointServiceConfigurationsResult> deleteVpcEndpointServiceConfigurationsAsync(
+            DeleteVpcEndpointServiceConfigurationsRequest deleteVpcEndpointServiceConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcEndpointServiceConfigurationsRequest, DeleteVpcEndpointServiceConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes the endpoint routes in the
      * route tables that were associated with the endpoint. Deleting an interface endpoint deletes the endpoint network
      * interfaces.
@@ -4530,9 +4932,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete
-     * the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can delete a
-     * VPC peering connection in the <code>pending-acceptance</code> state.
+     * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can
+     * delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can
+     * delete a VPC peering connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering
+     * connection that's in the <code>failed</code> state.
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
@@ -4547,9 +4950,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete
-     * the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can delete a
-     * VPC peering connection in the <code>pending-acceptance</code> state.
+     * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can
+     * delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can
+     * delete a VPC peering connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering
+     * connection that's in the <code>failed</code> state.
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
@@ -4755,7 +5159,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>max-instances</code>: The maximum number of On-Demand instances that you can run.
+     * <code>max-instances</code>: The maximum number of On-Demand Instances that you can run.
      * </p>
      * </li>
      * <li>
@@ -4806,7 +5210,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>max-instances</code>: The maximum number of On-Demand instances that you can run.
+     * <code>max-instances</code>: The maximum number of On-Demand Instances that you can run.
      * </p>
      * </li>
      * <li>
@@ -4916,6 +5320,73 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeAddressesResult> describeAddressesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAddressesRequest, DescribeAddressesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the longer ID format settings for all resource types in a specific region. This request is useful for
+     * performing a quick audit to determine whether a specific region is fully opted in for longer IDs (17-character
+     * IDs).
+     * </p>
+     * <p>
+     * This request only returns information about resource types that support longer IDs.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * 
+     * @param describeAggregateIdFormatRequest
+     * @return A Java Future containing the result of the DescribeAggregateIdFormat operation returned by the service.
+     * @sample AmazonEC2Async.DescribeAggregateIdFormat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAggregateIdFormatResult> describeAggregateIdFormatAsync(
+            DescribeAggregateIdFormatRequest describeAggregateIdFormatRequest);
+
+    /**
+     * <p>
+     * Describes the longer ID format settings for all resource types in a specific region. This request is useful for
+     * performing a quick audit to determine whether a specific region is fully opted in for longer IDs (17-character
+     * IDs).
+     * </p>
+     * <p>
+     * This request only returns information about resource types that support longer IDs.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * 
+     * @param describeAggregateIdFormatRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAggregateIdFormat operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeAggregateIdFormat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAggregateIdFormatResult> describeAggregateIdFormatAsync(
+            DescribeAggregateIdFormatRequest describeAggregateIdFormatRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAggregateIdFormatRequest, DescribeAggregateIdFormatResult> asyncHandler);
 
     /**
      * <p>
@@ -5687,8 +6158,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * be modified; it does not return information about other resource types.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>.
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * These settings apply to the IAM user who makes the request; they do not apply to the entire AWS account. By
@@ -5714,8 +6193,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * be modified; it does not return information about other resource types.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>.
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * These settings apply to the IAM user who makes the request; they do not apply to the entire AWS account. By
@@ -5763,8 +6250,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>.
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * These settings apply to the principal specified in the request. They do not apply to the principal that makes the
@@ -5789,8 +6284,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>.
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * These settings apply to the principal specified in the request. They do not apply to the principal that makes the
@@ -6046,6 +6549,79 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeInstanceAttributeResult> describeInstanceAttributeAsync(
             DescribeInstanceAttributeRequest describeInstanceAttributeRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceAttributeRequest, DescribeInstanceAttributeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the credit option for CPU usage of one or more of your T2 instances. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
+     * </p>
+     * <p>
+     * If you do not specify an instance ID, Amazon EC2 returns only the T2 instances with the <code>unlimited</code>
+     * credit option. If you specify one or more instance IDs, Amazon EC2 returns the credit option (
+     * <code>standard</code> or <code>unlimited</code>) of those instances. If you specify an instance ID that is not
+     * valid, such as an instance that is not a T2 instance, an error is returned.
+     * </p>
+     * <p>
+     * Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
+     * </p>
+     * <p>
+     * If an Availability Zone is experiencing a service disruption and you specify instance IDs in the affected zone,
+     * or do not specify any instance IDs at all, the call fails. If you specify only instance IDs in an unaffected
+     * zone, the call works normally.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceCreditSpecificationsRequest
+     * @return A Java Future containing the result of the DescribeInstanceCreditSpecifications operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeInstanceCreditSpecifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceCreditSpecificationsResult> describeInstanceCreditSpecificationsAsync(
+            DescribeInstanceCreditSpecificationsRequest describeInstanceCreditSpecificationsRequest);
+
+    /**
+     * <p>
+     * Describes the credit option for CPU usage of one or more of your T2 instances. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
+     * </p>
+     * <p>
+     * If you do not specify an instance ID, Amazon EC2 returns only the T2 instances with the <code>unlimited</code>
+     * credit option. If you specify one or more instance IDs, Amazon EC2 returns the credit option (
+     * <code>standard</code> or <code>unlimited</code>) of those instances. If you specify an instance ID that is not
+     * valid, such as an instance that is not a T2 instance, an error is returned.
+     * </p>
+     * <p>
+     * Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
+     * </p>
+     * <p>
+     * If an Availability Zone is experiencing a service disruption and you specify instance IDs in the affected zone,
+     * or do not specify any instance IDs at all, the call fails. If you specify only instance IDs in an unaffected
+     * zone, the call works normally.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceCreditSpecificationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceCreditSpecifications operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeInstanceCreditSpecifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceCreditSpecificationsResult> describeInstanceCreditSpecificationsAsync(
+            DescribeInstanceCreditSpecificationsRequest describeInstanceCreditSpecificationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceCreditSpecificationsRequest, DescribeInstanceCreditSpecificationsResult> asyncHandler);
 
     /**
      * <p>
@@ -6345,6 +6921,74 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes one or more versions of a specified launch template. You can describe all versions, individual
+     * versions, or a range of versions.
+     * </p>
+     * 
+     * @param describeLaunchTemplateVersionsRequest
+     * @return A Java Future containing the result of the DescribeLaunchTemplateVersions operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeLaunchTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLaunchTemplateVersionsResult> describeLaunchTemplateVersionsAsync(
+            DescribeLaunchTemplateVersionsRequest describeLaunchTemplateVersionsRequest);
+
+    /**
+     * <p>
+     * Describes one or more versions of a specified launch template. You can describe all versions, individual
+     * versions, or a range of versions.
+     * </p>
+     * 
+     * @param describeLaunchTemplateVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLaunchTemplateVersions operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeLaunchTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLaunchTemplateVersionsResult> describeLaunchTemplateVersionsAsync(
+            DescribeLaunchTemplateVersionsRequest describeLaunchTemplateVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLaunchTemplateVersionsRequest, DescribeLaunchTemplateVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more launch templates.
+     * </p>
+     * 
+     * @param describeLaunchTemplatesRequest
+     * @return A Java Future containing the result of the DescribeLaunchTemplates operation returned by the service.
+     * @sample AmazonEC2Async.DescribeLaunchTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLaunchTemplatesResult> describeLaunchTemplatesAsync(DescribeLaunchTemplatesRequest describeLaunchTemplatesRequest);
+
+    /**
+     * <p>
+     * Describes one or more launch templates.
+     * </p>
+     * 
+     * @param describeLaunchTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLaunchTemplates operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeLaunchTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLaunchTemplatesResult> describeLaunchTemplatesAsync(DescribeLaunchTemplatesRequest describeLaunchTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLaunchTemplatesRequest, DescribeLaunchTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes your Elastic IP addresses that are being moved to the EC2-VPC platform, or that are being restored to
      * the EC2-Classic platform. This request does not return information about any other Elastic IP addresses in your
      * account.
@@ -6612,9 +7256,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information about placement groups and cluster
-     * instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Describes one or more of your placement groups. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describePlacementGroupsRequest
@@ -6628,9 +7272,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information about placement groups and cluster
-     * instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Describes one or more of your placement groups. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describePlacementGroupsRequest
@@ -6666,7 +7310,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
      * of the service and the IP address range for the service. A prefix list ID is required for creating an outbound
-     * security group rule that allows traffic from a VPC to access an AWS service through a VPC endpoint.
+     * security group rule that allows traffic from a VPC to access an AWS service through a gateway VPC endpoint.
      * </p>
      * 
      * @param describePrefixListsRequest
@@ -6682,7 +7326,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
      * of the service and the IP address range for the service. A prefix list ID is required for creating an outbound
-     * security group rule that allows traffic from a VPC to access an AWS service through a VPC endpoint.
+     * security group rule that allows traffic from a VPC to access an AWS service through a gateway VPC endpoint.
      * </p>
      * 
      * @param describePrefixListsRequest
@@ -6713,6 +7357,75 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribePrefixListsResult> describePrefixListsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribePrefixListsRequest, DescribePrefixListsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the ID format settings for the root user and all IAM roles and IAM users that have explicitly specified
+     * a longer ID (17-character ID) preference.
+     * </p>
+     * <p>
+     * By default, all IAM roles and IAM users default to the same ID settings as the root user, unless they explicitly
+     * override the settings. This request is useful for identifying those IAM users and IAM roles that have overridden
+     * the default ID settings.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * 
+     * @param describePrincipalIdFormatRequest
+     * @return A Java Future containing the result of the DescribePrincipalIdFormat operation returned by the service.
+     * @sample AmazonEC2Async.DescribePrincipalIdFormat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePrincipalIdFormatResult> describePrincipalIdFormatAsync(
+            DescribePrincipalIdFormatRequest describePrincipalIdFormatRequest);
+
+    /**
+     * <p>
+     * Describes the ID format settings for the root user and all IAM roles and IAM users that have explicitly specified
+     * a longer ID (17-character ID) preference.
+     * </p>
+     * <p>
+     * By default, all IAM roles and IAM users default to the same ID settings as the root user, unless they explicitly
+     * override the settings. This request is useful for identifying those IAM users and IAM roles that have overridden
+     * the default ID settings.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * 
+     * @param describePrincipalIdFormatRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePrincipalIdFormat operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribePrincipalIdFormat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePrincipalIdFormatResult> describePrincipalIdFormatAsync(
+            DescribePrincipalIdFormatRequest describePrincipalIdFormatRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePrincipalIdFormatRequest, DescribePrincipalIdFormatResult> asyncHandler);
 
     /**
      * <p>
@@ -7531,7 +8244,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the data feed for Spot instances. For more information, see <a
+     * Describes the data feed for Spot Instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -7549,7 +8262,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the data feed for Spot instances. For more information, see <a
+     * Describes the data feed for Spot Instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -7588,7 +8301,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the running instances for the specified Spot fleet.
+     * Describes the running instances for the specified Spot Fleet.
      * </p>
      * 
      * @param describeSpotFleetInstancesRequest
@@ -7603,7 +8316,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the running instances for the specified Spot fleet.
+     * Describes the running instances for the specified Spot Fleet.
      * </p>
      * 
      * @param describeSpotFleetInstancesRequest
@@ -7623,10 +8336,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the events for the specified Spot fleet request during the specified time.
+     * Describes the events for the specified Spot Fleet request during the specified time.
      * </p>
      * <p>
-     * Spot fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
+     * Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
      * by the last evaluated time and not miss a recorded event.
      * </p>
      * 
@@ -7643,10 +8356,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the events for the specified Spot fleet request during the specified time.
+     * Describes the events for the specified Spot Fleet request during the specified time.
      * </p>
      * <p>
-     * Spot fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
+     * Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
      * by the last evaluated time and not miss a recorded event.
      * </p>
      * 
@@ -7668,10 +8381,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes your Spot fleet requests.
+     * Describes your Spot Fleet requests.
      * </p>
      * <p>
-     * Spot fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
+     * Spot Fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotFleetRequestsRequest
@@ -7686,10 +8399,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes your Spot fleet requests.
+     * Describes your Spot Fleet requests.
      * </p>
      * <p>
-     * Spot fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
+     * Spot Fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotFleetRequestsRequest
@@ -7724,20 +8437,19 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Spot instance requests that belong to your account. Spot instances are instances that Amazon EC2
-     * launches when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically sets the
-     * Spot price based on available Spot instance capacity and current Spot instance requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2
+     * launches when the Spot price that you specify exceeds the current Spot price. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance by examining the response.
-     * If the status of the Spot instance is <code>fulfilled</code>, the instance ID appears in the response and
+     * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
+     * If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and
      * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
      * look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
-     * Spot instance requests are deleted 4 hours after they are canceled and their instances are terminated.
+     * Spot Instance requests are deleted 4 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotInstanceRequestsRequest
@@ -7753,20 +8465,19 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Spot instance requests that belong to your account. Spot instances are instances that Amazon EC2
-     * launches when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically sets the
-     * Spot price based on available Spot instance capacity and current Spot instance requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2
+     * launches when the Spot price that you specify exceeds the current Spot price. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance by examining the response.
-     * If the status of the Spot instance is <code>fulfilled</code>, the instance ID appears in the response and
+     * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
+     * If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and
      * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
      * look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
-     * Spot instance requests are deleted 4 hours after they are canceled and their instances are terminated.
+     * Spot Instance requests are deleted 4 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotInstanceRequestsRequest
@@ -8442,7 +9153,149 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes all supported AWS services that can be specified when creating a VPC endpoint.
+     * Describes the connection notifications for VPC endpoints and VPC endpoint services.
+     * </p>
+     * 
+     * @param describeVpcEndpointConnectionNotificationsRequest
+     * @return A Java Future containing the result of the DescribeVpcEndpointConnectionNotifications operation returned
+     *         by the service.
+     * @sample AmazonEC2Async.DescribeVpcEndpointConnectionNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcEndpointConnectionNotificationsResult> describeVpcEndpointConnectionNotificationsAsync(
+            DescribeVpcEndpointConnectionNotificationsRequest describeVpcEndpointConnectionNotificationsRequest);
+
+    /**
+     * <p>
+     * Describes the connection notifications for VPC endpoints and VPC endpoint services.
+     * </p>
+     * 
+     * @param describeVpcEndpointConnectionNotificationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVpcEndpointConnectionNotifications operation returned
+     *         by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeVpcEndpointConnectionNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcEndpointConnectionNotificationsResult> describeVpcEndpointConnectionNotificationsAsync(
+            DescribeVpcEndpointConnectionNotificationsRequest describeVpcEndpointConnectionNotificationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointConnectionNotificationsRequest, DescribeVpcEndpointConnectionNotificationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the VPC endpoint connections to your VPC endpoint services, including any endpoints that are pending
+     * your acceptance.
+     * </p>
+     * 
+     * @param describeVpcEndpointConnectionsRequest
+     * @return A Java Future containing the result of the DescribeVpcEndpointConnections operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcEndpointConnectionsResult> describeVpcEndpointConnectionsAsync(
+            DescribeVpcEndpointConnectionsRequest describeVpcEndpointConnectionsRequest);
+
+    /**
+     * <p>
+     * Describes the VPC endpoint connections to your VPC endpoint services, including any endpoints that are pending
+     * your acceptance.
+     * </p>
+     * 
+     * @param describeVpcEndpointConnectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVpcEndpointConnections operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcEndpointConnectionsResult> describeVpcEndpointConnectionsAsync(
+            DescribeVpcEndpointConnectionsRequest describeVpcEndpointConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointConnectionsRequest, DescribeVpcEndpointConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the VPC endpoint service configurations in your account (your services).
+     * </p>
+     * 
+     * @param describeVpcEndpointServiceConfigurationsRequest
+     * @return A Java Future containing the result of the DescribeVpcEndpointServiceConfigurations operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.DescribeVpcEndpointServiceConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcEndpointServiceConfigurationsResult> describeVpcEndpointServiceConfigurationsAsync(
+            DescribeVpcEndpointServiceConfigurationsRequest describeVpcEndpointServiceConfigurationsRequest);
+
+    /**
+     * <p>
+     * Describes the VPC endpoint service configurations in your account (your services).
+     * </p>
+     * 
+     * @param describeVpcEndpointServiceConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVpcEndpointServiceConfigurations operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.DescribeVpcEndpointServiceConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcEndpointServiceConfigurationsResult> describeVpcEndpointServiceConfigurationsAsync(
+            DescribeVpcEndpointServiceConfigurationsRequest describeVpcEndpointServiceConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointServiceConfigurationsRequest, DescribeVpcEndpointServiceConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the principals (service consumers) that are permitted to discover your VPC endpoint service.
+     * </p>
+     * 
+     * @param describeVpcEndpointServicePermissionsRequest
+     * @return A Java Future containing the result of the DescribeVpcEndpointServicePermissions operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.DescribeVpcEndpointServicePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcEndpointServicePermissionsResult> describeVpcEndpointServicePermissionsAsync(
+            DescribeVpcEndpointServicePermissionsRequest describeVpcEndpointServicePermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the principals (service consumers) that are permitted to discover your VPC endpoint service.
+     * </p>
+     * 
+     * @param describeVpcEndpointServicePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVpcEndpointServicePermissions operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.DescribeVpcEndpointServicePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVpcEndpointServicePermissionsResult> describeVpcEndpointServicePermissionsAsync(
+            DescribeVpcEndpointServicePermissionsRequest describeVpcEndpointServicePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointServicePermissionsRequest, DescribeVpcEndpointServicePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes available services to which you can create a VPC endpoint.
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
@@ -8457,7 +9310,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes all supported AWS services that can be specified when creating a VPC endpoint.
+     * Describes available services to which you can create a VPC endpoint.
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
@@ -9608,6 +10461,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Retrieves the configuration data of the specified instance. You can use this data to create a launch template.
+     * </p>
+     * 
+     * @param getLaunchTemplateDataRequest
+     * @return A Java Future containing the result of the GetLaunchTemplateData operation returned by the service.
+     * @sample AmazonEC2Async.GetLaunchTemplateData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLaunchTemplateDataResult> getLaunchTemplateDataAsync(GetLaunchTemplateDataRequest getLaunchTemplateDataRequest);
+
+    /**
+     * <p>
+     * Retrieves the configuration data of the specified instance. You can use this data to create a launch template.
+     * </p>
+     * 
+     * @param getLaunchTemplateDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLaunchTemplateData operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetLaunchTemplateData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLaunchTemplateDataResult> getLaunchTemplateDataAsync(GetLaunchTemplateDataRequest getLaunchTemplateDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLaunchTemplateDataRequest, GetLaunchTemplateDataResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the encrypted administrator password for a running Windows instance.
      * </p>
      * <p>
@@ -10039,8 +10923,19 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Modifies the ID format for the specified resource on a per-region basis. You can specify that resources should
-     * receive longer IDs (17-character IDs) when they are created. The following resource types support longer IDs:
-     * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> | <code>volume</code>.
+     * receive longer IDs (17-character IDs) when they are created.
+     * </p>
+     * <p>
+     * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
+     * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>route-table</code> | <code>route-table-association</code> |
+     * <code>security-group</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+     * | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * This setting applies to the IAM user who makes the request; it does not apply to the entire AWS account. By
@@ -10067,8 +10962,19 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Modifies the ID format for the specified resource on a per-region basis. You can specify that resources should
-     * receive longer IDs (17-character IDs) when they are created. The following resource types support longer IDs:
-     * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> | <code>volume</code>.
+     * receive longer IDs (17-character IDs) when they are created.
+     * </p>
+     * <p>
+     * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
+     * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>route-table</code> | <code>route-table-association</code> |
+     * <code>security-group</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+     * | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * This setting applies to the IAM user who makes the request; it does not apply to the entire AWS account. By
@@ -10104,10 +11010,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * (17-character IDs) when they are created.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource IDs</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
+     * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>route-table</code> | <code>route-table-association</code> |
+     * <code>security-group</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+     * | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+     * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * This setting applies to the principal specified in the request; it does not apply to the principal that makes the
@@ -10134,10 +11050,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * (17-character IDs) when they are created.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource IDs</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
+     * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>route-table</code> | <code>route-table-association</code> |
+     * <code>security-group</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+     * | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+     * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * This setting applies to the principal specified in the request; it does not apply to the principal that makes the
@@ -10260,24 +11186,88 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Set the instance affinity value for a specific stopped instance and modify the instance tenancy setting.
+     * Modifies the credit option for CPU usage on a running or stopped T2 instance. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
      * </p>
      * <p>
-     * Instance affinity is disabled by default. When instance affinity is <code>host</code> and it is not associated
-     * with a specific Dedicated Host, the next time it is launched it will automatically be associated with the host it
-     * lands on. This relationship will persist if the instance is stopped/started, or rebooted.
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param modifyInstanceCreditSpecificationRequest
+     * @return A Java Future containing the result of the ModifyInstanceCreditSpecification operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyInstanceCreditSpecification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceCreditSpecificationResult> modifyInstanceCreditSpecificationAsync(
+            ModifyInstanceCreditSpecificationRequest modifyInstanceCreditSpecificationRequest);
+
+    /**
+     * <p>
+     * Modifies the credit option for CPU usage on a running or stopped T2 instance. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
      * </p>
      * <p>
-     * You can modify the host ID associated with a stopped instance. If a stopped instance has a new host ID
-     * association, the instance will target that host when restarted.
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param modifyInstanceCreditSpecificationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyInstanceCreditSpecification operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyInstanceCreditSpecification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceCreditSpecificationResult> modifyInstanceCreditSpecificationAsync(
+            ModifyInstanceCreditSpecificationRequest modifyInstanceCreditSpecificationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceCreditSpecificationRequest, ModifyInstanceCreditSpecificationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the placement attributes for a specified instance. You can do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Modify the affinity between an instance and a <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When
+     * affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next
+     * time the instance is launched, it is automatically associated with the host on which it lands. If the instance is
+     * restarted or rebooted, this relationship persists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the Dedicated Host with which an instance is associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the instance tenancy of an instance from <code>host</code> to <code>dedicated</code>, or from
+     * <code>dedicated</code> to <code>host</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Move an instance to or from a <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement group</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * At least one attribute for affinity, host ID, tenancy, or placement group name must be specified in the request.
+     * Affinity and tenancy can be modified in the same request.
      * </p>
      * <p>
-     * You can modify the tenancy of a stopped instance with a tenancy of <code>host</code> or <code>dedicated</code>.
-     * </p>
-     * <p>
-     * Affinity, hostID, and tenancy are not required parameters, but at least one of them must be specified in the
-     * request. Affinity and tenancy can be modified in the same request, but tenancy can only be modified on instances
-     * that are stopped.
+     * To modify the host ID, tenancy, or placement group for an instance, the instance must be in the
+     * <code>stopped</code> state.
      * </p>
      * 
      * @param modifyInstancePlacementRequest
@@ -10291,24 +11281,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Set the instance affinity value for a specific stopped instance and modify the instance tenancy setting.
+     * Modifies the placement attributes for a specified instance. You can do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Modify the affinity between an instance and a <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When
+     * affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next
+     * time the instance is launched, it is automatically associated with the host on which it lands. If the instance is
+     * restarted or rebooted, this relationship persists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the Dedicated Host with which an instance is associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the instance tenancy of an instance from <code>host</code> to <code>dedicated</code>, or from
+     * <code>dedicated</code> to <code>host</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Move an instance to or from a <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement group</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * At least one attribute for affinity, host ID, tenancy, or placement group name must be specified in the request.
+     * Affinity and tenancy can be modified in the same request.
      * </p>
      * <p>
-     * Instance affinity is disabled by default. When instance affinity is <code>host</code> and it is not associated
-     * with a specific Dedicated Host, the next time it is launched it will automatically be associated with the host it
-     * lands on. This relationship will persist if the instance is stopped/started, or rebooted.
-     * </p>
-     * <p>
-     * You can modify the host ID associated with a stopped instance. If a stopped instance has a new host ID
-     * association, the instance will target that host when restarted.
-     * </p>
-     * <p>
-     * You can modify the tenancy of a stopped instance with a tenancy of <code>host</code> or <code>dedicated</code>.
-     * </p>
-     * <p>
-     * Affinity, hostID, and tenancy are not required parameters, but at least one of them must be specified in the
-     * request. Affinity and tenancy can be modified in the same request, but tenancy can only be modified on instances
-     * that are stopped.
+     * To modify the host ID, tenancy, or placement group for an instance, the instance must be in the
+     * <code>stopped</code> state.
      * </p>
      * 
      * @param modifyInstancePlacementRequest
@@ -10324,6 +11333,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<ModifyInstancePlacementResult> modifyInstancePlacementAsync(ModifyInstancePlacementRequest modifyInstancePlacementRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyInstancePlacementRequest, ModifyInstancePlacementResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a launch template. You can specify which version of the launch template to set as the default version.
+     * When launching an instance, the default version applies when a launch template version is not specified.
+     * </p>
+     * 
+     * @param modifyLaunchTemplateRequest
+     * @return A Java Future containing the result of the ModifyLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2Async.ModifyLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyLaunchTemplateResult> modifyLaunchTemplateAsync(ModifyLaunchTemplateRequest modifyLaunchTemplateRequest);
+
+    /**
+     * <p>
+     * Modifies a launch template. You can specify which version of the launch template to set as the default version.
+     * When launching an instance, the default version applies when a launch template version is not specified.
+     * </p>
+     * 
+     * @param modifyLaunchTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyLaunchTemplateResult> modifyLaunchTemplateAsync(ModifyLaunchTemplateRequest modifyLaunchTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyLaunchTemplateRequest, ModifyLaunchTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -10470,25 +11512,29 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Spot fleet request.
+     * Modifies the specified Spot Fleet request.
      * </p>
      * <p>
-     * While the Spot fleet request is being modified, it is in the <code>modifying</code> state.
+     * While the Spot Fleet request is being modified, it is in the <code>modifying</code> state.
      * </p>
      * <p>
-     * To scale up your Spot fleet, increase its target capacity. The Spot fleet launches the additional Spot instances
-     * according to the allocation strategy for the Spot fleet request. If the allocation strategy is
-     * <code>lowestPrice</code>, the Spot fleet launches instances using the Spot pool with the lowest price. If the
-     * allocation strategy is <code>diversified</code>, the Spot fleet distributes the instances across the Spot pools.
+     * To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches the additional Spot Instances
+     * according to the allocation strategy for the Spot Fleet request. If the allocation strategy is
+     * <code>lowestPrice</code>, the Spot Fleet launches instances using the Spot pool with the lowest price. If the
+     * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot pools.
      * </p>
      * <p>
-     * To scale down your Spot fleet, decrease its target capacity. First, the Spot fleet cancels any open bids that
-     * exceed the new target capacity. You can request that the Spot fleet terminate Spot instances until the size of
+     * To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet cancels any open requests that
+     * exceed the new target capacity. You can request that the Spot Fleet terminate Spot Instances until the size of
      * the fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
-     * Spot fleet terminates the instances with the highest price per unit. If the allocation strategy is
-     * <code>diversified</code>, the Spot fleet terminates instances across the Spot pools. Alternatively, you can
-     * request that the Spot fleet keep the fleet at its current size, but not replace any Spot instances that are
+     * Spot Fleet terminates the instances with the highest price per unit. If the allocation strategy is
+     * <code>diversified</code>, the Spot Fleet terminates instances across the Spot pools. Alternatively, you can
+     * request that the Spot Fleet keep the fleet at its current size, but not replace any Spot Instances that are
      * interrupted or that you terminate manually.
+     * </p>
+     * <p>
+     * If you are finished with your Spot Fleet for now, but will use it again later, you can set the target capacity to
+     * 0.
      * </p>
      * 
      * @param modifySpotFleetRequestRequest
@@ -10502,25 +11548,29 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Spot fleet request.
+     * Modifies the specified Spot Fleet request.
      * </p>
      * <p>
-     * While the Spot fleet request is being modified, it is in the <code>modifying</code> state.
+     * While the Spot Fleet request is being modified, it is in the <code>modifying</code> state.
      * </p>
      * <p>
-     * To scale up your Spot fleet, increase its target capacity. The Spot fleet launches the additional Spot instances
-     * according to the allocation strategy for the Spot fleet request. If the allocation strategy is
-     * <code>lowestPrice</code>, the Spot fleet launches instances using the Spot pool with the lowest price. If the
-     * allocation strategy is <code>diversified</code>, the Spot fleet distributes the instances across the Spot pools.
+     * To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches the additional Spot Instances
+     * according to the allocation strategy for the Spot Fleet request. If the allocation strategy is
+     * <code>lowestPrice</code>, the Spot Fleet launches instances using the Spot pool with the lowest price. If the
+     * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot pools.
      * </p>
      * <p>
-     * To scale down your Spot fleet, decrease its target capacity. First, the Spot fleet cancels any open bids that
-     * exceed the new target capacity. You can request that the Spot fleet terminate Spot instances until the size of
+     * To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet cancels any open requests that
+     * exceed the new target capacity. You can request that the Spot Fleet terminate Spot Instances until the size of
      * the fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
-     * Spot fleet terminates the instances with the highest price per unit. If the allocation strategy is
-     * <code>diversified</code>, the Spot fleet terminates instances across the Spot pools. Alternatively, you can
-     * request that the Spot fleet keep the fleet at its current size, but not replace any Spot instances that are
+     * Spot Fleet terminates the instances with the highest price per unit. If the allocation strategy is
+     * <code>diversified</code>, the Spot Fleet terminates instances across the Spot pools. Alternatively, you can
+     * request that the Spot Fleet keep the fleet at its current size, but not replace any Spot Instances that are
      * interrupted or that you terminate manually.
+     * </p>
+     * <p>
+     * If you are finished with your Spot Fleet for now, but will use it again later, you can set the target capacity to
+     * 0.
      * </p>
      * 
      * @param modifySpotFleetRequestRequest
@@ -10802,6 +11852,123 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Modifies a connection notification for VPC endpoint or VPC endpoint service. You can change the SNS topic for the
+     * notification, or the events for which to be notified.
+     * </p>
+     * 
+     * @param modifyVpcEndpointConnectionNotificationRequest
+     * @return A Java Future containing the result of the ModifyVpcEndpointConnectionNotification operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.ModifyVpcEndpointConnectionNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpcEndpointConnectionNotificationResult> modifyVpcEndpointConnectionNotificationAsync(
+            ModifyVpcEndpointConnectionNotificationRequest modifyVpcEndpointConnectionNotificationRequest);
+
+    /**
+     * <p>
+     * Modifies a connection notification for VPC endpoint or VPC endpoint service. You can change the SNS topic for the
+     * notification, or the events for which to be notified.
+     * </p>
+     * 
+     * @param modifyVpcEndpointConnectionNotificationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVpcEndpointConnectionNotification operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVpcEndpointConnectionNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpcEndpointConnectionNotificationResult> modifyVpcEndpointConnectionNotificationAsync(
+            ModifyVpcEndpointConnectionNotificationRequest modifyVpcEndpointConnectionNotificationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVpcEndpointConnectionNotificationRequest, ModifyVpcEndpointConnectionNotificationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers for
+     * your service, and you can specify whether acceptance is required for requests to connect to your endpoint service
+     * through an interface VPC endpoint.
+     * </p>
+     * 
+     * @param modifyVpcEndpointServiceConfigurationRequest
+     * @return A Java Future containing the result of the ModifyVpcEndpointServiceConfiguration operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.ModifyVpcEndpointServiceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpcEndpointServiceConfigurationResult> modifyVpcEndpointServiceConfigurationAsync(
+            ModifyVpcEndpointServiceConfigurationRequest modifyVpcEndpointServiceConfigurationRequest);
+
+    /**
+     * <p>
+     * Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers for
+     * your service, and you can specify whether acceptance is required for requests to connect to your endpoint service
+     * through an interface VPC endpoint.
+     * </p>
+     * 
+     * @param modifyVpcEndpointServiceConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVpcEndpointServiceConfiguration operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVpcEndpointServiceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpcEndpointServiceConfigurationResult> modifyVpcEndpointServiceConfigurationAsync(
+            ModifyVpcEndpointServiceConfigurationRequest modifyVpcEndpointServiceConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVpcEndpointServiceConfigurationRequest, ModifyVpcEndpointServiceConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the permissions for your <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC endpoint service</a>. You
+     * can add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
+     * endpoint service.
+     * </p>
+     * 
+     * @param modifyVpcEndpointServicePermissionsRequest
+     * @return A Java Future containing the result of the ModifyVpcEndpointServicePermissions operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVpcEndpointServicePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpcEndpointServicePermissionsResult> modifyVpcEndpointServicePermissionsAsync(
+            ModifyVpcEndpointServicePermissionsRequest modifyVpcEndpointServicePermissionsRequest);
+
+    /**
+     * <p>
+     * Modifies the permissions for your <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC endpoint service</a>. You
+     * can add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
+     * endpoint service.
+     * </p>
+     * 
+     * @param modifyVpcEndpointServicePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVpcEndpointServicePermissions operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVpcEndpointServicePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpcEndpointServicePermissionsResult> modifyVpcEndpointServicePermissionsAsync(
+            ModifyVpcEndpointServicePermissionsRequest modifyVpcEndpointServicePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVpcEndpointServicePermissionsRequest, ModifyVpcEndpointServicePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the VPC peering connection options on one side of a VPC peering connection. You can do the following:
      * </p>
      * <ul>
@@ -10819,7 +11986,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in
+     * Enable/disable the ability to resolve public DNS hostnames to private IP addresses when queried from instances in
      * the peer VPC.
      * </p>
      * </li>
@@ -10861,7 +12028,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in
+     * Enable/disable the ability to resolve public DNS hostnames to private IP addresses when queried from instances in
      * the peer VPC.
      * </p>
      * </li>
@@ -11325,6 +12492,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+     * </p>
+     * 
+     * @param rejectVpcEndpointConnectionsRequest
+     * @return A Java Future containing the result of the RejectVpcEndpointConnections operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.RejectVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectVpcEndpointConnectionsResult> rejectVpcEndpointConnectionsAsync(
+            RejectVpcEndpointConnectionsRequest rejectVpcEndpointConnectionsRequest);
+
+    /**
+     * <p>
+     * Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+     * </p>
+     * 
+     * @param rejectVpcEndpointConnectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RejectVpcEndpointConnections operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.RejectVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectVpcEndpointConnectionsResult> rejectVpcEndpointConnectionsAsync(
+            RejectVpcEndpointConnectionsRequest rejectVpcEndpointConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<RejectVpcEndpointConnectionsRequest, RejectVpcEndpointConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Rejects a VPC peering connection request. The VPC peering connection must be in the
      * <code>pending-acceptance</code> state. Use the <a>DescribeVpcPeeringConnections</a> request to view your
      * outstanding VPC peering connection requests. To delete an active VPC peering connection, or to delete a VPC
@@ -11540,6 +12742,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
      * Virtual Private Cloud User Guide</i>.
      * </p>
+     * <p>
+     * This is an idempotent operation.
+     * </p>
      * 
      * @param replaceNetworkAclAssociationRequest
      *        Contains the parameters for ReplaceNetworkAclAssociation.
@@ -11558,6 +12763,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * associated with the default network ACL. For more information about network ACLs, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon
      * Virtual Private Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * This is an idempotent operation.
      * </p>
      * 
      * @param replaceNetworkAclAssociationRequest
@@ -11758,21 +12966,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a Spot fleet request.
+     * Creates a Spot Fleet request.
      * </p>
      * <p>
      * You can submit a single request that includes multiple launch specifications that vary by instance type, AMI,
      * Availability Zone, or subnet.
      * </p>
      * <p>
-     * By default, the Spot fleet requests Spot instances in the Spot pool where the price per unit is the lowest. Each
+     * By default, the Spot Fleet requests Spot Instances in the Spot pool where the price per unit is the lowest. Each
      * launch specification can include its own instance weighting that reflects the value of the instance type to your
      * application workload.
      * </p>
      * <p>
-     * Alternatively, you can specify that the Spot fleet distribute the target capacity across the Spot pools included
-     * in its launch specifications. By ensuring that the Spot instances in your Spot fleet are in different Spot pools,
+     * Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included
+     * in its launch specifications. By ensuring that the Spot Instances in your Spot Fleet are in different Spot pools,
      * you can improve the availability of your fleet.
+     * </p>
+     * <p>
+     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request; only
+     * the <code>instance</code> resource type is supported.
      * </p>
      * <p>
      * For more information, see <a
@@ -11791,21 +13003,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a Spot fleet request.
+     * Creates a Spot Fleet request.
      * </p>
      * <p>
      * You can submit a single request that includes multiple launch specifications that vary by instance type, AMI,
      * Availability Zone, or subnet.
      * </p>
      * <p>
-     * By default, the Spot fleet requests Spot instances in the Spot pool where the price per unit is the lowest. Each
+     * By default, the Spot Fleet requests Spot Instances in the Spot pool where the price per unit is the lowest. Each
      * launch specification can include its own instance weighting that reflects the value of the instance type to your
      * application workload.
      * </p>
      * <p>
-     * Alternatively, you can specify that the Spot fleet distribute the target capacity across the Spot pools included
-     * in its launch specifications. By ensuring that the Spot instances in your Spot fleet are in different Spot pools,
+     * Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included
+     * in its launch specifications. By ensuring that the Spot Instances in your Spot Fleet are in different Spot pools,
      * you can improve the availability of your fleet.
+     * </p>
+     * <p>
+     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request; only
+     * the <code>instance</code> resource type is supported.
      * </p>
      * <p>
      * For more information, see <a
@@ -11829,9 +13045,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a Spot instance request. Spot instances are instances that Amazon EC2 launches when the bid price that
-     * you specify exceeds the current Spot price. Amazon EC2 periodically sets the Spot price based on available Spot
-     * Instance capacity and current Spot instance requests. For more information, see <a
+     * Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches when the maximum price
+     * that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -11847,9 +13062,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a Spot instance request. Spot instances are instances that Amazon EC2 launches when the bid price that
-     * you specify exceeds the current Spot price. Amazon EC2 periodically sets the Spot price based on available Spot
-     * Instance capacity and current Spot instance requests. For more information, see <a
+     * Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches when the maximum price
+     * that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -12309,6 +13523,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * </ul>
      * <p>
+     * You can create a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+     * template</a>, which is a resource that contains the parameters to launch an instance. When you launch an instance
+     * using <a>RunInstances</a>, you can specify the launch template instead of specifying the launch parameters.
+     * </p>
+     * <p>
      * To ensure faster instance launches, break up large requests into smaller batches. For example, create five
      * separate launch requests for 100 instances each instead of one launch request for 500 instances.
      * </p>
@@ -12392,6 +13611,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can create a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+     * template</a>, which is a resource that contains the parameters to launch an instance. When you launch an instance
+     * using <a>RunInstances</a>, you can specify the launch template instead of specifying the launch parameters.
+     * </p>
      * <p>
      * To ensure faster instance launches, break up large requests into smaller batches. For example, create five
      * separate launch requests for 100 instances each instead of one launch request for 500 instances.

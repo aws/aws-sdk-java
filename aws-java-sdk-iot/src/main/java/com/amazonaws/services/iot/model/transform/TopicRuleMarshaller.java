@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class TopicRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ruleDisabled").build();
     private static final MarshallingInfo<String> AWSIOTSQLVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsIotSqlVersion").build();
+    private static final MarshallingInfo<StructuredPojo> ERRORACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorAction").build();
 
     private static final TopicRuleMarshaller instance = new TopicRuleMarshaller();
 
@@ -66,6 +68,7 @@ public class TopicRuleMarshaller {
             protocolMarshaller.marshall(topicRule.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(topicRule.getRuleDisabled(), RULEDISABLED_BINDING);
             protocolMarshaller.marshall(topicRule.getAwsIotSqlVersion(), AWSIOTSQLVERSION_BINDING);
+            protocolMarshaller.marshall(topicRule.getErrorAction(), ERRORACTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

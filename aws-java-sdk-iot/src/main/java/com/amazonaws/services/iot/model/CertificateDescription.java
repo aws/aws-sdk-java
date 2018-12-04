@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,12 +79,16 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Date lastModifiedDate;
+
+    private Integer customerVersion;
     /**
      * <p>
      * The transfer data.
      * </p>
      */
     private TransferData transferData;
+
+    private String generationId;
 
     /**
      * <p>
@@ -480,6 +484,32 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * @param customerVersion
+     */
+
+    public void setCustomerVersion(Integer customerVersion) {
+        this.customerVersion = customerVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getCustomerVersion() {
+        return this.customerVersion;
+    }
+
+    /**
+     * @param customerVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDescription withCustomerVersion(Integer customerVersion) {
+        setCustomerVersion(customerVersion);
+        return this;
+    }
+
+    /**
      * <p>
      * The transfer data.
      * </p>
@@ -520,6 +550,32 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * @param generationId
+     */
+
+    public void setGenerationId(String generationId) {
+        this.generationId = generationId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getGenerationId() {
+        return this.generationId;
+    }
+
+    /**
+     * @param generationId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDescription withGenerationId(String generationId) {
+        setGenerationId(generationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -548,8 +604,12 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getLastModifiedDate() != null)
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getCustomerVersion() != null)
+            sb.append("CustomerVersion: ").append(getCustomerVersion()).append(",");
         if (getTransferData() != null)
-            sb.append("TransferData: ").append(getTransferData());
+            sb.append("TransferData: ").append(getTransferData()).append(",");
+        if (getGenerationId() != null)
+            sb.append("GenerationId: ").append(getGenerationId());
         sb.append("}");
         return sb.toString();
     }
@@ -600,9 +660,17 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
             return false;
         if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
+        if (other.getCustomerVersion() == null ^ this.getCustomerVersion() == null)
+            return false;
+        if (other.getCustomerVersion() != null && other.getCustomerVersion().equals(this.getCustomerVersion()) == false)
+            return false;
         if (other.getTransferData() == null ^ this.getTransferData() == null)
             return false;
         if (other.getTransferData() != null && other.getTransferData().equals(this.getTransferData()) == false)
+            return false;
+        if (other.getGenerationId() == null ^ this.getGenerationId() == null)
+            return false;
+        if (other.getGenerationId() != null && other.getGenerationId().equals(this.getGenerationId()) == false)
             return false;
         return true;
     }
@@ -621,7 +689,9 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getPreviousOwnedBy() == null) ? 0 : getPreviousOwnedBy().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getCustomerVersion() == null) ? 0 : getCustomerVersion().hashCode());
         hashCode = prime * hashCode + ((getTransferData() == null) ? 0 : getTransferData().hashCode());
+        hashCode = prime * hashCode + ((getGenerationId() == null) ? 0 : getGenerationId().hashCode());
         return hashCode;
     }
 

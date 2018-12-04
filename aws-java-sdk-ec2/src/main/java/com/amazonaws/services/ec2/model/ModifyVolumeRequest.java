@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,11 @@ import com.amazonaws.services.ec2.model.transform.ModifyVolumeRequestMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyVolumeRequest> {
 
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     */
     private String volumeId;
     /**
      * <p>
@@ -68,7 +73,12 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     private Integer iops;
 
     /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
      * @param volumeId
+     *        The ID of the volume.
      */
 
     public void setVolumeId(String volumeId) {
@@ -76,7 +86,11 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @return The ID of the volume.
      */
 
     public String getVolumeId() {
@@ -84,7 +98,12 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
      * @param volumeId
+     *        The ID of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

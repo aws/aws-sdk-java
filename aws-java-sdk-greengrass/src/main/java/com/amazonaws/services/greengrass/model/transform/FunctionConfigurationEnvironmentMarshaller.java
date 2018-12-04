@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.greengrass.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +29,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FunctionConfigurationEnvironmentMarshaller {
 
+    private static final MarshallingInfo<Boolean> ACCESSSYSFS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessSysfs").build();
+    private static final MarshallingInfo<List> RESOURCEACCESSPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceAccessPolicies").build();
     private static final MarshallingInfo<Map> VARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Variables").build();
 
@@ -48,6 +52,8 @@ public class FunctionConfigurationEnvironmentMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(functionConfigurationEnvironment.getAccessSysfs(), ACCESSSYSFS_BINDING);
+            protocolMarshaller.marshall(functionConfigurationEnvironment.getResourceAccessPolicies(), RESOURCEACCESSPOLICIES_BINDING);
             protocolMarshaller.marshall(functionConfigurationEnvironment.getVariables(), VARIABLES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

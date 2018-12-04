@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,12 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The region in which the VPC is located.
+     * </p>
+     */
+    private String region;
 
     /**
      * <p>
@@ -370,6 +376,46 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The region in which the VPC is located.
+     * </p>
+     * 
+     * @param region
+     *        The region in which the VPC is located.
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * The region in which the VPC is located.
+     * </p>
+     * 
+     * @return The region in which the VPC is located.
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * The region in which the VPC is located.
+     * </p>
+     * 
+     * @param region
+     *        The region in which the VPC is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcPeeringConnectionVpcInfo withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -391,7 +437,9 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
         if (getPeeringOptions() != null)
             sb.append("PeeringOptions: ").append(getPeeringOptions()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getRegion() != null)
+            sb.append("Region: ").append(getRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -430,6 +478,10 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
+            return false;
         return true;
     }
 
@@ -444,6 +496,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPeeringOptions() == null) ? 0 : getPeeringOptions().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,10 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
                     if (ebs.getIops() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebs.getIops()));
+                    }
+
+                    if (ebs.getKmsKeyId() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId", StringUtils.fromString(ebs.getKmsKeyId()));
                     }
 
                     if (ebs.getSnapshotId() != null) {
@@ -402,6 +406,64 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     }
                 }
                 tagSpecificationsListIndex++;
+            }
+        }
+
+        LaunchTemplateSpecification launchTemplate = runInstancesRequest.getLaunchTemplate();
+        if (launchTemplate != null) {
+
+            if (launchTemplate.getLaunchTemplateId() != null) {
+                request.addParameter("LaunchTemplate.LaunchTemplateId", StringUtils.fromString(launchTemplate.getLaunchTemplateId()));
+            }
+
+            if (launchTemplate.getLaunchTemplateName() != null) {
+                request.addParameter("LaunchTemplate.LaunchTemplateName", StringUtils.fromString(launchTemplate.getLaunchTemplateName()));
+            }
+
+            if (launchTemplate.getVersion() != null) {
+                request.addParameter("LaunchTemplate.Version", StringUtils.fromString(launchTemplate.getVersion()));
+            }
+        }
+
+        InstanceMarketOptionsRequest instanceMarketOptions = runInstancesRequest.getInstanceMarketOptions();
+        if (instanceMarketOptions != null) {
+
+            if (instanceMarketOptions.getMarketType() != null) {
+                request.addParameter("InstanceMarketOptions.MarketType", StringUtils.fromString(instanceMarketOptions.getMarketType()));
+            }
+
+            SpotMarketOptions spotOptions = instanceMarketOptions.getSpotOptions();
+            if (spotOptions != null) {
+
+                if (spotOptions.getMaxPrice() != null) {
+                    request.addParameter("InstanceMarketOptions.SpotOptions.MaxPrice", StringUtils.fromString(spotOptions.getMaxPrice()));
+                }
+
+                if (spotOptions.getSpotInstanceType() != null) {
+                    request.addParameter("InstanceMarketOptions.SpotOptions.SpotInstanceType", StringUtils.fromString(spotOptions.getSpotInstanceType()));
+                }
+
+                if (spotOptions.getBlockDurationMinutes() != null) {
+                    request.addParameter("InstanceMarketOptions.SpotOptions.BlockDurationMinutes",
+                            StringUtils.fromInteger(spotOptions.getBlockDurationMinutes()));
+                }
+
+                if (spotOptions.getValidUntil() != null) {
+                    request.addParameter("InstanceMarketOptions.SpotOptions.ValidUntil", StringUtils.fromDate(spotOptions.getValidUntil()));
+                }
+
+                if (spotOptions.getInstanceInterruptionBehavior() != null) {
+                    request.addParameter("InstanceMarketOptions.SpotOptions.InstanceInterruptionBehavior",
+                            StringUtils.fromString(spotOptions.getInstanceInterruptionBehavior()));
+                }
+            }
+        }
+
+        CreditSpecificationRequest creditSpecification = runInstancesRequest.getCreditSpecification();
+        if (creditSpecification != null) {
+
+            if (creditSpecification.getCpuCredits() != null) {
+                request.addParameter("CreditSpecification.CpuCredits", StringUtils.fromString(creditSpecification.getCpuCredits()));
             }
         }
 

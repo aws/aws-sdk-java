@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
     private String workspaceId;
     /**
      * <p>
-     * The WorkSpace properties of the request.
+     * The properties of the WorkSpace.
      * </p>
      */
     private WorkspaceProperties workspaceProperties;
@@ -80,11 +80,11 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The WorkSpace properties of the request.
+     * The properties of the WorkSpace.
      * </p>
      * 
      * @param workspaceProperties
-     *        The WorkSpace properties of the request.
+     *        The properties of the WorkSpace.
      */
 
     public void setWorkspaceProperties(WorkspaceProperties workspaceProperties) {
@@ -93,10 +93,10 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The WorkSpace properties of the request.
+     * The properties of the WorkSpace.
      * </p>
      * 
-     * @return The WorkSpace properties of the request.
+     * @return The properties of the WorkSpace.
      */
 
     public WorkspaceProperties getWorkspaceProperties() {
@@ -105,11 +105,11 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The WorkSpace properties of the request.
+     * The properties of the WorkSpace.
      * </p>
      * 
      * @param workspaceProperties
-     *        The WorkSpace properties of the request.
+     *        The properties of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

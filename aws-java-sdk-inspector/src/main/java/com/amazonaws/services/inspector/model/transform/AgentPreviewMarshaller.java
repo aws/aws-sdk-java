@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,22 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AgentPreviewMarshaller {
 
+    private static final MarshallingInfo<String> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("hostname").build();
     private static final MarshallingInfo<String> AGENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("agentId").build();
     private static final MarshallingInfo<String> AUTOSCALINGGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoScalingGroup").build();
+    private static final MarshallingInfo<String> AGENTHEALTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("agentHealth").build();
+    private static final MarshallingInfo<String> AGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("agentVersion").build();
+    private static final MarshallingInfo<String> OPERATINGSYSTEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("operatingSystem").build();
+    private static final MarshallingInfo<String> KERNELVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kernelVersion").build();
+    private static final MarshallingInfo<String> IPV4ADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipv4Address").build();
 
     private static final AgentPreviewMarshaller instance = new AgentPreviewMarshaller();
 
@@ -48,8 +60,14 @@ public class AgentPreviewMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(agentPreview.getHostname(), HOSTNAME_BINDING);
             protocolMarshaller.marshall(agentPreview.getAgentId(), AGENTID_BINDING);
             protocolMarshaller.marshall(agentPreview.getAutoScalingGroup(), AUTOSCALINGGROUP_BINDING);
+            protocolMarshaller.marshall(agentPreview.getAgentHealth(), AGENTHEALTH_BINDING);
+            protocolMarshaller.marshall(agentPreview.getAgentVersion(), AGENTVERSION_BINDING);
+            protocolMarshaller.marshall(agentPreview.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
+            protocolMarshaller.marshall(agentPreview.getKernelVersion(), KERNELVERSION_BINDING);
+            protocolMarshaller.marshall(agentPreview.getIpv4Address(), IPV4ADDRESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

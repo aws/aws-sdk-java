@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon Technologies, Inc.
+ * Copyright 2011-2018 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,6 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicReference;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
@@ -33,6 +25,13 @@ import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.model.CopyResult;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Monitors an copy operation by periodically checking to see if the operation is
@@ -154,6 +153,10 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
     void copyComplete() {
         markAllDone();
         transfer.setState(TransferState.Completed);
+        // Since the copy has completed we can assume all bytes were successfully transferred
+        // This is required since there are no progress updates available during server-side
+        // copying of data.
+        transfer.getProgress().updateProgress(transfer.getProgress().getTotalBytesToTransfer());
         // AmazonS3Client takes care of all the events for single part uploads,
         // so we only need to send a completed event for multipart uploads.
         if (multipartCopyCallable.isMultipartCopy()) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -201,10 +201,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
-     * Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the instance is
-     * launched into a nondefault subnet, the default is <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Default: If the instance is launched into a default subnet, the default is to assign a public IP address. If the
+     * instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      * </p>
      */
     private Boolean associatePublicIpAddress;
@@ -1436,10 +1434,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
-     * Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the instance is
-     * launched into a nondefault subnet, the default is <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Default: If the instance is launched into a default subnet, the default is to assign a public IP address. If the
+     * instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      * </p>
      * 
      * @param associatePublicIpAddress
@@ -1451,10 +1447,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *        </p>
      *        <p>
-     *        Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the
-     *        instance is launched into a nondefault subnet, the default is <code>false</code>. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *        Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Default: If the instance is launched into a default subnet, the default is to assign a public IP address.
+     *        If the instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      */
 
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
@@ -1472,10 +1466,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
-     * Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the instance is
-     * launched into a nondefault subnet, the default is <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Default: If the instance is launched into a default subnet, the default is to assign a public IP address. If the
+     * instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      * </p>
      * 
      * @return Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a
@@ -1486,10 +1478,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *         If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *         </p>
      *         <p>
-     *         Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the
-     *         instance is launched into a nondefault subnet, the default is <code>false</code>. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *         Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Default: If the instance is launched into a default subnet, the default is to assign a public IP address.
+     *         If the instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      */
 
     public Boolean getAssociatePublicIpAddress() {
@@ -1507,10 +1497,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
-     * Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the instance is
-     * launched into a nondefault subnet, the default is <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Default: If the instance is launched into a default subnet, the default is to assign a public IP address. If the
+     * instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      * </p>
      * 
      * @param associatePublicIpAddress
@@ -1522,10 +1510,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *        </p>
      *        <p>
-     *        Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the
-     *        instance is launched into a nondefault subnet, the default is <code>false</code>. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *        Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Default: If the instance is launched into a default subnet, the default is to assign a public IP address.
+     *        If the instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1545,10 +1531,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
-     * Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the instance is
-     * launched into a nondefault subnet, the default is <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Default: If the instance is launched into a default subnet, the default is to assign a public IP address. If the
+     * instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      * </p>
      * 
      * @return Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a
@@ -1559,10 +1543,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *         If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *         </p>
      *         <p>
-     *         Default: If the instance is launched into a default subnet, the default is <code>true</code>. If the
-     *         instance is launched into a nondefault subnet, the default is <code>false</code>. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *         Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Default: If the instance is launched into a default subnet, the default is to assign a public IP address.
+     *         If the instance is launched into a nondefault subnet, the default is not to assign a public IP address.
      */
 
     public Boolean isAssociatePublicIpAddress() {

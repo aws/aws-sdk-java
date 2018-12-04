@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a WorkSpace that could not be created.
+ * Information about a WorkSpace that could not be created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedCreateWorkspaceRequest"
@@ -30,8 +30,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace
-     * that could not be created.
+     * Information about the WorkSpace.
      * </p>
      */
     private WorkspaceRequest workspaceRequest;
@@ -50,13 +49,11 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace
-     * that could not be created.
+     * Information about the WorkSpace.
      * </p>
      * 
      * @param workspaceRequest
-     *        A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the
-     *        WorkSpace that could not be created.
+     *        Information about the WorkSpace.
      */
 
     public void setWorkspaceRequest(WorkspaceRequest workspaceRequest) {
@@ -65,12 +62,10 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace
-     * that could not be created.
+     * Information about the WorkSpace.
      * </p>
      * 
-     * @return A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the
-     *         WorkSpace that could not be created.
+     * @return Information about the WorkSpace.
      */
 
     public WorkspaceRequest getWorkspaceRequest() {
@@ -79,13 +74,11 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace
-     * that could not be created.
+     * Information about the WorkSpace.
      * </p>
      * 
      * @param workspaceRequest
-     *        A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the
-     *        WorkSpace that could not be created.
+     *        Information about the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,16 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
     private String principalArn;
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     * <code>volume</code>
+     * The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>
      * </p>
      */
     private String resource;
@@ -84,13 +92,30 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     * <code>volume</code>
+     * The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>
      * </p>
      * 
      * @param resource
-     *        The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     *        <code>volume</code>
+     *        The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     *        <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     *        <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     *        <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     *        <code>network-acl-association</code> | <code>network-interface</code> |
+     *        <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> |
+     *        <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
+     *        <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     *        <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     *        <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     *        <code>vpn-gateway</code>
      */
 
     public void setResource(String resource) {
@@ -99,12 +124,29 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     * <code>volume</code>
+     * The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>
      * </p>
      * 
-     * @return The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     *         <code>volume</code>
+     * @return The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code>
+     *         | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     *         <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     *         <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     *         <code>network-acl-association</code> | <code>network-interface</code> |
+     *         <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> |
+     *         <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
+     *         <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     *         <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     *         <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     *         <code>vpn-gateway</code>
      */
 
     public String getResource() {
@@ -113,13 +155,30 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     * <code>volume</code>
+     * The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>
      * </p>
      * 
      * @param resource
-     *        The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     *        <code>volume</code>
+     *        The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     *        <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     *        <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     *        <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     *        <code>network-acl-association</code> | <code>network-interface</code> |
+     *        <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> |
+     *        <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
+     *        <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     *        <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     *        <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     *        <code>vpn-gateway</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

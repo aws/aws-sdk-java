@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,10 +96,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      */
@@ -123,6 +122,15 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private TracingConfig tracingConfig;
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
@@ -523,10 +531,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -540,11 +547,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *        <note>
      *        <p>
      *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *        one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *        provided. Failure to do so will result in an invalid parameter error being returned. Note that you will
-     *        have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *        runtime.
+     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
+     *        for each region that contains functions written in the Node v0.10.42 runtime.
      *        </p>
      * @see Runtime
      */
@@ -565,10 +570,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -581,11 +585,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *         <note>
      *         <p>
      *         Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *         runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *         one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *         provided. Failure to do so will result in an invalid parameter error being returned. Note that you will
-     *         have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *         runtime.
+     *         runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *         will result in an invalid parameter error being returned. Note that you will have to follow this
+     *         procedure for each region that contains functions written in the Node v0.10.42 runtime.
      *         </p>
      * @see Runtime
      */
@@ -606,10 +608,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -623,11 +624,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *        <note>
      *        <p>
      *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *        one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *        provided. Failure to do so will result in an invalid parameter error being returned. Note that you will
-     *        have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *        runtime.
+     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
+     *        for each region that contains functions written in the Node v0.10.42 runtime.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
@@ -650,10 +649,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -667,11 +665,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *        <note>
      *        <p>
      *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *        one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *        provided. Failure to do so will result in an invalid parameter error being returned. Note that you will
-     *        have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *        runtime.
+     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
+     *        for each region that contains functions written in the Node v0.10.42 runtime.
      *        </p>
      * @see Runtime
      */
@@ -692,10 +688,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <note>
      * <p>
      * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time
-     * extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to
-     * do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42 runtime.
+     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
+     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
+     * contains functions written in the Node v0.10.42 runtime.
      * </p>
      * </note>
      * 
@@ -709,11 +704,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *        <note>
      *        <p>
      *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a
-     *        one-time extension until June 30, 2017 by going to the Lambda console and following the instructions
-     *        provided. Failure to do so will result in an invalid parameter error being returned. Note that you will
-     *        have to follow this procedure for each region that contains functions written in the Node v0.10.42
-     *        runtime.
+     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
+     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
+     *        for each region that contains functions written in the Node v0.10.42 runtime.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
@@ -854,6 +847,64 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @param revisionId
+     *        An optional value you can use to ensure you are updating the latest update of the function version or
+     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *        version or alias <code>RevisionID</code> using either or .
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @return An optional value you can use to ensure you are updating the latest update of the function version or
+     *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *         function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *         version or alias <code>RevisionID</code> using either or .
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @param revisionId
+     *        An optional value you can use to ensure you are updating the latest update of the function version or
+     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *        version or alias <code>RevisionID</code> using either or .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -887,7 +938,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         if (getKMSKeyArn() != null)
             sb.append("KMSKeyArn: ").append(getKMSKeyArn()).append(",");
         if (getTracingConfig() != null)
-            sb.append("TracingConfig: ").append(getTracingConfig());
+            sb.append("TracingConfig: ").append(getTracingConfig()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -950,6 +1003,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getTracingConfig() != null && other.getTracingConfig().equals(this.getTracingConfig()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
         return true;
     }
 
@@ -970,6 +1027,7 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 

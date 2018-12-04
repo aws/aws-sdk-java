@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,9 +34,9 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String cluster;
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) of the container instance with which to filter the
-     * <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that
-     * belong to that container instance.
+     * The container instance ID or full ARN of the container instance with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container
+     * instance.
      * </p>
      */
     private String containerInstance;
@@ -51,8 +51,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListTasks</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -90,20 +89,26 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the desired
-     * status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or have
-     * died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that ECS has set the
-     * desired status to <code>RUNNING</code>.
+     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
+     * desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or
+     * have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has
+     * set the desired status to <code>RUNNING</code>.
      * </p>
      * <note>
      * <p>
-     * Although you can filter results based on a desired status of <code>PENDING</code>, this will not return any
-     * results because ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code>
-     * may have a value of <code>PENDING</code>).
+     * Although you can filter results based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).
      * </p>
      * </note>
      */
     private String desiredStatus;
+    /**
+     * <p>
+     * The launch type for services you want to list.
+     * </p>
+     */
+    private String launchType;
 
     /**
      * <p>
@@ -153,15 +158,15 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) of the container instance with which to filter the
-     * <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that
-     * belong to that container instance.
+     * The container instance ID or full ARN of the container instance with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container
+     * instance.
      * </p>
      * 
      * @param containerInstance
-     *        The container instance ID or full Amazon Resource Name (ARN) of the container instance with which to
-     *        filter the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results
-     *        to tasks that belong to that container instance.
+     *        The container instance ID or full ARN of the container instance with which to filter the
+     *        <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks
+     *        that belong to that container instance.
      */
 
     public void setContainerInstance(String containerInstance) {
@@ -170,14 +175,14 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) of the container instance with which to filter the
-     * <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that
-     * belong to that container instance.
+     * The container instance ID or full ARN of the container instance with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container
+     * instance.
      * </p>
      * 
-     * @return The container instance ID or full Amazon Resource Name (ARN) of the container instance with which to
-     *         filter the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results
-     *         to tasks that belong to that container instance.
+     * @return The container instance ID or full ARN of the container instance with which to filter the
+     *         <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks
+     *         that belong to that container instance.
      */
 
     public String getContainerInstance() {
@@ -186,15 +191,15 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) of the container instance with which to filter the
-     * <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that
-     * belong to that container instance.
+     * The container instance ID or full ARN of the container instance with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container
+     * instance.
      * </p>
      * 
      * @param containerInstance
-     *        The container instance ID or full Amazon Resource Name (ARN) of the container instance with which to
-     *        filter the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results
-     *        to tasks that belong to that container instance.
+     *        The container instance ID or full ARN of the container instance with which to filter the
+     *        <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks
+     *        that belong to that container instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,8 +258,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListTasks</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -266,8 +270,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>ListTasks</code> request where
      *        <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return.</p> <note>
+     *        continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -282,8 +285,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListTasks</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -294,8 +296,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @return The <code>nextToken</code> value returned from a previous paginated <code>ListTasks</code> request where
      *         <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *         is <code>null</code> when there are no more results to return.</p> <note>
+     *         continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -310,8 +311,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListTasks</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -323,8 +323,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>ListTasks</code> request where
      *        <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return.</p> <note>
+     *        continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -502,28 +501,28 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the desired
-     * status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or have
-     * died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that ECS has set the
-     * desired status to <code>RUNNING</code>.
+     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
+     * desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or
+     * have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has
+     * set the desired status to <code>RUNNING</code>.
      * </p>
      * <note>
      * <p>
-     * Although you can filter results based on a desired status of <code>PENDING</code>, this will not return any
-     * results because ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code>
-     * may have a value of <code>PENDING</code>).
+     * Although you can filter results based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).
      * </p>
      * </note>
      * 
      * @param desiredStatus
      *        The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     *        <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the
+     *        <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
      *        desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting
      *        properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks
-     *        that ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+     *        that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
      *        <p>
-     *        Although you can filter results based on a desired status of <code>PENDING</code>, this will not return
-     *        any results because ECS never sets the desired status of a task to that value (only a task's
+     *        Although you can filter results based on a desired status of <code>PENDING</code>, this does not return
+     *        any results because Amazon ECS never sets the desired status of a task to that value (only a task's
      *        <code>lastStatus</code> may have a value of <code>PENDING</code>).
      *        </p>
      * @see DesiredStatus
@@ -536,27 +535,27 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the desired
-     * status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or have
-     * died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that ECS has set the
-     * desired status to <code>RUNNING</code>.
+     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
+     * desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or
+     * have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has
+     * set the desired status to <code>RUNNING</code>.
      * </p>
      * <note>
      * <p>
-     * Although you can filter results based on a desired status of <code>PENDING</code>, this will not return any
-     * results because ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code>
-     * may have a value of <code>PENDING</code>).
+     * Although you can filter results based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).
      * </p>
      * </note>
      * 
      * @return The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     *         <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the
-     *         desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting
+     *         <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set
+     *         the desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting
      *         properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks
-     *         that ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+     *         that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
      *         <p>
-     *         Although you can filter results based on a desired status of <code>PENDING</code>, this will not return
-     *         any results because ECS never sets the desired status of a task to that value (only a task's
+     *         Although you can filter results based on a desired status of <code>PENDING</code>, this does not return
+     *         any results because Amazon ECS never sets the desired status of a task to that value (only a task's
      *         <code>lastStatus</code> may have a value of <code>PENDING</code>).
      *         </p>
      * @see DesiredStatus
@@ -569,28 +568,28 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the desired
-     * status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or have
-     * died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that ECS has set the
-     * desired status to <code>RUNNING</code>.
+     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
+     * desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or
+     * have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has
+     * set the desired status to <code>RUNNING</code>.
      * </p>
      * <note>
      * <p>
-     * Although you can filter results based on a desired status of <code>PENDING</code>, this will not return any
-     * results because ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code>
-     * may have a value of <code>PENDING</code>).
+     * Although you can filter results based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).
      * </p>
      * </note>
      * 
      * @param desiredStatus
      *        The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     *        <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the
+     *        <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
      *        desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting
      *        properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks
-     *        that ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+     *        that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
      *        <p>
-     *        Although you can filter results based on a desired status of <code>PENDING</code>, this will not return
-     *        any results because ECS never sets the desired status of a task to that value (only a task's
+     *        Although you can filter results based on a desired status of <code>PENDING</code>, this does not return
+     *        any results because Amazon ECS never sets the desired status of a task to that value (only a task's
      *        <code>lastStatus</code> may have a value of <code>PENDING</code>).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -605,28 +604,28 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the desired
-     * status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or have
-     * died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that ECS has set the
-     * desired status to <code>RUNNING</code>.
+     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
+     * desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or
+     * have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has
+     * set the desired status to <code>RUNNING</code>.
      * </p>
      * <note>
      * <p>
-     * Although you can filter results based on a desired status of <code>PENDING</code>, this will not return any
-     * results because ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code>
-     * may have a value of <code>PENDING</code>).
+     * Although you can filter results based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).
      * </p>
      * </note>
      * 
      * @param desiredStatus
      *        The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     *        <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the
+     *        <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
      *        desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting
      *        properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks
-     *        that ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+     *        that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
      *        <p>
-     *        Although you can filter results based on a desired status of <code>PENDING</code>, this will not return
-     *        any results because ECS never sets the desired status of a task to that value (only a task's
+     *        Although you can filter results based on a desired status of <code>PENDING</code>, this does not return
+     *        any results because Amazon ECS never sets the desired status of a task to that value (only a task's
      *        <code>lastStatus</code> may have a value of <code>PENDING</code>).
      *        </p>
      * @see DesiredStatus
@@ -639,28 +638,28 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the desired
-     * status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or have
-     * died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that ECS has set the
-     * desired status to <code>RUNNING</code>.
+     * <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
+     * desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting properly or
+     * have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has
+     * set the desired status to <code>RUNNING</code>.
      * </p>
      * <note>
      * <p>
-     * Although you can filter results based on a desired status of <code>PENDING</code>, this will not return any
-     * results because ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code>
-     * may have a value of <code>PENDING</code>).
+     * Although you can filter results based on a desired status of <code>PENDING</code>, this does not return any
+     * results because Amazon ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).
      * </p>
      * </note>
      * 
      * @param desiredStatus
      *        The task desired status with which to filter the <code>ListTasks</code> results. Specifying a
-     *        <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that ECS has set the
+     *        <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the
      *        desired status to <code>STOPPED</code>, which can be useful for debugging tasks that are not starting
      *        properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks
-     *        that ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+     *        that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
      *        <p>
-     *        Although you can filter results based on a desired status of <code>PENDING</code>, this will not return
-     *        any results because ECS never sets the desired status of a task to that value (only a task's
+     *        Although you can filter results based on a desired status of <code>PENDING</code>, this does not return
+     *        any results because Amazon ECS never sets the desired status of a task to that value (only a task's
      *        <code>lastStatus</code> may have a value of <code>PENDING</code>).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -669,6 +668,79 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public ListTasksRequest withDesiredStatus(DesiredStatus desiredStatus) {
         this.desiredStatus = desiredStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type for services you want to list.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type for services you want to list.
+     * @see LaunchType
+     */
+
+    public void setLaunchType(String launchType) {
+        this.launchType = launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type for services you want to list.
+     * </p>
+     * 
+     * @return The launch type for services you want to list.
+     * @see LaunchType
+     */
+
+    public String getLaunchType() {
+        return this.launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type for services you want to list.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type for services you want to list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public ListTasksRequest withLaunchType(String launchType) {
+        setLaunchType(launchType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type for services you want to list.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type for services you want to list.
+     * @see LaunchType
+     */
+
+    public void setLaunchType(LaunchType launchType) {
+        withLaunchType(launchType);
+    }
+
+    /**
+     * <p>
+     * The launch type for services you want to list.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type for services you want to list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public ListTasksRequest withLaunchType(LaunchType launchType) {
+        this.launchType = launchType.toString();
         return this;
     }
 
@@ -698,7 +770,9 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getServiceName() != null)
             sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getDesiredStatus() != null)
-            sb.append("DesiredStatus: ").append(getDesiredStatus());
+            sb.append("DesiredStatus: ").append(getDesiredStatus()).append(",");
+        if (getLaunchType() != null)
+            sb.append("LaunchType: ").append(getLaunchType());
         sb.append("}");
         return sb.toString();
     }
@@ -745,6 +819,10 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getDesiredStatus() != null && other.getDesiredStatus().equals(this.getDesiredStatus()) == false)
             return false;
+        if (other.getLaunchType() == null ^ this.getLaunchType() == null)
+            return false;
+        if (other.getLaunchType() != null && other.getLaunchType().equals(this.getLaunchType()) == false)
+            return false;
         return true;
     }
 
@@ -761,6 +839,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getDesiredStatus() == null) ? 0 : getDesiredStatus().hashCode());
+        hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
         return hashCode;
     }
 

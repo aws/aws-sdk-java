@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,18 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      */
     private java.util.List<MFAOptionType> mFAOptions;
+    /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     */
+    private String preferredMfaSetting;
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     */
+    private java.util.List<String> userMFASettingList;
 
     /**
      * <p>
@@ -249,6 +261,116 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
+     * @param preferredMfaSetting
+     *        The user's preferred MFA setting.
+     */
+
+    public void setPreferredMfaSetting(String preferredMfaSetting) {
+        this.preferredMfaSetting = preferredMfaSetting;
+    }
+
+    /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
+     * @return The user's preferred MFA setting.
+     */
+
+    public String getPreferredMfaSetting() {
+        return this.preferredMfaSetting;
+    }
+
+    /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
+     * @param preferredMfaSetting
+     *        The user's preferred MFA setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUserResult withPreferredMfaSetting(String preferredMfaSetting) {
+        setPreferredMfaSetting(preferredMfaSetting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
+     * @return The list of the user's MFA settings.
+     */
+
+    public java.util.List<String> getUserMFASettingList() {
+        return userMFASettingList;
+    }
+
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
+     * @param userMFASettingList
+     *        The list of the user's MFA settings.
+     */
+
+    public void setUserMFASettingList(java.util.Collection<String> userMFASettingList) {
+        if (userMFASettingList == null) {
+            this.userMFASettingList = null;
+            return;
+        }
+
+        this.userMFASettingList = new java.util.ArrayList<String>(userMFASettingList);
+    }
+
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserMFASettingList(java.util.Collection)} or {@link #withUserMFASettingList(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param userMFASettingList
+     *        The list of the user's MFA settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUserResult withUserMFASettingList(String... userMFASettingList) {
+        if (this.userMFASettingList == null) {
+            setUserMFASettingList(new java.util.ArrayList<String>(userMFASettingList.length));
+        }
+        for (String ele : userMFASettingList) {
+            this.userMFASettingList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
+     * @param userMFASettingList
+     *        The list of the user's MFA settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUserResult withUserMFASettingList(java.util.Collection<String> userMFASettingList) {
+        setUserMFASettingList(userMFASettingList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -264,7 +386,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         if (getUserAttributes() != null)
             sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getMFAOptions() != null)
-            sb.append("MFAOptions: ").append(getMFAOptions());
+            sb.append("MFAOptions: ").append(getMFAOptions()).append(",");
+        if (getPreferredMfaSetting() != null)
+            sb.append("PreferredMfaSetting: ").append(getPreferredMfaSetting()).append(",");
+        if (getUserMFASettingList() != null)
+            sb.append("UserMFASettingList: ").append(getUserMFASettingList());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +417,14 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             return false;
         if (other.getMFAOptions() != null && other.getMFAOptions().equals(this.getMFAOptions()) == false)
             return false;
+        if (other.getPreferredMfaSetting() == null ^ this.getPreferredMfaSetting() == null)
+            return false;
+        if (other.getPreferredMfaSetting() != null && other.getPreferredMfaSetting().equals(this.getPreferredMfaSetting()) == false)
+            return false;
+        if (other.getUserMFASettingList() == null ^ this.getUserMFASettingList() == null)
+            return false;
+        if (other.getUserMFASettingList() != null && other.getUserMFASettingList().equals(this.getUserMFASettingList()) == false)
+            return false;
         return true;
     }
 
@@ -302,6 +436,8 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
         hashCode = prime * hashCode + ((getMFAOptions() == null) ? 0 : getMFAOptions().hashCode());
+        hashCode = prime * hashCode + ((getPreferredMfaSetting() == null) ? 0 : getPreferredMfaSetting().hashCode());
+        hashCode = prime * hashCode + ((getUserMFASettingList() == null) ? 0 : getUserMFASettingList().hashCode());
         return hashCode;
     }
 

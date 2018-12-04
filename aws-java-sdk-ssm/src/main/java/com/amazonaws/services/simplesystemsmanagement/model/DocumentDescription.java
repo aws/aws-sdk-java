@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -128,6 +128,21 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String defaultVersion;
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     */
+    private String documentFormat;
+    /**
+     * <p>
+     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
+     * For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     */
+    private String targetType;
     /**
      * <p>
      * The tags, or metadata, that have been applied to the document.
@@ -994,6 +1009,137 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(String documentFormat) {
+        this.documentFormat = documentFormat;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @return The document format, either JSON or YAML.
+     * @see DocumentFormat
+     */
+
+    public String getDocumentFormat() {
+        return this.documentFormat;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public DocumentDescription withDocumentFormat(String documentFormat) {
+        setDocumentFormat(documentFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(DocumentFormat documentFormat) {
+        withDocumentFormat(documentFormat);
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public DocumentDescription withDocumentFormat(DocumentFormat documentFormat) {
+        this.documentFormat = documentFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
+     * For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param targetType
+     *        The target type which defines the kinds of resources the document can run on. For example,
+     *        /AWS::EC2::Instance. For a list of valid resource types, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
+    }
+
+    /**
+     * <p>
+     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
+     * For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @return The target type which defines the kinds of resources the document can run on. For example,
+     *         /AWS::EC2::Instance. For a list of valid resource types, see <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *         Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    /**
+     * <p>
+     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
+     * For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param targetType
+     *        The target type which defines the kinds of resources the document can run on. For example,
+     *        /AWS::EC2::Instance. For a list of valid resource types, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withTargetType(String targetType) {
+        setTargetType(targetType);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags, or metadata, that have been applied to the document.
      * </p>
      * 
@@ -1106,6 +1252,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
             sb.append("LatestVersion: ").append(getLatestVersion()).append(",");
         if (getDefaultVersion() != null)
             sb.append("DefaultVersion: ").append(getDefaultVersion()).append(",");
+        if (getDocumentFormat() != null)
+            sb.append("DocumentFormat: ").append(getDocumentFormat()).append(",");
+        if (getTargetType() != null)
+            sb.append("TargetType: ").append(getTargetType()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1182,6 +1332,14 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getDefaultVersion() != null && other.getDefaultVersion().equals(this.getDefaultVersion()) == false)
             return false;
+        if (other.getDocumentFormat() == null ^ this.getDocumentFormat() == null)
+            return false;
+        if (other.getDocumentFormat() != null && other.getDocumentFormat().equals(this.getDocumentFormat()) == false)
+            return false;
+        if (other.getTargetType() == null ^ this.getTargetType() == null)
+            return false;
+        if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1209,6 +1367,8 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
         hashCode = prime * hashCode + ((getLatestVersion() == null) ? 0 : getLatestVersion().hashCode());
         hashCode = prime * hashCode + ((getDefaultVersion() == null) ? 0 : getDefaultVersion().hashCode());
+        hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
+        hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String sourceProductArn;
     /**
      * <p>
-     * The ID of the target product. By default, a new product is created.
+     * The identifier of the target product. By default, a new product is created.
      * </p>
      */
     private String targetProductId;
@@ -68,7 +68,8 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String targetProductName;
     /**
      * <p>
-     * The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     * The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all
+     * provisioning artifacts are copied.
      * </p>
      */
     private java.util.List<java.util.Map<String, String>> sourceProvisioningArtifactIdentifiers;
@@ -81,8 +82,8 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> copyOptions;
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      */
     private String idempotencyToken;
@@ -268,11 +269,11 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the target product. By default, a new product is created.
+     * The identifier of the target product. By default, a new product is created.
      * </p>
      * 
      * @param targetProductId
-     *        The ID of the target product. By default, a new product is created.
+     *        The identifier of the target product. By default, a new product is created.
      */
 
     public void setTargetProductId(String targetProductId) {
@@ -281,10 +282,10 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the target product. By default, a new product is created.
+     * The identifier of the target product. By default, a new product is created.
      * </p>
      * 
-     * @return The ID of the target product. By default, a new product is created.
+     * @return The identifier of the target product. By default, a new product is created.
      */
 
     public String getTargetProductId() {
@@ -293,11 +294,11 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the target product. By default, a new product is created.
+     * The identifier of the target product. By default, a new product is created.
      * </p>
      * 
      * @param targetProductId
-     *        The ID of the target product. By default, a new product is created.
+     *        The identifier of the target product. By default, a new product is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,10 +349,12 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     * The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all
+     * provisioning artifacts are copied.
      * </p>
      * 
-     * @return The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     * @return The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By
+     *         default, all provisioning artifacts are copied.
      */
 
     public java.util.List<java.util.Map<String, String>> getSourceProvisioningArtifactIdentifiers() {
@@ -360,11 +363,13 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     * The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all
+     * provisioning artifacts are copied.
      * </p>
      * 
      * @param sourceProvisioningArtifactIdentifiers
-     *        The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     *        The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default,
+     *        all provisioning artifacts are copied.
      */
 
     public void setSourceProvisioningArtifactIdentifiers(java.util.Collection<java.util.Map<String, String>> sourceProvisioningArtifactIdentifiers) {
@@ -378,7 +383,8 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     * The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all
+     * provisioning artifacts are copied.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -388,7 +394,8 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param sourceProvisioningArtifactIdentifiers
-     *        The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     *        The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default,
+     *        all provisioning artifacts are copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,11 +411,13 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     * The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all
+     * provisioning artifacts are copied.
      * </p>
      * 
      * @param sourceProvisioningArtifactIdentifiers
-     *        The IDs of the product versions to copy. By default, all provisioning artifacts are copied.
+     *        The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default,
+     *        all provisioning artifacts are copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,13 +537,13 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that
-     *        you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -543,12 +552,12 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
-     * @return A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided
-     *         that you also specify a different idempotency token for each request.
+     * @return A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *         idempotency token, the same response is returned for each repeated request.
      */
 
     public String getIdempotencyToken() {
@@ -557,13 +566,13 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that
-     *        you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

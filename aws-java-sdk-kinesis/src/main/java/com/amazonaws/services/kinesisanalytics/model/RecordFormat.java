@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,13 @@ public class RecordFormat implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String recordFormatType;
-
+    /**
+     * <p>
+     * When configuring application input at the time of creating or updating an application, provides additional
+     * mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some
+     * delimiter) on the streaming source.
+     * </p>
+     */
     private MappingParameters mappingParameters;
 
     /**
@@ -112,7 +118,16 @@ public class RecordFormat implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * When configuring application input at the time of creating or updating an application, provides additional
+     * mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some
+     * delimiter) on the streaming source.
+     * </p>
+     * 
      * @param mappingParameters
+     *        When configuring application input at the time of creating or updating an application, provides additional
+     *        mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some
+     *        delimiter) on the streaming source.
      */
 
     public void setMappingParameters(MappingParameters mappingParameters) {
@@ -120,7 +135,15 @@ public class RecordFormat implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * When configuring application input at the time of creating or updating an application, provides additional
+     * mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some
+     * delimiter) on the streaming source.
+     * </p>
+     * 
+     * @return When configuring application input at the time of creating or updating an application, provides
+     *         additional mapping information specific to the record format (such as JSON, CSV, or record fields
+     *         delimited by some delimiter) on the streaming source.
      */
 
     public MappingParameters getMappingParameters() {
@@ -128,7 +151,16 @@ public class RecordFormat implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * When configuring application input at the time of creating or updating an application, provides additional
+     * mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some
+     * delimiter) on the streaming source.
+     * </p>
+     * 
      * @param mappingParameters
+     *        When configuring application input at the time of creating or updating an application, provides additional
+     *        mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some
+     *        delimiter) on the streaming source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

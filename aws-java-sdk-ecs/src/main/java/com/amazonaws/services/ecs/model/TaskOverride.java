@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,13 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String taskRoleArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     */
+    private String executionRoleArn;
 
     /**
      * <p>
@@ -162,6 +169,52 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *        Docker daemon can assume.
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *         Docker daemon can assume.
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *        Docker daemon can assume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskOverride withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -175,7 +228,9 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
         if (getContainerOverrides() != null)
             sb.append("ContainerOverrides: ").append(getContainerOverrides()).append(",");
         if (getTaskRoleArn() != null)
-            sb.append("TaskRoleArn: ").append(getTaskRoleArn());
+            sb.append("TaskRoleArn: ").append(getTaskRoleArn()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -198,6 +253,10 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTaskRoleArn() != null && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
             return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -208,6 +267,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getContainerOverrides() == null) ? 0 : getContainerOverrides().hashCode());
         hashCode = prime * hashCode + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         return hashCode;
     }
 

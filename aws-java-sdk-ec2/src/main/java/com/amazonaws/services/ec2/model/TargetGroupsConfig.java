@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the target groups to attach to a Spot fleet. Spot fleet registers the running Spot instances with these
+ * Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these
  * target groups.
  * </p>
  * 

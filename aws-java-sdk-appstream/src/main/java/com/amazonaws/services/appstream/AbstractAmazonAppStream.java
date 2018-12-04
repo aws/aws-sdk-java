@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public AssociateFleetResult associateFleet(AssociateFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CopyImageResult copyImage(CopyImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +154,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartFleetResult startFleet(StartFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -165,6 +175,16 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public StopImageBuilderResult stopImageBuilder(StopImageBuilderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

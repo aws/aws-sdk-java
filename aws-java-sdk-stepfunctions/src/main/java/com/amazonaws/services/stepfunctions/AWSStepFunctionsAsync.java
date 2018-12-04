@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ import com.amazonaws.services.stepfunctions.model.*;
  * You can use Step Functions to build applications from individual components, each of which performs a discrete
  * function, or <i>task</i>, allowing you to scale and change applications quickly. Step Functions provides a console
  * that helps visualize the components of your application as a series of steps. Step Functions automatically triggers
- * and tracks each step, and retries steps when there are errors, so your application executes in order and as expected,
- * every time. Step Functions logs the state of each step, so you can diagnose and debug problems quickly.
+ * and tracks each step, and retries steps when there are errors, so your application executes predictably and in the
+ * right order every time. Step Functions logs the state of each step, so you can quickly diagnose and debug any issues.
  * </p>
  * <p>
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
@@ -49,10 +49,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Creates an activity. An Activity is a task which you write, in any language and hosted on any machine which has
-     * access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> and
-     * respond using <code>SendTask*</code> API calls. This function lets Step Functions know the existence of your
-     * activity and returns an identifier for use in a state machine and when polling from the activity.
+     * Creates an activity. An activity is a task which you write in any programming language and host on any machine
+     * which has access to AWS Step Functions. Activities must poll Step Functions using the
+     * <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets
+     * Step Functions know the existence of your activity and returns an identifier for use in a state machine and when
+     * polling from the activity.
      * </p>
      * 
      * @param createActivityRequest
@@ -65,10 +66,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Creates an activity. An Activity is a task which you write, in any language and hosted on any machine which has
-     * access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> and
-     * respond using <code>SendTask*</code> API calls. This function lets Step Functions know the existence of your
-     * activity and returns an identifier for use in a state machine and when polling from the activity.
+     * Creates an activity. An activity is a task which you write in any programming language and host on any machine
+     * which has access to AWS Step Functions. Activities must poll Step Functions using the
+     * <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets
+     * Step Functions know the existence of your activity and returns an identifier for use in a state machine and when
+     * polling from the activity.
      * </p>
      * 
      * @param createActivityRequest
@@ -87,7 +89,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code>
-     * states), determine which states to transition to next (<code>Choice</code> states), stop an execution with an
+     * states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language.
      * </p>
@@ -103,7 +105,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code>
-     * states), determine which states to transition to next (<code>Choice</code> states), stop an execution with an
+     * states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language.
      * </p>
@@ -154,10 +156,15 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Deletes a state machine. This is an asynchronous operation-- it sets the state machine's status to "DELETING" and
-     * begins the delete process. Each state machine execution will be deleted the next time it makes a state
-     * transition. After all executions have completed or been deleted, the state machine itself will be deleted.
+     * Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to
+     * <code>DELETING</code> and begins the deletion process. Each state machine execution is deleted the next time it
+     * makes a state transition.
      * </p>
+     * <note>
+     * <p>
+     * The state machine itself is deleted after all executions are completed or deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteStateMachineRequest
      * @return A Java Future containing the result of the DeleteStateMachine operation returned by the service.
@@ -169,10 +176,15 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Deletes a state machine. This is an asynchronous operation-- it sets the state machine's status to "DELETING" and
-     * begins the delete process. Each state machine execution will be deleted the next time it makes a state
-     * transition. After all executions have completed or been deleted, the state machine itself will be deleted.
+     * Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to
+     * <code>DELETING</code> and begins the deletion process. Each state machine execution is deleted the next time it
+     * makes a state transition.
      * </p>
+     * <note>
+     * <p>
+     * The state machine itself is deleted after all executions are completed or deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteStateMachineRequest
      * @param asyncHandler
@@ -282,11 +294,46 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
+     * Describes the state machine associated with a specific execution.
+     * </p>
+     * 
+     * @param describeStateMachineForExecutionRequest
+     * @return A Java Future containing the result of the DescribeStateMachineForExecution operation returned by the
+     *         service.
+     * @sample AWSStepFunctionsAsync.DescribeStateMachineForExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStateMachineForExecutionResult> describeStateMachineForExecutionAsync(
+            DescribeStateMachineForExecutionRequest describeStateMachineForExecutionRequest);
+
+    /**
+     * <p>
+     * Describes the state machine associated with a specific execution.
+     * </p>
+     * 
+     * @param describeStateMachineForExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStateMachineForExecution operation returned by the
+     *         service.
+     * @sample AWSStepFunctionsAsyncHandler.DescribeStateMachineForExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStateMachineForExecutionResult> describeStateMachineForExecutionAsync(
+            DescribeStateMachineForExecutionRequest describeStateMachineForExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStateMachineForExecutionRequest, DescribeStateMachineForExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a
      * running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds
      * as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the
      * service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the
-     * poll will return a <code>taskToken</code> with a null string.
+     * poll returns a <code>taskToken</code> with a null string.
      * </p>
      * <important>
      * <p>
@@ -309,7 +356,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds
      * as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the
      * service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the
-     * poll will return a <code>taskToken</code> with a null string.
+     * poll returns a <code>taskToken</code> with a null string.
      * </p>
      * <important>
      * <p>
@@ -335,8 +382,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Returns the history of the specified execution as a list of events. By default, the results are returned in
      * ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get
-     * the latest events first. The results may be split into multiple pages. To retrieve subsequent pages, make the
-     * call again using the <code>nextToken</code> returned by the previous call.
+     * the latest events first.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param getExecutionHistoryRequest
@@ -351,8 +402,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Returns the history of the specified execution as a list of events. By default, the results are returned in
      * ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get
-     * the latest events first. The results may be split into multiple pages. To retrieve subsequent pages, make the
-     * call again using the <code>nextToken</code> returned by the previous call.
+     * the latest events first.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param getExecutionHistoryRequest
@@ -370,8 +425,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the existing activities. The results may be split into multiple pages. To retrieve subsequent pages, make
-     * the call again using the <code>nextToken</code> returned by the previous call.
+     * Lists the existing activities.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listActivitiesRequest
@@ -384,8 +443,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the existing activities. The results may be split into multiple pages. To retrieve subsequent pages, make
-     * the call again using the <code>nextToken</code> returned by the previous call.
+     * Lists the existing activities.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listActivitiesRequest
@@ -403,9 +466,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the executions of a state machine that meet the filtering criteria. The results may be split into multiple
-     * pages. To retrieve subsequent pages, make the call again using the <code>nextToken</code> returned by the
-     * previous call.
+     * Lists the executions of a state machine that meet the filtering criteria.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listExecutionsRequest
@@ -418,9 +484,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the executions of a state machine that meet the filtering criteria. The results may be split into multiple
-     * pages. To retrieve subsequent pages, make the call again using the <code>nextToken</code> returned by the
-     * previous call.
+     * Lists the executions of a state machine that meet the filtering criteria.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listExecutionsRequest
@@ -438,8 +507,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the existing state machines. The results may be split into multiple pages. To retrieve subsequent pages,
-     * make the call again using the <code>nextToken</code> returned by the previous call.
+     * Lists the existing state machines.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listStateMachinesRequest
@@ -452,8 +525,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the existing state machines. The results may be split into multiple pages. To retrieve subsequent pages,
-     * make the call again using the <code>nextToken</code> returned by the previous call.
+     * Lists the existing state machines.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listStateMachinesRequest
@@ -505,7 +582,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Used by workers to report to the service that the task represented by the specified <code>taskToken</code> is
      * still making progress. This action resets the <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold
      * is specified in the state machine's Amazon States Language definition. This action does not in itself create an
-     * event in the execution history. However, if the task times out, the execution history will contain an
+     * event in the execution history. However, if the task times out, the execution history contains an
      * <code>ActivityTimedOut</code> event.
      * </p>
      * <note>
@@ -532,7 +609,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Used by workers to report to the service that the task represented by the specified <code>taskToken</code> is
      * still making progress. This action resets the <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold
      * is specified in the state machine's Amazon States Language definition. This action does not in itself create an
-     * event in the execution history. However, if the task times out, the execution history will contain an
+     * event in the execution history. However, if the task times out, the execution history contains an
      * <code>ActivityTimedOut</code> event.
      * </p>
      * <note>
@@ -651,5 +728,56 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<StopExecutionResult> stopExecutionAsync(StopExecutionRequest stopExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StopExecutionRequest, StopExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
+     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * <note>
+     * <p>
+     * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
+     * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
+     * previous state machine <code>definition</code> and <code>roleArn</code>. You must include at least one of
+     * <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
+     * error.
+     * </p>
+     * </note>
+     * 
+     * @param updateStateMachineRequest
+     * @return A Java Future containing the result of the UpdateStateMachine operation returned by the service.
+     * @sample AWSStepFunctionsAsync.UpdateStateMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStateMachineResult> updateStateMachineAsync(UpdateStateMachineRequest updateStateMachineRequest);
+
+    /**
+     * <p>
+     * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
+     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * <note>
+     * <p>
+     * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
+     * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
+     * previous state machine <code>definition</code> and <code>roleArn</code>. You must include at least one of
+     * <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
+     * error.
+     * </p>
+     * </note>
+     * 
+     * @param updateStateMachineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateStateMachine operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.UpdateStateMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStateMachineResult> updateStateMachineAsync(UpdateStateMachineRequest updateStateMachineRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateStateMachineRequest, UpdateStateMachineResult> asyncHandler);
 
 }

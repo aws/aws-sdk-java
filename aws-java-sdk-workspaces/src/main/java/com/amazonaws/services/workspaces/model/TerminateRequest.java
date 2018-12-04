@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information used with the <a>TerminateWorkspaces</a> operation to terminate a WorkSpace.
+ * Information used to terminate a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateRequest" target="_top">AWS API
@@ -30,18 +30,18 @@ public class TerminateRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the WorkSpace to terminate.
+     * The identifier of the WorkSpace.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * The identifier of the WorkSpace to terminate.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The identifier of the WorkSpace to terminate.
+     *        The identifier of the WorkSpace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -50,10 +50,10 @@ public class TerminateRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the WorkSpace to terminate.
+     * The identifier of the WorkSpace.
      * </p>
      * 
-     * @return The identifier of the WorkSpace to terminate.
+     * @return The identifier of the WorkSpace.
      */
 
     public String getWorkspaceId() {
@@ -62,11 +62,11 @@ public class TerminateRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the WorkSpace to terminate.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The identifier of the WorkSpace to terminate.
+     *        The identifier of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

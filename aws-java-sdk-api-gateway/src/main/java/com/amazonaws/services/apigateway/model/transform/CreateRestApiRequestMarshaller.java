@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,10 @@ public class CreateRestApiRequestMarshaller {
             .marshallLocationName("cloneFrom").build();
     private static final MarshallingInfo<List> BINARYMEDIATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("binaryMediaTypes").build();
+    private static final MarshallingInfo<Integer> MINIMUMCOMPRESSIONSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumCompressionSize").build();
+    private static final MarshallingInfo<String> APIKEYSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeySource").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
 
@@ -62,6 +66,8 @@ public class CreateRestApiRequestMarshaller {
             protocolMarshaller.marshall(createRestApiRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(createRestApiRequest.getCloneFrom(), CLONEFROM_BINDING);
             protocolMarshaller.marshall(createRestApiRequest.getBinaryMediaTypes(), BINARYMEDIATYPES_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getMinimumCompressionSize(), MINIMUMCOMPRESSIONSIZE_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getApiKeySource(), APIKEYSOURCE_BINDING);
             protocolMarshaller.marshall(createRestApiRequest.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

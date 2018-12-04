@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String cluster;
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     * revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      */
     private String taskDefinition;
@@ -92,17 +91,29 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraints;
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
     /**
      * <p>
+     * The launch type on which to run your task.
+     * </p>
+     */
+    private String launchType;
+    /**
+     * <p>
+     * The platform version on which to run your task. If one is not specified, the latest version is used by default.
+     * </p>
+     */
+    private String platformVersion;
+    /**
+     * <p>
      * The network configuration for the task. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
@@ -155,15 +166,14 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     * revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *        Name (ARN) of the task definition to run. If a <code>revision</code> is not specified, the latest
-     *        <code>ACTIVE</code> revision is used.
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     *        used.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -172,14 +182,13 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     * revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * 
-     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *         Name (ARN) of the task definition to run. If a <code>revision</code> is not specified, the latest
-     *         <code>ACTIVE</code> revision is used.
+     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *         definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *         is used.
      */
 
     public String getTaskDefinition() {
@@ -188,15 +197,14 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-     * revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *        Name (ARN) of the task definition to run. If a <code>revision</code> is not specified, the latest
-     *        <code>ACTIVE</code> revision is used.
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to run. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     *        used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,10 +568,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.
      * </p>
      * 
-     * @return The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     * @return The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per
      *         task.
      */
 
@@ -576,11 +584,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per
      *        task.
      */
 
@@ -595,7 +603,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -604,7 +612,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per
      *        task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -621,11 +629,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per task.
+     * The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules per
+     *        The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per
      *        task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -637,19 +645,121 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
+     * The launch type on which to run your task.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which to run your task.
+     * @see LaunchType
+     */
+
+    public void setLaunchType(String launchType) {
+        this.launchType = launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type on which to run your task.
+     * </p>
+     * 
+     * @return The launch type on which to run your task.
+     * @see LaunchType
+     */
+
+    public String getLaunchType() {
+        return this.launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type on which to run your task.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which to run your task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public RunTaskRequest withLaunchType(String launchType) {
+        setLaunchType(launchType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type on which to run your task.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which to run your task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public RunTaskRequest withLaunchType(LaunchType launchType) {
+        this.launchType = launchType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform version on which to run your task. If one is not specified, the latest version is used by default.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version on which to run your task. If one is not specified, the latest version is used by
+     *        default.
+     */
+
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version on which to run your task. If one is not specified, the latest version is used by default.
+     * </p>
+     * 
+     * @return The platform version on which to run your task. If one is not specified, the latest version is used by
+     *         default.
+     */
+
+    public String getPlatformVersion() {
+        return this.platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version on which to run your task. If one is not specified, the latest version is used by default.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version on which to run your task. If one is not specified, the latest version is used by
+     *        default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withPlatformVersion(String platformVersion) {
+        setPlatformVersion(platformVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The network configuration for the task. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param networkConfiguration
      *        The network configuration for the task. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -661,15 +771,15 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * The network configuration for the task. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The network configuration for the task. This parameter is required for task definitions that use the
      *         <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *         for other network modes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *         in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -681,16 +791,16 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * The network configuration for the task. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param networkConfiguration
      *        The network configuration for the task. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -726,6 +836,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
             sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
         if (getPlacementStrategy() != null)
             sb.append("PlacementStrategy: ").append(getPlacementStrategy()).append(",");
+        if (getLaunchType() != null)
+            sb.append("LaunchType: ").append(getLaunchType()).append(",");
+        if (getPlatformVersion() != null)
+            sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getNetworkConfiguration() != null)
             sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
         sb.append("}");
@@ -774,6 +888,14 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getPlacementStrategy() != null && other.getPlacementStrategy().equals(this.getPlacementStrategy()) == false)
             return false;
+        if (other.getLaunchType() == null ^ this.getLaunchType() == null)
+            return false;
+        if (other.getLaunchType() != null && other.getLaunchType().equals(this.getLaunchType()) == false)
+            return false;
+        if (other.getPlatformVersion() == null ^ this.getPlatformVersion() == null)
+            return false;
+        if (other.getPlatformVersion() != null && other.getPlatformVersion().equals(this.getPlatformVersion()) == false)
+            return false;
         if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
@@ -794,6 +916,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
         hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
+        hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
+        hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         return hashCode;
     }

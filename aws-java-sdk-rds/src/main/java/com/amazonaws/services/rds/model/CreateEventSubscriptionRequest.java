@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The list of identifiers of the event sources for which events are returned. If not specified, then all sources
      * are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * <p>
      * Constraints:
@@ -386,7 +386,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The list of identifiers of the event sources for which events are returned. If not specified, then all sources
      * are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * <p>
      * Constraints:
@@ -421,7 +421,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * 
      * @return The list of identifiers of the event sources for which events are returned. If not specified, then all
      *         sources are included in the response. An identifier must begin with a letter and must contain only ASCII
-     *         letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     *         letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -464,7 +464,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The list of identifiers of the event sources for which events are returned. If not specified, then all sources
      * are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * <p>
      * Constraints:
@@ -500,7 +500,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * @param sourceIds
      *        The list of identifiers of the event sources for which events are returned. If not specified, then all
      *        sources are included in the response. An identifier must begin with a letter and must contain only ASCII
-     *        letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     *        letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -545,7 +545,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The list of identifiers of the event sources for which events are returned. If not specified, then all sources
      * are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * <p>
      * Constraints:
@@ -586,7 +586,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * @param sourceIds
      *        The list of identifiers of the event sources for which events are returned. If not specified, then all
      *        sources are included in the response. An identifier must begin with a letter and must contain only ASCII
-     *        letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     *        letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -633,7 +633,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The list of identifiers of the event sources for which events are returned. If not specified, then all sources
      * are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * <p>
      * Constraints:
@@ -669,7 +669,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * @param sourceIds
      *        The list of identifiers of the event sources for which events are returned. If not specified, then all
      *        sources are included in the response. An identifier must begin with a letter and must contain only ASCII
-     *        letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     *        letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      *        <p>
      *        Constraints:
      *        </p>

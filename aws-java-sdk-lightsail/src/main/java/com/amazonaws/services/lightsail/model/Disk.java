@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -113,7 +113,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in the API
+     * In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API
      * response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.
      * </p>
      * </note>
@@ -126,7 +126,8 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * In releases prior to November 9, 2017, this parameter was not included in the API response. It is now deprecated.
+     * In releases prior to November 14, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
      * </p>
      * </note>
      */
@@ -758,7 +759,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in the API
+     * In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API
      * response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.
      * </p>
      * </note>
@@ -766,7 +767,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * @param attachmentState
      *        (Deprecated) The attachment state of the disk.</p> <note>
      *        <p>
-     *        In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in
+     *        In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in
      *        the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code>
      *        instead.
      *        </p>
@@ -782,14 +783,14 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in the API
+     * In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API
      * response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.
      * </p>
      * </note>
      * 
      * @return (Deprecated) The attachment state of the disk.</p> <note>
      *         <p>
-     *         In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in
+     *         In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in
      *         the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code>
      *         instead.
      *         </p>
@@ -805,7 +806,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in the API
+     * In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API
      * response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.
      * </p>
      * </note>
@@ -813,7 +814,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * @param attachmentState
      *        (Deprecated) The attachment state of the disk.</p> <note>
      *        <p>
-     *        In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in
+     *        In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in
      *        the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code>
      *        instead.
      *        </p>
@@ -831,14 +832,15 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * In releases prior to November 9, 2017, this parameter was not included in the API response. It is now deprecated.
+     * In releases prior to November 14, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
      * </p>
      * </note>
      * 
      * @param gbInUse
      *        (Deprecated) The number of GB in use by the disk.</p> <note>
      *        <p>
-     *        In releases prior to November 9, 2017, this parameter was not included in the API response. It is now
+     *        In releases prior to November 14, 2017, this parameter was not included in the API response. It is now
      *        deprecated.
      *        </p>
      */
@@ -853,13 +855,14 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * In releases prior to November 9, 2017, this parameter was not included in the API response. It is now deprecated.
+     * In releases prior to November 14, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
      * </p>
      * </note>
      * 
      * @return (Deprecated) The number of GB in use by the disk.</p> <note>
      *         <p>
-     *         In releases prior to November 9, 2017, this parameter was not included in the API response. It is now
+     *         In releases prior to November 14, 2017, this parameter was not included in the API response. It is now
      *         deprecated.
      *         </p>
      */
@@ -874,14 +877,15 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * In releases prior to November 9, 2017, this parameter was not included in the API response. It is now deprecated.
+     * In releases prior to November 14, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
      * </p>
      * </note>
      * 
      * @param gbInUse
      *        (Deprecated) The number of GB in use by the disk.</p> <note>
      *        <p>
-     *        In releases prior to November 9, 2017, this parameter was not included in the API response. It is now
+     *        In releases prior to November 14, 2017, this parameter was not included in the API response. It is now
      *        deprecated.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

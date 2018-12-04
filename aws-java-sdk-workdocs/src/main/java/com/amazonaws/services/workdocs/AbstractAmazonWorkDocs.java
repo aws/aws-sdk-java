@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -134,6 +134,11 @@ public class AbstractAmazonWorkDocs implements AmazonWorkDocs {
 
     @Override
     public DescribeFolderContentsResult describeFolderContents(DescribeFolderContentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeGroupsResult describeGroups(DescribeGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

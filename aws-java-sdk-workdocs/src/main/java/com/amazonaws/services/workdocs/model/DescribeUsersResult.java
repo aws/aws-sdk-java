@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,7 @@ public class DescribeUsersResult extends com.amazonaws.AmazonWebServiceResult<co
      * The total number of users included in the results.
      * </p>
      */
+    @Deprecated
     private Long totalNumberOfUsers;
     /**
      * <p>
@@ -121,7 +122,7 @@ public class DescribeUsersResult extends com.amazonaws.AmazonWebServiceResult<co
      * @param totalNumberOfUsers
      *        The total number of users included in the results.
      */
-
+    @Deprecated
     public void setTotalNumberOfUsers(Long totalNumberOfUsers) {
         this.totalNumberOfUsers = totalNumberOfUsers;
     }
@@ -133,7 +134,7 @@ public class DescribeUsersResult extends com.amazonaws.AmazonWebServiceResult<co
      * 
      * @return The total number of users included in the results.
      */
-
+    @Deprecated
     public Long getTotalNumberOfUsers() {
         return this.totalNumberOfUsers;
     }
@@ -147,7 +148,7 @@ public class DescribeUsersResult extends com.amazonaws.AmazonWebServiceResult<co
      *        The total number of users included in the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DescribeUsersResult withTotalNumberOfUsers(Long totalNumberOfUsers) {
         setTotalNumberOfUsers(totalNumberOfUsers);
         return this;

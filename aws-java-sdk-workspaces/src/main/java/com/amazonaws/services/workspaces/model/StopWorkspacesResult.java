@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class StopWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be stopped.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest> failedRequests;
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be stopped.
      * </p>
      * 
-     * @return The failed requests.
+     * @return Information about the WorkSpaces that could not be stopped.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -47,11 +47,11 @@ public class StopWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be stopped.
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be stopped.
      */
 
     public void setFailedRequests(java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
@@ -65,7 +65,7 @@ public class StopWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be stopped.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class StopWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class StopWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be stopped.
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,9 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
     private String name;
     /**
      * <p>
-     * The security configuration details in JSON format.
+     * The security configuration details in JSON format. For JSON parameters and examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     * Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      */
     private String securityConfiguration;
@@ -80,11 +82,15 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The security configuration details in JSON format.
+     * The security configuration details in JSON format. For JSON parameters and examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     * Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param securityConfiguration
-     *        The security configuration details in JSON format.
+     *        The security configuration details in JSON format. For JSON parameters and examples, see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     *        Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      */
 
     public void setSecurityConfiguration(String securityConfiguration) {
@@ -93,10 +99,14 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The security configuration details in JSON format.
+     * The security configuration details in JSON format. For JSON parameters and examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     * Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
-     * @return The security configuration details in JSON format.
+     * @return The security configuration details in JSON format. For JSON parameters and examples, see <a
+     *         href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     *         Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      */
 
     public String getSecurityConfiguration() {
@@ -105,11 +115,15 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The security configuration details in JSON format.
+     * The security configuration details in JSON format. For JSON parameters and examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     * Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param securityConfiguration
-     *        The security configuration details in JSON format.
+     *        The security configuration details in JSON format. For JSON parameters and examples, see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+     *        Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

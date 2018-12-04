@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,21 +20,18 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
-     * label and each child label detected in the image. This is useful for filtering specific categories of content.
+     * Array of detected Moderation labels and the time, in millseconds from the start of the video, they were detected.
      * </p>
      */
     private java.util.List<ModerationLabel> moderationLabels;
 
     /**
      * <p>
-     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
-     * label and each child label detected in the image. This is useful for filtering specific categories of content.
+     * Array of detected Moderation labels and the time, in millseconds from the start of the video, they were detected.
      * </p>
      * 
-     * @return An array of labels for explicit or suggestive adult content found in the image. The list includes the
-     *         top-level label and each child label detected in the image. This is useful for filtering specific
-     *         categories of content.
+     * @return Array of detected Moderation labels and the time, in millseconds from the start of the video, they were
+     *         detected.
      */
 
     public java.util.List<ModerationLabel> getModerationLabels() {
@@ -43,14 +40,12 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
-     * label and each child label detected in the image. This is useful for filtering specific categories of content.
+     * Array of detected Moderation labels and the time, in millseconds from the start of the video, they were detected.
      * </p>
      * 
      * @param moderationLabels
-     *        An array of labels for explicit or suggestive adult content found in the image. The list includes the
-     *        top-level label and each child label detected in the image. This is useful for filtering specific
-     *        categories of content.
+     *        Array of detected Moderation labels and the time, in millseconds from the start of the video, they were
+     *        detected.
      */
 
     public void setModerationLabels(java.util.Collection<ModerationLabel> moderationLabels) {
@@ -64,8 +59,7 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
-     * label and each child label detected in the image. This is useful for filtering specific categories of content.
+     * Array of detected Moderation labels and the time, in millseconds from the start of the video, they were detected.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,9 +68,8 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param moderationLabels
-     *        An array of labels for explicit or suggestive adult content found in the image. The list includes the
-     *        top-level label and each child label detected in the image. This is useful for filtering specific
-     *        categories of content.
+     *        Array of detected Moderation labels and the time, in millseconds from the start of the video, they were
+     *        detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,14 +85,12 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
-     * label and each child label detected in the image. This is useful for filtering specific categories of content.
+     * Array of detected Moderation labels and the time, in millseconds from the start of the video, they were detected.
      * </p>
      * 
      * @param moderationLabels
-     *        An array of labels for explicit or suggestive adult content found in the image. The list includes the
-     *        top-level label and each child label detected in the image. This is useful for filtering specific
-     *        categories of content.
+     *        Array of detected Moderation labels and the time, in millseconds from the start of the video, they were
+     *        detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

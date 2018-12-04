@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class GetDocumentationPartsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("position").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
+    private static final MarshallingInfo<String> LOCATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("locationStatus").build();
 
     private static final GetDocumentationPartsRequestMarshaller instance = new GetDocumentationPartsRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class GetDocumentationPartsRequestMarshaller {
             protocolMarshaller.marshall(getDocumentationPartsRequest.getPath(), PATH_BINDING);
             protocolMarshaller.marshall(getDocumentationPartsRequest.getPosition(), POSITION_BINDING);
             protocolMarshaller.marshall(getDocumentationPartsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(getDocumentationPartsRequest.getLocationStatus(), LOCATIONSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

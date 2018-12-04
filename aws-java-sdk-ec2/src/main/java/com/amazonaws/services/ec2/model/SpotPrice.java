@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+ * Describes the maximum price per hour that you are willing to pay for a Spot Instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotPrice" target="_top">AWS API
@@ -34,7 +34,7 @@ public class SpotPrice implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      */
     private String instanceType;
@@ -46,7 +46,7 @@ public class SpotPrice implements Serializable, Cloneable {
     private String productDescription;
     /**
      * <p>
-     * The maximum price (bid) that you are willing to pay for a Spot instance.
+     * The maximum price per hour that you are willing to pay for a Spot Instance.
      * </p>
      */
     private String spotPrice;
@@ -100,11 +100,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @see InstanceType
      */
 
@@ -114,10 +114,10 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
-     * @return The instance type. Note that T2 and HS1 instance types are not supported.
+     * @return The instance type.
      * @see InstanceType
      */
 
@@ -127,11 +127,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -143,11 +143,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @see InstanceType
      */
 
@@ -157,11 +157,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -246,11 +246,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price (bid) that you are willing to pay for a Spot instance.
+     * The maximum price per hour that you are willing to pay for a Spot Instance.
      * </p>
      * 
      * @param spotPrice
-     *        The maximum price (bid) that you are willing to pay for a Spot instance.
+     *        The maximum price per hour that you are willing to pay for a Spot Instance.
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -259,10 +259,10 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price (bid) that you are willing to pay for a Spot instance.
+     * The maximum price per hour that you are willing to pay for a Spot Instance.
      * </p>
      * 
-     * @return The maximum price (bid) that you are willing to pay for a Spot instance.
+     * @return The maximum price per hour that you are willing to pay for a Spot Instance.
      */
 
     public String getSpotPrice() {
@@ -271,11 +271,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price (bid) that you are willing to pay for a Spot instance.
+     * The maximum price per hour that you are willing to pay for a Spot Instance.
      * </p>
      * 
      * @param spotPrice
-     *        The maximum price (bid) that you are willing to pay for a Spot instance.
+     *        The maximum price per hour that you are willing to pay for a Spot Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

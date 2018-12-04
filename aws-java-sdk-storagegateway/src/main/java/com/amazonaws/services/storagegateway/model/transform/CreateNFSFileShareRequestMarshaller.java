@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,12 +44,18 @@ public class CreateNFSFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocationARN").build();
     private static final MarshallingInfo<String> DEFAULTSTORAGECLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultStorageClass").build();
+    private static final MarshallingInfo<String> OBJECTACL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ObjectACL").build();
     private static final MarshallingInfo<List> CLIENTLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClientList").build();
     private static final MarshallingInfo<String> SQUASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Squash").build();
     private static final MarshallingInfo<Boolean> READONLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadOnly").build();
+    private static final MarshallingInfo<Boolean> GUESSMIMETYPEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GuessMIMETypeEnabled").build();
+    private static final MarshallingInfo<Boolean> REQUESTERPAYS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequesterPays").build();
 
     private static final CreateNFSFileShareRequestMarshaller instance = new CreateNFSFileShareRequestMarshaller();
 
@@ -75,9 +81,12 @@ public class CreateNFSFileShareRequestMarshaller {
             protocolMarshaller.marshall(createNFSFileShareRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getLocationARN(), LOCATIONARN_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getDefaultStorageClass(), DEFAULTSTORAGECLASS_BINDING);
+            protocolMarshaller.marshall(createNFSFileShareRequest.getObjectACL(), OBJECTACL_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getClientList(), CLIENTLIST_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getSquash(), SQUASH_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getReadOnly(), READONLY_BINDING);
+            protocolMarshaller.marshall(createNFSFileShareRequest.getGuessMIMETypeEnabled(), GUESSMIMETYPEENABLED_BINDING);
+            protocolMarshaller.marshall(createNFSFileShareRequest.getRequesterPays(), REQUESTERPAYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

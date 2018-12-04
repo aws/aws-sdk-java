@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,8 @@ public class PutIntentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parentIntentSignature").build();
     private static final MarshallingInfo<String> CHECKSUM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("checksum").build();
+    private static final MarshallingInfo<Boolean> CREATEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createVersion").build();
 
     private static final PutIntentRequestMarshaller instance = new PutIntentRequestMarshaller();
 
@@ -81,6 +83,7 @@ public class PutIntentRequestMarshaller {
             protocolMarshaller.marshall(putIntentRequest.getFulfillmentActivity(), FULFILLMENTACTIVITY_BINDING);
             protocolMarshaller.marshall(putIntentRequest.getParentIntentSignature(), PARENTINTENTSIGNATURE_BINDING);
             protocolMarshaller.marshall(putIntentRequest.getChecksum(), CHECKSUM_BINDING);
+            protocolMarshaller.marshall(putIntentRequest.getCreateVersion(), CREATEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

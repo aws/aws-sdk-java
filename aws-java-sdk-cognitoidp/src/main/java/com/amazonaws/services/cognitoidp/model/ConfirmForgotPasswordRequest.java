@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,8 +49,7 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     private String username;
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a>
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
      * </p>
      */
     private String confirmationCode;
@@ -60,6 +59,19 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String password;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private UserContextDataType userContextData;
 
     /**
      * <p>
@@ -189,13 +201,11 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a>
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
      * </p>
      * 
      * @param confirmationCode
      *        The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
-     *        <a href="API_ForgotPassword.html">ForgotPassword</a>
      */
 
     public void setConfirmationCode(String confirmationCode) {
@@ -204,12 +214,11 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a>
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
      * </p>
      * 
      * @return The confirmation code sent by a user's request to retrieve a forgotten password. For more information,
-     *         see <a href="API_ForgotPassword.html">ForgotPassword</a>
+     *         see
      */
 
     public String getConfirmationCode() {
@@ -218,13 +227,11 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
-     * href="API_ForgotPassword.html">ForgotPassword</a>
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
      * </p>
      * 
      * @param confirmationCode
      *        The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
-     *        <a href="API_ForgotPassword.html">ForgotPassword</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,6 +281,95 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code>
+     *        calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code>
+     *         calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code>
+     *        calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfirmForgotPasswordRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setUserContextData(UserContextDataType userContextData) {
+        this.userContextData = userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public UserContextDataType getUserContextData() {
+        return this.userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfirmForgotPasswordRequest withUserContextData(UserContextDataType userContextData) {
+        setUserContextData(userContextData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -293,7 +389,11 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
         if (getConfirmationCode() != null)
             sb.append("ConfirmationCode: ").append(getConfirmationCode()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword());
+            sb.append("Password: ").append(getPassword()).append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
+        if (getUserContextData() != null)
+            sb.append("UserContextData: ").append(getUserContextData());
         sb.append("}");
         return sb.toString();
     }
@@ -328,6 +428,14 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
+            return false;
+        if (other.getUserContextData() == null ^ this.getUserContextData() == null)
+            return false;
+        if (other.getUserContextData() != null && other.getUserContextData().equals(this.getUserContextData()) == false)
+            return false;
         return true;
     }
 
@@ -341,6 +449,8 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getConfirmationCode() == null) ? 0 : getConfirmationCode().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
+        hashCode = prime * hashCode + ((getUserContextData() == null) ? 0 : getUserContextData().hashCode());
         return hashCode;
     }
 

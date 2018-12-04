@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -259,11 +259,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any
      * DS node type. In that case, you can choose to restore into another DS node type of the same size. For example,
-     * you can restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have a DC instance type, you
+     * you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you
      * must restore into that same instance type and size. In other words, you can only restore a dc1.large instance
-     * type into another dc1.large instance type. For more information about node types, see <a
+     * type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to
+     * dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize to a dc2.8large cluster. For more information
+     * about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
-     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      */
     private String nodeType;
@@ -1827,11 +1829,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any
      * DS node type. In that case, you can choose to restore into another DS node type of the same size. For example,
-     * you can restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have a DC instance type, you
+     * you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you
      * must restore into that same instance type and size. In other words, you can only restore a dc1.large instance
-     * type into another dc1.large instance type. For more information about node types, see <a
+     * type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to
+     * dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize to a dc2.8large cluster. For more information
+     * about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
-     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param nodeType
@@ -1839,12 +1843,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        <p>
      *        Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are
      *        using any DS node type. In that case, you can choose to restore into another DS node type of the same
-     *        size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you
+     *        size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you
      *        have a DC instance type, you must restore into that same instance type and size. In other words, you can
-     *        only restore a dc1.large instance type into another dc1.large instance type. For more information about
-     *        node types, see <a href=
+     *        only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type.
+     *        You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize to a
+     *        dc2.8large cluster. For more information about node types, see <a href=
      *        "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
-     *        About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+     *        About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      */
 
     public void setNodeType(String nodeType) {
@@ -1858,23 +1863,26 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any
      * DS node type. In that case, you can choose to restore into another DS node type of the same size. For example,
-     * you can restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have a DC instance type, you
+     * you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you
      * must restore into that same instance type and size. In other words, you can only restore a dc1.large instance
-     * type into another dc1.large instance type. For more information about node types, see <a
+     * type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to
+     * dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize to a dc2.8large cluster. For more information
+     * about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
-     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @return The node type that the restored cluster will be provisioned with.</p>
      *         <p>
      *         Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are
      *         using any DS node type. In that case, you can choose to restore into another DS node type of the same
-     *         size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you
+     *         size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you
      *         have a DC instance type, you must restore into that same instance type and size. In other words, you can
-     *         only restore a dc1.large instance type into another dc1.large instance type. For more information about
-     *         node types, see <a href=
+     *         only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type.
+     *         You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize to a
+     *         dc2.8large cluster. For more information about node types, see <a href=
      *         "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
-     *         About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+     *         About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      */
 
     public String getNodeType() {
@@ -1888,11 +1896,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any
      * DS node type. In that case, you can choose to restore into another DS node type of the same size. For example,
-     * you can restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have a DC instance type, you
+     * you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you
      * must restore into that same instance type and size. In other words, you can only restore a dc1.large instance
-     * type into another dc1.large instance type. For more information about node types, see <a
+     * type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to
+     * dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize to a dc2.8large cluster. For more information
+     * about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
-     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+     * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param nodeType
@@ -1900,12 +1910,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        <p>
      *        Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are
      *        using any DS node type. In that case, you can choose to restore into another DS node type of the same
-     *        size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you
+     *        size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you
      *        have a DC instance type, you must restore into that same instance type and size. In other words, you can
-     *        only restore a dc1.large instance type into another dc1.large instance type. For more information about
-     *        node types, see <a href=
+     *        only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type.
+     *        You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize to a
+     *        dc2.8large cluster. For more information about node types, see <a href=
      *        "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
-     *        About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+     *        About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

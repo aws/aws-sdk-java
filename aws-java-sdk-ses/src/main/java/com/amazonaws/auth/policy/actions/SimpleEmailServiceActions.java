@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public enum SimpleEmailServiceActions implements Action {
     CreateConfigurationSetEventDestination("ses:CreateConfigurationSetEventDestination"),
     /** Action for the CreateConfigurationSetTrackingOptions operation. */
     CreateConfigurationSetTrackingOptions("ses:CreateConfigurationSetTrackingOptions"),
+    /** Action for the CreateCustomVerificationEmailTemplate operation. */
+    CreateCustomVerificationEmailTemplate("ses:CreateCustomVerificationEmailTemplate"),
     /** Action for the CreateReceiptFilter operation. */
     CreateReceiptFilter("ses:CreateReceiptFilter"),
     /** Action for the CreateReceiptRule operation. */
@@ -47,6 +49,8 @@ public enum SimpleEmailServiceActions implements Action {
     DeleteConfigurationSetEventDestination("ses:DeleteConfigurationSetEventDestination"),
     /** Action for the DeleteConfigurationSetTrackingOptions operation. */
     DeleteConfigurationSetTrackingOptions("ses:DeleteConfigurationSetTrackingOptions"),
+    /** Action for the DeleteCustomVerificationEmailTemplate operation. */
+    DeleteCustomVerificationEmailTemplate("ses:DeleteCustomVerificationEmailTemplate"),
     /** Action for the DeleteIdentity operation. */
     DeleteIdentity("ses:DeleteIdentity"),
     /** Action for the DeleteIdentityPolicy operation. */
@@ -69,6 +73,10 @@ public enum SimpleEmailServiceActions implements Action {
     DescribeReceiptRule("ses:DescribeReceiptRule"),
     /** Action for the DescribeReceiptRuleSet operation. */
     DescribeReceiptRuleSet("ses:DescribeReceiptRuleSet"),
+    /** Action for the GetAccountSendingEnabled operation. */
+    GetAccountSendingEnabled("ses:GetAccountSendingEnabled"),
+    /** Action for the GetCustomVerificationEmailTemplate operation. */
+    GetCustomVerificationEmailTemplate("ses:GetCustomVerificationEmailTemplate"),
     /** Action for the GetIdentityDkimAttributes operation. */
     GetIdentityDkimAttributes("ses:GetIdentityDkimAttributes"),
     /** Action for the GetIdentityMailFromDomainAttributes operation. */
@@ -87,6 +95,8 @@ public enum SimpleEmailServiceActions implements Action {
     GetTemplate("ses:GetTemplate"),
     /** Action for the ListConfigurationSets operation. */
     ListConfigurationSets("ses:ListConfigurationSets"),
+    /** Action for the ListCustomVerificationEmailTemplates operation. */
+    ListCustomVerificationEmailTemplates("ses:ListCustomVerificationEmailTemplates"),
     /** Action for the ListIdentities operation. */
     ListIdentities("ses:ListIdentities"),
     /** Action for the ListIdentityPolicies operation. */
@@ -107,6 +117,8 @@ public enum SimpleEmailServiceActions implements Action {
     SendBounce("ses:SendBounce"),
     /** Action for the SendBulkTemplatedEmail operation. */
     SendBulkTemplatedEmail("ses:SendBulkTemplatedEmail"),
+    /** Action for the SendCustomVerificationEmail operation. */
+    SendCustomVerificationEmail("ses:SendCustomVerificationEmail"),
     /** Action for the SendEmail operation. */
     SendEmail("ses:SendEmail"),
     /** Action for the SendRawEmail operation. */
@@ -129,10 +141,18 @@ public enum SimpleEmailServiceActions implements Action {
     SetReceiptRulePosition("ses:SetReceiptRulePosition"),
     /** Action for the TestRenderTemplate operation. */
     TestRenderTemplate("ses:TestRenderTemplate"),
+    /** Action for the UpdateAccountSendingEnabled operation. */
+    UpdateAccountSendingEnabled("ses:UpdateAccountSendingEnabled"),
     /** Action for the UpdateConfigurationSetEventDestination operation. */
     UpdateConfigurationSetEventDestination("ses:UpdateConfigurationSetEventDestination"),
+    /** Action for the UpdateConfigurationSetReputationMetricsEnabled operation. */
+    UpdateConfigurationSetReputationMetricsEnabled("ses:UpdateConfigurationSetReputationMetricsEnabled"),
+    /** Action for the UpdateConfigurationSetSendingEnabled operation. */
+    UpdateConfigurationSetSendingEnabled("ses:UpdateConfigurationSetSendingEnabled"),
     /** Action for the UpdateConfigurationSetTrackingOptions operation. */
     UpdateConfigurationSetTrackingOptions("ses:UpdateConfigurationSetTrackingOptions"),
+    /** Action for the UpdateCustomVerificationEmailTemplate operation. */
+    UpdateCustomVerificationEmailTemplate("ses:UpdateCustomVerificationEmailTemplate"),
     /** Action for the UpdateReceiptRule operation. */
     UpdateReceiptRule("ses:UpdateReceiptRule"),
     /** Action for the UpdateTemplate operation. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB,
-     * AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
+     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      */
     private String engineName;
@@ -48,13 +48,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB,
-     * AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
+     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES,
-     *        MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     *        The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
+     *        mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -63,12 +63,12 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB,
-     * AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
+     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
-     * @return The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES,
-     *         MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * @return The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
+     *         mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public String getEngineName() {
@@ -77,13 +77,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB,
-     * AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
+     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES,
-     *        MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     *        The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
+     *        mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

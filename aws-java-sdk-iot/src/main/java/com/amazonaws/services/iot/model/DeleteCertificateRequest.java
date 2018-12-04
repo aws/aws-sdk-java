@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String certificateId;
+    /**
+     * <p>
+     * Forces a certificate request to be deleted.
+     * </p>
+     */
+    private Boolean forceDelete;
 
     /**
      * <p>
@@ -73,6 +79,58 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Forces a certificate request to be deleted.
+     * </p>
+     * 
+     * @param forceDelete
+     *        Forces a certificate request to be deleted.
+     */
+
+    public void setForceDelete(Boolean forceDelete) {
+        this.forceDelete = forceDelete;
+    }
+
+    /**
+     * <p>
+     * Forces a certificate request to be deleted.
+     * </p>
+     * 
+     * @return Forces a certificate request to be deleted.
+     */
+
+    public Boolean getForceDelete() {
+        return this.forceDelete;
+    }
+
+    /**
+     * <p>
+     * Forces a certificate request to be deleted.
+     * </p>
+     * 
+     * @param forceDelete
+     *        Forces a certificate request to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteCertificateRequest withForceDelete(Boolean forceDelete) {
+        setForceDelete(forceDelete);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Forces a certificate request to be deleted.
+     * </p>
+     * 
+     * @return Forces a certificate request to be deleted.
+     */
+
+    public Boolean isForceDelete() {
+        return this.forceDelete;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -84,7 +142,9 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: ").append(getCertificateId());
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
+        if (getForceDelete() != null)
+            sb.append("ForceDelete: ").append(getForceDelete());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +163,10 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
+        if (other.getForceDelete() == null ^ this.getForceDelete() == null)
+            return false;
+        if (other.getForceDelete() != null && other.getForceDelete().equals(this.getForceDelete()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +176,7 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getForceDelete() == null) ? 0 : getForceDelete().hashCode());
         return hashCode;
     }
 

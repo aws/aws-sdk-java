@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,9 +56,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(modifyDBInstanceRequest.getDBSubnetGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
-                .getDBSecurityGroups();
-        if (!dBSecurityGroupsList.isEmpty() || !dBSecurityGroupsList.isAutoConstruct()) {
+        if (!modifyDBInstanceRequest.getDBSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest.getDBSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
+                    .getDBSecurityGroups();
             int dBSecurityGroupsListIndex = 1;
 
             for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
@@ -69,9 +70,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!modifyDBInstanceRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -197,6 +199,40 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
 
         if (modifyDBInstanceRequest.getPerformanceInsightsKMSKeyId() != null) {
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(modifyDBInstanceRequest.getPerformanceInsightsKMSKeyId()));
+        }
+
+        CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBInstanceRequest.getCloudwatchLogsExportConfiguration();
+        if (cloudwatchLogsExportConfiguration != null) {
+
+            if (!cloudwatchLogsExportConfiguration.getEnableLogTypes().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getEnableLogTypes()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> enableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                        .getEnableLogTypes();
+                int enableLogTypesListIndex = 1;
+
+                for (String enableLogTypesListValue : enableLogTypesList) {
+                    if (enableLogTypesListValue != null) {
+                        request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes.member." + enableLogTypesListIndex,
+                                StringUtils.fromString(enableLogTypesListValue));
+                    }
+                    enableLogTypesListIndex++;
+                }
+            }
+
+            if (!cloudwatchLogsExportConfiguration.getDisableLogTypes().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getDisableLogTypes()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> disableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                        .getDisableLogTypes();
+                int disableLogTypesListIndex = 1;
+
+                for (String disableLogTypesListValue : disableLogTypesList) {
+                    if (disableLogTypesListValue != null) {
+                        request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes.member." + disableLogTypesListIndex,
+                                StringUtils.fromString(disableLogTypesListValue));
+                    }
+                    disableLogTypesListIndex++;
+                }
+            }
         }
 
         return request;

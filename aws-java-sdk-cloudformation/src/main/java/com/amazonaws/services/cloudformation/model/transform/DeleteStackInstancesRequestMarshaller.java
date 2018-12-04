@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,12 +45,14 @@ public class DeleteStackInstancesRequestMarshaller implements Marshaller<Request
             request.addParameter("StackSetName", StringUtils.fromString(deleteStackInstancesRequest.getStackSetName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> accountsList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackInstancesRequest
-                .getAccounts();
-        if (accountsList.isEmpty() && !accountsList.isAutoConstruct()) {
+        if (deleteStackInstancesRequest.getAccounts().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) deleteStackInstancesRequest.getAccounts()).isAutoConstruct()) {
             request.addParameter("Accounts", "");
         }
-        if (!accountsList.isEmpty() || !accountsList.isAutoConstruct()) {
+        if (!deleteStackInstancesRequest.getAccounts().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) deleteStackInstancesRequest.getAccounts()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> accountsList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackInstancesRequest
+                    .getAccounts();
             int accountsListIndex = 1;
 
             for (String accountsListValue : accountsList) {
@@ -61,11 +63,14 @@ public class DeleteStackInstancesRequestMarshaller implements Marshaller<Request
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> regionsList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackInstancesRequest.getRegions();
-        if (regionsList.isEmpty() && !regionsList.isAutoConstruct()) {
+        if (deleteStackInstancesRequest.getRegions().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) deleteStackInstancesRequest.getRegions()).isAutoConstruct()) {
             request.addParameter("Regions", "");
         }
-        if (!regionsList.isEmpty() || !regionsList.isAutoConstruct()) {
+        if (!deleteStackInstancesRequest.getRegions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) deleteStackInstancesRequest.getRegions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> regionsList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackInstancesRequest
+                    .getRegions();
             int regionsListIndex = 1;
 
             for (String regionsListValue : regionsList) {
@@ -79,12 +84,14 @@ public class DeleteStackInstancesRequestMarshaller implements Marshaller<Request
         StackSetOperationPreferences operationPreferences = deleteStackInstancesRequest.getOperationPreferences();
         if (operationPreferences != null) {
 
-            com.amazonaws.internal.SdkInternalList<String> regionOrderList = (com.amazonaws.internal.SdkInternalList<String>) operationPreferences
-                    .getRegionOrder();
-            if (regionOrderList.isEmpty() && !regionOrderList.isAutoConstruct()) {
+            if (operationPreferences.getRegionOrder().isEmpty()
+                    && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
                 request.addParameter("OperationPreferences.RegionOrder", "");
             }
-            if (!regionOrderList.isEmpty() || !regionOrderList.isAutoConstruct()) {
+            if (!operationPreferences.getRegionOrder().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> regionOrderList = (com.amazonaws.internal.SdkInternalList<String>) operationPreferences
+                        .getRegionOrder();
                 int regionOrderListIndex = 1;
 
                 for (String regionOrderListValue : regionOrderList) {

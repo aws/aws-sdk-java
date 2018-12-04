@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,13 +104,13 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
     private String operationName;
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      */
     private java.util.Map<String, Boolean> requestParameters;
@@ -179,6 +179,17 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
      */
     private Integration methodIntegration;
+    /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
+     * </p>
+     */
+    private java.util.List<String> authorizationScopes;
 
     /**
      * <p>
@@ -464,17 +475,17 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
-     * @return A key-value map defining required or optional method request parameters that can be accepted by Amazon
-     *         API Gateway. A key is a method request parameter name matching the pattern of
+     * @return A key-value map defining required or optional method request parameters that can be accepted by API
+     *         Gateway. A key is a method request parameter name matching the pattern of
      *         <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *         <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
      *         value associated with the key is a Boolean flag indicating whether the parameter is required (
@@ -488,17 +499,17 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     *        A key-value map defining required or optional method request parameters that can be accepted by API
      *        Gateway. A key is a method request parameter name matching the pattern of
      *        <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *        <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
@@ -513,17 +524,17 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     *        A key-value map defining required or optional method request parameters that can be accepted by API
      *        Gateway. A key is a method request parameter name matching the pattern of
      *        <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *        <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
@@ -1010,6 +1021,116 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
+     * </p>
+     * 
+     * @return A list of authorization scopes configured on the method. The scopes are used with a
+     *         <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by
+     *         matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *         method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *         Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *         an access token instead of an identity token for authorization purposes.
+     */
+
+    public java.util.List<String> getAuthorizationScopes() {
+        return authorizationScopes;
+    }
+
+    /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
+     */
+
+    public void setAuthorizationScopes(java.util.Collection<String> authorizationScopes) {
+        if (authorizationScopes == null) {
+            this.authorizationScopes = null;
+            return;
+        }
+
+        this.authorizationScopes = new java.util.ArrayList<String>(authorizationScopes);
+    }
+
+    /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAuthorizationScopes(java.util.Collection)} or {@link #withAuthorizationScopes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMethodResult withAuthorizationScopes(String... authorizationScopes) {
+        if (this.authorizationScopes == null) {
+            setAuthorizationScopes(new java.util.ArrayList<String>(authorizationScopes.length));
+        }
+        for (String ele : authorizationScopes) {
+            this.authorizationScopes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMethodResult withAuthorizationScopes(java.util.Collection<String> authorizationScopes) {
+        setAuthorizationScopes(authorizationScopes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1039,7 +1160,9 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getMethodResponses() != null)
             sb.append("MethodResponses: ").append(getMethodResponses()).append(",");
         if (getMethodIntegration() != null)
-            sb.append("MethodIntegration: ").append(getMethodIntegration());
+            sb.append("MethodIntegration: ").append(getMethodIntegration()).append(",");
+        if (getAuthorizationScopes() != null)
+            sb.append("AuthorizationScopes: ").append(getAuthorizationScopes());
         sb.append("}");
         return sb.toString();
     }
@@ -1094,6 +1217,10 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getMethodIntegration() != null && other.getMethodIntegration().equals(this.getMethodIntegration()) == false)
             return false;
+        if (other.getAuthorizationScopes() == null ^ this.getAuthorizationScopes() == null)
+            return false;
+        if (other.getAuthorizationScopes() != null && other.getAuthorizationScopes().equals(this.getAuthorizationScopes()) == false)
+            return false;
         return true;
     }
 
@@ -1112,6 +1239,7 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getRequestModels() == null) ? 0 : getRequestModels().hashCode());
         hashCode = prime * hashCode + ((getMethodResponses() == null) ? 0 : getMethodResponses().hashCode());
         hashCode = prime * hashCode + ((getMethodIntegration() == null) ? 0 : getMethodIntegration().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizationScopes() == null) ? 0 : getAuthorizationScopes().hashCode());
         return hashCode;
     }
 

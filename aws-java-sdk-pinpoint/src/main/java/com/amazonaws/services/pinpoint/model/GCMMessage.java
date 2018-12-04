@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,20 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     private String imageIconUrl;
     /** The URL that points to an image used in the push notification. */
     private String imageUrl;
-    /** Is this a transaction priority message or lower priority. */
+    /**
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM priority parameter when it sends the
+     * message. Accepts the following values:
+     * 
+     * "Normal" - Messages might be delayed. Delivery is optimized for battery usage on the receiving device. Use normal
+     * priority unless immediate delivery is required.
+     * 
+     * "High" - Messages are sent immediately and might wake a sleeping device.
+     * 
+     * The equivalent values for APNs messages are "5" and "10". Amazon Pinpoint accepts these values here and converts
+     * them.
+     * 
+     * For more information, see About FCM Messages in the Firebase documentation.
+     */
     private String priority;
     /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
     private String rawContent;
@@ -80,8 +93,9 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     /** Default message substitutions. Can be overridden by individual address substitutions. */
     private java.util.Map<String, java.util.List<String>> substitutions;
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
-     * offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver the message. If unspecified, the
+     * value defaults to the maximum, which is 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the
+     * FCM or GCM time_to_live parameter.
      */
     private Integer timeToLive;
     /** The message title that displays above the message on the user's device. */
@@ -436,10 +450,32 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM priority parameter when it sends the
+     * message. Accepts the following values:
+     * 
+     * "Normal" - Messages might be delayed. Delivery is optimized for battery usage on the receiving device. Use normal
+     * priority unless immediate delivery is required.
+     * 
+     * "High" - Messages are sent immediately and might wake a sleeping device.
+     * 
+     * The equivalent values for APNs messages are "5" and "10". Amazon Pinpoint accepts these values here and converts
+     * them.
+     * 
+     * For more information, see About FCM Messages in the Firebase documentation.
      * 
      * @param priority
-     *        Is this a transaction priority message or lower priority.
+     *        The message priority. Amazon Pinpoint uses this value to set the FCM or GCM priority parameter when it
+     *        sends the message. Accepts the following values:
+     * 
+     *        "Normal" - Messages might be delayed. Delivery is optimized for battery usage on the receiving device. Use
+     *        normal priority unless immediate delivery is required.
+     * 
+     *        "High" - Messages are sent immediately and might wake a sleeping device.
+     * 
+     *        The equivalent values for APNs messages are "5" and "10". Amazon Pinpoint accepts these values here and
+     *        converts them.
+     * 
+     *        For more information, see About FCM Messages in the Firebase documentation.
      */
 
     public void setPriority(String priority) {
@@ -447,9 +483,31 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM priority parameter when it sends the
+     * message. Accepts the following values:
      * 
-     * @return Is this a transaction priority message or lower priority.
+     * "Normal" - Messages might be delayed. Delivery is optimized for battery usage on the receiving device. Use normal
+     * priority unless immediate delivery is required.
+     * 
+     * "High" - Messages are sent immediately and might wake a sleeping device.
+     * 
+     * The equivalent values for APNs messages are "5" and "10". Amazon Pinpoint accepts these values here and converts
+     * them.
+     * 
+     * For more information, see About FCM Messages in the Firebase documentation.
+     * 
+     * @return The message priority. Amazon Pinpoint uses this value to set the FCM or GCM priority parameter when it
+     *         sends the message. Accepts the following values:
+     * 
+     *         "Normal" - Messages might be delayed. Delivery is optimized for battery usage on the receiving device.
+     *         Use normal priority unless immediate delivery is required.
+     * 
+     *         "High" - Messages are sent immediately and might wake a sleeping device.
+     * 
+     *         The equivalent values for APNs messages are "5" and "10". Amazon Pinpoint accepts these values here and
+     *         converts them.
+     * 
+     *         For more information, see About FCM Messages in the Firebase documentation.
      */
 
     public String getPriority() {
@@ -457,10 +515,32 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM priority parameter when it sends the
+     * message. Accepts the following values:
+     * 
+     * "Normal" - Messages might be delayed. Delivery is optimized for battery usage on the receiving device. Use normal
+     * priority unless immediate delivery is required.
+     * 
+     * "High" - Messages are sent immediately and might wake a sleeping device.
+     * 
+     * The equivalent values for APNs messages are "5" and "10". Amazon Pinpoint accepts these values here and converts
+     * them.
+     * 
+     * For more information, see About FCM Messages in the Firebase documentation.
      * 
      * @param priority
-     *        Is this a transaction priority message or lower priority.
+     *        The message priority. Amazon Pinpoint uses this value to set the FCM or GCM priority parameter when it
+     *        sends the message. Accepts the following values:
+     * 
+     *        "Normal" - Messages might be delayed. Delivery is optimized for battery usage on the receiving device. Use
+     *        normal priority unless immediate delivery is required.
+     * 
+     *        "High" - Messages are sent immediately and might wake a sleeping device.
+     * 
+     *        The equivalent values for APNs messages are "5" and "10". Amazon Pinpoint accepts these values here and
+     *        converts them.
+     * 
+     *        For more information, see About FCM Messages in the Firebase documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,12 +811,14 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
-     * offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver the message. If unspecified, the
+     * value defaults to the maximum, which is 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the
+     * FCM or GCM time_to_live parameter.
      * 
      * @param timeToLive
-     *        This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
-     *        offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     *        The length of time (in seconds) that FCM or GCM stores and attempts to deliver the message. If
+     *        unspecified, the value defaults to the maximum, which is 2,419,200 seconds (28 days). Amazon Pinpoint uses
+     *        this value to set the FCM or GCM time_to_live parameter.
      */
 
     public void setTimeToLive(Integer timeToLive) {
@@ -744,11 +826,13 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
-     * offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver the message. If unspecified, the
+     * value defaults to the maximum, which is 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the
+     * FCM or GCM time_to_live parameter.
      * 
-     * @return This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
-     *         offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * @return The length of time (in seconds) that FCM or GCM stores and attempts to deliver the message. If
+     *         unspecified, the value defaults to the maximum, which is 2,419,200 seconds (28 days). Amazon Pinpoint
+     *         uses this value to set the FCM or GCM time_to_live parameter.
      */
 
     public Integer getTimeToLive() {
@@ -756,12 +840,14 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
-     * offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver the message. If unspecified, the
+     * value defaults to the maximum, which is 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the
+     * FCM or GCM time_to_live parameter.
      * 
      * @param timeToLive
-     *        This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
-     *        offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     *        The length of time (in seconds) that FCM or GCM stores and attempts to deliver the message. If
+     *        unspecified, the value defaults to the maximum, which is 2,419,200 seconds (28 days). Amazon Pinpoint uses
+     *        this value to set the FCM or GCM time_to_live parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

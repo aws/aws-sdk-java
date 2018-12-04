@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,14 +29,14 @@ import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
  * <p>
  * <fullname>AWS CodeDeploy</fullname>
  * <p>
- * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances or on-premises
- * instances running in your own facility.
+ * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises
+ * instances running in your own facility, or serverless AWS Lambda functions.
  * </p>
  * <p>
- * You can deploy a nearly unlimited variety of application content, such as code, web and configuration files,
- * executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy application content stored in
- * Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing
- * code before you can use AWS CodeDeploy.
+ * You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, code, web and
+ * configuration files, executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy
+ * application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to
+ * make changes to your existing code before you can use AWS CodeDeploy.
  * </p>
  * <p>
  * AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application
@@ -59,8 +59,9 @@ import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
  * </li>
  * <li>
  * <p>
- * <b>Deployment group</b>: A set of individual instances. A deployment group contains individually tagged instances,
- * Amazon EC2 instances in Auto Scaling groups, or both.
+ * <b>Deployment group</b>: A set of individual instances or CodeDeploy Lambda applications. A Lambda deployment group
+ * contains a group of applications. An EC2/On-premises deployment group contains individually tagged instances, Amazon
+ * EC2 instances in Auto Scaling groups, or both.
  * </p>
  * </li>
  * <li>
@@ -71,22 +72,25 @@ import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
  * </li>
  * <li>
  * <p>
- * <b>Deployment</b>: The process, and the components involved in the process, of installing content on one or more
- * instances.
+ * <b>Deployment</b>: The process and the components used in the process of updating a Lambda function or of installing
+ * content on one or more instances.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Application revisions</b>: An archive file containing source content—source code, web pages, executable files, and
- * deployment scripts—along with an application specification file (AppSpec file). Revisions are stored in Amazon S3
- * buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its
- * ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.
+ * <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file that specifies the Lambda
+ * function to update and one or more functions to validate deployment lifecycle events. For an EC2/On-premises
+ * deployment, this is an archive file containing source content—source code, web pages, executable files, and
+ * deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For
+ * Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub,
+ * a revision is uniquely identified by its commit ID.
  * </p>
  * </li>
  * </ul>
  * <p>
- * This guide also contains information to help you get details about the instances in your deployments and to make
- * on-premises instances available for AWS CodeDeploy deployments.
+ * This guide also contains information to help you get details about the instances in your deployments, to make
+ * on-premises instances available for AWS CodeDeploy deployments, and to get details about a Lambda function
+ * deployment.
  * </p>
  * <p>
  * <b>AWS CodeDeploy Information Resources</b>
@@ -186,6 +190,8 @@ public interface AmazonCodeDeploy {
      * @return Result of the AddTagsToOnPremisesInstances operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an invalid format.
      * @throws TagRequiredException
      *         A tag was not specified.
      * @throws InvalidTagException
@@ -407,6 +413,8 @@ public interface AmazonCodeDeploy {
      *         An application with the specified name already exists with the applicable IAM user or AWS account.
      * @throws ApplicationLimitExceededException
      *         More applications were attempted to be created than are allowed.
+     * @throws InvalidComputePlatformException
+     *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
      * @sample AmazonCodeDeploy.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication" target="_top">AWS
      *      API Documentation</a>
@@ -479,6 +487,19 @@ public interface AmazonCodeDeploy {
      *         An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or
      *         directories that already exist in a deployment target location but weren't part of the previous
      *         successful deployment. Valid values include "DISALLOW", "OVERWRITE", and "RETAIN".
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the
+     *         specified service role does not grant the appropriate permissions to Auto Scaling.
+     * @throws InvalidAutoScalingGroupException
+     *         The Auto Scaling group was specified in an invalid format or does not exist.
+     * @throws ThrottlingException
+     *         An API function was called too frequently.
+     * @throws InvalidUpdateOutdatedInstancesOnlyValueException
+     *         The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is
+     *         expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.
+     * @throws InvalidIgnoreApplicationStopFailuresValueException
+     *         The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is
+     *         expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.
      * @sample AmazonCodeDeploy.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
      *      API Documentation</a>
@@ -504,6 +525,10 @@ public interface AmazonCodeDeploy {
      *         The minimum healthy instance value was specified in an invalid format.
      * @throws DeploymentConfigLimitExceededException
      *         The deployment configurations limit was exceeded.
+     * @throws InvalidComputePlatformException
+     *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
+     * @throws InvalidTrafficRoutingConfigurationException
+     *         The configuration that specifies how traffic is routed during a deployment is invalid.
      * @sample AmazonCodeDeploy.CreateDeploymentConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"
      *      target="_top">AWS API Documentation</a>
@@ -602,6 +627,8 @@ public interface AmazonCodeDeploy {
      *         data types can be used in a single call.
      * @throws TagSetListLimitExceededException
      *         The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.
+     * @throws InvalidInputException
+     *         The specified input was specified in an invalid format.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>
@@ -678,6 +705,30 @@ public interface AmazonCodeDeploy {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteDeploymentGroupResult deleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a GitHub account connection.
+     * </p>
+     * 
+     * @param deleteGitHubAccountTokenRequest
+     *        Represents the input of a DeleteGitHubAccount operation.
+     * @return Result of the DeleteGitHubAccountToken operation returned by the service.
+     * @throws GitHubAccountTokenNameRequiredException
+     *         The call is missing a required GitHub account connection name.
+     * @throws GitHubAccountTokenDoesNotExistException
+     *         No GitHub account connection exists with the named specified in the call.
+     * @throws InvalidGitHubAccountTokenNameException
+     *         The format of the specified GitHub account connection name is invalid.
+     * @throws ResourceValidationException
+     *         The specified resource could not be validated.
+     * @throws OperationNotSupportedException
+     *         The API used does not support the deployment.
+     * @sample AmazonCodeDeploy.DeleteGitHubAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteGitHubAccountTokenResult deleteGitHubAccountToken(DeleteGitHubAccountTokenRequest deleteGitHubAccountTokenRequest);
 
     /**
      * <p>
@@ -1041,6 +1092,8 @@ public interface AmazonCodeDeploy {
      *         The next token was specified in an invalid format.
      * @throws ResourceValidationException
      *         The specified resource could not be validated.
+     * @throws OperationNotSupportedException
+     *         The API used does not support the deployment.
      * @sample AmazonCodeDeploy.ListGitHubAccountTokenNames
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames"
      *      target="_top">AWS API Documentation</a>
@@ -1077,6 +1130,38 @@ public interface AmazonCodeDeploy {
      * @see #listOnPremisesInstances(ListOnPremisesInstancesRequest)
      */
     ListOnPremisesInstancesResult listOnPremisesInstances();
+
+    /**
+     * <p>
+     * Sets the result of a Lambda validation function. The function validates one or both lifecycle events (
+     * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+     * <code>Failed</code>.
+     * </p>
+     * 
+     * @param putLifecycleEventHookExecutionStatusRequest
+     * @return Result of the PutLifecycleEventHookExecutionStatus operation returned by the service.
+     * @throws InvalidLifecycleEventHookExecutionStatusException
+     *         The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return
+     *         <code>Succeeded</code> or <code>Failed</code>.
+     * @throws InvalidLifecycleEventHookExecutionIdException
+     *         A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure
+     *         the lifecycle events and <code>hooks</code> functions are valid.
+     * @throws LifecycleEventAlreadyCompletedException
+     *         An attempt to return the status of an already completed lifecycle event occurred.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS account.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid format.
+     * @throws UnsupportedActionForDeploymentTypeException
+     *         A call was submitted that is not supported for the specified deployment type.
+     * @sample AmazonCodeDeploy.PutLifecycleEventHookExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutLifecycleEventHookExecutionStatusResult putLifecycleEventHookExecutionStatus(
+            PutLifecycleEventHookExecutionStatusRequest putLifecycleEventHookExecutionStatusRequest);
 
     /**
      * <p>
@@ -1153,6 +1238,8 @@ public interface AmazonCodeDeploy {
      * @return Result of the RemoveTagsFromOnPremisesInstances operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an invalid format.
      * @throws TagRequiredException
      *         A tag was not specified.
      * @throws InvalidTagException
@@ -1337,6 +1424,8 @@ public interface AmazonCodeDeploy {
      *         data types can be used in a single call.
      * @throws TagSetListLimitExceededException
      *         The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.
+     * @throws InvalidInputException
+     *         The specified input was specified in an invalid format.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>

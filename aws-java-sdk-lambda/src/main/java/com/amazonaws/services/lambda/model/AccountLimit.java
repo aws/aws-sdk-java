@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,10 +53,17 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
      * Number of simultaneous executions of your function per region. For more information or to request a limit
      * increase for concurrent executions, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 100.
+     * Executions</a>. The default limit is 1000.
      * </p>
      */
     private Integer concurrentExecutions;
+    /**
+     * <p>
+     * The number of concurrent executions available to functions that do not have concurrency limits set. For more
+     * information, see <a>concurrent-executions</a>.
+     * </p>
+     */
+    private Integer unreservedConcurrentExecutions;
 
     /**
      * <p>
@@ -195,14 +202,14 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
      * Number of simultaneous executions of your function per region. For more information or to request a limit
      * increase for concurrent executions, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 100.
+     * Executions</a>. The default limit is 1000.
      * </p>
      * 
      * @param concurrentExecutions
      *        Number of simultaneous executions of your function per region. For more information or to request a limit
      *        increase for concurrent executions, see <a
      *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *        Executions</a>. The default limit is 100.
+     *        Executions</a>. The default limit is 1000.
      */
 
     public void setConcurrentExecutions(Integer concurrentExecutions) {
@@ -214,13 +221,13 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
      * Number of simultaneous executions of your function per region. For more information or to request a limit
      * increase for concurrent executions, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 100.
+     * Executions</a>. The default limit is 1000.
      * </p>
      * 
      * @return Number of simultaneous executions of your function per region. For more information or to request a limit
      *         increase for concurrent executions, see <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *         Executions</a>. The default limit is 100.
+     *         Executions</a>. The default limit is 1000.
      */
 
     public Integer getConcurrentExecutions() {
@@ -232,19 +239,65 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
      * Number of simultaneous executions of your function per region. For more information or to request a limit
      * increase for concurrent executions, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 100.
+     * Executions</a>. The default limit is 1000.
      * </p>
      * 
      * @param concurrentExecutions
      *        Number of simultaneous executions of your function per region. For more information or to request a limit
      *        increase for concurrent executions, see <a
      *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *        Executions</a>. The default limit is 100.
+     *        Executions</a>. The default limit is 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccountLimit withConcurrentExecutions(Integer concurrentExecutions) {
         setConcurrentExecutions(concurrentExecutions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of concurrent executions available to functions that do not have concurrency limits set. For more
+     * information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param unreservedConcurrentExecutions
+     *        The number of concurrent executions available to functions that do not have concurrency limits set. For
+     *        more information, see <a>concurrent-executions</a>.
+     */
+
+    public void setUnreservedConcurrentExecutions(Integer unreservedConcurrentExecutions) {
+        this.unreservedConcurrentExecutions = unreservedConcurrentExecutions;
+    }
+
+    /**
+     * <p>
+     * The number of concurrent executions available to functions that do not have concurrency limits set. For more
+     * information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @return The number of concurrent executions available to functions that do not have concurrency limits set. For
+     *         more information, see <a>concurrent-executions</a>.
+     */
+
+    public Integer getUnreservedConcurrentExecutions() {
+        return this.unreservedConcurrentExecutions;
+    }
+
+    /**
+     * <p>
+     * The number of concurrent executions available to functions that do not have concurrency limits set. For more
+     * information, see <a>concurrent-executions</a>.
+     * </p>
+     * 
+     * @param unreservedConcurrentExecutions
+     *        The number of concurrent executions available to functions that do not have concurrency limits set. For
+     *        more information, see <a>concurrent-executions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountLimit withUnreservedConcurrentExecutions(Integer unreservedConcurrentExecutions) {
+        setUnreservedConcurrentExecutions(unreservedConcurrentExecutions);
         return this;
     }
 
@@ -266,7 +319,9 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
         if (getCodeSizeZipped() != null)
             sb.append("CodeSizeZipped: ").append(getCodeSizeZipped()).append(",");
         if (getConcurrentExecutions() != null)
-            sb.append("ConcurrentExecutions: ").append(getConcurrentExecutions());
+            sb.append("ConcurrentExecutions: ").append(getConcurrentExecutions()).append(",");
+        if (getUnreservedConcurrentExecutions() != null)
+            sb.append("UnreservedConcurrentExecutions: ").append(getUnreservedConcurrentExecutions());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +352,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConcurrentExecutions() != null && other.getConcurrentExecutions().equals(this.getConcurrentExecutions()) == false)
             return false;
+        if (other.getUnreservedConcurrentExecutions() == null ^ this.getUnreservedConcurrentExecutions() == null)
+            return false;
+        if (other.getUnreservedConcurrentExecutions() != null
+                && other.getUnreservedConcurrentExecutions().equals(this.getUnreservedConcurrentExecutions()) == false)
+            return false;
         return true;
     }
 
@@ -309,6 +369,7 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCodeSizeUnzipped() == null) ? 0 : getCodeSizeUnzipped().hashCode());
         hashCode = prime * hashCode + ((getCodeSizeZipped() == null) ? 0 : getCodeSizeZipped().hashCode());
         hashCode = prime * hashCode + ((getConcurrentExecutions() == null) ? 0 : getConcurrentExecutions().hashCode());
+        hashCode = prime * hashCode + ((getUnreservedConcurrentExecutions() == null) ? 0 : getUnreservedConcurrentExecutions().hashCode());
         return hashCode;
     }
 

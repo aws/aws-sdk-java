@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,7 +80,125 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Adds a thing to a thing group.
+     * </p>
+     * 
+     * @param addThingToThingGroupRequest
+     * @return A Java Future containing the result of the AddThingToThingGroup operation returned by the service.
+     * @sample AWSIotAsync.AddThingToThingGroup
+     */
+    java.util.concurrent.Future<AddThingToThingGroupResult> addThingToThingGroupAsync(AddThingToThingGroupRequest addThingToThingGroupRequest);
+
+    /**
+     * <p>
+     * Adds a thing to a thing group.
+     * </p>
+     * 
+     * @param addThingToThingGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddThingToThingGroup operation returned by the service.
+     * @sample AWSIotAsyncHandler.AddThingToThingGroup
+     */
+    java.util.concurrent.Future<AddThingToThingGroupResult> addThingToThingGroupAsync(AddThingToThingGroupRequest addThingToThingGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<AddThingToThingGroupRequest, AddThingToThingGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a group with a continuous job. The following criteria must be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The job must have been created with the <code>targetSelection</code> field set to "CONTINUOUS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The job status must currently be "IN_PROGRESS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total number of targets associated with a job must not exceed 100.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param associateTargetsWithJobRequest
+     * @return A Java Future containing the result of the AssociateTargetsWithJob operation returned by the service.
+     * @sample AWSIotAsync.AssociateTargetsWithJob
+     */
+    java.util.concurrent.Future<AssociateTargetsWithJobResult> associateTargetsWithJobAsync(AssociateTargetsWithJobRequest associateTargetsWithJobRequest);
+
+    /**
+     * <p>
+     * Associates a group with a continuous job. The following criteria must be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The job must have been created with the <code>targetSelection</code> field set to "CONTINUOUS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The job status must currently be "IN_PROGRESS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total number of targets associated with a job must not exceed 100.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param associateTargetsWithJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateTargetsWithJob operation returned by the service.
+     * @sample AWSIotAsyncHandler.AssociateTargetsWithJob
+     */
+    java.util.concurrent.Future<AssociateTargetsWithJobResult> associateTargetsWithJobAsync(AssociateTargetsWithJobRequest associateTargetsWithJobRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateTargetsWithJobRequest, AssociateTargetsWithJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches a policy to the specified target.
+     * </p>
+     * 
+     * @param attachPolicyRequest
+     * @return A Java Future containing the result of the AttachPolicy operation returned by the service.
+     * @sample AWSIotAsync.AttachPolicy
+     */
+    java.util.concurrent.Future<AttachPolicyResult> attachPolicyAsync(AttachPolicyRequest attachPolicyRequest);
+
+    /**
+     * <p>
+     * Attaches a policy to the specified target.
+     * </p>
+     * 
+     * @param attachPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachPolicy operation returned by the service.
+     * @sample AWSIotAsyncHandler.AttachPolicy
+     */
+    java.util.concurrent.Future<AttachPolicyResult> attachPolicyAsync(AttachPolicyRequest attachPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<AttachPolicyRequest, AttachPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Attaches the specified policy to the specified principal (certificate or other credential).
+     * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
      * </p>
      * 
      * @param attachPrincipalPolicyRequest
@@ -88,11 +206,15 @@ public interface AWSIotAsync extends AWSIot {
      * @return A Java Future containing the result of the AttachPrincipalPolicy operation returned by the service.
      * @sample AWSIotAsync.AttachPrincipalPolicy
      */
+    @Deprecated
     java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(AttachPrincipalPolicyRequest attachPrincipalPolicyRequest);
 
     /**
      * <p>
      * Attaches the specified policy to the specified principal (certificate or other credential).
+     * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
      * </p>
      * 
      * @param attachPrincipalPolicyRequest
@@ -104,6 +226,7 @@ public interface AWSIotAsync extends AWSIot {
      * @return A Java Future containing the result of the AttachPrincipalPolicy operation returned by the service.
      * @sample AWSIotAsyncHandler.AttachPrincipalPolicy
      */
+    @Deprecated
     java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(AttachPrincipalPolicyRequest attachPrincipalPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, AttachPrincipalPolicyResult> asyncHandler);
 
@@ -186,6 +309,87 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<CancelCertificateTransferResult> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest cancelCertificateTransferRequest,
             com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, CancelCertificateTransferResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancels a job.
+     * </p>
+     * 
+     * @param cancelJobRequest
+     * @return A Java Future containing the result of the CancelJob operation returned by the service.
+     * @sample AWSIotAsync.CancelJob
+     */
+    java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest);
+
+    /**
+     * <p>
+     * Cancels a job.
+     * </p>
+     * 
+     * @param cancelJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelJob operation returned by the service.
+     * @sample AWSIotAsyncHandler.CancelJob
+     */
+    java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Clears the default authorizer.
+     * </p>
+     * 
+     * @param clearDefaultAuthorizerRequest
+     * @return A Java Future containing the result of the ClearDefaultAuthorizer operation returned by the service.
+     * @sample AWSIotAsync.ClearDefaultAuthorizer
+     */
+    java.util.concurrent.Future<ClearDefaultAuthorizerResult> clearDefaultAuthorizerAsync(ClearDefaultAuthorizerRequest clearDefaultAuthorizerRequest);
+
+    /**
+     * <p>
+     * Clears the default authorizer.
+     * </p>
+     * 
+     * @param clearDefaultAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ClearDefaultAuthorizer operation returned by the service.
+     * @sample AWSIotAsyncHandler.ClearDefaultAuthorizer
+     */
+    java.util.concurrent.Future<ClearDefaultAuthorizerResult> clearDefaultAuthorizerAsync(ClearDefaultAuthorizerRequest clearDefaultAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<ClearDefaultAuthorizerRequest, ClearDefaultAuthorizerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an authorizer.
+     * </p>
+     * 
+     * @param createAuthorizerRequest
+     * @return A Java Future containing the result of the CreateAuthorizer operation returned by the service.
+     * @sample AWSIotAsync.CreateAuthorizer
+     */
+    java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(CreateAuthorizerRequest createAuthorizerRequest);
+
+    /**
+     * <p>
+     * Creates an authorizer.
+     * </p>
+     * 
+     * @param createAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAuthorizer operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateAuthorizer
+     */
+    java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(CreateAuthorizerRequest createAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAuthorizerRequest, CreateAuthorizerResult> asyncHandler);
 
     /**
      * <p>
@@ -314,6 +518,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Creates a job.
+     * </p>
+     * 
+     * @param createJobRequest
+     * @return A Java Future containing the result of the CreateJob operation returned by the service.
+     * @sample AWSIotAsync.CreateJob
+     */
+    java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest);
+
+    /**
+     * <p>
+     * Creates a job.
+     * </p>
+     * 
+     * @param createJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateJob operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateJob
+     */
+    java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.
      * </p>
      * <p>
@@ -348,6 +579,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateKeysAndCertificateResult> createKeysAndCertificateAsync(CreateKeysAndCertificateRequest createKeysAndCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateKeysAndCertificateRequest, CreateKeysAndCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an AWS IoT OTAUpdate on a target group of things or groups.
+     * </p>
+     * 
+     * @param createOTAUpdateRequest
+     * @return A Java Future containing the result of the CreateOTAUpdate operation returned by the service.
+     * @sample AWSIotAsync.CreateOTAUpdate
+     */
+    java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(CreateOTAUpdateRequest createOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Creates an AWS IoT OTAUpdate on a target group of things or groups.
+     * </p>
+     * 
+     * @param createOTAUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOTAUpdate operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateOTAUpdate
+     */
+    java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(CreateOTAUpdateRequest createOTAUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOTAUpdateRequest, CreateOTAUpdateResult> asyncHandler);
 
     /**
      * <p>
@@ -429,6 +687,68 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Creates a role alias.
+     * </p>
+     * 
+     * @param createRoleAliasRequest
+     * @return A Java Future containing the result of the CreateRoleAlias operation returned by the service.
+     * @sample AWSIotAsync.CreateRoleAlias
+     */
+    java.util.concurrent.Future<CreateRoleAliasResult> createRoleAliasAsync(CreateRoleAliasRequest createRoleAliasRequest);
+
+    /**
+     * <p>
+     * Creates a role alias.
+     * </p>
+     * 
+     * @param createRoleAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRoleAlias operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateRoleAlias
+     */
+    java.util.concurrent.Future<CreateRoleAliasResult> createRoleAliasAsync(CreateRoleAliasRequest createRoleAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRoleAliasRequest, CreateRoleAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
+     * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
+     * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
+     * created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted
+     * within last 90 days, we will resurrect that old stream by incrementing the version by 1.
+     * </p>
+     * 
+     * @param createStreamRequest
+     * @return A Java Future containing the result of the CreateStream operation returned by the service.
+     * @sample AWSIotAsync.CreateStream
+     */
+    java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest createStreamRequest);
+
+    /**
+     * <p>
+     * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
+     * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
+     * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
+     * created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted
+     * within last 90 days, we will resurrect that old stream by incrementing the version by 1.
+     * </p>
+     * 
+     * @param createStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStream operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateStream
+     */
+    java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest createStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a thing record in the thing registry.
      * </p>
      * 
@@ -455,6 +775,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateThingResult> createThingAsync(CreateThingRequest createThingRequest,
             com.amazonaws.handlers.AsyncHandler<CreateThingRequest, CreateThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a thing group.
+     * </p>
+     * 
+     * @param createThingGroupRequest
+     * @return A Java Future containing the result of the CreateThingGroup operation returned by the service.
+     * @sample AWSIotAsync.CreateThingGroup
+     */
+    java.util.concurrent.Future<CreateThingGroupResult> createThingGroupAsync(CreateThingGroupRequest createThingGroupRequest);
+
+    /**
+     * <p>
+     * Create a thing group.
+     * </p>
+     * 
+     * @param createThingGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateThingGroup operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateThingGroup
+     */
+    java.util.concurrent.Future<CreateThingGroupResult> createThingGroupAsync(CreateThingGroupRequest createThingGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateThingGroupRequest, CreateThingGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -515,6 +862,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(CreateTopicRuleRequest createTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, CreateTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an authorizer.
+     * </p>
+     * 
+     * @param deleteAuthorizerRequest
+     * @return A Java Future containing the result of the DeleteAuthorizer operation returned by the service.
+     * @sample AWSIotAsync.DeleteAuthorizer
+     */
+    java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(DeleteAuthorizerRequest deleteAuthorizerRequest);
+
+    /**
+     * <p>
+     * Deletes an authorizer.
+     * </p>
+     * 
+     * @param deleteAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAuthorizer operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteAuthorizer
+     */
+    java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(DeleteAuthorizerRequest deleteAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, DeleteAuthorizerResult> asyncHandler);
 
     /**
      * <p>
@@ -583,6 +957,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an OTA update.
+     * </p>
+     * 
+     * @param deleteOTAUpdateRequest
+     * @return A Java Future containing the result of the DeleteOTAUpdate operation returned by the service.
+     * @sample AWSIotAsync.DeleteOTAUpdate
+     */
+    java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest deleteOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Delete an OTA update.
+     * </p>
+     * 
+     * @param deleteOTAUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOTAUpdate operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteOTAUpdate
+     */
+    java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest deleteOTAUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOTAUpdateRequest, DeleteOTAUpdateResult> asyncHandler);
 
     /**
      * <p>
@@ -699,6 +1100,60 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Deletes a role alias
+     * </p>
+     * 
+     * @param deleteRoleAliasRequest
+     * @return A Java Future containing the result of the DeleteRoleAlias operation returned by the service.
+     * @sample AWSIotAsync.DeleteRoleAlias
+     */
+    java.util.concurrent.Future<DeleteRoleAliasResult> deleteRoleAliasAsync(DeleteRoleAliasRequest deleteRoleAliasRequest);
+
+    /**
+     * <p>
+     * Deletes a role alias
+     * </p>
+     * 
+     * @param deleteRoleAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRoleAlias operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteRoleAlias
+     */
+    java.util.concurrent.Future<DeleteRoleAliasResult> deleteRoleAliasAsync(DeleteRoleAliasRequest deleteRoleAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleAliasRequest, DeleteRoleAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a stream.
+     * </p>
+     * 
+     * @param deleteStreamRequest
+     * @return A Java Future containing the result of the DeleteStream operation returned by the service.
+     * @sample AWSIotAsync.DeleteStream
+     */
+    java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest deleteStreamRequest);
+
+    /**
+     * <p>
+     * Deletes a stream.
+     * </p>
+     * 
+     * @param deleteStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStream operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteStream
+     */
+    java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest deleteStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified thing.
      * </p>
      * 
@@ -725,6 +1180,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteThingResult> deleteThingAsync(DeleteThingRequest deleteThingRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteThingRequest, DeleteThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a thing group.
+     * </p>
+     * 
+     * @param deleteThingGroupRequest
+     * @return A Java Future containing the result of the DeleteThingGroup operation returned by the service.
+     * @sample AWSIotAsync.DeleteThingGroup
+     */
+    java.util.concurrent.Future<DeleteThingGroupResult> deleteThingGroupAsync(DeleteThingGroupRequest deleteThingGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a thing group.
+     * </p>
+     * 
+     * @param deleteThingGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteThingGroup operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteThingGroup
+     */
+    java.util.concurrent.Future<DeleteThingGroupResult> deleteThingGroupAsync(DeleteThingGroupRequest deleteThingGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteThingGroupRequest, DeleteThingGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -763,7 +1245,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Deletes the specified rule.
+     * Deletes the rule.
      * </p>
      * 
      * @param deleteTopicRuleRequest
@@ -775,7 +1257,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Deletes the specified rule.
+     * Deletes the rule.
      * </p>
      * 
      * @param deleteTopicRuleRequest
@@ -789,6 +1271,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(DeleteTopicRuleRequest deleteTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a logging level.
+     * </p>
+     * 
+     * @param deleteV2LoggingLevelRequest
+     * @return A Java Future containing the result of the DeleteV2LoggingLevel operation returned by the service.
+     * @sample AWSIotAsync.DeleteV2LoggingLevel
+     */
+    java.util.concurrent.Future<DeleteV2LoggingLevelResult> deleteV2LoggingLevelAsync(DeleteV2LoggingLevelRequest deleteV2LoggingLevelRequest);
+
+    /**
+     * <p>
+     * Deletes a logging level.
+     * </p>
+     * 
+     * @param deleteV2LoggingLevelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteV2LoggingLevel operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteV2LoggingLevel
+     */
+    java.util.concurrent.Future<DeleteV2LoggingLevelResult> deleteV2LoggingLevelAsync(DeleteV2LoggingLevelRequest deleteV2LoggingLevelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteV2LoggingLevelRequest, DeleteV2LoggingLevelResult> asyncHandler);
 
     /**
      * <p>
@@ -818,6 +1327,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeprecateThingTypeResult> deprecateThingTypeAsync(DeprecateThingTypeRequest deprecateThingTypeRequest,
             com.amazonaws.handlers.AsyncHandler<DeprecateThingTypeRequest, DeprecateThingTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an authorizer.
+     * </p>
+     * 
+     * @param describeAuthorizerRequest
+     * @return A Java Future containing the result of the DescribeAuthorizer operation returned by the service.
+     * @sample AWSIotAsync.DescribeAuthorizer
+     */
+    java.util.concurrent.Future<DescribeAuthorizerResult> describeAuthorizerAsync(DescribeAuthorizerRequest describeAuthorizerRequest);
+
+    /**
+     * <p>
+     * Describes an authorizer.
+     * </p>
+     * 
+     * @param describeAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAuthorizer operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeAuthorizer
+     */
+    java.util.concurrent.Future<DescribeAuthorizerResult> describeAuthorizerAsync(DescribeAuthorizerRequest describeAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAuthorizerRequest, DescribeAuthorizerResult> asyncHandler);
 
     /**
      * <p>
@@ -879,6 +1415,35 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Describes the default authorizer.
+     * </p>
+     * 
+     * @param describeDefaultAuthorizerRequest
+     * @return A Java Future containing the result of the DescribeDefaultAuthorizer operation returned by the service.
+     * @sample AWSIotAsync.DescribeDefaultAuthorizer
+     */
+    java.util.concurrent.Future<DescribeDefaultAuthorizerResult> describeDefaultAuthorizerAsync(
+            DescribeDefaultAuthorizerRequest describeDefaultAuthorizerRequest);
+
+    /**
+     * <p>
+     * Describes the default authorizer.
+     * </p>
+     * 
+     * @param describeDefaultAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDefaultAuthorizer operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeDefaultAuthorizer
+     */
+    java.util.concurrent.Future<DescribeDefaultAuthorizerResult> describeDefaultAuthorizerAsync(
+            DescribeDefaultAuthorizerRequest describeDefaultAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDefaultAuthorizerRequest, DescribeDefaultAuthorizerResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a unique endpoint specific to the AWS account making the call.
      * </p>
      * 
@@ -905,6 +1470,170 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DescribeEndpointResult> describeEndpointAsync(DescribeEndpointRequest describeEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEndpointRequest, DescribeEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes event configurations.
+     * </p>
+     * 
+     * @param describeEventConfigurationsRequest
+     * @return A Java Future containing the result of the DescribeEventConfigurations operation returned by the service.
+     * @sample AWSIotAsync.DescribeEventConfigurations
+     */
+    java.util.concurrent.Future<DescribeEventConfigurationsResult> describeEventConfigurationsAsync(
+            DescribeEventConfigurationsRequest describeEventConfigurationsRequest);
+
+    /**
+     * <p>
+     * Describes event configurations.
+     * </p>
+     * 
+     * @param describeEventConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEventConfigurations operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeEventConfigurations
+     */
+    java.util.concurrent.Future<DescribeEventConfigurationsResult> describeEventConfigurationsAsync(
+            DescribeEventConfigurationsRequest describeEventConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventConfigurationsRequest, DescribeEventConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a search index.
+     * </p>
+     * 
+     * @param describeIndexRequest
+     * @return A Java Future containing the result of the DescribeIndex operation returned by the service.
+     * @sample AWSIotAsync.DescribeIndex
+     */
+    java.util.concurrent.Future<DescribeIndexResult> describeIndexAsync(DescribeIndexRequest describeIndexRequest);
+
+    /**
+     * <p>
+     * Describes a search index.
+     * </p>
+     * 
+     * @param describeIndexRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIndex operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeIndex
+     */
+    java.util.concurrent.Future<DescribeIndexResult> describeIndexAsync(DescribeIndexRequest describeIndexRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIndexRequest, DescribeIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a job.
+     * </p>
+     * 
+     * @param describeJobRequest
+     * @return A Java Future containing the result of the DescribeJob operation returned by the service.
+     * @sample AWSIotAsync.DescribeJob
+     */
+    java.util.concurrent.Future<DescribeJobResult> describeJobAsync(DescribeJobRequest describeJobRequest);
+
+    /**
+     * <p>
+     * Describes a job.
+     * </p>
+     * 
+     * @param describeJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeJob operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeJob
+     */
+    java.util.concurrent.Future<DescribeJobResult> describeJobAsync(DescribeJobRequest describeJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeJobRequest, DescribeJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a job execution.
+     * </p>
+     * 
+     * @param describeJobExecutionRequest
+     * @return A Java Future containing the result of the DescribeJobExecution operation returned by the service.
+     * @sample AWSIotAsync.DescribeJobExecution
+     */
+    java.util.concurrent.Future<DescribeJobExecutionResult> describeJobExecutionAsync(DescribeJobExecutionRequest describeJobExecutionRequest);
+
+    /**
+     * <p>
+     * Describes a job execution.
+     * </p>
+     * 
+     * @param describeJobExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeJobExecution operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeJobExecution
+     */
+    java.util.concurrent.Future<DescribeJobExecutionResult> describeJobExecutionAsync(DescribeJobExecutionRequest describeJobExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeJobExecutionRequest, DescribeJobExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a role alias.
+     * </p>
+     * 
+     * @param describeRoleAliasRequest
+     * @return A Java Future containing the result of the DescribeRoleAlias operation returned by the service.
+     * @sample AWSIotAsync.DescribeRoleAlias
+     */
+    java.util.concurrent.Future<DescribeRoleAliasResult> describeRoleAliasAsync(DescribeRoleAliasRequest describeRoleAliasRequest);
+
+    /**
+     * <p>
+     * Describes a role alias.
+     * </p>
+     * 
+     * @param describeRoleAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRoleAlias operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeRoleAlias
+     */
+    java.util.concurrent.Future<DescribeRoleAliasResult> describeRoleAliasAsync(DescribeRoleAliasRequest describeRoleAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRoleAliasRequest, DescribeRoleAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a stream.
+     * </p>
+     * 
+     * @param describeStreamRequest
+     * @return A Java Future containing the result of the DescribeStream operation returned by the service.
+     * @sample AWSIotAsync.DescribeStream
+     */
+    java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest describeStreamRequest);
+
+    /**
+     * <p>
+     * Gets information about a stream.
+     * </p>
+     * 
+     * @param describeStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStream operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeStream
+     */
+    java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest describeStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -937,6 +1666,64 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Describe a thing group.
+     * </p>
+     * 
+     * @param describeThingGroupRequest
+     * @return A Java Future containing the result of the DescribeThingGroup operation returned by the service.
+     * @sample AWSIotAsync.DescribeThingGroup
+     */
+    java.util.concurrent.Future<DescribeThingGroupResult> describeThingGroupAsync(DescribeThingGroupRequest describeThingGroupRequest);
+
+    /**
+     * <p>
+     * Describe a thing group.
+     * </p>
+     * 
+     * @param describeThingGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThingGroup operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeThingGroup
+     */
+    java.util.concurrent.Future<DescribeThingGroupResult> describeThingGroupAsync(DescribeThingGroupRequest describeThingGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThingGroupRequest, DescribeThingGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param describeThingRegistrationTaskRequest
+     * @return A Java Future containing the result of the DescribeThingRegistrationTask operation returned by the
+     *         service.
+     * @sample AWSIotAsync.DescribeThingRegistrationTask
+     */
+    java.util.concurrent.Future<DescribeThingRegistrationTaskResult> describeThingRegistrationTaskAsync(
+            DescribeThingRegistrationTaskRequest describeThingRegistrationTaskRequest);
+
+    /**
+     * <p>
+     * Describes a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param describeThingRegistrationTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThingRegistrationTask operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.DescribeThingRegistrationTask
+     */
+    java.util.concurrent.Future<DescribeThingRegistrationTaskResult> describeThingRegistrationTaskAsync(
+            DescribeThingRegistrationTaskRequest describeThingRegistrationTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThingRegistrationTaskRequest, DescribeThingRegistrationTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified thing type.
      * </p>
      * 
@@ -966,7 +1753,37 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Detaches a policy from the specified target.
+     * </p>
+     * 
+     * @param detachPolicyRequest
+     * @return A Java Future containing the result of the DetachPolicy operation returned by the service.
+     * @sample AWSIotAsync.DetachPolicy
+     */
+    java.util.concurrent.Future<DetachPolicyResult> detachPolicyAsync(DetachPolicyRequest detachPolicyRequest);
+
+    /**
+     * <p>
+     * Detaches a policy from the specified target.
+     * </p>
+     * 
+     * @param detachPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachPolicy operation returned by the service.
+     * @sample AWSIotAsyncHandler.DetachPolicy
+     */
+    java.util.concurrent.Future<DetachPolicyResult> detachPolicyAsync(DetachPolicyRequest detachPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DetachPolicyRequest, DetachPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the specified policy from the specified certificate.
+     * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
      * </p>
      * 
      * @param detachPrincipalPolicyRequest
@@ -974,11 +1791,15 @@ public interface AWSIotAsync extends AWSIot {
      * @return A Java Future containing the result of the DetachPrincipalPolicy operation returned by the service.
      * @sample AWSIotAsync.DetachPrincipalPolicy
      */
+    @Deprecated
     java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(DetachPrincipalPolicyRequest detachPrincipalPolicyRequest);
 
     /**
      * <p>
      * Removes the specified policy from the specified certificate.
+     * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
      * </p>
      * 
      * @param detachPrincipalPolicyRequest
@@ -990,6 +1811,7 @@ public interface AWSIotAsync extends AWSIot {
      * @return A Java Future containing the result of the DetachPrincipalPolicy operation returned by the service.
      * @sample AWSIotAsyncHandler.DetachPrincipalPolicy
      */
+    @Deprecated
     java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(DetachPrincipalPolicyRequest detachPrincipalPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, DetachPrincipalPolicyResult> asyncHandler);
 
@@ -1024,7 +1846,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Disables the specified rule.
+     * Disables the rule.
      * </p>
      * 
      * @param disableTopicRuleRequest
@@ -1036,7 +1858,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Disables the specified rule.
+     * Disables the rule.
      * </p>
      * 
      * @param disableTopicRuleRequest
@@ -1053,7 +1875,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Enables the specified rule.
+     * Enables the rule.
      * </p>
      * 
      * @param enableTopicRuleRequest
@@ -1065,7 +1887,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Enables the specified rule.
+     * Enables the rule.
      * </p>
      * 
      * @param enableTopicRuleRequest
@@ -1079,6 +1901,87 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<EnableTopicRuleResult> enableTopicRuleAsync(EnableTopicRuleRequest enableTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, EnableTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets effective policies.
+     * </p>
+     * 
+     * @param getEffectivePoliciesRequest
+     * @return A Java Future containing the result of the GetEffectivePolicies operation returned by the service.
+     * @sample AWSIotAsync.GetEffectivePolicies
+     */
+    java.util.concurrent.Future<GetEffectivePoliciesResult> getEffectivePoliciesAsync(GetEffectivePoliciesRequest getEffectivePoliciesRequest);
+
+    /**
+     * <p>
+     * Gets effective policies.
+     * </p>
+     * 
+     * @param getEffectivePoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEffectivePolicies operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetEffectivePolicies
+     */
+    java.util.concurrent.Future<GetEffectivePoliciesResult> getEffectivePoliciesAsync(GetEffectivePoliciesRequest getEffectivePoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEffectivePoliciesRequest, GetEffectivePoliciesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the search configuration.
+     * </p>
+     * 
+     * @param getIndexingConfigurationRequest
+     * @return A Java Future containing the result of the GetIndexingConfiguration operation returned by the service.
+     * @sample AWSIotAsync.GetIndexingConfiguration
+     */
+    java.util.concurrent.Future<GetIndexingConfigurationResult> getIndexingConfigurationAsync(GetIndexingConfigurationRequest getIndexingConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the search configuration.
+     * </p>
+     * 
+     * @param getIndexingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetIndexingConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetIndexingConfiguration
+     */
+    java.util.concurrent.Future<GetIndexingConfigurationResult> getIndexingConfigurationAsync(GetIndexingConfigurationRequest getIndexingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetIndexingConfigurationRequest, GetIndexingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a job document.
+     * </p>
+     * 
+     * @param getJobDocumentRequest
+     * @return A Java Future containing the result of the GetJobDocument operation returned by the service.
+     * @sample AWSIotAsync.GetJobDocument
+     */
+    java.util.concurrent.Future<GetJobDocumentResult> getJobDocumentAsync(GetJobDocumentRequest getJobDocumentRequest);
+
+    /**
+     * <p>
+     * Gets a job document.
+     * </p>
+     * 
+     * @param getJobDocumentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetJobDocument operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetJobDocument
+     */
+    java.util.concurrent.Future<GetJobDocumentResult> getJobDocumentAsync(GetJobDocumentRequest getJobDocumentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetJobDocumentRequest, GetJobDocumentResult> asyncHandler);
 
     /**
      * <p>
@@ -1108,6 +2011,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<GetLoggingOptionsResult> getLoggingOptionsAsync(GetLoggingOptionsRequest getLoggingOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetLoggingOptionsRequest, GetLoggingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets an OTA update.
+     * </p>
+     * 
+     * @param getOTAUpdateRequest
+     * @return A Java Future containing the result of the GetOTAUpdate operation returned by the service.
+     * @sample AWSIotAsync.GetOTAUpdate
+     */
+    java.util.concurrent.Future<GetOTAUpdateResult> getOTAUpdateAsync(GetOTAUpdateRequest getOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Gets an OTA update.
+     * </p>
+     * 
+     * @param getOTAUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOTAUpdate operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetOTAUpdate
+     */
+    java.util.concurrent.Future<GetOTAUpdateResult> getOTAUpdateAsync(GetOTAUpdateRequest getOTAUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOTAUpdateRequest, GetOTAUpdateResult> asyncHandler);
 
     /**
      * <p>
@@ -1198,7 +2128,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets information about the specified rule.
+     * Gets information about the rule.
      * </p>
      * 
      * @param getTopicRuleRequest
@@ -1210,7 +2140,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets information about the specified rule.
+     * Gets information about the rule.
      * </p>
      * 
      * @param getTopicRuleRequest
@@ -1224,6 +2154,87 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<GetTopicRuleResult> getTopicRuleAsync(GetTopicRuleRequest getTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<GetTopicRuleRequest, GetTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the fine grained logging options.
+     * </p>
+     * 
+     * @param getV2LoggingOptionsRequest
+     * @return A Java Future containing the result of the GetV2LoggingOptions operation returned by the service.
+     * @sample AWSIotAsync.GetV2LoggingOptions
+     */
+    java.util.concurrent.Future<GetV2LoggingOptionsResult> getV2LoggingOptionsAsync(GetV2LoggingOptionsRequest getV2LoggingOptionsRequest);
+
+    /**
+     * <p>
+     * Gets the fine grained logging options.
+     * </p>
+     * 
+     * @param getV2LoggingOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetV2LoggingOptions operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetV2LoggingOptions
+     */
+    java.util.concurrent.Future<GetV2LoggingOptionsResult> getV2LoggingOptionsAsync(GetV2LoggingOptionsRequest getV2LoggingOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetV2LoggingOptionsRequest, GetV2LoggingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the policies attached to the specified thing group.
+     * </p>
+     * 
+     * @param listAttachedPoliciesRequest
+     * @return A Java Future containing the result of the ListAttachedPolicies operation returned by the service.
+     * @sample AWSIotAsync.ListAttachedPolicies
+     */
+    java.util.concurrent.Future<ListAttachedPoliciesResult> listAttachedPoliciesAsync(ListAttachedPoliciesRequest listAttachedPoliciesRequest);
+
+    /**
+     * <p>
+     * Lists the policies attached to the specified thing group.
+     * </p>
+     * 
+     * @param listAttachedPoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAttachedPolicies operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListAttachedPolicies
+     */
+    java.util.concurrent.Future<ListAttachedPoliciesResult> listAttachedPoliciesAsync(ListAttachedPoliciesRequest listAttachedPoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAttachedPoliciesRequest, ListAttachedPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the authorizers registered in your account.
+     * </p>
+     * 
+     * @param listAuthorizersRequest
+     * @return A Java Future containing the result of the ListAuthorizers operation returned by the service.
+     * @sample AWSIotAsync.ListAuthorizers
+     */
+    java.util.concurrent.Future<ListAuthorizersResult> listAuthorizersAsync(ListAuthorizersRequest listAuthorizersRequest);
+
+    /**
+     * <p>
+     * Lists the authorizers registered in your account.
+     * </p>
+     * 
+     * @param listAuthorizersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAuthorizers operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListAuthorizers
+     */
+    java.util.concurrent.Future<ListAuthorizersResult> listAuthorizersAsync(ListAuthorizersRequest listAuthorizersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAuthorizersRequest, ListAuthorizersResult> asyncHandler);
 
     /**
      * <p>
@@ -1330,7 +2341,144 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists certificates that are being transfered but not yet accepted.
+     * Lists the search indices.
+     * </p>
+     * 
+     * @param listIndicesRequest
+     * @return A Java Future containing the result of the ListIndices operation returned by the service.
+     * @sample AWSIotAsync.ListIndices
+     */
+    java.util.concurrent.Future<ListIndicesResult> listIndicesAsync(ListIndicesRequest listIndicesRequest);
+
+    /**
+     * <p>
+     * Lists the search indices.
+     * </p>
+     * 
+     * @param listIndicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIndices operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListIndices
+     */
+    java.util.concurrent.Future<ListIndicesResult> listIndicesAsync(ListIndicesRequest listIndicesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIndicesRequest, ListIndicesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the job executions for a job.
+     * </p>
+     * 
+     * @param listJobExecutionsForJobRequest
+     * @return A Java Future containing the result of the ListJobExecutionsForJob operation returned by the service.
+     * @sample AWSIotAsync.ListJobExecutionsForJob
+     */
+    java.util.concurrent.Future<ListJobExecutionsForJobResult> listJobExecutionsForJobAsync(ListJobExecutionsForJobRequest listJobExecutionsForJobRequest);
+
+    /**
+     * <p>
+     * Lists the job executions for a job.
+     * </p>
+     * 
+     * @param listJobExecutionsForJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListJobExecutionsForJob operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListJobExecutionsForJob
+     */
+    java.util.concurrent.Future<ListJobExecutionsForJobResult> listJobExecutionsForJobAsync(ListJobExecutionsForJobRequest listJobExecutionsForJobRequest,
+            com.amazonaws.handlers.AsyncHandler<ListJobExecutionsForJobRequest, ListJobExecutionsForJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the job executions for the specified thing.
+     * </p>
+     * 
+     * @param listJobExecutionsForThingRequest
+     * @return A Java Future containing the result of the ListJobExecutionsForThing operation returned by the service.
+     * @sample AWSIotAsync.ListJobExecutionsForThing
+     */
+    java.util.concurrent.Future<ListJobExecutionsForThingResult> listJobExecutionsForThingAsync(
+            ListJobExecutionsForThingRequest listJobExecutionsForThingRequest);
+
+    /**
+     * <p>
+     * Lists the job executions for the specified thing.
+     * </p>
+     * 
+     * @param listJobExecutionsForThingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListJobExecutionsForThing operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListJobExecutionsForThing
+     */
+    java.util.concurrent.Future<ListJobExecutionsForThingResult> listJobExecutionsForThingAsync(
+            ListJobExecutionsForThingRequest listJobExecutionsForThingRequest,
+            com.amazonaws.handlers.AsyncHandler<ListJobExecutionsForThingRequest, ListJobExecutionsForThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists jobs.
+     * </p>
+     * 
+     * @param listJobsRequest
+     * @return A Java Future containing the result of the ListJobs operation returned by the service.
+     * @sample AWSIotAsync.ListJobs
+     */
+    java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest listJobsRequest);
+
+    /**
+     * <p>
+     * Lists jobs.
+     * </p>
+     * 
+     * @param listJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListJobs operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListJobs
+     */
+    java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest listJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists OTA updates.
+     * </p>
+     * 
+     * @param listOTAUpdatesRequest
+     * @return A Java Future containing the result of the ListOTAUpdates operation returned by the service.
+     * @sample AWSIotAsync.ListOTAUpdates
+     */
+    java.util.concurrent.Future<ListOTAUpdatesResult> listOTAUpdatesAsync(ListOTAUpdatesRequest listOTAUpdatesRequest);
+
+    /**
+     * <p>
+     * Lists OTA updates.
+     * </p>
+     * 
+     * @param listOTAUpdatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOTAUpdates operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListOTAUpdates
+     */
+    java.util.concurrent.Future<ListOTAUpdatesResult> listOTAUpdatesAsync(ListOTAUpdatesRequest listOTAUpdatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOTAUpdatesRequest, ListOTAUpdatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists certificates that are being transferred but not yet accepted.
      * </p>
      * 
      * @param listOutgoingCertificatesRequest
@@ -1342,7 +2490,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists certificates that are being transfered but not yet accepted.
+     * Lists certificates that are being transferred but not yet accepted.
      * </p>
      * 
      * @param listOutgoingCertificatesRequest
@@ -1390,17 +2538,24 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Lists the principals associated with the specified policy.
      * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+     * </p>
      * 
      * @param listPolicyPrincipalsRequest
      *        The input for the ListPolicyPrincipals operation.
      * @return A Java Future containing the result of the ListPolicyPrincipals operation returned by the service.
      * @sample AWSIotAsync.ListPolicyPrincipals
      */
+    @Deprecated
     java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(ListPolicyPrincipalsRequest listPolicyPrincipalsRequest);
 
     /**
      * <p>
      * Lists the principals associated with the specified policy.
+     * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
      * </p>
      * 
      * @param listPolicyPrincipalsRequest
@@ -1412,6 +2567,7 @@ public interface AWSIotAsync extends AWSIot {
      * @return A Java Future containing the result of the ListPolicyPrincipals operation returned by the service.
      * @sample AWSIotAsyncHandler.ListPolicyPrincipals
      */
+    @Deprecated
     java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(ListPolicyPrincipalsRequest listPolicyPrincipalsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPolicyPrincipalsRequest, ListPolicyPrincipalsResult> asyncHandler);
 
@@ -1451,12 +2607,16 @@ public interface AWSIotAsync extends AWSIot {
      * "http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax"
      * >AmazonCognito Identity format</a>.
      * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+     * </p>
      * 
      * @param listPrincipalPoliciesRequest
      *        The input for the ListPrincipalPolicies operation.
      * @return A Java Future containing the result of the ListPrincipalPolicies operation returned by the service.
      * @sample AWSIotAsync.ListPrincipalPolicies
      */
+    @Deprecated
     java.util.concurrent.Future<ListPrincipalPoliciesResult> listPrincipalPoliciesAsync(ListPrincipalPoliciesRequest listPrincipalPoliciesRequest);
 
     /**
@@ -1465,6 +2625,9 @@ public interface AWSIotAsync extends AWSIot {
      * href=
      * "http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax"
      * >AmazonCognito Identity format</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
      * </p>
      * 
      * @param listPrincipalPoliciesRequest
@@ -1476,6 +2639,7 @@ public interface AWSIotAsync extends AWSIot {
      * @return A Java Future containing the result of the ListPrincipalPolicies operation returned by the service.
      * @sample AWSIotAsyncHandler.ListPrincipalPolicies
      */
+    @Deprecated
     java.util.concurrent.Future<ListPrincipalPoliciesResult> listPrincipalPoliciesAsync(ListPrincipalPoliciesRequest listPrincipalPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListPrincipalPoliciesRequest, ListPrincipalPoliciesResult> asyncHandler);
 
@@ -1510,6 +2674,141 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Lists the role aliases registered in your account.
+     * </p>
+     * 
+     * @param listRoleAliasesRequest
+     * @return A Java Future containing the result of the ListRoleAliases operation returned by the service.
+     * @sample AWSIotAsync.ListRoleAliases
+     */
+    java.util.concurrent.Future<ListRoleAliasesResult> listRoleAliasesAsync(ListRoleAliasesRequest listRoleAliasesRequest);
+
+    /**
+     * <p>
+     * Lists the role aliases registered in your account.
+     * </p>
+     * 
+     * @param listRoleAliasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRoleAliases operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListRoleAliases
+     */
+    java.util.concurrent.Future<ListRoleAliasesResult> listRoleAliasesAsync(ListRoleAliasesRequest listRoleAliasesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRoleAliasesRequest, ListRoleAliasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all of the streams in your AWS account.
+     * </p>
+     * 
+     * @param listStreamsRequest
+     * @return A Java Future containing the result of the ListStreams operation returned by the service.
+     * @sample AWSIotAsync.ListStreams
+     */
+    java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest listStreamsRequest);
+
+    /**
+     * <p>
+     * Lists all of the streams in your AWS account.
+     * </p>
+     * 
+     * @param listStreamsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStreams operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListStreams
+     */
+    java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest listStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List targets for the specified policy.
+     * </p>
+     * 
+     * @param listTargetsForPolicyRequest
+     * @return A Java Future containing the result of the ListTargetsForPolicy operation returned by the service.
+     * @sample AWSIotAsync.ListTargetsForPolicy
+     */
+    java.util.concurrent.Future<ListTargetsForPolicyResult> listTargetsForPolicyAsync(ListTargetsForPolicyRequest listTargetsForPolicyRequest);
+
+    /**
+     * <p>
+     * List targets for the specified policy.
+     * </p>
+     * 
+     * @param listTargetsForPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTargetsForPolicy operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListTargetsForPolicy
+     */
+    java.util.concurrent.Future<ListTargetsForPolicyResult> listTargetsForPolicyAsync(ListTargetsForPolicyRequest listTargetsForPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTargetsForPolicyRequest, ListTargetsForPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the thing groups in your account.
+     * </p>
+     * 
+     * @param listThingGroupsRequest
+     * @return A Java Future containing the result of the ListThingGroups operation returned by the service.
+     * @sample AWSIotAsync.ListThingGroups
+     */
+    java.util.concurrent.Future<ListThingGroupsResult> listThingGroupsAsync(ListThingGroupsRequest listThingGroupsRequest);
+
+    /**
+     * <p>
+     * List the thing groups in your account.
+     * </p>
+     * 
+     * @param listThingGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThingGroups operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListThingGroups
+     */
+    java.util.concurrent.Future<ListThingGroupsResult> listThingGroupsAsync(ListThingGroupsRequest listThingGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThingGroupsRequest, ListThingGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the thing groups to which the specified thing belongs.
+     * </p>
+     * 
+     * @param listThingGroupsForThingRequest
+     * @return A Java Future containing the result of the ListThingGroupsForThing operation returned by the service.
+     * @sample AWSIotAsync.ListThingGroupsForThing
+     */
+    java.util.concurrent.Future<ListThingGroupsForThingResult> listThingGroupsForThingAsync(ListThingGroupsForThingRequest listThingGroupsForThingRequest);
+
+    /**
+     * <p>
+     * List the thing groups to which the specified thing belongs.
+     * </p>
+     * 
+     * @param listThingGroupsForThingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThingGroupsForThing operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListThingGroupsForThing
+     */
+    java.util.concurrent.Future<ListThingGroupsForThingResult> listThingGroupsForThingAsync(ListThingGroupsForThingRequest listThingGroupsForThingRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThingGroupsForThingRequest, ListThingGroupsForThingResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the principals associated with the specified thing.
      * </p>
      * 
@@ -1536,6 +2835,66 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ListThingPrincipalsResult> listThingPrincipalsAsync(ListThingPrincipalsRequest listThingPrincipalsRequest,
             com.amazonaws.handlers.AsyncHandler<ListThingPrincipalsRequest, ListThingPrincipalsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Information about the thing registration tasks.
+     * </p>
+     * 
+     * @param listThingRegistrationTaskReportsRequest
+     * @return A Java Future containing the result of the ListThingRegistrationTaskReports operation returned by the
+     *         service.
+     * @sample AWSIotAsync.ListThingRegistrationTaskReports
+     */
+    java.util.concurrent.Future<ListThingRegistrationTaskReportsResult> listThingRegistrationTaskReportsAsync(
+            ListThingRegistrationTaskReportsRequest listThingRegistrationTaskReportsRequest);
+
+    /**
+     * <p>
+     * Information about the thing registration tasks.
+     * </p>
+     * 
+     * @param listThingRegistrationTaskReportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThingRegistrationTaskReports operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.ListThingRegistrationTaskReports
+     */
+    java.util.concurrent.Future<ListThingRegistrationTaskReportsResult> listThingRegistrationTaskReportsAsync(
+            ListThingRegistrationTaskReportsRequest listThingRegistrationTaskReportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThingRegistrationTaskReportsRequest, ListThingRegistrationTaskReportsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List bulk thing provisioning tasks.
+     * </p>
+     * 
+     * @param listThingRegistrationTasksRequest
+     * @return A Java Future containing the result of the ListThingRegistrationTasks operation returned by the service.
+     * @sample AWSIotAsync.ListThingRegistrationTasks
+     */
+    java.util.concurrent.Future<ListThingRegistrationTasksResult> listThingRegistrationTasksAsync(
+            ListThingRegistrationTasksRequest listThingRegistrationTasksRequest);
+
+    /**
+     * <p>
+     * List bulk thing provisioning tasks.
+     * </p>
+     * 
+     * @param listThingRegistrationTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThingRegistrationTasks operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListThingRegistrationTasks
+     */
+    java.util.concurrent.Future<ListThingRegistrationTasksResult> listThingRegistrationTasksAsync(
+            ListThingRegistrationTasksRequest listThingRegistrationTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThingRegistrationTasksRequest, ListThingRegistrationTasksResult> asyncHandler);
 
     /**
      * <p>
@@ -1601,6 +2960,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Lists the things in the specified group.
+     * </p>
+     * 
+     * @param listThingsInThingGroupRequest
+     * @return A Java Future containing the result of the ListThingsInThingGroup operation returned by the service.
+     * @sample AWSIotAsync.ListThingsInThingGroup
+     */
+    java.util.concurrent.Future<ListThingsInThingGroupResult> listThingsInThingGroupAsync(ListThingsInThingGroupRequest listThingsInThingGroupRequest);
+
+    /**
+     * <p>
+     * Lists the things in the specified group.
+     * </p>
+     * 
+     * @param listThingsInThingGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThingsInThingGroup operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListThingsInThingGroup
+     */
+    java.util.concurrent.Future<ListThingsInThingGroupResult> listThingsInThingGroupAsync(ListThingsInThingGroupRequest listThingsInThingGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThingsInThingGroupRequest, ListThingsInThingGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the rules for the specific topic.
      * </p>
      * 
@@ -1627,6 +3013,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ListTopicRulesResult> listTopicRulesAsync(ListTopicRulesRequest listTopicRulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListTopicRulesRequest, ListTopicRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists logging levels.
+     * </p>
+     * 
+     * @param listV2LoggingLevelsRequest
+     * @return A Java Future containing the result of the ListV2LoggingLevels operation returned by the service.
+     * @sample AWSIotAsync.ListV2LoggingLevels
+     */
+    java.util.concurrent.Future<ListV2LoggingLevelsResult> listV2LoggingLevelsAsync(ListV2LoggingLevelsRequest listV2LoggingLevelsRequest);
+
+    /**
+     * <p>
+     * Lists logging levels.
+     * </p>
+     * 
+     * @param listV2LoggingLevelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListV2LoggingLevels operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListV2LoggingLevels
+     */
+    java.util.concurrent.Future<ListV2LoggingLevelsResult> listV2LoggingLevelsAsync(ListV2LoggingLevelsRequest listV2LoggingLevelsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListV2LoggingLevelsRequest, ListV2LoggingLevelsResult> asyncHandler);
 
     /**
      * <p>
@@ -1698,6 +3111,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Provisions a thing.
+     * </p>
+     * 
+     * @param registerThingRequest
+     * @return A Java Future containing the result of the RegisterThing operation returned by the service.
+     * @sample AWSIotAsync.RegisterThing
+     */
+    java.util.concurrent.Future<RegisterThingResult> registerThingAsync(RegisterThingRequest registerThingRequest);
+
+    /**
+     * <p>
+     * Provisions a thing.
+     * </p>
+     * 
+     * @param registerThingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterThing operation returned by the service.
+     * @sample AWSIotAsyncHandler.RegisterThing
+     */
+    java.util.concurrent.Future<RegisterThingResult> registerThingAsync(RegisterThingRequest registerThingRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterThingRequest, RegisterThingResult> asyncHandler);
+
+    /**
+     * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status
      * changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
      * </p>
@@ -1745,9 +3185,37 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Replaces the specified rule. You must specify all parameters for the new rule. Creating rules is an
-     * administrator-level action. Any user who has permission to create rules will be able to access data processed by
-     * the rule.
+     * Remove the specified thing from the specified group.
+     * </p>
+     * 
+     * @param removeThingFromThingGroupRequest
+     * @return A Java Future containing the result of the RemoveThingFromThingGroup operation returned by the service.
+     * @sample AWSIotAsync.RemoveThingFromThingGroup
+     */
+    java.util.concurrent.Future<RemoveThingFromThingGroupResult> removeThingFromThingGroupAsync(
+            RemoveThingFromThingGroupRequest removeThingFromThingGroupRequest);
+
+    /**
+     * <p>
+     * Remove the specified thing from the specified group.
+     * </p>
+     * 
+     * @param removeThingFromThingGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveThingFromThingGroup operation returned by the service.
+     * @sample AWSIotAsyncHandler.RemoveThingFromThingGroup
+     */
+    java.util.concurrent.Future<RemoveThingFromThingGroupResult> removeThingFromThingGroupAsync(
+            RemoveThingFromThingGroupRequest removeThingFromThingGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveThingFromThingGroupRequest, RemoveThingFromThingGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level
+     * action. Any user who has permission to create rules will be able to access data processed by the rule.
      * </p>
      * 
      * @param replaceTopicRuleRequest
@@ -1759,9 +3227,8 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Replaces the specified rule. You must specify all parameters for the new rule. Creating rules is an
-     * administrator-level action. Any user who has permission to create rules will be able to access data processed by
-     * the rule.
+     * Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level
+     * action. Any user who has permission to create rules will be able to access data processed by the rule.
      * </p>
      * 
      * @param replaceTopicRuleRequest
@@ -1775,6 +3242,62 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ReplaceTopicRuleResult> replaceTopicRuleAsync(ReplaceTopicRuleRequest replaceTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, ReplaceTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * The query search index.
+     * </p>
+     * 
+     * @param searchIndexRequest
+     * @return A Java Future containing the result of the SearchIndex operation returned by the service.
+     * @sample AWSIotAsync.SearchIndex
+     */
+    java.util.concurrent.Future<SearchIndexResult> searchIndexAsync(SearchIndexRequest searchIndexRequest);
+
+    /**
+     * <p>
+     * The query search index.
+     * </p>
+     * 
+     * @param searchIndexRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchIndex operation returned by the service.
+     * @sample AWSIotAsyncHandler.SearchIndex
+     */
+    java.util.concurrent.Future<SearchIndexResult> searchIndexAsync(SearchIndexRequest searchIndexRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchIndexRequest, SearchIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the default authorizer. This will be used if a websocket connection is made without specifying an
+     * authorizer.
+     * </p>
+     * 
+     * @param setDefaultAuthorizerRequest
+     * @return A Java Future containing the result of the SetDefaultAuthorizer operation returned by the service.
+     * @sample AWSIotAsync.SetDefaultAuthorizer
+     */
+    java.util.concurrent.Future<SetDefaultAuthorizerResult> setDefaultAuthorizerAsync(SetDefaultAuthorizerRequest setDefaultAuthorizerRequest);
+
+    /**
+     * <p>
+     * Sets the default authorizer. This will be used if a websocket connection is made without specifying an
+     * authorizer.
+     * </p>
+     * 
+     * @param setDefaultAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetDefaultAuthorizer operation returned by the service.
+     * @sample AWSIotAsyncHandler.SetDefaultAuthorizer
+     */
+    java.util.concurrent.Future<SetDefaultAuthorizerResult> setDefaultAuthorizerAsync(SetDefaultAuthorizerRequest setDefaultAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<SetDefaultAuthorizerRequest, SetDefaultAuthorizerResult> asyncHandler);
 
     /**
      * <p>
@@ -1840,6 +3363,172 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Sets the logging level.
+     * </p>
+     * 
+     * @param setV2LoggingLevelRequest
+     * @return A Java Future containing the result of the SetV2LoggingLevel operation returned by the service.
+     * @sample AWSIotAsync.SetV2LoggingLevel
+     */
+    java.util.concurrent.Future<SetV2LoggingLevelResult> setV2LoggingLevelAsync(SetV2LoggingLevelRequest setV2LoggingLevelRequest);
+
+    /**
+     * <p>
+     * Sets the logging level.
+     * </p>
+     * 
+     * @param setV2LoggingLevelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetV2LoggingLevel operation returned by the service.
+     * @sample AWSIotAsyncHandler.SetV2LoggingLevel
+     */
+    java.util.concurrent.Future<SetV2LoggingLevelResult> setV2LoggingLevelAsync(SetV2LoggingLevelRequest setV2LoggingLevelRequest,
+            com.amazonaws.handlers.AsyncHandler<SetV2LoggingLevelRequest, SetV2LoggingLevelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the logging options for the V2 logging service.
+     * </p>
+     * 
+     * @param setV2LoggingOptionsRequest
+     * @return A Java Future containing the result of the SetV2LoggingOptions operation returned by the service.
+     * @sample AWSIotAsync.SetV2LoggingOptions
+     */
+    java.util.concurrent.Future<SetV2LoggingOptionsResult> setV2LoggingOptionsAsync(SetV2LoggingOptionsRequest setV2LoggingOptionsRequest);
+
+    /**
+     * <p>
+     * Sets the logging options for the V2 logging service.
+     * </p>
+     * 
+     * @param setV2LoggingOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetV2LoggingOptions operation returned by the service.
+     * @sample AWSIotAsyncHandler.SetV2LoggingOptions
+     */
+    java.util.concurrent.Future<SetV2LoggingOptionsResult> setV2LoggingOptionsAsync(SetV2LoggingOptionsRequest setV2LoggingOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<SetV2LoggingOptionsRequest, SetV2LoggingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param startThingRegistrationTaskRequest
+     * @return A Java Future containing the result of the StartThingRegistrationTask operation returned by the service.
+     * @sample AWSIotAsync.StartThingRegistrationTask
+     */
+    java.util.concurrent.Future<StartThingRegistrationTaskResult> startThingRegistrationTaskAsync(
+            StartThingRegistrationTaskRequest startThingRegistrationTaskRequest);
+
+    /**
+     * <p>
+     * Creates a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param startThingRegistrationTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartThingRegistrationTask operation returned by the service.
+     * @sample AWSIotAsyncHandler.StartThingRegistrationTask
+     */
+    java.util.concurrent.Future<StartThingRegistrationTaskResult> startThingRegistrationTaskAsync(
+            StartThingRegistrationTaskRequest startThingRegistrationTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartThingRegistrationTaskRequest, StartThingRegistrationTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancels a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param stopThingRegistrationTaskRequest
+     * @return A Java Future containing the result of the StopThingRegistrationTask operation returned by the service.
+     * @sample AWSIotAsync.StopThingRegistrationTask
+     */
+    java.util.concurrent.Future<StopThingRegistrationTaskResult> stopThingRegistrationTaskAsync(
+            StopThingRegistrationTaskRequest stopThingRegistrationTaskRequest);
+
+    /**
+     * <p>
+     * Cancels a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param stopThingRegistrationTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopThingRegistrationTask operation returned by the service.
+     * @sample AWSIotAsyncHandler.StopThingRegistrationTask
+     */
+    java.util.concurrent.Future<StopThingRegistrationTaskResult> stopThingRegistrationTaskAsync(
+            StopThingRegistrationTaskRequest stopThingRegistrationTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StopThingRegistrationTaskRequest, StopThingRegistrationTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Test custom authorization.
+     * </p>
+     * 
+     * @param testAuthorizationRequest
+     * @return A Java Future containing the result of the TestAuthorization operation returned by the service.
+     * @sample AWSIotAsync.TestAuthorization
+     */
+    java.util.concurrent.Future<TestAuthorizationResult> testAuthorizationAsync(TestAuthorizationRequest testAuthorizationRequest);
+
+    /**
+     * <p>
+     * Test custom authorization.
+     * </p>
+     * 
+     * @param testAuthorizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestAuthorization operation returned by the service.
+     * @sample AWSIotAsyncHandler.TestAuthorization
+     */
+    java.util.concurrent.Future<TestAuthorizationResult> testAuthorizationAsync(TestAuthorizationRequest testAuthorizationRequest,
+            com.amazonaws.handlers.AsyncHandler<TestAuthorizationRequest, TestAuthorizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Invoke the specified custom authorizer for testing purposes.
+     * </p>
+     * 
+     * @param testInvokeAuthorizerRequest
+     * @return A Java Future containing the result of the TestInvokeAuthorizer operation returned by the service.
+     * @sample AWSIotAsync.TestInvokeAuthorizer
+     */
+    java.util.concurrent.Future<TestInvokeAuthorizerResult> testInvokeAuthorizerAsync(TestInvokeAuthorizerRequest testInvokeAuthorizerRequest);
+
+    /**
+     * <p>
+     * Invoke the specified custom authorizer for testing purposes.
+     * </p>
+     * 
+     * @param testInvokeAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestInvokeAuthorizer operation returned by the service.
+     * @sample AWSIotAsyncHandler.TestInvokeAuthorizer
+     */
+    java.util.concurrent.Future<TestInvokeAuthorizerResult> testInvokeAuthorizerAsync(TestInvokeAuthorizerRequest testInvokeAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<TestInvokeAuthorizerRequest, TestInvokeAuthorizerResult> asyncHandler);
+
+    /**
+     * <p>
      * Transfers the specified certificate to the specified AWS account.
      * </p>
      * <p>
@@ -1896,6 +3585,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<TransferCertificateResult> transferCertificateAsync(TransferCertificateRequest transferCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<TransferCertificateRequest, TransferCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an authorizer.
+     * </p>
+     * 
+     * @param updateAuthorizerRequest
+     * @return A Java Future containing the result of the UpdateAuthorizer operation returned by the service.
+     * @sample AWSIotAsync.UpdateAuthorizer
+     */
+    java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(UpdateAuthorizerRequest updateAuthorizerRequest);
+
+    /**
+     * <p>
+     * Updates an authorizer.
+     * </p>
+     * 
+     * @param updateAuthorizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAuthorizer operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateAuthorizer
+     */
+    java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(UpdateAuthorizerRequest updateAuthorizerRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAuthorizerRequest, UpdateAuthorizerResult> asyncHandler);
 
     /**
      * <p>
@@ -1971,6 +3687,118 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Updates the event configurations.
+     * </p>
+     * 
+     * @param updateEventConfigurationsRequest
+     * @return A Java Future containing the result of the UpdateEventConfigurations operation returned by the service.
+     * @sample AWSIotAsync.UpdateEventConfigurations
+     */
+    java.util.concurrent.Future<UpdateEventConfigurationsResult> updateEventConfigurationsAsync(
+            UpdateEventConfigurationsRequest updateEventConfigurationsRequest);
+
+    /**
+     * <p>
+     * Updates the event configurations.
+     * </p>
+     * 
+     * @param updateEventConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEventConfigurations operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateEventConfigurations
+     */
+    java.util.concurrent.Future<UpdateEventConfigurationsResult> updateEventConfigurationsAsync(
+            UpdateEventConfigurationsRequest updateEventConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEventConfigurationsRequest, UpdateEventConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the search configuration.
+     * </p>
+     * 
+     * @param updateIndexingConfigurationRequest
+     * @return A Java Future containing the result of the UpdateIndexingConfiguration operation returned by the service.
+     * @sample AWSIotAsync.UpdateIndexingConfiguration
+     */
+    java.util.concurrent.Future<UpdateIndexingConfigurationResult> updateIndexingConfigurationAsync(
+            UpdateIndexingConfigurationRequest updateIndexingConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the search configuration.
+     * </p>
+     * 
+     * @param updateIndexingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateIndexingConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateIndexingConfiguration
+     */
+    java.util.concurrent.Future<UpdateIndexingConfigurationResult> updateIndexingConfigurationAsync(
+            UpdateIndexingConfigurationRequest updateIndexingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateIndexingConfigurationRequest, UpdateIndexingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a role alias.
+     * </p>
+     * 
+     * @param updateRoleAliasRequest
+     * @return A Java Future containing the result of the UpdateRoleAlias operation returned by the service.
+     * @sample AWSIotAsync.UpdateRoleAlias
+     */
+    java.util.concurrent.Future<UpdateRoleAliasResult> updateRoleAliasAsync(UpdateRoleAliasRequest updateRoleAliasRequest);
+
+    /**
+     * <p>
+     * Updates a role alias.
+     * </p>
+     * 
+     * @param updateRoleAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRoleAlias operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateRoleAlias
+     */
+    java.util.concurrent.Future<UpdateRoleAliasResult> updateRoleAliasAsync(UpdateRoleAliasRequest updateRoleAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoleAliasRequest, UpdateRoleAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing stream. The stream version will be incremented by one.
+     * </p>
+     * 
+     * @param updateStreamRequest
+     * @return A Java Future containing the result of the UpdateStream operation returned by the service.
+     * @sample AWSIotAsync.UpdateStream
+     */
+    java.util.concurrent.Future<UpdateStreamResult> updateStreamAsync(UpdateStreamRequest updateStreamRequest);
+
+    /**
+     * <p>
+     * Updates an existing stream. The stream version will be incremented by one.
+     * </p>
+     * 
+     * @param updateStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateStream operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateStream
+     */
+    java.util.concurrent.Future<UpdateStreamResult> updateStreamAsync(UpdateStreamRequest updateStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateStreamRequest, UpdateStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the data for a thing.
      * </p>
      * 
@@ -1997,5 +3825,61 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<UpdateThingResult> updateThingAsync(UpdateThingRequest updateThingRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateThingRequest, UpdateThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a thing group.
+     * </p>
+     * 
+     * @param updateThingGroupRequest
+     * @return A Java Future containing the result of the UpdateThingGroup operation returned by the service.
+     * @sample AWSIotAsync.UpdateThingGroup
+     */
+    java.util.concurrent.Future<UpdateThingGroupResult> updateThingGroupAsync(UpdateThingGroupRequest updateThingGroupRequest);
+
+    /**
+     * <p>
+     * Update a thing group.
+     * </p>
+     * 
+     * @param updateThingGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThingGroup operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateThingGroup
+     */
+    java.util.concurrent.Future<UpdateThingGroupResult> updateThingGroupAsync(UpdateThingGroupRequest updateThingGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThingGroupRequest, UpdateThingGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the groups to which the thing belongs.
+     * </p>
+     * 
+     * @param updateThingGroupsForThingRequest
+     * @return A Java Future containing the result of the UpdateThingGroupsForThing operation returned by the service.
+     * @sample AWSIotAsync.UpdateThingGroupsForThing
+     */
+    java.util.concurrent.Future<UpdateThingGroupsForThingResult> updateThingGroupsForThingAsync(
+            UpdateThingGroupsForThingRequest updateThingGroupsForThingRequest);
+
+    /**
+     * <p>
+     * Updates the groups to which the thing belongs.
+     * </p>
+     * 
+     * @param updateThingGroupsForThingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThingGroupsForThing operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateThingGroupsForThing
+     */
+    java.util.concurrent.Future<UpdateThingGroupsForThingResult> updateThingGroupsForThingAsync(
+            UpdateThingGroupsForThingRequest updateThingGroupsForThingRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThingGroupsForThingRequest, UpdateThingGroupsForThingResult> asyncHandler);
 
 }

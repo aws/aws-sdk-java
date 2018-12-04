@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,14 +104,14 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
+                                    com.amazonaws.services.cloudwatchevents.model.PolicyLengthExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidEventPatternException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.InternalException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.PolicyLengthExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.LimitExceededException.class))
@@ -343,6 +343,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DeleteRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -397,6 +398,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DescribeEventBusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventBusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -449,6 +451,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DescribeRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -508,6 +511,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DisableRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -566,6 +570,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new EnableRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -617,6 +622,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListRuleNamesByTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleNamesByTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -669,6 +675,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -721,6 +728,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListTargetsByRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsByRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -771,6 +779,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -840,6 +849,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -860,6 +870,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * <p>
      * Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can
      * disable a rule using <a>DisableRule</a>.
+     * </p>
+     * <p>
+     * If you are updating an existing rule, the rule is completely replaced with what you specify in this
+     * <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>, the old values for those arguments
+     * are not kept. Instead, they are replaced with null values.
      * </p>
      * <p>
      * When you create or update a rule, incoming events might not immediately start matching to new or updated rules.
@@ -912,6 +927,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -972,6 +988,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * </li>
      * <li>
      * <p>
+     * AWS Batch jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Pipelines in Amazon Code Pipeline
      * </p>
      * </li>
@@ -987,7 +1008,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * </li>
      * <li>
      * <p>
-     * Amazon SQS queues
+     * Amazon SQS queues, including FIFO queues
      * </p>
      * </li>
      * <li>
@@ -1057,8 +1078,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * </li>
      * </ul>
      * <p>
-     * When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON
-     * dot notation, not bracket notation.
+     * When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not
+     * bracket notation.
      * </p>
      * <p>
      * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be
@@ -1105,6 +1126,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1162,6 +1184,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1226,6 +1249,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new RemoveTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1283,6 +1307,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new TestEventPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testEventPatternRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

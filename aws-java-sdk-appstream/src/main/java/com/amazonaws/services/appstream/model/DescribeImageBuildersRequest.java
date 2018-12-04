@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,14 +25,32 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The names of the image builders to describe.
+     * </p>
+     */
     private java.util.List<String> names;
-
+    /**
+     * <p>
+     * The maximum size of each page of results.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The names of the image builders to describe.
+     * </p>
+     * 
+     * @return The names of the image builders to describe.
      */
 
     public java.util.List<String> getNames() {
@@ -40,7 +58,12 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The names of the image builders to describe.
+     * </p>
+     * 
      * @param names
+     *        The names of the image builders to describe.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -54,12 +77,16 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The names of the image builders to describe.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNames(java.util.Collection)} or {@link #withNames(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param names
+     *        The names of the image builders to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +101,12 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The names of the image builders to describe.
+     * </p>
+     * 
      * @param names
+     *        The names of the image builders to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +116,12 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The maximum size of each page of results.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum size of each page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -92,7 +129,11 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum size of each page of results.
+     * </p>
+     * 
+     * @return The maximum size of each page of results.
      */
 
     public Integer getMaxResults() {
@@ -100,7 +141,12 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The maximum size of each page of results.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum size of each page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +156,14 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      */
 
     public void setNextToken(String nextToken) {
@@ -118,7 +171,13 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *         null, it retrieves the first page.
      */
 
     public String getNextToken() {
@@ -126,7 +185,14 @@ public class DescribeImageBuildersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

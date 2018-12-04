@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,24 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The update behavior.
+     * The update behavior when the crawler finds a changed schema.
      * </p>
      */
     private String updateBehavior;
     /**
      * <p>
-     * The deletion behavior.
+     * The deletion behavior when the crawler finds a deleted object.
      * </p>
      */
     private String deleteBehavior;
 
     /**
      * <p>
-     * The update behavior.
+     * The update behavior when the crawler finds a changed schema.
      * </p>
      * 
      * @param updateBehavior
-     *        The update behavior.
+     *        The update behavior when the crawler finds a changed schema.
      * @see UpdateBehavior
      */
 
@@ -57,10 +57,10 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The update behavior.
+     * The update behavior when the crawler finds a changed schema.
      * </p>
      * 
-     * @return The update behavior.
+     * @return The update behavior when the crawler finds a changed schema.
      * @see UpdateBehavior
      */
 
@@ -70,11 +70,11 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The update behavior.
+     * The update behavior when the crawler finds a changed schema.
      * </p>
      * 
      * @param updateBehavior
-     *        The update behavior.
+     *        The update behavior when the crawler finds a changed schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpdateBehavior
      */
@@ -86,11 +86,11 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The update behavior.
+     * The update behavior when the crawler finds a changed schema.
      * </p>
      * 
      * @param updateBehavior
-     *        The update behavior.
+     *        The update behavior when the crawler finds a changed schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpdateBehavior
      */
@@ -102,11 +102,11 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The deletion behavior.
+     * The deletion behavior when the crawler finds a deleted object.
      * </p>
      * 
      * @param deleteBehavior
-     *        The deletion behavior.
+     *        The deletion behavior when the crawler finds a deleted object.
      * @see DeleteBehavior
      */
 
@@ -116,10 +116,10 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The deletion behavior.
+     * The deletion behavior when the crawler finds a deleted object.
      * </p>
      * 
-     * @return The deletion behavior.
+     * @return The deletion behavior when the crawler finds a deleted object.
      * @see DeleteBehavior
      */
 
@@ -129,11 +129,11 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The deletion behavior.
+     * The deletion behavior when the crawler finds a deleted object.
      * </p>
      * 
      * @param deleteBehavior
-     *        The deletion behavior.
+     *        The deletion behavior when the crawler finds a deleted object.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeleteBehavior
      */
@@ -145,11 +145,11 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The deletion behavior.
+     * The deletion behavior when the crawler finds a deleted object.
      * </p>
      * 
      * @param deleteBehavior
-     *        The deletion behavior.
+     *        The deletion behavior when the crawler finds a deleted object.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeleteBehavior
      */
