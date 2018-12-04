@@ -15,10 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue determines
- * whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue. For Reserved
- * queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS Elemental
- * MediaConvert console.
+ * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed
+ * in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of
+ * how much or how little you use it. Reserved pricing requires a 12-month commitment.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PricingPlan {

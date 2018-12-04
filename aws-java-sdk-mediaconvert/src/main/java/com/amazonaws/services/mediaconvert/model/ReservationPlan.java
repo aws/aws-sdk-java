@@ -27,31 +27,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReservationPlan implements Serializable, Cloneable, StructuredPojo {
 
-    /** The length of time that you commit to when you set up a pricing plan contract for a reserved queue. */
+    /** The length of the term of your reserved queue pricing plan commitment. */
     private String commitment;
-    /** The time stamp, in epoch seconds, for when the pricing plan for this reserved queue expires. */
+    /** The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires. */
     private java.util.Date expiresAt;
-    /** The time stamp in epoch seconds when the reserved queue's reservation plan was created. */
+    /** The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue. */
     private java.util.Date purchasedAt;
     /**
-     * Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or expires
-     * (EXPIRE) at the end of the contract period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires
+     * (EXPIRE) at the end of the term.
      */
     private String renewalType;
     /**
      * Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs
-     * the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
-     * replacement contract through the AWS Elemental MediaConvert console.
+     * the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you
+     * extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment
+     * begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
      */
     private Integer reservedSlots;
     /** Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED. */
     private String status;
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      * 
      * @param commitment
-     *        The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+     *        The length of the term of your reserved queue pricing plan commitment.
      * @see Commitment
      */
 
@@ -60,9 +61,9 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      * 
-     * @return The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+     * @return The length of the term of your reserved queue pricing plan commitment.
      * @see Commitment
      */
 
@@ -71,10 +72,10 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      * 
      * @param commitment
-     *        The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+     *        The length of the term of your reserved queue pricing plan commitment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Commitment
      */
@@ -85,10 +86,10 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      * 
      * @param commitment
-     *        The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+     *        The length of the term of your reserved queue pricing plan commitment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Commitment
      */
@@ -99,10 +100,10 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The time stamp, in epoch seconds, for when the pricing plan for this reserved queue expires.
+     * The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
      * 
      * @param expiresAt
-     *        The time stamp, in epoch seconds, for when the pricing plan for this reserved queue expires.
+     *        The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
      */
 
     public void setExpiresAt(java.util.Date expiresAt) {
@@ -110,9 +111,9 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The time stamp, in epoch seconds, for when the pricing plan for this reserved queue expires.
+     * The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
      * 
-     * @return The time stamp, in epoch seconds, for when the pricing plan for this reserved queue expires.
+     * @return The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
      */
 
     public java.util.Date getExpiresAt() {
@@ -120,10 +121,10 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The time stamp, in epoch seconds, for when the pricing plan for this reserved queue expires.
+     * The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
      * 
      * @param expiresAt
-     *        The time stamp, in epoch seconds, for when the pricing plan for this reserved queue expires.
+     *        The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +134,10 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The time stamp in epoch seconds when the reserved queue's reservation plan was created.
+     * The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
      * 
      * @param purchasedAt
-     *        The time stamp in epoch seconds when the reserved queue's reservation plan was created.
+     *        The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
      */
 
     public void setPurchasedAt(java.util.Date purchasedAt) {
@@ -144,9 +145,9 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The time stamp in epoch seconds when the reserved queue's reservation plan was created.
+     * The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
      * 
-     * @return The time stamp in epoch seconds when the reserved queue's reservation plan was created.
+     * @return The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
      */
 
     public java.util.Date getPurchasedAt() {
@@ -154,10 +155,10 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The time stamp in epoch seconds when the reserved queue's reservation plan was created.
+     * The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
      * 
      * @param purchasedAt
-     *        The time stamp in epoch seconds when the reserved queue's reservation plan was created.
+     *        The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,12 +168,12 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or expires
-     * (EXPIRE) at the end of the contract period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires
+     * (EXPIRE) at the end of the term.
      * 
      * @param renewalType
-     *        Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or
-     *        expires (EXPIRE) at the end of the contract period.
+     *        Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or
+     *        expires (EXPIRE) at the end of the term.
      * @see RenewalType
      */
 
@@ -181,11 +182,11 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or expires
-     * (EXPIRE) at the end of the contract period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires
+     * (EXPIRE) at the end of the term.
      * 
-     * @return Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or
-     *         expires (EXPIRE) at the end of the contract period.
+     * @return Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or
+     *         expires (EXPIRE) at the end of the term.
      * @see RenewalType
      */
 
@@ -194,12 +195,12 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or expires
-     * (EXPIRE) at the end of the contract period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires
+     * (EXPIRE) at the end of the term.
      * 
      * @param renewalType
-     *        Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or
-     *        expires (EXPIRE) at the end of the contract period.
+     *        Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or
+     *        expires (EXPIRE) at the end of the term.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RenewalType
      */
@@ -210,12 +211,12 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or expires
-     * (EXPIRE) at the end of the contract period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires
+     * (EXPIRE) at the end of the term.
      * 
      * @param renewalType
-     *        Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or
-     *        expires (EXPIRE) at the end of the contract period.
+     *        Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or
+     *        expires (EXPIRE) at the end of the term.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RenewalType
      */
@@ -227,13 +228,16 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs
-     * the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
-     * replacement contract through the AWS Elemental MediaConvert console.
+     * the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you
+     * extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment
+     * begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
      * 
      * @param reservedSlots
      *        Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how
-     *        many jobs the queue can process in parallel; each RTS can process one job at a time. To increase this
-     *        number, create a replacement contract through the AWS Elemental MediaConvert console.
+     *        many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase
+     *        this number, you extend your existing commitment with a new 12-month commitment for a larger number of
+     *        RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of
+     *        RTS in your reserved queue.
      */
 
     public void setReservedSlots(Integer reservedSlots) {
@@ -242,12 +246,15 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs
-     * the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
-     * replacement contract through the AWS Elemental MediaConvert console.
+     * the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you
+     * extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment
+     * begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
      * 
      * @return Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how
-     *         many jobs the queue can process in parallel; each RTS can process one job at a time. To increase this
-     *         number, create a replacement contract through the AWS Elemental MediaConvert console.
+     *         many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase
+     *         this number, you extend your existing commitment with a new 12-month commitment for a larger number of
+     *         RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number
+     *         of RTS in your reserved queue.
      */
 
     public Integer getReservedSlots() {
@@ -256,13 +263,16 @@ public class ReservationPlan implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs
-     * the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
-     * replacement contract through the AWS Elemental MediaConvert console.
+     * the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you
+     * extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment
+     * begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
      * 
      * @param reservedSlots
      *        Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how
-     *        many jobs the queue can process in parallel; each RTS can process one job at a time. To increase this
-     *        number, create a replacement contract through the AWS Elemental MediaConvert console.
+     *        many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase
+     *        this number, you extend your existing commitment with a new 12-month commitment for a larger number of
+     *        RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of
+     *        RTS in your reserved queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

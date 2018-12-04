@@ -1,3 +1,20 @@
+# __1.11.462__ __2018-12-03__
+## __AWS Device Farm__
+  - ### Features
+    - Customers can now schedule runs without a need to create a Device Pool. They also get realtime information on public device availability.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Documentation updates for mediaconvert
+
+## __AWS Service Catalog__
+  - ### Features
+    - Documentation updates for servicecatalog
+
+## __AWS Storage Gateway__
+  - ### Features
+    - API list-local-disks returns a list of the gateway's local disks. This release adds a field DiskAttributeList to these disks.
+
 # __1.11.461__ __2018-11-29__
 ## __AWS Lambda__
   - ### Features

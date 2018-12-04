@@ -25,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The name of the queue to be deleted. */
+    /** The name of the queue that you want to delete. */
     private String name;
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      * 
      * @param name
-     *        The name of the queue to be deleted.
+     *        The name of the queue that you want to delete.
      */
 
     public void setName(String name) {
@@ -40,9 +40,9 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      * 
-     * @return The name of the queue to be deleted.
+     * @return The name of the queue that you want to delete.
      */
 
     public String getName() {
@@ -50,10 +50,10 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      * 
      * @param name
-     *        The name of the queue to be deleted.
+     *        The name of the queue that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

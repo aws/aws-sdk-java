@@ -128,6 +128,10 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                     context.nextToken();
                     device.setInstances(new ListUnmarshaller<DeviceInstance>(DeviceInstanceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("availability", targetDepth)) {
+                    context.nextToken();
+                    device.setAvailability(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

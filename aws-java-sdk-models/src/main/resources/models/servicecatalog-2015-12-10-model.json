@@ -1385,7 +1385,7 @@
         },
         "Type":{
           "shape":"ConstraintType",
-          "documentation":"<p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li> <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>"
+          "documentation":"<p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li> <p> <code>NOTIFICATION</code> </p> </li> <li> <p>STACKSET</p> </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>"
         },
         "Description":{
           "shape":"ConstraintDescription",
@@ -1412,7 +1412,7 @@
       "members":{
         "Type":{
           "shape":"ConstraintType",
-          "documentation":"<p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li> <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>"
+          "documentation":"<p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li> <p> <code>NOTIFICATION</code> </p> </li> <li> <p>STACKSET</p> </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>"
         },
         "Description":{
           "shape":"ConstraintDescription",

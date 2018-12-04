@@ -174,8 +174,8 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
             com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult> asyncHandler);
 
     /**
-     * Create a new transcoding queue. For information about job templates see the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * Create a new transcoding queue. For information about queues, see Working With Queues in the User Guide at
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html
      * 
      * @param createQueueRequest
      * @return A Java Future containing the result of the CreateQueue operation returned by the service.
@@ -186,8 +186,8 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
     java.util.concurrent.Future<CreateQueueResult> createQueueAsync(CreateQueueRequest createQueueRequest);
 
     /**
-     * Create a new transcoding queue. For information about job templates see the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * Create a new transcoding queue. For information about queues, see Working With Queues in the User Guide at
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html
      * 
      * @param createQueueRequest
      * @param asyncHandler

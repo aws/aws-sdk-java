@@ -20,8 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * You can use queues to manage the resources that are available to your AWS account for running multiple transcoding
  * jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more
- * information, see
- * https://docs.aws.amazon.com/mediaconvert/latest/ug/about-resource-allocation-and-job-prioritization.html.
+ * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Queue" target="_top">AWS API
  *      Documentation</a>
@@ -31,19 +30,18 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
 
     /** An identifier for this resource that is unique within all of AWS. */
     private String arn;
-    /** The time stamp in epoch seconds for queue creation. */
+    /** The timestamp in epoch seconds for when you created the queue. */
     private java.util.Date createdAt;
     /** An optional description that you create for each queue. */
     private String description;
-    /** The time stamp in epoch seconds when the queue was last updated. */
+    /** The timestamp in epoch seconds for when you most recently updated the queue. */
     private java.util.Date lastUpdated;
     /** A name that you create for each queue. Each name must be unique within your account. */
     private String name;
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
-     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
-     * Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
      */
     private String pricingPlan;
     /** The estimated number of jobs with a PROGRESSING status. */
@@ -61,8 +59,8 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     /** The estimated number of jobs with a SUBMITTED status. */
     private Integer submittedJobsCount;
     /**
-     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
-     * queues. You can create and modify custom queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or
+     * delete system queues. You can create and modify custom queues.
      */
     private String type;
 
@@ -101,10 +99,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time stamp in epoch seconds for queue creation.
+     * The timestamp in epoch seconds for when you created the queue.
      * 
      * @param createdAt
-     *        The time stamp in epoch seconds for queue creation.
+     *        The timestamp in epoch seconds for when you created the queue.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -112,9 +110,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time stamp in epoch seconds for queue creation.
+     * The timestamp in epoch seconds for when you created the queue.
      * 
-     * @return The time stamp in epoch seconds for queue creation.
+     * @return The timestamp in epoch seconds for when you created the queue.
      */
 
     public java.util.Date getCreatedAt() {
@@ -122,10 +120,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time stamp in epoch seconds for queue creation.
+     * The timestamp in epoch seconds for when you created the queue.
      * 
      * @param createdAt
-     *        The time stamp in epoch seconds for queue creation.
+     *        The timestamp in epoch seconds for when you created the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,10 +167,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time stamp in epoch seconds when the queue was last updated.
+     * The timestamp in epoch seconds for when you most recently updated the queue.
      * 
      * @param lastUpdated
-     *        The time stamp in epoch seconds when the queue was last updated.
+     *        The timestamp in epoch seconds for when you most recently updated the queue.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -180,9 +178,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time stamp in epoch seconds when the queue was last updated.
+     * The timestamp in epoch seconds for when you most recently updated the queue.
      * 
-     * @return The time stamp in epoch seconds when the queue was last updated.
+     * @return The timestamp in epoch seconds for when you most recently updated the queue.
      */
 
     public java.util.Date getLastUpdated() {
@@ -190,10 +188,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time stamp in epoch seconds when the queue was last updated.
+     * The timestamp in epoch seconds for when you most recently updated the queue.
      * 
      * @param lastUpdated
-     *        The time stamp in epoch seconds when the queue was last updated.
+     *        The timestamp in epoch seconds for when you most recently updated the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,16 +235,15 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
-     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
-     * Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
      * 
      * @param pricingPlan
-     *        Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     *        determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the
-     *        queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract
-     *        through the AWS Elemental MediaConvert console.
+     *        Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per
+     *        minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the
+     *        entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month
+     *        commitment.
      * @see PricingPlan
      */
 
@@ -255,15 +252,14 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
-     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
-     * Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
      * 
-     * @return Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     *         determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through
-     *         the queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue
-     *         contract through the AWS Elemental MediaConvert console.
+     * @return Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per
+     *         minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the
+     *         entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month
+     *         commitment.
      * @see PricingPlan
      */
 
@@ -272,16 +268,15 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
-     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
-     * Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
      * 
      * @param pricingPlan
-     *        Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     *        determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the
-     *        queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract
-     *        through the AWS Elemental MediaConvert console.
+     *        Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per
+     *        minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the
+     *        entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month
+     *        commitment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -292,16 +287,15 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
-     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
-     * Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
      * 
      * @param pricingPlan
-     *        Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
-     *        determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the
-     *        queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract
-     *        through the AWS Elemental MediaConvert console.
+     *        Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per
+     *        minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the
+     *        entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month
+     *        commitment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingPlan
      */
@@ -483,12 +477,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
-     * queues. You can create and modify custom queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or
+     * delete system queues. You can create and modify custom queues.
      * 
      * @param type
-     *        Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete
-     *        system queues. You can create and modify custom queues.
+     *        Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify
+     *        or delete system queues. You can create and modify custom queues.
      * @see Type
      */
 
@@ -497,11 +491,11 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
-     * queues. You can create and modify custom queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or
+     * delete system queues. You can create and modify custom queues.
      * 
-     * @return Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete
-     *         system queues. You can create and modify custom queues.
+     * @return Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify
+     *         or delete system queues. You can create and modify custom queues.
      * @see Type
      */
 
@@ -510,12 +504,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
-     * queues. You can create and modify custom queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or
+     * delete system queues. You can create and modify custom queues.
      * 
      * @param type
-     *        Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete
-     *        system queues. You can create and modify custom queues.
+     *        Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify
+     *        or delete system queues. You can create and modify custom queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -526,12 +520,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
-     * queues. You can create and modify custom queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or
+     * delete system queues. You can create and modify custom queues.
      * 
      * @param type
-     *        Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete
-     *        system queues. You can create and modify custom queues.
+     *        Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify
+     *        or delete system queues. You can create and modify custom queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */

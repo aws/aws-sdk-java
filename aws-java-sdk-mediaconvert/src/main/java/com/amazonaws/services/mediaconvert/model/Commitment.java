@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+ * The length of the term of your reserved queue pricing plan commitment.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Commitment {

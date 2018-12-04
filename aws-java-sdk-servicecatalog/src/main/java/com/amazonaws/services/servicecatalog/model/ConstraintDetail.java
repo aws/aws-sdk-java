@@ -51,6 +51,11 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
+     * STACKSET
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -127,6 +132,11 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
+     * STACKSET
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -143,6 +153,11 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STACKSET
      *        </p>
      *        </li>
      *        <li>
@@ -173,6 +188,11 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
+     * STACKSET
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -188,6 +208,11 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
      *         <li>
      *         <p>
      *         <code>NOTIFICATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         STACKSET
      *         </p>
      *         </li>
      *         <li>
@@ -218,6 +243,11 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
+     * STACKSET
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -234,6 +264,11 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STACKSET
      *        </p>
      *        </li>
      *        <li>

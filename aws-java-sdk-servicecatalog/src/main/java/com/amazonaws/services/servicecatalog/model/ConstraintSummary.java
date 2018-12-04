@@ -45,6 +45,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
+     * STACKSET
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -75,6 +80,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
+     * STACKSET
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -91,6 +101,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STACKSET
      *        </p>
      *        </li>
      *        <li>
@@ -121,6 +136,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
+     * STACKSET
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -136,6 +156,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
      *         <li>
      *         <p>
      *         <code>NOTIFICATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         STACKSET
      *         </p>
      *         </li>
      *         <li>
@@ -166,6 +191,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
+     * STACKSET
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -182,6 +212,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STACKSET
      *        </p>
      *        </li>
      *        <li>

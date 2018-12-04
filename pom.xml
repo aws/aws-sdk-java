@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.462-SNAPSHOT</version>
+  <version>1.11.462</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -224,6 +224,7 @@
       <commons.io.version>2.4</commons.io.version>
       <mockito.all.version>1.10.19</mockito.all.version>
       <equalsverifier.version>1.7.5</equalsverifier.version>
+      <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <!-- These properties are used by SWF for it's dependencies and also in the OSGI build to
         generate the aggregate ZIP artifact -->
@@ -284,7 +285,17 @@
           <configuration>
             <excludes>
               <exclude>**/*CucumberTest.java</exclude>
+              <exclude>**/*IntegrationTest.java</exclude>
+              <exclude>**/*IntegrationTests.java</exclude>
+              <exclude>**/*IntegTest.java</exclude>
+              <exclude>**/*IntegrationTestCase.java</exclude>
             </excludes>
+            <includes>
+              <include>**/Test*.java</include>
+              <include>**/*Tests.java</include>
+              <include>**/*Test.java</include>
+              <include>**/*TestCase.java</include>
+            </includes>
           </configuration>
         </plugin>
       </plugins>
@@ -348,6 +359,48 @@
           </plugins>
         </pluginManagement>
       </build>
+    </profile>
+    <profile>
+        <id>integration-tests</id>
+        <activation>
+            <property>
+                <name>doRelease</name>
+            </property>
+        </activation>
+        <properties>
+            <checkstyle.skip>true</checkstyle.skip>
+            <findbugs.skip>true</findbugs.skip>
+            <skip.unit.tests>true</skip.unit.tests>
+            <mdep.analyze.skip>true</mdep.analyze.skip>
+        </properties>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-failsafe-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>integration-test</phase>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                            <configuration>
+                                <includes>
+                                    <include>**/*IntegrationTest.java</include>
+                                    <include>**/*IntegrationTests.java</include>
+                                    <include>**/*IntegTest.java</include>
+                                    <include>**/RunCucumberTest.java</include>
+                                </includes>
+                                <trimStackTrace>false</trimStackTrace>
+                                <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
     </profile>
   </profiles>
 </project>

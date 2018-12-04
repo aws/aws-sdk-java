@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or expires
- * (EXPIRE) at the end of the contract period.
+ * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires
+ * (EXPIRE) at the end of the term.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RenewalType {
