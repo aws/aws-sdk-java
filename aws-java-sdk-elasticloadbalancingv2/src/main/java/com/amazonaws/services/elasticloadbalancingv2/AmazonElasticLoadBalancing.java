@@ -186,9 +186,6 @@ public interface AmazonElasticLoadBalancing {
      *         You've reached the limit on the number of certificates per load balancer.
      * @throws CertificateNotFoundException
      *         The specified certificate does not exist.
-     * @throws UnsupportedCertificateException
-     * @throws UnsupportedProtocolException
-     *         The specified protocol is not supported.
      * @sample AmazonElasticLoadBalancing.AddListenerCertificates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates"
      *      target="_top">AWS API Documentation</a>
@@ -274,7 +271,6 @@ public interface AmazonElasticLoadBalancing {
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @throws TooManyTargetsException
      *         You've reached the limit on the number of targets.
-     * @throws UnsupportedCertificateException
      * @throws TooManyActionsException
      *         You've reached the limit on the number of actions per rule.
      * @throws InvalidLoadBalancerActionException
@@ -645,18 +641,6 @@ public interface AmazonElasticLoadBalancing {
     DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest);
 
     /**
-     * @param describeProvisionedCapacityRequest
-     * @return Result of the DescribeProvisionedCapacity operation returned by the service.
-     * @throws LoadBalancerNotFoundException
-     *         The specified load balancer does not exist.
-     * @sample AmazonElasticLoadBalancing.DescribeProvisionedCapacity
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity"
-     *      target="_top">AWS API Documentation</a>
-     */
-    DescribeProvisionedCapacityResult describeProvisionedCapacity(DescribeProvisionedCapacityRequest describeProvisionedCapacityRequest);
-
-    /**
      * <p>
      * Describes the specified rules or the rules for the specified listener. You must specify either a listener or one
      * or more rules.
@@ -822,7 +806,6 @@ public interface AmazonElasticLoadBalancing {
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @throws TooManyTargetsException
      *         You've reached the limit on the number of targets.
-     * @throws UnsupportedCertificateException
      * @throws TooManyActionsException
      *         You've reached the limit on the number of actions per rule.
      * @throws InvalidLoadBalancerActionException
@@ -854,22 +837,6 @@ public interface AmazonElasticLoadBalancing {
      *      target="_top">AWS API Documentation</a>
      */
     ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest);
-
-    /**
-     * @param modifyProvisionedCapacityRequest
-     * @return Result of the ModifyProvisionedCapacity operation returned by the service.
-     * @throws LoadBalancerNotFoundException
-     *         The specified load balancer does not exist.
-     * @throws InvalidConfigurationRequestException
-     *         The requested configuration is not valid.
-     * @throws MinimumLBCapacityUnitsDecreaseThrottlingException
-     * @throws MinimumLBCapacityUnitsLimitExceededException
-     * @throws InsufficientCapacityException
-     * @sample AmazonElasticLoadBalancing.ModifyProvisionedCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity"
-     *      target="_top">AWS API Documentation</a>
-     */
-    ModifyProvisionedCapacityResult modifyProvisionedCapacity(ModifyProvisionedCapacityRequest modifyProvisionedCapacityRequest);
 
     /**
      * <p>

@@ -203,6 +203,11 @@ public class DBInstance implements Serializable, Cloneable {
      * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
      * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBClusterIdentifiers;
     /**
@@ -1699,11 +1704,19 @@ public class DBInstance implements Serializable, Cloneable {
      * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
      * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      * 
      * @return Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
      *         Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
      *         MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
-     *         cross region Aurora Read Replicas.
+     *         cross region Aurora Read Replicas.</p> <note>
+     *         <p>
+     *         Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *         </p>
      */
 
     public java.util.List<String> getReadReplicaDBClusterIdentifiers() {
@@ -1720,12 +1733,20 @@ public class DBInstance implements Serializable, Cloneable {
      * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
      * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      * 
      * @param readReplicaDBClusterIdentifiers
      *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
      *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
      *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
-     *        cross region Aurora Read Replicas.
+     *        cross region Aurora Read Replicas.</p> <note>
+     *        <p>
+     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        </p>
      */
 
     public void setReadReplicaDBClusterIdentifiers(java.util.Collection<String> readReplicaDBClusterIdentifiers) {
@@ -1744,6 +1765,11 @@ public class DBInstance implements Serializable, Cloneable {
      * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
      * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setReadReplicaDBClusterIdentifiers(java.util.Collection)} or
@@ -1754,7 +1780,10 @@ public class DBInstance implements Serializable, Cloneable {
      *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
      *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
      *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
-     *        cross region Aurora Read Replicas.
+     *        cross region Aurora Read Replicas.</p> <note>
+     *        <p>
+     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1775,12 +1804,20 @@ public class DBInstance implements Serializable, Cloneable {
      * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
      * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      * 
      * @param readReplicaDBClusterIdentifiers
      *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
      *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
      *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
-     *        cross region Aurora Read Replicas.
+     *        cross region Aurora Read Replicas.</p> <note>
+     *        <p>
+     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

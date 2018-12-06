@@ -65,10 +65,6 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     continue;
                 }
 
-                if (context.testExpression("StaticIp", targetDepth)) {
-                    availabilityZone.setStaticIp(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return availabilityZone;

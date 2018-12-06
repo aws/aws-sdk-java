@@ -293,7 +293,16 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enabledCloudwatchLogsExports;
-
+    /**
+     * <p>
+     * The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is paused.
+     * </p>
+     * <p>
+     * For more information about Aurora Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     */
     private Integer capacity;
     /**
      * <p>
@@ -2390,7 +2399,22 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is paused.
+     * </p>
+     * <p>
+     * For more information about Aurora Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
      * @param capacity
+     *        The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is
+     *        paused.</p>
+     *        <p>
+     *        For more information about Aurora Serverless, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setCapacity(Integer capacity) {
@@ -2398,7 +2422,21 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is paused.
+     * </p>
+     * <p>
+     * For more information about Aurora Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @return The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is
+     *         paused.</p>
+     *         <p>
+     *         For more information about Aurora Serverless, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public Integer getCapacity() {
@@ -2406,7 +2444,22 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is paused.
+     * </p>
+     * <p>
+     * For more information about Aurora Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
      * @param capacity
+     *        The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero) when the cluster is
+     *        paused.</p>
+     *        <p>
+     *        For more information about Aurora Serverless, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

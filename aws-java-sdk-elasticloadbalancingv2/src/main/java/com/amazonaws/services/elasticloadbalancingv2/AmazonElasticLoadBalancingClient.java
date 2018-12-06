@@ -340,7 +340,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     }
 
     private void init() {
-        exceptionUnmarshallers.add(new UnsupportedCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnsupportedProtocolExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AllocationIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
@@ -357,9 +356,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         exceptionUnmarshallers.add(new TooManyActionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyListenersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DuplicateLoadBalancerNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InsufficientCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationNotPermittedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MinimumLBCapacityUnitsDecreaseThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLoadBalancerActionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DuplicateTagKeysExceptionUnmarshaller());
@@ -376,7 +373,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         exceptionUnmarshallers.add(new DuplicateListenerExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSchemeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthUnavailableExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MinimumLBCapacityUnitsLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTargetsExceptionUnmarshaller());
         exceptionUnmarshallers
@@ -413,9 +409,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of certificates per load balancer.
      * @throws CertificateNotFoundException
      *         The specified certificate does not exist.
-     * @throws UnsupportedCertificateException
-     * @throws UnsupportedProtocolException
-     *         The specified protocol is not supported.
      * @sample AmazonElasticLoadBalancing.AddListenerCertificates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates"
      *      target="_top">AWS API Documentation</a>
@@ -578,7 +571,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @throws TooManyTargetsException
      *         You've reached the limit on the number of targets.
-     * @throws UnsupportedCertificateException
      * @throws TooManyActionsException
      *         You've reached the limit on the number of actions per rule.
      * @throws InvalidLoadBalancerActionException
@@ -1493,57 +1485,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     }
 
     /**
-     * @param describeProvisionedCapacityRequest
-     * @return Result of the DescribeProvisionedCapacity operation returned by the service.
-     * @throws LoadBalancerNotFoundException
-     *         The specified load balancer does not exist.
-     * @sample AmazonElasticLoadBalancing.DescribeProvisionedCapacity
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public DescribeProvisionedCapacityResult describeProvisionedCapacity(DescribeProvisionedCapacityRequest request) {
-        request = beforeClientExecution(request);
-        return executeDescribeProvisionedCapacity(request);
-    }
-
-    @SdkInternalApi
-    final DescribeProvisionedCapacityResult executeDescribeProvisionedCapacity(DescribeProvisionedCapacityRequest describeProvisionedCapacityRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(describeProvisionedCapacityRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeProvisionedCapacityRequest> request = null;
-        Response<DescribeProvisionedCapacityResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeProvisionedCapacityRequestMarshaller().marshall(super.beforeMarshalling(describeProvisionedCapacityRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisionedCapacity");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            StaxResponseHandler<DescribeProvisionedCapacityResult> responseHandler = new StaxResponseHandler<DescribeProvisionedCapacityResult>(
-                    new DescribeProvisionedCapacityResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
      * <p>
      * Describes the specified rules or the rules for the specified listener. You must specify either a listener or one
      * or more rules.
@@ -1941,7 +1882,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @throws TooManyTargetsException
      *         You've reached the limit on the number of targets.
-     * @throws UnsupportedCertificateException
      * @throws TooManyActionsException
      *         You've reached the limit on the number of actions per rule.
      * @throws InvalidLoadBalancerActionException
@@ -2042,61 +1982,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ModifyLoadBalancerAttributesResult> responseHandler = new StaxResponseHandler<ModifyLoadBalancerAttributesResult>(
                     new ModifyLoadBalancerAttributesResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * @param modifyProvisionedCapacityRequest
-     * @return Result of the ModifyProvisionedCapacity operation returned by the service.
-     * @throws LoadBalancerNotFoundException
-     *         The specified load balancer does not exist.
-     * @throws InvalidConfigurationRequestException
-     *         The requested configuration is not valid.
-     * @throws MinimumLBCapacityUnitsDecreaseThrottlingException
-     * @throws MinimumLBCapacityUnitsLimitExceededException
-     * @throws InsufficientCapacityException
-     * @sample AmazonElasticLoadBalancing.ModifyProvisionedCapacity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public ModifyProvisionedCapacityResult modifyProvisionedCapacity(ModifyProvisionedCapacityRequest request) {
-        request = beforeClientExecution(request);
-        return executeModifyProvisionedCapacity(request);
-    }
-
-    @SdkInternalApi
-    final ModifyProvisionedCapacityResult executeModifyProvisionedCapacity(ModifyProvisionedCapacityRequest modifyProvisionedCapacityRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(modifyProvisionedCapacityRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ModifyProvisionedCapacityRequest> request = null;
-        Response<ModifyProvisionedCapacityResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ModifyProvisionedCapacityRequestMarshaller().marshall(super.beforeMarshalling(modifyProvisionedCapacityRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyProvisionedCapacity");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            StaxResponseHandler<ModifyProvisionedCapacityResult> responseHandler = new StaxResponseHandler<ModifyProvisionedCapacityResult>(
-                    new ModifyProvisionedCapacityResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

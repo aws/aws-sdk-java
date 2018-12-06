@@ -34,8 +34,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<InputDestination> destinations;
     /** The generated ID of the input (unique for user account, immutable). */
     private String id;
+    /** A list of MediaConnect Flows for this input. */
+    private java.util.List<MediaConnectFlow> mediaConnectFlows;
     /** The user-assigned name (This is a mutable value). */
     private String name;
+    /** The Amazon Resource Name (ARN) of the role this input assumes during and after creation. */
+    private String roleArn;
     /** A list of IDs for all the security groups attached to the input. */
     private java.util.List<String> securityGroups;
     /** A list of the sources of the input (PULL-type). */
@@ -242,6 +246,68 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A list of MediaConnect Flows for this input.
+     * 
+     * @return A list of MediaConnect Flows for this input.
+     */
+
+    public java.util.List<MediaConnectFlow> getMediaConnectFlows() {
+        return mediaConnectFlows;
+    }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     * 
+     * @param mediaConnectFlows
+     *        A list of MediaConnect Flows for this input.
+     */
+
+    public void setMediaConnectFlows(java.util.Collection<MediaConnectFlow> mediaConnectFlows) {
+        if (mediaConnectFlows == null) {
+            this.mediaConnectFlows = null;
+            return;
+        }
+
+        this.mediaConnectFlows = new java.util.ArrayList<MediaConnectFlow>(mediaConnectFlows);
+    }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaConnectFlows(java.util.Collection)} or {@link #withMediaConnectFlows(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaConnectFlows
+     *        A list of MediaConnect Flows for this input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withMediaConnectFlows(MediaConnectFlow... mediaConnectFlows) {
+        if (this.mediaConnectFlows == null) {
+            setMediaConnectFlows(new java.util.ArrayList<MediaConnectFlow>(mediaConnectFlows.length));
+        }
+        for (MediaConnectFlow ele : mediaConnectFlows) {
+            this.mediaConnectFlows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     * 
+     * @param mediaConnectFlows
+     *        A list of MediaConnect Flows for this input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withMediaConnectFlows(java.util.Collection<MediaConnectFlow> mediaConnectFlows) {
+        setMediaConnectFlows(mediaConnectFlows);
+        return this;
+    }
+
+    /**
      * The user-assigned name (This is a mutable value).
      * 
      * @param name
@@ -272,6 +338,40 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     public Input withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     * 
+     * @return The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
         return this;
     }
 
@@ -498,8 +598,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getMediaConnectFlows() != null)
+            sb.append("MediaConnectFlows: ").append(getMediaConnectFlows()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSecurityGroups() != null)
             sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getSources() != null)
@@ -538,9 +642,17 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getMediaConnectFlows() == null ^ this.getMediaConnectFlows() == null)
+            return false;
+        if (other.getMediaConnectFlows() != null && other.getMediaConnectFlows().equals(this.getMediaConnectFlows()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
@@ -570,7 +682,9 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAttachedChannels() == null) ? 0 : getAttachedChannels().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getMediaConnectFlows() == null) ? 0 : getMediaConnectFlows().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

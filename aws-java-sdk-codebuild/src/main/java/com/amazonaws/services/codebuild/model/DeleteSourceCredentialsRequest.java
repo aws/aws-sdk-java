@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.elasticloadbalancingv2.model;
+package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
@@ -19,37 +19,56 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity"
- *      target="_top">AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeProvisionedCapacityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
-
-    private String loadBalancerArn;
+public class DeleteSourceCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * @param loadBalancerArn
+     * <p>
+     * The Amazon Resource Name (ARN) of the token.
+     * </p>
+     */
+    private String arn;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the token.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the token.
      */
 
-    public void setLoadBalancerArn(String loadBalancerArn) {
-        this.loadBalancerArn = loadBalancerArn;
+    public void setArn(String arn) {
+        this.arn = arn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the token.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the token.
      */
 
-    public String getLoadBalancerArn() {
-        return this.loadBalancerArn;
+    public String getArn() {
+        return this.arn;
     }
 
     /**
-     * @param loadBalancerArn
+     * <p>
+     * The Amazon Resource Name (ARN) of the token.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeProvisionedCapacityRequest withLoadBalancerArn(String loadBalancerArn) {
-        setLoadBalancerArn(loadBalancerArn);
+    public DeleteSourceCredentialsRequest withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -64,8 +83,8 @@ public class DescribeProvisionedCapacityRequest extends com.amazonaws.AmazonWebS
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLoadBalancerArn() != null)
-            sb.append("LoadBalancerArn: ").append(getLoadBalancerArn());
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -77,12 +96,12 @@ public class DescribeProvisionedCapacityRequest extends com.amazonaws.AmazonWebS
         if (obj == null)
             return false;
 
-        if (obj instanceof DescribeProvisionedCapacityRequest == false)
+        if (obj instanceof DeleteSourceCredentialsRequest == false)
             return false;
-        DescribeProvisionedCapacityRequest other = (DescribeProvisionedCapacityRequest) obj;
-        if (other.getLoadBalancerArn() == null ^ this.getLoadBalancerArn() == null)
+        DeleteSourceCredentialsRequest other = (DeleteSourceCredentialsRequest) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getLoadBalancerArn() != null && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -92,13 +111,13 @@ public class DescribeProvisionedCapacityRequest extends com.amazonaws.AmazonWebS
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 
     @Override
-    public DescribeProvisionedCapacityRequest clone() {
-        return (DescribeProvisionedCapacityRequest) super.clone();
+    public DeleteSourceCredentialsRequest clone() {
+        return (DeleteSourceCredentialsRequest) super.clone();
     }
 
 }

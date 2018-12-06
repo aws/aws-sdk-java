@@ -1,3 +1,20 @@
+# __1.11.465__ __2018-12-06__
+## __AWS CodeBuild__
+  - ### Features
+    - Support personal access tokens for GitHub source and app passwords for Bitbucket source
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - This release enables the AWS Elemental MediaConnect input type in AWS Elemental MediaLive. This can then be used to automatically create and manage AWS Elemental MediaConnect Flow Outputs when you create a channel using those inputs.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for Amazon RDS
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release allows Application Load Balancers to route traffic to Lambda functions, in addition to instances and IP addresses.
+
 # __1.11.464__ __2018-12-05__
 ## __AWS Cost Explorer Service__
   - ### Features

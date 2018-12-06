@@ -171,11 +171,6 @@ public class CreateListenerRequestMarshaller implements Marshaller<Request<Creat
                                 request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".AuthenticateOidcConfig.OnUnauthenticatedRequest",
                                         StringUtils.fromString(authenticateOidcConfig.getOnUnauthenticatedRequest()));
                             }
-
-                            if (authenticateOidcConfig.getUseExistingClientSecret() != null) {
-                                request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".AuthenticateOidcConfig.UseExistingClientSecret",
-                                        StringUtils.fromBoolean(authenticateOidcConfig.getUseExistingClientSecret()));
-                            }
                         }
                     }
 

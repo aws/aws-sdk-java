@@ -273,10 +273,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you specify this parameter when you create a Read Replica from an unencrypted DB instance, the Read Replica is
-     * encrypted.
-     * </p>
-     * <p>
      * If you create an encrypted Read Replica in the same AWS Region as the source DB instance, then you do not have to
      * specify a value for this parameter. The Read Replica is encrypted with the same KMS key as the source DB
      * instance.
@@ -285,6 +281,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * If you create an encrypted Read Replica in a different AWS Region, then you must specify a KMS key for the
      * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
      * can't use encryption keys from one AWS Region in another AWS Region.
+     * </p>
+     * <p>
+     * You can't create an encrypted Read Replica from an unencrypted DB instance.
      * </p>
      */
     private String kmsKeyId;
@@ -2145,10 +2144,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you specify this parameter when you create a Read Replica from an unencrypted DB instance, the Read Replica is
-     * encrypted.
-     * </p>
-     * <p>
      * If you create an encrypted Read Replica in the same AWS Region as the source DB instance, then you do not have to
      * specify a value for this parameter. The Read Replica is encrypted with the same KMS key as the source DB
      * instance.
@@ -2158,14 +2153,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
      * can't use encryption keys from one AWS Region in another AWS Region.
      * </p>
+     * <p>
+     * You can't create an encrypted Read Replica from an unencrypted DB instance.
+     * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
      *        key identifier, or the KMS key alias for the KMS encryption key. </p>
-     *        <p>
-     *        If you specify this parameter when you create a Read Replica from an unencrypted DB instance, the Read
-     *        Replica is encrypted.
-     *        </p>
      *        <p>
      *        If you create an encrypted Read Replica in the same AWS Region as the source DB instance, then you do not
      *        have to specify a value for this parameter. The Read Replica is encrypted with the same KMS key as the
@@ -2175,6 +2169,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        If you create an encrypted Read Replica in a different AWS Region, then you must specify a KMS key for the
      *        destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
      *        you can't use encryption keys from one AWS Region in another AWS Region.
+     *        </p>
+     *        <p>
+     *        You can't create an encrypted Read Replica from an unencrypted DB instance.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2187,10 +2184,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you specify this parameter when you create a Read Replica from an unencrypted DB instance, the Read Replica is
-     * encrypted.
-     * </p>
-     * <p>
      * If you create an encrypted Read Replica in the same AWS Region as the source DB instance, then you do not have to
      * specify a value for this parameter. The Read Replica is encrypted with the same KMS key as the source DB
      * instance.
@@ -2200,13 +2193,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
      * can't use encryption keys from one AWS Region in another AWS Region.
      * </p>
+     * <p>
+     * You can't create an encrypted Read Replica from an unencrypted DB instance.
+     * </p>
      * 
      * @return The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
      *         key identifier, or the KMS key alias for the KMS encryption key. </p>
-     *         <p>
-     *         If you specify this parameter when you create a Read Replica from an unencrypted DB instance, the Read
-     *         Replica is encrypted.
-     *         </p>
      *         <p>
      *         If you create an encrypted Read Replica in the same AWS Region as the source DB instance, then you do not
      *         have to specify a value for this parameter. The Read Replica is encrypted with the same KMS key as the
@@ -2216,6 +2208,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         If you create an encrypted Read Replica in a different AWS Region, then you must specify a KMS key for
      *         the destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in,
      *         and you can't use encryption keys from one AWS Region in another AWS Region.
+     *         </p>
+     *         <p>
+     *         You can't create an encrypted Read Replica from an unencrypted DB instance.
      */
 
     public String getKmsKeyId() {
@@ -2228,10 +2223,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you specify this parameter when you create a Read Replica from an unencrypted DB instance, the Read Replica is
-     * encrypted.
-     * </p>
-     * <p>
      * If you create an encrypted Read Replica in the same AWS Region as the source DB instance, then you do not have to
      * specify a value for this parameter. The Read Replica is encrypted with the same KMS key as the source DB
      * instance.
@@ -2241,14 +2232,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
      * can't use encryption keys from one AWS Region in another AWS Region.
      * </p>
+     * <p>
+     * You can't create an encrypted Read Replica from an unencrypted DB instance.
+     * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
      *        key identifier, or the KMS key alias for the KMS encryption key. </p>
-     *        <p>
-     *        If you specify this parameter when you create a Read Replica from an unencrypted DB instance, the Read
-     *        Replica is encrypted.
-     *        </p>
      *        <p>
      *        If you create an encrypted Read Replica in the same AWS Region as the source DB instance, then you do not
      *        have to specify a value for this parameter. The Read Replica is encrypted with the same KMS key as the
@@ -2258,6 +2248,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        If you create an encrypted Read Replica in a different AWS Region, then you must specify a KMS key for the
      *        destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
      *        you can't use encryption keys from one AWS Region in another AWS Region.
+     *        </p>
+     *        <p>
+     *        You can't create an encrypted Read Replica from an unencrypted DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

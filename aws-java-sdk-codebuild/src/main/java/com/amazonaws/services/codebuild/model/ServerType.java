@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.elasticloadbalancingv2.model;
+package com.amazonaws.services.codebuild.model;
 
 import javax.annotation.Generated;
 
@@ -18,21 +18,15 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum HttpRequestMethodEnum {
+public enum ServerType {
 
-    GET("GET"),
-    HEAD("HEAD"),
-    POST("POST"),
-    PUT("PUT"),
-    DELETE("DELETE"),
-    CONNECT("CONNECT"),
-    OPTIONS("OPTIONS"),
-    TRACE("TRACE"),
-    PATCH("PATCH");
+    GITHUB("GITHUB"),
+    BITBUCKET("BITBUCKET"),
+    GITHUB_ENTERPRISE("GITHUB_ENTERPRISE");
 
     private String value;
 
-    private HttpRequestMethodEnum(String value) {
+    private ServerType(String value) {
         this.value = value;
     }
 
@@ -46,17 +40,17 @@ public enum HttpRequestMethodEnum {
      *
      * @param value
      *        real value
-     * @return HttpRequestMethodEnum corresponding to the value
+     * @return ServerType corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static HttpRequestMethodEnum fromValue(String value) {
+    public static ServerType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (HttpRequestMethodEnum enumEntry : HttpRequestMethodEnum.values()) {
+        for (ServerType enumEntry : ServerType.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

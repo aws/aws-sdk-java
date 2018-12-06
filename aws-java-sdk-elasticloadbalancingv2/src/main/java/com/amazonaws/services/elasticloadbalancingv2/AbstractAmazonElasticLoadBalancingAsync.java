@@ -236,19 +236,6 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeProvisionedCapacityResult> describeProvisionedCapacityAsync(DescribeProvisionedCapacityRequest request) {
-
-        return describeProvisionedCapacityAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DescribeProvisionedCapacityResult> describeProvisionedCapacityAsync(DescribeProvisionedCapacityRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeProvisionedCapacityRequest, DescribeProvisionedCapacityResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<DescribeRulesResult> describeRulesAsync(DescribeRulesRequest request) {
 
         return describeRulesAsync(request, null);
@@ -348,19 +335,6 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
     @Override
     public java.util.concurrent.Future<ModifyLoadBalancerAttributesResult> modifyLoadBalancerAttributesAsync(ModifyLoadBalancerAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyLoadBalancerAttributesRequest, ModifyLoadBalancerAttributesResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<ModifyProvisionedCapacityResult> modifyProvisionedCapacityAsync(ModifyProvisionedCapacityRequest request) {
-
-        return modifyProvisionedCapacityAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ModifyProvisionedCapacityResult> modifyProvisionedCapacityAsync(ModifyProvisionedCapacityRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyProvisionedCapacityRequest, ModifyProvisionedCapacityResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

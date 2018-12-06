@@ -152,8 +152,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
-     * directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or
-     * <code>GITHUB</code>).
+     * directly.
      * </p>
      */
     private SourceAuth auth;
@@ -1068,16 +1067,14 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
-     * directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or
-     * <code>GITHUB</code>).
+     * directly.
      * </p>
      * 
      * @param auth
      *        Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *        <p>
      *        This information is for the AWS CodeBuild console's use only. Your code should not get or set this
-     *        information directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code>
-     *        or <code>GITHUB</code>).
+     *        information directly.
      */
 
     public void setAuth(SourceAuth auth) {
@@ -1090,15 +1087,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
-     * directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or
-     * <code>GITHUB</code>).
+     * directly.
      * </p>
      * 
      * @return Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *         <p>
      *         This information is for the AWS CodeBuild console's use only. Your code should not get or set this
-     *         information directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code>
-     *         or <code>GITHUB</code>).
+     *         information directly.
      */
 
     public SourceAuth getAuth() {
@@ -1111,16 +1106,14 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
-     * directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or
-     * <code>GITHUB</code>).
+     * directly.
      * </p>
      * 
      * @param auth
      *        Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *        <p>
      *        This information is for the AWS CodeBuild console's use only. Your code should not get or set this
-     *        information directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code>
-     *        or <code>GITHUB</code>).
+     *        information directly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

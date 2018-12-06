@@ -124,6 +124,24 @@ import com.amazonaws.services.codebuild.model.*;
  * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that are managed by AWS CodeBuild.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ImportSourceCredentials</code>: Imports the source repository credentials for an AWS CodeBuild project that has
+ * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
+ * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
+ * for one set of credentials.
+ * </p>
+ * </li>
  * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -305,6 +323,23 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+     * </p>
+     * 
+     * @param deleteSourceCredentialsRequest
+     * @return Result of the DeleteSourceCredentials operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.DeleteSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteSourceCredentialsResult deleteSourceCredentials(DeleteSourceCredentialsRequest deleteSourceCredentialsRequest);
+
+    /**
+     * <p>
      * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
      * stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
      * </p>
@@ -322,6 +357,24 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     DeleteWebhookResult deleteWebhook(DeleteWebhookRequest deleteWebhookRequest);
+
+    /**
+     * <p>
+     * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a
+     * GitHub, GitHub Enterprise, or Bitbucket repository.
+     * </p>
+     * 
+     * @param importSourceCredentialsRequest
+     * @return Result of the ImportSourceCredentials operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws AccountLimitExceededException
+     *         An AWS service limit was exceeded for the calling AWS account.
+     * @sample AWSCodeBuild.ImportSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ImportSourceCredentialsResult importSourceCredentials(ImportSourceCredentialsRequest importSourceCredentialsRequest);
 
     /**
      * <p>
@@ -399,6 +452,19 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
+
+    /**
+     * <p>
+     * Returns a list of <code>SourceCredentialsInfo</code> objects.
+     * </p>
+     * 
+     * @param listSourceCredentialsRequest
+     * @return Result of the ListSourceCredentials operation returned by the service.
+     * @sample AWSCodeBuild.ListSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSourceCredentialsResult listSourceCredentials(ListSourceCredentialsRequest listSourceCredentialsRequest);
 
     /**
      * <p>

@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.elasticloadbalancingv2.model;
+package com.amazonaws.services.codebuild.model;
 
 import javax.annotation.Generated;
 
@@ -18,16 +18,15 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum ProvisionedCapacityStatus {
+public enum AuthType {
 
-    Disabled("disabled"),
-    Pending("pending"),
-    Provisioned("provisioned"),
-    PreWarmed("pre-warmed");
+    OAUTH("OAUTH"),
+    BASIC_AUTH("BASIC_AUTH"),
+    PERSONAL_ACCESS_TOKEN("PERSONAL_ACCESS_TOKEN");
 
     private String value;
 
-    private ProvisionedCapacityStatus(String value) {
+    private AuthType(String value) {
         this.value = value;
     }
 
@@ -41,17 +40,17 @@ public enum ProvisionedCapacityStatus {
      *
      * @param value
      *        real value
-     * @return ProvisionedCapacityStatus corresponding to the value
+     * @return AuthType corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static ProvisionedCapacityStatus fromValue(String value) {
+    public static AuthType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (ProvisionedCapacityStatus enumEntry : ProvisionedCapacityStatus.values()) {
+        for (AuthType enumEntry : AuthType.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

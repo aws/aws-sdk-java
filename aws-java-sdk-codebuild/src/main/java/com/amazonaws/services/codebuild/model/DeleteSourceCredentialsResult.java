@@ -10,44 +10,63 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.elasticloadbalancingv2.model;
+package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity"
- *      target="_top">AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ModifyProvisionedCapacityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
-
-    private ProvisionedCapacity provisionedCapacity;
+public class DeleteSourceCredentialsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
-     * @param provisionedCapacity
+     * <p>
+     * The Amazon Resource Name (ARN) of the token.
+     * </p>
+     */
+    private String arn;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the token.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the token.
      */
 
-    public void setProvisionedCapacity(ProvisionedCapacity provisionedCapacity) {
-        this.provisionedCapacity = provisionedCapacity;
+    public void setArn(String arn) {
+        this.arn = arn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the token.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the token.
      */
 
-    public ProvisionedCapacity getProvisionedCapacity() {
-        return this.provisionedCapacity;
+    public String getArn() {
+        return this.arn;
     }
 
     /**
-     * @param provisionedCapacity
+     * <p>
+     * The Amazon Resource Name (ARN) of the token.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyProvisionedCapacityResult withProvisionedCapacity(ProvisionedCapacity provisionedCapacity) {
-        setProvisionedCapacity(provisionedCapacity);
+    public DeleteSourceCredentialsResult withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -62,8 +81,8 @@ public class ModifyProvisionedCapacityResult extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getProvisionedCapacity() != null)
-            sb.append("ProvisionedCapacity: ").append(getProvisionedCapacity());
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -75,12 +94,12 @@ public class ModifyProvisionedCapacityResult extends com.amazonaws.AmazonWebServ
         if (obj == null)
             return false;
 
-        if (obj instanceof ModifyProvisionedCapacityResult == false)
+        if (obj instanceof DeleteSourceCredentialsResult == false)
             return false;
-        ModifyProvisionedCapacityResult other = (ModifyProvisionedCapacityResult) obj;
-        if (other.getProvisionedCapacity() == null ^ this.getProvisionedCapacity() == null)
+        DeleteSourceCredentialsResult other = (DeleteSourceCredentialsResult) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getProvisionedCapacity() != null && other.getProvisionedCapacity().equals(this.getProvisionedCapacity()) == false)
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -90,14 +109,14 @@ public class ModifyProvisionedCapacityResult extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getProvisionedCapacity() == null) ? 0 : getProvisionedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 
     @Override
-    public ModifyProvisionedCapacityResult clone() {
+    public DeleteSourceCredentialsResult clone() {
         try {
-            return (ModifyProvisionedCapacityResult) super.clone();
+            return (DeleteSourceCredentialsResult) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }

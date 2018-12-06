@@ -123,6 +123,24 @@ import com.amazonaws.services.codebuild.model.*;
  * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that are managed by AWS CodeBuild.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ImportSourceCredentials</code>: Imports the source repository credentials for an AWS CodeBuild project that has
+ * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
+ * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
+ * for one set of credentials.
+ * </p>
+ * </li>
  * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -340,6 +358,37 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
+     * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+     * </p>
+     * 
+     * @param deleteSourceCredentialsRequest
+     * @return A Java Future containing the result of the DeleteSourceCredentials operation returned by the service.
+     * @sample AWSCodeBuildAsync.DeleteSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSourceCredentialsResult> deleteSourceCredentialsAsync(DeleteSourceCredentialsRequest deleteSourceCredentialsRequest);
+
+    /**
+     * <p>
+     * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+     * </p>
+     * 
+     * @param deleteSourceCredentialsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSourceCredentials operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.DeleteSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSourceCredentialsResult> deleteSourceCredentialsAsync(DeleteSourceCredentialsRequest deleteSourceCredentialsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSourceCredentialsRequest, DeleteSourceCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
      * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
      * stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
      * </p>
@@ -370,6 +419,39 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      */
     java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest deleteWebhookRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWebhookRequest, DeleteWebhookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a
+     * GitHub, GitHub Enterprise, or Bitbucket repository.
+     * </p>
+     * 
+     * @param importSourceCredentialsRequest
+     * @return A Java Future containing the result of the ImportSourceCredentials operation returned by the service.
+     * @sample AWSCodeBuildAsync.ImportSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportSourceCredentialsResult> importSourceCredentialsAsync(ImportSourceCredentialsRequest importSourceCredentialsRequest);
+
+    /**
+     * <p>
+     * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a
+     * GitHub, GitHub Enterprise, or Bitbucket repository.
+     * </p>
+     * 
+     * @param importSourceCredentialsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportSourceCredentials operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.ImportSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportSourceCredentialsResult> importSourceCredentialsAsync(ImportSourceCredentialsRequest importSourceCredentialsRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportSourceCredentialsRequest, ImportSourceCredentialsResult> asyncHandler);
 
     /**
      * <p>
@@ -529,6 +611,37 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      */
     java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest listProjectsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of <code>SourceCredentialsInfo</code> objects.
+     * </p>
+     * 
+     * @param listSourceCredentialsRequest
+     * @return A Java Future containing the result of the ListSourceCredentials operation returned by the service.
+     * @sample AWSCodeBuildAsync.ListSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(ListSourceCredentialsRequest listSourceCredentialsRequest);
+
+    /**
+     * <p>
+     * Returns a list of <code>SourceCredentialsInfo</code> objects.
+     * </p>
+     * 
+     * @param listSourceCredentialsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSourceCredentials operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.ListSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(ListSourceCredentialsRequest listSourceCredentialsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSourceCredentialsRequest, ListSourceCredentialsResult> asyncHandler);
 
     /**
      * <p>

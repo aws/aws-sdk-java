@@ -22,9 +22,7 @@ public enum ProtocolEnum {
 
     HTTP("HTTP"),
     HTTPS("HTTPS"),
-    TCP("TCP"),
-    TLS("TLS"),
-    UDP("UDP");
+    TCP("TCP");
 
     private String value;
 

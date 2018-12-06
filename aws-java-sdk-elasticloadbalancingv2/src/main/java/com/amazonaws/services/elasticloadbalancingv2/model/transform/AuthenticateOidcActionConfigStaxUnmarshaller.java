@@ -142,11 +142,6 @@ public class AuthenticateOidcActionConfigStaxUnmarshaller implements Unmarshalle
                     authenticateOidcActionConfig.setOnUnauthenticatedRequest(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-
-                if (context.testExpression("UseExistingClientSecret", targetDepth)) {
-                    authenticateOidcActionConfig.setUseExistingClientSecret(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return authenticateOidcActionConfig;
