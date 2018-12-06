@@ -121,6 +121,11 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("users", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setUsers(new ListUnmarshaller<UserSummary>(UserSummaryJsonUnmarshaller.getInstance()).unmarshall(context));

@@ -69,7 +69,7 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
     /**
      * <p>
      * The hardware specifications for the service instances that you want recommendations for, such as standard or
-     * convertible EC2 instances.
+     * convertible Amazon EC2 instances.
      * </p>
      */
     private ServiceSpecification serviceSpecification;
@@ -441,12 +441,12 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
     /**
      * <p>
      * The hardware specifications for the service instances that you want recommendations for, such as standard or
-     * convertible EC2 instances.
+     * convertible Amazon EC2 instances.
      * </p>
      * 
      * @param serviceSpecification
      *        The hardware specifications for the service instances that you want recommendations for, such as standard
-     *        or convertible EC2 instances.
+     *        or convertible Amazon EC2 instances.
      */
 
     public void setServiceSpecification(ServiceSpecification serviceSpecification) {
@@ -456,11 +456,11 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
     /**
      * <p>
      * The hardware specifications for the service instances that you want recommendations for, such as standard or
-     * convertible EC2 instances.
+     * convertible Amazon EC2 instances.
      * </p>
      * 
      * @return The hardware specifications for the service instances that you want recommendations for, such as standard
-     *         or convertible EC2 instances.
+     *         or convertible Amazon EC2 instances.
      */
 
     public ServiceSpecification getServiceSpecification() {
@@ -470,12 +470,12 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
     /**
      * <p>
      * The hardware specifications for the service instances that you want recommendations for, such as standard or
-     * convertible EC2 instances.
+     * convertible Amazon EC2 instances.
      * </p>
      * 
      * @param serviceSpecification
      *        The hardware specifications for the service instances that you want recommendations for, such as standard
-     *        or convertible EC2 instances.
+     *        or convertible Amazon EC2 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,24 +29,24 @@ public class TagValues implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key for a tag.
+     * The key for the tag.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The specific value of a tag.
+     * The specific value of the tag.
      * </p>
      */
     private java.util.List<String> values;
 
     /**
      * <p>
-     * The key for a tag.
+     * The key for the tag.
      * </p>
      * 
      * @param key
-     *        The key for a tag.
+     *        The key for the tag.
      */
 
     public void setKey(String key) {
@@ -55,10 +55,10 @@ public class TagValues implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key for a tag.
+     * The key for the tag.
      * </p>
      * 
-     * @return The key for a tag.
+     * @return The key for the tag.
      */
 
     public String getKey() {
@@ -67,11 +67,11 @@ public class TagValues implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key for a tag.
+     * The key for the tag.
      * </p>
      * 
      * @param key
-     *        The key for a tag.
+     *        The key for the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,10 +82,10 @@ public class TagValues implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The specific value of a tag.
+     * The specific value of the tag.
      * </p>
      * 
-     * @return The specific value of a tag.
+     * @return The specific value of the tag.
      */
 
     public java.util.List<String> getValues() {
@@ -94,11 +94,11 @@ public class TagValues implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The specific value of a tag.
+     * The specific value of the tag.
      * </p>
      * 
      * @param values
-     *        The specific value of a tag.
+     *        The specific value of the tag.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -112,7 +112,7 @@ public class TagValues implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The specific value of a tag.
+     * The specific value of the tag.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -121,7 +121,7 @@ public class TagValues implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        The specific value of a tag.
+     *        The specific value of the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class TagValues implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The specific value of a tag.
+     * The specific value of the tag.
      * </p>
      * 
      * @param values
-     *        The specific value of a tag.
+     *        The specific value of the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the RDS instances that AWS recommends that you purchase.
+ * Details about the Amazon RDS instances that AWS recommends that you purchase.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RDSInstanceDetails" target="_top">AWS API
@@ -73,7 +73,7 @@ public class RDSInstanceDetails implements Serializable, Cloneable, StructuredPo
     private String licenseModel;
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      */
     private Boolean currentGeneration;
@@ -372,11 +372,11 @@ public class RDSInstanceDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      * 
      * @param currentGeneration
-     *        Whether the recommendation is for a current generation instance.
+     *        Whether the recommendation is for a current-generation instance.
      */
 
     public void setCurrentGeneration(Boolean currentGeneration) {
@@ -385,10 +385,10 @@ public class RDSInstanceDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      * 
-     * @return Whether the recommendation is for a current generation instance.
+     * @return Whether the recommendation is for a current-generation instance.
      */
 
     public Boolean getCurrentGeneration() {
@@ -397,11 +397,11 @@ public class RDSInstanceDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      * 
      * @param currentGeneration
-     *        Whether the recommendation is for a current generation instance.
+     *        Whether the recommendation is for a current-generation instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,10 +412,10 @@ public class RDSInstanceDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      * 
-     * @return Whether the recommendation is for a current generation instance.
+     * @return Whether the recommendation is for a current-generation instance.
      */
 
     public Boolean isCurrentGeneration() {

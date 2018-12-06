@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the ElastiCache instances that AWS recommends that you purchase.
+ * Details about the Amazon ElastiCache instances that AWS recommends that you purchase.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ElastiCacheInstanceDetails" target="_top">AWS API

@@ -38,12 +38,22 @@ public class AbstractAmazonMQ implements AmazonMQ {
     }
 
     @Override
+    public CreateTagsResult createTags(CreateTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUserResult createUser(CreateUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteBrokerResult deleteBroker(DeleteBrokerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +94,11 @@ public class AbstractAmazonMQ implements AmazonMQ {
 
     @Override
     public ListConfigurationsResult listConfigurations(ListConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsResult listTags(ListTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

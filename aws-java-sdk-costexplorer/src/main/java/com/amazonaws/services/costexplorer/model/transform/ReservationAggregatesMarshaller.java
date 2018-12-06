@@ -29,12 +29,20 @@ public class ReservationAggregatesMarshaller {
 
     private static final MarshallingInfo<String> UTILIZATIONPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UtilizationPercentage").build();
+    private static final MarshallingInfo<String> UTILIZATIONPERCENTAGEINUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UtilizationPercentageInUnits").build();
     private static final MarshallingInfo<String> PURCHASEDHOURS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PurchasedHours").build();
+    private static final MarshallingInfo<String> PURCHASEDUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PurchasedUnits").build();
     private static final MarshallingInfo<String> TOTALACTUALHOURS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalActualHours").build();
+    private static final MarshallingInfo<String> TOTALACTUALUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalActualUnits").build();
     private static final MarshallingInfo<String> UNUSEDHOURS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnusedHours").build();
+    private static final MarshallingInfo<String> UNUSEDUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnusedUnits").build();
     private static final MarshallingInfo<String> ONDEMANDCOSTOFRIHOURSUSED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDemandCostOfRIHoursUsed").build();
     private static final MarshallingInfo<String> NETRISAVINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -65,9 +73,13 @@ public class ReservationAggregatesMarshaller {
 
         try {
             protocolMarshaller.marshall(reservationAggregates.getUtilizationPercentage(), UTILIZATIONPERCENTAGE_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getUtilizationPercentageInUnits(), UTILIZATIONPERCENTAGEINUNITS_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getPurchasedHours(), PURCHASEDHOURS_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getPurchasedUnits(), PURCHASEDUNITS_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getTotalActualHours(), TOTALACTUALHOURS_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getTotalActualUnits(), TOTALACTUALUNITS_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getUnusedHours(), UNUSEDHOURS_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getUnusedUnits(), UNUSEDUNITS_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getOnDemandCostOfRIHoursUsed(), ONDEMANDCOSTOFRIHOURSUSED_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getNetRISavings(), NETRISAVINGS_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getTotalPotentialRISavings(), TOTALPOTENTIALRISAVINGS_BINDING);

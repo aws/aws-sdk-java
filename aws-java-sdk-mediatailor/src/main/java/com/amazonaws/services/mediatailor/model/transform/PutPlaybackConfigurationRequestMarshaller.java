@@ -31,6 +31,8 @@ public class PutPlaybackConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdDecisionServerUrl").build();
     private static final MarshallingInfo<StructuredPojo> CDNCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdnConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> DASHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashConfiguration").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> SLATEADURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,7 @@ public class PutPlaybackConfigurationRequestMarshaller {
         try {
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getAdDecisionServerUrl(), ADDECISIONSERVERURL_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getCdnConfiguration(), CDNCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(putPlaybackConfigurationRequest.getDashConfiguration(), DASHCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getSlateAdUrl(), SLATEADURL_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getTranscodeProfileName(), TRANSCODEPROFILENAME_BINDING);

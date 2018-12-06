@@ -34,6 +34,16 @@ public class DashConfiguration implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String manifestEndpointPrefix;
+    /**
+     * <p>
+     * The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates
+     * the Location tag with the URL for manifest update requests, to be used by players that don't support sticky
+     * redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are
+     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and
+     * EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
+     */
+    private String mpdLocation;
 
     /**
      * <p>
@@ -76,6 +86,73 @@ public class DashConfiguration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates
+     * the Location tag with the URL for manifest update requests, to be used by players that don't support sticky
+     * redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are
+     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and
+     * EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
+     * 
+     * @param mpdLocation
+     *        The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor
+     *        populates the Location tag with the URL for manifest update requests, to be used by players that don't
+     *        support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor
+     *        manifests and you are either using client-side reporting or your players support sticky HTTP redirects.
+     *        Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is
+     *        the default value.
+     */
+
+    public void setMpdLocation(String mpdLocation) {
+        this.mpdLocation = mpdLocation;
+    }
+
+    /**
+     * <p>
+     * The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates
+     * the Location tag with the URL for manifest update requests, to be used by players that don't support sticky
+     * redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are
+     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and
+     * EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
+     * 
+     * @return The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor
+     *         populates the Location tag with the URL for manifest update requests, to be used by players that don't
+     *         support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor
+     *         manifests and you are either using client-side reporting or your players support sticky HTTP redirects.
+     *         Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and
+     *         is the default value.
+     */
+
+    public String getMpdLocation() {
+        return this.mpdLocation;
+    }
+
+    /**
+     * <p>
+     * The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates
+     * the Location tag with the URL for manifest update requests, to be used by players that don't support sticky
+     * redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are
+     * either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and
+     * EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
+     * 
+     * @param mpdLocation
+     *        The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor
+     *        populates the Location tag with the URL for manifest update requests, to be used by players that don't
+     *        support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor
+     *        manifests and you are either using client-side reporting or your players support sticky HTTP redirects.
+     *        Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is
+     *        the default value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashConfiguration withMpdLocation(String mpdLocation) {
+        setMpdLocation(mpdLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -87,7 +164,9 @@ public class DashConfiguration implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getManifestEndpointPrefix() != null)
-            sb.append("ManifestEndpointPrefix: ").append(getManifestEndpointPrefix());
+            sb.append("ManifestEndpointPrefix: ").append(getManifestEndpointPrefix()).append(",");
+        if (getMpdLocation() != null)
+            sb.append("MpdLocation: ").append(getMpdLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +185,10 @@ public class DashConfiguration implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getManifestEndpointPrefix() != null && other.getManifestEndpointPrefix().equals(this.getManifestEndpointPrefix()) == false)
             return false;
+        if (other.getMpdLocation() == null ^ this.getMpdLocation() == null)
+            return false;
+        if (other.getMpdLocation() != null && other.getMpdLocation().equals(this.getMpdLocation()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +198,7 @@ public class DashConfiguration implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getManifestEndpointPrefix() == null) ? 0 : getManifestEndpointPrefix().hashCode());
+        hashCode = prime * hashCode + ((getMpdLocation() == null) ? 0 : getMpdLocation().hashCode());
         return hashCode;
     }
 

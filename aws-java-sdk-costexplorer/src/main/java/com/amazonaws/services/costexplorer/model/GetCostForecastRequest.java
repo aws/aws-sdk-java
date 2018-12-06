@@ -74,6 +74,10 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of
      * <code>MONTHLY</code> forecasts.
      * </p>
+     * <p>
+     * The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      */
     private String granularity;
     /**
@@ -449,10 +453,17 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of
      * <code>MONTHLY</code> forecasts.
      * </p>
+     * <p>
+     * The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
      *        How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12
-     *        months of <code>MONTHLY</code> forecasts.
+     *        months of <code>MONTHLY</code> forecasts.</p>
+     *        <p>
+     *        The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     *        granularities.
      * @see Granularity
      */
 
@@ -465,9 +476,16 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of
      * <code>MONTHLY</code> forecasts.
      * </p>
+     * <p>
+     * The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @return How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12
-     *         months of <code>MONTHLY</code> forecasts.
+     *         months of <code>MONTHLY</code> forecasts.</p>
+     *         <p>
+     *         The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     *         granularities.
      * @see Granularity
      */
 
@@ -480,10 +498,17 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of
      * <code>MONTHLY</code> forecasts.
      * </p>
+     * <p>
+     * The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
      *        How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12
-     *        months of <code>MONTHLY</code> forecasts.
+     *        months of <code>MONTHLY</code> forecasts.</p>
+     *        <p>
+     *        The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     *        granularities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -498,10 +523,17 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
      * How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of
      * <code>MONTHLY</code> forecasts.
      * </p>
+     * <p>
+     * The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
      *        How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12
-     *        months of <code>MONTHLY</code> forecasts.
+     *        months of <code>MONTHLY</code> forecasts.</p>
+     *        <p>
+     *        The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     *        granularities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */

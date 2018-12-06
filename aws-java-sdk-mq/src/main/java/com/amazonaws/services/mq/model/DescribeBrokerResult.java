@@ -50,7 +50,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     private String deploymentMode;
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
     private String engineType;
-    /** The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0. */
+    /**
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     */
     private String engineVersion;
     /** The broker's instance type. */
     private String hostInstanceType;
@@ -58,7 +61,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     private LogsSummary logs;
     /** The parameters that determine the WeeklyStartTime. */
     private WeeklyStartTime maintenanceWindowStartTime;
-    /** The version of the broker engine to upgrade to. */
+    /**
+     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     */
     private String pendingEngineVersion;
     /** Required. Enables connections from applications outside of the VPC that hosts the broker's subnets. */
     private Boolean publiclyAccessible;
@@ -70,6 +76,8 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
      * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
      */
     private java.util.List<String> subnetIds;
+    /** The list of all tags associated with this broker. */
+    private java.util.Map<String, String> tags;
     /** The list of all ActiveMQ usernames for the specified broker. */
     private java.util.List<UserSummary> users;
 
@@ -523,10 +531,12 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param engineVersion
-     *        The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     *        The version of the broker engine. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -534,9 +544,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
-     * @return The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     * @return The version of the broker engine. For a list of supported engine versions, see
+     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public String getEngineVersion() {
@@ -544,10 +556,12 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param engineVersion
-     *        The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     *        The version of the broker engine. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,10 +673,12 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param pendingEngineVersion
-     *        The version of the broker engine to upgrade to.
+     *        The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public void setPendingEngineVersion(String pendingEngineVersion) {
@@ -670,9 +686,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
-     * @return The version of the broker engine to upgrade to.
+     * @return The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public String getPendingEngineVersion() {
@@ -680,10 +698,12 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param pendingEngineVersion
-     *        The version of the broker engine to upgrade to.
+     *        The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -877,6 +897,61 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * The list of all tags associated with this broker.
+     * 
+     * @return The list of all tags associated with this broker.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * The list of all tags associated with this broker.
+     * 
+     * @param tags
+     *        The list of all tags associated with this broker.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * The list of all tags associated with this broker.
+     * 
+     * @param tags
+     *        The list of all tags associated with this broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public DescribeBrokerResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * The list of all ActiveMQ usernames for the specified broker.
      * 
      * @return The list of all ActiveMQ usernames for the specified broker.
@@ -985,6 +1060,8 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getUsers() != null)
             sb.append("Users: ").append(getUsers());
         sb.append("}");
@@ -1073,6 +1150,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getUsers() == null ^ this.getUsers() == null)
             return false;
         if (other.getUsers() != null && other.getUsers().equals(this.getUsers()) == false)
@@ -1103,6 +1184,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUsers() == null) ? 0 : getUsers().hashCode());
         return hashCode;
     }

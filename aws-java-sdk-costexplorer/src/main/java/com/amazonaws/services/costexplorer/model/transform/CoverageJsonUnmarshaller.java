@@ -52,6 +52,14 @@ public class CoverageJsonUnmarshaller implements Unmarshaller<Coverage, JsonUnma
                     context.nextToken();
                     coverage.setCoverageHours(CoverageHoursJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CoverageNormalizedUnits", targetDepth)) {
+                    context.nextToken();
+                    coverage.setCoverageNormalizedUnits(CoverageNormalizedUnitsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CoverageCost", targetDepth)) {
+                    context.nextToken();
+                    coverage.setCoverageCost(CoverageCostJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

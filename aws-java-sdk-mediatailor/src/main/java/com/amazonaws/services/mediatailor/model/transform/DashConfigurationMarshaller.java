@@ -29,6 +29,8 @@ public class DashConfigurationMarshaller {
 
     private static final MarshallingInfo<String> MANIFESTENDPOINTPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestEndpointPrefix").build();
+    private static final MarshallingInfo<String> MPDLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MpdLocation").build();
 
     private static final DashConfigurationMarshaller instance = new DashConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class DashConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(dashConfiguration.getManifestEndpointPrefix(), MANIFESTENDPOINTPREFIX_BINDING);
+            protocolMarshaller.marshall(dashConfiguration.getMpdLocation(), MPDLOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

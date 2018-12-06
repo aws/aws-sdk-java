@@ -53,6 +53,19 @@ public class AbstractAmazonMQAsync extends AbstractAmazonMQ implements AmazonMQA
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
+
+        return createTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
 
         return createUserAsync(request, null);
@@ -74,6 +87,19 @@ public class AbstractAmazonMQAsync extends AbstractAmazonMQ implements AmazonMQA
     @Override
     public java.util.concurrent.Future<DeleteBrokerResult> deleteBrokerAsync(DeleteBrokerRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBrokerRequest, DeleteBrokerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request) {
+
+        return deleteTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -178,6 +204,19 @@ public class AbstractAmazonMQAsync extends AbstractAmazonMQ implements AmazonMQA
     @Override
     public java.util.concurrent.Future<ListConfigurationsResult> listConfigurationsAsync(ListConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationsRequest, ListConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
+
+        return listTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

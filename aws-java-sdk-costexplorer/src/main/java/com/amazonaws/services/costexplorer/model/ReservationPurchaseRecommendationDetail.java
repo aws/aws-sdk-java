@@ -56,8 +56,8 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     private String minimumNumberOfInstancesUsedPerHour;
     /**
      * <p>
-     * The minimum number of hours that you used in an hour during the historical period. AWS uses this to calculate
-     * your recommended reservation purchases.
+     * The minimum number of normalized units that you used in an hour during the historical period. AWS uses this to
+     * calculate your recommended reservation purchases.
      * </p>
      */
     private String minimumNormalizedUnitsUsedPerHour;
@@ -340,13 +340,13 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * The minimum number of hours that you used in an hour during the historical period. AWS uses this to calculate
-     * your recommended reservation purchases.
+     * The minimum number of normalized units that you used in an hour during the historical period. AWS uses this to
+     * calculate your recommended reservation purchases.
      * </p>
      * 
      * @param minimumNormalizedUnitsUsedPerHour
-     *        The minimum number of hours that you used in an hour during the historical period. AWS uses this to
-     *        calculate your recommended reservation purchases.
+     *        The minimum number of normalized units that you used in an hour during the historical period. AWS uses
+     *        this to calculate your recommended reservation purchases.
      */
 
     public void setMinimumNormalizedUnitsUsedPerHour(String minimumNormalizedUnitsUsedPerHour) {
@@ -355,12 +355,12 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * The minimum number of hours that you used in an hour during the historical period. AWS uses this to calculate
-     * your recommended reservation purchases.
+     * The minimum number of normalized units that you used in an hour during the historical period. AWS uses this to
+     * calculate your recommended reservation purchases.
      * </p>
      * 
-     * @return The minimum number of hours that you used in an hour during the historical period. AWS uses this to
-     *         calculate your recommended reservation purchases.
+     * @return The minimum number of normalized units that you used in an hour during the historical period. AWS uses
+     *         this to calculate your recommended reservation purchases.
      */
 
     public String getMinimumNormalizedUnitsUsedPerHour() {
@@ -369,13 +369,13 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
 
     /**
      * <p>
-     * The minimum number of hours that you used in an hour during the historical period. AWS uses this to calculate
-     * your recommended reservation purchases.
+     * The minimum number of normalized units that you used in an hour during the historical period. AWS uses this to
+     * calculate your recommended reservation purchases.
      * </p>
      * 
      * @param minimumNormalizedUnitsUsedPerHour
-     *        The minimum number of hours that you used in an hour during the historical period. AWS uses this to
-     *        calculate your recommended reservation purchases.
+     *        The minimum number of normalized units that you used in an hour during the historical period. AWS uses
+     *        this to calculate your recommended reservation purchases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

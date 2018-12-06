@@ -30,13 +30,13 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 instances that AWS recommends that you purchase.
+     * The Amazon EC2 instances that AWS recommends that you purchase.
      * </p>
      */
     private EC2InstanceDetails eC2InstanceDetails;
     /**
      * <p>
-     * The RDS instances that AWS recommends that you purchase.
+     * The Amazon RDS instances that AWS recommends that you purchase.
      * </p>
      */
     private RDSInstanceDetails rDSInstanceDetails;
@@ -61,11 +61,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 instances that AWS recommends that you purchase.
+     * The Amazon EC2 instances that AWS recommends that you purchase.
      * </p>
      * 
      * @param eC2InstanceDetails
-     *        The EC2 instances that AWS recommends that you purchase.
+     *        The Amazon EC2 instances that AWS recommends that you purchase.
      */
 
     public void setEC2InstanceDetails(EC2InstanceDetails eC2InstanceDetails) {
@@ -74,10 +74,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 instances that AWS recommends that you purchase.
+     * The Amazon EC2 instances that AWS recommends that you purchase.
      * </p>
      * 
-     * @return The EC2 instances that AWS recommends that you purchase.
+     * @return The Amazon EC2 instances that AWS recommends that you purchase.
      */
 
     public EC2InstanceDetails getEC2InstanceDetails() {
@@ -86,11 +86,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 instances that AWS recommends that you purchase.
+     * The Amazon EC2 instances that AWS recommends that you purchase.
      * </p>
      * 
      * @param eC2InstanceDetails
-     *        The EC2 instances that AWS recommends that you purchase.
+     *        The Amazon EC2 instances that AWS recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The RDS instances that AWS recommends that you purchase.
+     * The Amazon RDS instances that AWS recommends that you purchase.
      * </p>
      * 
      * @param rDSInstanceDetails
-     *        The RDS instances that AWS recommends that you purchase.
+     *        The Amazon RDS instances that AWS recommends that you purchase.
      */
 
     public void setRDSInstanceDetails(RDSInstanceDetails rDSInstanceDetails) {
@@ -114,10 +114,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The RDS instances that AWS recommends that you purchase.
+     * The Amazon RDS instances that AWS recommends that you purchase.
      * </p>
      * 
-     * @return The RDS instances that AWS recommends that you purchase.
+     * @return The Amazon RDS instances that AWS recommends that you purchase.
      */
 
     public RDSInstanceDetails getRDSInstanceDetails() {
@@ -126,11 +126,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The RDS instances that AWS recommends that you purchase.
+     * The Amazon RDS instances that AWS recommends that you purchase.
      * </p>
      * 
      * @param rDSInstanceDetails
-     *        The RDS instances that AWS recommends that you purchase.
+     *        The Amazon RDS instances that AWS recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The EC2 hardware specifications that you want AWS to provide recommendations for.
+ * The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2Specification" target="_top">AWS API

@@ -52,6 +52,10 @@ public class DashConfigurationJsonUnmarshaller implements Unmarshaller<DashConfi
                     context.nextToken();
                     dashConfiguration.setManifestEndpointPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MpdLocation", targetDepth)) {
+                    context.nextToken();
+                    dashConfiguration.setMpdLocation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

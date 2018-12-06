@@ -29,13 +29,18 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
     private String engineType;
-    /** Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0. */
+    /**
+     * Required. The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     */
     private String engineVersion;
     /**
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
      */
     private String name;
+    /** Create tags when creating the configuration. */
+    private java.util.Map<String, String> tags;
 
     /**
      * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
@@ -89,10 +94,12 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     * Required. The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     *        Required. The version of the broker engine. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -100,9 +107,11 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     * Required. The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
-     * @return Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     * @return Required. The version of the broker engine. For a list of supported engine versions, see
+     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public String getEngineVersion() {
@@ -110,10 +119,12 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     * Required. The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+     *        Required. The version of the broker engine. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,6 +174,61 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * Create tags when creating the configuration.
+     * 
+     * @return Create tags when creating the configuration.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * Create tags when creating the configuration.
+     * 
+     * @param tags
+     *        Create tags when creating the configuration.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * Create tags when creating the configuration.
+     * 
+     * @param tags
+     *        Create tags when creating the configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateConfigurationRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -178,7 +244,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +273,10 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -216,6 +288,7 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

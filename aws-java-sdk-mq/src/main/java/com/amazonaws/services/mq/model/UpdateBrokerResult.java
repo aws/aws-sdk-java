@@ -29,7 +29,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     private String brokerId;
     /** The ID of the updated configuration. */
     private ConfigurationId configuration;
-    /** The version of the broker engine to upgrade to. */
+    /**
+     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     */
     private String engineVersion;
     /** The list of information about logs to be enabled for the specified broker. */
     private Logs logs;
@@ -147,10 +150,12 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param engineVersion
-     *        The version of the broker engine to upgrade to.
+     *        The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -158,9 +163,11 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
-     * @return The version of the broker engine to upgrade to.
+     * @return The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public String getEngineVersion() {
@@ -168,10 +175,12 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param engineVersion
-     *        The version of the broker engine to upgrade to.
+     *        The version of the broker engine to upgrade to. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

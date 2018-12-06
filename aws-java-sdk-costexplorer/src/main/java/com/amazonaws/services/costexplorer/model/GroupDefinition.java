@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a group when you specify a group by criteria, or in the response to a query with a specific grouping.
+ * Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GroupDefinition" target="_top">AWS API

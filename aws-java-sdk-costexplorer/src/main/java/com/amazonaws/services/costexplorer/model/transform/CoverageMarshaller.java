@@ -29,6 +29,10 @@ public class CoverageMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> COVERAGEHOURS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CoverageHours").build();
+    private static final MarshallingInfo<StructuredPojo> COVERAGENORMALIZEDUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CoverageNormalizedUnits").build();
+    private static final MarshallingInfo<StructuredPojo> COVERAGECOST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CoverageCost").build();
 
     private static final CoverageMarshaller instance = new CoverageMarshaller();
 
@@ -47,6 +51,8 @@ public class CoverageMarshaller {
 
         try {
             protocolMarshaller.marshall(coverage.getCoverageHours(), COVERAGEHOURS_BINDING);
+            protocolMarshaller.marshall(coverage.getCoverageNormalizedUnits(), COVERAGENORMALIZEDUNITS_BINDING);
+            protocolMarshaller.marshall(coverage.getCoverageCost(), COVERAGECOST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

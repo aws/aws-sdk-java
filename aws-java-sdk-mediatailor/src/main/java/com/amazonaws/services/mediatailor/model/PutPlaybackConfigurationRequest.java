@@ -43,6 +43,12 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
     private CdnConfiguration cdnConfiguration;
     /**
      * <p>
+     * The configuration object for DASH content.
+     * </p>
+     */
+    private DashConfigurationForPut dashConfiguration;
+    /**
+     * <p>
      * The identifier for the configuration.
      * </p>
      */
@@ -172,6 +178,46 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     public PutPlaybackConfigurationRequest withCdnConfiguration(CdnConfiguration cdnConfiguration) {
         setCdnConfiguration(cdnConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration object for DASH content.
+     * </p>
+     * 
+     * @param dashConfiguration
+     *        The configuration object for DASH content.
+     */
+
+    public void setDashConfiguration(DashConfigurationForPut dashConfiguration) {
+        this.dashConfiguration = dashConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration object for DASH content.
+     * </p>
+     * 
+     * @return The configuration object for DASH content.
+     */
+
+    public DashConfigurationForPut getDashConfiguration() {
+        return this.dashConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration object for DASH content.
+     * </p>
+     * 
+     * @param dashConfiguration
+     *        The configuration object for DASH content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationRequest withDashConfiguration(DashConfigurationForPut dashConfiguration) {
+        setDashConfiguration(dashConfiguration);
         return this;
     }
 
@@ -386,6 +432,8 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
             sb.append("AdDecisionServerUrl: ").append(getAdDecisionServerUrl()).append(",");
         if (getCdnConfiguration() != null)
             sb.append("CdnConfiguration: ").append(getCdnConfiguration()).append(",");
+        if (getDashConfiguration() != null)
+            sb.append("DashConfiguration: ").append(getDashConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getSlateAdUrl() != null)
@@ -416,6 +464,10 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getCdnConfiguration() != null && other.getCdnConfiguration().equals(this.getCdnConfiguration()) == false)
             return false;
+        if (other.getDashConfiguration() == null ^ this.getDashConfiguration() == null)
+            return false;
+        if (other.getDashConfiguration() != null && other.getDashConfiguration().equals(this.getDashConfiguration()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -442,6 +494,7 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
         hashCode = prime * hashCode + ((getAdDecisionServerUrl() == null) ? 0 : getAdDecisionServerUrl().hashCode());
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSlateAdUrl() == null) ? 0 : getSlateAdUrl().hashCode());
         hashCode = prime * hashCode + ((getTranscodeProfileName() == null) ? 0 : getTranscodeProfileName().hashCode());

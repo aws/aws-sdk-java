@@ -52,17 +52,33 @@ public class ReservationAggregatesJsonUnmarshaller implements Unmarshaller<Reser
                     context.nextToken();
                     reservationAggregates.setUtilizationPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UtilizationPercentageInUnits", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setUtilizationPercentageInUnits(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PurchasedHours", targetDepth)) {
                     context.nextToken();
                     reservationAggregates.setPurchasedHours(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PurchasedUnits", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setPurchasedUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalActualHours", targetDepth)) {
                     context.nextToken();
                     reservationAggregates.setTotalActualHours(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TotalActualUnits", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setTotalActualUnits(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UnusedHours", targetDepth)) {
                     context.nextToken();
                     reservationAggregates.setUnusedHours(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UnusedUnits", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setUnusedUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OnDemandCostOfRIHoursUsed", targetDepth)) {
                     context.nextToken();

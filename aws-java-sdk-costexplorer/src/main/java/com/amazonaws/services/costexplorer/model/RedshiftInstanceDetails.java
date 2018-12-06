@@ -48,7 +48,7 @@ public class RedshiftInstanceDetails implements Serializable, Cloneable, Structu
     private String region;
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      */
     private Boolean currentGeneration;
@@ -181,11 +181,11 @@ public class RedshiftInstanceDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      * 
      * @param currentGeneration
-     *        Whether the recommendation is for a current generation instance.
+     *        Whether the recommendation is for a current-generation instance.
      */
 
     public void setCurrentGeneration(Boolean currentGeneration) {
@@ -194,10 +194,10 @@ public class RedshiftInstanceDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      * 
-     * @return Whether the recommendation is for a current generation instance.
+     * @return Whether the recommendation is for a current-generation instance.
      */
 
     public Boolean getCurrentGeneration() {
@@ -206,11 +206,11 @@ public class RedshiftInstanceDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      * 
      * @param currentGeneration
-     *        Whether the recommendation is for a current generation instance.
+     *        Whether the recommendation is for a current-generation instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,10 +221,10 @@ public class RedshiftInstanceDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Whether the recommendation is for a current generation instance.
+     * Whether the recommendation is for a current-generation instance.
      * </p>
      * 
-     * @return Whether the recommendation is for a current generation instance.
+     * @return Whether the recommendation is for a current-generation instance.
      */
 
     public Boolean isCurrentGeneration() {

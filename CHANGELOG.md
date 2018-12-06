@@ -1,3 +1,16 @@
+# __1.11.464__ __2018-12-05__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Add normalized unit support for both GetReservationUtilization and GetReservationCoverage API.
+
+## __AWS MediaTailor__
+  - ### Features
+    - AWS Elemental MediaTailor SDK now includes a new parameter to control the Location tag of DASH manifests.
+
+## __AmazonMQ__
+  - ### Features
+    - This release adds support for cost allocation tagging. You can now create, delete, and list tags for AmazonMQ resources. For more information about tagging, see AWS Tagging Strategies.
+
 # __1.11.463__ __2018-12-04__
 ## __AWS Health APIs and Notifications__
   - ### Features
