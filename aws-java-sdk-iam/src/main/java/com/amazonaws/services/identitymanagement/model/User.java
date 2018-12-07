@@ -89,7 +89,7 @@ public class User implements Serializable, Cloneable {
      * sign-in time, see the <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
      * the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the first use is
-     * returned in this field. If the field is null (no value) then it indicates that they never signed in with a
+     * returned in this field. If the field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:
      * </p>
      * <ul>
@@ -100,12 +100,12 @@ public class User implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A password exists but has not been used since IAM started tracking this information on October 20th, 2014.
+     * A password exists but has not been used since IAM started tracking this information on October 20, 2014.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * A null does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
+     * A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
@@ -115,23 +115,23 @@ public class User implements Serializable, Cloneable {
     private java.util.Date passwordLastUsed;
     /**
      * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     */
+    private AttachedPermissionsBoundary permissionsBoundary;
+    /**
+     * <p>
      * A list of tags that are associated with the specified user. For more information about tagging, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
      * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
-    /**
-     * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
-     * </p>
-     * <p>
-     * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * </p>
-     */
-    private AttachedPermissionsBoundary permissionsBoundary;
 
     /**
      * Default constructor for User object. Callers should use the setter or fluent setter (with...) methods to
@@ -420,7 +420,7 @@ public class User implements Serializable, Cloneable {
      * sign-in time, see the <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
      * the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the first use is
-     * returned in this field. If the field is null (no value) then it indicates that they never signed in with a
+     * returned in this field. If the field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:
      * </p>
      * <ul>
@@ -431,12 +431,12 @@ public class User implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A password exists but has not been used since IAM started tracking this information on October 20th, 2014.
+     * A password exists but has not been used since IAM started tracking this information on October 20, 2014.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * A null does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
+     * A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
@@ -449,7 +449,7 @@ public class User implements Serializable, Cloneable {
      *        user's last sign-in time, see the <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
      *        topic in the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the
-     *        first use is returned in this field. If the field is null (no value) then it indicates that they never
+     *        first use is returned in this field. If the field is null (no value), then it indicates that they never
      *        signed in with a password. This can be because:</p>
      *        <ul>
      *        <li>
@@ -459,14 +459,14 @@ public class User implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        A password exists but has not been used since IAM started tracking this information on October 20th, 2014.
+     *        A password exists but has not been used since IAM started tracking this information on October 20, 2014.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        A null does not mean that the user <i>never</i> had a password. Also, if the user does not currently have
-     *        a password, but had one in the past, then this field contains the date and time the most recent password
-     *        was used.
+     *        A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently
+     *        have a password, but had one in the past, then this field contains the date and time the most recent
+     *        password was used.
      *        </p>
      *        <p>
      *        This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
@@ -483,7 +483,7 @@ public class User implements Serializable, Cloneable {
      * sign-in time, see the <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
      * the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the first use is
-     * returned in this field. If the field is null (no value) then it indicates that they never signed in with a
+     * returned in this field. If the field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:
      * </p>
      * <ul>
@@ -494,12 +494,12 @@ public class User implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A password exists but has not been used since IAM started tracking this information on October 20th, 2014.
+     * A password exists but has not been used since IAM started tracking this information on October 20, 2014.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * A null does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
+     * A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
@@ -511,7 +511,7 @@ public class User implements Serializable, Cloneable {
      *         user's last sign-in time, see the <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
      *         topic in the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the
-     *         first use is returned in this field. If the field is null (no value) then it indicates that they never
+     *         first use is returned in this field. If the field is null (no value), then it indicates that they never
      *         signed in with a password. This can be because:</p>
      *         <ul>
      *         <li>
@@ -521,15 +521,14 @@ public class User implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         A password exists but has not been used since IAM started tracking this information on October 20th,
-     *         2014.
+     *         A password exists but has not been used since IAM started tracking this information on October 20, 2014.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         A null does not mean that the user <i>never</i> had a password. Also, if the user does not currently have
-     *         a password, but had one in the past, then this field contains the date and time the most recent password
-     *         was used.
+     *         A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently
+     *         have a password, but had one in the past, then this field contains the date and time the most recent
+     *         password was used.
      *         </p>
      *         <p>
      *         This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
@@ -546,7 +545,7 @@ public class User implements Serializable, Cloneable {
      * sign-in time, see the <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
      * the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the first use is
-     * returned in this field. If the field is null (no value) then it indicates that they never signed in with a
+     * returned in this field. If the field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:
      * </p>
      * <ul>
@@ -557,12 +556,12 @@ public class User implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * A password exists but has not been used since IAM started tracking this information on October 20th, 2014.
+     * A password exists but has not been used since IAM started tracking this information on October 20, 2014.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * A null does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
+     * A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently have a
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
@@ -575,7 +574,7 @@ public class User implements Serializable, Cloneable {
      *        user's last sign-in time, see the <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
      *        topic in the <i>Using IAM</i> guide. If a password is used more than once in a five-minute span, only the
-     *        first use is returned in this field. If the field is null (no value) then it indicates that they never
+     *        first use is returned in this field. If the field is null (no value), then it indicates that they never
      *        signed in with a password. This can be because:</p>
      *        <ul>
      *        <li>
@@ -585,14 +584,14 @@ public class User implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        A password exists but has not been used since IAM started tracking this information on October 20th, 2014.
+     *        A password exists but has not been used since IAM started tracking this information on October 20, 2014.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        A null does not mean that the user <i>never</i> had a password. Also, if the user does not currently have
-     *        a password, but had one in the past, then this field contains the date and time the most recent password
-     *        was used.
+     *        A null valuedoes not mean that the user <i>never</i> had a password. Also, if the user does not currently
+     *        have a password, but had one in the past, then this field contains the date and time the most recent
+     *        password was used.
      *        </p>
      *        <p>
      *        This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
@@ -601,6 +600,73 @@ public class User implements Serializable, Cloneable {
 
     public User withPasswordLastUsed(java.util.Date passwordLastUsed) {
         setPasswordLastUsed(passwordLastUsed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy used to set the permissions boundary for the user.</p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a>
+     *        in the <i>IAM User Guide</i>.
+     */
+
+    public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
+        this.permissionsBoundary = permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The ARN of the policy used to set the permissions boundary for the user.</p>
+     *         <p>
+     *         For more information about permissions boundaries, see <a
+     *         href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities
+     *         </a> in the <i>IAM User Guide</i>.
+     */
+
+    public AttachedPermissionsBoundary getPermissionsBoundary() {
+        return this.permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy used to set the permissions boundary for the user.</p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a>
+     *        in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
+        setPermissionsBoundary(permissionsBoundary);
         return this;
     }
 
@@ -694,74 +760,8 @@ public class User implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
-     * </p>
-     * <p>
-     * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * </p>
-     * 
-     * @param permissionsBoundary
-     *        The ARN of the policy used to set the permissions boundary for the user.</p>
-     *        <p>
-     *        For more information about permissions boundaries, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
-     */
-
-    public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
-        this.permissionsBoundary = permissionsBoundary;
-    }
-
-    /**
-     * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
-     * </p>
-     * <p>
-     * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * </p>
-     * 
-     * @return The ARN of the policy used to set the permissions boundary for the user.</p>
-     *         <p>
-     *         For more information about permissions boundaries, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
-     */
-
-    public AttachedPermissionsBoundary getPermissionsBoundary() {
-        return this.permissionsBoundary;
-    }
-
-    /**
-     * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
-     * </p>
-     * <p>
-     * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * </p>
-     * 
-     * @param permissionsBoundary
-     *        The ARN of the policy used to set the permissions boundary for the user.</p>
-     *        <p>
-     *        For more information about permissions boundaries, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public User withPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
-        setPermissionsBoundary(permissionsBoundary);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -783,10 +783,10 @@ public class User implements Serializable, Cloneable {
             sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getPasswordLastUsed() != null)
             sb.append("PasswordLastUsed: ").append(getPasswordLastUsed()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
         if (getPermissionsBoundary() != null)
-            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary());
+            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -825,13 +825,13 @@ public class User implements Serializable, Cloneable {
             return false;
         if (other.getPasswordLastUsed() != null && other.getPasswordLastUsed().equals(this.getPasswordLastUsed()) == false)
             return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
         if (other.getPermissionsBoundary() == null ^ this.getPermissionsBoundary() == null)
             return false;
         if (other.getPermissionsBoundary() != null && other.getPermissionsBoundary().equals(this.getPermissionsBoundary()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -847,8 +847,8 @@ public class User implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getPasswordLastUsed() == null) ? 0 : getPasswordLastUsed().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

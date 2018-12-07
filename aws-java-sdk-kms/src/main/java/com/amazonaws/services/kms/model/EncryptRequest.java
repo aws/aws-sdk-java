@@ -586,7 +586,8 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -599,7 +600,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getKeyId() != null)
             sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getPlaintext() != null)
-            sb.append("Plaintext: ").append(getPlaintext()).append(",");
+            sb.append("Plaintext: ").append("***Sensitive Data Redacted***").append(",");
         if (getEncryptionContext() != null)
             sb.append("EncryptionContext: ").append(getEncryptionContext()).append(",");
         if (getGrantTokens() != null)

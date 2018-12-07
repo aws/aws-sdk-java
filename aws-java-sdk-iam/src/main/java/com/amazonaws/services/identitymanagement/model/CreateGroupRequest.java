@@ -35,7 +35,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -47,7 +47,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the group to create. Do not include the path in this value.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-. The group name must be unique within the account. Group names are not
      * distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
@@ -69,10 +69,11 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param groupName
      *        The name of the group to create. Do not include the path in this value.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-. The group name must be unique within the account. Group names
-     *        are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-. The group name must be unique within the account. Group
+     *        names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and
+     *        "admins".
      */
     public CreateGroupRequest(String groupName) {
         setGroupName(groupName);
@@ -88,7 +89,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -102,8 +103,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
@@ -122,7 +123,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -135,8 +136,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *         forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *         character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
@@ -155,7 +156,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -169,8 +170,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -186,7 +187,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the group to create. Do not include the path in this value.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-. The group name must be unique within the account. Group names are not
      * distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
@@ -195,10 +196,11 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param groupName
      *        The name of the group to create. Do not include the path in this value.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-. The group name must be unique within the account. Group names
-     *        are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-. The group name must be unique within the account. Group
+     *        names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and
+     *        "admins".
      */
 
     public void setGroupName(String groupName) {
@@ -210,7 +212,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the group to create. Do not include the path in this value.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-. The group name must be unique within the account. Group names are not
      * distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
@@ -218,10 +220,11 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return The name of the group to create. Do not include the path in this value.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: _+=,.@-. The group name must be unique within the account. Group names
-     *         are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-. The group name must be unique within the account. Group
+     *         names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and
+     *         "admins".
      */
 
     public String getGroupName() {
@@ -233,7 +236,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the group to create. Do not include the path in this value.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-. The group name must be unique within the account. Group names are not
      * distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
@@ -242,10 +245,11 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param groupName
      *        The name of the group to create. Do not include the path in this value.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-. The group name must be unique within the account. Group names
-     *        are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-. The group name must be unique within the account. Group
+     *        names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and
+     *        "admins".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,7 +259,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

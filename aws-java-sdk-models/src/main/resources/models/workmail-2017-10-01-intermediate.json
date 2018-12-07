@@ -1870,6 +1870,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The organization under which the resource exists.</p>\n@param organizationId The organization under which the resource exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -1935,6 +1936,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource for which members are associated.</p>\n@param resourceId The resource for which members are associated.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -2000,6 +2002,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The member (user or group) to associate to the resource.</p>\n@param entityId The member (user or group) to associate to the resource.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -2067,6 +2070,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The member (user or group) to associate to the resource.</p>\n@param entityId The member (user or group) to associate to the resource.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -2133,6 +2137,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The organization under which the resource exists.</p>\n@param organizationId The organization under which the resource exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -2199,6 +2204,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource for which members are associated.</p>\n@param resourceId The resource for which members are associated.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -2348,6 +2354,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The organization under which the group exists.</p>\n@param organizationId The organization under which the group exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -2413,6 +2420,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The group for which the member is associated.</p>\n@param groupId The group for which the member is associated.*/",
         "setterMethodName" : "setGroupId",
         "setterModel" : {
@@ -2478,6 +2486,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MemberId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The member to associate to the group.</p>\n@param memberId The member to associate to the group.*/",
         "setterMethodName" : "setMemberId",
         "setterModel" : {
@@ -2545,6 +2554,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The group for which the member is associated.</p>\n@param groupId The group for which the member is associated.*/",
           "setterMethodName" : "setGroupId",
           "setterModel" : {
@@ -2611,6 +2621,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MemberId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The member to associate to the group.</p>\n@param memberId The member to associate to the group.*/",
           "setterMethodName" : "setMemberId",
           "setterModel" : {
@@ -2677,6 +2688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The organization under which the group exists.</p>\n@param organizationId The organization under which the group exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -2819,6 +2831,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AutoAcceptRequests",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>\n@param autoAcceptRequests The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.*/",
         "setterMethodName" : "setAutoAcceptRequests",
         "setterModel" : {
@@ -2884,6 +2897,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AutoDeclineRecurringRequests",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource's ability to automatically decline any recurring requests.</p>\n@param autoDeclineRecurringRequests The resource's ability to automatically decline any recurring requests.*/",
         "setterMethodName" : "setAutoDeclineRecurringRequests",
         "setterModel" : {
@@ -2949,6 +2963,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AutoDeclineConflictingRequests",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource's ability to automatically decline any conflicting requests.</p>\n@param autoDeclineConflictingRequests The resource's ability to automatically decline any conflicting requests.*/",
         "setterMethodName" : "setAutoDeclineConflictingRequests",
         "setterModel" : {
@@ -3016,6 +3031,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AutoAcceptRequests",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>\n@param autoAcceptRequests The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.*/",
           "setterMethodName" : "setAutoAcceptRequests",
           "setterModel" : {
@@ -3082,6 +3098,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AutoDeclineConflictingRequests",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource's ability to automatically decline any conflicting requests.</p>\n@param autoDeclineConflictingRequests The resource's ability to automatically decline any conflicting requests.*/",
           "setterMethodName" : "setAutoDeclineConflictingRequests",
           "setterModel" : {
@@ -3148,6 +3165,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AutoDeclineRecurringRequests",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource's ability to automatically decline any recurring requests.</p>\n@param autoDeclineRecurringRequests The resource's ability to automatically decline any recurring requests.*/",
           "setterMethodName" : "setAutoDeclineRecurringRequests",
           "setterModel" : {
@@ -3260,6 +3278,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The organization under which the member exists.</p>\n@param organizationId The organization under which the member exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -3325,6 +3344,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The alias is added to this Amazon WorkMail entity.</p>\n@param entityId The alias is added to this Amazon WorkMail entity.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -3390,6 +3410,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Alias",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The alias to add to the user.</p>\n@param alias The alias to add to the user.*/",
         "setterMethodName" : "setAlias",
         "setterModel" : {
@@ -3457,6 +3478,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Alias",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The alias to add to the user.</p>\n@param alias The alias to add to the user.*/",
           "setterMethodName" : "setAlias",
           "setterModel" : {
@@ -3523,6 +3545,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The alias is added to this Amazon WorkMail entity.</p>\n@param entityId The alias is added to this Amazon WorkMail entity.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -3589,6 +3612,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The organization under which the member exists.</p>\n@param organizationId The organization under which the member exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -3738,6 +3762,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The organization under which the group is to be created.</p>\n@param organizationId The organization under which the group is to be created.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -3803,6 +3828,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the group.</p>\n@param name The name of the group.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3870,6 +3896,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the group.</p>\n@param name The name of the group.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3936,6 +3963,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The organization under which the group is to be created.</p>\n@param organizationId The organization under which the group is to be created.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -4038,6 +4066,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the group.</p>\n@param groupId The ID of the group.*/",
         "setterMethodName" : "setGroupId",
         "setterModel" : {
@@ -4105,6 +4134,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the group.</p>\n@param groupId The ID of the group.*/",
           "setterMethodName" : "setGroupId",
           "setterModel" : {
@@ -4217,6 +4247,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier associated with the organization for which the resource is created.</p>\n@param organizationId The identifier associated with the organization for which the resource is created.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -4282,6 +4313,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the created resource.</p>\n@param name The name of the created resource.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -4347,6 +4379,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the created resource.</p>\n@param type The type of the created resource.\n@see ResourceType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -4414,6 +4447,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the created resource.</p>\n@param name The name of the created resource.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -4480,6 +4514,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier associated with the organization for which the resource is created.</p>\n@param organizationId The identifier associated with the organization for which the resource is created.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -4546,6 +4581,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the created resource.</p>\n@param type The type of the created resource.\n@see ResourceType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -4648,6 +4684,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the created resource.</p>\n@param resourceId The identifier of the created resource.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -4715,6 +4752,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the created resource.</p>\n@param resourceId The identifier of the created resource.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -4827,6 +4865,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the organization for which the user is created.</p>\n@param organizationId The identifier of the organization for which the user is created.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -4892,6 +4931,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name for the user to be created.</p>\n@param name The name for the user to be created.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -4957,6 +4997,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The display name for the user to be created.</p>\n@param displayName The display name for the user to be created.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -5022,6 +5063,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Password",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The password for the user to be created.</p>\n@param password The password for the user to be created.*/",
         "setterMethodName" : "setPassword",
         "setterModel" : {
@@ -5089,6 +5131,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The display name for the user to be created.</p>\n@param displayName The display name for the user to be created.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -5155,6 +5198,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name for the user to be created.</p>\n@param name The name for the user to be created.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5221,6 +5265,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the organization for which the user is created.</p>\n@param organizationId The identifier of the organization for which the user is created.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -5287,6 +5332,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Password",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The password for the user to be created.</p>\n@param password The password for the user to be created.*/",
           "setterMethodName" : "setPassword",
           "setterModel" : {
@@ -5389,6 +5435,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The information regarding the newly created user.</p>\n@param userId The information regarding the newly created user.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -5456,6 +5503,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The information regarding the newly created user.</p>\n@param userId The information regarding the newly created user.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -5561,6 +5609,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the user or group is associated as the resource's delegate.</p>\n@param id The identifier for the user or group is associated as the resource's delegate.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -5626,6 +5675,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the delegate: user or group.</p>\n@param type The type of the delegate: user or group.\n@see MemberType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -5693,6 +5743,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the user or group is associated as the resource's delegate.</p>\n@param id The identifier for the user or group is associated as the resource's delegate.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -5759,6 +5810,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the delegate: user or group.</p>\n@param type The type of the delegate: user or group.\n@see MemberType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -5871,6 +5923,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the user exists.</p>\n@param organizationId The identifier for the organization under which the user exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -5936,6 +5989,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the Amazon WorkMail entity to have the aliases removed.</p>\n@param entityId The identifier for the Amazon WorkMail entity to have the aliases removed.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -6001,6 +6055,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Alias",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>\n@param alias The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).*/",
         "setterMethodName" : "setAlias",
         "setterModel" : {
@@ -6068,6 +6123,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Alias",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>\n@param alias The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).*/",
           "setterMethodName" : "setAlias",
           "setterModel" : {
@@ -6134,6 +6190,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the Amazon WorkMail entity to have the aliases removed.</p>\n@param entityId The identifier for the Amazon WorkMail entity to have the aliases removed.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -6200,6 +6257,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the user exists.</p>\n@param organizationId The identifier for the organization under which the user exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -6349,6 +6407,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The organization that contains the group.</p>\n@param organizationId The organization that contains the group.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -6414,6 +6473,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the group to be deleted.</p>\n@param groupId The identifier of the group to be deleted.*/",
         "setterMethodName" : "setGroupId",
         "setterModel" : {
@@ -6481,6 +6541,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the group to be deleted.</p>\n@param groupId The identifier of the group to be deleted.*/",
           "setterMethodName" : "setGroupId",
           "setterModel" : {
@@ -6547,6 +6608,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The organization that contains the group.</p>\n@param organizationId The organization that contains the group.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -6696,6 +6758,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the organization under which the entity (user or group) exists.</p>\n@param organizationId The identifier of the organization under which the entity (user or group) exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -6761,6 +6824,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the entity (user or group) for which to delete mailbox permissions.</p>\n@param entityId The identifier of the entity (user or group) for which to delete mailbox permissions.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -6826,6 +6890,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GranteeId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the entity (user or group) for which to delete granted permissions.</p>\n@param granteeId The identifier of the entity (user or group) for which to delete granted permissions.*/",
         "setterMethodName" : "setGranteeId",
         "setterModel" : {
@@ -6893,6 +6958,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the entity (user or group) for which to delete mailbox permissions.</p>\n@param entityId The identifier of the entity (user or group) for which to delete mailbox permissions.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -6959,6 +7025,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GranteeId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the entity (user or group) for which to delete granted permissions.</p>\n@param granteeId The identifier of the entity (user or group) for which to delete granted permissions.*/",
           "setterMethodName" : "setGranteeId",
           "setterModel" : {
@@ -7025,6 +7092,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the organization under which the entity (user or group) exists.</p>\n@param organizationId The identifier of the organization under which the entity (user or group) exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -7174,6 +7242,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier associated with the organization for which the resource is deleted.</p>\n@param organizationId The identifier associated with the organization for which the resource is deleted.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -7239,6 +7308,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the resource to be deleted.</p>\n@param resourceId The identifier of the resource to be deleted.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -7306,6 +7376,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier associated with the organization for which the resource is deleted.</p>\n@param organizationId The identifier associated with the organization for which the resource is deleted.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -7372,6 +7443,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the resource to be deleted.</p>\n@param resourceId The identifier of the resource to be deleted.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -7521,6 +7593,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The organization that contains the user.</p>\n@param organizationId The organization that contains the user.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -7586,6 +7659,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the user to be deleted.</p>\n@param userId The identifier of the user to be deleted.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -7653,6 +7727,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The organization that contains the user.</p>\n@param organizationId The organization that contains the user.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -7719,6 +7794,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the user to be deleted.</p>\n@param userId The identifier of the user to be deleted.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -7868,6 +7944,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>\n@param organizationId The identifier for the organization under which the Amazon WorkMail entity exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -7933,6 +8010,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the entity to be updated.</p>\n@param entityId The identifier for the entity to be updated.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -8000,6 +8078,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the entity to be updated.</p>\n@param entityId The identifier for the entity to be updated.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -8066,6 +8145,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>\n@param organizationId The identifier for the organization under which the Amazon WorkMail entity exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -8215,6 +8295,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the group exists.</p>\n@param organizationId The identifier for the organization under which the group exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -8280,6 +8361,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the group to be described.</p>\n@param groupId The identifier for the group to be described.*/",
         "setterMethodName" : "setGroupId",
         "setterModel" : {
@@ -8347,6 +8429,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the group to be described.</p>\n@param groupId The identifier for the group to be described.*/",
           "setterMethodName" : "setGroupId",
           "setterModel" : {
@@ -8413,6 +8496,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the group exists.</p>\n@param organizationId The identifier for the organization under which the group exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -8515,6 +8599,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the described group.</p>\n@param groupId The identifier of the described group.*/",
         "setterMethodName" : "setGroupId",
         "setterModel" : {
@@ -8580,6 +8665,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the described group.</p>\n@param name The name of the described group.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -8645,6 +8731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Email",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email of the described group.</p>\n@param email The email of the described group.*/",
         "setterMethodName" : "setEmail",
         "setterModel" : {
@@ -8710,6 +8797,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).</p>\n@param state The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).\n@see EntityState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -8775,6 +8863,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EnabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.</p>\n@param enabledDate The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.*/",
         "setterMethodName" : "setEnabledDate",
         "setterModel" : {
@@ -8840,6 +8929,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DisabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.</p>\n@param disabledDate The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.*/",
         "setterMethodName" : "setDisabledDate",
         "setterModel" : {
@@ -8907,6 +8997,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DisabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.</p>\n@param disabledDate The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.*/",
           "setterMethodName" : "setDisabledDate",
           "setterModel" : {
@@ -8973,6 +9064,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Email",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email of the described group.</p>\n@param email The email of the described group.*/",
           "setterMethodName" : "setEmail",
           "setterModel" : {
@@ -9039,6 +9131,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EnabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.</p>\n@param enabledDate The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.*/",
           "setterMethodName" : "setEnabledDate",
           "setterModel" : {
@@ -9105,6 +9198,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the described group.</p>\n@param groupId The identifier of the described group.*/",
           "setterMethodName" : "setGroupId",
           "setterModel" : {
@@ -9171,6 +9265,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the described group.</p>\n@param name The name of the described group.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -9237,6 +9332,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).</p>\n@param state The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).\n@see EntityState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -9349,6 +9445,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization to be described.</p>\n@param organizationId The identifier for the organization to be described.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -9416,6 +9513,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization to be described.</p>\n@param organizationId The identifier for the organization to be described.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -9518,6 +9616,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of an organization.</p>\n@param organizationId The identifier of an organization.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -9583,6 +9682,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Alias",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The alias for an organization.</p>\n@param alias The alias for an organization.*/",
         "setterMethodName" : "setAlias",
         "setterModel" : {
@@ -9648,6 +9748,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of an organization.</p>\n@param state The state of an organization.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -9713,6 +9814,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DirectoryId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the directory associated with an Amazon WorkMail organization.</p>\n@param directoryId The identifier for the directory associated with an Amazon WorkMail organization.*/",
         "setterMethodName" : "setDirectoryId",
         "setterModel" : {
@@ -9778,6 +9880,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DirectoryType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of directory associated with the Amazon WorkMail organization.</p>\n@param directoryType The type of directory associated with the Amazon WorkMail organization.*/",
         "setterMethodName" : "setDirectoryType",
         "setterModel" : {
@@ -9843,6 +9946,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultMailDomain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The default mail domain associated with the organization.</p>\n@param defaultMailDomain The default mail domain associated with the organization.*/",
         "setterMethodName" : "setDefaultMailDomain",
         "setterModel" : {
@@ -9908,6 +10012,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CompletedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time format.</p>\n@param completedDate The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time format.*/",
         "setterMethodName" : "setCompletedDate",
         "setterModel" : {
@@ -9973,6 +10078,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The (optional) error message indicating if unexpected behavior was encountered with regards to the organization.</p>\n@param errorMessage The (optional) error message indicating if unexpected behavior was encountered with regards to the organization.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
@@ -10040,6 +10146,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Alias",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The alias for an organization.</p>\n@param alias The alias for an organization.*/",
           "setterMethodName" : "setAlias",
           "setterModel" : {
@@ -10106,6 +10213,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CompletedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time format.</p>\n@param completedDate The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time format.*/",
           "setterMethodName" : "setCompletedDate",
           "setterModel" : {
@@ -10172,6 +10280,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultMailDomain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The default mail domain associated with the organization.</p>\n@param defaultMailDomain The default mail domain associated with the organization.*/",
           "setterMethodName" : "setDefaultMailDomain",
           "setterModel" : {
@@ -10238,6 +10347,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DirectoryId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the directory associated with an Amazon WorkMail organization.</p>\n@param directoryId The identifier for the directory associated with an Amazon WorkMail organization.*/",
           "setterMethodName" : "setDirectoryId",
           "setterModel" : {
@@ -10304,6 +10414,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DirectoryType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of directory associated with the Amazon WorkMail organization.</p>\n@param directoryType The type of directory associated with the Amazon WorkMail organization.*/",
           "setterMethodName" : "setDirectoryType",
           "setterModel" : {
@@ -10370,6 +10481,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The (optional) error message indicating if unexpected behavior was encountered with regards to the organization.</p>\n@param errorMessage The (optional) error message indicating if unexpected behavior was encountered with regards to the organization.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
@@ -10436,6 +10548,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of an organization.</p>\n@param organizationId The identifier of an organization.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -10502,6 +10615,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of an organization.</p>\n@param state The state of an organization.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -10614,6 +10728,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier associated with the organization for which the resource is described.</p>\n@param organizationId The identifier associated with the organization for which the resource is described.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -10679,6 +10794,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the resource to be described.</p>\n@param resourceId The identifier of the resource to be described.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -10746,6 +10862,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier associated with the organization for which the resource is described.</p>\n@param organizationId The identifier associated with the organization for which the resource is described.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -10812,6 +10929,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the resource to be described.</p>\n@param resourceId The identifier of the resource to be described.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -10914,6 +11032,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the described resource.</p>\n@param resourceId The identifier of the described resource.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -10979,6 +11098,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Email",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email of the described resource.</p>\n@param email The email of the described resource.*/",
         "setterMethodName" : "setEmail",
         "setterModel" : {
@@ -11044,6 +11164,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the described resource.</p>\n@param name The name of the described resource.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -11109,6 +11230,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the described resource.</p>\n@param type The type of the described resource.\n@see ResourceType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -11174,6 +11296,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "BookingOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The booking options for the described resource.</p>\n@param bookingOptions The booking options for the described resource.*/",
         "setterMethodName" : "setBookingOptions",
         "setterModel" : {
@@ -11239,6 +11362,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the resource: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).</p>\n@param state The state of the resource: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).\n@see EntityState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -11304,6 +11428,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EnabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when a resource was registered to Amazon WorkMail, in UNIX epoch time format.</p>\n@param enabledDate The date and time when a resource was registered to Amazon WorkMail, in UNIX epoch time format.*/",
         "setterMethodName" : "setEnabledDate",
         "setterModel" : {
@@ -11369,6 +11494,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DisabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when a resource was registered from Amazon WorkMail, in UNIX epoch time format.</p>\n@param disabledDate The date and time when a resource was registered from Amazon WorkMail, in UNIX epoch time format.*/",
         "setterMethodName" : "setDisabledDate",
         "setterModel" : {
@@ -11436,6 +11562,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "BookingOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The booking options for the described resource.</p>\n@param bookingOptions The booking options for the described resource.*/",
           "setterMethodName" : "setBookingOptions",
           "setterModel" : {
@@ -11502,6 +11629,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DisabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when a resource was registered from Amazon WorkMail, in UNIX epoch time format.</p>\n@param disabledDate The date and time when a resource was registered from Amazon WorkMail, in UNIX epoch time format.*/",
           "setterMethodName" : "setDisabledDate",
           "setterModel" : {
@@ -11568,6 +11696,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Email",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email of the described resource.</p>\n@param email The email of the described resource.*/",
           "setterMethodName" : "setEmail",
           "setterModel" : {
@@ -11634,6 +11763,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EnabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when a resource was registered to Amazon WorkMail, in UNIX epoch time format.</p>\n@param enabledDate The date and time when a resource was registered to Amazon WorkMail, in UNIX epoch time format.*/",
           "setterMethodName" : "setEnabledDate",
           "setterModel" : {
@@ -11700,6 +11830,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the described resource.</p>\n@param name The name of the described resource.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -11766,6 +11897,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the described resource.</p>\n@param resourceId The identifier of the described resource.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -11832,6 +11964,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the resource: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).</p>\n@param state The state of the resource: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).\n@see EntityState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -11898,6 +12031,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the described resource.</p>\n@param type The type of the described resource.\n@see ResourceType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -12010,6 +12144,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the user exists.</p>\n@param organizationId The identifier for the organization under which the user exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -12075,6 +12210,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the user to be described.</p>\n@param userId The identifier for the user to be described.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -12142,6 +12278,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the user exists.</p>\n@param organizationId The identifier for the organization under which the user exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -12208,6 +12345,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the user to be described.</p>\n@param userId The identifier for the user to be described.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -12310,6 +12448,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the described user.</p>\n@param userId The identifier for the described user.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -12375,6 +12514,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name for the user.</p>\n@param name The name for the user.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -12440,6 +12580,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Email",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email of the user.</p>\n@param email The email of the user.*/",
         "setterMethodName" : "setEmail",
         "setterModel" : {
@@ -12505,6 +12646,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The display name of the user.</p>\n@param displayName The display name of the user.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -12570,6 +12712,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).</p>\n@param state The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).\n@see EntityState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -12635,6 +12778,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types, administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.</p>\n@param userRole In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types, administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.\n@see UserRole*/",
         "setterMethodName" : "setUserRole",
         "setterModel" : {
@@ -12700,6 +12844,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EnabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>\n@param enabledDate The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.*/",
         "setterMethodName" : "setEnabledDate",
         "setterModel" : {
@@ -12765,6 +12910,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DisabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>\n@param disabledDate The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.*/",
         "setterMethodName" : "setDisabledDate",
         "setterModel" : {
@@ -12832,6 +12978,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DisabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>\n@param disabledDate The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.*/",
           "setterMethodName" : "setDisabledDate",
           "setterModel" : {
@@ -12898,6 +13045,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The display name of the user.</p>\n@param displayName The display name of the user.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -12964,6 +13112,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Email",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email of the user.</p>\n@param email The email of the user.*/",
           "setterMethodName" : "setEmail",
           "setterModel" : {
@@ -13030,6 +13179,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EnabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>\n@param enabledDate The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.*/",
           "setterMethodName" : "setEnabledDate",
           "setterModel" : {
@@ -13096,6 +13246,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name for the user.</p>\n@param name The name for the user.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -13162,6 +13313,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).</p>\n@param state The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to Amazon WorkMail).\n@see EntityState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -13228,6 +13380,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the described user.</p>\n@param userId The identifier for the described user.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -13294,6 +13447,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types, administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.</p>\n@param userRole In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types, administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.\n@see UserRole*/",
           "setterMethodName" : "setUserRole",
           "setterModel" : {
@@ -13480,6 +13634,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the resource exists.</p>\n@param organizationId The identifier for the organization under which the resource exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -13545,6 +13700,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the resource from which delegates' set members are removed. </p>\n@param resourceId The identifier of the resource from which delegates' set members are removed.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -13610,6 +13766,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>\n@param entityId The identifier for the member (user, group) to be removed from the resource's delegates.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -13677,6 +13834,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>\n@param entityId The identifier for the member (user, group) to be removed from the resource's delegates.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -13743,6 +13901,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the resource exists.</p>\n@param organizationId The identifier for the organization under which the resource exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -13809,6 +13968,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the resource from which delegates' set members are removed. </p>\n@param resourceId The identifier of the resource from which delegates' set members are removed.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -13958,6 +14118,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the group exists.</p>\n@param organizationId The identifier for the organization under which the group exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -14023,6 +14184,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the group from which members are removed.</p>\n@param groupId The identifier for the group from which members are removed.*/",
         "setterMethodName" : "setGroupId",
         "setterModel" : {
@@ -14088,6 +14250,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MemberId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the member to be removed to the group.</p>\n@param memberId The identifier for the member to be removed to the group.*/",
         "setterMethodName" : "setMemberId",
         "setterModel" : {
@@ -14155,6 +14318,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the group from which members are removed.</p>\n@param groupId The identifier for the group from which members are removed.*/",
           "setterMethodName" : "setGroupId",
           "setterModel" : {
@@ -14221,6 +14385,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MemberId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the member to be removed to the group.</p>\n@param memberId The identifier for the member to be removed to the group.*/",
           "setterMethodName" : "setMemberId",
           "setterModel" : {
@@ -14287,6 +14452,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the group exists.</p>\n@param organizationId The identifier for the organization under which the group exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -14626,6 +14792,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the group.</p>\n@param id The identifier of the group.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -14691,6 +14858,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Email",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email of the group.</p>\n@param email The email of the group.*/",
         "setterMethodName" : "setEmail",
         "setterModel" : {
@@ -14756,6 +14924,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the group.</p>\n@param name The name of the group.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -14821,6 +14990,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>\n@param state The state of the group, which can be ENABLED, DISABLED, or DELETED.\n@see EntityState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -14886,6 +15056,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EnabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date indicating when the group was enabled for Amazon WorkMail use.</p>\n@param enabledDate The date indicating when the group was enabled for Amazon WorkMail use.*/",
         "setterMethodName" : "setEnabledDate",
         "setterModel" : {
@@ -14951,6 +15122,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DisabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date indicating when the group was disabled from Amazon WorkMail use.</p>\n@param disabledDate The date indicating when the group was disabled from Amazon WorkMail use.*/",
         "setterMethodName" : "setDisabledDate",
         "setterModel" : {
@@ -15018,6 +15190,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DisabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date indicating when the group was disabled from Amazon WorkMail use.</p>\n@param disabledDate The date indicating when the group was disabled from Amazon WorkMail use.*/",
           "setterMethodName" : "setDisabledDate",
           "setterModel" : {
@@ -15084,6 +15257,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Email",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email of the group.</p>\n@param email The email of the group.*/",
           "setterMethodName" : "setEmail",
           "setterModel" : {
@@ -15150,6 +15324,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EnabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date indicating when the group was enabled for Amazon WorkMail use.</p>\n@param enabledDate The date indicating when the group was enabled for Amazon WorkMail use.*/",
           "setterMethodName" : "setEnabledDate",
           "setterModel" : {
@@ -15216,6 +15391,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the group.</p>\n@param id The identifier of the group.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -15282,6 +15458,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the group.</p>\n@param name The name of the group.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -15348,6 +15525,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>\n@param state The state of the group, which can be ENABLED, DISABLED, or DELETED.\n@see EntityState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -15571,6 +15749,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the entity exists.</p>\n@param organizationId The identifier for the organization under which the entity exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -15636,6 +15815,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the entity for which to list the aliases.</p>\n@param entityId The identifier for the entity for which to list the aliases.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -15701,6 +15881,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15766,6 +15947,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -15833,6 +16015,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the entity for which to list the aliases.</p>\n@param entityId The identifier for the entity for which to list the aliases.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -15899,6 +16082,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -15965,6 +16149,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16031,6 +16216,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the entity exists.</p>\n@param organizationId The identifier for the organization under which the entity exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -16170,6 +16356,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16213,6 +16400,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Aliases",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The entity's paginated aliases.</p>\n@param aliases The entity's paginated aliases.*/",
         "setterMethodName" : "setAliases",
         "setterModel" : {
@@ -16278,6 +16466,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -16382,6 +16571,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16425,6 +16615,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Aliases",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The entity's paginated aliases.</p>\n@param aliases The entity's paginated aliases.*/",
           "setterMethodName" : "setAliases",
           "setterModel" : {
@@ -16491,6 +16682,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16603,6 +16795,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the group exists.</p>\n@param organizationId The identifier for the organization under which the group exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -16668,6 +16861,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the group to which the members are associated.</p>\n@param groupId The identifier for the group to which the members are associated.*/",
         "setterMethodName" : "setGroupId",
         "setterModel" : {
@@ -16733,6 +16927,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -16798,6 +16993,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -16865,6 +17061,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the group to which the members are associated.</p>\n@param groupId The identifier for the group to which the members are associated.*/",
           "setterMethodName" : "setGroupId",
           "setterModel" : {
@@ -16931,6 +17128,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -16997,6 +17195,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -17063,6 +17262,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the group exists.</p>\n@param organizationId The identifier for the organization under which the group exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -17202,6 +17402,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17245,6 +17446,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Members",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The members associated to the group.</p>\n@param members The members associated to the group.*/",
         "setterMethodName" : "setMembers",
         "setterModel" : {
@@ -17310,6 +17512,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -17414,6 +17617,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -17457,6 +17661,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Members",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The members associated to the group.</p>\n@param members The members associated to the group.*/",
           "setterMethodName" : "setMembers",
           "setterModel" : {
@@ -17523,6 +17728,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -17635,6 +17841,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the groups exist.</p>\n@param organizationId The identifier for the organization under which the groups exist.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -17700,6 +17907,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -17765,6 +17973,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -17832,6 +18041,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -17898,6 +18108,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -17964,6 +18175,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the groups exist.</p>\n@param organizationId The identifier for the organization under which the groups exist.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -18103,6 +18315,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18146,6 +18359,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Groups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The overview of groups for an organization.</p>\n@param groups The overview of groups for an organization.*/",
         "setterMethodName" : "setGroups",
         "setterModel" : {
@@ -18211,6 +18425,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -18315,6 +18530,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18358,6 +18574,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Groups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The overview of groups for an organization.</p>\n@param groups The overview of groups for an organization.*/",
           "setterMethodName" : "setGroups",
           "setterModel" : {
@@ -18424,6 +18641,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18536,6 +18754,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the organization under which the entity (user or group) exists.</p>\n@param organizationId The identifier of the organization under which the entity (user or group) exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -18601,6 +18820,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the entity (user or group) for which to list mailbox permissions.</p>\n@param entityId The identifier of the entity (user or group) for which to list mailbox permissions.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -18666,6 +18886,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -18731,6 +18952,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -18798,6 +19020,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the entity (user or group) for which to list mailbox permissions.</p>\n@param entityId The identifier of the entity (user or group) for which to list mailbox permissions.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -18864,6 +19087,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -18930,6 +19154,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18996,6 +19221,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the organization under which the entity (user or group) exists.</p>\n@param organizationId The identifier of the organization under which the entity (user or group) exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -19135,6 +19361,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -19178,6 +19405,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Permissions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One page of the entity's mailbox permissions.</p>\n@param permissions One page of the entity's mailbox permissions.*/",
         "setterMethodName" : "setPermissions",
         "setterModel" : {
@@ -19243,6 +19471,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -19310,6 +19539,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -19413,6 +19643,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -19456,6 +19687,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Permissions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One page of the entity's mailbox permissions.</p>\n@param permissions One page of the entity's mailbox permissions.*/",
           "setterMethodName" : "setPermissions",
           "setterModel" : {
@@ -19568,6 +19800,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -19633,6 +19866,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -19700,6 +19934,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -19766,6 +20001,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -19905,6 +20141,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -19948,6 +20185,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "OrganizationSummaries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The overview of owned organizations presented as a list of organization summaries.</p>\n@param organizationSummaries The overview of owned organizations presented as a list of organization summaries.*/",
         "setterMethodName" : "setOrganizationSummaries",
         "setterModel" : {
@@ -20013,6 +20251,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -20080,6 +20319,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. The value is \"null\" when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -20183,6 +20423,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20226,6 +20467,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "OrganizationSummaries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The overview of owned organizations presented as a list of organization summaries.</p>\n@param organizationSummaries The overview of owned organizations presented as a list of organization summaries.*/",
           "setterMethodName" : "setOrganizationSummaries",
           "setterModel" : {
@@ -20338,6 +20580,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization that contains the resource for which delegates are listed.</p>\n@param organizationId The identifier for the organization that contains the resource for which delegates are listed.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -20403,6 +20646,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the resource whose delegates are listed.</p>\n@param resourceId The identifier for the resource whose delegates are listed.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -20468,6 +20712,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token used to paginate through the delegates associated with a resource.</p>\n@param nextToken The token used to paginate through the delegates associated with a resource.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -20533,6 +20778,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of maximum results in a page.</p>\n@param maxResults The number of maximum results in a page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -20600,6 +20846,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of maximum results in a page.</p>\n@param maxResults The number of maximum results in a page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -20666,6 +20913,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token used to paginate through the delegates associated with a resource.</p>\n@param nextToken The token used to paginate through the delegates associated with a resource.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -20732,6 +20980,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization that contains the resource for which delegates are listed.</p>\n@param organizationId The identifier for the organization that contains the resource for which delegates are listed.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -20798,6 +21047,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the resource whose delegates are listed.</p>\n@param resourceId The identifier for the resource whose delegates are listed.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -20937,6 +21187,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20980,6 +21231,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Delegates",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One page of the resource's delegates.</p>\n@param delegates One page of the resource's delegates.*/",
         "setterMethodName" : "setDelegates",
         "setterModel" : {
@@ -21045,6 +21297,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>\n@param nextToken The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -21149,6 +21402,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -21192,6 +21446,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Delegates",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One page of the resource's delegates.</p>\n@param delegates One page of the resource's delegates.*/",
           "setterMethodName" : "setDelegates",
           "setterModel" : {
@@ -21258,6 +21513,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>\n@param nextToken The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -21370,6 +21626,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the resources exist.</p>\n@param organizationId The identifier for the organization under which the resources exist.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -21435,6 +21692,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -21500,6 +21758,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -21567,6 +21826,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -21633,6 +21893,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>\n@param nextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -21699,6 +21960,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the resources exist.</p>\n@param organizationId The identifier for the organization under which the resources exist.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -21838,6 +22100,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -21881,6 +22144,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Resources",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One page of the organization's resource representation.</p>\n@param resources One page of the organization's resource representation.*/",
         "setterMethodName" : "setResources",
         "setterModel" : {
@@ -21946,6 +22210,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>\n@param nextToken The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -22013,6 +22278,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>\n@param nextToken The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -22116,6 +22382,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22159,6 +22426,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Resources",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One page of the organization's resource representation.</p>\n@param resources One page of the organization's resource representation.*/",
           "setterMethodName" : "setResources",
           "setterModel" : {
@@ -22271,6 +22539,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the users exist.</p>\n@param organizationId The identifier for the organization under which the users exist.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -22336,6 +22605,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>TBD</p>\n@param nextToken TBD*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -22401,6 +22671,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -22468,6 +22739,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call.</p>\n@param maxResults The maximum number of results to return in a single call.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -22534,6 +22806,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>TBD</p>\n@param nextToken TBD*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -22600,6 +22873,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the users exist.</p>\n@param organizationId The identifier for the organization under which the users exist.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -22739,6 +23013,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -22782,6 +23057,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Users",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The overview of users for an organization.</p>\n@param users The overview of users for an organization.*/",
         "setterMethodName" : "setUsers",
         "setterModel" : {
@@ -22847,6 +23123,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -22914,6 +23191,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -23017,6 +23295,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -23060,6 +23339,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Users",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The overview of users for an organization.</p>\n@param users The overview of users for an organization.*/",
           "setterMethodName" : "setUsers",
           "setterModel" : {
@@ -23239,6 +23519,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the member.</p>\n@param id The identifier of the member.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -23304,6 +23585,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the member.</p>\n@param name The name of the member.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -23369,6 +23651,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A member can be a user or group.</p>\n@param type A member can be a user or group.\n@see MemberType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -23434,6 +23717,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>\n@param state The state of the member, which can be ENABLED, DISABLED, or DELETED.\n@see EntityState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -23499,6 +23783,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EnabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date indicating when the member was enabled for Amazon WorkMail use.</p>\n@param enabledDate The date indicating when the member was enabled for Amazon WorkMail use.*/",
         "setterMethodName" : "setEnabledDate",
         "setterModel" : {
@@ -23564,6 +23849,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DisabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date indicating when the member was disabled from Amazon WorkMail use.</p>\n@param disabledDate The date indicating when the member was disabled from Amazon WorkMail use.*/",
         "setterMethodName" : "setDisabledDate",
         "setterModel" : {
@@ -23631,6 +23917,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DisabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date indicating when the member was disabled from Amazon WorkMail use.</p>\n@param disabledDate The date indicating when the member was disabled from Amazon WorkMail use.*/",
           "setterMethodName" : "setDisabledDate",
           "setterModel" : {
@@ -23697,6 +23984,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EnabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date indicating when the member was enabled for Amazon WorkMail use.</p>\n@param enabledDate The date indicating when the member was enabled for Amazon WorkMail use.*/",
           "setterMethodName" : "setEnabledDate",
           "setterModel" : {
@@ -23763,6 +24051,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the member.</p>\n@param id The identifier of the member.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -23829,6 +24118,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the member.</p>\n@param name The name of the member.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -23895,6 +24185,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>\n@param state The state of the member, which can be ENABLED, DISABLED, or DELETED.\n@see EntityState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -23961,6 +24252,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A member can be a user or group.</p>\n@param type A member can be a user or group.\n@see MemberType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -24223,6 +24515,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier associated with the organization.</p>\n@param organizationId The identifier associated with the organization.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -24288,6 +24581,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Alias",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The alias associated with the organization.</p>\n@param alias The alias associated with the organization.*/",
         "setterMethodName" : "setAlias",
         "setterModel" : {
@@ -24353,6 +24647,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>\n@param errorMessage The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
@@ -24418,6 +24713,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state associated with the organization.</p>\n@param state The state associated with the organization.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -24485,6 +24781,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Alias",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The alias associated with the organization.</p>\n@param alias The alias associated with the organization.*/",
           "setterMethodName" : "setAlias",
           "setterModel" : {
@@ -24551,6 +24848,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>\n@param errorMessage The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
@@ -24617,6 +24915,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier associated with the organization.</p>\n@param organizationId The identifier associated with the organization.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -24683,6 +24982,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state associated with the organization.</p>\n@param state The state associated with the organization.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -24788,6 +25088,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GranteeId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the entity (user or group) to which the permissions are granted.</p>\n@param granteeId The identifier of the entity (user or group) to which the permissions are granted.*/",
         "setterMethodName" : "setGranteeId",
         "setterModel" : {
@@ -24853,6 +25154,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GranteeType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of entity (user, group) of the entity referred to in GranteeId.</p>\n@param granteeType The type of entity (user, group) of the entity referred to in GranteeId.\n@see MemberType*/",
         "setterMethodName" : "setGranteeType",
         "setterModel" : {
@@ -24955,6 +25257,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see PermissionType*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -24998,6 +25301,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PermissionValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>\n@param permissionValues The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.\n@see PermissionType*/",
         "setterMethodName" : "setPermissionValues",
         "setterModel" : {
@@ -25065,6 +25369,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GranteeId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the entity (user or group) to which the permissions are granted.</p>\n@param granteeId The identifier of the entity (user or group) to which the permissions are granted.*/",
           "setterMethodName" : "setGranteeId",
           "setterModel" : {
@@ -25131,6 +25436,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GranteeType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of entity (user, group) of the entity referred to in GranteeId.</p>\n@param granteeType The type of entity (user, group) of the entity referred to in GranteeId.\n@see MemberType*/",
           "setterMethodName" : "setGranteeType",
           "setterModel" : {
@@ -25234,6 +25540,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see PermissionType*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -25277,6 +25584,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PermissionValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>\n@param permissionValues The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.\n@see PermissionType*/",
           "setterMethodName" : "setPermissionValues",
           "setterModel" : {
@@ -25438,6 +25746,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the organization under which the entity (user or group) exists.</p>\n@param organizationId The identifier of the organization under which the entity (user or group) exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -25503,6 +25812,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the entity (user or group) for which to update mailbox permissions.</p>\n@param entityId The identifier of the entity (user or group) for which to update mailbox permissions.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -25568,6 +25878,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GranteeId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the entity (user or group) to which to grant the permissions.</p>\n@param granteeId The identifier of the entity (user or group) to which to grant the permissions.*/",
         "setterMethodName" : "setGranteeId",
         "setterModel" : {
@@ -25670,6 +25981,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see PermissionType*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -25713,6 +26025,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PermissionValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>\n@param permissionValues The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.\n@see PermissionType*/",
         "setterMethodName" : "setPermissionValues",
         "setterModel" : {
@@ -25780,6 +26093,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the entity (user or group) for which to update mailbox permissions.</p>\n@param entityId The identifier of the entity (user or group) for which to update mailbox permissions.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -25846,6 +26160,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GranteeId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the entity (user or group) to which to grant the permissions.</p>\n@param granteeId The identifier of the entity (user or group) to which to grant the permissions.*/",
           "setterMethodName" : "setGranteeId",
           "setterModel" : {
@@ -25912,6 +26227,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the organization under which the entity (user or group) exists.</p>\n@param organizationId The identifier of the organization under which the entity (user or group) exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -26015,6 +26331,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see PermissionType*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -26058,6 +26375,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PermissionValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>\n@param permissionValues The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.\n@see PermissionType*/",
           "setterMethodName" : "setPermissionValues",
           "setterModel" : {
@@ -26207,6 +26525,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>\n@param organizationId The identifier for the organization under which the Amazon WorkMail entity exists.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -26272,6 +26591,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the entity to be updated.</p>\n@param entityId The identifier for the entity to be updated.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -26337,6 +26657,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Email",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email for the entity to be updated.</p>\n@param email The email for the entity to be updated.*/",
         "setterMethodName" : "setEmail",
         "setterModel" : {
@@ -26404,6 +26725,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Email",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email for the entity to be updated.</p>\n@param email The email for the entity to be updated.*/",
           "setterMethodName" : "setEmail",
           "setterModel" : {
@@ -26470,6 +26792,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the entity to be updated.</p>\n@param entityId The identifier for the entity to be updated.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -26536,6 +26859,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>\n@param organizationId The identifier for the organization under which the Amazon WorkMail entity exists.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -26722,6 +27046,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the organization that contains the user for which the password is reset.</p>\n@param organizationId The identifier of the organization that contains the user for which the password is reset.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -26787,6 +27112,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the user for whom the password is reset.</p>\n@param userId The identifier of the user for whom the password is reset.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -26852,6 +27178,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Password",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The new password for the user.</p>\n@param password The new password for the user.*/",
         "setterMethodName" : "setPassword",
         "setterModel" : {
@@ -26919,6 +27246,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the organization that contains the user for which the password is reset.</p>\n@param organizationId The identifier of the organization that contains the user for which the password is reset.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -26985,6 +27313,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Password",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The new password for the user.</p>\n@param password The new password for the user.*/",
           "setterMethodName" : "setPassword",
           "setterModel" : {
@@ -27051,6 +27380,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the user for whom the password is reset.</p>\n@param userId The identifier of the user for whom the password is reset.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -27193,6 +27523,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the resource.</p>\n@param id The identifier of the resource.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -27258,6 +27589,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Email",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email of the resource.</p>\n@param email The email of the resource.*/",
         "setterMethodName" : "setEmail",
         "setterModel" : {
@@ -27323,6 +27655,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource.</p>\n@param name The name of the resource.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -27388,6 +27721,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the resource: equipment or room.</p>\n@param type The type of the resource: equipment or room.\n@see ResourceType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -27453,6 +27787,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>\n@param state The state of the resource, which can be ENABLED, DISABLED, or DELETED.\n@see EntityState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -27518,6 +27853,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EnabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>\n@param enabledDate The date indicating when the resource was enabled for Amazon WorkMail use.*/",
         "setterMethodName" : "setEnabledDate",
         "setterModel" : {
@@ -27583,6 +27919,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DisabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>\n@param disabledDate The date indicating when the resource was disabled from Amazon WorkMail use.*/",
         "setterMethodName" : "setDisabledDate",
         "setterModel" : {
@@ -27650,6 +27987,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DisabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>\n@param disabledDate The date indicating when the resource was disabled from Amazon WorkMail use.*/",
           "setterMethodName" : "setDisabledDate",
           "setterModel" : {
@@ -27716,6 +28054,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Email",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email of the resource.</p>\n@param email The email of the resource.*/",
           "setterMethodName" : "setEmail",
           "setterModel" : {
@@ -27782,6 +28121,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EnabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>\n@param enabledDate The date indicating when the resource was enabled for Amazon WorkMail use.*/",
           "setterMethodName" : "setEnabledDate",
           "setterModel" : {
@@ -27848,6 +28188,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the resource.</p>\n@param id The identifier of the resource.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -27914,6 +28255,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource.</p>\n@param name The name of the resource.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -27980,6 +28322,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>\n@param state The state of the resource, which can be ENABLED, DISABLED, or DELETED.\n@see EntityState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -28046,6 +28389,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the resource: equipment or room.</p>\n@param type The type of the resource: equipment or room.\n@see ResourceType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -28241,6 +28585,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The organization that contains the entity to update.</p>\n@param organizationId The organization that contains the entity to update.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -28306,6 +28651,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The entity to update (user, group, or resource).</p>\n@param entityId The entity to update (user, group, or resource).*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
@@ -28371,6 +28717,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Email",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of the email to be updated as primary.</p>\n@param email The value of the email to be updated as primary.*/",
         "setterMethodName" : "setEmail",
         "setterModel" : {
@@ -28438,6 +28785,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Email",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of the email to be updated as primary.</p>\n@param email The value of the email to be updated as primary.*/",
           "setterMethodName" : "setEmail",
           "setterModel" : {
@@ -28504,6 +28852,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The entity to update (user, group, or resource).</p>\n@param entityId The entity to update (user, group, or resource).*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
@@ -28570,6 +28919,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The organization that contains the entity to update.</p>\n@param organizationId The organization that contains the entity to update.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -28719,6 +29069,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier associated with the organization for which the resource is updated.</p>\n@param organizationId The identifier associated with the organization for which the resource is updated.*/",
         "setterMethodName" : "setOrganizationId",
         "setterModel" : {
@@ -28784,6 +29135,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the resource to be updated.</p>\n@param resourceId The identifier of the resource to be updated.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -28849,6 +29201,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource to be updated.</p>\n@param name The name of the resource to be updated.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -28914,6 +29267,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "BookingOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource's booking options to be updated.</p>\n@param bookingOptions The resource's booking options to be updated.*/",
         "setterMethodName" : "setBookingOptions",
         "setterModel" : {
@@ -28981,6 +29335,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "BookingOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource's booking options to be updated.</p>\n@param bookingOptions The resource's booking options to be updated.*/",
           "setterMethodName" : "setBookingOptions",
           "setterModel" : {
@@ -29047,6 +29402,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource to be updated.</p>\n@param name The name of the resource to be updated.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -29113,6 +29469,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier associated with the organization for which the resource is updated.</p>\n@param organizationId The identifier associated with the organization for which the resource is updated.*/",
           "setterMethodName" : "setOrganizationId",
           "setterModel" : {
@@ -29179,6 +29536,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the resource to be updated.</p>\n@param resourceId The identifier of the resource to be updated.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -29321,6 +29679,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the user.</p>\n@param id The identifier of the user.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -29386,6 +29745,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Email",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email of the user.</p>\n@param email The email of the user.*/",
         "setterMethodName" : "setEmail",
         "setterModel" : {
@@ -29451,6 +29811,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the user.</p>\n@param name The name of the user.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -29516,6 +29877,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The display name of the user.</p>\n@param displayName The display name of the user.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -29581,6 +29943,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>\n@param state The state of the user, which can be ENABLED, DISABLED, or DELETED.\n@see EntityState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -29646,6 +30009,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The role of the user.</p>\n@param userRole The role of the user.\n@see UserRole*/",
         "setterMethodName" : "setUserRole",
         "setterModel" : {
@@ -29711,6 +30075,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EnabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date indicating when the user was enabled for Amazon WorkMail use.</p>\n@param enabledDate The date indicating when the user was enabled for Amazon WorkMail use.*/",
         "setterMethodName" : "setEnabledDate",
         "setterModel" : {
@@ -29776,6 +30141,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DisabledDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date indicating when the user was disabled from Amazon WorkMail use.</p>\n@param disabledDate The date indicating when the user was disabled from Amazon WorkMail use.*/",
         "setterMethodName" : "setDisabledDate",
         "setterModel" : {
@@ -29843,6 +30209,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DisabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date indicating when the user was disabled from Amazon WorkMail use.</p>\n@param disabledDate The date indicating when the user was disabled from Amazon WorkMail use.*/",
           "setterMethodName" : "setDisabledDate",
           "setterModel" : {
@@ -29909,6 +30276,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The display name of the user.</p>\n@param displayName The display name of the user.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -29975,6 +30343,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Email",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email of the user.</p>\n@param email The email of the user.*/",
           "setterMethodName" : "setEmail",
           "setterModel" : {
@@ -30041,6 +30410,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EnabledDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date indicating when the user was enabled for Amazon WorkMail use.</p>\n@param enabledDate The date indicating when the user was enabled for Amazon WorkMail use.*/",
           "setterMethodName" : "setEnabledDate",
           "setterModel" : {
@@ -30107,6 +30477,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the user.</p>\n@param id The identifier of the user.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -30173,6 +30544,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the user.</p>\n@param name The name of the user.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -30239,6 +30611,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>\n@param state The state of the user, which can be ENABLED, DISABLED, or DELETED.\n@see EntityState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -30305,6 +30678,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The role of the user.</p>\n@param userRole The role of the user.\n@see UserRole*/",
           "setterMethodName" : "setUserRole",
           "setterModel" : {

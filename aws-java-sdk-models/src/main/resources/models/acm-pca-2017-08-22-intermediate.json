@@ -979,6 +979,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Country",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Two-digit code that specifies the country in which the certificate subject located.</p>\n@param country Two-digit code that specifies the country in which the certificate subject located.*/",
         "setterMethodName" : "setCountry",
         "setterModel" : {
@@ -1044,6 +1045,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Organization",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Legal name of the organization with which the certificate subject is affiliated. </p>\n@param organization Legal name of the organization with which the certificate subject is affiliated.*/",
         "setterMethodName" : "setOrganization",
         "setterModel" : {
@@ -1109,6 +1111,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OrganizationalUnit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>\n@param organizationalUnit A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.*/",
         "setterMethodName" : "setOrganizationalUnit",
         "setterModel" : {
@@ -1174,6 +1177,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DistinguishedNameQualifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Disambiguating information for the certificate subject.</p>\n@param distinguishedNameQualifier Disambiguating information for the certificate subject.*/",
         "setterMethodName" : "setDistinguishedNameQualifier",
         "setterModel" : {
@@ -1239,6 +1243,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>State in which the subject of the certificate is located.</p>\n@param state State in which the subject of the certificate is located.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -1304,6 +1309,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CommonName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Fully qualified domain name (FQDN) associated with the certificate subject.</p>\n@param commonName Fully qualified domain name (FQDN) associated with the certificate subject.*/",
         "setterMethodName" : "setCommonName",
         "setterModel" : {
@@ -1369,6 +1375,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SerialNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The certificate serial number.</p>\n@param serialNumber The certificate serial number.*/",
         "setterMethodName" : "setSerialNumber",
         "setterModel" : {
@@ -1434,6 +1441,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Locality",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The locality (such as a city or town) in which the certificate subject is located.</p>\n@param locality The locality (such as a city or town) in which the certificate subject is located.*/",
         "setterMethodName" : "setLocality",
         "setterModel" : {
@@ -1499,6 +1507,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Title",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>\n@param title A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.*/",
         "setterMethodName" : "setTitle",
         "setterModel" : {
@@ -1564,6 +1573,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Surname",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>\n@param surname Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.*/",
         "setterMethodName" : "setSurname",
         "setterModel" : {
@@ -1629,6 +1639,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GivenName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>First name.</p>\n@param givenName First name.*/",
         "setterMethodName" : "setGivenName",
         "setterModel" : {
@@ -1694,6 +1705,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Initials",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>SurName</b>.</p>\n@param initials Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>SurName</b>.*/",
         "setterMethodName" : "setInitials",
         "setterModel" : {
@@ -1759,6 +1771,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Pseudonym",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>\n@param pseudonym Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.*/",
         "setterMethodName" : "setPseudonym",
         "setterModel" : {
@@ -1824,6 +1837,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GenerationQualifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>\n@param generationQualifier Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.*/",
         "setterMethodName" : "setGenerationQualifier",
         "setterModel" : {
@@ -1891,6 +1905,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CommonName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Fully qualified domain name (FQDN) associated with the certificate subject.</p>\n@param commonName Fully qualified domain name (FQDN) associated with the certificate subject.*/",
           "setterMethodName" : "setCommonName",
           "setterModel" : {
@@ -1957,6 +1972,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Country",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Two-digit code that specifies the country in which the certificate subject located.</p>\n@param country Two-digit code that specifies the country in which the certificate subject located.*/",
           "setterMethodName" : "setCountry",
           "setterModel" : {
@@ -2023,6 +2039,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DistinguishedNameQualifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Disambiguating information for the certificate subject.</p>\n@param distinguishedNameQualifier Disambiguating information for the certificate subject.*/",
           "setterMethodName" : "setDistinguishedNameQualifier",
           "setterModel" : {
@@ -2089,6 +2106,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GenerationQualifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>\n@param generationQualifier Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.*/",
           "setterMethodName" : "setGenerationQualifier",
           "setterModel" : {
@@ -2155,6 +2173,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GivenName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>First name.</p>\n@param givenName First name.*/",
           "setterMethodName" : "setGivenName",
           "setterModel" : {
@@ -2221,6 +2240,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Initials",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>SurName</b>.</p>\n@param initials Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>SurName</b>.*/",
           "setterMethodName" : "setInitials",
           "setterModel" : {
@@ -2287,6 +2307,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Locality",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The locality (such as a city or town) in which the certificate subject is located.</p>\n@param locality The locality (such as a city or town) in which the certificate subject is located.*/",
           "setterMethodName" : "setLocality",
           "setterModel" : {
@@ -2353,6 +2374,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Organization",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Legal name of the organization with which the certificate subject is affiliated. </p>\n@param organization Legal name of the organization with which the certificate subject is affiliated.*/",
           "setterMethodName" : "setOrganization",
           "setterModel" : {
@@ -2419,6 +2441,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OrganizationalUnit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>\n@param organizationalUnit A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.*/",
           "setterMethodName" : "setOrganizationalUnit",
           "setterModel" : {
@@ -2485,6 +2508,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Pseudonym",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>\n@param pseudonym Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.*/",
           "setterMethodName" : "setPseudonym",
           "setterModel" : {
@@ -2551,6 +2575,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SerialNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The certificate serial number.</p>\n@param serialNumber The certificate serial number.*/",
           "setterMethodName" : "setSerialNumber",
           "setterModel" : {
@@ -2617,6 +2642,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>State in which the subject of the certificate is located.</p>\n@param state State in which the subject of the certificate is located.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -2683,6 +2709,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Surname",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>\n@param surname Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.*/",
           "setterMethodName" : "setSurname",
           "setterModel" : {
@@ -2749,6 +2776,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Title",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>\n@param title A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.*/",
           "setterMethodName" : "setTitle",
           "setterModel" : {
@@ -2949,6 +2977,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>\n@param arn Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -3014,6 +3043,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date and time at which your private CA was created.</p>\n@param createdAt Date and time at which your private CA was created.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -3079,6 +3109,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastStateChangeAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date and time at which your private CA was last updated.</p>\n@param lastStateChangeAt Date and time at which your private CA was last updated.*/",
         "setterMethodName" : "setLastStateChangeAt",
         "setterModel" : {
@@ -3144,6 +3175,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Type of your private CA.</p>\n@param type Type of your private CA.\n@see CertificateAuthorityType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -3209,6 +3241,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Serial",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Serial number of your private CA.</p>\n@param serial Serial number of your private CA.*/",
         "setterMethodName" : "setSerial",
         "setterModel" : {
@@ -3274,6 +3307,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Status of your private CA.</p>\n@param status Status of your private CA.\n@see CertificateAuthorityStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -3339,6 +3373,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "NotBefore",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date and time before which your private CA certificate is not valid.</p>\n@param notBefore Date and time before which your private CA certificate is not valid.*/",
         "setterMethodName" : "setNotBefore",
         "setterModel" : {
@@ -3404,6 +3439,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "NotAfter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date and time after which your private CA certificate is not valid.</p>\n@param notAfter Date and time after which your private CA certificate is not valid.*/",
         "setterMethodName" : "setNotAfter",
         "setterModel" : {
@@ -3469,6 +3505,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FailureReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Reason the request to create your private CA failed.</p>\n@param failureReason Reason the request to create your private CA failed.\n@see FailureReason*/",
         "setterMethodName" : "setFailureReason",
         "setterModel" : {
@@ -3534,6 +3571,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CertificateAuthorityConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Your private CA configuration.</p>\n@param certificateAuthorityConfiguration Your private CA configuration.*/",
         "setterMethodName" : "setCertificateAuthorityConfiguration",
         "setterModel" : {
@@ -3599,6 +3637,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RevocationConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the certificate revocation list (CRL) created and maintained by your private CA. </p>\n@param revocationConfiguration Information about the certificate revocation list (CRL) created and maintained by your private CA.*/",
         "setterMethodName" : "setRevocationConfiguration",
         "setterModel" : {
@@ -3664,6 +3703,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "RestorableUntil",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation. </p>\n@param restorableUntil The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.*/",
         "setterMethodName" : "setRestorableUntil",
         "setterModel" : {
@@ -3731,6 +3771,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>\n@param arn Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -3797,6 +3838,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CertificateAuthorityConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Your private CA configuration.</p>\n@param certificateAuthorityConfiguration Your private CA configuration.*/",
           "setterMethodName" : "setCertificateAuthorityConfiguration",
           "setterModel" : {
@@ -3863,6 +3905,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date and time at which your private CA was created.</p>\n@param createdAt Date and time at which your private CA was created.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -3929,6 +3972,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FailureReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Reason the request to create your private CA failed.</p>\n@param failureReason Reason the request to create your private CA failed.\n@see FailureReason*/",
           "setterMethodName" : "setFailureReason",
           "setterModel" : {
@@ -3995,6 +4039,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastStateChangeAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date and time at which your private CA was last updated.</p>\n@param lastStateChangeAt Date and time at which your private CA was last updated.*/",
           "setterMethodName" : "setLastStateChangeAt",
           "setterModel" : {
@@ -4061,6 +4106,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "NotAfter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date and time after which your private CA certificate is not valid.</p>\n@param notAfter Date and time after which your private CA certificate is not valid.*/",
           "setterMethodName" : "setNotAfter",
           "setterModel" : {
@@ -4127,6 +4173,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "NotBefore",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date and time before which your private CA certificate is not valid.</p>\n@param notBefore Date and time before which your private CA certificate is not valid.*/",
           "setterMethodName" : "setNotBefore",
           "setterModel" : {
@@ -4193,6 +4240,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "RestorableUntil",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation. </p>\n@param restorableUntil The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.*/",
           "setterMethodName" : "setRestorableUntil",
           "setterModel" : {
@@ -4259,6 +4307,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RevocationConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the certificate revocation list (CRL) created and maintained by your private CA. </p>\n@param revocationConfiguration Information about the certificate revocation list (CRL) created and maintained by your private CA.*/",
           "setterMethodName" : "setRevocationConfiguration",
           "setterModel" : {
@@ -4325,6 +4374,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Serial",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Serial number of your private CA.</p>\n@param serial Serial number of your private CA.*/",
           "setterMethodName" : "setSerial",
           "setterModel" : {
@@ -4391,6 +4441,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Status of your private CA.</p>\n@param status Status of your private CA.\n@see CertificateAuthorityStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -4457,6 +4508,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Type of your private CA.</p>\n@param type Type of your private CA.\n@see CertificateAuthorityType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -4562,6 +4614,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyAlgorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a certificate.</p>\n@param keyAlgorithm Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a certificate.\n@see KeyAlgorithm*/",
         "setterMethodName" : "setKeyAlgorithm",
         "setterModel" : {
@@ -4627,6 +4680,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SigningAlgorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the algorithm your private CA uses to sign certificate requests.</p>\n@param signingAlgorithm Name of the algorithm your private CA uses to sign certificate requests.\n@see SigningAlgorithm*/",
         "setterMethodName" : "setSigningAlgorithm",
         "setterModel" : {
@@ -4692,6 +4746,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Subject",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Structure that contains X.500 distinguished name information for your private CA.</p>\n@param subject Structure that contains X.500 distinguished name information for your private CA.*/",
         "setterMethodName" : "setSubject",
         "setterModel" : {
@@ -4759,6 +4814,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyAlgorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a certificate.</p>\n@param keyAlgorithm Type of the public key algorithm and size, in bits, of the key pair that your key pair creates when it issues a certificate.\n@see KeyAlgorithm*/",
           "setterMethodName" : "setKeyAlgorithm",
           "setterModel" : {
@@ -4825,6 +4881,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SigningAlgorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the algorithm your private CA uses to sign certificate requests.</p>\n@param signingAlgorithm Name of the algorithm your private CA uses to sign certificate requests.\n@see SigningAlgorithm*/",
           "setterMethodName" : "setSigningAlgorithm",
           "setterModel" : {
@@ -4891,6 +4948,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Subject",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Structure that contains X.500 distinguished name information for your private CA.</p>\n@param subject Structure that contains X.500 distinguished name information for your private CA.*/",
           "setterMethodName" : "setSubject",
           "setterModel" : {
@@ -5181,6 +5239,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>\n@param certificateAuthorityArn Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -5246,6 +5305,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3BucketName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the S3 bucket that will contain the audit report.</p>\n@param s3BucketName Name of the S3 bucket that will contain the audit report.*/",
         "setterMethodName" : "setS3BucketName",
         "setterModel" : {
@@ -5311,6 +5371,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AuditReportResponseFormat",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>\n@param auditReportResponseFormat Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.\n@see AuditReportResponseFormat*/",
         "setterMethodName" : "setAuditReportResponseFormat",
         "setterModel" : {
@@ -5378,6 +5439,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AuditReportResponseFormat",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>\n@param auditReportResponseFormat Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.\n@see AuditReportResponseFormat*/",
           "setterMethodName" : "setAuditReportResponseFormat",
           "setterModel" : {
@@ -5444,6 +5506,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>\n@param certificateAuthorityArn Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -5510,6 +5573,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3BucketName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the S3 bucket that will contain the audit report.</p>\n@param s3BucketName Name of the S3 bucket that will contain the audit report.*/",
           "setterMethodName" : "setS3BucketName",
           "setterModel" : {
@@ -5612,6 +5676,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AuditReportId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An alphanumeric string that contains a report identifier.</p>\n@param auditReportId An alphanumeric string that contains a report identifier.*/",
         "setterMethodName" : "setAuditReportId",
         "setterModel" : {
@@ -5677,6 +5742,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>\n@param s3Key The <b>key</b> that uniquely identifies the report file in your S3 bucket.*/",
         "setterMethodName" : "setS3Key",
         "setterModel" : {
@@ -5744,6 +5810,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AuditReportId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An alphanumeric string that contains a report identifier.</p>\n@param auditReportId An alphanumeric string that contains a report identifier.*/",
           "setterMethodName" : "setAuditReportId",
           "setterModel" : {
@@ -5810,6 +5877,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>\n@param s3Key The <b>key</b> that uniquely identifies the report file in your S3 bucket.*/",
           "setterMethodName" : "setS3Key",
           "setterModel" : {
@@ -5922,6 +5990,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CertificateAuthorityConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>\n@param certificateAuthorityConfiguration Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.*/",
         "setterMethodName" : "setCertificateAuthorityConfiguration",
         "setterModel" : {
@@ -5987,6 +6056,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RevocationConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA will write the CRL, and an optional CNAME alias that you can use to hide the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For more information, see the <a>CrlConfiguration</a> structure. </p>\n@param revocationConfiguration Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA will write the CRL, and an optional CNAME alias that you can use to hide the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For more information, see the <a>CrlConfiguration</a> structure.*/",
         "setterMethodName" : "setRevocationConfiguration",
         "setterModel" : {
@@ -6052,6 +6122,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the certificate authority. Currently, this must be <b>SUBORDINATE</b>.</p>\n@param certificateAuthorityType The type of the certificate authority. Currently, this must be <b>SUBORDINATE</b>.\n@see CertificateAuthorityType*/",
         "setterMethodName" : "setCertificateAuthorityType",
         "setterModel" : {
@@ -6117,6 +6188,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdempotencyToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call, however, ACM PCA recognizes that you are requesting multiple certificates.</p>\n@param idempotencyToken Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call, however, ACM PCA recognizes that you are requesting multiple certificates.*/",
         "setterMethodName" : "setIdempotencyToken",
         "setterModel" : {
@@ -6184,6 +6256,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CertificateAuthorityConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>\n@param certificateAuthorityConfiguration Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.*/",
           "setterMethodName" : "setCertificateAuthorityConfiguration",
           "setterModel" : {
@@ -6250,6 +6323,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the certificate authority. Currently, this must be <b>SUBORDINATE</b>.</p>\n@param certificateAuthorityType The type of the certificate authority. Currently, this must be <b>SUBORDINATE</b>.\n@see CertificateAuthorityType*/",
           "setterMethodName" : "setCertificateAuthorityType",
           "setterModel" : {
@@ -6316,6 +6390,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdempotencyToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call, however, ACM PCA recognizes that you are requesting multiple certificates.</p>\n@param idempotencyToken Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call, however, ACM PCA recognizes that you are requesting multiple certificates.*/",
           "setterMethodName" : "setIdempotencyToken",
           "setterModel" : {
@@ -6382,6 +6457,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RevocationConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA will write the CRL, and an optional CNAME alias that you can use to hide the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For more information, see the <a>CrlConfiguration</a> structure. </p>\n@param revocationConfiguration Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA will write the CRL, and an optional CNAME alias that you can use to hide the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For more information, see the <a>CrlConfiguration</a> structure.*/",
           "setterMethodName" : "setRevocationConfiguration",
           "setterModel" : {
@@ -6484,6 +6560,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -6551,6 +6628,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -6656,6 +6734,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for an existing CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>\n@param enabled Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -6721,6 +6800,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ExpirationInDays",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of days until a certificate expires.</p>\n@param expirationInDays Number of days until a certificate expires.*/",
         "setterMethodName" : "setExpirationInDays",
         "setterModel" : {
@@ -6786,6 +6866,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CustomCname",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p>\n@param customCname Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.*/",
         "setterMethodName" : "setCustomCname",
         "setterModel" : {
@@ -6851,6 +6932,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3BucketName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must specify a bucket policy that allows ACM PCA to write the CRL to your bucket.</p>\n@param s3BucketName Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must specify a bucket policy that allows ACM PCA to write the CRL to your bucket.*/",
         "setterMethodName" : "setS3BucketName",
         "setterModel" : {
@@ -6918,6 +7000,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CustomCname",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p>\n@param customCname Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.*/",
           "setterMethodName" : "setCustomCname",
           "setterModel" : {
@@ -6984,6 +7067,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for an existing CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>\n@param enabled Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a>CreateCertificateAuthority</a> operation or for an existing CA when you call the <a>UpdateCertificateAuthority</a> operation.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
@@ -7050,6 +7134,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ExpirationInDays",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of days until a certificate expires.</p>\n@param expirationInDays Number of days until a certificate expires.*/",
           "setterMethodName" : "setExpirationInDays",
           "setterModel" : {
@@ -7116,6 +7201,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3BucketName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must specify a bucket policy that allows ACM PCA to write the CRL to your bucket.</p>\n@param s3BucketName Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must specify a bucket policy that allows ACM PCA to write the CRL to your bucket.*/",
           "setterMethodName" : "setS3BucketName",
           "setterModel" : {
@@ -7228,6 +7314,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must have the following form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must have the following form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -7293,6 +7380,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "PermanentDeletionTimeInDays",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>\n@param permanentDeletionTimeInDays The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.*/",
         "setterMethodName" : "setPermanentDeletionTimeInDays",
         "setterModel" : {
@@ -7360,6 +7448,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must have the following form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must have the following form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -7426,6 +7515,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "PermanentDeletionTimeInDays",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>\n@param permanentDeletionTimeInDays The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.*/",
           "setterMethodName" : "setPermanentDeletionTimeInDays",
           "setterModel" : {
@@ -7575,6 +7665,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -7640,6 +7731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AuditReportId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.</p>\n@param auditReportId The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.*/",
         "setterMethodName" : "setAuditReportId",
         "setterModel" : {
@@ -7707,6 +7799,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AuditReportId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.</p>\n@param auditReportId The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.*/",
           "setterMethodName" : "setAuditReportId",
           "setterModel" : {
@@ -7773,6 +7866,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -7875,6 +7969,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AuditReportStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>\n@param auditReportStatus Specifies whether report creation is in progress, has succeeded, or has failed.\n@see AuditReportStatus*/",
         "setterMethodName" : "setAuditReportStatus",
         "setterModel" : {
@@ -7940,6 +8035,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3BucketName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the S3 bucket that contains the report.</p>\n@param s3BucketName Name of the S3 bucket that contains the report.*/",
         "setterMethodName" : "setS3BucketName",
         "setterModel" : {
@@ -8005,6 +8101,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>\n@param s3Key S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.*/",
         "setterMethodName" : "setS3Key",
         "setterModel" : {
@@ -8070,6 +8167,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time at which the report was created.</p>\n@param createdAt The date and time at which the report was created.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -8137,6 +8235,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AuditReportStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>\n@param auditReportStatus Specifies whether report creation is in progress, has succeeded, or has failed.\n@see AuditReportStatus*/",
           "setterMethodName" : "setAuditReportStatus",
           "setterModel" : {
@@ -8203,6 +8302,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time at which the report was created.</p>\n@param createdAt The date and time at which the report was created.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -8269,6 +8369,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3BucketName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the S3 bucket that contains the report.</p>\n@param s3BucketName Name of the S3 bucket that contains the report.*/",
           "setterMethodName" : "setS3BucketName",
           "setterModel" : {
@@ -8335,6 +8436,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>\n@param s3Key S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.*/",
           "setterMethodName" : "setS3Key",
           "setterModel" : {
@@ -8447,6 +8549,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -8514,6 +8617,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -8616,6 +8720,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CertificateAuthority",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A <a>CertificateAuthority</a> structure that contains information about your private CA.</p>\n@param certificateAuthority A <a>CertificateAuthority</a> structure that contains information about your private CA.*/",
         "setterMethodName" : "setCertificateAuthority",
         "setterModel" : {
@@ -8683,6 +8788,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CertificateAuthority",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A <a>CertificateAuthority</a> structure that contains information about your private CA.</p>\n@param certificateAuthority A <a>CertificateAuthority</a> structure that contains information about your private CA.*/",
           "setterMethodName" : "setCertificateAuthority",
           "setterModel" : {
@@ -8844,6 +8950,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) of your private CA. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -8911,6 +9018,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) of your private CA. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -9013,6 +9121,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Certificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Base64-encoded certificate authority (CA) certificate.</p>\n@param certificate Base64-encoded certificate authority (CA) certificate.*/",
         "setterMethodName" : "setCertificate",
         "setterModel" : {
@@ -9078,6 +9187,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateChain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root on-premises certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. </p>\n@param certificateChain Base64-encoded certificate chain that includes any intermediate certificates and chains up to root on-premises certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate.*/",
         "setterMethodName" : "setCertificateChain",
         "setterModel" : {
@@ -9145,6 +9255,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Certificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Base64-encoded certificate authority (CA) certificate.</p>\n@param certificate Base64-encoded certificate authority (CA) certificate.*/",
           "setterMethodName" : "setCertificate",
           "setterModel" : {
@@ -9211,6 +9322,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateChain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root on-premises certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. </p>\n@param certificateChain Base64-encoded certificate chain that includes any intermediate certificates and chains up to root on-premises certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate.*/",
           "setterMethodName" : "setCertificateChain",
           "setterModel" : {
@@ -9323,6 +9435,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -9390,6 +9503,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -9492,6 +9606,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Csr",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>\n@param csr The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.*/",
         "setterMethodName" : "setCsr",
         "setterModel" : {
@@ -9559,6 +9674,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Csr",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>\n@param csr The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.*/",
           "setterMethodName" : "setCsr",
           "setterModel" : {
@@ -9671,6 +9787,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -9736,6 +9853,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>\n@param certificateArn The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -9803,6 +9921,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>\n@param certificateArn The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -9869,6 +9988,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -9971,6 +10091,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Certificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>\n@param certificate The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.*/",
         "setterMethodName" : "setCertificate",
         "setterModel" : {
@@ -10036,6 +10157,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateChain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to sign your private CA certificate. </p>\n@param certificateChain The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to sign your private CA certificate.*/",
         "setterMethodName" : "setCertificateChain",
         "setterModel" : {
@@ -10103,6 +10225,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Certificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>\n@param certificate The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.*/",
           "setterMethodName" : "setCertificate",
           "setterModel" : {
@@ -10169,6 +10292,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateChain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to sign your private CA certificate. </p>\n@param certificateChain The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to sign your private CA certificate.*/",
           "setterMethodName" : "setCertificateChain",
           "setterModel" : {
@@ -10281,6 +10405,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -10346,6 +10471,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Certificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificate The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.*/",
         "setterMethodName" : "setCertificate",
         "setterModel" : {
@@ -10411,6 +10537,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "CertificateChain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding. </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificateChain A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding.*/",
         "setterMethodName" : "setCertificateChain",
         "setterModel" : {
@@ -10478,6 +10605,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Certificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificate The PEM-encoded certificate for your private CA. This must be signed by using your on-premises CA.*/",
           "setterMethodName" : "setCertificate",
           "setterModel" : {
@@ -10544,6 +10672,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -10610,6 +10739,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "CertificateChain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding. </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificateChain A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding.*/",
           "setterMethodName" : "setCertificateChain",
           "setterModel" : {
@@ -10981,6 +11111,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -11046,6 +11177,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Csr",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The certificate signing request (CSR) for the certificate you want to issue. You can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p> <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p> <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param csr The certificate signing request (CSR) for the certificate you want to issue. You can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p> <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p> <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>*/",
         "setterMethodName" : "setCsr",
         "setterModel" : {
@@ -11111,6 +11243,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SigningAlgorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the algorithm that will be used to sign the certificate to be issued.</p>\n@param signingAlgorithm The name of the algorithm that will be used to sign the certificate to be issued.\n@see SigningAlgorithm*/",
         "setterMethodName" : "setSigningAlgorithm",
         "setterModel" : {
@@ -11176,6 +11309,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Validity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the validity period.</p>\n@param validity The type of the validity period.*/",
         "setterMethodName" : "setValidity",
         "setterModel" : {
@@ -11241,6 +11375,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdempotencyToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within 5 minutes, ACM PCA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.</p>\n@param idempotencyToken Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within 5 minutes, ACM PCA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.*/",
         "setterMethodName" : "setIdempotencyToken",
         "setterModel" : {
@@ -11308,6 +11443,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -11374,6 +11510,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Csr",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The certificate signing request (CSR) for the certificate you want to issue. You can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p> <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p> <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param csr The certificate signing request (CSR) for the certificate you want to issue. You can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p> <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>If you have a configuration file, you can use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p> <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>*/",
           "setterMethodName" : "setCsr",
           "setterModel" : {
@@ -11440,6 +11577,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdempotencyToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within 5 minutes, ACM PCA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.</p>\n@param idempotencyToken Custom string that can be used to distinguish between calls to the <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within 5 minutes, ACM PCA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.*/",
           "setterMethodName" : "setIdempotencyToken",
           "setterModel" : {
@@ -11506,6 +11644,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SigningAlgorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the algorithm that will be used to sign the certificate to be issued.</p>\n@param signingAlgorithm The name of the algorithm that will be used to sign the certificate to be issued.\n@see SigningAlgorithm*/",
           "setterMethodName" : "setSigningAlgorithm",
           "setterModel" : {
@@ -11572,6 +11711,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Validity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the validity period.</p>\n@param validity The type of the validity period.*/",
           "setterMethodName" : "setValidity",
           "setterModel" : {
@@ -11674,6 +11814,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>\n@param certificateArn The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -11741,6 +11882,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>\n@param certificateArn The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -11942,6 +12084,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>\n@param nextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12007,6 +12150,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>\n@param maxResults Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -12074,6 +12218,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>\n@param maxResults Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -12140,6 +12285,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>\n@param nextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12279,6 +12425,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12322,6 +12469,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CertificateAuthorities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Summary information about each certificate authority you have created.</p>\n@param certificateAuthorities Summary information about each certificate authority you have created.*/",
         "setterMethodName" : "setCertificateAuthorities",
         "setterModel" : {
@@ -12387,6 +12535,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>\n@param nextToken When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12491,6 +12640,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12534,6 +12684,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CertificateAuthorities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Summary information about each certificate authority you have created.</p>\n@param certificateAuthorities Summary information about each certificate authority you have created.*/",
           "setterMethodName" : "setCertificateAuthorities",
           "setterModel" : {
@@ -12600,6 +12751,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>\n@param nextToken When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12712,6 +12864,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -12777,6 +12930,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>\n@param nextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12842,6 +12996,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>\n@param maxResults Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -12909,6 +13064,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -12975,6 +13131,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>\n@param maxResults Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -13041,6 +13198,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>\n@param nextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13180,6 +13338,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13223,6 +13382,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags associated with your private CA.</p>\n@param tags The tags associated with your private CA.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -13288,6 +13448,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>\n@param nextToken When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13355,6 +13516,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>\n@param nextToken When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13458,6 +13620,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13501,6 +13664,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags associated with your private CA.</p>\n@param tags The tags associated with your private CA.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -13835,6 +13999,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -13902,6 +14067,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -14044,6 +14210,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CrlConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA.</p>\n@param crlConfiguration Configuration of the certificate revocation list (CRL), if any, maintained by your private CA.*/",
         "setterMethodName" : "setCrlConfiguration",
         "setterModel" : {
@@ -14111,6 +14278,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CrlConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA.</p>\n@param crlConfiguration Configuration of the certificate revocation list (CRL), if any, maintained by your private CA.*/",
           "setterMethodName" : "setCrlConfiguration",
           "setterModel" : {
@@ -14287,6 +14455,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -14352,6 +14521,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateSerial",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a>GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> operation retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p> <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also copy the serial number from the console or use the <a href=\"https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html\">DescribeCertificate</a> operation in the <i>AWS Certificate Manager API Reference</i>. </p>\n@param certificateSerial Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a>GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> operation retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p> <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also copy the serial number from the console or use the <a href=\"https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html\">DescribeCertificate</a> operation in the <i>AWS Certificate Manager API Reference</i>.*/",
         "setterMethodName" : "setCertificateSerial",
         "setterModel" : {
@@ -14417,6 +14587,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RevocationReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies why you revoked the certificate.</p>\n@param revocationReason Specifies why you revoked the certificate.\n@see RevocationReason*/",
         "setterMethodName" : "setRevocationReason",
         "setterModel" : {
@@ -14484,6 +14655,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -14550,6 +14722,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateSerial",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a>GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> operation retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p> <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also copy the serial number from the console or use the <a href=\"https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html\">DescribeCertificate</a> operation in the <i>AWS Certificate Manager API Reference</i>. </p>\n@param certificateSerial Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a>GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> operation retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p> <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also copy the serial number from the console or use the <a href=\"https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html\">DescribeCertificate</a> operation in the <i>AWS Certificate Manager API Reference</i>.*/",
           "setterMethodName" : "setCertificateSerial",
           "setterModel" : {
@@ -14616,6 +14789,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RevocationReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies why you revoked the certificate.</p>\n@param revocationReason Specifies why you revoked the certificate.\n@see RevocationReason*/",
           "setterMethodName" : "setRevocationReason",
           "setterModel" : {
@@ -14816,6 +14990,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Key (name) of the tag.</p>\n@param key Key (name) of the tag.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -14881,6 +15056,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value of the tag.</p>\n@param value Value of the tag.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -14948,6 +15124,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Key (name) of the tag.</p>\n@param key Key (name) of the tag.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -15014,6 +15191,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value of the tag.</p>\n@param value Value of the tag.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -15126,6 +15304,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -15228,6 +15407,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15271,6 +15451,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of tags to be associated with the CA.</p>\n@param tags List of tags to be associated with the CA.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -15338,6 +15519,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -15441,6 +15623,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15484,6 +15667,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of tags to be associated with the CA.</p>\n@param tags List of tags to be associated with the CA.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -15670,6 +15854,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -15772,6 +15957,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15815,6 +16001,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of tags to be removed from the CA.</p>\n@param tags List of tags to be removed from the CA.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -15882,6 +16069,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -15985,6 +16173,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16028,6 +16217,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of tags to be removed from the CA.</p>\n@param tags List of tags to be removed from the CA.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -16177,6 +16367,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -16242,6 +16433,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RevocationConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Revocation information for your private CA.</p>\n@param revocationConfiguration Revocation information for your private CA.*/",
         "setterMethodName" : "setRevocationConfiguration",
         "setterModel" : {
@@ -16307,6 +16499,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Status of your private CA.</p>\n@param status Status of your private CA.\n@see CertificateAuthorityStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -16374,6 +16567,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateAuthorityArn Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p> <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -16440,6 +16634,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RevocationConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Revocation information for your private CA.</p>\n@param revocationConfiguration Revocation information for your private CA.*/",
           "setterMethodName" : "setRevocationConfiguration",
           "setterModel" : {
@@ -16506,6 +16701,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Status of your private CA.</p>\n@param status Status of your private CA.\n@see CertificateAuthorityStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -16648,6 +16844,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Time period.</p>\n@param value Time period.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -16713,6 +16910,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether the <code>Value</code> parameter represents days, months, or years.</p>\n@param type Specifies whether the <code>Value</code> parameter represents days, months, or years.\n@see ValidityPeriodType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -16780,6 +16978,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether the <code>Value</code> parameter represents days, months, or years.</p>\n@param type Specifies whether the <code>Value</code> parameter represents days, months, or years.\n@see ValidityPeriodType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -16846,6 +17045,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Time period.</p>\n@param value Time period.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {

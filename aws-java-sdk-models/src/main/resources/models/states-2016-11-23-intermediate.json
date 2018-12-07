@@ -1011,6 +1011,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -1076,6 +1077,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -1143,6 +1145,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -1209,6 +1212,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -1351,6 +1355,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActivityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the activity.*/",
         "setterMethodName" : "setActivityArn",
         "setterModel" : {
@@ -1416,6 +1421,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -1481,6 +1487,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the activity is created.</p>\n@param creationDate The date the activity is created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -1548,6 +1555,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActivityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the activity.*/",
           "setterMethodName" : "setActivityArn",
           "setterModel" : {
@@ -1614,6 +1622,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the activity is created.</p>\n@param creationDate The date the activity is created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -1680,6 +1689,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1785,6 +1795,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -1850,6 +1861,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -1917,6 +1929,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -1983,6 +1996,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -2088,6 +2102,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the scheduled activity.</p>\n@param resource The Amazon Resource Name (ARN) of the scheduled activity.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -2153,6 +2168,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Input",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON data input to the activity task.</p>\n@param input The JSON data input to the activity task.*/",
         "setterMethodName" : "setInput",
         "setterModel" : {
@@ -2218,6 +2234,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "TimeoutInSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum allowed duration of the activity task.</p>\n@param timeoutInSeconds The maximum allowed duration of the activity task.*/",
         "setterMethodName" : "setTimeoutInSeconds",
         "setterModel" : {
@@ -2283,6 +2300,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "HeartbeatInSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum allowed duration between two heartbeats for the activity task.</p>\n@param heartbeatInSeconds The maximum allowed duration between two heartbeats for the activity task.*/",
         "setterMethodName" : "setHeartbeatInSeconds",
         "setterModel" : {
@@ -2350,6 +2368,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "HeartbeatInSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum allowed duration between two heartbeats for the activity task.</p>\n@param heartbeatInSeconds The maximum allowed duration between two heartbeats for the activity task.*/",
           "setterMethodName" : "setHeartbeatInSeconds",
           "setterModel" : {
@@ -2416,6 +2435,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Input",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON data input to the activity task.</p>\n@param input The JSON data input to the activity task.*/",
           "setterMethodName" : "setInput",
           "setterModel" : {
@@ -2482,6 +2502,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the scheduled activity.</p>\n@param resource The Amazon Resource Name (ARN) of the scheduled activity.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -2548,6 +2569,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "TimeoutInSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum allowed duration of the activity task.</p>\n@param timeoutInSeconds The maximum allowed duration of the activity task.*/",
           "setterMethodName" : "setTimeoutInSeconds",
           "setterModel" : {
@@ -2653,6 +2675,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WorkerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <a>GetActivityTask</a>.</p>\n@param workerName The name of the worker that the task is assigned to. These names are provided by the workers when calling <a>GetActivityTask</a>.*/",
         "setterMethodName" : "setWorkerName",
         "setterModel" : {
@@ -2720,6 +2743,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WorkerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <a>GetActivityTask</a>.</p>\n@param workerName The name of the worker that the task is assigned to. These names are provided by the workers when calling <a>GetActivityTask</a>.*/",
           "setterMethodName" : "setWorkerName",
           "setterModel" : {
@@ -2825,6 +2849,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Output",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON data output by the activity task.</p>\n@param output The JSON data output by the activity task.*/",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -2892,6 +2917,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Output",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON data output by the activity task.</p>\n@param output The JSON data output by the activity task.*/",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -2997,6 +3023,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -3062,6 +3089,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -3129,6 +3157,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -3195,6 +3224,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -3344,6 +3374,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3411,6 +3442,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3513,6 +3545,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActivityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the created activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the created activity.*/",
         "setterMethodName" : "setActivityArn",
         "setterModel" : {
@@ -3578,6 +3611,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the activity is created.</p>\n@param creationDate The date the activity is created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -3645,6 +3679,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActivityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the created activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the created activity.*/",
           "setterMethodName" : "setActivityArn",
           "setterModel" : {
@@ -3711,6 +3746,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the activity is created.</p>\n@param creationDate The date the activity is created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -3823,6 +3859,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the state machine. </p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3888,6 +3925,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Definition",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>\n@param definition The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.*/",
         "setterMethodName" : "setDefinition",
         "setterModel" : {
@@ -3953,6 +3991,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role to use for this state machine.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -4020,6 +4059,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Definition",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>\n@param definition The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.*/",
           "setterMethodName" : "setDefinition",
           "setterModel" : {
@@ -4086,6 +4126,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the state machine. </p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -4152,6 +4193,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role to use for this state machine.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -4254,6 +4296,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the created state machine.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -4319,6 +4362,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the state machine is created.</p>\n@param creationDate The date the state machine is created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -4386,6 +4430,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the state machine is created.</p>\n@param creationDate The date the state machine is created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -4452,6 +4497,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the created state machine.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -4564,6 +4610,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActivityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to delete.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to delete.*/",
         "setterMethodName" : "setActivityArn",
         "setterModel" : {
@@ -4631,6 +4678,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActivityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to delete.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to delete.*/",
           "setterMethodName" : "setActivityArn",
           "setterModel" : {
@@ -4780,6 +4828,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to delete.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to delete.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -4847,6 +4896,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to delete.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to delete.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -4996,6 +5046,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActivityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to describe.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to describe.*/",
         "setterMethodName" : "setActivityArn",
         "setterModel" : {
@@ -5063,6 +5114,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActivityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to describe.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to describe.*/",
           "setterMethodName" : "setActivityArn",
           "setterModel" : {
@@ -5165,6 +5217,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActivityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the activity.*/",
         "setterMethodName" : "setActivityArn",
         "setterModel" : {
@@ -5230,6 +5283,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5295,6 +5349,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the activity is created.</p>\n@param creationDate The date the activity is created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -5362,6 +5417,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActivityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the activity.*/",
           "setterMethodName" : "setActivityArn",
           "setterModel" : {
@@ -5428,6 +5484,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the activity is created.</p>\n@param creationDate The date the activity is created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -5494,6 +5551,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5606,6 +5664,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution to describe.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution to describe.*/",
         "setterMethodName" : "setExecutionArn",
         "setterModel" : {
@@ -5673,6 +5732,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution to describe.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution to describe.*/",
           "setterMethodName" : "setExecutionArn",
           "setterModel" : {
@@ -5775,6 +5835,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.*/",
         "setterMethodName" : "setExecutionArn",
         "setterModel" : {
@@ -5840,6 +5901,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the executed stated machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the executed stated machine.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -5905,6 +5967,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the execution.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the execution.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5970,6 +6033,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the execution.</p>\n@param status The current status of the execution.\n@see ExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -6035,6 +6099,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the execution is started.</p>\n@param startDate The date the execution is started.*/",
         "setterMethodName" : "setStartDate",
         "setterModel" : {
@@ -6100,6 +6165,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StopDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the execution has already ended, the date the execution stopped.</p>\n@param stopDate If the execution has already ended, the date the execution stopped.*/",
         "setterMethodName" : "setStopDate",
         "setterModel" : {
@@ -6165,6 +6231,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Input",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The string that contains the JSON input data of the execution.</p>\n@param input The string that contains the JSON input data of the execution.*/",
         "setterMethodName" : "setInput",
         "setterModel" : {
@@ -6230,6 +6297,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Output",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON output data of the execution.</p> <note> <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> </note>\n@param output The JSON output data of the execution.</p> <note> <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>*/",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -6297,6 +6365,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.*/",
           "setterMethodName" : "setExecutionArn",
           "setterModel" : {
@@ -6363,6 +6432,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Input",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The string that contains the JSON input data of the execution.</p>\n@param input The string that contains the JSON input data of the execution.*/",
           "setterMethodName" : "setInput",
           "setterModel" : {
@@ -6429,6 +6499,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the execution.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the execution.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -6495,6 +6566,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Output",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON output data of the execution.</p> <note> <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> </note>\n@param output The JSON output data of the execution.</p> <note> <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>*/",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -6561,6 +6633,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the execution is started.</p>\n@param startDate The date the execution is started.*/",
           "setterMethodName" : "setStartDate",
           "setterModel" : {
@@ -6627,6 +6700,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the executed stated machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the executed stated machine.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -6693,6 +6767,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the execution.</p>\n@param status The current status of the execution.\n@see ExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -6759,6 +6834,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StopDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the execution has already ended, the date the execution stopped.</p>\n@param stopDate If the execution has already ended, the date the execution stopped.*/",
           "setterMethodName" : "setStopDate",
           "setterModel" : {
@@ -6871,6 +6947,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution you want state machine information for.*/",
         "setterMethodName" : "setExecutionArn",
         "setterModel" : {
@@ -6938,6 +7015,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution you want state machine information for.*/",
           "setterMethodName" : "setExecutionArn",
           "setterModel" : {
@@ -7040,6 +7118,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine associated with the execution.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -7105,6 +7184,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the state machine associated with the execution.</p>\n@param name The name of the state machine associated with the execution.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -7170,6 +7250,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Definition",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>\n@param definition The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.*/",
         "setterMethodName" : "setDefinition",
         "setterModel" : {
@@ -7235,6 +7316,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -7300,6 +7382,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdateDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>\n@param updateDate The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.*/",
         "setterMethodName" : "setUpdateDate",
         "setterModel" : {
@@ -7367,6 +7450,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Definition",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>\n@param definition The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.*/",
           "setterMethodName" : "setDefinition",
           "setterModel" : {
@@ -7433,6 +7517,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the state machine associated with the execution.</p>\n@param name The name of the state machine associated with the execution.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -7499,6 +7584,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -7565,6 +7651,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine associated with the execution.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -7631,6 +7718,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdateDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>\n@param updateDate The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.*/",
           "setterMethodName" : "setUpdateDate",
           "setterModel" : {
@@ -7743,6 +7831,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to describe.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to describe.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -7810,6 +7899,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to describe.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to describe.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -7912,6 +8002,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the state machine.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -7977,6 +8068,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -8042,6 +8134,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the state machine.</p>\n@param status The current status of the state machine.\n@see StateMachineStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -8107,6 +8200,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Definition",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>\n@param definition The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.*/",
         "setterMethodName" : "setDefinition",
         "setterModel" : {
@@ -8172,6 +8266,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -8237,6 +8332,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the state machine is created.</p>\n@param creationDate The date the state machine is created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -8304,6 +8400,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the state machine is created.</p>\n@param creationDate The date the state machine is created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -8370,6 +8467,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Definition",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>\n@param definition The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.*/",
           "setterMethodName" : "setDefinition",
           "setterModel" : {
@@ -8436,6 +8534,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -8502,6 +8601,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -8568,6 +8668,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the state machine.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -8634,6 +8735,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the state machine.</p>\n@param status The current status of the state machine.\n@see StateMachineStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -8739,6 +8841,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -8804,6 +8907,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -8871,6 +8975,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -8937,6 +9042,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -9116,6 +9222,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -9181,6 +9288,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -9248,6 +9356,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -9314,6 +9423,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -9456,6 +9566,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.*/",
         "setterMethodName" : "setExecutionArn",
         "setterModel" : {
@@ -9521,6 +9632,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the executed state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the executed state machine.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -9586,6 +9698,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the execution.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the execution.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -9651,6 +9764,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the execution.</p>\n@param status The current status of the execution.\n@see ExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -9716,6 +9830,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the execution started.</p>\n@param startDate The date the execution started.*/",
         "setterMethodName" : "setStartDate",
         "setterModel" : {
@@ -9781,6 +9896,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StopDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the execution already ended, the date the execution stopped.</p>\n@param stopDate If the execution already ended, the date the execution stopped.*/",
         "setterMethodName" : "setStopDate",
         "setterModel" : {
@@ -9848,6 +9964,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.*/",
           "setterMethodName" : "setExecutionArn",
           "setterModel" : {
@@ -9914,6 +10031,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the execution.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the execution.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -9980,6 +10098,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the execution started.</p>\n@param startDate The date the execution started.*/",
           "setterMethodName" : "setStartDate",
           "setterModel" : {
@@ -10046,6 +10165,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the executed state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the executed state machine.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -10112,6 +10232,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the execution.</p>\n@param status The current status of the execution.\n@see ExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -10178,6 +10299,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StopDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the execution already ended, the date the execution stopped.</p>\n@param stopDate If the execution already ended, the date the execution stopped.*/",
           "setterMethodName" : "setStopDate",
           "setterModel" : {
@@ -10283,6 +10405,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Input",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON data input to the execution.</p>\n@param input The JSON data input to the execution.*/",
         "setterMethodName" : "setInput",
         "setterModel" : {
@@ -10348,6 +10471,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -10415,6 +10539,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Input",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON data input to the execution.</p>\n@param input The JSON data input to the execution.*/",
           "setterMethodName" : "setInput",
           "setterModel" : {
@@ -10481,6 +10606,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -10641,6 +10767,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Output",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON data output by the execution.</p>\n@param output The JSON data output by the execution.*/",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -10708,6 +10835,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Output",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON data output by the execution.</p>\n@param output The JSON data output by the execution.*/",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -10813,6 +10941,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -10878,6 +11007,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -10945,6 +11075,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -11011,6 +11142,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -11123,6 +11255,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActivityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <a>CreateActivity</a>.)</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <a>CreateActivity</a>.)*/",
         "setterMethodName" : "setActivityArn",
         "setterModel" : {
@@ -11188,6 +11321,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WorkerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>\n@param workerName You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.*/",
         "setterMethodName" : "setWorkerName",
         "setterModel" : {
@@ -11255,6 +11389,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActivityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <a>CreateActivity</a>.)</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <a>CreateActivity</a>.)*/",
           "setterMethodName" : "setActivityArn",
           "setterModel" : {
@@ -11321,6 +11456,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WorkerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>\n@param workerName You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.*/",
           "setterMethodName" : "setWorkerName",
           "setterModel" : {
@@ -11423,6 +11559,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TaskToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.</p>\n@param taskToken A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.*/",
         "setterMethodName" : "setTaskToken",
         "setterModel" : {
@@ -11488,6 +11625,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Input",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The string that contains the JSON input data for the task.</p>\n@param input The string that contains the JSON input data for the task.*/",
         "setterMethodName" : "setInput",
         "setterModel" : {
@@ -11555,6 +11693,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Input",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The string that contains the JSON input data for the task.</p>\n@param input The string that contains the JSON input data for the task.*/",
           "setterMethodName" : "setInput",
           "setterModel" : {
@@ -11621,6 +11760,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TaskToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.</p>\n@param taskToken A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.*/",
           "setterMethodName" : "setTaskToken",
           "setterModel" : {
@@ -11733,6 +11873,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution.*/",
         "setterMethodName" : "setExecutionArn",
         "setterModel" : {
@@ -11798,6 +11939,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11863,6 +12005,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReverseOrder",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Lists events in descending order of their <code>timeStamp</code>.</p>\n@param reverseOrder Lists events in descending order of their <code>timeStamp</code>.*/",
         "setterMethodName" : "setReverseOrder",
         "setterModel" : {
@@ -11928,6 +12071,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11995,6 +12139,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution.*/",
           "setterMethodName" : "setExecutionArn",
           "setterModel" : {
@@ -12061,6 +12206,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -12127,6 +12273,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12193,6 +12340,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReverseOrder",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Lists events in descending order of their <code>timeStamp</code>.</p>\n@param reverseOrder Lists events in descending order of their <code>timeStamp</code>.*/",
           "setterMethodName" : "setReverseOrder",
           "setterModel" : {
@@ -12332,6 +12480,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12375,6 +12524,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Events",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of events that occurred in the execution.</p>\n@param events The list of events that occurred in the execution.*/",
         "setterMethodName" : "setEvents",
         "setterModel" : {
@@ -12440,6 +12590,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12544,6 +12695,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12587,6 +12739,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Events",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of events that occurred in the execution.</p>\n@param events The list of events that occurred in the execution.*/",
           "setterMethodName" : "setEvents",
           "setterModel" : {
@@ -12653,6 +12806,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12758,6 +12912,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "Timestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time the event occurred.</p>\n@param timestamp The date and time the event occurred.*/",
         "setterMethodName" : "setTimestamp",
         "setterModel" : {
@@ -12823,6 +12978,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the event.</p>\n@param type The type of the event.\n@see HistoryEventType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -12888,6 +13044,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The id of the event. Events are numbered sequentially, starting at one.</p>\n@param id The id of the event. Events are numbered sequentially, starting at one.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -12953,6 +13110,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "PreviousEventId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The id of the previous event.</p>\n@param previousEventId The id of the previous event.*/",
         "setterMethodName" : "setPreviousEventId",
         "setterModel" : {
@@ -13018,6 +13176,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ActivityFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param activityFailedEventDetails */",
         "setterMethodName" : "setActivityFailedEventDetails",
         "setterModel" : {
@@ -13083,6 +13242,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ActivityScheduleFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains details about an activity schedule event that failed during an execution.</p>\n@param activityScheduleFailedEventDetails Contains details about an activity schedule event that failed during an execution.*/",
         "setterMethodName" : "setActivityScheduleFailedEventDetails",
         "setterModel" : {
@@ -13148,6 +13308,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ActivityScheduledEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param activityScheduledEventDetails */",
         "setterMethodName" : "setActivityScheduledEventDetails",
         "setterModel" : {
@@ -13213,6 +13374,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ActivityStartedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param activityStartedEventDetails */",
         "setterMethodName" : "setActivityStartedEventDetails",
         "setterModel" : {
@@ -13278,6 +13440,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ActivitySucceededEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param activitySucceededEventDetails */",
         "setterMethodName" : "setActivitySucceededEventDetails",
         "setterModel" : {
@@ -13343,6 +13506,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ActivityTimedOutEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param activityTimedOutEventDetails */",
         "setterMethodName" : "setActivityTimedOutEventDetails",
         "setterModel" : {
@@ -13408,6 +13572,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TaskFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param taskFailedEventDetails */",
         "setterMethodName" : "setTaskFailedEventDetails",
         "setterModel" : {
@@ -13473,6 +13638,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TaskScheduledEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param taskScheduledEventDetails */",
         "setterMethodName" : "setTaskScheduledEventDetails",
         "setterModel" : {
@@ -13538,6 +13704,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TaskStartFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param taskStartFailedEventDetails */",
         "setterMethodName" : "setTaskStartFailedEventDetails",
         "setterModel" : {
@@ -13603,6 +13770,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TaskStartedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param taskStartedEventDetails */",
         "setterMethodName" : "setTaskStartedEventDetails",
         "setterModel" : {
@@ -13668,6 +13836,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TaskSubmitFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param taskSubmitFailedEventDetails */",
         "setterMethodName" : "setTaskSubmitFailedEventDetails",
         "setterModel" : {
@@ -13733,6 +13902,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TaskSubmittedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param taskSubmittedEventDetails */",
         "setterMethodName" : "setTaskSubmittedEventDetails",
         "setterModel" : {
@@ -13798,6 +13968,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TaskSucceededEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param taskSucceededEventDetails */",
         "setterMethodName" : "setTaskSucceededEventDetails",
         "setterModel" : {
@@ -13863,6 +14034,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TaskTimedOutEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param taskTimedOutEventDetails */",
         "setterMethodName" : "setTaskTimedOutEventDetails",
         "setterModel" : {
@@ -13928,6 +14100,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ExecutionFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param executionFailedEventDetails */",
         "setterMethodName" : "setExecutionFailedEventDetails",
         "setterModel" : {
@@ -13993,6 +14166,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ExecutionStartedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param executionStartedEventDetails */",
         "setterMethodName" : "setExecutionStartedEventDetails",
         "setterModel" : {
@@ -14058,6 +14232,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ExecutionSucceededEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param executionSucceededEventDetails */",
         "setterMethodName" : "setExecutionSucceededEventDetails",
         "setterModel" : {
@@ -14123,6 +14298,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ExecutionAbortedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param executionAbortedEventDetails */",
         "setterMethodName" : "setExecutionAbortedEventDetails",
         "setterModel" : {
@@ -14188,6 +14364,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ExecutionTimedOutEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param executionTimedOutEventDetails */",
         "setterMethodName" : "setExecutionTimedOutEventDetails",
         "setterModel" : {
@@ -14253,6 +14430,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LambdaFunctionFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param lambdaFunctionFailedEventDetails */",
         "setterMethodName" : "setLambdaFunctionFailedEventDetails",
         "setterModel" : {
@@ -14318,6 +14496,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LambdaFunctionScheduleFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param lambdaFunctionScheduleFailedEventDetails */",
         "setterMethodName" : "setLambdaFunctionScheduleFailedEventDetails",
         "setterModel" : {
@@ -14383,6 +14562,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LambdaFunctionScheduledEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param lambdaFunctionScheduledEventDetails */",
         "setterMethodName" : "setLambdaFunctionScheduledEventDetails",
         "setterModel" : {
@@ -14448,6 +14628,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LambdaFunctionStartFailedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains details about a lambda function that failed to start during an execution.</p>\n@param lambdaFunctionStartFailedEventDetails Contains details about a lambda function that failed to start during an execution.*/",
         "setterMethodName" : "setLambdaFunctionStartFailedEventDetails",
         "setterModel" : {
@@ -14513,6 +14694,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LambdaFunctionSucceededEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains details about a lambda function that terminated successfully during an execution.</p>\n@param lambdaFunctionSucceededEventDetails Contains details about a lambda function that terminated successfully during an execution.*/",
         "setterMethodName" : "setLambdaFunctionSucceededEventDetails",
         "setterModel" : {
@@ -14578,6 +14760,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LambdaFunctionTimedOutEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param lambdaFunctionTimedOutEventDetails */",
         "setterMethodName" : "setLambdaFunctionTimedOutEventDetails",
         "setterModel" : {
@@ -14643,6 +14826,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StateEnteredEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param stateEnteredEventDetails */",
         "setterMethodName" : "setStateEnteredEventDetails",
         "setterModel" : {
@@ -14708,6 +14892,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StateExitedEventDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param stateExitedEventDetails */",
         "setterMethodName" : "setStateExitedEventDetails",
         "setterModel" : {
@@ -14775,6 +14960,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ActivityFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param activityFailedEventDetails */",
           "setterMethodName" : "setActivityFailedEventDetails",
           "setterModel" : {
@@ -14841,6 +15027,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ActivityScheduleFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains details about an activity schedule event that failed during an execution.</p>\n@param activityScheduleFailedEventDetails Contains details about an activity schedule event that failed during an execution.*/",
           "setterMethodName" : "setActivityScheduleFailedEventDetails",
           "setterModel" : {
@@ -14907,6 +15094,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ActivityScheduledEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param activityScheduledEventDetails */",
           "setterMethodName" : "setActivityScheduledEventDetails",
           "setterModel" : {
@@ -14973,6 +15161,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ActivityStartedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param activityStartedEventDetails */",
           "setterMethodName" : "setActivityStartedEventDetails",
           "setterModel" : {
@@ -15039,6 +15228,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ActivitySucceededEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param activitySucceededEventDetails */",
           "setterMethodName" : "setActivitySucceededEventDetails",
           "setterModel" : {
@@ -15105,6 +15295,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ActivityTimedOutEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param activityTimedOutEventDetails */",
           "setterMethodName" : "setActivityTimedOutEventDetails",
           "setterModel" : {
@@ -15171,6 +15362,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ExecutionAbortedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param executionAbortedEventDetails */",
           "setterMethodName" : "setExecutionAbortedEventDetails",
           "setterModel" : {
@@ -15237,6 +15429,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ExecutionFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param executionFailedEventDetails */",
           "setterMethodName" : "setExecutionFailedEventDetails",
           "setterModel" : {
@@ -15303,6 +15496,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ExecutionStartedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param executionStartedEventDetails */",
           "setterMethodName" : "setExecutionStartedEventDetails",
           "setterModel" : {
@@ -15369,6 +15563,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ExecutionSucceededEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param executionSucceededEventDetails */",
           "setterMethodName" : "setExecutionSucceededEventDetails",
           "setterModel" : {
@@ -15435,6 +15630,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ExecutionTimedOutEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param executionTimedOutEventDetails */",
           "setterMethodName" : "setExecutionTimedOutEventDetails",
           "setterModel" : {
@@ -15501,6 +15697,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The id of the event. Events are numbered sequentially, starting at one.</p>\n@param id The id of the event. Events are numbered sequentially, starting at one.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -15567,6 +15764,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LambdaFunctionFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param lambdaFunctionFailedEventDetails */",
           "setterMethodName" : "setLambdaFunctionFailedEventDetails",
           "setterModel" : {
@@ -15633,6 +15831,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LambdaFunctionScheduleFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param lambdaFunctionScheduleFailedEventDetails */",
           "setterMethodName" : "setLambdaFunctionScheduleFailedEventDetails",
           "setterModel" : {
@@ -15699,6 +15898,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LambdaFunctionScheduledEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param lambdaFunctionScheduledEventDetails */",
           "setterMethodName" : "setLambdaFunctionScheduledEventDetails",
           "setterModel" : {
@@ -15765,6 +15965,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LambdaFunctionStartFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains details about a lambda function that failed to start during an execution.</p>\n@param lambdaFunctionStartFailedEventDetails Contains details about a lambda function that failed to start during an execution.*/",
           "setterMethodName" : "setLambdaFunctionStartFailedEventDetails",
           "setterModel" : {
@@ -15831,6 +16032,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LambdaFunctionSucceededEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains details about a lambda function that terminated successfully during an execution.</p>\n@param lambdaFunctionSucceededEventDetails Contains details about a lambda function that terminated successfully during an execution.*/",
           "setterMethodName" : "setLambdaFunctionSucceededEventDetails",
           "setterModel" : {
@@ -15897,6 +16099,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LambdaFunctionTimedOutEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param lambdaFunctionTimedOutEventDetails */",
           "setterMethodName" : "setLambdaFunctionTimedOutEventDetails",
           "setterModel" : {
@@ -15963,6 +16166,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "PreviousEventId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The id of the previous event.</p>\n@param previousEventId The id of the previous event.*/",
           "setterMethodName" : "setPreviousEventId",
           "setterModel" : {
@@ -16029,6 +16233,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StateEnteredEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param stateEnteredEventDetails */",
           "setterMethodName" : "setStateEnteredEventDetails",
           "setterModel" : {
@@ -16095,6 +16300,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StateExitedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param stateExitedEventDetails */",
           "setterMethodName" : "setStateExitedEventDetails",
           "setterModel" : {
@@ -16161,6 +16367,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TaskFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param taskFailedEventDetails */",
           "setterMethodName" : "setTaskFailedEventDetails",
           "setterModel" : {
@@ -16227,6 +16434,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TaskScheduledEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param taskScheduledEventDetails */",
           "setterMethodName" : "setTaskScheduledEventDetails",
           "setterModel" : {
@@ -16293,6 +16501,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TaskStartFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param taskStartFailedEventDetails */",
           "setterMethodName" : "setTaskStartFailedEventDetails",
           "setterModel" : {
@@ -16359,6 +16568,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TaskStartedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param taskStartedEventDetails */",
           "setterMethodName" : "setTaskStartedEventDetails",
           "setterModel" : {
@@ -16425,6 +16635,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TaskSubmitFailedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param taskSubmitFailedEventDetails */",
           "setterMethodName" : "setTaskSubmitFailedEventDetails",
           "setterModel" : {
@@ -16491,6 +16702,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TaskSubmittedEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param taskSubmittedEventDetails */",
           "setterMethodName" : "setTaskSubmittedEventDetails",
           "setterModel" : {
@@ -16557,6 +16769,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TaskSucceededEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param taskSucceededEventDetails */",
           "setterMethodName" : "setTaskSucceededEventDetails",
           "setterModel" : {
@@ -16623,6 +16836,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TaskTimedOutEventDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param taskTimedOutEventDetails */",
           "setterMethodName" : "setTaskTimedOutEventDetails",
           "setterModel" : {
@@ -16689,6 +16903,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "Timestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time the event occurred.</p>\n@param timestamp The date and time the event occurred.*/",
           "setterMethodName" : "setTimestamp",
           "setterModel" : {
@@ -16755,6 +16970,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the event.</p>\n@param type The type of the event.\n@see HistoryEventType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -17257,6 +17473,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -17322,6 +17539,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -17389,6 +17607,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -17455,6 +17674,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -17560,6 +17780,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -17625,6 +17846,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -17692,6 +17914,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -17758,6 +17981,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -17863,6 +18087,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>\n@param resource The Amazon Resource Name (ARN) of the scheduled lambda function.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -17928,6 +18153,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Input",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON data input to the lambda function.</p>\n@param input The JSON data input to the lambda function.*/",
         "setterMethodName" : "setInput",
         "setterModel" : {
@@ -17993,6 +18219,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "TimeoutInSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum allowed duration of the lambda function.</p>\n@param timeoutInSeconds The maximum allowed duration of the lambda function.*/",
         "setterMethodName" : "setTimeoutInSeconds",
         "setterModel" : {
@@ -18060,6 +18287,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Input",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON data input to the lambda function.</p>\n@param input The JSON data input to the lambda function.*/",
           "setterMethodName" : "setInput",
           "setterModel" : {
@@ -18126,6 +18354,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>\n@param resource The Amazon Resource Name (ARN) of the scheduled lambda function.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -18192,6 +18421,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "TimeoutInSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum allowed duration of the lambda function.</p>\n@param timeoutInSeconds The maximum allowed duration of the lambda function.*/",
           "setterMethodName" : "setTimeoutInSeconds",
           "setterModel" : {
@@ -18297,6 +18527,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -18362,6 +18593,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -18429,6 +18661,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -18495,6 +18728,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -18600,6 +18834,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Output",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON data output by the lambda function.</p>\n@param output The JSON data output by the lambda function.*/",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -18667,6 +18902,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Output",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON data output by the lambda function.</p>\n@param output The JSON data output by the lambda function.*/",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -18772,6 +19008,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -18837,6 +19074,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -18904,6 +19142,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -18970,6 +19209,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -19082,6 +19322,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -19147,6 +19388,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -19214,6 +19456,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -19280,6 +19523,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -19419,6 +19663,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -19462,6 +19707,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Activities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of activities.</p>\n@param activities The list of activities.*/",
         "setterMethodName" : "setActivities",
         "setterModel" : {
@@ -19527,6 +19773,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -19631,6 +19878,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -19674,6 +19922,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Activities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of activities.</p>\n@param activities The list of activities.*/",
           "setterMethodName" : "setActivities",
           "setterModel" : {
@@ -19740,6 +19989,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -19852,6 +20102,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine whose executions is listed.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -19917,6 +20168,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusFilter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If specified, only list the executions whose current execution status matches the given filter.</p>\n@param statusFilter If specified, only list the executions whose current execution status matches the given filter.\n@see ExecutionStatus*/",
         "setterMethodName" : "setStatusFilter",
         "setterModel" : {
@@ -19982,6 +20234,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -20047,6 +20300,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -20114,6 +20368,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -20180,6 +20435,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -20246,6 +20502,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine whose executions is listed.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -20312,6 +20569,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusFilter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If specified, only list the executions whose current execution status matches the given filter.</p>\n@param statusFilter If specified, only list the executions whose current execution status matches the given filter.\n@see ExecutionStatus*/",
           "setterMethodName" : "setStatusFilter",
           "setterModel" : {
@@ -20451,6 +20709,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20494,6 +20753,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Executions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of matching executions.</p>\n@param executions The list of matching executions.*/",
         "setterMethodName" : "setExecutions",
         "setterModel" : {
@@ -20559,6 +20819,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -20663,6 +20924,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20706,6 +20968,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Executions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of matching executions.</p>\n@param executions The list of matching executions.*/",
           "setterMethodName" : "setExecutions",
           "setterModel" : {
@@ -20772,6 +21035,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -20884,6 +21148,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -20949,6 +21214,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -21016,6 +21282,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -21082,6 +21349,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -21221,6 +21489,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -21264,6 +21533,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "StateMachines",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param stateMachines */",
         "setterMethodName" : "setStateMachines",
         "setterModel" : {
@@ -21329,6 +21599,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -21396,6 +21667,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>\n@param nextToken If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -21499,6 +21771,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -21542,6 +21815,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "StateMachines",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param stateMachines */",
           "setterMethodName" : "setStateMachines",
           "setterModel" : {
@@ -21691,6 +21965,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TaskToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).*/",
         "setterMethodName" : "setTaskToken",
         "setterModel" : {
@@ -21756,6 +22031,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -21821,6 +22097,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -21888,6 +22165,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -21954,6 +22232,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -22020,6 +22299,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TaskToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).*/",
           "setterMethodName" : "setTaskToken",
           "setterModel" : {
@@ -22169,6 +22449,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TaskToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).*/",
         "setterMethodName" : "setTaskToken",
         "setterModel" : {
@@ -22236,6 +22517,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TaskToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).*/",
           "setterMethodName" : "setTaskToken",
           "setterModel" : {
@@ -22385,6 +22667,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TaskToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).*/",
         "setterMethodName" : "setTaskToken",
         "setterModel" : {
@@ -22450,6 +22733,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Output",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON output of the task.</p>\n@param output The JSON output of the task.*/",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -22517,6 +22801,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Output",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON output of the task.</p>\n@param output The JSON output of the task.*/",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -22583,6 +22868,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TaskToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).*/",
           "setterMethodName" : "setTaskToken",
           "setterModel" : {
@@ -22732,6 +23018,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to execute.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to execute.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -22797,6 +23084,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the execution. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the execution. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -22862,6 +23150,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Input",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The string that contains the JSON input data for the execution, for example:</p> <p> <code>\"input\": \"{\\\"first_name\\\" : \\\"test\\\"}\"</code> </p> <note> <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>\"input\": \"{}\"</code> </p> </note>\n@param input The string that contains the JSON input data for the execution, for example:</p> <p> <code>\"input\": \"{\\\"first_name\\\" : \\\"test\\\"}\"</code> </p> <note> <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>\"input\": \"{}\"</code> </p>*/",
         "setterMethodName" : "setInput",
         "setterModel" : {
@@ -22929,6 +23218,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Input",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The string that contains the JSON input data for the execution, for example:</p> <p> <code>\"input\": \"{\\\"first_name\\\" : \\\"test\\\"}\"</code> </p> <note> <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>\"input\": \"{}\"</code> </p> </note>\n@param input The string that contains the JSON input data for the execution, for example:</p> <p> <code>\"input\": \"{\\\"first_name\\\" : \\\"test\\\"}\"</code> </p> <note> <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>\"input\": \"{}\"</code> </p>*/",
           "setterMethodName" : "setInput",
           "setterModel" : {
@@ -22995,6 +23285,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the execution. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the execution. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -23061,6 +23352,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to execute.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to execute.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -23163,6 +23455,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.*/",
         "setterMethodName" : "setExecutionArn",
         "setterModel" : {
@@ -23228,6 +23521,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the execution is started.</p>\n@param startDate The date the execution is started.*/",
         "setterMethodName" : "setStartDate",
         "setterModel" : {
@@ -23295,6 +23589,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.*/",
           "setterMethodName" : "setExecutionArn",
           "setterModel" : {
@@ -23361,6 +23656,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the execution is started.</p>\n@param startDate The date the execution is started.*/",
           "setterMethodName" : "setStartDate",
           "setterModel" : {
@@ -23466,6 +23762,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the state.</p>\n@param name The name of the state.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -23531,6 +23828,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Input",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The string that contains the JSON input data for the state.</p>\n@param input The string that contains the JSON input data for the state.*/",
         "setterMethodName" : "setInput",
         "setterModel" : {
@@ -23598,6 +23896,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Input",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The string that contains the JSON input data for the state.</p>\n@param input The string that contains the JSON input data for the state.*/",
           "setterMethodName" : "setInput",
           "setterModel" : {
@@ -23664,6 +23963,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the state.</p>\n@param name The name of the state.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -23769,6 +24069,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -23834,6 +24135,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Output",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON output data of the state.</p>\n@param output The JSON output data of the state.*/",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -23901,6 +24203,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -23967,6 +24270,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Output",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON output data of the state.</p>\n@param output The JSON output data of the state.*/",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -24220,6 +24524,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the state machine.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -24285,6 +24590,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -24350,6 +24656,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the state machine is created.</p>\n@param creationDate The date the state machine is created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -24417,6 +24724,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the state machine is created.</p>\n@param creationDate The date the state machine is created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -24483,6 +24791,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>\n@param name The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -24549,6 +24858,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the state machine.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -24707,6 +25017,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution to stop.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution to stop.*/",
         "setterMethodName" : "setExecutionArn",
         "setterModel" : {
@@ -24772,6 +25083,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -24837,6 +25149,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -24904,6 +25217,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -24970,6 +25284,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -25036,6 +25351,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution to stop.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution to stop.*/",
           "setterMethodName" : "setExecutionArn",
           "setterModel" : {
@@ -25138,6 +25454,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StopDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the execution is stopped.</p>\n@param stopDate The date the execution is stopped.*/",
         "setterMethodName" : "setStopDate",
         "setterModel" : {
@@ -25205,6 +25522,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StopDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the execution is stopped.</p>\n@param stopDate The date the execution is stopped.*/",
           "setterMethodName" : "setStopDate",
           "setterModel" : {
@@ -25347,6 +25665,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -25412,6 +25731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -25477,6 +25797,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -25542,6 +25863,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -25609,6 +25931,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -25675,6 +25998,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -25741,6 +26065,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -25807,6 +26132,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -25912,6 +26238,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -25977,6 +26304,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -26042,6 +26370,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Region",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param region */",
         "setterMethodName" : "setRegion",
         "setterModel" : {
@@ -26107,6 +26436,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Parameters",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The JSON data passed to the connected service referenced in a task state.</p>\n@param parameters The JSON data passed to the connected service referenced in a task state.*/",
         "setterMethodName" : "setParameters",
         "setterModel" : {
@@ -26172,6 +26502,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "TimeoutInSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum allowed duration of the task.</p>\n@param timeoutInSeconds The maximum allowed duration of the task.*/",
         "setterMethodName" : "setTimeoutInSeconds",
         "setterModel" : {
@@ -26239,6 +26570,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Parameters",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The JSON data passed to the connected service referenced in a task state.</p>\n@param parameters The JSON data passed to the connected service referenced in a task state.*/",
           "setterMethodName" : "setParameters",
           "setterModel" : {
@@ -26305,6 +26637,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Region",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param region */",
           "setterMethodName" : "setRegion",
           "setterModel" : {
@@ -26371,6 +26704,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -26437,6 +26771,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -26503,6 +26838,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "TimeoutInSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum allowed duration of the task.</p>\n@param timeoutInSeconds The maximum allowed duration of the task.*/",
           "setterMethodName" : "setTimeoutInSeconds",
           "setterModel" : {
@@ -26608,6 +26944,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -26673,6 +27010,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -26738,6 +27076,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -26803,6 +27142,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -26870,6 +27210,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -26936,6 +27277,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -27002,6 +27344,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -27068,6 +27411,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -27173,6 +27517,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -27238,6 +27583,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -27305,6 +27651,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -27371,6 +27718,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -27476,6 +27824,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -27541,6 +27890,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -27606,6 +27956,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -27671,6 +28022,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -27738,6 +28090,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -27804,6 +28157,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -27870,6 +28224,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -27936,6 +28291,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -28041,6 +28397,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -28106,6 +28463,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -28171,6 +28529,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Output",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The response from a connected service when a task has started.</p>\n@param output The response from a connected service when a task has started.*/",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -28238,6 +28597,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Output",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The response from a connected service when a task has started.</p>\n@param output The response from a connected service when a task has started.*/",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -28304,6 +28664,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -28370,6 +28731,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -28475,6 +28837,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -28540,6 +28903,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -28605,6 +28969,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Output",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The full JSON response from a connected service when a task has succeeded. This response becomes the output of the related task.</p>\n@param output The full JSON response from a connected service when a task has succeeded. This response becomes the output of the related task.*/",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -28672,6 +29037,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Output",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The full JSON response from a connected service when a task has succeeded. This response becomes the output of the related task.</p>\n@param output The full JSON response from a connected service when a task has succeeded. This response becomes the output of the related task.*/",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -28738,6 +29104,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -28804,6 +29171,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -28909,6 +29277,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -28974,6 +29343,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -29039,6 +29409,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Error",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
         "setterMethodName" : "setError",
         "setterModel" : {
@@ -29104,6 +29475,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Cause",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
         "setterMethodName" : "setCause",
         "setterModel" : {
@@ -29171,6 +29543,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Cause",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.*/",
           "setterMethodName" : "setCause",
           "setterModel" : {
@@ -29237,6 +29610,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Error",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.*/",
           "setterMethodName" : "setError",
           "setterModel" : {
@@ -29303,6 +29677,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service name of the connected service in a task state.</p>\n@param resource The service name of the connected service in a task state.*/",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -29369,6 +29744,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action of the connected service called by a task state.</p>\n@param resourceType The action of the connected service called by a task state.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -29518,6 +29894,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMachineArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine.*/",
         "setterMethodName" : "setStateMachineArn",
         "setterModel" : {
@@ -29583,6 +29960,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Definition",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>\n@param definition The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.*/",
         "setterMethodName" : "setDefinition",
         "setterModel" : {
@@ -29648,6 +30026,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role of the state machine.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -29715,6 +30094,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Definition",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>\n@param definition The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.*/",
           "setterMethodName" : "setDefinition",
           "setterModel" : {
@@ -29781,6 +30161,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role of the state machine.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -29847,6 +30228,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMachineArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine.*/",
           "setterMethodName" : "setStateMachineArn",
           "setterModel" : {
@@ -29949,6 +30331,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdateDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time the state machine was updated.</p>\n@param updateDate The date and time the state machine was updated.*/",
         "setterMethodName" : "setUpdateDate",
         "setterModel" : {
@@ -30016,6 +30399,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdateDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time the state machine was updated.</p>\n@param updateDate The date and time the state machine was updated.*/",
           "setterMethodName" : "setUpdateDate",
           "setterModel" : {

@@ -536,7 +536,8 @@ public class SharedDirectory implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -559,7 +560,7 @@ public class SharedDirectory implements Serializable, Cloneable, StructuredPojo 
         if (getShareStatus() != null)
             sb.append("ShareStatus: ").append(getShareStatus()).append(",");
         if (getShareNotes() != null)
-            sb.append("ShareNotes: ").append(getShareNotes()).append(",");
+            sb.append("ShareNotes: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreatedDateTime() != null)
             sb.append("CreatedDateTime: ").append(getCreatedDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)

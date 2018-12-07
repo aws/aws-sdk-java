@@ -25,8 +25,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information about permissions boundaries, see <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for
- * IAM Identities </a> in the <i>IAM User Guide</i>.
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM
+ * Identities </a> in the <i>IAM User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachedPermissionsBoundary" target="_top">AWS
@@ -157,7 +157,8 @@ public class AttachedPermissionsBoundary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

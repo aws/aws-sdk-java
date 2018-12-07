@@ -242,7 +242,8 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -259,7 +260,7 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getTimeoutInSeconds() != null)
             sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds());
         sb.append("}");

@@ -566,7 +566,8 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -577,7 +578,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: ").append(getClientId()).append(",");
+            sb.append("ClientId: ").append("***Sensitive Data Redacted***").append(",");
         if (getChallengeName() != null)
             sb.append("ChallengeName: ").append(getChallengeName()).append(",");
         if (getSession() != null)

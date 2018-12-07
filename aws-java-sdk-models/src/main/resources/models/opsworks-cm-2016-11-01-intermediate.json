@@ -843,6 +843,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The attribute name. The following are supported attribute names. </p> <ul> <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li> <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li> </ul>\n@param name The attribute name. The following are supported attribute names. </p> <ul> <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li> <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -908,6 +909,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Maximum",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The maximum allowed value. </p>\n@param maximum The maximum allowed value.*/",
         "setterMethodName" : "setMaximum",
         "setterModel" : {
@@ -973,6 +975,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Used",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The current usage, such as the current number of servers that are associated with the account. </p>\n@param used The current usage, such as the current number of servers that are associated with the account.*/",
         "setterMethodName" : "setUsed",
         "setterModel" : {
@@ -1040,6 +1043,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Maximum",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The maximum allowed value. </p>\n@param maximum The maximum allowed value.*/",
           "setterMethodName" : "setMaximum",
           "setterModel" : {
@@ -1106,6 +1110,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The attribute name. The following are supported attribute names. </p> <ul> <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li> <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li> </ul>\n@param name The attribute name. The following are supported attribute names. </p> <ul> <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li> <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1172,6 +1177,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Used",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The current usage, such as the current number of servers that are associated with the account. </p>\n@param used The current usage, such as the current number of servers that are associated with the account.*/",
           "setterMethodName" : "setUsed",
           "setterModel" : {
@@ -1284,6 +1290,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server with which to associate the node. </p>\n@param serverName The name of the server with which to associate the node.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -1349,6 +1356,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the node. </p>\n@param nodeName The name of the node.*/",
         "setterMethodName" : "setNodeName",
         "setterModel" : {
@@ -1451,6 +1459,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1494,6 +1503,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EngineAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Engine attributes used for associating the node. </p> <p class=\"title\"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p> <ul> <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li> </ul> <p class=\"title\"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p> <ul> <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li> </ul>\n@param engineAttributes Engine attributes used for associating the node. </p> <p class=\"title\"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p> <ul> <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li> </ul> <p class=\"title\"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p> <ul> <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>*/",
         "setterMethodName" : "setEngineAttributes",
         "setterModel" : {
@@ -1598,6 +1608,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1641,6 +1652,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EngineAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Engine attributes used for associating the node. </p> <p class=\"title\"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p> <ul> <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li> </ul> <p class=\"title\"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p> <ul> <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li> </ul>\n@param engineAttributes Engine attributes used for associating the node. </p> <p class=\"title\"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p> <ul> <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li> </ul> <p class=\"title\"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p> <ul> <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>*/",
           "setterMethodName" : "setEngineAttributes",
           "setterModel" : {
@@ -1707,6 +1719,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the node. </p>\n@param nodeName The name of the node.*/",
           "setterMethodName" : "setNodeName",
           "setterModel" : {
@@ -1773,6 +1786,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server with which to associate the node. </p>\n@param serverName The name of the server with which to associate the node.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -1875,6 +1889,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeAssociationStatusToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>\n@param nodeAssociationStatusToken Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.*/",
         "setterMethodName" : "setNodeAssociationStatusToken",
         "setterModel" : {
@@ -1942,6 +1957,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeAssociationStatusToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>\n@param nodeAssociationStatusToken Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.*/",
           "setterMethodName" : "setNodeAssociationStatusToken",
           "setterModel" : {
@@ -2047,6 +2063,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the backup. </p>\n@param backupArn The ARN of the backup.*/",
         "setterMethodName" : "setBackupArn",
         "setterModel" : {
@@ -2112,6 +2129,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code> </p>\n@param backupId The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code>*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -2177,6 +2195,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The backup type. Valid values are <code>automated</code> or <code>manual</code>. </p>\n@param backupType The backup type. Valid values are <code>automated</code> or <code>manual</code>.\n@see BackupType*/",
         "setterMethodName" : "setBackupType",
         "setterModel" : {
@@ -2242,6 +2261,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code> </p>\n@param createdAt The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -2307,6 +2327,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> A user-provided description for a manual backup. This field is empty for automated backups. </p>\n@param description A user-provided description for a manual backup. This field is empty for automated backups.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -2372,6 +2393,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Engine",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The engine type that is obtained from the server when the backup is created. </p>\n@param engine The engine type that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setEngine",
         "setterModel" : {
@@ -2437,6 +2459,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EngineModel",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The engine model that is obtained from the server when the backup is created. </p>\n@param engineModel The engine model that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setEngineModel",
         "setterModel" : {
@@ -2502,6 +2525,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EngineVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The engine version that is obtained from the server when the backup is created. </p>\n@param engineVersion The engine version that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setEngineVersion",
         "setterModel" : {
@@ -2567,6 +2591,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceProfileArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup. </p>\n@param instanceProfileArn The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup.*/",
         "setterMethodName" : "setInstanceProfileArn",
         "setterModel" : {
@@ -2632,6 +2657,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The instance type that is obtained from the server when the backup is created. </p>\n@param instanceType The instance type that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setInstanceType",
         "setterModel" : {
@@ -2697,6 +2723,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyPair",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The key pair that is obtained from the server when the backup is created. </p>\n@param keyPair The key pair that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setKeyPair",
         "setterModel" : {
@@ -2762,6 +2789,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredBackupWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The preferred backup period that is obtained from the server when the backup is created. </p>\n@param preferredBackupWindow The preferred backup period that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setPreferredBackupWindow",
         "setterModel" : {
@@ -2827,6 +2855,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredMaintenanceWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The preferred maintenance period that is obtained from the server when the backup is created. </p>\n@param preferredMaintenanceWindow The preferred maintenance period that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setPreferredMaintenanceWindow",
         "setterModel" : {
@@ -2892,6 +2921,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "S3DataSize",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> This field is deprecated and is no longer used. </p>\n@param s3DataSize This field is deprecated and is no longer used.*/",
         "setterMethodName" : "setS3DataSize",
         "setterModel" : {
@@ -2957,6 +2987,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3DataUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> This field is deprecated and is no longer used. </p>\n@param s3DataUrl This field is deprecated and is no longer used.*/",
         "setterMethodName" : "setS3DataUrl",
         "setterModel" : {
@@ -3022,6 +3053,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3LogUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The Amazon S3 URL of the backup's log file. </p>\n@param s3LogUrl The Amazon S3 URL of the backup's log file.*/",
         "setterMethodName" : "setS3LogUrl",
         "setterModel" : {
@@ -3124,6 +3156,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3167,6 +3200,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The security group IDs that are obtained from the server when the backup is created. </p>\n@param securityGroupIds The security group IDs that are obtained from the server when the backup is created.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -3232,6 +3266,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The name of the server from which the backup was made. </p>\n@param serverName The name of the server from which the backup was made.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -3297,6 +3332,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The service role ARN that is obtained from the server when the backup is created. </p>\n@param serviceRoleArn The service role ARN that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setServiceRoleArn",
         "setterModel" : {
@@ -3362,6 +3398,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of a backup while in progress. </p>\n@param status The status of a backup while in progress.\n@see BackupStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -3427,6 +3464,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusDescription",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> An informational message about backup status. </p>\n@param statusDescription An informational message about backup status.*/",
         "setterMethodName" : "setStatusDescription",
         "setterModel" : {
@@ -3529,6 +3567,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3572,6 +3611,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The subnet IDs that are obtained from the server when the backup is created. </p>\n@param subnetIds The subnet IDs that are obtained from the server when the backup is created.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -3637,6 +3677,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ToolsVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created. </p>\n@param toolsVersion The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.*/",
         "setterMethodName" : "setToolsVersion",
         "setterModel" : {
@@ -3702,6 +3743,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The IAM user ARN of the requester for manual backups. This field is empty for automated backups. </p>\n@param userArn The IAM user ARN of the requester for manual backups. This field is empty for automated backups.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -3769,6 +3811,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the backup. </p>\n@param backupArn The ARN of the backup.*/",
           "setterMethodName" : "setBackupArn",
           "setterModel" : {
@@ -3835,6 +3878,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code> </p>\n@param backupId The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code>*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -3901,6 +3945,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The backup type. Valid values are <code>automated</code> or <code>manual</code>. </p>\n@param backupType The backup type. Valid values are <code>automated</code> or <code>manual</code>.\n@see BackupType*/",
           "setterMethodName" : "setBackupType",
           "setterModel" : {
@@ -3967,6 +4012,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code> </p>\n@param createdAt The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -4033,6 +4079,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> A user-provided description for a manual backup. This field is empty for automated backups. </p>\n@param description A user-provided description for a manual backup. This field is empty for automated backups.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -4099,6 +4146,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Engine",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The engine type that is obtained from the server when the backup is created. </p>\n@param engine The engine type that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setEngine",
           "setterModel" : {
@@ -4165,6 +4213,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EngineModel",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The engine model that is obtained from the server when the backup is created. </p>\n@param engineModel The engine model that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setEngineModel",
           "setterModel" : {
@@ -4231,6 +4280,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EngineVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The engine version that is obtained from the server when the backup is created. </p>\n@param engineVersion The engine version that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setEngineVersion",
           "setterModel" : {
@@ -4297,6 +4347,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceProfileArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup. </p>\n@param instanceProfileArn The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup.*/",
           "setterMethodName" : "setInstanceProfileArn",
           "setterModel" : {
@@ -4363,6 +4414,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The instance type that is obtained from the server when the backup is created. </p>\n@param instanceType The instance type that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setInstanceType",
           "setterModel" : {
@@ -4429,6 +4481,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyPair",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The key pair that is obtained from the server when the backup is created. </p>\n@param keyPair The key pair that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setKeyPair",
           "setterModel" : {
@@ -4495,6 +4548,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredBackupWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The preferred backup period that is obtained from the server when the backup is created. </p>\n@param preferredBackupWindow The preferred backup period that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setPreferredBackupWindow",
           "setterModel" : {
@@ -4561,6 +4615,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredMaintenanceWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The preferred maintenance period that is obtained from the server when the backup is created. </p>\n@param preferredMaintenanceWindow The preferred maintenance period that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setPreferredMaintenanceWindow",
           "setterModel" : {
@@ -4627,6 +4682,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "S3DataSize",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> This field is deprecated and is no longer used. </p>\n@param s3DataSize This field is deprecated and is no longer used.*/",
           "setterMethodName" : "setS3DataSize",
           "setterModel" : {
@@ -4693,6 +4749,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3DataUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> This field is deprecated and is no longer used. </p>\n@param s3DataUrl This field is deprecated and is no longer used.*/",
           "setterMethodName" : "setS3DataUrl",
           "setterModel" : {
@@ -4759,6 +4816,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3LogUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The Amazon S3 URL of the backup's log file. </p>\n@param s3LogUrl The Amazon S3 URL of the backup's log file.*/",
           "setterMethodName" : "setS3LogUrl",
           "setterModel" : {
@@ -4862,6 +4920,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4905,6 +4964,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The security group IDs that are obtained from the server when the backup is created. </p>\n@param securityGroupIds The security group IDs that are obtained from the server when the backup is created.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -4971,6 +5031,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The name of the server from which the backup was made. </p>\n@param serverName The name of the server from which the backup was made.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -5037,6 +5098,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The service role ARN that is obtained from the server when the backup is created. </p>\n@param serviceRoleArn The service role ARN that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setServiceRoleArn",
           "setterModel" : {
@@ -5103,6 +5165,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of a backup while in progress. </p>\n@param status The status of a backup while in progress.\n@see BackupStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -5169,6 +5232,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusDescription",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> An informational message about backup status. </p>\n@param statusDescription An informational message about backup status.*/",
           "setterMethodName" : "setStatusDescription",
           "setterModel" : {
@@ -5272,6 +5336,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5315,6 +5380,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The subnet IDs that are obtained from the server when the backup is created. </p>\n@param subnetIds The subnet IDs that are obtained from the server when the backup is created.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -5381,6 +5447,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ToolsVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created. </p>\n@param toolsVersion The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.*/",
           "setterMethodName" : "setToolsVersion",
           "setterModel" : {
@@ -5447,6 +5514,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The IAM user ARN of the requester for manual backups. This field is empty for automated backups. </p>\n@param userArn The IAM user ARN of the requester for manual backups. This field is empty for automated backups.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -5657,6 +5725,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server that you want to back up. </p>\n@param serverName The name of the server that you want to back up.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -5722,6 +5791,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> A user-defined description of the backup. </p>\n@param description A user-defined description of the backup.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -5789,6 +5859,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> A user-defined description of the backup. </p>\n@param description A user-defined description of the backup.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -5855,6 +5926,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server that you want to back up. </p>\n@param serverName The name of the server that you want to back up.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -5957,6 +6029,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Backup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Backup created by request.</p>\n@param backup Backup created by request.*/",
         "setterMethodName" : "setBackup",
         "setterModel" : {
@@ -6024,6 +6097,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Backup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Backup created by request.</p>\n@param backup Backup created by request.*/",
           "setterMethodName" : "setBackup",
           "setterModel" : {
@@ -6136,6 +6210,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AssociatePublicIpAddress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>\n@param associatePublicIpAddress Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.*/",
         "setterMethodName" : "setAssociatePublicIpAddress",
         "setterModel" : {
@@ -6201,6 +6276,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DisableAutomatedBackup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>\n@param disableAutomatedBackup Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.*/",
         "setterMethodName" : "setDisableAutomatedBackup",
         "setterModel" : {
@@ -6266,6 +6342,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Engine",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The configuration management engine to use. Valid values include <code>Chef</code> and <code>Puppet</code>. </p>\n@param engine The configuration management engine to use. Valid values include <code>Chef</code> and <code>Puppet</code>.*/",
         "setterMethodName" : "setEngine",
         "setterModel" : {
@@ -6331,6 +6408,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EngineModel",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>\n@param engineModel The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.*/",
         "setterMethodName" : "setEngineModel",
         "setterModel" : {
@@ -6396,6 +6474,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EngineVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>. </p>\n@param engineVersion The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.*/",
         "setterMethodName" : "setEngineVersion",
         "setterModel" : {
@@ -6498,6 +6577,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6541,6 +6621,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EngineAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional engine attributes on a specified server. </p> <p class=\"title\"> <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li> </ul> <p class=\"title\"> <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li> </ul>\n@param engineAttributes Optional engine attributes on a specified server. </p> <p class=\"title\"> <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li> </ul> <p class=\"title\"> <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>*/",
         "setterMethodName" : "setEngineAttributes",
         "setterModel" : {
@@ -6606,6 +6687,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "BackupRetentionCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>\n@param backupRetentionCount The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.*/",
         "setterMethodName" : "setBackupRetentionCount",
         "setterModel" : {
@@ -6671,6 +6753,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>\n@param serverName The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -6736,6 +6819,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceProfileArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>\n@param instanceProfileArn The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need.*/",
         "setterMethodName" : "setInstanceProfileArn",
         "setterModel" : {
@@ -6801,6 +6885,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>. Recommended instance types include <code>t2.medium</code> and greater, <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>\n@param instanceType The Amazon EC2 instance type to use. For example, <code>m4.large</code>. Recommended instance types include <code>t2.medium</code> and greater, <code>m4.*</code>, or <code>c4.xlarge</code> and greater.*/",
         "setterMethodName" : "setInstanceType",
         "setterModel" : {
@@ -6866,6 +6951,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyPair",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>\n@param keyPair The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.*/",
         "setterMethodName" : "setKeyPair",
         "setterModel" : {
@@ -6931,6 +7017,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredMaintenanceWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>\n@param preferredMaintenanceWindow The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)*/",
         "setterMethodName" : "setPreferredMaintenanceWindow",
         "setterModel" : {
@@ -6996,6 +7083,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredBackupWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p> <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>\n@param preferredBackupWindow The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p> <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)*/",
         "setterMethodName" : "setPreferredBackupWindow",
         "setterModel" : {
@@ -7098,6 +7186,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7141,6 +7230,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p> <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>\n@param securityGroupIds A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p> <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -7206,6 +7296,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>\n@param serviceRoleArn The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need.*/",
         "setterMethodName" : "setServiceRoleArn",
         "setterModel" : {
@@ -7308,6 +7399,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7351,6 +7443,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The IDs of subnets in which to launch the server EC2 instance. </p> <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have \"Auto Assign Public IP\" enabled. </p> <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have \"Auto Assign Public IP\" enabled. </p> <p>For more information about supported Amazon EC2 platforms, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html\">Supported Platforms</a>.</p>\n@param subnetIds The IDs of subnets in which to launch the server EC2 instance. </p> <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have \"Auto Assign Public IP\" enabled. </p> <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have \"Auto Assign Public IP\" enabled. </p> <p>For more information about supported Amazon EC2 platforms, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html\">Supported Platforms</a>.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -7416,6 +7509,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>\n@param backupId If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -7483,6 +7577,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AssociatePublicIpAddress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>\n@param associatePublicIpAddress Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.*/",
           "setterMethodName" : "setAssociatePublicIpAddress",
           "setterModel" : {
@@ -7549,6 +7644,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>\n@param backupId If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -7615,6 +7711,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "BackupRetentionCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>\n@param backupRetentionCount The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.*/",
           "setterMethodName" : "setBackupRetentionCount",
           "setterModel" : {
@@ -7681,6 +7778,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DisableAutomatedBackup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>\n@param disableAutomatedBackup Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.*/",
           "setterMethodName" : "setDisableAutomatedBackup",
           "setterModel" : {
@@ -7747,6 +7845,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Engine",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The configuration management engine to use. Valid values include <code>Chef</code> and <code>Puppet</code>. </p>\n@param engine The configuration management engine to use. Valid values include <code>Chef</code> and <code>Puppet</code>.*/",
           "setterMethodName" : "setEngine",
           "setterModel" : {
@@ -7850,6 +7949,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7893,6 +7993,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EngineAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional engine attributes on a specified server. </p> <p class=\"title\"> <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li> </ul> <p class=\"title\"> <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li> </ul>\n@param engineAttributes Optional engine attributes on a specified server. </p> <p class=\"title\"> <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate GUI. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is generated and returned in the response.</p> </li> </ul> <p class=\"title\"> <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p> </li>*/",
           "setterMethodName" : "setEngineAttributes",
           "setterModel" : {
@@ -7959,6 +8060,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EngineModel",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>\n@param engineModel The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.*/",
           "setterMethodName" : "setEngineModel",
           "setterModel" : {
@@ -8025,6 +8127,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EngineVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>. </p>\n@param engineVersion The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.*/",
           "setterMethodName" : "setEngineVersion",
           "setterModel" : {
@@ -8091,6 +8194,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceProfileArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>\n@param instanceProfileArn The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need.*/",
           "setterMethodName" : "setInstanceProfileArn",
           "setterModel" : {
@@ -8157,6 +8261,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>. Recommended instance types include <code>t2.medium</code> and greater, <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>\n@param instanceType The Amazon EC2 instance type to use. For example, <code>m4.large</code>. Recommended instance types include <code>t2.medium</code> and greater, <code>m4.*</code>, or <code>c4.xlarge</code> and greater.*/",
           "setterMethodName" : "setInstanceType",
           "setterModel" : {
@@ -8223,6 +8328,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyPair",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>\n@param keyPair The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.*/",
           "setterMethodName" : "setKeyPair",
           "setterModel" : {
@@ -8289,6 +8395,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredBackupWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p> <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>\n@param preferredBackupWindow The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats: </p> <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)*/",
           "setterMethodName" : "setPreferredBackupWindow",
           "setterModel" : {
@@ -8355,6 +8462,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredMaintenanceWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>\n@param preferredMaintenanceWindow The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)*/",
           "setterMethodName" : "setPreferredMaintenanceWindow",
           "setterModel" : {
@@ -8458,6 +8566,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8501,6 +8610,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p> <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>\n@param securityGroupIds A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p> <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -8567,6 +8677,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>\n@param serverName The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -8633,6 +8744,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>\n@param serviceRoleArn The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need.*/",
           "setterMethodName" : "setServiceRoleArn",
           "setterModel" : {
@@ -8736,6 +8848,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8779,6 +8892,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The IDs of subnets in which to launch the server EC2 instance. </p> <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have \"Auto Assign Public IP\" enabled. </p> <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have \"Auto Assign Public IP\" enabled. </p> <p>For more information about supported Amazon EC2 platforms, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html\">Supported Platforms</a>.</p>\n@param subnetIds The IDs of subnets in which to launch the server EC2 instance. </p> <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have \"Auto Assign Public IP\" enabled. </p> <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have \"Auto Assign Public IP\" enabled. </p> <p>For more information about supported Amazon EC2 platforms, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html\">Supported Platforms</a>.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -8881,6 +8995,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Server",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The server that is created by the request. </p>\n@param server The server that is created by the request.*/",
         "setterMethodName" : "setServer",
         "setterModel" : {
@@ -8948,6 +9063,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Server",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The server that is created by the request. </p>\n@param server The server that is created by the request.*/",
           "setterMethodName" : "setServer",
           "setterModel" : {
@@ -9060,6 +9176,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>\n@param backupId The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -9127,6 +9244,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>\n@param backupId The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -9276,6 +9394,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the server to delete.</p>\n@param serverName The ID of the server to delete.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -9343,6 +9462,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the server to delete.</p>\n@param serverName The ID of the server to delete.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -9566,6 +9686,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9609,6 +9730,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The attributes that are currently set for the account. </p>\n@param attributes The attributes that are currently set for the account.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -9713,6 +9835,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9756,6 +9879,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The attributes that are currently set for the account. </p>\n@param attributes The attributes that are currently set for the account.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -9868,6 +9992,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Describes a single backup. </p>\n@param backupId Describes a single backup.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -9933,6 +10058,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Returns backups for the server with the specified ServerName. </p>\n@param serverName Returns backups for the server with the specified ServerName.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -9998,6 +10124,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>\n@param nextToken This is not currently implemented for <code>DescribeBackups</code> requests.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10063,6 +10190,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>\n@param maxResults This is not currently implemented for <code>DescribeBackups</code> requests.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10130,6 +10258,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Describes a single backup. </p>\n@param backupId Describes a single backup.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -10196,6 +10325,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>\n@param maxResults This is not currently implemented for <code>DescribeBackups</code> requests.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10262,6 +10392,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>\n@param nextToken This is not currently implemented for <code>DescribeBackups</code> requests.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10328,6 +10459,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Returns backups for the server with the specified ServerName. </p>\n@param serverName Returns backups for the server with the specified ServerName.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -10467,6 +10599,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10510,6 +10643,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Backups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the response to a <code>DescribeBackups</code> request. </p>\n@param backups Contains the response to a <code>DescribeBackups</code> request.*/",
         "setterMethodName" : "setBackups",
         "setterModel" : {
@@ -10575,6 +10709,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>\n@param nextToken This is not currently implemented for <code>DescribeBackups</code> requests.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10679,6 +10814,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10722,6 +10858,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Backups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the response to a <code>DescribeBackups</code> request. </p>\n@param backups Contains the response to a <code>DescribeBackups</code> request.*/",
           "setterMethodName" : "setBackups",
           "setterModel" : {
@@ -10788,6 +10925,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>\n@param nextToken This is not currently implemented for <code>DescribeBackups</code> requests.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10900,6 +11038,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server for which you want to view events.</p>\n@param serverName The name of the server for which you want to view events.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -10965,6 +11104,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>\n@param nextToken NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11030,6 +11170,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results. </p>\n@param maxResults To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11097,6 +11238,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results. </p>\n@param maxResults To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11163,6 +11305,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>\n@param nextToken NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11229,6 +11372,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server for which you want to view events.</p>\n@param serverName The name of the server for which you want to view events.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -11368,6 +11512,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11411,6 +11556,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ServerEvents",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the response to a <code>DescribeEvents</code> request. </p>\n@param serverEvents Contains the response to a <code>DescribeEvents</code> request.*/",
         "setterMethodName" : "setServerEvents",
         "setterModel" : {
@@ -11476,6 +11622,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>\n@param nextToken NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11543,6 +11690,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>\n@param nextToken NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11646,6 +11794,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11689,6 +11838,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ServerEvents",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the response to a <code>DescribeEvents</code> request. </p>\n@param serverEvents Contains the response to a <code>DescribeEvents</code> request.*/",
           "setterMethodName" : "setServerEvents",
           "setterModel" : {
@@ -11801,6 +11951,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeAssociationStatusToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>\n@param nodeAssociationStatusToken The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.*/",
         "setterMethodName" : "setNodeAssociationStatusToken",
         "setterModel" : {
@@ -11866,6 +12017,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server from which to disassociate the node. </p>\n@param serverName The name of the server from which to disassociate the node.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -11933,6 +12085,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeAssociationStatusToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>\n@param nodeAssociationStatusToken The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.*/",
           "setterMethodName" : "setNodeAssociationStatusToken",
           "setterModel" : {
@@ -11999,6 +12152,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server from which to disassociate the node. </p>\n@param serverName The name of the server from which to disassociate the node.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -12101,6 +12255,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeAssociationStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the association or disassociation request. </p> <p class=\"title\"> <b>Possible values:</b> </p> <ul> <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> </ul>\n@param nodeAssociationStatus The status of the association or disassociation request. </p> <p class=\"title\"> <b>Possible values:</b> </p> <ul> <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>\n@see NodeAssociationStatus*/",
         "setterMethodName" : "setNodeAssociationStatus",
         "setterModel" : {
@@ -12203,6 +12358,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12246,6 +12402,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EngineAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>\n@param engineAttributes Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).*/",
         "setterMethodName" : "setEngineAttributes",
         "setterModel" : {
@@ -12350,6 +12507,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12393,6 +12551,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EngineAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>\n@param engineAttributes Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).*/",
           "setterMethodName" : "setEngineAttributes",
           "setterModel" : {
@@ -12459,6 +12618,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeAssociationStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the association or disassociation request. </p> <p class=\"title\"> <b>Possible values:</b> </p> <ul> <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> </ul>\n@param nodeAssociationStatus The status of the association or disassociation request. </p> <p class=\"title\"> <b>Possible values:</b> </p> <ul> <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>\n@see NodeAssociationStatus*/",
           "setterMethodName" : "setNodeAssociationStatus",
           "setterModel" : {
@@ -12571,6 +12731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Describes the server with the specified ServerName.</p>\n@param serverName Describes the server with the specified ServerName.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -12636,6 +12797,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeServers</code> requests. </p>\n@param nextToken This is not currently implemented for <code>DescribeServers</code> requests.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12701,6 +12863,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeServers</code> requests. </p>\n@param maxResults This is not currently implemented for <code>DescribeServers</code> requests.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -12768,6 +12931,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeServers</code> requests. </p>\n@param maxResults This is not currently implemented for <code>DescribeServers</code> requests.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -12834,6 +12998,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeServers</code> requests. </p>\n@param nextToken This is not currently implemented for <code>DescribeServers</code> requests.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12900,6 +13065,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Describes the server with the specified ServerName.</p>\n@param serverName Describes the server with the specified ServerName.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -13039,6 +13205,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13082,6 +13249,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Servers",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the response to a <code>DescribeServers</code> request.</p> <p> <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p>\n@param servers Contains the response to a <code>DescribeServers</code> request.</p> <p> <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.*/",
         "setterMethodName" : "setServers",
         "setterModel" : {
@@ -13147,6 +13315,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeServers</code> requests. </p>\n@param nextToken This is not currently implemented for <code>DescribeServers</code> requests.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13214,6 +13383,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is not currently implemented for <code>DescribeServers</code> requests. </p>\n@param nextToken This is not currently implemented for <code>DescribeServers</code> requests.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13317,6 +13487,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13360,6 +13531,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Servers",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the response to a <code>DescribeServers</code> request.</p> <p> <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p>\n@param servers Contains the response to a <code>DescribeServers</code> request.</p> <p> <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.*/",
           "setterMethodName" : "setServers",
           "setterModel" : {
@@ -13472,6 +13644,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server from which to disassociate the node. </p>\n@param serverName The name of the server from which to disassociate the node.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -13537,6 +13710,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the client node. </p>\n@param nodeName The name of the client node.*/",
         "setterMethodName" : "setNodeName",
         "setterModel" : {
@@ -13639,6 +13813,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13682,6 +13857,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EngineAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p> <p class=\"title\"> <b>Attributes required in a DisassociateNode request for Chef</b> </p> <ul> <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li> </ul>\n@param engineAttributes Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p> <p class=\"title\"> <b>Attributes required in a DisassociateNode request for Chef</b> </p> <ul> <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>*/",
         "setterMethodName" : "setEngineAttributes",
         "setterModel" : {
@@ -13786,6 +13962,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13829,6 +14006,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EngineAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p> <p class=\"title\"> <b>Attributes required in a DisassociateNode request for Chef</b> </p> <ul> <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li> </ul>\n@param engineAttributes Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p> <p class=\"title\"> <b>Attributes required in a DisassociateNode request for Chef</b> </p> <ul> <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>*/",
           "setterMethodName" : "setEngineAttributes",
           "setterModel" : {
@@ -13895,6 +14073,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the client node. </p>\n@param nodeName The name of the client node.*/",
           "setterMethodName" : "setNodeName",
           "setterModel" : {
@@ -13961,6 +14140,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server from which to disassociate the node. </p>\n@param serverName The name of the server from which to disassociate the node.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -14063,6 +14243,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeAssociationStatusToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>\n@param nodeAssociationStatusToken Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request.*/",
         "setterMethodName" : "setNodeAssociationStatusToken",
         "setterModel" : {
@@ -14130,6 +14311,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeAssociationStatusToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>\n@param nodeAssociationStatusToken Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request.*/",
           "setterMethodName" : "setNodeAssociationStatusToken",
           "setterModel" : {
@@ -14235,6 +14417,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the engine attribute. </p>\n@param name The name of the engine attribute.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -14300,6 +14483,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The value of the engine attribute. </p>\n@param value The value of the engine attribute.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -14367,6 +14551,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the engine attribute. </p>\n@param name The name of the engine attribute.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -14433,6 +14618,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The value of the engine attribute. </p>\n@param value The value of the engine attribute.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -14545,6 +14731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportAttributeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the export attribute. Currently supported export attribute is \"Userdata\" which exports a userdata script filled out with parameters provided in the <code>InputAttributes</code> list.</p>\n@param exportAttributeName The name of the export attribute. Currently supported export attribute is \"Userdata\" which exports a userdata script filled out with parameters provided in the <code>InputAttributes</code> list.*/",
         "setterMethodName" : "setExportAttributeName",
         "setterModel" : {
@@ -14610,6 +14797,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the Server to which the attribute is being exported from </p>\n@param serverName The name of the Server to which the attribute is being exported from*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -14712,6 +14900,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14755,6 +14944,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "InputAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of engine attributes. The list type is <code>EngineAttribute</code>. <code>EngineAttribute</code> is a pair of attribute name and value. For <code>ExportAttributeName</code> \"Userdata\", currently supported input attribute names are: - \"RunList\": For Chef, an ordered list of roles and/or recipes that are run in the exact order. For Puppet, this parameter is ignored. - \"OrganizationName\": For Chef, an organization name. AWS OpsWorks for Chef Server always creates the organization \"default\". For Puppet, this parameter is ignored. - \"NodeEnvironment\": For Chef, a node environment (eg. development, staging, onebox). For Puppet, this parameter is ignored. - \"NodeClientVersion\": For Chef, version of Chef Engine (3 numbers separated by dots, eg. \"13.8.5\"). If empty, it uses the latest one. For Puppet, this parameter is ignored. </p>\n@param inputAttributes The list of engine attributes. The list type is <code>EngineAttribute</code>. <code>EngineAttribute</code> is a pair of attribute name and value. For <code>ExportAttributeName</code> \"Userdata\", currently supported input attribute names are: - \"RunList\": For Chef, an ordered list of roles and/or recipes that are run in the exact order. For Puppet, this parameter is ignored. - \"OrganizationName\": For Chef, an organization name. AWS OpsWorks for Chef Server always creates the organization \"default\". For Puppet, this parameter is ignored. - \"NodeEnvironment\": For Chef, a node environment (eg. development, staging, onebox). For Puppet, this parameter is ignored. - \"NodeClientVersion\": For Chef, version of Chef Engine (3 numbers separated by dots, eg. \"13.8.5\"). If empty, it uses the latest one. For Puppet, this parameter is ignored.*/",
         "setterMethodName" : "setInputAttributes",
         "setterModel" : {
@@ -14822,6 +15012,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportAttributeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the export attribute. Currently supported export attribute is \"Userdata\" which exports a userdata script filled out with parameters provided in the <code>InputAttributes</code> list.</p>\n@param exportAttributeName The name of the export attribute. Currently supported export attribute is \"Userdata\" which exports a userdata script filled out with parameters provided in the <code>InputAttributes</code> list.*/",
           "setterMethodName" : "setExportAttributeName",
           "setterModel" : {
@@ -14925,6 +15116,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14968,6 +15160,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "InputAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of engine attributes. The list type is <code>EngineAttribute</code>. <code>EngineAttribute</code> is a pair of attribute name and value. For <code>ExportAttributeName</code> \"Userdata\", currently supported input attribute names are: - \"RunList\": For Chef, an ordered list of roles and/or recipes that are run in the exact order. For Puppet, this parameter is ignored. - \"OrganizationName\": For Chef, an organization name. AWS OpsWorks for Chef Server always creates the organization \"default\". For Puppet, this parameter is ignored. - \"NodeEnvironment\": For Chef, a node environment (eg. development, staging, onebox). For Puppet, this parameter is ignored. - \"NodeClientVersion\": For Chef, version of Chef Engine (3 numbers separated by dots, eg. \"13.8.5\"). If empty, it uses the latest one. For Puppet, this parameter is ignored. </p>\n@param inputAttributes The list of engine attributes. The list type is <code>EngineAttribute</code>. <code>EngineAttribute</code> is a pair of attribute name and value. For <code>ExportAttributeName</code> \"Userdata\", currently supported input attribute names are: - \"RunList\": For Chef, an ordered list of roles and/or recipes that are run in the exact order. For Puppet, this parameter is ignored. - \"OrganizationName\": For Chef, an organization name. AWS OpsWorks for Chef Server always creates the organization \"default\". For Puppet, this parameter is ignored. - \"NodeEnvironment\": For Chef, a node environment (eg. development, staging, onebox). For Puppet, this parameter is ignored. - \"NodeClientVersion\": For Chef, version of Chef Engine (3 numbers separated by dots, eg. \"13.8.5\"). If empty, it uses the latest one. For Puppet, this parameter is ignored.*/",
           "setterMethodName" : "setInputAttributes",
           "setterModel" : {
@@ -15034,6 +15227,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the Server to which the attribute is being exported from </p>\n@param serverName The name of the Server to which the attribute is being exported from*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -15136,6 +15330,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EngineAttribute",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The requested engine attribute pair with attribute name and value. </p>\n@param engineAttribute The requested engine attribute pair with attribute name and value.*/",
         "setterMethodName" : "setEngineAttribute",
         "setterModel" : {
@@ -15201,6 +15396,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The requested ServerName. </p>\n@param serverName The requested ServerName.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -15268,6 +15464,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EngineAttribute",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The requested engine attribute pair with attribute name and value. </p>\n@param engineAttribute The requested engine attribute pair with attribute name and value.*/",
           "setterMethodName" : "setEngineAttribute",
           "setterModel" : {
@@ -15334,6 +15531,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The requested ServerName. </p>\n@param serverName The requested ServerName.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -15726,6 +15924,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The ID of the backup that you want to use to restore a server. </p>\n@param backupId The ID of the backup that you want to use to restore a server.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -15791,6 +15990,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The name of the server that you want to restore. </p>\n@param serverName The name of the server that you want to restore.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -15856,6 +16056,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The type of the instance to create. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>, <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup. </p>\n@param instanceType The type of the instance to create. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>, <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup.*/",
         "setterMethodName" : "setInstanceType",
         "setterModel" : {
@@ -15921,6 +16122,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyPair",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key. </p>\n@param keyPair The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key.*/",
         "setterMethodName" : "setKeyPair",
         "setterModel" : {
@@ -15988,6 +16190,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The ID of the backup that you want to use to restore a server. </p>\n@param backupId The ID of the backup that you want to use to restore a server.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -16054,6 +16257,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The type of the instance to create. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>, <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup. </p>\n@param instanceType The type of the instance to create. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>, <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup.*/",
           "setterMethodName" : "setInstanceType",
           "setterModel" : {
@@ -16120,6 +16324,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyPair",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key. </p>\n@param keyPair The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has the SSH key.*/",
           "setterMethodName" : "setKeyPair",
           "setterModel" : {
@@ -16186,6 +16391,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The name of the server that you want to restore. </p>\n@param serverName The name of the server that you want to restore.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -16328,6 +16534,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AssociatePublicIpAddress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Associate a public IP address with a server that you are launching. </p>\n@param associatePublicIpAddress Associate a public IP address with a server that you are launching.*/",
         "setterMethodName" : "setAssociatePublicIpAddress",
         "setterModel" : {
@@ -16393,6 +16600,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "BackupRetentionCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of automated backups to keep. </p>\n@param backupRetentionCount The number of automated backups to keep.*/",
         "setterMethodName" : "setBackupRetentionCount",
         "setterModel" : {
@@ -16458,6 +16666,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server. </p>\n@param serverName The name of the server.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -16523,6 +16732,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code> </p>\n@param createdAt Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -16588,6 +16798,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CloudFormationStackArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the CloudFormation stack that was used to create the server. </p>\n@param cloudFormationStackArn The ARN of the CloudFormation stack that was used to create the server.*/",
         "setterMethodName" : "setCloudFormationStackArn",
         "setterModel" : {
@@ -16653,6 +16864,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DisableAutomatedBackup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount. </p>\n@param disableAutomatedBackup Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.*/",
         "setterMethodName" : "setDisableAutomatedBackup",
         "setterModel" : {
@@ -16718,6 +16930,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Endpoint",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>\n@param endpoint A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>*/",
         "setterMethodName" : "setEndpoint",
         "setterModel" : {
@@ -16783,6 +16996,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Engine",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The engine type of the server. Valid values in this release include <code>Chef</code> and <code>Puppet</code>. </p>\n@param engine The engine type of the server. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.*/",
         "setterMethodName" : "setEngine",
         "setterModel" : {
@@ -16848,6 +17062,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EngineModel",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>\n@param engineModel The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.*/",
         "setterMethodName" : "setEngineModel",
         "setterModel" : {
@@ -16950,6 +17165,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16993,6 +17209,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EngineAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer(). </p> <p class=\"title\"> <b>Attributes returned in a createServer response for Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is generated by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API.</p> </li> <li> <p> <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Chef starter kit, which includes a README, a configuration file, and the required RSA private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents. From this directory, you can run Knife commands.</p> </li> </ul> <p class=\"title\"> <b>Attributes returned in a createServer response for Puppet</b> </p> <ul> <li> <p> <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including a README and a required private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p> </li> </ul>\n@param engineAttributes The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer(). </p> <p class=\"title\"> <b>Attributes returned in a createServer response for Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is generated by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API.</p> </li> <li> <p> <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Chef starter kit, which includes a README, a configuration file, and the required RSA private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents. From this directory, you can run Knife commands.</p> </li> </ul> <p class=\"title\"> <b>Attributes returned in a createServer response for Puppet</b> </p> <ul> <li> <p> <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including a README and a required private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p> </li>*/",
         "setterMethodName" : "setEngineAttributes",
         "setterModel" : {
@@ -17058,6 +17275,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EngineVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>. </p>\n@param engineVersion The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.*/",
         "setterMethodName" : "setEngineVersion",
         "setterModel" : {
@@ -17123,6 +17341,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceProfileArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The instance profile ARN of the server. </p>\n@param instanceProfileArn The instance profile ARN of the server.*/",
         "setterMethodName" : "setInstanceProfileArn",
         "setterModel" : {
@@ -17188,6 +17407,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console. </p>\n@param instanceType The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console.*/",
         "setterMethodName" : "setInstanceType",
         "setterModel" : {
@@ -17253,6 +17473,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyPair",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key pair associated with the server. </p>\n@param keyPair The key pair associated with the server.*/",
         "setterMethodName" : "setKeyPair",
         "setterModel" : {
@@ -17318,6 +17539,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MaintenanceStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>. </p>\n@param maintenanceStatus The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>.\n@see MaintenanceStatus*/",
         "setterMethodName" : "setMaintenanceStatus",
         "setterModel" : {
@@ -17383,6 +17605,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredMaintenanceWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred maintenance period specified for the server. </p>\n@param preferredMaintenanceWindow The preferred maintenance period specified for the server.*/",
         "setterMethodName" : "setPreferredMaintenanceWindow",
         "setterModel" : {
@@ -17448,6 +17671,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredBackupWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred backup period specified for the server. </p>\n@param preferredBackupWindow The preferred backup period specified for the server.*/",
         "setterMethodName" : "setPreferredBackupWindow",
         "setterModel" : {
@@ -17550,6 +17774,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17593,6 +17818,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console. </p>\n@param securityGroupIds The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -17658,6 +17884,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service role ARN used to create the server. </p>\n@param serviceRoleArn The service role ARN used to create the server.*/",
         "setterMethodName" : "setServiceRoleArn",
         "setterModel" : {
@@ -17723,6 +17950,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state. </p>\n@param status The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state.\n@see ServerStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -17788,6 +18016,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results). </p>\n@param statusReason Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results).*/",
         "setterMethodName" : "setStatusReason",
         "setterModel" : {
@@ -17890,6 +18119,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17933,6 +18163,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The subnet IDs specified in a CreateServer request. </p>\n@param subnetIds The subnet IDs specified in a CreateServer request.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -17998,6 +18229,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the server. </p>\n@param serverArn The ARN of the server.*/",
         "setterMethodName" : "setServerArn",
         "setterModel" : {
@@ -18065,6 +18297,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AssociatePublicIpAddress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Associate a public IP address with a server that you are launching. </p>\n@param associatePublicIpAddress Associate a public IP address with a server that you are launching.*/",
           "setterMethodName" : "setAssociatePublicIpAddress",
           "setterModel" : {
@@ -18131,6 +18364,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "BackupRetentionCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of automated backups to keep. </p>\n@param backupRetentionCount The number of automated backups to keep.*/",
           "setterMethodName" : "setBackupRetentionCount",
           "setterModel" : {
@@ -18197,6 +18431,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CloudFormationStackArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the CloudFormation stack that was used to create the server. </p>\n@param cloudFormationStackArn The ARN of the CloudFormation stack that was used to create the server.*/",
           "setterMethodName" : "setCloudFormationStackArn",
           "setterModel" : {
@@ -18263,6 +18498,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code> </p>\n@param createdAt Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -18329,6 +18565,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DisableAutomatedBackup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount. </p>\n@param disableAutomatedBackup Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.*/",
           "setterMethodName" : "setDisableAutomatedBackup",
           "setterModel" : {
@@ -18395,6 +18632,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Endpoint",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>\n@param endpoint A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>*/",
           "setterMethodName" : "setEndpoint",
           "setterModel" : {
@@ -18461,6 +18699,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Engine",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The engine type of the server. Valid values in this release include <code>Chef</code> and <code>Puppet</code>. </p>\n@param engine The engine type of the server. Valid values in this release include <code>Chef</code> and <code>Puppet</code>.*/",
           "setterMethodName" : "setEngine",
           "setterModel" : {
@@ -18564,6 +18803,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18607,6 +18847,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EngineAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer(). </p> <p class=\"title\"> <b>Attributes returned in a createServer response for Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is generated by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API.</p> </li> <li> <p> <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Chef starter kit, which includes a README, a configuration file, and the required RSA private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents. From this directory, you can run Knife commands.</p> </li> </ul> <p class=\"title\"> <b>Attributes returned in a createServer response for Puppet</b> </p> <ul> <li> <p> <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including a README and a required private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p> </li> </ul>\n@param engineAttributes The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer(). </p> <p class=\"title\"> <b>Attributes returned in a createServer response for Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is generated by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API.</p> </li> <li> <p> <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Chef starter kit, which includes a README, a configuration file, and the required RSA private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents. From this directory, you can run Knife commands.</p> </li> </ul> <p class=\"title\"> <b>Attributes returned in a createServer response for Puppet</b> </p> <ul> <li> <p> <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including a README and a required private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p> </li>*/",
           "setterMethodName" : "setEngineAttributes",
           "setterModel" : {
@@ -18673,6 +18914,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EngineModel",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>\n@param engineModel The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.*/",
           "setterMethodName" : "setEngineModel",
           "setterModel" : {
@@ -18739,6 +18981,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EngineVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>. </p>\n@param engineVersion The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.*/",
           "setterMethodName" : "setEngineVersion",
           "setterModel" : {
@@ -18805,6 +19048,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceProfileArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The instance profile ARN of the server. </p>\n@param instanceProfileArn The instance profile ARN of the server.*/",
           "setterMethodName" : "setInstanceProfileArn",
           "setterModel" : {
@@ -18871,6 +19115,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console. </p>\n@param instanceType The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console.*/",
           "setterMethodName" : "setInstanceType",
           "setterModel" : {
@@ -18937,6 +19182,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyPair",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key pair associated with the server. </p>\n@param keyPair The key pair associated with the server.*/",
           "setterMethodName" : "setKeyPair",
           "setterModel" : {
@@ -19003,6 +19249,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MaintenanceStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>. </p>\n@param maintenanceStatus The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>.\n@see MaintenanceStatus*/",
           "setterMethodName" : "setMaintenanceStatus",
           "setterModel" : {
@@ -19069,6 +19316,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredBackupWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred backup period specified for the server. </p>\n@param preferredBackupWindow The preferred backup period specified for the server.*/",
           "setterMethodName" : "setPreferredBackupWindow",
           "setterModel" : {
@@ -19135,6 +19383,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredMaintenanceWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred maintenance period specified for the server. </p>\n@param preferredMaintenanceWindow The preferred maintenance period specified for the server.*/",
           "setterMethodName" : "setPreferredMaintenanceWindow",
           "setterModel" : {
@@ -19238,6 +19487,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -19281,6 +19531,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console. </p>\n@param securityGroupIds The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -19347,6 +19598,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the server. </p>\n@param serverArn The ARN of the server.*/",
           "setterMethodName" : "setServerArn",
           "setterModel" : {
@@ -19413,6 +19665,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server. </p>\n@param serverName The name of the server.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -19479,6 +19732,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service role ARN used to create the server. </p>\n@param serviceRoleArn The service role ARN used to create the server.*/",
           "setterMethodName" : "setServiceRoleArn",
           "setterModel" : {
@@ -19545,6 +19799,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state. </p>\n@param status The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state.\n@see ServerStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -19611,6 +19866,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results). </p>\n@param statusReason Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results).*/",
           "setterMethodName" : "setStatusReason",
           "setterModel" : {
@@ -19714,6 +19970,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -19757,6 +20014,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The subnet IDs specified in a CreateServer request. </p>\n@param subnetIds The subnet IDs specified in a CreateServer request.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -19862,6 +20120,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the event occurred. </p>\n@param createdAt The time when the event occurred.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -19927,6 +20186,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server on or for which the event occurred. </p>\n@param serverName The name of the server on or for which the event occurred.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -19992,6 +20252,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Message",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A human-readable informational or status message.</p>\n@param message A human-readable informational or status message.*/",
         "setterMethodName" : "setMessage",
         "setterModel" : {
@@ -20057,6 +20318,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LogUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon S3 URL of the event's log file.</p>\n@param logUrl The Amazon S3 URL of the event's log file.*/",
         "setterMethodName" : "setLogUrl",
         "setterModel" : {
@@ -20124,6 +20386,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the event occurred. </p>\n@param createdAt The time when the event occurred.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -20190,6 +20453,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LogUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon S3 URL of the event's log file.</p>\n@param logUrl The Amazon S3 URL of the event's log file.*/",
           "setterMethodName" : "setLogUrl",
           "setterModel" : {
@@ -20256,6 +20520,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Message",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A human-readable informational or status message.</p>\n@param message A human-readable informational or status message.*/",
           "setterMethodName" : "setMessage",
           "setterModel" : {
@@ -20322,6 +20587,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server on or for which the event occurred. </p>\n@param serverName The name of the server on or for which the event occurred.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -20513,6 +20779,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server on which to run maintenance. </p>\n@param serverName The name of the server on which to run maintenance.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -20615,6 +20882,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20658,6 +20926,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EngineAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Engine attributes that are specific to the server on which you want to run maintenance. </p>\n@param engineAttributes Engine attributes that are specific to the server on which you want to run maintenance.*/",
         "setterMethodName" : "setEngineAttributes",
         "setterModel" : {
@@ -20762,6 +21031,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20805,6 +21075,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EngineAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Engine attributes that are specific to the server on which you want to run maintenance. </p>\n@param engineAttributes Engine attributes that are specific to the server on which you want to run maintenance.*/",
           "setterMethodName" : "setEngineAttributes",
           "setterModel" : {
@@ -20871,6 +21142,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server on which to run maintenance. </p>\n@param serverName The name of the server on which to run maintenance.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -20973,6 +21245,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Server",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the response to a <code>StartMaintenance</code> request. </p>\n@param server Contains the response to a <code>StartMaintenance</code> request.*/",
         "setterMethodName" : "setServer",
         "setterModel" : {
@@ -21040,6 +21313,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Server",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the response to a <code>StartMaintenance</code> request. </p>\n@param server Contains the response to a <code>StartMaintenance</code> request.*/",
           "setterMethodName" : "setServer",
           "setterModel" : {
@@ -21152,6 +21426,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server to update. </p>\n@param serverName The name of the server to update.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -21217,6 +21492,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttributeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the engine attribute to update. </p>\n@param attributeName The name of the engine attribute to update.*/",
         "setterMethodName" : "setAttributeName",
         "setterModel" : {
@@ -21282,6 +21558,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttributeValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value to set for the attribute. </p>\n@param attributeValue The value to set for the attribute.*/",
         "setterMethodName" : "setAttributeValue",
         "setterModel" : {
@@ -21349,6 +21626,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttributeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the engine attribute to update. </p>\n@param attributeName The name of the engine attribute to update.*/",
           "setterMethodName" : "setAttributeName",
           "setterModel" : {
@@ -21415,6 +21693,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttributeValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value to set for the attribute. </p>\n@param attributeValue The value to set for the attribute.*/",
           "setterMethodName" : "setAttributeValue",
           "setterModel" : {
@@ -21481,6 +21760,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server to update. </p>\n@param serverName The name of the server to update.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -21583,6 +21863,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Server",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>\n@param server Contains the response to an <code>UpdateServerEngineAttributes</code> request.*/",
         "setterMethodName" : "setServer",
         "setterModel" : {
@@ -21650,6 +21931,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Server",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>\n@param server Contains the response to an <code>UpdateServerEngineAttributes</code> request.*/",
           "setterMethodName" : "setServer",
           "setterModel" : {
@@ -21762,6 +22044,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DisableAutomatedBackup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>\n@param disableAutomatedBackup Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.*/",
         "setterMethodName" : "setDisableAutomatedBackup",
         "setterModel" : {
@@ -21827,6 +22110,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "BackupRetentionCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Sets the number of automated backups that you want to keep. </p>\n@param backupRetentionCount Sets the number of automated backups that you want to keep.*/",
         "setterMethodName" : "setBackupRetentionCount",
         "setterModel" : {
@@ -21892,6 +22176,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the server to update. </p>\n@param serverName The name of the server to update.*/",
         "setterMethodName" : "setServerName",
         "setterModel" : {
@@ -21957,6 +22242,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredMaintenanceWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param preferredMaintenanceWindow */",
         "setterMethodName" : "setPreferredMaintenanceWindow",
         "setterModel" : {
@@ -22022,6 +22308,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredBackupWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param preferredBackupWindow */",
         "setterMethodName" : "setPreferredBackupWindow",
         "setterModel" : {
@@ -22089,6 +22376,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "BackupRetentionCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Sets the number of automated backups that you want to keep. </p>\n@param backupRetentionCount Sets the number of automated backups that you want to keep.*/",
           "setterMethodName" : "setBackupRetentionCount",
           "setterModel" : {
@@ -22155,6 +22443,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DisableAutomatedBackup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>\n@param disableAutomatedBackup Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.*/",
           "setterMethodName" : "setDisableAutomatedBackup",
           "setterModel" : {
@@ -22221,6 +22510,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredBackupWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param preferredBackupWindow */",
           "setterMethodName" : "setPreferredBackupWindow",
           "setterModel" : {
@@ -22287,6 +22577,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredMaintenanceWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param preferredMaintenanceWindow */",
           "setterMethodName" : "setPreferredMaintenanceWindow",
           "setterModel" : {
@@ -22353,6 +22644,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the server to update. </p>\n@param serverName The name of the server to update.*/",
           "setterMethodName" : "setServerName",
           "setterModel" : {
@@ -22455,6 +22747,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Server",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the response to a <code>UpdateServer</code> request. </p>\n@param server Contains the response to a <code>UpdateServer</code> request.*/",
         "setterMethodName" : "setServer",
         "setterModel" : {
@@ -22522,6 +22815,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Server",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the response to a <code>UpdateServer</code> request. </p>\n@param server Contains the response to a <code>UpdateServer</code> request.*/",
           "setterMethodName" : "setServer",
           "setterModel" : {

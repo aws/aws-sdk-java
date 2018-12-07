@@ -108,6 +108,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(CreateBusinessReportScheduleRequest request) {
+
+        return createBusinessReportScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(CreateBusinessReportScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateBusinessReportScheduleRequest, CreateBusinessReportScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest request) {
 
         return createConferenceProviderAsync(request, null);
@@ -194,6 +207,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<DeleteAddressBookResult> deleteAddressBookAsync(DeleteAddressBookRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAddressBookRequest, DeleteAddressBookResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(DeleteBusinessReportScheduleRequest request) {
+
+        return deleteBusinessReportScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(DeleteBusinessReportScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteBusinessReportScheduleRequest, DeleteBusinessReportScheduleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -497,6 +523,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<GetSkillGroupResult> getSkillGroupAsync(GetSkillGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSkillGroupRequest, GetSkillGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(ListBusinessReportSchedulesRequest request) {
+
+        return listBusinessReportSchedulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(ListBusinessReportSchedulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBusinessReportSchedulesRequest, ListBusinessReportSchedulesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -852,6 +891,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(UpdateAddressBookRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAddressBookRequest, UpdateAddressBookResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(UpdateBusinessReportScheduleRequest request) {
+
+        return updateBusinessReportScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(UpdateBusinessReportScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateBusinessReportScheduleRequest, UpdateBusinessReportScheduleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

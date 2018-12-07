@@ -31,7 +31,7 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * the same permissions as the associated user except that they can be used only to access the specified service.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -51,7 +51,7 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * the same permissions as the associated user except that they can be used only to access the specified service.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -61,9 +61,9 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      *        credentials have the same permissions as the associated user except that they can be used only to access
      *        the specified service.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -76,7 +76,7 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * the same permissions as the associated user except that they can be used only to access the specified service.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -85,9 +85,9 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      *         credentials have the same permissions as the associated user except that they can be used only to access
      *         the specified service.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: _+=,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -100,7 +100,7 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * the same permissions as the associated user except that they can be used only to access the specified service.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -110,9 +110,9 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      *        credentials have the same permissions as the associated user except that they can be used only to access
      *        the specified service.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +168,8 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,3 +1,20 @@
+# __1.11.466__ __2018-12-07__
+## __AWS Identity and Access Management__
+  - ### Features
+    - We are making it easier for you to manage your AWS Identity and Access Management (IAM) policy permissions by enabling you to retrieve the last timestamp when an IAM entity (e.g., user, role, or a group) accessed an AWS service. This feature also allows you to audit service access for your entities.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Documentation updates for servicecatalog.
+
+## __Alexa For Business__
+  - ### Features
+    - Alexa for Business now allows IT administrators to create ad-hoc or scheduled usage reports, which help customers understand how Alexa is used in their workplace. To learn how to create usage reports, see https://docs.aws.amazon.com/a4b/latest/ag/creating-reports.html
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - You can now launch the larger-sized P3dn.24xlarge instance that features NVIDIA Tesla V100s with double the GPU memory, 100Gbps networking and local NVMe storage.
+
 # __1.11.465__ __2018-12-06__
 ## __AWS CodeBuild__
   - ### Features

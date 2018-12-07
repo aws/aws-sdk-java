@@ -658,6 +658,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClaimCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The claim code, starting with \"C-\", as provided by the device manufacturer.</p>\n@param claimCode The claim code, starting with \"C-\", as provided by the device manufacturer.*/",
         "setterMethodName" : "setClaimCode",
         "setterModel" : {
@@ -725,6 +726,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClaimCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The claim code, starting with \"C-\", as provided by the device manufacturer.</p>\n@param claimCode The claim code, starting with \"C-\", as provided by the device manufacturer.*/",
           "setterMethodName" : "setClaimCode",
           "setterModel" : {
@@ -827,6 +829,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClaimCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The claim code provided by the device manufacturer.</p>\n@param claimCode The claim code provided by the device manufacturer.*/",
         "setterMethodName" : "setClaimCode",
         "setterModel" : {
@@ -892,6 +895,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Total",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The total number of devices associated with the claim code that has been processed\n in the claim request.</p>\n@param total The total number of devices associated with the claim code that has been processed\n in the claim request.*/",
         "setterMethodName" : "setTotal",
         "setterModel" : {
@@ -959,6 +963,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClaimCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The claim code provided by the device manufacturer.</p>\n@param claimCode The claim code provided by the device manufacturer.*/",
           "setterMethodName" : "setClaimCode",
           "setterModel" : {
@@ -1025,6 +1030,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Total",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The total number of devices associated with the claim code that has been processed\n in the claim request.</p>\n@param total The total number of devices associated with the claim code that has been processed\n in the claim request.*/",
           "setterMethodName" : "setTotal",
           "setterModel" : {
@@ -1137,6 +1143,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -1204,6 +1211,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -1306,6 +1314,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DeviceDescription",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Device details.</p>\n@param deviceDescription Device details.*/",
         "setterMethodName" : "setDeviceDescription",
         "setterModel" : {
@@ -1373,6 +1382,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DeviceDescription",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Device details.</p>\n@param deviceDescription Device details.*/",
           "setterMethodName" : "setDeviceDescription",
           "setterModel" : {
@@ -1478,6 +1488,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user specified attributes associated with the device for an event.</p>\n@param attributes The user specified attributes associated with the device for an event.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -1543,6 +1554,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -1608,6 +1620,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The device type, such as \"button\".</p>\n@param type The device type, such as \"button\".*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -1675,6 +1688,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user specified attributes associated with the device for an event.</p>\n@param attributes The user specified attributes associated with the device for an event.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -1741,6 +1755,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -1807,6 +1822,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The device type, such as \"button\".</p>\n@param type The device type, such as \"button\".*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -1955,6 +1971,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1992,6 +2009,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.</p>\n@param attributes An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -2057,6 +2075,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -2122,6 +2141,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A Boolean value indicating whether or not the device is enabled.</p>\n@param enabled A Boolean value indicating whether or not the device is enabled.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -2187,6 +2207,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "RemainingLife",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.</p>\n@param remainingLife A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.*/",
         "setterMethodName" : "setRemainingLife",
         "setterModel" : {
@@ -2252,6 +2273,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param type The type of the device, such as \"button\".*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -2362,6 +2384,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -2399,6 +2422,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.</p>\n@param attributes An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -2465,6 +2489,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -2531,6 +2556,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A Boolean value indicating whether or not the device is enabled.</p>\n@param enabled A Boolean value indicating whether or not the device is enabled.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
@@ -2597,6 +2623,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "RemainingLife",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.</p>\n@param remainingLife A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.*/",
           "setterMethodName" : "setRemainingLife",
           "setterModel" : {
@@ -2663,6 +2690,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param type The type of the device, such as \"button\".*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -2768,6 +2796,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Device",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object representing the device associated with the event.</p>\n@param device An object representing the device associated with the event.*/",
         "setterMethodName" : "setDevice",
         "setterModel" : {
@@ -2833,6 +2862,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StdEvent",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A serialized JSON object representing the device-type specific event.</p>\n@param stdEvent A serialized JSON object representing the device-type specific event.*/",
         "setterMethodName" : "setStdEvent",
         "setterModel" : {
@@ -2900,6 +2930,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Device",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object representing the device associated with the event.</p>\n@param device An object representing the device associated with the event.*/",
           "setterMethodName" : "setDevice",
           "setterModel" : {
@@ -2966,6 +2997,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StdEvent",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A serialized JSON object representing the device-type specific event.</p>\n@param stdEvent A serialized JSON object representing the device-type specific event.*/",
           "setterMethodName" : "setStdEvent",
           "setterModel" : {
@@ -3071,6 +3103,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".*/",
         "setterMethodName" : "setDeviceType",
         "setterModel" : {
@@ -3136,6 +3169,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MethodName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the method applicable to the deviceType.</p>\n@param methodName The name of the method applicable to the deviceType.*/",
         "setterMethodName" : "setMethodName",
         "setterModel" : {
@@ -3203,6 +3237,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".*/",
           "setterMethodName" : "setDeviceType",
           "setterModel" : {
@@ -3269,6 +3304,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MethodName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the method applicable to the deviceType.</p>\n@param methodName The name of the method applicable to the deviceType.*/",
           "setterMethodName" : "setMethodName",
           "setterModel" : {
@@ -3381,6 +3417,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -3448,6 +3485,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -3550,6 +3588,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -3617,6 +3656,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -3722,6 +3762,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>403</p>\n@param code 403*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -3789,6 +3830,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>403</p>\n@param code 403*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -3898,6 +3940,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -3965,6 +4008,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -4104,6 +4148,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4147,6 +4192,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DeviceMethods",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of available device APIs.</p>\n@param deviceMethods List of available device APIs.*/",
         "setterMethodName" : "setDeviceMethods",
         "setterModel" : {
@@ -4251,6 +4297,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4294,6 +4341,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DeviceMethods",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of available device APIs.</p>\n@param deviceMethods List of available device APIs.*/",
           "setterMethodName" : "setDeviceMethods",
           "setterModel" : {
@@ -4406,6 +4454,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -4473,6 +4522,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -4575,6 +4625,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -4642,6 +4693,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -4747,6 +4799,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>500</p>\n@param code 500*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -4814,6 +4867,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>500</p>\n@param code 500*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -4916,6 +4970,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>400</p>\n@param code 400*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -4983,6 +5038,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>400</p>\n@param code 400*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -5092,6 +5148,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -5157,6 +5214,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DeviceMethod",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The device method to invoke.</p>\n@param deviceMethod The device method to invoke.*/",
         "setterMethodName" : "setDeviceMethod",
         "setterModel" : {
@@ -5222,6 +5280,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceMethodParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JSON encoded string containing the device method request parameters.</p>\n@param deviceMethodParameters A JSON encoded string containing the device method request parameters.*/",
         "setterMethodName" : "setDeviceMethodParameters",
         "setterModel" : {
@@ -5289,6 +5348,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -5355,6 +5415,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DeviceMethod",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The device method to invoke.</p>\n@param deviceMethod The device method to invoke.*/",
           "setterMethodName" : "setDeviceMethod",
           "setterModel" : {
@@ -5421,6 +5482,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceMethodParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JSON encoded string containing the device method request parameters.</p>\n@param deviceMethodParameters A JSON encoded string containing the device method request parameters.*/",
           "setterMethodName" : "setDeviceMethodParameters",
           "setterModel" : {
@@ -5523,6 +5585,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceMethodResponse",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JSON encoded string containing the device method response.</p>\n@param deviceMethodResponse A JSON encoded string containing the device method response.*/",
         "setterMethodName" : "setDeviceMethodResponse",
         "setterModel" : {
@@ -5590,6 +5653,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceMethodResponse",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JSON encoded string containing the device method response.</p>\n@param deviceMethodResponse A JSON encoded string containing the device method response.*/",
           "setterMethodName" : "setDeviceMethodResponse",
           "setterModel" : {
@@ -5702,6 +5766,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -5767,6 +5832,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "FromTimeStamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param fromTimeStamp The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z*/",
         "setterMethodName" : "setFromTimeStamp",
         "setterModel" : {
@@ -5832,6 +5898,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -5897,6 +5964,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5962,6 +6030,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "ToTimeStamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param toTimeStamp The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z*/",
         "setterMethodName" : "setToTimeStamp",
         "setterModel" : {
@@ -6029,6 +6098,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -6095,6 +6165,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "FromTimeStamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param fromTimeStamp The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z*/",
           "setterMethodName" : "setFromTimeStamp",
           "setterModel" : {
@@ -6161,6 +6232,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -6227,6 +6299,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6293,6 +6366,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "ToTimeStamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param toTimeStamp The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z*/",
           "setterMethodName" : "setToTimeStamp",
           "setterModel" : {
@@ -6432,6 +6506,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6475,6 +6550,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Events",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of zero or more elements describing the event(s) associated with the\n device.</p>\n@param events An array of zero or more elements describing the event(s) associated with the\n device.*/",
         "setterMethodName" : "setEvents",
         "setterModel" : {
@@ -6540,6 +6616,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6644,6 +6721,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6687,6 +6765,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Events",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of zero or more elements describing the event(s) associated with the\n device.</p>\n@param events An array of zero or more elements describing the event(s) associated with the\n device.*/",
           "setterMethodName" : "setEvents",
           "setterModel" : {
@@ -6753,6 +6832,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6865,6 +6945,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".*/",
         "setterMethodName" : "setDeviceType",
         "setterModel" : {
@@ -6930,6 +7011,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -6995,6 +7077,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7062,6 +7145,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".*/",
           "setterMethodName" : "setDeviceType",
           "setterModel" : {
@@ -7128,6 +7212,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -7194,6 +7279,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7333,6 +7419,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7376,6 +7463,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Devices",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of devices.</p>\n@param devices A list of devices.*/",
         "setterMethodName" : "setDevices",
         "setterModel" : {
@@ -7441,6 +7529,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7545,6 +7634,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7588,6 +7678,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Devices",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of devices.</p>\n@param devices A list of devices.*/",
           "setterMethodName" : "setDevices",
           "setterModel" : {
@@ -7654,6 +7745,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7759,6 +7851,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>412</p>\n@param code 412*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -7826,6 +7919,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>412</p>\n@param code 412*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -7928,6 +8022,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>416</p>\n@param code 416*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -7995,6 +8090,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>416</p>\n@param code 416*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -8097,6 +8193,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>409</p>\n@param code 409*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -8164,6 +8261,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>409</p>\n@param code 409*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -8266,6 +8364,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>404</p>\n@param code 404*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -8333,6 +8432,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>404</p>\n@param code 404*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -8442,6 +8542,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -8509,6 +8610,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -8611,6 +8713,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -8678,6 +8781,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -8790,6 +8894,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -8855,6 +8960,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If true, the device is enabled. If false, the device is\n disabled.</p>\n@param enabled If true, the device is enabled. If false, the device is\n disabled.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -8922,6 +9028,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -8988,6 +9095,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If true, the device is enabled. If false, the device is\n disabled.</p>\n@param enabled If true, the device is enabled. If false, the device is\n disabled.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {

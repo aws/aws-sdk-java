@@ -713,6 +713,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the attribute.\n@param name The name of the attribute.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -778,6 +779,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AlternateNameEncoding",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p></p>\n@param alternateNameEncoding */",
         "setterMethodName" : "setAlternateNameEncoding",
         "setterModel" : {
@@ -843,6 +845,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**The value of the attribute.\n@param value The value of the attribute.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -908,6 +911,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AlternateValueEncoding",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p></p>\n@param alternateValueEncoding */",
         "setterMethodName" : "setAlternateValueEncoding",
         "setterModel" : {
@@ -975,6 +979,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AlternateNameEncoding",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p></p>\n@param alternateNameEncoding */",
           "setterMethodName" : "setAlternateNameEncoding",
           "setterModel" : {
@@ -1041,6 +1046,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AlternateValueEncoding",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p></p>\n@param alternateValueEncoding */",
           "setterMethodName" : "setAlternateValueEncoding",
           "setterModel" : {
@@ -1107,6 +1113,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the attribute.\n@param name The name of the attribute.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1173,6 +1180,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**The value of the attribute.\n@param value The value of the attribute.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -1278,6 +1286,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -1345,6 +1354,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -1454,6 +1464,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the domain in which the attributes are being deleted.\n@param domainName The name of the domain in which the attributes are being deleted.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -1556,6 +1567,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1599,6 +1611,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Items",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of items on which to perform the operation.\n@param items A list of items on which to perform the operation.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
@@ -1666,6 +1679,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the domain in which the attributes are being deleted.\n@param domainName The name of the domain in which the attributes are being deleted.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -1769,6 +1783,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1812,6 +1827,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Items",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of items on which to perform the operation.\n@param items A list of items on which to perform the operation.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
@@ -1961,6 +1977,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the domain in which the attributes are being stored.\n@param domainName The name of the domain in which the attributes are being stored.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -2063,6 +2080,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2106,6 +2124,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Items",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of items on which to perform the operation.\n@param items A list of items on which to perform the operation.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
@@ -2173,6 +2192,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the domain in which the attributes are being stored.\n@param domainName The name of the domain in which the attributes are being stored.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -2276,6 +2296,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2319,6 +2340,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Items",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of items on which to perform the operation.\n@param items A list of items on which to perform the operation.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
@@ -2468,6 +2490,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@param domainName The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -2535,6 +2558,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@param domainName The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -2677,6 +2701,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param name */",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2779,6 +2804,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2822,6 +2848,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param attributes */",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -2926,6 +2953,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2969,6 +2997,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param attributes */",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -3035,6 +3064,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param name */",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3147,6 +3177,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -3212,6 +3243,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ItemName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@param itemName The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.*/",
         "setterMethodName" : "setItemName",
         "setterModel" : {
@@ -3314,6 +3346,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3357,6 +3390,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n@param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -3422,6 +3456,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Expected",
+        "sensitive" : false,
         "setterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@param expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.*/",
         "setterMethodName" : "setExpected",
         "setterModel" : {
@@ -3526,6 +3561,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3569,6 +3605,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n@param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -3635,6 +3672,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -3701,6 +3739,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Expected",
+          "sensitive" : false,
           "setterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@param expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.*/",
           "setterMethodName" : "setExpected",
           "setterModel" : {
@@ -3767,6 +3806,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ItemName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@param itemName The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.*/",
           "setterMethodName" : "setItemName",
           "setterModel" : {
@@ -3916,6 +3956,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the domain to delete.\n@param domainName The name of the domain to delete.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -3983,6 +4024,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the domain to delete.\n@param domainName The name of the domain to delete.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -4132,6 +4174,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the domain for which to display the metadata of.\n@param domainName The name of the domain for which to display the metadata of.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -4199,6 +4242,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the domain for which to display the metadata of.\n@param domainName The name of the domain for which to display the metadata of.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -4301,6 +4345,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ItemCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**The number of all items in the domain.\n@param itemCount The number of all items in the domain.*/",
         "setterMethodName" : "setItemCount",
         "setterModel" : {
@@ -4366,6 +4411,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ItemNamesSizeBytes",
+        "sensitive" : false,
         "setterDocumentation" : "/**The total size of all item names in the domain, in bytes.\n@param itemNamesSizeBytes The total size of all item names in the domain, in bytes.*/",
         "setterMethodName" : "setItemNamesSizeBytes",
         "setterModel" : {
@@ -4431,6 +4477,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "AttributeNameCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**The number of unique attribute names in the domain.\n@param attributeNameCount The number of unique attribute names in the domain.*/",
         "setterMethodName" : "setAttributeNameCount",
         "setterModel" : {
@@ -4496,6 +4543,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "AttributeNamesSizeBytes",
+        "sensitive" : false,
         "setterDocumentation" : "/**The total size of all unique attribute names in the domain, in bytes.\n@param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.*/",
         "setterMethodName" : "setAttributeNamesSizeBytes",
         "setterModel" : {
@@ -4561,6 +4609,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "AttributeValueCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**The number of all attribute name/value pairs in the domain.\n@param attributeValueCount The number of all attribute name/value pairs in the domain.*/",
         "setterMethodName" : "setAttributeValueCount",
         "setterModel" : {
@@ -4626,6 +4675,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "AttributeValuesSizeBytes",
+        "sensitive" : false,
         "setterDocumentation" : "/**The total size of all attribute values in the domain, in bytes.\n@param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.*/",
         "setterMethodName" : "setAttributeValuesSizeBytes",
         "setterModel" : {
@@ -4691,6 +4741,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Timestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@param timestamp The data and time when metadata was calculated, in Epoch (UNIX) seconds.*/",
         "setterMethodName" : "setTimestamp",
         "setterModel" : {
@@ -4758,6 +4809,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "AttributeNameCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**The number of unique attribute names in the domain.\n@param attributeNameCount The number of unique attribute names in the domain.*/",
           "setterMethodName" : "setAttributeNameCount",
           "setterModel" : {
@@ -4824,6 +4876,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "AttributeNamesSizeBytes",
+          "sensitive" : false,
           "setterDocumentation" : "/**The total size of all unique attribute names in the domain, in bytes.\n@param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.*/",
           "setterMethodName" : "setAttributeNamesSizeBytes",
           "setterModel" : {
@@ -4890,6 +4943,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "AttributeValueCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**The number of all attribute name/value pairs in the domain.\n@param attributeValueCount The number of all attribute name/value pairs in the domain.*/",
           "setterMethodName" : "setAttributeValueCount",
           "setterModel" : {
@@ -4956,6 +5010,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "AttributeValuesSizeBytes",
+          "sensitive" : false,
           "setterDocumentation" : "/**The total size of all attribute values in the domain, in bytes.\n@param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.*/",
           "setterMethodName" : "setAttributeValuesSizeBytes",
           "setterModel" : {
@@ -5022,6 +5077,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ItemCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**The number of all items in the domain.\n@param itemCount The number of all items in the domain.*/",
           "setterMethodName" : "setItemCount",
           "setterModel" : {
@@ -5088,6 +5144,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ItemNamesSizeBytes",
+          "sensitive" : false,
           "setterDocumentation" : "/**The total size of all item names in the domain, in bytes.\n@param itemNamesSizeBytes The total size of all item names in the domain, in bytes.*/",
           "setterMethodName" : "setItemNamesSizeBytes",
           "setterModel" : {
@@ -5154,6 +5211,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Timestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@param timestamp The data and time when metadata was calculated, in Epoch (UNIX) seconds.*/",
           "setterMethodName" : "setTimestamp",
           "setterModel" : {
@@ -5259,6 +5317,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -5326,6 +5385,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -5435,6 +5495,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -5500,6 +5561,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ItemName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.*/",
         "setterMethodName" : "setItemName",
         "setterModel" : {
@@ -5602,6 +5664,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5645,6 +5708,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttributeNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**The names of the attributes.\n@param attributeNames The names of the attributes.*/",
         "setterMethodName" : "setAttributeNames",
         "setterModel" : {
@@ -5710,6 +5774,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ConsistentRead",
+        "sensitive" : false,
         "setterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.*/",
         "setterMethodName" : "setConsistentRead",
         "setterModel" : {
@@ -5814,6 +5879,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5857,6 +5923,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttributeNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**The names of the attributes.\n@param attributeNames The names of the attributes.*/",
           "setterMethodName" : "setAttributeNames",
           "setterModel" : {
@@ -5923,6 +5990,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ConsistentRead",
+          "sensitive" : false,
           "setterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.*/",
           "setterMethodName" : "setConsistentRead",
           "setterModel" : {
@@ -5989,6 +6057,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -6055,6 +6124,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ItemName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.*/",
           "setterMethodName" : "setItemName",
           "setterModel" : {
@@ -6194,6 +6264,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6237,6 +6308,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**The list of attributes returned by the operation.\n@param attributes The list of attributes returned by the operation.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -6341,6 +6413,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6384,6 +6457,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**The list of attributes returned by the operation.\n@param attributes The list of attributes returned by the operation.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -6489,6 +6563,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -6556,6 +6631,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -6658,6 +6734,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -6725,6 +6802,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -6827,6 +6905,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -6894,6 +6973,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -6996,6 +7076,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -7063,6 +7144,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -7165,6 +7247,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -7232,6 +7315,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -7334,6 +7418,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the item.\n@param name The name of the item.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -7399,6 +7484,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AlternateNameEncoding",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p></p>\n@param alternateNameEncoding */",
         "setterMethodName" : "setAlternateNameEncoding",
         "setterModel" : {
@@ -7501,6 +7587,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7544,6 +7631,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of attributes.\n@param attributes A list of attributes.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -7611,6 +7699,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AlternateNameEncoding",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p></p>\n@param alternateNameEncoding */",
           "setterMethodName" : "setAlternateNameEncoding",
           "setterModel" : {
@@ -7714,6 +7803,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7757,6 +7847,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of attributes.\n@param attributes A list of attributes.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -7823,6 +7914,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the item.\n@param name The name of the item.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -7935,6 +8027,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxNumberOfDomains",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.*/",
         "setterMethodName" : "setMaxNumberOfDomains",
         "setterModel" : {
@@ -8000,6 +8093,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of domain names.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of domain names.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8067,6 +8161,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxNumberOfDomains",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.*/",
           "setterMethodName" : "setMaxNumberOfDomains",
           "setterModel" : {
@@ -8133,6 +8228,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of domain names.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of domain names.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8272,6 +8368,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8315,6 +8412,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DomainNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of domain names that match the expression.\n@param domainNames A list of domain names that match the expression.*/",
         "setterMethodName" : "setDomainNames",
         "setterModel" : {
@@ -8380,6 +8478,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@param nextToken An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8484,6 +8583,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8527,6 +8627,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DomainNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of domain names that match the expression.\n@param domainNames A list of domain names that match the expression.*/",
           "setterMethodName" : "setDomainNames",
           "setterModel" : {
@@ -8593,6 +8694,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@param nextToken An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8698,6 +8800,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -8765,6 +8868,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -8867,6 +8971,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -8934,6 +9039,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -9036,6 +9142,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -9103,6 +9210,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -9205,6 +9313,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -9272,6 +9381,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -9374,6 +9484,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -9441,6 +9552,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -9543,6 +9655,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -9610,6 +9723,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -9712,6 +9826,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -9779,6 +9894,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -9881,6 +9997,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -9948,6 +10065,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -10057,6 +10175,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -10122,6 +10241,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ItemName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.*/",
         "setterMethodName" : "setItemName",
         "setterModel" : {
@@ -10224,6 +10344,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10267,6 +10388,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**The list of attributes.\n@param attributes The list of attributes.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -10332,6 +10454,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Expected",
+        "sensitive" : false,
         "setterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@param expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.*/",
         "setterMethodName" : "setExpected",
         "setterModel" : {
@@ -10436,6 +10559,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10479,6 +10603,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**The list of attributes.\n@param attributes The list of attributes.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -10545,6 +10670,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -10611,6 +10737,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Expected",
+          "sensitive" : false,
           "setterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@param expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.*/",
           "setterMethodName" : "setExpected",
           "setterModel" : {
@@ -10677,6 +10804,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ItemName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.*/",
           "setterMethodName" : "setItemName",
           "setterModel" : {
@@ -10819,6 +10947,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the replaceable attribute.\n@param name The name of the replaceable attribute.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -10884,6 +11013,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**The value of the replaceable attribute.\n@param value The value of the replaceable attribute.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -10949,6 +11079,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Replace",
+        "sensitive" : false,
         "setterDocumentation" : "/**A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@param replace A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.*/",
         "setterMethodName" : "setReplace",
         "setterModel" : {
@@ -11016,6 +11147,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the replaceable attribute.\n@param name The name of the replaceable attribute.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -11082,6 +11214,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Replace",
+          "sensitive" : false,
           "setterDocumentation" : "/**A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@param replace A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.*/",
           "setterMethodName" : "setReplace",
           "setterModel" : {
@@ -11148,6 +11281,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**The value of the replaceable attribute.\n@param value The value of the replaceable attribute.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -11253,6 +11387,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the replaceable item.\n@param name The name of the replaceable item.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -11355,6 +11490,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11398,6 +11534,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**The list of attributes for a replaceable item.\n@param attributes The list of attributes for a replaceable item.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -11502,6 +11639,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11545,6 +11683,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**The list of attributes for a replaceable item.\n@param attributes The list of attributes for a replaceable item.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -11611,6 +11750,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the replaceable item.\n@param name The name of the replaceable item.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -11716,6 +11856,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -11783,6 +11924,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -11892,6 +12034,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SelectExpression",
+        "sensitive" : false,
         "setterDocumentation" : "/**The expression used to query the domain.\n@param selectExpression The expression used to query the domain.*/",
         "setterMethodName" : "setSelectExpression",
         "setterModel" : {
@@ -11957,6 +12100,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12022,6 +12166,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ConsistentRead",
+        "sensitive" : false,
         "setterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.*/",
         "setterMethodName" : "setConsistentRead",
         "setterModel" : {
@@ -12089,6 +12234,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ConsistentRead",
+          "sensitive" : false,
           "setterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.*/",
           "setterMethodName" : "setConsistentRead",
           "setterModel" : {
@@ -12155,6 +12301,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12221,6 +12368,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SelectExpression",
+          "sensitive" : false,
           "setterDocumentation" : "/**The expression used to query the domain.\n@param selectExpression The expression used to query the domain.*/",
           "setterMethodName" : "setSelectExpression",
           "setterModel" : {
@@ -12360,6 +12508,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12403,6 +12552,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Items",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of items that match the select expression.\n@param items A list of items that match the select expression.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
@@ -12468,6 +12618,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@param nextToken An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12572,6 +12723,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12615,6 +12767,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Items",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of items that match the select expression.\n@param items A list of items that match the select expression.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
@@ -12681,6 +12834,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@param nextToken An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12786,6 +12940,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "BoxUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
@@ -12853,6 +13008,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "BoxUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
@@ -12955,6 +13111,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the attribute involved in the condition.</p>\n@param name The name of the attribute involved in the condition.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -13020,6 +13177,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>\n@param value The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -13085,6 +13243,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Exists",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>\n@param exists A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.*/",
         "setterMethodName" : "setExists",
         "setterModel" : {
@@ -13152,6 +13311,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Exists",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>\n@param exists A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.*/",
           "setterMethodName" : "setExists",
           "setterModel" : {
@@ -13218,6 +13378,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the attribute involved in the condition.</p>\n@param name The name of the attribute involved in the condition.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -13284,6 +13445,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>\n@param value The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {

@@ -30,7 +30,7 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name (friendly name, not ARN) of the role to attach the policy to.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -53,7 +53,7 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name (friendly name, not ARN) of the role to attach the policy to.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -61,9 +61,9 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param roleName
      *        The name (friendly name, not ARN) of the role to attach the policy to.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setRoleName(String roleName) {
@@ -75,16 +75,16 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name (friendly name, not ARN) of the role to attach the policy to.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name (friendly name, not ARN) of the role to attach the policy to.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: _+=,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getRoleName() {
@@ -96,7 +96,7 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name (friendly name, not ARN) of the role to attach the policy to.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -104,9 +104,9 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param roleName
      *        The name (friendly name, not ARN) of the role to attach the policy to.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,7 +183,8 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

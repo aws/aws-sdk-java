@@ -163,7 +163,8 @@ public class ExportCertificateResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -178,7 +179,7 @@ public class ExportCertificateResult extends com.amazonaws.AmazonWebServiceResul
         if (getCertificateChain() != null)
             sb.append("CertificateChain: ").append(getCertificateChain()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: ").append(getPrivateKey());
+            sb.append("PrivateKey: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

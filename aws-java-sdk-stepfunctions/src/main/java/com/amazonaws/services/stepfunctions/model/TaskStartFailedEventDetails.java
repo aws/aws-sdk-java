@@ -214,7 +214,8 @@ public class TaskStartFailedEventDetails implements Serializable, Cloneable, Str
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -229,9 +230,9 @@ public class TaskStartFailedEventDetails implements Serializable, Cloneable, Str
         if (getResource() != null)
             sb.append("Resource: ").append(getResource()).append(",");
         if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
+            sb.append("Error: ").append("***Sensitive Data Redacted***").append(",");
         if (getCause() != null)
-            sb.append("Cause: ").append(getCause());
+            sb.append("Cause: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -1280,6 +1280,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param options */",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -1345,6 +1346,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param status */",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -1412,6 +1414,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param options */",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -1478,6 +1481,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param status */",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -1635,6 +1639,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Synonyms",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms\">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>\n@param synonyms A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms\">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.*/",
         "setterMethodName" : "setSynonyms",
         "setterModel" : {
@@ -1700,6 +1705,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Stopwords",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JSON array of terms to ignore during indexing and searching. For example, <code>[\"a\", \"an\", \"the\", \"of\"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>\n@param stopwords A JSON array of terms to ignore during indexing and searching. For example, <code>[\"a\", \"an\", \"the\", \"of\"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported.*/",
         "setterMethodName" : "setStopwords",
         "setterModel" : {
@@ -1765,6 +1771,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StemmingDictionary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{\"term1\": \"stem1\", \"term2\": \"stem2\", \"term3\": \"stem3\"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>\n@param stemmingDictionary A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{\"term1\": \"stem1\", \"term2\": \"stem2\", \"term3\": \"stem3\"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.*/",
         "setterMethodName" : "setStemmingDictionary",
         "setterModel" : {
@@ -1830,6 +1837,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JapaneseTokenizationDictionary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>\n@param japaneseTokenizationDictionary A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.*/",
         "setterMethodName" : "setJapaneseTokenizationDictionary",
         "setterModel" : {
@@ -1895,6 +1903,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AlgorithmicStemming",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings\" target=\"_blank\">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>\n@param algorithmicStemming The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings\" target=\"_blank\">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i>\n@see AlgorithmicStemming*/",
         "setterMethodName" : "setAlgorithmicStemming",
         "setterModel" : {
@@ -1962,6 +1971,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AlgorithmicStemming",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings\" target=\"_blank\">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>\n@param algorithmicStemming The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings\" target=\"_blank\">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i>\n@see AlgorithmicStemming*/",
           "setterMethodName" : "setAlgorithmicStemming",
           "setterModel" : {
@@ -2028,6 +2038,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JapaneseTokenizationDictionary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>\n@param japaneseTokenizationDictionary A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.*/",
           "setterMethodName" : "setJapaneseTokenizationDictionary",
           "setterModel" : {
@@ -2094,6 +2105,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StemmingDictionary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{\"term1\": \"stem1\", \"term2\": \"stem2\", \"term3\": \"stem3\"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>\n@param stemmingDictionary A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{\"term1\": \"stem1\", \"term2\": \"stem2\", \"term3\": \"stem3\"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.*/",
           "setterMethodName" : "setStemmingDictionary",
           "setterModel" : {
@@ -2160,6 +2172,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Stopwords",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JSON array of terms to ignore during indexing and searching. For example, <code>[\"a\", \"an\", \"the\", \"of\"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>\n@param stopwords A JSON array of terms to ignore during indexing and searching. For example, <code>[\"a\", \"an\", \"the\", \"of\"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported.*/",
           "setterMethodName" : "setStopwords",
           "setterModel" : {
@@ -2226,6 +2239,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Synonyms",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms\">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>\n@param synonyms A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms\">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.*/",
           "setterMethodName" : "setSynonyms",
           "setterModel" : {
@@ -2331,6 +2345,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AnalysisSchemeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param analysisSchemeName */",
         "setterMethodName" : "setAnalysisSchemeName",
         "setterModel" : {
@@ -2396,6 +2411,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AnalysisSchemeLanguage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param analysisSchemeLanguage \n@see AnalysisSchemeLanguage*/",
         "setterMethodName" : "setAnalysisSchemeLanguage",
         "setterModel" : {
@@ -2461,6 +2477,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AnalysisOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param analysisOptions */",
         "setterMethodName" : "setAnalysisOptions",
         "setterModel" : {
@@ -2528,6 +2545,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AnalysisOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param analysisOptions */",
           "setterMethodName" : "setAnalysisOptions",
           "setterModel" : {
@@ -2594,6 +2612,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AnalysisSchemeLanguage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param analysisSchemeLanguage \n@see AnalysisSchemeLanguage*/",
           "setterMethodName" : "setAnalysisSchemeLanguage",
           "setterModel" : {
@@ -2660,6 +2679,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AnalysisSchemeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param analysisSchemeName */",
           "setterMethodName" : "setAnalysisSchemeName",
           "setterModel" : {
@@ -2910,6 +2930,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param options */",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -2975,6 +2996,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param status */",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -3042,6 +3064,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param options */",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -3108,6 +3131,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param status */",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -3213,6 +3237,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The availability options configured for the domain.</p>\n@param options The availability options configured for the domain.*/",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -3278,6 +3303,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param status */",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -3345,6 +3371,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The availability options configured for the domain.</p>\n@param options The availability options configured for the domain.*/",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -3411,6 +3438,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param status */",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -3516,6 +3544,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -3583,6 +3612,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -3692,6 +3722,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -3759,6 +3790,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -3898,6 +3930,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3941,6 +3974,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FieldNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param fieldNames */",
         "setterMethodName" : "setFieldNames",
         "setterModel" : {
@@ -4045,6 +4079,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4088,6 +4123,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FieldNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param fieldNames */",
           "setterMethodName" : "setFieldNames",
           "setterModel" : {
@@ -4200,6 +4236,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>\n@param domainName A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -4267,6 +4304,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>\n@param domainName A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -4369,6 +4407,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DomainStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainStatus */",
         "setterMethodName" : "setDomainStatus",
         "setterModel" : {
@@ -4436,6 +4475,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DomainStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainStatus */",
           "setterMethodName" : "setDomainStatus",
           "setterModel" : {
@@ -4541,6 +4581,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -4606,6 +4647,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceFields",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
         "setterMethodName" : "setSourceFields",
         "setterModel" : {
@@ -4671,6 +4713,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -4736,6 +4779,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -4801,6 +4845,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -4868,6 +4913,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -4934,6 +4980,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -5000,6 +5047,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -5066,6 +5114,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -5132,6 +5181,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceFields",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
           "setterMethodName" : "setSourceFields",
           "setterModel" : {
@@ -5237,6 +5287,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -5302,6 +5353,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceField",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceField */",
         "setterMethodName" : "setSourceField",
         "setterModel" : {
@@ -5367,6 +5419,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -5432,6 +5485,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -5497,6 +5551,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -5562,6 +5617,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SortEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
         "setterMethodName" : "setSortEnabled",
         "setterModel" : {
@@ -5629,6 +5685,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -5695,6 +5752,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -5761,6 +5819,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -5827,6 +5886,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -5893,6 +5953,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SortEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
           "setterMethodName" : "setSortEnabled",
           "setterModel" : {
@@ -5959,6 +6020,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceField",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceField */",
           "setterMethodName" : "setSourceField",
           "setterModel" : {
@@ -6071,6 +6133,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -6136,6 +6199,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AnalysisScheme",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param analysisScheme */",
         "setterMethodName" : "setAnalysisScheme",
         "setterModel" : {
@@ -6203,6 +6267,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AnalysisScheme",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param analysisScheme */",
           "setterMethodName" : "setAnalysisScheme",
           "setterModel" : {
@@ -6269,6 +6334,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -6371,6 +6437,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AnalysisScheme",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param analysisScheme */",
         "setterMethodName" : "setAnalysisScheme",
         "setterModel" : {
@@ -6438,6 +6505,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AnalysisScheme",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param analysisScheme */",
           "setterMethodName" : "setAnalysisScheme",
           "setterModel" : {
@@ -6550,6 +6618,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -6615,6 +6684,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Expression",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param expression */",
         "setterMethodName" : "setExpression",
         "setterModel" : {
@@ -6682,6 +6752,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -6748,6 +6819,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Expression",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param expression */",
           "setterMethodName" : "setExpression",
           "setterModel" : {
@@ -6850,6 +6922,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Expression",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param expression */",
         "setterMethodName" : "setExpression",
         "setterModel" : {
@@ -6917,6 +6990,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Expression",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param expression */",
           "setterMethodName" : "setExpression",
           "setterModel" : {
@@ -7029,6 +7103,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -7094,6 +7169,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "IndexField",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The index field and field options you want to configure. </p>\n@param indexField The index field and field options you want to configure.*/",
         "setterMethodName" : "setIndexField",
         "setterModel" : {
@@ -7161,6 +7237,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -7227,6 +7304,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "IndexField",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The index field and field options you want to configure. </p>\n@param indexField The index field and field options you want to configure.*/",
           "setterMethodName" : "setIndexField",
           "setterModel" : {
@@ -7329,6 +7407,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "IndexField",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param indexField */",
         "setterMethodName" : "setIndexField",
         "setterModel" : {
@@ -7396,6 +7475,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "IndexField",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param indexField */",
           "setterMethodName" : "setIndexField",
           "setterModel" : {
@@ -7508,6 +7588,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -7573,6 +7654,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Suggester",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param suggester */",
         "setterMethodName" : "setSuggester",
         "setterModel" : {
@@ -7640,6 +7722,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -7706,6 +7789,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Suggester",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param suggester */",
           "setterMethodName" : "setSuggester",
           "setterModel" : {
@@ -7808,6 +7892,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Suggester",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param suggester */",
         "setterMethodName" : "setSuggester",
         "setterModel" : {
@@ -7875,6 +7960,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Suggester",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param suggester */",
           "setterMethodName" : "setSuggester",
           "setterModel" : {
@@ -7987,6 +8073,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -8052,6 +8139,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AnalysisSchemeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the analysis scheme you want to delete.</p>\n@param analysisSchemeName The name of the analysis scheme you want to delete.*/",
         "setterMethodName" : "setAnalysisSchemeName",
         "setterModel" : {
@@ -8119,6 +8207,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AnalysisSchemeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the analysis scheme you want to delete.</p>\n@param analysisSchemeName The name of the analysis scheme you want to delete.*/",
           "setterMethodName" : "setAnalysisSchemeName",
           "setterModel" : {
@@ -8185,6 +8274,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -8287,6 +8377,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AnalysisScheme",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the analysis scheme being deleted.</p>\n@param analysisScheme The status of the analysis scheme being deleted.*/",
         "setterMethodName" : "setAnalysisScheme",
         "setterModel" : {
@@ -8354,6 +8445,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AnalysisScheme",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the analysis scheme being deleted.</p>\n@param analysisScheme The status of the analysis scheme being deleted.*/",
           "setterMethodName" : "setAnalysisScheme",
           "setterModel" : {
@@ -8466,6 +8558,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the domain you want to permanently delete.</p>\n@param domainName The name of the domain you want to permanently delete.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -8533,6 +8626,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the domain you want to permanently delete.</p>\n@param domainName The name of the domain you want to permanently delete.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -8635,6 +8729,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DomainStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainStatus */",
         "setterMethodName" : "setDomainStatus",
         "setterModel" : {
@@ -8702,6 +8797,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DomainStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainStatus */",
           "setterMethodName" : "setDomainStatus",
           "setterModel" : {
@@ -8814,6 +8910,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -8879,6 +8976,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExpressionName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the <code><a>Expression</a></code> to delete.</p>\n@param expressionName The name of the <code><a>Expression</a></code> to delete.*/",
         "setterMethodName" : "setExpressionName",
         "setterModel" : {
@@ -8946,6 +9044,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -9012,6 +9111,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExpressionName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the <code><a>Expression</a></code> to delete.</p>\n@param expressionName The name of the <code><a>Expression</a></code> to delete.*/",
           "setterMethodName" : "setExpressionName",
           "setterModel" : {
@@ -9114,6 +9214,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Expression",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the expression being deleted.</p>\n@param expression The status of the expression being deleted.*/",
         "setterMethodName" : "setExpression",
         "setterModel" : {
@@ -9181,6 +9282,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Expression",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the expression being deleted.</p>\n@param expression The status of the expression being deleted.*/",
           "setterMethodName" : "setExpression",
           "setterModel" : {
@@ -9293,6 +9395,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -9358,6 +9461,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IndexFieldName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the index field your want to remove from the domain's indexing options.</p>\n@param indexFieldName The name of the index field your want to remove from the domain's indexing options.*/",
         "setterMethodName" : "setIndexFieldName",
         "setterModel" : {
@@ -9425,6 +9529,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -9491,6 +9596,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IndexFieldName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the index field your want to remove from the domain's indexing options.</p>\n@param indexFieldName The name of the index field your want to remove from the domain's indexing options.*/",
           "setterMethodName" : "setIndexFieldName",
           "setterModel" : {
@@ -9593,6 +9699,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "IndexField",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the index field being deleted.</p>\n@param indexField The status of the index field being deleted.*/",
         "setterMethodName" : "setIndexField",
         "setterModel" : {
@@ -9660,6 +9767,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "IndexField",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the index field being deleted.</p>\n@param indexField The status of the index field being deleted.*/",
           "setterMethodName" : "setIndexField",
           "setterModel" : {
@@ -9772,6 +9880,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -9837,6 +9946,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SuggesterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the name of the suggester you want to delete.</p>\n@param suggesterName Specifies the name of the suggester you want to delete.*/",
         "setterMethodName" : "setSuggesterName",
         "setterModel" : {
@@ -9904,6 +10014,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -9970,6 +10081,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SuggesterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the name of the suggester you want to delete.</p>\n@param suggesterName Specifies the name of the suggester you want to delete.*/",
           "setterMethodName" : "setSuggesterName",
           "setterModel" : {
@@ -10072,6 +10184,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Suggester",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the suggester being deleted.</p>\n@param suggester The status of the suggester being deleted.*/",
         "setterMethodName" : "setSuggester",
         "setterModel" : {
@@ -10139,6 +10252,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Suggester",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the suggester being deleted.</p>\n@param suggester The status of the suggester being deleted.*/",
           "setterMethodName" : "setSuggester",
           "setterModel" : {
@@ -10251,6 +10365,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -10353,6 +10468,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10396,6 +10512,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AnalysisSchemeNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The analysis schemes you want to describe.</p>\n@param analysisSchemeNames The analysis schemes you want to describe.*/",
         "setterMethodName" : "setAnalysisSchemeNames",
         "setterModel" : {
@@ -10461,6 +10578,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Deployed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
         "setterMethodName" : "setDeployed",
         "setterModel" : {
@@ -10565,6 +10683,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10608,6 +10727,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AnalysisSchemeNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The analysis schemes you want to describe.</p>\n@param analysisSchemeNames The analysis schemes you want to describe.*/",
           "setterMethodName" : "setAnalysisSchemeNames",
           "setterModel" : {
@@ -10674,6 +10794,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Deployed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
           "setterMethodName" : "setDeployed",
           "setterModel" : {
@@ -10740,6 +10861,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -10879,6 +11001,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10922,6 +11045,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AnalysisSchemes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The analysis scheme descriptions.</p>\n@param analysisSchemes The analysis scheme descriptions.*/",
         "setterMethodName" : "setAnalysisSchemes",
         "setterModel" : {
@@ -11026,6 +11150,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11069,6 +11194,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AnalysisSchemes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The analysis scheme descriptions.</p>\n@param analysisSchemes The analysis scheme descriptions.*/",
           "setterMethodName" : "setAnalysisSchemes",
           "setterModel" : {
@@ -11181,6 +11307,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -11246,6 +11373,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Deployed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
         "setterMethodName" : "setDeployed",
         "setterModel" : {
@@ -11313,6 +11441,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Deployed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
           "setterMethodName" : "setDeployed",
           "setterModel" : {
@@ -11379,6 +11508,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -11481,6 +11611,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AvailabilityOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>\n@param availabilityOptions The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain.*/",
         "setterMethodName" : "setAvailabilityOptions",
         "setterModel" : {
@@ -11548,6 +11679,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AvailabilityOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>\n@param availabilityOptions The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain.*/",
           "setterMethodName" : "setAvailabilityOptions",
           "setterModel" : {
@@ -11697,6 +11829,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11740,6 +11873,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DomainNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The names of the domains you want to include in the response.</p>\n@param domainNames The names of the domains you want to include in the response.*/",
         "setterMethodName" : "setDomainNames",
         "setterModel" : {
@@ -11844,6 +11978,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11887,6 +12022,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DomainNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The names of the domains you want to include in the response.</p>\n@param domainNames The names of the domains you want to include in the response.*/",
           "setterMethodName" : "setDomainNames",
           "setterModel" : {
@@ -12026,6 +12162,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12069,6 +12206,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DomainStatusList",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainStatusList */",
         "setterMethodName" : "setDomainStatusList",
         "setterModel" : {
@@ -12173,6 +12311,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12216,6 +12355,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DomainStatusList",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainStatusList */",
           "setterMethodName" : "setDomainStatusList",
           "setterModel" : {
@@ -12328,6 +12468,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -12430,6 +12571,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12473,6 +12615,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExpressionNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>\n@param expressionNames Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.*/",
         "setterMethodName" : "setExpressionNames",
         "setterModel" : {
@@ -12538,6 +12681,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Deployed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
         "setterMethodName" : "setDeployed",
         "setterModel" : {
@@ -12605,6 +12749,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Deployed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
           "setterMethodName" : "setDeployed",
           "setterModel" : {
@@ -12671,6 +12816,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -12774,6 +12920,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12817,6 +12964,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExpressionNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>\n@param expressionNames Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.*/",
           "setterMethodName" : "setExpressionNames",
           "setterModel" : {
@@ -12956,6 +13104,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12999,6 +13148,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Expressions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The expressions configured for the domain.</p>\n@param expressions The expressions configured for the domain.*/",
         "setterMethodName" : "setExpressions",
         "setterModel" : {
@@ -13103,6 +13253,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13146,6 +13297,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Expressions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The expressions configured for the domain.</p>\n@param expressions The expressions configured for the domain.*/",
           "setterMethodName" : "setExpressions",
           "setterModel" : {
@@ -13258,6 +13410,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -13360,6 +13513,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13403,6 +13557,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FieldNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>\n@param fieldNames A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.*/",
         "setterMethodName" : "setFieldNames",
         "setterModel" : {
@@ -13468,6 +13623,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Deployed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
         "setterMethodName" : "setDeployed",
         "setterModel" : {
@@ -13535,6 +13691,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Deployed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
           "setterMethodName" : "setDeployed",
           "setterModel" : {
@@ -13601,6 +13758,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -13704,6 +13862,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13747,6 +13906,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FieldNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>\n@param fieldNames A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.*/",
           "setterMethodName" : "setFieldNames",
           "setterModel" : {
@@ -13886,6 +14046,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13929,6 +14090,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "IndexFields",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The index fields configured for the domain.</p>\n@param indexFields The index fields configured for the domain.*/",
         "setterMethodName" : "setIndexFields",
         "setterModel" : {
@@ -14033,6 +14195,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14076,6 +14239,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "IndexFields",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The index fields configured for the domain.</p>\n@param indexFields The index fields configured for the domain.*/",
           "setterMethodName" : "setIndexFields",
           "setterModel" : {
@@ -14188,6 +14352,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -14255,6 +14420,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -14357,6 +14523,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ScalingParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param scalingParameters */",
         "setterMethodName" : "setScalingParameters",
         "setterModel" : {
@@ -14424,6 +14591,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ScalingParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param scalingParameters */",
           "setterMethodName" : "setScalingParameters",
           "setterModel" : {
@@ -14536,6 +14704,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -14601,6 +14770,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Deployed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
         "setterMethodName" : "setDeployed",
         "setterModel" : {
@@ -14668,6 +14838,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Deployed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
           "setterMethodName" : "setDeployed",
           "setterModel" : {
@@ -14734,6 +14905,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -14836,6 +15008,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AccessPolicies",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The access rules configured for the domain specified in the request.</p>\n@param accessPolicies The access rules configured for the domain specified in the request.*/",
         "setterMethodName" : "setAccessPolicies",
         "setterModel" : {
@@ -14903,6 +15076,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AccessPolicies",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The access rules configured for the domain specified in the request.</p>\n@param accessPolicies The access rules configured for the domain specified in the request.*/",
           "setterMethodName" : "setAccessPolicies",
           "setterModel" : {
@@ -15015,6 +15189,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -15117,6 +15292,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15160,6 +15336,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SuggesterNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The suggesters you want to describe.</p>\n@param suggesterNames The suggesters you want to describe.*/",
         "setterMethodName" : "setSuggesterNames",
         "setterModel" : {
@@ -15225,6 +15402,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Deployed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
         "setterMethodName" : "setDeployed",
         "setterModel" : {
@@ -15292,6 +15470,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Deployed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>\n@param deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.*/",
           "setterMethodName" : "setDeployed",
           "setterModel" : {
@@ -15358,6 +15537,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the domain you want to describe.</p>\n@param domainName The name of the domain you want to describe.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -15461,6 +15641,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15504,6 +15685,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SuggesterNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The suggesters you want to describe.</p>\n@param suggesterNames The suggesters you want to describe.*/",
           "setterMethodName" : "setSuggesterNames",
           "setterModel" : {
@@ -15643,6 +15825,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15686,6 +15869,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Suggesters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The suggesters configured for the domain specified in the request.</p>\n@param suggesters The suggesters configured for the domain specified in the request.*/",
         "setterMethodName" : "setSuggesters",
         "setterModel" : {
@@ -15790,6 +15974,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15833,6 +16018,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Suggesters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The suggesters configured for the domain specified in the request.</p>\n@param suggesters The suggesters configured for the domain specified in the request.*/",
           "setterMethodName" : "setSuggesters",
           "setterModel" : {
@@ -15975,6 +16161,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceField",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the index field you want to use for suggestions. </p>\n@param sourceField The name of the index field you want to use for suggestions.*/",
         "setterMethodName" : "setSourceField",
         "setterModel" : {
@@ -16040,6 +16227,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FuzzyMatching",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>\n@param fuzzyMatching The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none.\n@see SuggesterFuzzyMatching*/",
         "setterMethodName" : "setFuzzyMatching",
         "setterModel" : {
@@ -16105,6 +16293,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SortExpression",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>\n@param sortExpression An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.*/",
         "setterMethodName" : "setSortExpression",
         "setterModel" : {
@@ -16172,6 +16361,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FuzzyMatching",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>\n@param fuzzyMatching The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none.\n@see SuggesterFuzzyMatching*/",
           "setterMethodName" : "setFuzzyMatching",
           "setterModel" : {
@@ -16238,6 +16428,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SortExpression",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>\n@param sortExpression An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.*/",
           "setterMethodName" : "setSortExpression",
           "setterModel" : {
@@ -16304,6 +16495,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceField",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the index field you want to use for suggestions. </p>\n@param sourceField The name of the index field you want to use for suggestions.*/",
           "setterMethodName" : "setSourceField",
           "setterModel" : {
@@ -16409,6 +16601,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainId",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainId */",
         "setterMethodName" : "setDomainId",
         "setterModel" : {
@@ -16474,6 +16667,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -16539,6 +16733,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param aRN */",
         "setterMethodName" : "setARN",
         "setterModel" : {
@@ -16604,6 +16799,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Created",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>\n@param created True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.*/",
         "setterMethodName" : "setCreated",
         "setterModel" : {
@@ -16669,6 +16865,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Deleted",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called. Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>\n@param deleted True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called. Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.*/",
         "setterMethodName" : "setDeleted",
         "setterModel" : {
@@ -16734,6 +16931,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DocService",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service endpoint for updating documents in a search domain.</p>\n@param docService The service endpoint for updating documents in a search domain.*/",
         "setterMethodName" : "setDocService",
         "setterModel" : {
@@ -16799,6 +16997,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SearchService",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service endpoint for requesting search results from a search domain.</p>\n@param searchService The service endpoint for requesting search results from a search domain.*/",
         "setterMethodName" : "setSearchService",
         "setterModel" : {
@@ -16864,6 +17063,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RequiresIndexDocuments",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>\n@param requiresIndexDocuments True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.*/",
         "setterMethodName" : "setRequiresIndexDocuments",
         "setterModel" : {
@@ -16929,6 +17129,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Processing",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>True if processing is being done to activate the current domain configuration.</p>\n@param processing True if processing is being done to activate the current domain configuration.*/",
         "setterMethodName" : "setProcessing",
         "setterModel" : {
@@ -16994,6 +17195,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SearchInstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The instance type that is being used to process search requests.</p>\n@param searchInstanceType The instance type that is being used to process search requests.*/",
         "setterMethodName" : "setSearchInstanceType",
         "setterModel" : {
@@ -17059,6 +17261,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SearchPartitionCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of partitions across which the search index is spread.</p>\n@param searchPartitionCount The number of partitions across which the search index is spread.*/",
         "setterMethodName" : "setSearchPartitionCount",
         "setterModel" : {
@@ -17124,6 +17327,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SearchInstanceCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of search instances that are available to process search requests.</p>\n@param searchInstanceCount The number of search instances that are available to process search requests.*/",
         "setterMethodName" : "setSearchInstanceCount",
         "setterModel" : {
@@ -17189,6 +17393,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Limits",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param limits */",
         "setterMethodName" : "setLimits",
         "setterModel" : {
@@ -17256,6 +17461,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param aRN */",
           "setterMethodName" : "setARN",
           "setterModel" : {
@@ -17322,6 +17528,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Created",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>\n@param created True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.*/",
           "setterMethodName" : "setCreated",
           "setterModel" : {
@@ -17388,6 +17595,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Deleted",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called. Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>\n@param deleted True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called. Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.*/",
           "setterMethodName" : "setDeleted",
           "setterModel" : {
@@ -17454,6 +17662,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DocService",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service endpoint for updating documents in a search domain.</p>\n@param docService The service endpoint for updating documents in a search domain.*/",
           "setterMethodName" : "setDocService",
           "setterModel" : {
@@ -17520,6 +17729,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainId",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainId */",
           "setterMethodName" : "setDomainId",
           "setterModel" : {
@@ -17586,6 +17796,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -17652,6 +17863,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Limits",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param limits */",
           "setterMethodName" : "setLimits",
           "setterModel" : {
@@ -17718,6 +17930,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Processing",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>True if processing is being done to activate the current domain configuration.</p>\n@param processing True if processing is being done to activate the current domain configuration.*/",
           "setterMethodName" : "setProcessing",
           "setterModel" : {
@@ -17784,6 +17997,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RequiresIndexDocuments",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>\n@param requiresIndexDocuments True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.*/",
           "setterMethodName" : "setRequiresIndexDocuments",
           "setterModel" : {
@@ -17850,6 +18064,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SearchInstanceCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of search instances that are available to process search requests.</p>\n@param searchInstanceCount The number of search instances that are available to process search requests.*/",
           "setterMethodName" : "setSearchInstanceCount",
           "setterModel" : {
@@ -17916,6 +18131,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SearchInstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The instance type that is being used to process search requests.</p>\n@param searchInstanceType The instance type that is being used to process search requests.*/",
           "setterMethodName" : "setSearchInstanceType",
           "setterModel" : {
@@ -17982,6 +18198,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SearchPartitionCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of partitions across which the search index is spread.</p>\n@param searchPartitionCount The number of partitions across which the search index is spread.*/",
           "setterMethodName" : "setSearchPartitionCount",
           "setterModel" : {
@@ -18048,6 +18265,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SearchService",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service endpoint for requesting search results from a search domain.</p>\n@param searchService The service endpoint for requesting search results from a search domain.*/",
           "setterMethodName" : "setSearchService",
           "setterModel" : {
@@ -18153,6 +18371,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -18218,6 +18437,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceFields",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
         "setterMethodName" : "setSourceFields",
         "setterModel" : {
@@ -18283,6 +18503,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -18348,6 +18569,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -18413,6 +18635,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -18480,6 +18703,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -18546,6 +18770,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -18612,6 +18837,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -18678,6 +18904,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -18744,6 +18971,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceFields",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
           "setterMethodName" : "setSourceFields",
           "setterModel" : {
@@ -18849,6 +19077,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>\n@param defaultValue A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -18914,6 +19143,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceField",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the source field to map to the field. </p>\n@param sourceField The name of the source field to map to the field.*/",
         "setterMethodName" : "setSourceField",
         "setterModel" : {
@@ -18979,6 +19209,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -19044,6 +19275,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -19109,6 +19341,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -19174,6 +19407,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SortEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
         "setterMethodName" : "setSortEnabled",
         "setterModel" : {
@@ -19241,6 +19475,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>\n@param defaultValue A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -19307,6 +19542,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -19373,6 +19609,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -19439,6 +19676,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -19505,6 +19743,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SortEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
           "setterMethodName" : "setSortEnabled",
           "setterModel" : {
@@ -19571,6 +19810,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceField",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the source field to map to the field. </p>\n@param sourceField The name of the source field to map to the field.*/",
           "setterMethodName" : "setSourceField",
           "setterModel" : {
@@ -19676,6 +19916,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExpressionName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param expressionName */",
         "setterMethodName" : "setExpressionName",
         "setterModel" : {
@@ -19741,6 +19982,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExpressionValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param expressionValue */",
         "setterMethodName" : "setExpressionValue",
         "setterModel" : {
@@ -19808,6 +20050,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExpressionName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param expressionName */",
           "setterMethodName" : "setExpressionName",
           "setterModel" : {
@@ -19874,6 +20117,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExpressionValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param expressionValue */",
           "setterMethodName" : "setExpressionValue",
           "setterModel" : {
@@ -19979,6 +20223,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The expression that is evaluated for sorting while processing a search request.</p>\n@param options The expression that is evaluated for sorting while processing a search request.*/",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -20044,6 +20289,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param status */",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -20111,6 +20357,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The expression that is evaluated for sorting while processing a search request.</p>\n@param options The expression that is evaluated for sorting while processing a search request.*/",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -20177,6 +20424,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param status */",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -20289,6 +20537,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -20356,6 +20605,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -20495,6 +20745,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20538,6 +20789,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FieldNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The names of the fields that are currently being indexed.</p>\n@param fieldNames The names of the fields that are currently being indexed.*/",
         "setterMethodName" : "setFieldNames",
         "setterModel" : {
@@ -20642,6 +20894,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20685,6 +20938,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FieldNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The names of the fields that are currently being indexed.</p>\n@param fieldNames The names of the fields that are currently being indexed.*/",
           "setterMethodName" : "setFieldNames",
           "setterModel" : {
@@ -20790,6 +21044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IndexFieldName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>\n@param indexFieldName A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>.*/",
         "setterMethodName" : "setIndexFieldName",
         "setterModel" : {
@@ -20855,6 +21110,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IndexFieldType",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param indexFieldType \n@see IndexFieldType*/",
         "setterMethodName" : "setIndexFieldType",
         "setterModel" : {
@@ -20920,6 +21176,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "IntOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param intOptions */",
         "setterMethodName" : "setIntOptions",
         "setterModel" : {
@@ -20985,6 +21242,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DoubleOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param doubleOptions */",
         "setterMethodName" : "setDoubleOptions",
         "setterModel" : {
@@ -21050,6 +21308,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LiteralOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param literalOptions */",
         "setterMethodName" : "setLiteralOptions",
         "setterModel" : {
@@ -21115,6 +21374,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TextOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param textOptions */",
         "setterMethodName" : "setTextOptions",
         "setterModel" : {
@@ -21180,6 +21440,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DateOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dateOptions */",
         "setterMethodName" : "setDateOptions",
         "setterModel" : {
@@ -21245,6 +21506,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LatLonOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param latLonOptions */",
         "setterMethodName" : "setLatLonOptions",
         "setterModel" : {
@@ -21310,6 +21572,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "IntArrayOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param intArrayOptions */",
         "setterMethodName" : "setIntArrayOptions",
         "setterModel" : {
@@ -21375,6 +21638,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DoubleArrayOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param doubleArrayOptions */",
         "setterMethodName" : "setDoubleArrayOptions",
         "setterModel" : {
@@ -21440,6 +21704,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LiteralArrayOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param literalArrayOptions */",
         "setterMethodName" : "setLiteralArrayOptions",
         "setterModel" : {
@@ -21505,6 +21770,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TextArrayOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param textArrayOptions */",
         "setterMethodName" : "setTextArrayOptions",
         "setterModel" : {
@@ -21570,6 +21836,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DateArrayOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dateArrayOptions */",
         "setterMethodName" : "setDateArrayOptions",
         "setterModel" : {
@@ -21637,6 +21904,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DateArrayOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dateArrayOptions */",
           "setterMethodName" : "setDateArrayOptions",
           "setterModel" : {
@@ -21703,6 +21971,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DateOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dateOptions */",
           "setterMethodName" : "setDateOptions",
           "setterModel" : {
@@ -21769,6 +22038,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DoubleArrayOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param doubleArrayOptions */",
           "setterMethodName" : "setDoubleArrayOptions",
           "setterModel" : {
@@ -21835,6 +22105,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DoubleOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param doubleOptions */",
           "setterMethodName" : "setDoubleOptions",
           "setterModel" : {
@@ -21901,6 +22172,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IndexFieldName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>\n@param indexFieldName A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>.*/",
           "setterMethodName" : "setIndexFieldName",
           "setterModel" : {
@@ -21967,6 +22239,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IndexFieldType",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param indexFieldType \n@see IndexFieldType*/",
           "setterMethodName" : "setIndexFieldType",
           "setterModel" : {
@@ -22033,6 +22306,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "IntArrayOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param intArrayOptions */",
           "setterMethodName" : "setIntArrayOptions",
           "setterModel" : {
@@ -22099,6 +22373,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "IntOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param intOptions */",
           "setterMethodName" : "setIntOptions",
           "setterModel" : {
@@ -22165,6 +22440,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LatLonOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param latLonOptions */",
           "setterMethodName" : "setLatLonOptions",
           "setterModel" : {
@@ -22231,6 +22507,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LiteralArrayOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param literalArrayOptions */",
           "setterMethodName" : "setLiteralArrayOptions",
           "setterModel" : {
@@ -22297,6 +22574,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LiteralOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param literalOptions */",
           "setterMethodName" : "setLiteralOptions",
           "setterModel" : {
@@ -22363,6 +22641,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TextArrayOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param textArrayOptions */",
           "setterMethodName" : "setTextArrayOptions",
           "setterModel" : {
@@ -22429,6 +22708,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TextOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param textOptions */",
           "setterMethodName" : "setTextOptions",
           "setterModel" : {
@@ -22534,6 +22814,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param options */",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -22599,6 +22880,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param status */",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -22666,6 +22948,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param options */",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -22732,6 +23015,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param status */",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -22910,6 +23194,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -22975,6 +23260,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceFields",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
         "setterMethodName" : "setSourceFields",
         "setterModel" : {
@@ -23040,6 +23326,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -23105,6 +23392,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -23170,6 +23458,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -23237,6 +23526,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -23303,6 +23593,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -23369,6 +23660,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -23435,6 +23727,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -23501,6 +23794,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceFields",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
           "setterMethodName" : "setSourceFields",
           "setterModel" : {
@@ -23606,6 +23900,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.\n@param defaultValue A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -23671,6 +23966,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceField",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the source field to map to the field. </p>\n@param sourceField The name of the source field to map to the field.*/",
         "setterMethodName" : "setSourceField",
         "setterModel" : {
@@ -23736,6 +24032,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -23801,6 +24098,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -23866,6 +24164,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -23931,6 +24230,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SortEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
         "setterMethodName" : "setSortEnabled",
         "setterModel" : {
@@ -23998,6 +24298,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.\n@param defaultValue A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -24064,6 +24365,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -24130,6 +24432,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -24196,6 +24499,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -24262,6 +24566,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SortEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
           "setterMethodName" : "setSortEnabled",
           "setterModel" : {
@@ -24328,6 +24633,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceField",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the source field to map to the field. </p>\n@param sourceField The name of the source field to map to the field.*/",
           "setterMethodName" : "setSourceField",
           "setterModel" : {
@@ -24507,6 +24813,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -24572,6 +24879,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceField",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceField */",
         "setterMethodName" : "setSourceField",
         "setterModel" : {
@@ -24637,6 +24945,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -24702,6 +25011,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -24767,6 +25077,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -24832,6 +25143,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SortEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
         "setterMethodName" : "setSortEnabled",
         "setterModel" : {
@@ -24899,6 +25211,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -24965,6 +25278,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -25031,6 +25345,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -25097,6 +25412,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -25163,6 +25479,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SortEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
           "setterMethodName" : "setSortEnabled",
           "setterModel" : {
@@ -25229,6 +25546,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceField",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceField */",
           "setterMethodName" : "setSourceField",
           "setterModel" : {
@@ -25371,6 +25689,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaximumReplicationCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param maximumReplicationCount */",
         "setterMethodName" : "setMaximumReplicationCount",
         "setterModel" : {
@@ -25436,6 +25755,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaximumPartitionCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param maximumPartitionCount */",
         "setterMethodName" : "setMaximumPartitionCount",
         "setterModel" : {
@@ -25503,6 +25823,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaximumPartitionCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param maximumPartitionCount */",
           "setterMethodName" : "setMaximumPartitionCount",
           "setterModel" : {
@@ -25569,6 +25890,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaximumReplicationCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param maximumReplicationCount */",
           "setterMethodName" : "setMaximumReplicationCount",
           "setterModel" : {
@@ -25761,6 +26083,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -25798,6 +26121,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "DomainNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The names of the search domains owned by an account.</p>\n@param domainNames The names of the search domains owned by an account.*/",
         "setterMethodName" : "setDomainNames",
         "setterModel" : {
@@ -25908,6 +26232,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -25945,6 +26270,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "DomainNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The names of the search domains owned by an account.</p>\n@param domainNames The names of the search domains owned by an account.*/",
           "setterMethodName" : "setDomainNames",
           "setterModel" : {
@@ -26050,6 +26376,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -26115,6 +26442,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceFields",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
         "setterMethodName" : "setSourceFields",
         "setterModel" : {
@@ -26180,6 +26508,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -26245,6 +26574,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -26310,6 +26640,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -26377,6 +26708,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -26443,6 +26775,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -26509,6 +26842,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -26575,6 +26909,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -26641,6 +26976,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceFields",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
           "setterMethodName" : "setSourceFields",
           "setterModel" : {
@@ -26746,6 +27082,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -26811,6 +27148,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceField",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceField */",
         "setterMethodName" : "setSourceField",
         "setterModel" : {
@@ -26876,6 +27214,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FacetEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
         "setterMethodName" : "setFacetEnabled",
         "setterModel" : {
@@ -26941,6 +27280,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SearchEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
         "setterMethodName" : "setSearchEnabled",
         "setterModel" : {
@@ -27006,6 +27346,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -27071,6 +27412,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SortEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
         "setterMethodName" : "setSortEnabled",
         "setterModel" : {
@@ -27138,6 +27480,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -27204,6 +27547,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FacetEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether facet information can be returned for the field.</p>\n@param facetEnabled Whether facet information can be returned for the field.*/",
           "setterMethodName" : "setFacetEnabled",
           "setterModel" : {
@@ -27270,6 +27614,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -27336,6 +27681,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SearchEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field are searchable.</p>\n@param searchEnabled Whether the contents of the field are searchable.*/",
           "setterMethodName" : "setSearchEnabled",
           "setterModel" : {
@@ -27402,6 +27748,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SortEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
           "setterMethodName" : "setSortEnabled",
           "setterModel" : {
@@ -27468,6 +27815,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceField",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceField */",
           "setterMethodName" : "setSourceField",
           "setterModel" : {
@@ -27625,6 +27973,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A timestamp for when this option was created.</p>\n@param creationDate A timestamp for when this option was created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -27690,6 +28039,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdateDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A timestamp for when this option was last updated.</p>\n@param updateDate A timestamp for when this option was last updated.*/",
         "setterMethodName" : "setUpdateDate",
         "setterModel" : {
@@ -27755,6 +28105,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UpdateVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique integer that indicates when this option was last updated.</p>\n@param updateVersion A unique integer that indicates when this option was last updated.*/",
         "setterMethodName" : "setUpdateVersion",
         "setterModel" : {
@@ -27820,6 +28171,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of processing a change to an option. Possible values:</p> <ul> <li> <code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li> <code>Processing</code>: the option's latest value is in the process of being activated. </li> <li> <code>Active</code>: the option's latest value is completely deployed.</li> <li> <code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>\n@param state The state of processing a change to an option. Possible values:</p> <ul> <li> <code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li> <code>Processing</code>: the option's latest value is in the process of being activated. </li> <li> <code>Active</code>: the option's latest value is completely deployed.</li> <li> <code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>\n@see OptionState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -27885,6 +28237,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "PendingDeletion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates that the option will be deleted once processing is complete.</p>\n@param pendingDeletion Indicates that the option will be deleted once processing is complete.*/",
         "setterMethodName" : "setPendingDeletion",
         "setterModel" : {
@@ -27952,6 +28305,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A timestamp for when this option was created.</p>\n@param creationDate A timestamp for when this option was created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -28018,6 +28372,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "PendingDeletion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates that the option will be deleted once processing is complete.</p>\n@param pendingDeletion Indicates that the option will be deleted once processing is complete.*/",
           "setterMethodName" : "setPendingDeletion",
           "setterModel" : {
@@ -28084,6 +28439,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of processing a change to an option. Possible values:</p> <ul> <li> <code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li> <code>Processing</code>: the option's latest value is in the process of being activated. </li> <li> <code>Active</code>: the option's latest value is completely deployed.</li> <li> <code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>\n@param state The state of processing a change to an option. Possible values:</p> <ul> <li> <code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li> <code>Processing</code>: the option's latest value is in the process of being activated. </li> <li> <code>Active</code>: the option's latest value is completely deployed.</li> <li> <code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>\n@see OptionState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -28150,6 +28506,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdateDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A timestamp for when this option was last updated.</p>\n@param updateDate A timestamp for when this option was last updated.*/",
           "setterMethodName" : "setUpdateDate",
           "setterModel" : {
@@ -28216,6 +28573,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UpdateVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique integer that indicates when this option was last updated.</p>\n@param updateVersion A unique integer that indicates when this option was last updated.*/",
           "setterMethodName" : "setUpdateVersion",
           "setterModel" : {
@@ -28422,6 +28780,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DesiredInstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>\n@param desiredInstanceType The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.\n@see PartitionInstanceType*/",
         "setterMethodName" : "setDesiredInstanceType",
         "setterModel" : {
@@ -28487,6 +28846,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "DesiredReplicationCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of replicas you want to preconfigure for each index partition.</p>\n@param desiredReplicationCount The number of replicas you want to preconfigure for each index partition.*/",
         "setterMethodName" : "setDesiredReplicationCount",
         "setterModel" : {
@@ -28552,6 +28912,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "DesiredPartitionCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>\n@param desiredPartitionCount The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.*/",
         "setterMethodName" : "setDesiredPartitionCount",
         "setterModel" : {
@@ -28619,6 +28980,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DesiredInstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>\n@param desiredInstanceType The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.\n@see PartitionInstanceType*/",
           "setterMethodName" : "setDesiredInstanceType",
           "setterModel" : {
@@ -28685,6 +29047,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "DesiredPartitionCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>\n@param desiredPartitionCount The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.*/",
           "setterMethodName" : "setDesiredPartitionCount",
           "setterModel" : {
@@ -28751,6 +29114,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "DesiredReplicationCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of replicas you want to preconfigure for each index partition.</p>\n@param desiredReplicationCount The number of replicas you want to preconfigure for each index partition.*/",
           "setterMethodName" : "setDesiredReplicationCount",
           "setterModel" : {
@@ -28856,6 +29220,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param options */",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -28921,6 +29286,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param status */",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -28988,6 +29354,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param options */",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -29054,6 +29421,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param status */",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -29159,6 +29527,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Endpoint",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param endpoint */",
         "setterMethodName" : "setEndpoint",
         "setterModel" : {
@@ -29226,6 +29595,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Endpoint",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param endpoint */",
           "setterMethodName" : "setEndpoint",
           "setterModel" : {
@@ -29331,6 +29701,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SuggesterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param suggesterName */",
         "setterMethodName" : "setSuggesterName",
         "setterModel" : {
@@ -29396,6 +29767,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DocumentSuggesterOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param documentSuggesterOptions */",
         "setterMethodName" : "setDocumentSuggesterOptions",
         "setterModel" : {
@@ -29463,6 +29835,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DocumentSuggesterOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param documentSuggesterOptions */",
           "setterMethodName" : "setDocumentSuggesterOptions",
           "setterModel" : {
@@ -29529,6 +29902,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SuggesterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param suggesterName */",
           "setterMethodName" : "setSuggesterName",
           "setterModel" : {
@@ -29683,6 +30057,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param options */",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -29748,6 +30123,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param status */",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -29815,6 +30191,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param options */",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -29881,6 +30258,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param status */",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -29986,6 +30364,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -30051,6 +30430,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceFields",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
         "setterMethodName" : "setSourceFields",
         "setterModel" : {
@@ -30116,6 +30496,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -30181,6 +30562,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "HighlightEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether highlights can be returned for the field.</p>\n@param highlightEnabled Whether highlights can be returned for the field.*/",
         "setterMethodName" : "setHighlightEnabled",
         "setterModel" : {
@@ -30246,6 +30628,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AnalysisScheme",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of an analysis scheme for a <code>text-array</code> field.</p>\n@param analysisScheme The name of an analysis scheme for a <code>text-array</code> field.*/",
         "setterMethodName" : "setAnalysisScheme",
         "setterModel" : {
@@ -30313,6 +30696,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AnalysisScheme",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of an analysis scheme for a <code>text-array</code> field.</p>\n@param analysisScheme The name of an analysis scheme for a <code>text-array</code> field.*/",
           "setterMethodName" : "setAnalysisScheme",
           "setterModel" : {
@@ -30379,6 +30763,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -30445,6 +30830,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "HighlightEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether highlights can be returned for the field.</p>\n@param highlightEnabled Whether highlights can be returned for the field.*/",
           "setterMethodName" : "setHighlightEnabled",
           "setterModel" : {
@@ -30511,6 +30897,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -30577,6 +30964,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceFields",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of source fields to map to the field. </p>\n@param sourceFields A list of source fields to map to the field.*/",
           "setterMethodName" : "setSourceFields",
           "setterModel" : {
@@ -30682,6 +31070,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -30747,6 +31136,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceField",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceField */",
         "setterMethodName" : "setSourceField",
         "setterModel" : {
@@ -30812,6 +31202,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
         "setterMethodName" : "setReturnEnabled",
         "setterModel" : {
@@ -30877,6 +31268,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SortEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
         "setterMethodName" : "setSortEnabled",
         "setterModel" : {
@@ -30942,6 +31334,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "HighlightEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether highlights can be returned for the field.</p>\n@param highlightEnabled Whether highlights can be returned for the field.*/",
         "setterMethodName" : "setHighlightEnabled",
         "setterModel" : {
@@ -31007,6 +31400,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AnalysisScheme",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of an analysis scheme for a <code>text</code> field.</p>\n@param analysisScheme The name of an analysis scheme for a <code>text</code> field.*/",
         "setterMethodName" : "setAnalysisScheme",
         "setterModel" : {
@@ -31074,6 +31468,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AnalysisScheme",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of an analysis scheme for a <code>text</code> field.</p>\n@param analysisScheme The name of an analysis scheme for a <code>text</code> field.*/",
           "setterMethodName" : "setAnalysisScheme",
           "setterModel" : {
@@ -31140,6 +31535,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**A value to use for the field if the field isn't specified for a document.\n@param defaultValue A value to use for the field if the field isn't specified for a document.*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -31206,6 +31602,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "HighlightEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether highlights can be returned for the field.</p>\n@param highlightEnabled Whether highlights can be returned for the field.*/",
           "setterMethodName" : "setHighlightEnabled",
           "setterModel" : {
@@ -31272,6 +31669,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the contents of the field can be returned in the search results.</p>\n@param returnEnabled Whether the contents of the field can be returned in the search results.*/",
           "setterMethodName" : "setReturnEnabled",
           "setterModel" : {
@@ -31338,6 +31736,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SortEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the field can be used to sort the search results.</p>\n@param sortEnabled Whether the field can be used to sort the search results.*/",
           "setterMethodName" : "setSortEnabled",
           "setterModel" : {
@@ -31404,6 +31803,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceField",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceField */",
           "setterMethodName" : "setSourceField",
           "setterModel" : {
@@ -31516,6 +31916,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -31581,6 +31982,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "MultiAZ",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>\n@param multiAZ You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>.*/",
         "setterMethodName" : "setMultiAZ",
         "setterModel" : {
@@ -31648,6 +32050,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -31714,6 +32117,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "MultiAZ",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>\n@param multiAZ You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>.*/",
           "setterMethodName" : "setMultiAZ",
           "setterModel" : {
@@ -31816,6 +32220,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AvailabilityOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>\n@param availabilityOptions The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain.*/",
         "setterMethodName" : "setAvailabilityOptions",
         "setterModel" : {
@@ -31883,6 +32288,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AvailabilityOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>\n@param availabilityOptions The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain.*/",
           "setterMethodName" : "setAvailabilityOptions",
           "setterModel" : {
@@ -31995,6 +32401,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -32060,6 +32467,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ScalingParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param scalingParameters */",
         "setterMethodName" : "setScalingParameters",
         "setterModel" : {
@@ -32127,6 +32535,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -32193,6 +32602,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ScalingParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param scalingParameters */",
           "setterMethodName" : "setScalingParameters",
           "setterModel" : {
@@ -32295,6 +32705,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ScalingParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param scalingParameters */",
         "setterMethodName" : "setScalingParameters",
         "setterModel" : {
@@ -32362,6 +32773,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ScalingParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param scalingParameters */",
           "setterMethodName" : "setScalingParameters",
           "setterModel" : {
@@ -32474,6 +32886,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainName */",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -32539,6 +32952,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccessPolicies",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The access rules you want to configure. These rules replace any existing rules. </p>\n@param accessPolicies The access rules you want to configure. These rules replace any existing rules.*/",
         "setterMethodName" : "setAccessPolicies",
         "setterModel" : {
@@ -32606,6 +33020,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccessPolicies",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The access rules you want to configure. These rules replace any existing rules. </p>\n@param accessPolicies The access rules you want to configure. These rules replace any existing rules.*/",
           "setterMethodName" : "setAccessPolicies",
           "setterModel" : {
@@ -32672,6 +33087,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainName */",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -32774,6 +33190,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AccessPolicies",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The access rules configured for the domain.</p>\n@param accessPolicies The access rules configured for the domain.*/",
         "setterMethodName" : "setAccessPolicies",
         "setterModel" : {
@@ -32841,6 +33258,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AccessPolicies",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The access rules configured for the domain.</p>\n@param accessPolicies The access rules configured for the domain.*/",
           "setterMethodName" : "setAccessPolicies",
           "setterModel" : {

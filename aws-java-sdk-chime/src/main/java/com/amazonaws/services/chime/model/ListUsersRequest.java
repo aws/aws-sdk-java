@@ -211,7 +211,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -224,7 +225,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getUserEmail() != null)
-            sb.append("UserEmail: ").append(getUserEmail()).append(",");
+            sb.append("UserEmail: ").append("***Sensitive Data Redacted***").append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)

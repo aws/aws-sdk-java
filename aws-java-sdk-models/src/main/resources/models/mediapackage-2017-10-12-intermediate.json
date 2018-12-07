@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -864,6 +864,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -929,6 +930,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -994,6 +996,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsIngest",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsIngest */",
         "setterMethodName" : "setHlsIngest",
         "setterModel" : {
@@ -1059,6 +1062,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -1126,6 +1130,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -1192,6 +1197,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -1258,6 +1264,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsIngest",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsIngest */",
           "setterMethodName" : "setHlsIngest",
           "setterModel" : {
@@ -1324,6 +1331,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -1429,6 +1437,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "KeyRotationIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Time (in seconds) between each encryption key rotation.\n@param keyRotationIntervalSeconds Time (in seconds) between each encryption key rotation.*/",
         "setterMethodName" : "setKeyRotationIntervalSeconds",
         "setterModel" : {
@@ -1494,6 +1503,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SpekeKeyProvider",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param spekeKeyProvider */",
         "setterMethodName" : "setSpekeKeyProvider",
         "setterModel" : {
@@ -1561,6 +1571,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "KeyRotationIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Time (in seconds) between each encryption key rotation.\n@param keyRotationIntervalSeconds Time (in seconds) between each encryption key rotation.*/",
           "setterMethodName" : "setKeyRotationIntervalSeconds",
           "setterModel" : {
@@ -1627,6 +1638,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SpekeKeyProvider",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param spekeKeyProvider */",
           "setterMethodName" : "setSpekeKeyProvider",
           "setterModel" : {
@@ -1732,6 +1744,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param encryption */",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -1834,6 +1847,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1877,6 +1891,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "HlsManifests",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of HLS manifest configurations\n@param hlsManifests A list of HLS manifest configurations*/",
         "setterMethodName" : "setHlsManifests",
         "setterModel" : {
@@ -1942,6 +1957,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SegmentDurationSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.\n\n@param segmentDurationSeconds Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.*/",
         "setterMethodName" : "setSegmentDurationSeconds",
         "setterModel" : {
@@ -2007,6 +2023,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SegmentPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.\n@param segmentPrefix An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.*/",
         "setterMethodName" : "setSegmentPrefix",
         "setterModel" : {
@@ -2072,6 +2089,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StreamSelection",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param streamSelection */",
         "setterMethodName" : "setStreamSelection",
         "setterModel" : {
@@ -2139,6 +2157,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param encryption */",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -2242,6 +2261,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2285,6 +2305,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "HlsManifests",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of HLS manifest configurations\n@param hlsManifests A list of HLS manifest configurations*/",
           "setterMethodName" : "setHlsManifests",
           "setterModel" : {
@@ -2351,6 +2372,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SegmentDurationSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.\n\n@param segmentDurationSeconds Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.*/",
           "setterMethodName" : "setSegmentDurationSeconds",
           "setterModel" : {
@@ -2417,6 +2439,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SegmentPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.\n@param segmentPrefix An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.*/",
           "setterMethodName" : "setSegmentPrefix",
           "setterModel" : {
@@ -2483,6 +2506,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StreamSelection",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param streamSelection */",
           "setterMethodName" : "setStreamSelection",
           "setterModel" : {
@@ -2588,6 +2612,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param encryption */",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -2690,6 +2715,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2733,6 +2759,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "HlsManifests",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of HLS manifest configurations\n@param hlsManifests A list of HLS manifest configurations*/",
         "setterMethodName" : "setHlsManifests",
         "setterModel" : {
@@ -2798,6 +2825,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SegmentDurationSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.\n\n@param segmentDurationSeconds Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.*/",
         "setterMethodName" : "setSegmentDurationSeconds",
         "setterModel" : {
@@ -2863,6 +2891,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SegmentPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.\n@param segmentPrefix An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.*/",
         "setterMethodName" : "setSegmentPrefix",
         "setterModel" : {
@@ -2928,6 +2957,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StreamSelection",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param streamSelection */",
         "setterMethodName" : "setStreamSelection",
         "setterModel" : {
@@ -2995,6 +3025,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param encryption */",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -3098,6 +3129,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3141,6 +3173,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "HlsManifests",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of HLS manifest configurations\n@param hlsManifests A list of HLS manifest configurations*/",
           "setterMethodName" : "setHlsManifests",
           "setterModel" : {
@@ -3207,6 +3240,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SegmentDurationSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.\n\n@param segmentDurationSeconds Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.*/",
           "setterMethodName" : "setSegmentDurationSeconds",
           "setterModel" : {
@@ -3273,6 +3307,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SegmentPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.\n@param segmentPrefix An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.*/",
           "setterMethodName" : "setSegmentPrefix",
           "setterModel" : {
@@ -3339,6 +3374,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StreamSelection",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param streamSelection */",
           "setterMethodName" : "setStreamSelection",
           "setterModel" : {
@@ -3451,6 +3487,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -3516,6 +3553,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel. The ID must be unique within the region and it\ncannot be changed after a Channel is created.\n\n@param id The ID of the Channel. The ID must be unique within the region and it\ncannot be changed after a Channel is created.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -3583,6 +3621,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -3649,6 +3688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel. The ID must be unique within the region and it\ncannot be changed after a Channel is created.\n\n@param id The ID of the Channel. The ID must be unique within the region and it\ncannot be changed after a Channel is created.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -3751,6 +3791,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -3816,6 +3857,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -3881,6 +3923,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsIngest",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsIngest */",
         "setterMethodName" : "setHlsIngest",
         "setterModel" : {
@@ -3946,6 +3989,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -4013,6 +4057,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -4079,6 +4124,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -4145,6 +4191,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsIngest",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsIngest */",
           "setterMethodName" : "setHlsIngest",
           "setterModel" : {
@@ -4211,6 +4258,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -4323,6 +4371,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ChannelId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel that the OriginEndpoint will be associated with.\nThis cannot be changed after the OriginEndpoint is created.\n\n@param channelId The ID of the Channel that the OriginEndpoint will be associated with.\nThis cannot be changed after the OriginEndpoint is created.*/",
         "setterMethodName" : "setChannelId",
         "setterModel" : {
@@ -4388,6 +4437,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CmafPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param cmafPackage */",
         "setterMethodName" : "setCmafPackage",
         "setterModel" : {
@@ -4453,6 +4503,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dashPackage */",
         "setterMethodName" : "setDashPackage",
         "setterModel" : {
@@ -4518,6 +4569,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -4583,6 +4635,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsPackage */",
         "setterMethodName" : "setHlsPackage",
         "setterModel" : {
@@ -4648,6 +4701,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the OriginEndpoint.  The ID must be unique within the region\nand it cannot be changed after the OriginEndpoint is created.\n\n@param id The ID of the OriginEndpoint.  The ID must be unique within the region\nand it cannot be changed after the OriginEndpoint is created.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -4713,6 +4767,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestName",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short string that will be used as the filename of the OriginEndpoint URL (defaults to \"index\").\n@param manifestName A short string that will be used as the filename of the OriginEndpoint URL (defaults to \"index\").*/",
         "setterMethodName" : "setManifestName",
         "setterModel" : {
@@ -4778,6 +4833,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "MssPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param mssPackage */",
         "setterMethodName" : "setMssPackage",
         "setterModel" : {
@@ -4843,6 +4899,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StartoverWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
         "setterMethodName" : "setStartoverWindowSeconds",
         "setterModel" : {
@@ -4908,6 +4965,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TimeDelaySeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
         "setterMethodName" : "setTimeDelaySeconds",
         "setterModel" : {
@@ -5010,6 +5068,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5053,6 +5112,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Whitelist",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
         "setterMethodName" : "setWhitelist",
         "setterModel" : {
@@ -5120,6 +5180,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ChannelId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel that the OriginEndpoint will be associated with.\nThis cannot be changed after the OriginEndpoint is created.\n\n@param channelId The ID of the Channel that the OriginEndpoint will be associated with.\nThis cannot be changed after the OriginEndpoint is created.*/",
           "setterMethodName" : "setChannelId",
           "setterModel" : {
@@ -5186,6 +5247,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CmafPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param cmafPackage */",
           "setterMethodName" : "setCmafPackage",
           "setterModel" : {
@@ -5252,6 +5314,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dashPackage */",
           "setterMethodName" : "setDashPackage",
           "setterModel" : {
@@ -5318,6 +5381,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -5384,6 +5448,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsPackage */",
           "setterMethodName" : "setHlsPackage",
           "setterModel" : {
@@ -5450,6 +5515,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the OriginEndpoint.  The ID must be unique within the region\nand it cannot be changed after the OriginEndpoint is created.\n\n@param id The ID of the OriginEndpoint.  The ID must be unique within the region\nand it cannot be changed after the OriginEndpoint is created.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -5516,6 +5582,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestName",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short string that will be used as the filename of the OriginEndpoint URL (defaults to \"index\").\n@param manifestName A short string that will be used as the filename of the OriginEndpoint URL (defaults to \"index\").*/",
           "setterMethodName" : "setManifestName",
           "setterModel" : {
@@ -5582,6 +5649,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "MssPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param mssPackage */",
           "setterMethodName" : "setMssPackage",
           "setterModel" : {
@@ -5648,6 +5716,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StartoverWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
           "setterMethodName" : "setStartoverWindowSeconds",
           "setterModel" : {
@@ -5714,6 +5783,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TimeDelaySeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
           "setterMethodName" : "setTimeDelaySeconds",
           "setterModel" : {
@@ -5817,6 +5887,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5860,6 +5931,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Whitelist",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
           "setterMethodName" : "setWhitelist",
           "setterModel" : {
@@ -5962,6 +6034,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the OriginEndpoint.\n@param arn The Amazon Resource Name (ARN) assigned to the OriginEndpoint.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -6027,6 +6100,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ChannelId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel the OriginEndpoint is associated with.\n@param channelId The ID of the Channel the OriginEndpoint is associated with.*/",
         "setterMethodName" : "setChannelId",
         "setterModel" : {
@@ -6092,6 +6166,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CmafPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param cmafPackage */",
         "setterMethodName" : "setCmafPackage",
         "setterModel" : {
@@ -6157,6 +6232,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dashPackage */",
         "setterMethodName" : "setDashPackage",
         "setterModel" : {
@@ -6222,6 +6298,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -6287,6 +6364,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsPackage */",
         "setterMethodName" : "setHlsPackage",
         "setterModel" : {
@@ -6352,6 +6430,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -6417,6 +6496,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestName",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short string appended to the end of the OriginEndpoint URL.\n@param manifestName A short string appended to the end of the OriginEndpoint URL.*/",
         "setterMethodName" : "setManifestName",
         "setterModel" : {
@@ -6482,6 +6562,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "MssPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param mssPackage */",
         "setterMethodName" : "setMssPackage",
         "setterModel" : {
@@ -6547,6 +6628,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StartoverWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
         "setterMethodName" : "setStartoverWindowSeconds",
         "setterModel" : {
@@ -6612,6 +6694,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TimeDelaySeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
         "setterMethodName" : "setTimeDelaySeconds",
         "setterModel" : {
@@ -6677,6 +6760,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -6779,6 +6863,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6822,6 +6907,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Whitelist",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
         "setterMethodName" : "setWhitelist",
         "setterModel" : {
@@ -6889,6 +6975,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the OriginEndpoint.\n@param arn The Amazon Resource Name (ARN) assigned to the OriginEndpoint.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -6955,6 +7042,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ChannelId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel the OriginEndpoint is associated with.\n@param channelId The ID of the Channel the OriginEndpoint is associated with.*/",
           "setterMethodName" : "setChannelId",
           "setterModel" : {
@@ -7021,6 +7109,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CmafPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param cmafPackage */",
           "setterMethodName" : "setCmafPackage",
           "setterModel" : {
@@ -7087,6 +7176,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dashPackage */",
           "setterMethodName" : "setDashPackage",
           "setterModel" : {
@@ -7153,6 +7243,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -7219,6 +7310,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsPackage */",
           "setterMethodName" : "setHlsPackage",
           "setterModel" : {
@@ -7285,6 +7377,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -7351,6 +7444,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestName",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short string appended to the end of the OriginEndpoint URL.\n@param manifestName A short string appended to the end of the OriginEndpoint URL.*/",
           "setterMethodName" : "setManifestName",
           "setterModel" : {
@@ -7417,6 +7511,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "MssPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param mssPackage */",
           "setterMethodName" : "setMssPackage",
           "setterModel" : {
@@ -7483,6 +7578,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StartoverWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
           "setterMethodName" : "setStartoverWindowSeconds",
           "setterModel" : {
@@ -7549,6 +7645,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TimeDelaySeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
           "setterMethodName" : "setTimeDelaySeconds",
           "setterModel" : {
@@ -7615,6 +7712,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -7718,6 +7816,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7761,6 +7860,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Whitelist",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
           "setterMethodName" : "setWhitelist",
           "setterModel" : {
@@ -7866,6 +7966,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "KeyRotationIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Time (in seconds) between each encryption key rotation.\n@param keyRotationIntervalSeconds Time (in seconds) between each encryption key rotation.*/",
         "setterMethodName" : "setKeyRotationIntervalSeconds",
         "setterModel" : {
@@ -7931,6 +8032,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SpekeKeyProvider",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param spekeKeyProvider */",
         "setterMethodName" : "setSpekeKeyProvider",
         "setterModel" : {
@@ -7998,6 +8100,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "KeyRotationIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Time (in seconds) between each encryption key rotation.\n@param keyRotationIntervalSeconds Time (in seconds) between each encryption key rotation.*/",
           "setterMethodName" : "setKeyRotationIntervalSeconds",
           "setterModel" : {
@@ -8064,6 +8167,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SpekeKeyProvider",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param spekeKeyProvider */",
           "setterMethodName" : "setSpekeKeyProvider",
           "setterModel" : {
@@ -8169,6 +8273,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param encryption */",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -8234,6 +8339,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ManifestWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Time window (in seconds) contained in each manifest.\n@param manifestWindowSeconds Time window (in seconds) contained in each manifest.*/",
         "setterMethodName" : "setManifestWindowSeconds",
         "setterModel" : {
@@ -8299,6 +8405,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MinBufferTimeSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Minimum duration (in seconds) that a player will buffer media before starting the presentation.\n@param minBufferTimeSeconds Minimum duration (in seconds) that a player will buffer media before starting the presentation.*/",
         "setterMethodName" : "setMinBufferTimeSeconds",
         "setterModel" : {
@@ -8364,6 +8471,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MinUpdatePeriodSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).\n@param minUpdatePeriodSeconds Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).*/",
         "setterMethodName" : "setMinUpdatePeriodSeconds",
         "setterModel" : {
@@ -8466,6 +8574,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see PeriodTriggersElement*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8509,6 +8618,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PeriodTriggers",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)\nMedia Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not\nbe partitioned into more than one period. If the list contains \"ADS\", new periods will be created where\nthe Channel source contains SCTE-35 ad markers.\n\n@param periodTriggers A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)\nMedia Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not\nbe partitioned into more than one period. If the list contains \"ADS\", new periods will be created where\nthe Channel source contains SCTE-35 ad markers.\n@see PeriodTriggersElement*/",
         "setterMethodName" : "setPeriodTriggers",
         "setterModel" : {
@@ -8574,6 +8684,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Profile",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to \"HBBTV_1_5\", HbbTV 1.5 compliant output is enabled.\n@param profile The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to \"HBBTV_1_5\", HbbTV 1.5 compliant output is enabled.\n@see Profile*/",
         "setterMethodName" : "setProfile",
         "setterModel" : {
@@ -8639,6 +8750,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SegmentDurationSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.\n\n@param segmentDurationSeconds Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.*/",
         "setterMethodName" : "setSegmentDurationSeconds",
         "setterModel" : {
@@ -8704,6 +8816,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StreamSelection",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param streamSelection */",
         "setterMethodName" : "setStreamSelection",
         "setterModel" : {
@@ -8769,6 +8882,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SuggestedPresentationDelaySeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Duration (in seconds) to delay live content before presentation.\n@param suggestedPresentationDelaySeconds Duration (in seconds) to delay live content before presentation.*/",
         "setterMethodName" : "setSuggestedPresentationDelaySeconds",
         "setterModel" : {
@@ -8836,6 +8950,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param encryption */",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -8902,6 +9017,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ManifestWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Time window (in seconds) contained in each manifest.\n@param manifestWindowSeconds Time window (in seconds) contained in each manifest.*/",
           "setterMethodName" : "setManifestWindowSeconds",
           "setterModel" : {
@@ -8968,6 +9084,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MinBufferTimeSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Minimum duration (in seconds) that a player will buffer media before starting the presentation.\n@param minBufferTimeSeconds Minimum duration (in seconds) that a player will buffer media before starting the presentation.*/",
           "setterMethodName" : "setMinBufferTimeSeconds",
           "setterModel" : {
@@ -9034,6 +9151,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MinUpdatePeriodSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).\n@param minUpdatePeriodSeconds Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).*/",
           "setterMethodName" : "setMinUpdatePeriodSeconds",
           "setterModel" : {
@@ -9137,6 +9255,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see PeriodTriggersElement*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9180,6 +9299,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PeriodTriggers",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)\nMedia Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not\nbe partitioned into more than one period. If the list contains \"ADS\", new periods will be created where\nthe Channel source contains SCTE-35 ad markers.\n\n@param periodTriggers A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)\nMedia Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not\nbe partitioned into more than one period. If the list contains \"ADS\", new periods will be created where\nthe Channel source contains SCTE-35 ad markers.\n@see PeriodTriggersElement*/",
           "setterMethodName" : "setPeriodTriggers",
           "setterModel" : {
@@ -9246,6 +9366,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Profile",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to \"HBBTV_1_5\", HbbTV 1.5 compliant output is enabled.\n@param profile The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to \"HBBTV_1_5\", HbbTV 1.5 compliant output is enabled.\n@see Profile*/",
           "setterMethodName" : "setProfile",
           "setterModel" : {
@@ -9312,6 +9433,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SegmentDurationSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.\n\n@param segmentDurationSeconds Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.*/",
           "setterMethodName" : "setSegmentDurationSeconds",
           "setterModel" : {
@@ -9378,6 +9500,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StreamSelection",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param streamSelection */",
           "setterMethodName" : "setStreamSelection",
           "setterModel" : {
@@ -9444,6 +9567,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SuggestedPresentationDelaySeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Duration (in seconds) to delay live content before presentation.\n@param suggestedPresentationDelaySeconds Duration (in seconds) to delay live content before presentation.*/",
           "setterMethodName" : "setSuggestedPresentationDelaySeconds",
           "setterModel" : {
@@ -9556,6 +9680,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel to delete.\n@param id The ID of the Channel to delete.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -9623,6 +9748,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel to delete.\n@param id The ID of the Channel to delete.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -9772,6 +9898,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the OriginEndpoint to delete.\n@param id The ID of the OriginEndpoint to delete.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -9839,6 +9966,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the OriginEndpoint to delete.\n@param id The ID of the OriginEndpoint to delete.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -9988,6 +10116,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of a Channel.\n@param id The ID of a Channel.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -10055,6 +10184,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of a Channel.\n@param id The ID of a Channel.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -10157,6 +10287,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -10222,6 +10353,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -10287,6 +10419,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsIngest",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsIngest */",
         "setterMethodName" : "setHlsIngest",
         "setterModel" : {
@@ -10352,6 +10485,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -10419,6 +10553,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -10485,6 +10620,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -10551,6 +10687,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsIngest",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsIngest */",
           "setterMethodName" : "setHlsIngest",
           "setterModel" : {
@@ -10617,6 +10754,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -10729,6 +10867,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -10796,6 +10935,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -10898,6 +11038,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the OriginEndpoint.\n@param arn The Amazon Resource Name (ARN) assigned to the OriginEndpoint.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -10963,6 +11104,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ChannelId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel the OriginEndpoint is associated with.\n@param channelId The ID of the Channel the OriginEndpoint is associated with.*/",
         "setterMethodName" : "setChannelId",
         "setterModel" : {
@@ -11028,6 +11170,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CmafPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param cmafPackage */",
         "setterMethodName" : "setCmafPackage",
         "setterModel" : {
@@ -11093,6 +11236,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dashPackage */",
         "setterMethodName" : "setDashPackage",
         "setterModel" : {
@@ -11158,6 +11302,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -11223,6 +11368,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsPackage */",
         "setterMethodName" : "setHlsPackage",
         "setterModel" : {
@@ -11288,6 +11434,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -11353,6 +11500,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestName",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short string appended to the end of the OriginEndpoint URL.\n@param manifestName A short string appended to the end of the OriginEndpoint URL.*/",
         "setterMethodName" : "setManifestName",
         "setterModel" : {
@@ -11418,6 +11566,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "MssPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param mssPackage */",
         "setterMethodName" : "setMssPackage",
         "setterModel" : {
@@ -11483,6 +11632,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StartoverWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
         "setterMethodName" : "setStartoverWindowSeconds",
         "setterModel" : {
@@ -11548,6 +11698,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TimeDelaySeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
         "setterMethodName" : "setTimeDelaySeconds",
         "setterModel" : {
@@ -11613,6 +11764,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -11715,6 +11867,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11758,6 +11911,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Whitelist",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
         "setterMethodName" : "setWhitelist",
         "setterModel" : {
@@ -11825,6 +11979,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the OriginEndpoint.\n@param arn The Amazon Resource Name (ARN) assigned to the OriginEndpoint.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -11891,6 +12046,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ChannelId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel the OriginEndpoint is associated with.\n@param channelId The ID of the Channel the OriginEndpoint is associated with.*/",
           "setterMethodName" : "setChannelId",
           "setterModel" : {
@@ -11957,6 +12113,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CmafPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param cmafPackage */",
           "setterMethodName" : "setCmafPackage",
           "setterModel" : {
@@ -12023,6 +12180,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dashPackage */",
           "setterMethodName" : "setDashPackage",
           "setterModel" : {
@@ -12089,6 +12247,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -12155,6 +12314,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsPackage */",
           "setterMethodName" : "setHlsPackage",
           "setterModel" : {
@@ -12221,6 +12381,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -12287,6 +12448,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestName",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short string appended to the end of the OriginEndpoint URL.\n@param manifestName A short string appended to the end of the OriginEndpoint URL.*/",
           "setterMethodName" : "setManifestName",
           "setterModel" : {
@@ -12353,6 +12515,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "MssPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param mssPackage */",
           "setterMethodName" : "setMssPackage",
           "setterModel" : {
@@ -12419,6 +12582,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StartoverWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
           "setterMethodName" : "setStartoverWindowSeconds",
           "setterModel" : {
@@ -12485,6 +12649,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TimeDelaySeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
           "setterMethodName" : "setTimeDelaySeconds",
           "setterModel" : {
@@ -12551,6 +12716,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -12654,6 +12820,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12697,6 +12864,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Whitelist",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
           "setterMethodName" : "setWhitelist",
           "setterModel" : {
@@ -12885,6 +13053,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConstantInitializationVector",
+        "sensitive" : false,
         "setterDocumentation" : "/**A constant initialization vector for encryption (optional).\nWhen not specified the initialization vector will be periodically rotated.\n\n@param constantInitializationVector A constant initialization vector for encryption (optional).\nWhen not specified the initialization vector will be periodically rotated.*/",
         "setterMethodName" : "setConstantInitializationVector",
         "setterModel" : {
@@ -12950,6 +13119,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EncryptionMethod",
+        "sensitive" : false,
         "setterDocumentation" : "/**The encryption method to use.\n@param encryptionMethod The encryption method to use.\n@see EncryptionMethod*/",
         "setterMethodName" : "setEncryptionMethod",
         "setterModel" : {
@@ -13015,6 +13185,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "KeyRotationIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Interval (in seconds) between each encryption key rotation.\n@param keyRotationIntervalSeconds Interval (in seconds) between each encryption key rotation.*/",
         "setterMethodName" : "setKeyRotationIntervalSeconds",
         "setterModel" : {
@@ -13080,6 +13251,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RepeatExtXKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**When enabled, the EXT-X-KEY tag will be repeated in output manifests.\n@param repeatExtXKey When enabled, the EXT-X-KEY tag will be repeated in output manifests.*/",
         "setterMethodName" : "setRepeatExtXKey",
         "setterModel" : {
@@ -13145,6 +13317,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SpekeKeyProvider",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param spekeKeyProvider */",
         "setterMethodName" : "setSpekeKeyProvider",
         "setterModel" : {
@@ -13212,6 +13385,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConstantInitializationVector",
+          "sensitive" : false,
           "setterDocumentation" : "/**A constant initialization vector for encryption (optional).\nWhen not specified the initialization vector will be periodically rotated.\n\n@param constantInitializationVector A constant initialization vector for encryption (optional).\nWhen not specified the initialization vector will be periodically rotated.*/",
           "setterMethodName" : "setConstantInitializationVector",
           "setterModel" : {
@@ -13278,6 +13452,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EncryptionMethod",
+          "sensitive" : false,
           "setterDocumentation" : "/**The encryption method to use.\n@param encryptionMethod The encryption method to use.\n@see EncryptionMethod*/",
           "setterMethodName" : "setEncryptionMethod",
           "setterModel" : {
@@ -13344,6 +13519,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "KeyRotationIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Interval (in seconds) between each encryption key rotation.\n@param keyRotationIntervalSeconds Interval (in seconds) between each encryption key rotation.*/",
           "setterMethodName" : "setKeyRotationIntervalSeconds",
           "setterModel" : {
@@ -13410,6 +13586,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RepeatExtXKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**When enabled, the EXT-X-KEY tag will be repeated in output manifests.\n@param repeatExtXKey When enabled, the EXT-X-KEY tag will be repeated in output manifests.*/",
           "setterMethodName" : "setRepeatExtXKey",
           "setterModel" : {
@@ -13476,6 +13653,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SpekeKeyProvider",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param spekeKeyProvider */",
           "setterMethodName" : "setSpekeKeyProvider",
           "setterModel" : {
@@ -13618,6 +13796,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13661,6 +13840,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "IngestEndpoints",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of endpoints to which the source stream should be sent.\n@param ingestEndpoints A list of endpoints to which the source stream should be sent.*/",
         "setterMethodName" : "setIngestEndpoints",
         "setterModel" : {
@@ -13765,6 +13945,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13808,6 +13989,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "IngestEndpoints",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of endpoints to which the source stream should be sent.\n@param ingestEndpoints A list of endpoints to which the source stream should be sent.*/",
           "setterMethodName" : "setIngestEndpoints",
           "setterModel" : {
@@ -13913,6 +14095,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdMarkers",
+        "sensitive" : false,
         "setterDocumentation" : "/**This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\n@param adMarkers This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n@see AdMarkers*/",
         "setterMethodName" : "setAdMarkers",
         "setterModel" : {
@@ -13978,6 +14161,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.\n@param id The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -14043,6 +14227,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeIframeOnlyStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**When enabled, an I-Frame only stream will be included in the output.\n@param includeIframeOnlyStream When enabled, an I-Frame only stream will be included in the output.*/",
         "setterMethodName" : "setIncludeIframeOnlyStream",
         "setterModel" : {
@@ -14108,6 +14293,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestName",
+        "sensitive" : false,
         "setterDocumentation" : "/**An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.\n@param manifestName An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.*/",
         "setterMethodName" : "setManifestName",
         "setterModel" : {
@@ -14173,6 +14359,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlaylistType",
+        "sensitive" : false,
         "setterDocumentation" : "/**The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n\n@param playlistType The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n@see PlaylistType*/",
         "setterMethodName" : "setPlaylistType",
         "setterModel" : {
@@ -14238,6 +14425,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "PlaylistWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Time window (in seconds) contained in each parent manifest.\n@param playlistWindowSeconds Time window (in seconds) contained in each parent manifest.*/",
         "setterMethodName" : "setPlaylistWindowSeconds",
         "setterModel" : {
@@ -14303,6 +14491,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ProgramDateTimeIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.\n\n@param programDateTimeIntervalSeconds The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.*/",
         "setterMethodName" : "setProgramDateTimeIntervalSeconds",
         "setterModel" : {
@@ -14368,6 +14557,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -14435,6 +14625,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdMarkers",
+          "sensitive" : false,
           "setterDocumentation" : "/**This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\n@param adMarkers This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n@see AdMarkers*/",
           "setterMethodName" : "setAdMarkers",
           "setterModel" : {
@@ -14501,6 +14692,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.\n@param id The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -14567,6 +14759,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeIframeOnlyStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**When enabled, an I-Frame only stream will be included in the output.\n@param includeIframeOnlyStream When enabled, an I-Frame only stream will be included in the output.*/",
           "setterMethodName" : "setIncludeIframeOnlyStream",
           "setterModel" : {
@@ -14633,6 +14826,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestName",
+          "sensitive" : false,
           "setterDocumentation" : "/**An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.\n@param manifestName An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.*/",
           "setterMethodName" : "setManifestName",
           "setterModel" : {
@@ -14699,6 +14893,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlaylistType",
+          "sensitive" : false,
           "setterDocumentation" : "/**The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n\n@param playlistType The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n@see PlaylistType*/",
           "setterMethodName" : "setPlaylistType",
           "setterModel" : {
@@ -14765,6 +14960,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "PlaylistWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Time window (in seconds) contained in each parent manifest.\n@param playlistWindowSeconds Time window (in seconds) contained in each parent manifest.*/",
           "setterMethodName" : "setPlaylistWindowSeconds",
           "setterModel" : {
@@ -14831,6 +15027,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ProgramDateTimeIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.\n\n@param programDateTimeIntervalSeconds The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.*/",
           "setterMethodName" : "setProgramDateTimeIntervalSeconds",
           "setterModel" : {
@@ -14897,6 +15094,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -15002,6 +15200,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdMarkers",
+        "sensitive" : false,
         "setterDocumentation" : "/**This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\n@param adMarkers This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n@see AdMarkers*/",
         "setterMethodName" : "setAdMarkers",
         "setterModel" : {
@@ -15067,6 +15266,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.\n@param id The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -15132,6 +15332,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeIframeOnlyStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**When enabled, an I-Frame only stream will be included in the output.\n@param includeIframeOnlyStream When enabled, an I-Frame only stream will be included in the output.*/",
         "setterMethodName" : "setIncludeIframeOnlyStream",
         "setterModel" : {
@@ -15197,6 +15398,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestName",
+        "sensitive" : false,
         "setterDocumentation" : "/**An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.\n@param manifestName An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.*/",
         "setterMethodName" : "setManifestName",
         "setterModel" : {
@@ -15262,6 +15464,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlaylistType",
+        "sensitive" : false,
         "setterDocumentation" : "/**The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n\n@param playlistType The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n@see PlaylistType*/",
         "setterMethodName" : "setPlaylistType",
         "setterModel" : {
@@ -15327,6 +15530,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "PlaylistWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Time window (in seconds) contained in each parent manifest.\n@param playlistWindowSeconds Time window (in seconds) contained in each parent manifest.*/",
         "setterMethodName" : "setPlaylistWindowSeconds",
         "setterModel" : {
@@ -15392,6 +15596,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ProgramDateTimeIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.\n\n@param programDateTimeIntervalSeconds The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.*/",
         "setterMethodName" : "setProgramDateTimeIntervalSeconds",
         "setterModel" : {
@@ -15459,6 +15664,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdMarkers",
+          "sensitive" : false,
           "setterDocumentation" : "/**This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\n@param adMarkers This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n@see AdMarkers*/",
           "setterMethodName" : "setAdMarkers",
           "setterModel" : {
@@ -15525,6 +15731,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.\n@param id The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -15591,6 +15798,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeIframeOnlyStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**When enabled, an I-Frame only stream will be included in the output.\n@param includeIframeOnlyStream When enabled, an I-Frame only stream will be included in the output.*/",
           "setterMethodName" : "setIncludeIframeOnlyStream",
           "setterModel" : {
@@ -15657,6 +15865,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestName",
+          "sensitive" : false,
           "setterDocumentation" : "/**An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.\n@param manifestName An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.*/",
           "setterMethodName" : "setManifestName",
           "setterModel" : {
@@ -15723,6 +15932,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlaylistType",
+          "sensitive" : false,
           "setterDocumentation" : "/**The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n\n@param playlistType The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n@see PlaylistType*/",
           "setterMethodName" : "setPlaylistType",
           "setterModel" : {
@@ -15789,6 +15999,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "PlaylistWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Time window (in seconds) contained in each parent manifest.\n@param playlistWindowSeconds Time window (in seconds) contained in each parent manifest.*/",
           "setterMethodName" : "setPlaylistWindowSeconds",
           "setterModel" : {
@@ -15855,6 +16066,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ProgramDateTimeIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.\n\n@param programDateTimeIntervalSeconds The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.*/",
           "setterMethodName" : "setProgramDateTimeIntervalSeconds",
           "setterModel" : {
@@ -15960,6 +16172,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdMarkers",
+        "sensitive" : false,
         "setterDocumentation" : "/**This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\n@param adMarkers This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n@see AdMarkers*/",
         "setterMethodName" : "setAdMarkers",
         "setterModel" : {
@@ -16025,6 +16238,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param encryption */",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -16090,6 +16304,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeIframeOnlyStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**When enabled, an I-Frame only stream will be included in the output.\n@param includeIframeOnlyStream When enabled, an I-Frame only stream will be included in the output.*/",
         "setterMethodName" : "setIncludeIframeOnlyStream",
         "setterModel" : {
@@ -16155,6 +16370,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlaylistType",
+        "sensitive" : false,
         "setterDocumentation" : "/**The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n\n@param playlistType The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n@see PlaylistType*/",
         "setterMethodName" : "setPlaylistType",
         "setterModel" : {
@@ -16220,6 +16436,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "PlaylistWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Time window (in seconds) contained in each parent manifest.\n@param playlistWindowSeconds Time window (in seconds) contained in each parent manifest.*/",
         "setterMethodName" : "setPlaylistWindowSeconds",
         "setterModel" : {
@@ -16285,6 +16502,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ProgramDateTimeIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.\n\n@param programDateTimeIntervalSeconds The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.*/",
         "setterMethodName" : "setProgramDateTimeIntervalSeconds",
         "setterModel" : {
@@ -16350,6 +16568,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SegmentDurationSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Duration (in seconds) of each fragment. Actual fragments will be\nrounded to the nearest multiple of the source fragment duration.\n\n@param segmentDurationSeconds Duration (in seconds) of each fragment. Actual fragments will be\nrounded to the nearest multiple of the source fragment duration.*/",
         "setterMethodName" : "setSegmentDurationSeconds",
         "setterModel" : {
@@ -16415,6 +16634,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StreamSelection",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param streamSelection */",
         "setterMethodName" : "setStreamSelection",
         "setterModel" : {
@@ -16480,6 +16700,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "UseAudioRenditionGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**When enabled, audio streams will be placed in rendition groups in the output.\n@param useAudioRenditionGroup When enabled, audio streams will be placed in rendition groups in the output.*/",
         "setterMethodName" : "setUseAudioRenditionGroup",
         "setterModel" : {
@@ -16547,6 +16768,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdMarkers",
+          "sensitive" : false,
           "setterDocumentation" : "/**This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\n@param adMarkers This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n@see AdMarkers*/",
           "setterMethodName" : "setAdMarkers",
           "setterModel" : {
@@ -16613,6 +16835,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param encryption */",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -16679,6 +16902,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeIframeOnlyStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**When enabled, an I-Frame only stream will be included in the output.\n@param includeIframeOnlyStream When enabled, an I-Frame only stream will be included in the output.*/",
           "setterMethodName" : "setIncludeIframeOnlyStream",
           "setterModel" : {
@@ -16745,6 +16969,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlaylistType",
+          "sensitive" : false,
           "setterDocumentation" : "/**The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n\n@param playlistType The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n@see PlaylistType*/",
           "setterMethodName" : "setPlaylistType",
           "setterModel" : {
@@ -16811,6 +17036,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "PlaylistWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Time window (in seconds) contained in each parent manifest.\n@param playlistWindowSeconds Time window (in seconds) contained in each parent manifest.*/",
           "setterMethodName" : "setPlaylistWindowSeconds",
           "setterModel" : {
@@ -16877,6 +17103,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ProgramDateTimeIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.\n\n@param programDateTimeIntervalSeconds The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.*/",
           "setterMethodName" : "setProgramDateTimeIntervalSeconds",
           "setterModel" : {
@@ -16943,6 +17170,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SegmentDurationSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Duration (in seconds) of each fragment. Actual fragments will be\nrounded to the nearest multiple of the source fragment duration.\n\n@param segmentDurationSeconds Duration (in seconds) of each fragment. Actual fragments will be\nrounded to the nearest multiple of the source fragment duration.*/",
           "setterMethodName" : "setSegmentDurationSeconds",
           "setterModel" : {
@@ -17009,6 +17237,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StreamSelection",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param streamSelection */",
           "setterMethodName" : "setStreamSelection",
           "setterModel" : {
@@ -17075,6 +17304,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "UseAudioRenditionGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**When enabled, audio streams will be placed in rendition groups in the output.\n@param useAudioRenditionGroup When enabled, audio streams will be placed in rendition groups in the output.*/",
           "setterMethodName" : "setUseAudioRenditionGroup",
           "setterModel" : {
@@ -17180,6 +17410,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The system generated unique identifier for the IngestEndpoint\n@param id The system generated unique identifier for the IngestEndpoint*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -17245,6 +17476,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Password",
+        "sensitive" : false,
         "setterDocumentation" : "/**The system generated password for ingest authentication.\n@param password The system generated password for ingest authentication.*/",
         "setterMethodName" : "setPassword",
         "setterModel" : {
@@ -17310,6 +17542,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ingest URL to which the source stream should be sent.\n@param url The ingest URL to which the source stream should be sent.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -17375,6 +17608,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Username",
+        "sensitive" : false,
         "setterDocumentation" : "/**The system generated username for ingest authentication.\n@param username The system generated username for ingest authentication.*/",
         "setterMethodName" : "setUsername",
         "setterModel" : {
@@ -17442,6 +17676,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The system generated unique identifier for the IngestEndpoint\n@param id The system generated unique identifier for the IngestEndpoint*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -17508,6 +17743,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Password",
+          "sensitive" : false,
           "setterDocumentation" : "/**The system generated password for ingest authentication.\n@param password The system generated password for ingest authentication.*/",
           "setterMethodName" : "setPassword",
           "setterModel" : {
@@ -17574,6 +17810,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ingest URL to which the source stream should be sent.\n@param url The ingest URL to which the source stream should be sent.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -17640,6 +17877,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Username",
+          "sensitive" : false,
           "setterDocumentation" : "/**The system generated username for ingest authentication.\n@param username The system generated username for ingest authentication.*/",
           "setterMethodName" : "setUsername",
           "setterModel" : {
@@ -17789,6 +18027,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**Upper bound on number of records to return.\n@param maxResults Upper bound on number of records to return.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -17854,6 +18093,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**A token used to resume pagination from the end of a previous request.\n@param nextToken A token used to resume pagination from the end of a previous request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -17921,6 +18161,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**Upper bound on number of records to return.\n@param maxResults Upper bound on number of records to return.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -17987,6 +18228,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**A token used to resume pagination from the end of a previous request.\n@param nextToken A token used to resume pagination from the end of a previous request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18126,6 +18368,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18169,6 +18412,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Channels",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of Channel records.\n@param channels A list of Channel records.*/",
         "setterMethodName" : "setChannels",
         "setterModel" : {
@@ -18234,6 +18478,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**A token that can be used to resume pagination from the end of the collection.\n@param nextToken A token that can be used to resume pagination from the end of the collection.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -18338,6 +18583,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18381,6 +18627,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Channels",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of Channel records.\n@param channels A list of Channel records.*/",
           "setterMethodName" : "setChannels",
           "setterModel" : {
@@ -18447,6 +18694,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**A token that can be used to resume pagination from the end of the collection.\n@param nextToken A token that can be used to resume pagination from the end of the collection.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18559,6 +18807,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ChannelId",
+        "sensitive" : false,
         "setterDocumentation" : "/**When specified, the request will return only OriginEndpoints associated with the given Channel ID.\n@param channelId When specified, the request will return only OriginEndpoints associated with the given Channel ID.*/",
         "setterMethodName" : "setChannelId",
         "setterModel" : {
@@ -18624,6 +18873,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**The upper bound on the number of records to return.\n@param maxResults The upper bound on the number of records to return.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -18689,6 +18939,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**A token used to resume pagination from the end of a previous request.\n@param nextToken A token used to resume pagination from the end of a previous request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -18756,6 +19007,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ChannelId",
+          "sensitive" : false,
           "setterDocumentation" : "/**When specified, the request will return only OriginEndpoints associated with the given Channel ID.\n@param channelId When specified, the request will return only OriginEndpoints associated with the given Channel ID.*/",
           "setterMethodName" : "setChannelId",
           "setterModel" : {
@@ -18822,6 +19074,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**The upper bound on the number of records to return.\n@param maxResults The upper bound on the number of records to return.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -18888,6 +19141,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**A token used to resume pagination from the end of a previous request.\n@param nextToken A token used to resume pagination from the end of a previous request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18990,6 +19244,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**A token that can be used to resume pagination from the end of the collection.\n@param nextToken A token that can be used to resume pagination from the end of the collection.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -19092,6 +19347,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -19135,6 +19391,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "OriginEndpoints",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of OriginEndpoint records.\n@param originEndpoints A list of OriginEndpoint records.*/",
         "setterMethodName" : "setOriginEndpoints",
         "setterModel" : {
@@ -19202,6 +19459,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**A token that can be used to resume pagination from the end of the collection.\n@param nextToken A token that can be used to resume pagination from the end of the collection.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -19305,6 +19563,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -19348,6 +19607,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "OriginEndpoints",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of OriginEndpoint records.\n@param originEndpoints A list of OriginEndpoint records.*/",
           "setterMethodName" : "setOriginEndpoints",
           "setterModel" : {
@@ -19453,6 +19713,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SpekeKeyProvider",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param spekeKeyProvider */",
         "setterMethodName" : "setSpekeKeyProvider",
         "setterModel" : {
@@ -19520,6 +19781,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SpekeKeyProvider",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param spekeKeyProvider */",
           "setterMethodName" : "setSpekeKeyProvider",
           "setterModel" : {
@@ -19625,6 +19887,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param encryption */",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -19690,6 +19953,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ManifestWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**The time window (in seconds) contained in each manifest.\n@param manifestWindowSeconds The time window (in seconds) contained in each manifest.*/",
         "setterMethodName" : "setManifestWindowSeconds",
         "setterModel" : {
@@ -19755,6 +20019,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SegmentDurationSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**The duration (in seconds) of each segment.\n@param segmentDurationSeconds The duration (in seconds) of each segment.*/",
         "setterMethodName" : "setSegmentDurationSeconds",
         "setterModel" : {
@@ -19820,6 +20085,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StreamSelection",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param streamSelection */",
         "setterMethodName" : "setStreamSelection",
         "setterModel" : {
@@ -19887,6 +20153,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param encryption */",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -19953,6 +20220,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ManifestWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**The time window (in seconds) contained in each manifest.\n@param manifestWindowSeconds The time window (in seconds) contained in each manifest.*/",
           "setterMethodName" : "setManifestWindowSeconds",
           "setterModel" : {
@@ -20019,6 +20287,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SegmentDurationSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**The duration (in seconds) of each segment.\n@param segmentDurationSeconds The duration (in seconds) of each segment.*/",
           "setterMethodName" : "setSegmentDurationSeconds",
           "setterModel" : {
@@ -20085,6 +20354,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StreamSelection",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param streamSelection */",
           "setterMethodName" : "setStreamSelection",
           "setterModel" : {
@@ -20227,6 +20497,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the OriginEndpoint.\n@param arn The Amazon Resource Name (ARN) assigned to the OriginEndpoint.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -20292,6 +20563,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ChannelId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel the OriginEndpoint is associated with.\n@param channelId The ID of the Channel the OriginEndpoint is associated with.*/",
         "setterMethodName" : "setChannelId",
         "setterModel" : {
@@ -20357,6 +20629,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CmafPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param cmafPackage */",
         "setterMethodName" : "setCmafPackage",
         "setterModel" : {
@@ -20422,6 +20695,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dashPackage */",
         "setterMethodName" : "setDashPackage",
         "setterModel" : {
@@ -20487,6 +20761,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -20552,6 +20827,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsPackage */",
         "setterMethodName" : "setHlsPackage",
         "setterModel" : {
@@ -20617,6 +20893,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -20682,6 +20959,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestName",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short string appended to the end of the OriginEndpoint URL.\n@param manifestName A short string appended to the end of the OriginEndpoint URL.*/",
         "setterMethodName" : "setManifestName",
         "setterModel" : {
@@ -20747,6 +21025,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "MssPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param mssPackage */",
         "setterMethodName" : "setMssPackage",
         "setterModel" : {
@@ -20812,6 +21091,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StartoverWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
         "setterMethodName" : "setStartoverWindowSeconds",
         "setterModel" : {
@@ -20877,6 +21157,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TimeDelaySeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
         "setterMethodName" : "setTimeDelaySeconds",
         "setterModel" : {
@@ -20942,6 +21223,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -21044,6 +21326,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -21087,6 +21370,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Whitelist",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
         "setterMethodName" : "setWhitelist",
         "setterModel" : {
@@ -21154,6 +21438,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the OriginEndpoint.\n@param arn The Amazon Resource Name (ARN) assigned to the OriginEndpoint.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -21220,6 +21505,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ChannelId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel the OriginEndpoint is associated with.\n@param channelId The ID of the Channel the OriginEndpoint is associated with.*/",
           "setterMethodName" : "setChannelId",
           "setterModel" : {
@@ -21286,6 +21572,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CmafPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param cmafPackage */",
           "setterMethodName" : "setCmafPackage",
           "setterModel" : {
@@ -21352,6 +21639,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dashPackage */",
           "setterMethodName" : "setDashPackage",
           "setterModel" : {
@@ -21418,6 +21706,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -21484,6 +21773,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsPackage */",
           "setterMethodName" : "setHlsPackage",
           "setterModel" : {
@@ -21550,6 +21840,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -21616,6 +21907,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestName",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short string appended to the end of the OriginEndpoint URL.\n@param manifestName A short string appended to the end of the OriginEndpoint URL.*/",
           "setterMethodName" : "setManifestName",
           "setterModel" : {
@@ -21682,6 +21974,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "MssPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param mssPackage */",
           "setterMethodName" : "setMssPackage",
           "setterModel" : {
@@ -21748,6 +22041,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StartoverWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
           "setterMethodName" : "setStartoverWindowSeconds",
           "setterModel" : {
@@ -21814,6 +22108,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TimeDelaySeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
           "setterMethodName" : "setTimeDelaySeconds",
           "setterModel" : {
@@ -21880,6 +22175,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -21983,6 +22279,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22026,6 +22323,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Whitelist",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
           "setterMethodName" : "setWhitelist",
           "setterModel" : {
@@ -22276,6 +22574,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the channel to update.\n@param id The ID of the channel to update.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -22343,6 +22642,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the channel to update.\n@param id The ID of the channel to update.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -22445,6 +22745,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -22510,6 +22811,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -22575,6 +22877,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsIngest",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsIngest */",
         "setterMethodName" : "setHlsIngest",
         "setterModel" : {
@@ -22640,6 +22943,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -22707,6 +23011,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -22773,6 +23078,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -22839,6 +23145,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsIngest",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsIngest */",
           "setterMethodName" : "setHlsIngest",
           "setterModel" : {
@@ -22905,6 +23212,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -23017,6 +23325,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the channel the IngestEndpoint is on.\n@param id The ID of the channel the IngestEndpoint is on.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -23082,6 +23391,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IngestEndpointId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The id of the IngestEndpoint whose credentials should be rotated\n@param ingestEndpointId The id of the IngestEndpoint whose credentials should be rotated*/",
         "setterMethodName" : "setIngestEndpointId",
         "setterModel" : {
@@ -23149,6 +23459,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the channel the IngestEndpoint is on.\n@param id The ID of the channel the IngestEndpoint is on.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -23215,6 +23526,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IngestEndpointId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The id of the IngestEndpoint whose credentials should be rotated\n@param ingestEndpointId The id of the IngestEndpoint whose credentials should be rotated*/",
           "setterMethodName" : "setIngestEndpointId",
           "setterModel" : {
@@ -23317,6 +23629,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -23382,6 +23695,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -23447,6 +23761,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsIngest",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsIngest */",
         "setterMethodName" : "setHlsIngest",
         "setterModel" : {
@@ -23512,6 +23827,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -23579,6 +23895,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -23645,6 +23962,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -23711,6 +24029,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsIngest",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsIngest */",
           "setterMethodName" : "setHlsIngest",
           "setterModel" : {
@@ -23777,6 +24096,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -23919,6 +24239,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**An Amazon Resource Name (ARN) of a Certificate Manager certificate\nthat MediaPackage will use for enforcing secure end-to-end data\ntransfer with the key provider service.\n\n@param certificateArn An Amazon Resource Name (ARN) of a Certificate Manager certificate\nthat MediaPackage will use for enforcing secure end-to-end data\ntransfer with the key provider service.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -23984,6 +24305,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The resource ID to include in key requests.\n@param resourceId The resource ID to include in key requests.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -24049,6 +24371,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**An Amazon Resource Name (ARN) of an IAM role that AWS Elemental\nMediaPackage will assume when accessing the key provider service.\n\n@param roleArn An Amazon Resource Name (ARN) of an IAM role that AWS Elemental\nMediaPackage will assume when accessing the key provider service.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -24151,6 +24474,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -24194,6 +24518,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SystemIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**The system IDs to include in key requests.\n@param systemIds The system IDs to include in key requests.*/",
         "setterMethodName" : "setSystemIds",
         "setterModel" : {
@@ -24259,6 +24584,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**The URL of the external key provider service.\n@param url The URL of the external key provider service.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -24326,6 +24652,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**An Amazon Resource Name (ARN) of a Certificate Manager certificate\nthat MediaPackage will use for enforcing secure end-to-end data\ntransfer with the key provider service.\n\n@param certificateArn An Amazon Resource Name (ARN) of a Certificate Manager certificate\nthat MediaPackage will use for enforcing secure end-to-end data\ntransfer with the key provider service.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -24392,6 +24719,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The resource ID to include in key requests.\n@param resourceId The resource ID to include in key requests.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -24458,6 +24786,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**An Amazon Resource Name (ARN) of an IAM role that AWS Elemental\nMediaPackage will assume when accessing the key provider service.\n\n@param roleArn An Amazon Resource Name (ARN) of an IAM role that AWS Elemental\nMediaPackage will assume when accessing the key provider service.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -24561,6 +24890,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -24604,6 +24934,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SystemIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**The system IDs to include in key requests.\n@param systemIds The system IDs to include in key requests.*/",
           "setterMethodName" : "setSystemIds",
           "setterModel" : {
@@ -24670,6 +25001,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**The URL of the external key provider service.\n@param url The URL of the external key provider service.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -24824,6 +25156,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxVideoBitsPerSecond",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum video bitrate (bps) to include in output.\n@param maxVideoBitsPerSecond The maximum video bitrate (bps) to include in output.*/",
         "setterMethodName" : "setMaxVideoBitsPerSecond",
         "setterModel" : {
@@ -24889,6 +25222,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MinVideoBitsPerSecond",
+        "sensitive" : false,
         "setterDocumentation" : "/**The minimum video bitrate (bps) to include in output.\n@param minVideoBitsPerSecond The minimum video bitrate (bps) to include in output.*/",
         "setterMethodName" : "setMinVideoBitsPerSecond",
         "setterModel" : {
@@ -24954,6 +25288,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamOrder",
+        "sensitive" : false,
         "setterDocumentation" : "/**A directive that determines the order of streams in the output.\n@param streamOrder A directive that determines the order of streams in the output.\n@see StreamOrder*/",
         "setterMethodName" : "setStreamOrder",
         "setterModel" : {
@@ -25021,6 +25356,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxVideoBitsPerSecond",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum video bitrate (bps) to include in output.\n@param maxVideoBitsPerSecond The maximum video bitrate (bps) to include in output.*/",
           "setterMethodName" : "setMaxVideoBitsPerSecond",
           "setterModel" : {
@@ -25087,6 +25423,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MinVideoBitsPerSecond",
+          "sensitive" : false,
           "setterDocumentation" : "/**The minimum video bitrate (bps) to include in output.\n@param minVideoBitsPerSecond The minimum video bitrate (bps) to include in output.*/",
           "setterMethodName" : "setMinVideoBitsPerSecond",
           "setterModel" : {
@@ -25153,6 +25490,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamOrder",
+          "sensitive" : false,
           "setterDocumentation" : "/**A directive that determines the order of streams in the output.\n@param streamOrder A directive that determines the order of streams in the output.\n@see StreamOrder*/",
           "setterMethodName" : "setStreamOrder",
           "setterModel" : {
@@ -25339,6 +25677,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -25404,6 +25743,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel to update.\n@param id The ID of the Channel to update.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -25471,6 +25811,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -25537,6 +25878,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel to update.\n@param id The ID of the Channel to update.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -25639,6 +25981,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -25704,6 +26047,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -25769,6 +26113,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsIngest",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsIngest */",
         "setterMethodName" : "setHlsIngest",
         "setterModel" : {
@@ -25834,6 +26179,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -25901,6 +26247,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the Channel.\n@param arn The Amazon Resource Name (ARN) assigned to the Channel.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -25967,6 +26314,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the Channel.\n@param description A short text description of the Channel.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -26033,6 +26381,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsIngest",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsIngest */",
           "setterMethodName" : "setHlsIngest",
           "setterModel" : {
@@ -26099,6 +26448,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel.\n@param id The ID of the Channel.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -26211,6 +26561,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CmafPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param cmafPackage */",
         "setterMethodName" : "setCmafPackage",
         "setterModel" : {
@@ -26276,6 +26627,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dashPackage */",
         "setterMethodName" : "setDashPackage",
         "setterModel" : {
@@ -26341,6 +26693,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -26406,6 +26759,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsPackage */",
         "setterMethodName" : "setHlsPackage",
         "setterModel" : {
@@ -26471,6 +26825,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the OriginEndpoint to update.\n@param id The ID of the OriginEndpoint to update.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -26536,6 +26891,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestName",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short string that will be appended to the end of the Endpoint URL.\n@param manifestName A short string that will be appended to the end of the Endpoint URL.*/",
         "setterMethodName" : "setManifestName",
         "setterModel" : {
@@ -26601,6 +26957,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "MssPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param mssPackage */",
         "setterMethodName" : "setMssPackage",
         "setterModel" : {
@@ -26666,6 +27023,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StartoverWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Maximum duration (in seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (in seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
         "setterMethodName" : "setStartoverWindowSeconds",
         "setterModel" : {
@@ -26731,6 +27089,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TimeDelaySeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Amount of delay (in seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (in seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
         "setterMethodName" : "setTimeDelaySeconds",
         "setterModel" : {
@@ -26833,6 +27192,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -26876,6 +27236,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Whitelist",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
         "setterMethodName" : "setWhitelist",
         "setterModel" : {
@@ -26943,6 +27304,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CmafPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param cmafPackage */",
           "setterMethodName" : "setCmafPackage",
           "setterModel" : {
@@ -27009,6 +27371,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dashPackage */",
           "setterMethodName" : "setDashPackage",
           "setterModel" : {
@@ -27075,6 +27438,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -27141,6 +27505,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsPackage */",
           "setterMethodName" : "setHlsPackage",
           "setterModel" : {
@@ -27207,6 +27572,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the OriginEndpoint to update.\n@param id The ID of the OriginEndpoint to update.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -27273,6 +27639,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestName",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short string that will be appended to the end of the Endpoint URL.\n@param manifestName A short string that will be appended to the end of the Endpoint URL.*/",
           "setterMethodName" : "setManifestName",
           "setterModel" : {
@@ -27339,6 +27706,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "MssPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param mssPackage */",
           "setterMethodName" : "setMssPackage",
           "setterModel" : {
@@ -27405,6 +27773,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StartoverWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Maximum duration (in seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (in seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
           "setterMethodName" : "setStartoverWindowSeconds",
           "setterModel" : {
@@ -27471,6 +27840,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TimeDelaySeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Amount of delay (in seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (in seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
           "setterMethodName" : "setTimeDelaySeconds",
           "setterModel" : {
@@ -27574,6 +27944,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -27617,6 +27988,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Whitelist",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
           "setterMethodName" : "setWhitelist",
           "setterModel" : {
@@ -27719,6 +28091,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the OriginEndpoint.\n@param arn The Amazon Resource Name (ARN) assigned to the OriginEndpoint.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -27784,6 +28157,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ChannelId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the Channel the OriginEndpoint is associated with.\n@param channelId The ID of the Channel the OriginEndpoint is associated with.*/",
         "setterMethodName" : "setChannelId",
         "setterModel" : {
@@ -27849,6 +28223,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CmafPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param cmafPackage */",
         "setterMethodName" : "setCmafPackage",
         "setterModel" : {
@@ -27914,6 +28289,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dashPackage */",
         "setterMethodName" : "setDashPackage",
         "setterModel" : {
@@ -27979,6 +28355,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -28044,6 +28421,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param hlsPackage */",
         "setterMethodName" : "setHlsPackage",
         "setterModel" : {
@@ -28109,6 +28487,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -28174,6 +28553,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestName",
+        "sensitive" : false,
         "setterDocumentation" : "/**A short string appended to the end of the OriginEndpoint URL.\n@param manifestName A short string appended to the end of the OriginEndpoint URL.*/",
         "setterMethodName" : "setManifestName",
         "setterModel" : {
@@ -28239,6 +28619,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "MssPackage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param mssPackage */",
         "setterMethodName" : "setMssPackage",
         "setterModel" : {
@@ -28304,6 +28685,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StartoverWindowSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
         "setterMethodName" : "setStartoverWindowSeconds",
         "setterModel" : {
@@ -28369,6 +28751,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TimeDelaySeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
         "setterMethodName" : "setTimeDelaySeconds",
         "setterModel" : {
@@ -28434,6 +28817,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -28536,6 +28920,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -28579,6 +28964,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Whitelist",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
         "setterMethodName" : "setWhitelist",
         "setterModel" : {
@@ -28646,6 +29032,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) assigned to the OriginEndpoint.\n@param arn The Amazon Resource Name (ARN) assigned to the OriginEndpoint.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -28712,6 +29099,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ChannelId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the Channel the OriginEndpoint is associated with.\n@param channelId The ID of the Channel the OriginEndpoint is associated with.*/",
           "setterMethodName" : "setChannelId",
           "setterModel" : {
@@ -28778,6 +29166,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CmafPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param cmafPackage */",
           "setterMethodName" : "setCmafPackage",
           "setterModel" : {
@@ -28844,6 +29233,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dashPackage */",
           "setterMethodName" : "setDashPackage",
           "setterModel" : {
@@ -28910,6 +29300,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short text description of the OriginEndpoint.\n@param description A short text description of the OriginEndpoint.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -28976,6 +29367,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param hlsPackage */",
           "setterMethodName" : "setHlsPackage",
           "setterModel" : {
@@ -29042,6 +29434,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ID of the OriginEndpoint.\n@param id The ID of the OriginEndpoint.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -29108,6 +29501,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestName",
+          "sensitive" : false,
           "setterDocumentation" : "/**A short string appended to the end of the OriginEndpoint URL.\n@param manifestName A short string appended to the end of the OriginEndpoint URL.*/",
           "setterMethodName" : "setManifestName",
           "setterModel" : {
@@ -29174,6 +29568,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "MssPackage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param mssPackage */",
           "setterMethodName" : "setMssPackage",
           "setterModel" : {
@@ -29240,6 +29635,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StartoverWindowSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n\n@param startoverWindowSeconds Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.*/",
           "setterMethodName" : "setStartoverWindowSeconds",
           "setterModel" : {
@@ -29306,6 +29702,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TimeDelaySeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n\n@param timeDelaySeconds Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.*/",
           "setterMethodName" : "setTimeDelaySeconds",
           "setterModel" : {
@@ -29372,6 +29769,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**The URL of the packaged OriginEndpoint for consumption.\n@param url The URL of the packaged OriginEndpoint for consumption.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -29475,6 +29873,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -29518,6 +29917,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Whitelist",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.\n@param whitelist A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.*/",
           "setterMethodName" : "setWhitelist",
           "setterModel" : {

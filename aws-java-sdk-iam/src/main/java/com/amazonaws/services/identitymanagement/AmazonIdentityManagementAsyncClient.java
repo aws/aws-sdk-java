@@ -2035,6 +2035,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
+            GenerateServiceLastAccessedDetailsRequest request) {
+
+        return generateServiceLastAccessedDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
+            final GenerateServiceLastAccessedDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateServiceLastAccessedDetailsRequest, GenerateServiceLastAccessedDetailsResult> asyncHandler) {
+        final GenerateServiceLastAccessedDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateServiceLastAccessedDetailsResult>() {
+            @Override
+            public GenerateServiceLastAccessedDetailsResult call() throws Exception {
+                GenerateServiceLastAccessedDetailsResult result = null;
+
+                try {
+                    result = executeGenerateServiceLastAccessedDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccessKeyLastUsedResult> getAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request) {
 
         return getAccessKeyLastUsedAsync(request, null);
@@ -2743,6 +2778,75 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeGetServerCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsResult> getServiceLastAccessedDetailsAsync(GetServiceLastAccessedDetailsRequest request) {
+
+        return getServiceLastAccessedDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsResult> getServiceLastAccessedDetailsAsync(
+            final GetServiceLastAccessedDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceLastAccessedDetailsRequest, GetServiceLastAccessedDetailsResult> asyncHandler) {
+        final GetServiceLastAccessedDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceLastAccessedDetailsResult>() {
+            @Override
+            public GetServiceLastAccessedDetailsResult call() throws Exception {
+                GetServiceLastAccessedDetailsResult result = null;
+
+                try {
+                    result = executeGetServiceLastAccessedDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsWithEntitiesResult> getServiceLastAccessedDetailsWithEntitiesAsync(
+            GetServiceLastAccessedDetailsWithEntitiesRequest request) {
+
+        return getServiceLastAccessedDetailsWithEntitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsWithEntitiesResult> getServiceLastAccessedDetailsWithEntitiesAsync(
+            final GetServiceLastAccessedDetailsWithEntitiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceLastAccessedDetailsWithEntitiesRequest, GetServiceLastAccessedDetailsWithEntitiesResult> asyncHandler) {
+        final GetServiceLastAccessedDetailsWithEntitiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceLastAccessedDetailsWithEntitiesResult>() {
+            @Override
+            public GetServiceLastAccessedDetailsWithEntitiesResult call() throws Exception {
+                GetServiceLastAccessedDetailsWithEntitiesResult result = null;
+
+                try {
+                    result = executeGetServiceLastAccessedDetailsWithEntities(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3501,6 +3605,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult> asyncHandler) {
 
         return listPoliciesAsync(new ListPoliciesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesGrantingServiceAccessResult> listPoliciesGrantingServiceAccessAsync(
+            ListPoliciesGrantingServiceAccessRequest request) {
+
+        return listPoliciesGrantingServiceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesGrantingServiceAccessResult> listPoliciesGrantingServiceAccessAsync(
+            final ListPoliciesGrantingServiceAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPoliciesGrantingServiceAccessRequest, ListPoliciesGrantingServiceAccessResult> asyncHandler) {
+        final ListPoliciesGrantingServiceAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPoliciesGrantingServiceAccessResult>() {
+            @Override
+            public ListPoliciesGrantingServiceAccessResult call() throws Exception {
+                ListPoliciesGrantingServiceAccessResult result = null;
+
+                try {
+                    result = executeListPoliciesGrantingServiceAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

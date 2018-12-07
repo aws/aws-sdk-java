@@ -228,6 +228,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ArrayBaseColumnType",
+        "sensitive" : false,
         "setterDocumentation" : "/**Homogenous array base SQL type from java.sql.Types.\n@param arrayBaseColumnType Homogenous array base SQL type from java.sql.Types.*/",
         "setterMethodName" : "setArrayBaseColumnType",
         "setterModel" : {
@@ -293,6 +294,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IsAutoIncrement",
+        "sensitive" : false,
         "setterDocumentation" : "/**Whether the designated column is automatically numbered\n@param isAutoIncrement Whether the designated column is automatically numbered*/",
         "setterMethodName" : "setIsAutoIncrement",
         "setterModel" : {
@@ -358,6 +360,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IsCaseSensitive",
+        "sensitive" : false,
         "setterDocumentation" : "/**Whether values in the designated column's case matters\n@param isCaseSensitive Whether values in the designated column's case matters*/",
         "setterMethodName" : "setIsCaseSensitive",
         "setterModel" : {
@@ -423,6 +426,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IsCurrency",
+        "sensitive" : false,
         "setterDocumentation" : "/**Whether values in the designated column is a cash value\n@param isCurrency Whether values in the designated column is a cash value*/",
         "setterMethodName" : "setIsCurrency",
         "setterModel" : {
@@ -488,6 +492,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IsSigned",
+        "sensitive" : false,
         "setterDocumentation" : "/**Whether values in the designated column are signed numbers\n@param isSigned Whether values in the designated column are signed numbers*/",
         "setterMethodName" : "setIsSigned",
         "setterModel" : {
@@ -553,6 +558,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Label",
+        "sensitive" : false,
         "setterDocumentation" : "/**Usually specified by the SQL AS. If not specified, return column name.\n@param label Usually specified by the SQL AS. If not specified, return column name.*/",
         "setterMethodName" : "setLabel",
         "setterModel" : {
@@ -618,6 +624,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**Name of the column.\n@param name Name of the column.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -683,6 +690,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Nullable",
+        "sensitive" : false,
         "setterDocumentation" : "/**Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)\n@param nullable Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)*/",
         "setterMethodName" : "setNullable",
         "setterModel" : {
@@ -748,6 +756,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Precision",
+        "sensitive" : false,
         "setterDocumentation" : "/**Get the designated column's specified column size.For numeric data, this is the maximum precision.  For character data, this is the length in characters. For datetime datatypes, this is the length in characters of the String representation (assuming the maximum allowed precision of the fractional seconds component). For binary data, this is the length in bytes.  For the ROWID datatype, this is the length in bytes. 0 is returned for data types where the column size is not applicable.\n@param precision Get the designated column's specified column size.For numeric data, this is the maximum precision.  For character data, this is the length in characters. For datetime datatypes, this is the length in characters of the String representation (assuming the maximum allowed precision of the fractional seconds component). For binary data, this is the length in bytes.  For the ROWID datatype, this is the length in bytes. 0 is returned for data types where the column size is not applicable.*/",
         "setterMethodName" : "setPrecision",
         "setterModel" : {
@@ -813,6 +822,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Scale",
+        "sensitive" : false,
         "setterDocumentation" : "/**Designated column's number of digits to right of the decimal point. 0 is returned for data types where the scale is not applicable.\n@param scale Designated column's number of digits to right of the decimal point. 0 is returned for data types where the scale is not applicable.*/",
         "setterMethodName" : "setScale",
         "setterModel" : {
@@ -878,6 +888,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SchemaName",
+        "sensitive" : false,
         "setterDocumentation" : "/**Designated column's table's schema\n@param schemaName Designated column's table's schema*/",
         "setterMethodName" : "setSchemaName",
         "setterModel" : {
@@ -943,6 +954,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TableName",
+        "sensitive" : false,
         "setterDocumentation" : "/**Designated column's table name\n@param tableName Designated column's table name*/",
         "setterMethodName" : "setTableName",
         "setterModel" : {
@@ -1008,6 +1020,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**SQL type from java.sql.Types.\n@param type SQL type from java.sql.Types.*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -1073,6 +1086,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TypeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**Database-specific type name.\n@param typeName Database-specific type name.*/",
         "setterMethodName" : "setTypeName",
         "setterModel" : {
@@ -1140,6 +1154,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ArrayBaseColumnType",
+          "sensitive" : false,
           "setterDocumentation" : "/**Homogenous array base SQL type from java.sql.Types.\n@param arrayBaseColumnType Homogenous array base SQL type from java.sql.Types.*/",
           "setterMethodName" : "setArrayBaseColumnType",
           "setterModel" : {
@@ -1206,6 +1221,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IsAutoIncrement",
+          "sensitive" : false,
           "setterDocumentation" : "/**Whether the designated column is automatically numbered\n@param isAutoIncrement Whether the designated column is automatically numbered*/",
           "setterMethodName" : "setIsAutoIncrement",
           "setterModel" : {
@@ -1272,6 +1288,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IsCaseSensitive",
+          "sensitive" : false,
           "setterDocumentation" : "/**Whether values in the designated column's case matters\n@param isCaseSensitive Whether values in the designated column's case matters*/",
           "setterMethodName" : "setIsCaseSensitive",
           "setterModel" : {
@@ -1338,6 +1355,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IsCurrency",
+          "sensitive" : false,
           "setterDocumentation" : "/**Whether values in the designated column is a cash value\n@param isCurrency Whether values in the designated column is a cash value*/",
           "setterMethodName" : "setIsCurrency",
           "setterModel" : {
@@ -1404,6 +1422,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IsSigned",
+          "sensitive" : false,
           "setterDocumentation" : "/**Whether values in the designated column are signed numbers\n@param isSigned Whether values in the designated column are signed numbers*/",
           "setterMethodName" : "setIsSigned",
           "setterModel" : {
@@ -1470,6 +1489,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Label",
+          "sensitive" : false,
           "setterDocumentation" : "/**Usually specified by the SQL AS. If not specified, return column name.\n@param label Usually specified by the SQL AS. If not specified, return column name.*/",
           "setterMethodName" : "setLabel",
           "setterModel" : {
@@ -1536,6 +1556,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**Name of the column.\n@param name Name of the column.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1602,6 +1623,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Nullable",
+          "sensitive" : false,
           "setterDocumentation" : "/**Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)\n@param nullable Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)*/",
           "setterMethodName" : "setNullable",
           "setterModel" : {
@@ -1668,6 +1690,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Precision",
+          "sensitive" : false,
           "setterDocumentation" : "/**Get the designated column's specified column size.For numeric data, this is the maximum precision.  For character data, this is the length in characters. For datetime datatypes, this is the length in characters of the String representation (assuming the maximum allowed precision of the fractional seconds component). For binary data, this is the length in bytes.  For the ROWID datatype, this is the length in bytes. 0 is returned for data types where the column size is not applicable.\n@param precision Get the designated column's specified column size.For numeric data, this is the maximum precision.  For character data, this is the length in characters. For datetime datatypes, this is the length in characters of the String representation (assuming the maximum allowed precision of the fractional seconds component). For binary data, this is the length in bytes.  For the ROWID datatype, this is the length in bytes. 0 is returned for data types where the column size is not applicable.*/",
           "setterMethodName" : "setPrecision",
           "setterModel" : {
@@ -1734,6 +1757,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Scale",
+          "sensitive" : false,
           "setterDocumentation" : "/**Designated column's number of digits to right of the decimal point. 0 is returned for data types where the scale is not applicable.\n@param scale Designated column's number of digits to right of the decimal point. 0 is returned for data types where the scale is not applicable.*/",
           "setterMethodName" : "setScale",
           "setterModel" : {
@@ -1800,6 +1824,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SchemaName",
+          "sensitive" : false,
           "setterDocumentation" : "/**Designated column's table's schema\n@param schemaName Designated column's table's schema*/",
           "setterMethodName" : "setSchemaName",
           "setterModel" : {
@@ -1866,6 +1891,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TableName",
+          "sensitive" : false,
           "setterDocumentation" : "/**Designated column's table name\n@param tableName Designated column's table name*/",
           "setterMethodName" : "setTableName",
           "setterModel" : {
@@ -1932,6 +1958,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**SQL type from java.sql.Types.\n@param type SQL type from java.sql.Types.*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -1998,6 +2025,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TypeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**Database-specific type name.\n@param typeName Database-specific type name.*/",
           "setterMethodName" : "setTypeName",
           "setterModel" : {
@@ -2110,6 +2138,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AwsSecretStoreArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**ARN of the db credentials in AWS Secret Store or the friendly secret name\n@param awsSecretStoreArn ARN of the db credentials in AWS Secret Store or the friendly secret name*/",
         "setterMethodName" : "setAwsSecretStoreArn",
         "setterModel" : {
@@ -2175,6 +2204,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Database",
+        "sensitive" : false,
         "setterDocumentation" : "/**Target DB name\n@param database Target DB name*/",
         "setterMethodName" : "setDatabase",
         "setterModel" : {
@@ -2240,6 +2270,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DbClusterOrInstanceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**ARN of the target db cluster or instance\n@param dbClusterOrInstanceArn ARN of the target db cluster or instance*/",
         "setterMethodName" : "setDbClusterOrInstanceArn",
         "setterModel" : {
@@ -2305,6 +2336,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Schema",
+        "sensitive" : false,
         "setterDocumentation" : "/**Target Schema name\n@param schema Target Schema name*/",
         "setterMethodName" : "setSchema",
         "setterModel" : {
@@ -2370,6 +2402,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SqlStatements",
+        "sensitive" : false,
         "setterDocumentation" : "/**SQL statement(s) to be executed. Statements can be chained by using semicolons\n@param sqlStatements SQL statement(s) to be executed. Statements can be chained by using semicolons*/",
         "setterMethodName" : "setSqlStatements",
         "setterModel" : {
@@ -2437,6 +2470,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AwsSecretStoreArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**ARN of the db credentials in AWS Secret Store or the friendly secret name\n@param awsSecretStoreArn ARN of the db credentials in AWS Secret Store or the friendly secret name*/",
           "setterMethodName" : "setAwsSecretStoreArn",
           "setterModel" : {
@@ -2503,6 +2537,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Database",
+          "sensitive" : false,
           "setterDocumentation" : "/**Target DB name\n@param database Target DB name*/",
           "setterMethodName" : "setDatabase",
           "setterModel" : {
@@ -2569,6 +2604,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DbClusterOrInstanceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**ARN of the target db cluster or instance\n@param dbClusterOrInstanceArn ARN of the target db cluster or instance*/",
           "setterMethodName" : "setDbClusterOrInstanceArn",
           "setterModel" : {
@@ -2635,6 +2671,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Schema",
+          "sensitive" : false,
           "setterDocumentation" : "/**Target Schema name\n@param schema Target Schema name*/",
           "setterMethodName" : "setSchema",
           "setterModel" : {
@@ -2701,6 +2738,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SqlStatements",
+          "sensitive" : false,
           "setterDocumentation" : "/**SQL statement(s) to be executed. Statements can be chained by using semicolons\n@param sqlStatements SQL statement(s) to be executed. Statements can be chained by using semicolons*/",
           "setterMethodName" : "setSqlStatements",
           "setterModel" : {
@@ -2840,6 +2878,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2883,6 +2922,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SqlStatementResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**Results returned by executing the sql statement(s)\n@param sqlStatementResults Results returned by executing the sql statement(s)*/",
         "setterMethodName" : "setSqlStatementResults",
         "setterModel" : {
@@ -2987,6 +3027,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3030,6 +3071,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SqlStatementResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**Results returned by executing the sql statement(s)\n@param sqlStatementResults Results returned by executing the sql statement(s)*/",
           "setterMethodName" : "setSqlStatementResults",
           "setterModel" : {
@@ -3246,6 +3288,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3289,6 +3332,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**Record\n@param values Record*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -3393,6 +3437,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3436,6 +3481,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**Record\n@param values Record*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -3578,6 +3624,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3621,6 +3668,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Records",
+        "sensitive" : false,
         "setterDocumentation" : "/**ResultSet Metadata.\n@param records ResultSet Metadata.*/",
         "setterMethodName" : "setRecords",
         "setterModel" : {
@@ -3686,6 +3734,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResultSetMetadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**ResultSet Metadata.\n@param resultSetMetadata ResultSet Metadata.*/",
         "setterMethodName" : "setResultSetMetadata",
         "setterModel" : {
@@ -3790,6 +3839,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3833,6 +3883,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Records",
+          "sensitive" : false,
           "setterDocumentation" : "/**ResultSet Metadata.\n@param records ResultSet Metadata.*/",
           "setterMethodName" : "setRecords",
           "setterModel" : {
@@ -3899,6 +3950,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResultSetMetadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**ResultSet Metadata.\n@param resultSetMetadata ResultSet Metadata.*/",
           "setterMethodName" : "setResultSetMetadata",
           "setterModel" : {
@@ -4004,6 +4056,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ColumnCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**Number of columns\n@param columnCount Number of columns*/",
         "setterMethodName" : "setColumnCount",
         "setterModel" : {
@@ -4106,6 +4159,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4149,6 +4203,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ColumnMetadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**List of columns and their types\n@param columnMetadata List of columns and their types*/",
         "setterMethodName" : "setColumnMetadata",
         "setterModel" : {
@@ -4216,6 +4271,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ColumnCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**Number of columns\n@param columnCount Number of columns*/",
           "setterMethodName" : "setColumnCount",
           "setterModel" : {
@@ -4319,6 +4375,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4362,6 +4419,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ColumnMetadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**List of columns and their types\n@param columnMetadata List of columns and their types*/",
           "setterMethodName" : "setColumnMetadata",
           "setterModel" : {
@@ -4504,6 +4562,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "NumberOfRecordsUpdated",
+        "sensitive" : false,
         "setterDocumentation" : "/**Number of rows updated.\n@param numberOfRecordsUpdated Number of rows updated.*/",
         "setterMethodName" : "setNumberOfRecordsUpdated",
         "setterModel" : {
@@ -4569,6 +4628,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResultFrame",
+        "sensitive" : false,
         "setterDocumentation" : "/**ResultFrame returned by executing the sql statement\n@param resultFrame ResultFrame returned by executing the sql statement*/",
         "setterMethodName" : "setResultFrame",
         "setterModel" : {
@@ -4636,6 +4696,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "NumberOfRecordsUpdated",
+          "sensitive" : false,
           "setterDocumentation" : "/**Number of rows updated.\n@param numberOfRecordsUpdated Number of rows updated.*/",
           "setterMethodName" : "setNumberOfRecordsUpdated",
           "setterModel" : {
@@ -4702,6 +4763,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResultFrame",
+          "sensitive" : false,
           "setterDocumentation" : "/**ResultFrame returned by executing the sql statement\n@param resultFrame ResultFrame returned by executing the sql statement*/",
           "setterMethodName" : "setResultFrame",
           "setterModel" : {
@@ -4844,6 +4906,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4887,6 +4950,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**Struct or UDT\n@param attributes Struct or UDT*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -4991,6 +5055,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5034,6 +5099,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**Struct or UDT\n@param attributes Struct or UDT*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -5176,6 +5242,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5219,6 +5286,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ArrayValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**Arbitrarily nested arrays\n@param arrayValues Arbitrarily nested arrays*/",
         "setterMethodName" : "setArrayValues",
         "setterModel" : {
@@ -5284,6 +5352,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "BigIntValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**Long value\n@param bigIntValue Long value*/",
         "setterMethodName" : "setBigIntValue",
         "setterModel" : {
@@ -5349,6 +5418,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "BitValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**Bit value\n@param bitValue Bit value*/",
         "setterMethodName" : "setBitValue",
         "setterModel" : {
@@ -5414,6 +5484,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "BlobValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**Blob value<p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param blobValue Blob value*/",
         "setterMethodName" : "setBlobValue",
         "setterModel" : {
@@ -5479,6 +5550,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "DoubleValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**Double value\n@param doubleValue Double value*/",
         "setterMethodName" : "setDoubleValue",
         "setterModel" : {
@@ -5544,6 +5616,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "IntValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**Integer value\n@param intValue Integer value*/",
         "setterMethodName" : "setIntValue",
         "setterModel" : {
@@ -5609,6 +5682,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IsNull",
+        "sensitive" : false,
         "setterDocumentation" : "/**Is column null\n@param isNull Is column null*/",
         "setterMethodName" : "setIsNull",
         "setterModel" : {
@@ -5674,6 +5748,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "RealValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**Float value\n@param realValue Float value*/",
         "setterMethodName" : "setRealValue",
         "setterModel" : {
@@ -5739,6 +5814,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StringValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**String value\n@param stringValue String value*/",
         "setterMethodName" : "setStringValue",
         "setterModel" : {
@@ -5804,6 +5880,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StructValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**Struct or UDT\n@param structValue Struct or UDT*/",
         "setterMethodName" : "setStructValue",
         "setterModel" : {
@@ -5908,6 +5985,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5951,6 +6029,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ArrayValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**Arbitrarily nested arrays\n@param arrayValues Arbitrarily nested arrays*/",
           "setterMethodName" : "setArrayValues",
           "setterModel" : {
@@ -6017,6 +6096,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "BigIntValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**Long value\n@param bigIntValue Long value*/",
           "setterMethodName" : "setBigIntValue",
           "setterModel" : {
@@ -6083,6 +6163,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "BitValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**Bit value\n@param bitValue Bit value*/",
           "setterMethodName" : "setBitValue",
           "setterModel" : {
@@ -6149,6 +6230,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "BlobValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**Blob value<p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param blobValue Blob value*/",
           "setterMethodName" : "setBlobValue",
           "setterModel" : {
@@ -6215,6 +6297,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "DoubleValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**Double value\n@param doubleValue Double value*/",
           "setterMethodName" : "setDoubleValue",
           "setterModel" : {
@@ -6281,6 +6364,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "IntValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**Integer value\n@param intValue Integer value*/",
           "setterMethodName" : "setIntValue",
           "setterModel" : {
@@ -6347,6 +6431,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IsNull",
+          "sensitive" : false,
           "setterDocumentation" : "/**Is column null\n@param isNull Is column null*/",
           "setterMethodName" : "setIsNull",
           "setterModel" : {
@@ -6413,6 +6498,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "RealValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**Float value\n@param realValue Float value*/",
           "setterMethodName" : "setRealValue",
           "setterModel" : {
@@ -6479,6 +6565,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StringValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**String value\n@param stringValue String value*/",
           "setterMethodName" : "setStringValue",
           "setterModel" : {
@@ -6545,6 +6632,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StructValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**Struct or UDT\n@param structValue Struct or UDT*/",
           "setterMethodName" : "setStructValue",
           "setterModel" : {

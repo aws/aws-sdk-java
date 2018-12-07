@@ -1569,8 +1569,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * by the master account in the organization.
      * </p>
      * <p>
-     * By calling this API Service Catalog will use FAS credentials to call organizations:EnableAWSServiceAccess so that
-     * your shares can be in sync with any changes in your AWS Organizations.
+     * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
+     * that your shares can be in sync with any changes in your AWS Organizations structure.
      * </p>
      * 
      * @param enableAWSOrganizationsAccessRequest
@@ -1590,8 +1590,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * by the master account in the organization.
      * </p>
      * <p>
-     * By calling this API Service Catalog will use FAS credentials to call organizations:EnableAWSServiceAccess so that
-     * your shares can be in sync with any changes in your AWS Organizations.
+     * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
+     * that your shares can be in sync with any changes in your AWS Organizations structure.
      * </p>
      * 
      * @param enableAWSOrganizationsAccessRequest

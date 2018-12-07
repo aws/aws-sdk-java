@@ -391,7 +391,8 @@ public class GitHubCodeDestination implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -414,7 +415,7 @@ public class GitHubCodeDestination implements Serializable, Cloneable, Structure
         if (getIssuesEnabled() != null)
             sb.append("IssuesEnabled: ").append(getIssuesEnabled()).append(",");
         if (getToken() != null)
-            sb.append("Token: ").append(getToken());
+            sb.append("Token: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

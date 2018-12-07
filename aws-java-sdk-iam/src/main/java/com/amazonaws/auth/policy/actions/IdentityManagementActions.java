@@ -125,6 +125,8 @@ public enum IdentityManagementActions implements Action {
     EnableMFADevice("iam:EnableMFADevice"),
     /** Action for the GenerateCredentialReport operation. */
     GenerateCredentialReport("iam:GenerateCredentialReport"),
+    /** Action for the GenerateServiceLastAccessedDetails operation. */
+    GenerateServiceLastAccessedDetails("iam:GenerateServiceLastAccessedDetails"),
     /** Action for the GetAccessKeyLastUsed operation. */
     GetAccessKeyLastUsed("iam:GetAccessKeyLastUsed"),
     /** Action for the GetAccountAuthorizationDetails operation. */
@@ -163,6 +165,10 @@ public enum IdentityManagementActions implements Action {
     GetSSHPublicKey("iam:GetSSHPublicKey"),
     /** Action for the GetServerCertificate operation. */
     GetServerCertificate("iam:GetServerCertificate"),
+    /** Action for the GetServiceLastAccessedDetails operation. */
+    GetServiceLastAccessedDetails("iam:GetServiceLastAccessedDetails"),
+    /** Action for the GetServiceLastAccessedDetailsWithEntities operation. */
+    GetServiceLastAccessedDetailsWithEntities("iam:GetServiceLastAccessedDetailsWithEntities"),
     /** Action for the GetServiceLinkedRoleDeletionStatus operation. */
     GetServiceLinkedRoleDeletionStatus("iam:GetServiceLinkedRoleDeletionStatus"),
     /** Action for the GetUser operation. */
@@ -197,6 +203,8 @@ public enum IdentityManagementActions implements Action {
     ListOpenIDConnectProviders("iam:ListOpenIDConnectProviders"),
     /** Action for the ListPolicies operation. */
     ListPolicies("iam:ListPolicies"),
+    /** Action for the ListPoliciesGrantingServiceAccess operation. */
+    ListPoliciesGrantingServiceAccess("iam:ListPoliciesGrantingServiceAccess"),
     /** Action for the ListPolicyVersions operation. */
     ListPolicyVersions("iam:ListPolicyVersions"),
     /** Action for the ListRolePolicies operation. */

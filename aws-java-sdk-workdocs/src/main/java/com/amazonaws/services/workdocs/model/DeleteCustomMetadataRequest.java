@@ -306,7 +306,8 @@ public class DeleteCustomMetadataRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -317,7 +318,7 @@ public class DeleteCustomMetadataRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthenticationToken() != null)
-            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
+            sb.append("AuthenticationToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getVersionId() != null)

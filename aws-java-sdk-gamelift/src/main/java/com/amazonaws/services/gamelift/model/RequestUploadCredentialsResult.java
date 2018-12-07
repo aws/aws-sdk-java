@@ -127,7 +127,8 @@ public class RequestUploadCredentialsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -138,7 +139,7 @@ public class RequestUploadCredentialsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUploadCredentials() != null)
-            sb.append("UploadCredentials: ").append(getUploadCredentials()).append(",");
+            sb.append("UploadCredentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getStorageLocation() != null)
             sb.append("StorageLocation: ").append(getStorageLocation());
         sb.append("}");

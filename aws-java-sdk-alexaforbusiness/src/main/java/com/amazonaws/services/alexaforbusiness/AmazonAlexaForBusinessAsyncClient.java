@@ -269,6 +269,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(CreateBusinessReportScheduleRequest request) {
+
+        return createBusinessReportScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(final CreateBusinessReportScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBusinessReportScheduleRequest, CreateBusinessReportScheduleResult> asyncHandler) {
+        final CreateBusinessReportScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBusinessReportScheduleResult>() {
+            @Override
+            public CreateBusinessReportScheduleResult call() throws Exception {
+                CreateBusinessReportScheduleResult result = null;
+
+                try {
+                    result = executeCreateBusinessReportSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest request) {
 
         return createConferenceProviderAsync(request, null);
@@ -484,6 +517,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeDeleteAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(DeleteBusinessReportScheduleRequest request) {
+
+        return deleteBusinessReportScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(final DeleteBusinessReportScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBusinessReportScheduleRequest, DeleteBusinessReportScheduleResult> asyncHandler) {
+        final DeleteBusinessReportScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBusinessReportScheduleResult>() {
+            @Override
+            public DeleteBusinessReportScheduleResult call() throws Exception {
+                DeleteBusinessReportScheduleResult result = null;
+
+                try {
+                    result = executeDeleteBusinessReportSchedule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1248,6 +1314,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeGetSkillGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(ListBusinessReportSchedulesRequest request) {
+
+        return listBusinessReportSchedulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(final ListBusinessReportSchedulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBusinessReportSchedulesRequest, ListBusinessReportSchedulesResult> asyncHandler) {
+        final ListBusinessReportSchedulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBusinessReportSchedulesResult>() {
+            @Override
+            public ListBusinessReportSchedulesResult call() throws Exception {
+                ListBusinessReportSchedulesResult result = null;
+
+                try {
+                    result = executeListBusinessReportSchedules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2143,6 +2242,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeUpdateAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(UpdateBusinessReportScheduleRequest request) {
+
+        return updateBusinessReportScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(final UpdateBusinessReportScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBusinessReportScheduleRequest, UpdateBusinessReportScheduleResult> asyncHandler) {
+        final UpdateBusinessReportScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBusinessReportScheduleResult>() {
+            @Override
+            public UpdateBusinessReportScheduleResult call() throws Exception {
+                UpdateBusinessReportScheduleResult result = null;
+
+                try {
+                    result = executeUpdateBusinessReportSchedule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

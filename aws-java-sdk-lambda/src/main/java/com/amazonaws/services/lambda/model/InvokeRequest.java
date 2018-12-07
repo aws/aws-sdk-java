@@ -943,7 +943,8 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -962,7 +963,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         if (getClientContext() != null)
             sb.append("ClientContext: ").append(getClientContext()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: ").append(getPayload()).append(",");
+            sb.append("Payload: ").append("***Sensitive Data Redacted***").append(",");
         if (getQualifier() != null)
             sb.append("Qualifier: ").append(getQualifier());
         sb.append("}");

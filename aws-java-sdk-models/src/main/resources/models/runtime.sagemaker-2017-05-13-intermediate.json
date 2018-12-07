@@ -235,6 +235,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API. </p>\n@param endpointName The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API.*/",
         "setterMethodName" : "setEndpointName",
         "setterModel" : {
@@ -300,6 +301,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Body",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p> <p>For information about the format of the request body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param body Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p> <p>For information about the format of the request body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.*/",
         "setterMethodName" : "setBody",
         "setterModel" : {
@@ -365,6 +367,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContentType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The MIME type of the input data in the request body.</p>\n@param contentType The MIME type of the input data in the request body.*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
@@ -430,6 +433,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Accept",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The desired MIME type of the inference in the response.</p>\n@param accept The desired MIME type of the inference in the response.*/",
         "setterMethodName" : "setAccept",
         "setterModel" : {
@@ -495,6 +499,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CustomAttributes",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p/>\n@param customAttributes */",
         "setterMethodName" : "setCustomAttributes",
         "setterModel" : {
@@ -562,6 +567,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Accept",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The desired MIME type of the inference in the response.</p>\n@param accept The desired MIME type of the inference in the response.*/",
           "setterMethodName" : "setAccept",
           "setterModel" : {
@@ -628,6 +634,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Body",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p> <p>For information about the format of the request body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param body Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p> <p>For information about the format of the request body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.*/",
           "setterMethodName" : "setBody",
           "setterModel" : {
@@ -694,6 +701,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContentType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The MIME type of the input data in the request body.</p>\n@param contentType The MIME type of the input data in the request body.*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
@@ -760,6 +768,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CustomAttributes",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p/>\n@param customAttributes */",
           "setterMethodName" : "setCustomAttributes",
           "setterModel" : {
@@ -826,6 +835,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API. </p>\n@param endpointName The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API.*/",
           "setterMethodName" : "setEndpointName",
           "setterModel" : {
@@ -928,6 +938,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Body",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>Includes the inference provided by the model.</p> <p>For information about the format of the response body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param body Includes the inference provided by the model.</p> <p>For information about the format of the response body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.*/",
         "setterMethodName" : "setBody",
         "setterModel" : {
@@ -993,6 +1004,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContentType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The MIME type of the inference returned in the response body.</p>\n@param contentType The MIME type of the inference returned in the response body.*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
@@ -1058,6 +1070,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvokedProductionVariant",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Identifies the production variant that was invoked.</p>\n@param invokedProductionVariant Identifies the production variant that was invoked.*/",
         "setterMethodName" : "setInvokedProductionVariant",
         "setterModel" : {
@@ -1123,6 +1136,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CustomAttributes",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p/>\n@param customAttributes */",
         "setterMethodName" : "setCustomAttributes",
         "setterModel" : {
@@ -1190,6 +1204,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Body",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>Includes the inference provided by the model.</p> <p>For information about the format of the response body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param body Includes the inference provided by the model.</p> <p>For information about the format of the response body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.*/",
           "setterMethodName" : "setBody",
           "setterModel" : {
@@ -1256,6 +1271,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContentType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The MIME type of the inference returned in the response body.</p>\n@param contentType The MIME type of the inference returned in the response body.*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
@@ -1322,6 +1338,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CustomAttributes",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p/>\n@param customAttributes */",
           "setterMethodName" : "setCustomAttributes",
           "setterModel" : {
@@ -1388,6 +1405,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvokedProductionVariant",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Identifies the production variant that was invoked.</p>\n@param invokedProductionVariant Identifies the production variant that was invoked.*/",
           "setterMethodName" : "setInvokedProductionVariant",
           "setterModel" : {
@@ -1493,6 +1511,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "OriginalStatusCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Original status code. </p>\n@param originalStatusCode Original status code.*/",
         "setterMethodName" : "setOriginalStatusCode",
         "setterModel" : {
@@ -1558,6 +1577,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OriginalMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Original message. </p>\n@param originalMessage Original message.*/",
         "setterMethodName" : "setOriginalMessage",
         "setterModel" : {
@@ -1623,6 +1643,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LogStreamArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The Amazon Resource Name (ARN) of the log stream. </p>\n@param logStreamArn The Amazon Resource Name (ARN) of the log stream.*/",
         "setterMethodName" : "setLogStreamArn",
         "setterModel" : {
@@ -1690,6 +1711,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LogStreamArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The Amazon Resource Name (ARN) of the log stream. </p>\n@param logStreamArn The Amazon Resource Name (ARN) of the log stream.*/",
           "setterMethodName" : "setLogStreamArn",
           "setterModel" : {
@@ -1756,6 +1778,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OriginalMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Original message. </p>\n@param originalMessage Original message.*/",
           "setterMethodName" : "setOriginalMessage",
           "setterModel" : {
@@ -1822,6 +1845,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "OriginalStatusCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Original status code. </p>\n@param originalStatusCode Original status code.*/",
           "setterMethodName" : "setOriginalStatusCode",
           "setterModel" : {

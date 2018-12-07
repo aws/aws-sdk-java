@@ -86,23 +86,23 @@ public class RoleDetail implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<AttachedPolicy> attachedManagedPolicies;
     /**
      * <p>
+     * The ARN of the policy used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     */
+    private AttachedPermissionsBoundary permissionsBoundary;
+    /**
+     * <p>
      * A list of tags that are attached to the specified role. For more information about tagging, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
      * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
-    /**
-     * <p>
-     * The ARN of the policy used to set the permissions boundary for the role.
-     * </p>
-     * <p>
-     * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * </p>
-     */
-    private AttachedPermissionsBoundary permissionsBoundary;
 
     /**
      * <p>
@@ -589,6 +589,73 @@ public class RoleDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ARN of the policy used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy used to set the permissions boundary for the role.</p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a>
+     *        in the <i>IAM User Guide</i>.
+     */
+
+    public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
+        this.permissionsBoundary = permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The ARN of the policy used to set the permissions boundary for the role.</p>
+     *         <p>
+     *         For more information about permissions boundaries, see <a
+     *         href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities
+     *         </a> in the <i>IAM User Guide</i>.
+     */
+
+    public AttachedPermissionsBoundary getPermissionsBoundary() {
+        return this.permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy used to set the permissions boundary for the role.</p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a>
+     *        in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoleDetail withPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
+        setPermissionsBoundary(permissionsBoundary);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of tags that are attached to the specified role. For more information about tagging, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
      * Guide</i>.
@@ -677,74 +744,8 @@ public class RoleDetail implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The ARN of the policy used to set the permissions boundary for the role.
-     * </p>
-     * <p>
-     * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * </p>
-     * 
-     * @param permissionsBoundary
-     *        The ARN of the policy used to set the permissions boundary for the role.</p>
-     *        <p>
-     *        For more information about permissions boundaries, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
-     */
-
-    public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
-        this.permissionsBoundary = permissionsBoundary;
-    }
-
-    /**
-     * <p>
-     * The ARN of the policy used to set the permissions boundary for the role.
-     * </p>
-     * <p>
-     * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * </p>
-     * 
-     * @return The ARN of the policy used to set the permissions boundary for the role.</p>
-     *         <p>
-     *         For more information about permissions boundaries, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
-     */
-
-    public AttachedPermissionsBoundary getPermissionsBoundary() {
-        return this.permissionsBoundary;
-    }
-
-    /**
-     * <p>
-     * The ARN of the policy used to set the permissions boundary for the role.
-     * </p>
-     * <p>
-     * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * </p>
-     * 
-     * @param permissionsBoundary
-     *        The ARN of the policy used to set the permissions boundary for the role.</p>
-     *        <p>
-     *        For more information about permissions boundaries, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RoleDetail withPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
-        setPermissionsBoundary(permissionsBoundary);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -772,10 +773,10 @@ public class RoleDetail implements Serializable, Cloneable {
             sb.append("RolePolicyList: ").append(getRolePolicyList()).append(",");
         if (getAttachedManagedPolicies() != null)
             sb.append("AttachedManagedPolicies: ").append(getAttachedManagedPolicies()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
         if (getPermissionsBoundary() != null)
-            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary());
+            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -826,13 +827,13 @@ public class RoleDetail implements Serializable, Cloneable {
             return false;
         if (other.getAttachedManagedPolicies() != null && other.getAttachedManagedPolicies().equals(this.getAttachedManagedPolicies()) == false)
             return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
         if (other.getPermissionsBoundary() == null ^ this.getPermissionsBoundary() == null)
             return false;
         if (other.getPermissionsBoundary() != null && other.getPermissionsBoundary().equals(this.getPermissionsBoundary()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -851,8 +852,8 @@ public class RoleDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceProfileList() == null) ? 0 : getInstanceProfileList().hashCode());
         hashCode = prime * hashCode + ((getRolePolicyList() == null) ? 0 : getRolePolicyList().hashCode());
         hashCode = prime * hashCode + ((getAttachedManagedPolicies() == null) ? 0 : getAttachedManagedPolicies().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -648,6 +648,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive.</p>\n@param vocabularyName The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -713,6 +714,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -815,6 +817,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -858,6 +861,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Phrases",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of strings that contains the vocabulary entries. </p>\n@param phrases An array of strings that contains the vocabulary entries.*/",
         "setterMethodName" : "setPhrases",
         "setterModel" : {
@@ -925,6 +929,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -1028,6 +1033,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1071,6 +1077,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Phrases",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of strings that contains the vocabulary entries. </p>\n@param phrases An array of strings that contains the vocabulary entries.*/",
           "setterMethodName" : "setPhrases",
           "setterModel" : {
@@ -1137,6 +1144,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive.</p>\n@param vocabularyName The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -1239,6 +1247,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the vocabulary.</p>\n@param vocabularyName The name of the vocabulary.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -1304,6 +1313,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -1369,6 +1379,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.</p>\n@param vocabularyState The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.\n@see VocabularyState*/",
         "setterMethodName" : "setVocabularyState",
         "setterModel" : {
@@ -1434,6 +1445,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the vocabulary was created.</p>\n@param lastModifiedTime The date and time that the vocabulary was created.*/",
         "setterMethodName" : "setLastModifiedTime",
         "setterModel" : {
@@ -1499,6 +1511,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FailureReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>\n@param failureReason If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.*/",
         "setterMethodName" : "setFailureReason",
         "setterModel" : {
@@ -1566,6 +1579,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FailureReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>\n@param failureReason If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.*/",
           "setterMethodName" : "setFailureReason",
           "setterModel" : {
@@ -1632,6 +1646,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -1698,6 +1713,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the vocabulary was created.</p>\n@param lastModifiedTime The date and time that the vocabulary was created.*/",
           "setterMethodName" : "setLastModifiedTime",
           "setterModel" : {
@@ -1764,6 +1780,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the vocabulary.</p>\n@param vocabularyName The name of the vocabulary.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -1830,6 +1847,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.</p>\n@param vocabularyState The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.\n@see VocabularyState*/",
           "setterMethodName" : "setVocabularyState",
           "setterModel" : {
@@ -1942,6 +1960,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@param transcriptionJobName The name of the transcription job to be deleted.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
@@ -2009,6 +2028,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@param transcriptionJobName The name of the transcription job to be deleted.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
@@ -2158,6 +2178,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the vocabulary to delete. </p>\n@param vocabularyName The name of the vocabulary to delete.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -2225,6 +2246,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the vocabulary to delete. </p>\n@param vocabularyName The name of the vocabulary to delete.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -2374,6 +2396,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the job.</p>\n@param transcriptionJobName The name of the job.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
@@ -2441,6 +2464,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the job.</p>\n@param transcriptionJobName The name of the job.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
@@ -2543,6 +2567,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TranscriptionJob",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object that contains the results of the transcription job.</p>\n@param transcriptionJob An object that contains the results of the transcription job.*/",
         "setterMethodName" : "setTranscriptionJob",
         "setterModel" : {
@@ -2610,6 +2635,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TranscriptionJob",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object that contains the results of the transcription job.</p>\n@param transcriptionJob An object that contains the results of the transcription job.*/",
           "setterMethodName" : "setTranscriptionJob",
           "setterModel" : {
@@ -2722,6 +2748,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the vocabulary to return information about. The name is case-sensitive.</p>\n@param vocabularyName The name of the vocabulary to return information about. The name is case-sensitive.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -2789,6 +2816,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the vocabulary to return information about. The name is case-sensitive.</p>\n@param vocabularyName The name of the vocabulary to return information about. The name is case-sensitive.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -2891,6 +2919,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the vocabulary to return.</p>\n@param vocabularyName The name of the vocabulary to return.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -2956,6 +2985,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -3021,6 +3051,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The processing state of the vocabulary.</p>\n@param vocabularyState The processing state of the vocabulary.\n@see VocabularyState*/",
         "setterMethodName" : "setVocabularyState",
         "setterModel" : {
@@ -3086,6 +3117,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the vocabulary was last modified.</p>\n@param lastModifiedTime The date and time that the vocabulary was last modified.*/",
         "setterMethodName" : "setLastModifiedTime",
         "setterModel" : {
@@ -3151,6 +3183,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FailureReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>\n@param failureReason If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.*/",
         "setterMethodName" : "setFailureReason",
         "setterModel" : {
@@ -3216,6 +3249,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DownloadUri",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. The URI is available for a limited time.</p>\n@param downloadUri The S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. The URI is available for a limited time.*/",
         "setterMethodName" : "setDownloadUri",
         "setterModel" : {
@@ -3283,6 +3317,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DownloadUri",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. The URI is available for a limited time.</p>\n@param downloadUri The S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. The URI is available for a limited time.*/",
           "setterMethodName" : "setDownloadUri",
           "setterModel" : {
@@ -3349,6 +3384,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FailureReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>\n@param failureReason If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.*/",
           "setterMethodName" : "setFailureReason",
           "setterModel" : {
@@ -3415,6 +3451,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -3481,6 +3518,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the vocabulary was last modified.</p>\n@param lastModifiedTime The date and time that the vocabulary was last modified.*/",
           "setterMethodName" : "setLastModifiedTime",
           "setterModel" : {
@@ -3547,6 +3585,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the vocabulary to return.</p>\n@param vocabularyName The name of the vocabulary to return.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -3613,6 +3652,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The processing state of the vocabulary.</p>\n@param vocabularyState The processing state of the vocabulary.\n@see VocabularyState*/",
           "setterMethodName" : "setVocabularyState",
           "setterModel" : {
@@ -3863,6 +3903,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When specified, returns only transcription jobs with the specified status.</p>\n@param status When specified, returns only transcription jobs with the specified status.\n@see TranscriptionJobStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -3928,6 +3969,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobNameContains",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>\n@param jobNameContains When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.*/",
         "setterMethodName" : "setJobNameContains",
         "setterModel" : {
@@ -3993,6 +4035,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the result of the previous request to <code>ListTranscriptionJobs</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.</p>\n@param nextToken If the result of the previous request to <code>ListTranscriptionJobs</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4058,6 +4101,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>\n@param maxResults The maximum number of jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -4125,6 +4169,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobNameContains",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>\n@param jobNameContains When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.*/",
           "setterMethodName" : "setJobNameContains",
           "setterModel" : {
@@ -4191,6 +4236,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>\n@param maxResults The maximum number of jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -4257,6 +4303,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the result of the previous request to <code>ListTranscriptionJobs</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.</p>\n@param nextToken If the result of the previous request to <code>ListTranscriptionJobs</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4323,6 +4370,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When specified, returns only transcription jobs with the specified status.</p>\n@param status When specified, returns only transcription jobs with the specified status.\n@see TranscriptionJobStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -4425,6 +4473,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The requested status of the jobs returned.</p>\n@param status The requested status of the jobs returned.\n@see TranscriptionJobStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -4490,6 +4539,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.</p>\n@param nextToken The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4592,6 +4642,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4635,6 +4686,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TranscriptionJobSummaries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of objects containing summary information for a transcription job.</p>\n@param transcriptionJobSummaries A list of objects containing summary information for a transcription job.*/",
         "setterMethodName" : "setTranscriptionJobSummaries",
         "setterModel" : {
@@ -4702,6 +4754,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.</p>\n@param nextToken The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4768,6 +4821,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The requested status of the jobs returned.</p>\n@param status The requested status of the jobs returned.\n@see TranscriptionJobStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -4871,6 +4925,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4914,6 +4969,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TranscriptionJobSummaries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of objects containing summary information for a transcription job.</p>\n@param transcriptionJobSummaries A list of objects containing summary information for a transcription job.*/",
           "setterMethodName" : "setTranscriptionJobSummaries",
           "setterModel" : {
@@ -5026,6 +5082,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the result of the previous request to <code>ListVocabularies</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.</p>\n@param nextToken If the result of the previous request to <code>ListVocabularies</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5091,6 +5148,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of vocabularies to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>\n@param maxResults The maximum number of vocabularies to return in the response. If there are fewer results in the list, this response contains only the actual results.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -5156,6 +5214,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateEquals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When specified, only returns vocabularies with the <code>VocabularyState</code> field equal to the specified state.</p>\n@param stateEquals When specified, only returns vocabularies with the <code>VocabularyState</code> field equal to the specified state.\n@see VocabularyState*/",
         "setterMethodName" : "setStateEquals",
         "setterModel" : {
@@ -5221,6 +5280,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NameContains",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the specified string. The search is case-insensitive, <code>ListVocabularies</code> will return both \"vocabularyname\" and \"VocabularyName\" in the response list.</p>\n@param nameContains When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the specified string. The search is case-insensitive, <code>ListVocabularies</code> will return both \"vocabularyname\" and \"VocabularyName\" in the response list.*/",
         "setterMethodName" : "setNameContains",
         "setterModel" : {
@@ -5288,6 +5348,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of vocabularies to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>\n@param maxResults The maximum number of vocabularies to return in the response. If there are fewer results in the list, this response contains only the actual results.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -5354,6 +5415,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NameContains",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the specified string. The search is case-insensitive, <code>ListVocabularies</code> will return both \"vocabularyname\" and \"VocabularyName\" in the response list.</p>\n@param nameContains When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the specified string. The search is case-insensitive, <code>ListVocabularies</code> will return both \"vocabularyname\" and \"VocabularyName\" in the response list.*/",
           "setterMethodName" : "setNameContains",
           "setterModel" : {
@@ -5420,6 +5482,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the result of the previous request to <code>ListVocabularies</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.</p>\n@param nextToken If the result of the previous request to <code>ListVocabularies</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -5486,6 +5549,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateEquals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When specified, only returns vocabularies with the <code>VocabularyState</code> field equal to the specified state.</p>\n@param stateEquals When specified, only returns vocabularies with the <code>VocabularyState</code> field equal to the specified state.\n@see VocabularyState*/",
           "setterMethodName" : "setStateEquals",
           "setterModel" : {
@@ -5588,6 +5652,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The requested vocabulary state.</p>\n@param status The requested vocabulary state.\n@see TranscriptionJobStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -5653,6 +5718,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListVocabularies</code> operation to return in the next page of jobs.</p>\n@param nextToken The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListVocabularies</code> operation to return in the next page of jobs.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5755,6 +5821,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5798,6 +5865,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Vocabularies",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of objects that describe the vocabularies that match the search criteria in the request.</p>\n@param vocabularies A list of objects that describe the vocabularies that match the search criteria in the request.*/",
         "setterMethodName" : "setVocabularies",
         "setterModel" : {
@@ -5865,6 +5933,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListVocabularies</code> operation to return in the next page of jobs.</p>\n@param nextToken The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListVocabularies</code> operation to return in the next page of jobs.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -5931,6 +6000,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The requested vocabulary state.</p>\n@param status The requested vocabulary state.\n@see TranscriptionJobStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -6034,6 +6104,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6077,6 +6148,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Vocabularies",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of objects that describe the vocabularies that match the search criteria in the request.</p>\n@param vocabularies A list of objects that describe the vocabularies that match the search criteria in the request.*/",
           "setterMethodName" : "setVocabularies",
           "setterModel" : {
@@ -6182,6 +6254,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MediaFileUri",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The S3 location of the input media file. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p> <p> <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p> <p>For example:</p> <p> <code>https://s3-us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p> <p> <code>https://s3-us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code> </p> <p>For more information about S3 object names, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys\">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>\n@param mediaFileUri The S3 location of the input media file. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p> <p> <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p> <p>For example:</p> <p> <code>https://s3-us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p> <p> <code>https://s3-us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code> </p> <p>For more information about S3 object names, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys\">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.*/",
         "setterMethodName" : "setMediaFileUri",
         "setterModel" : {
@@ -6249,6 +6322,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MediaFileUri",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The S3 location of the input media file. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p> <p> <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p> <p>For example:</p> <p> <code>https://s3-us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p> <p> <code>https://s3-us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code> </p> <p>For more information about S3 object names, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys\">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>\n@param mediaFileUri The S3 location of the input media file. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p> <p> <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p> <p>For example:</p> <p> <code>https://s3-us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p> <p> <code>https://s3-us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code> </p> <p>For more information about S3 object names, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys\">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.*/",
           "setterMethodName" : "setMediaFileUri",
           "setterModel" : {
@@ -6489,6 +6563,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of a vocabulary to use when processing the transcription job.</p>\n@param vocabularyName The name of a vocabulary to use when processing the transcription job.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -6554,6 +6629,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ShowSpeakerLabels",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Determines whether the transcription job uses speaker recognition to identify different speakers in the input audio. Speaker recognition labels individual speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>\n@param showSpeakerLabels Determines whether the transcription job uses speaker recognition to identify different speakers in the input audio. Speaker recognition labels individual speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.*/",
         "setterMethodName" : "setShowSpeakerLabels",
         "setterModel" : {
@@ -6619,6 +6695,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxSpeakerLabels",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this number, multiple speakers will be identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>\n@param maxSpeakerLabels The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this number, multiple speakers will be identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.*/",
         "setterMethodName" : "setMaxSpeakerLabels",
         "setterModel" : {
@@ -6684,6 +6761,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ChannelIdentification",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of each channel into a single transcription. </p> <p>Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start time and end time of the item and alternative transcriptions of the item including the confidence that Amazon Transcribe has in the transcription.</p> <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>\n@param channelIdentification Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of each channel into a single transcription. </p> <p>Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start time and end time of the item and alternative transcriptions of the item including the confidence that Amazon Transcribe has in the transcription.</p> <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.*/",
         "setterMethodName" : "setChannelIdentification",
         "setterModel" : {
@@ -6751,6 +6829,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ChannelIdentification",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of each channel into a single transcription. </p> <p>Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start time and end time of the item and alternative transcriptions of the item including the confidence that Amazon Transcribe has in the transcription.</p> <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>\n@param channelIdentification Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of each channel into a single transcription. </p> <p>Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start time and end time of the item and alternative transcriptions of the item including the confidence that Amazon Transcribe has in the transcription.</p> <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.*/",
           "setterMethodName" : "setChannelIdentification",
           "setterModel" : {
@@ -6817,6 +6896,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxSpeakerLabels",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this number, multiple speakers will be identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>\n@param maxSpeakerLabels The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this number, multiple speakers will be identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.*/",
           "setterMethodName" : "setMaxSpeakerLabels",
           "setterModel" : {
@@ -6883,6 +6963,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ShowSpeakerLabels",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Determines whether the transcription job uses speaker recognition to identify different speakers in the input audio. Speaker recognition labels individual speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>\n@param showSpeakerLabels Determines whether the transcription job uses speaker recognition to identify different speakers in the input audio. Speaker recognition labels individual speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.*/",
           "setterMethodName" : "setShowSpeakerLabels",
           "setterModel" : {
@@ -6949,6 +7030,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of a vocabulary to use when processing the transcription job.</p>\n@param vocabularyName The name of a vocabulary to use when processing the transcription job.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -7061,6 +7143,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
@@ -7126,6 +7209,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the language used in the input media file.</p>\n@param languageCode The language code for the language used in the input media file.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -7191,6 +7275,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MediaSampleRateHertz",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The sample rate, in Hertz, of the audio track in the input media file. </p>\n@param mediaSampleRateHertz The sample rate, in Hertz, of the audio track in the input media file.*/",
         "setterMethodName" : "setMediaSampleRateHertz",
         "setterModel" : {
@@ -7256,6 +7341,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MediaFormat",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The format of the input media file.</p>\n@param mediaFormat The format of the input media file.\n@see MediaFormat*/",
         "setterMethodName" : "setMediaFormat",
         "setterModel" : {
@@ -7321,6 +7407,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Media",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@param media An object that describes the input media for a transcription job.*/",
         "setterMethodName" : "setMedia",
         "setterModel" : {
@@ -7386,6 +7473,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OutputBucketName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@param outputBucketName The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.*/",
         "setterMethodName" : "setOutputBucketName",
         "setterModel" : {
@@ -7451,6 +7539,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Settings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>\n@param settings A <code>Settings</code> object that provides optional settings for a transcription job.*/",
         "setterMethodName" : "setSettings",
         "setterModel" : {
@@ -7518,6 +7607,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the language used in the input media file.</p>\n@param languageCode The language code for the language used in the input media file.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -7584,6 +7674,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Media",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@param media An object that describes the input media for a transcription job.*/",
           "setterMethodName" : "setMedia",
           "setterModel" : {
@@ -7650,6 +7741,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MediaFormat",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The format of the input media file.</p>\n@param mediaFormat The format of the input media file.\n@see MediaFormat*/",
           "setterMethodName" : "setMediaFormat",
           "setterModel" : {
@@ -7716,6 +7808,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MediaSampleRateHertz",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The sample rate, in Hertz, of the audio track in the input media file. </p>\n@param mediaSampleRateHertz The sample rate, in Hertz, of the audio track in the input media file.*/",
           "setterMethodName" : "setMediaSampleRateHertz",
           "setterModel" : {
@@ -7782,6 +7875,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OutputBucketName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@param outputBucketName The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.*/",
           "setterMethodName" : "setOutputBucketName",
           "setterModel" : {
@@ -7848,6 +7942,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Settings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>\n@param settings A <code>Settings</code> object that provides optional settings for a transcription job.*/",
           "setterMethodName" : "setSettings",
           "setterModel" : {
@@ -7914,6 +8009,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
@@ -8016,6 +8112,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TranscriptionJob",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object containing details of the asynchronous transcription job.</p>\n@param transcriptionJob An object containing details of the asynchronous transcription job.*/",
         "setterMethodName" : "setTranscriptionJob",
         "setterModel" : {
@@ -8083,6 +8180,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TranscriptionJob",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object containing details of the asynchronous transcription job.</p>\n@param transcriptionJob An object containing details of the asynchronous transcription job.*/",
           "setterMethodName" : "setTranscriptionJob",
           "setterModel" : {
@@ -8188,6 +8286,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptFileUri",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@param transcriptFileUri The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.*/",
         "setterMethodName" : "setTranscriptFileUri",
         "setterModel" : {
@@ -8255,6 +8354,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptFileUri",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@param transcriptFileUri The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.*/",
           "setterMethodName" : "setTranscriptFileUri",
           "setterModel" : {
@@ -8360,6 +8460,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
@@ -8425,6 +8526,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the transcription job.</p>\n@param transcriptionJobStatus The status of the transcription job.\n@see TranscriptionJobStatus*/",
         "setterMethodName" : "setTranscriptionJobStatus",
         "setterModel" : {
@@ -8490,6 +8592,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the input speech.</p>\n@param languageCode The language code for the input speech.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -8555,6 +8658,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MediaSampleRateHertz",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The sample rate, in Hertz, of the audio track in the input media file. </p>\n@param mediaSampleRateHertz The sample rate, in Hertz, of the audio track in the input media file.*/",
         "setterMethodName" : "setMediaSampleRateHertz",
         "setterModel" : {
@@ -8620,6 +8724,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MediaFormat",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The format of the input media file.</p>\n@param mediaFormat The format of the input media file.\n@see MediaFormat*/",
         "setterMethodName" : "setMediaFormat",
         "setterModel" : {
@@ -8685,6 +8790,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Media",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@param media An object that describes the input media for the transcription job.*/",
         "setterMethodName" : "setMedia",
         "setterModel" : {
@@ -8750,6 +8856,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Transcript",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object that describes the output of the transcription job.</p>\n@param transcript An object that describes the output of the transcription job.*/",
         "setterMethodName" : "setTranscript",
         "setterModel" : {
@@ -8815,6 +8922,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -8880,6 +8988,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CompletionTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.*/",
         "setterMethodName" : "setCompletionTime",
         "setterModel" : {
@@ -8945,6 +9054,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FailureReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information about why the job failed.*/",
         "setterMethodName" : "setFailureReason",
         "setterModel" : {
@@ -9010,6 +9120,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Settings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@param settings Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.*/",
         "setterMethodName" : "setSettings",
         "setterModel" : {
@@ -9077,6 +9188,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CompletionTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.*/",
           "setterMethodName" : "setCompletionTime",
           "setterModel" : {
@@ -9143,6 +9255,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -9209,6 +9322,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FailureReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information about why the job failed.*/",
           "setterMethodName" : "setFailureReason",
           "setterModel" : {
@@ -9275,6 +9389,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the input speech.</p>\n@param languageCode The language code for the input speech.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -9341,6 +9456,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Media",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@param media An object that describes the input media for the transcription job.*/",
           "setterMethodName" : "setMedia",
           "setterModel" : {
@@ -9407,6 +9523,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MediaFormat",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The format of the input media file.</p>\n@param mediaFormat The format of the input media file.\n@see MediaFormat*/",
           "setterMethodName" : "setMediaFormat",
           "setterModel" : {
@@ -9473,6 +9590,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MediaSampleRateHertz",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The sample rate, in Hertz, of the audio track in the input media file. </p>\n@param mediaSampleRateHertz The sample rate, in Hertz, of the audio track in the input media file.*/",
           "setterMethodName" : "setMediaSampleRateHertz",
           "setterModel" : {
@@ -9539,6 +9657,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Settings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@param settings Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.*/",
           "setterMethodName" : "setSettings",
           "setterModel" : {
@@ -9605,6 +9724,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Transcript",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object that describes the output of the transcription job.</p>\n@param transcript An object that describes the output of the transcription job.*/",
           "setterMethodName" : "setTranscript",
           "setterModel" : {
@@ -9671,6 +9791,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
@@ -9737,6 +9858,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the transcription job.</p>\n@param transcriptionJobStatus The status of the transcription job.\n@see TranscriptionJobStatus*/",
           "setterMethodName" : "setTranscriptionJobStatus",
           "setterModel" : {
@@ -9891,6 +10013,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
@@ -9956,6 +10079,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -10021,6 +10145,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CompletionTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.*/",
         "setterMethodName" : "setCompletionTime",
         "setterModel" : {
@@ -10086,6 +10211,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the input speech.</p>\n@param languageCode The language code for the input speech.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -10151,6 +10277,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the transcription job. When the status is <code>COMPLETED</code>, use the <code>GetTranscriptionJob</code> operation to get the results of the transcription.</p>\n@param transcriptionJobStatus The status of the transcription job. When the status is <code>COMPLETED</code>, use the <code>GetTranscriptionJob</code> operation to get the results of the transcription.\n@see TranscriptionJobStatus*/",
         "setterMethodName" : "setTranscriptionJobStatus",
         "setterModel" : {
@@ -10216,6 +10343,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FailureReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.*/",
         "setterMethodName" : "setFailureReason",
         "setterModel" : {
@@ -10281,6 +10409,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OutputLocationType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@param outputLocationType Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@see OutputLocationType*/",
         "setterMethodName" : "setOutputLocationType",
         "setterModel" : {
@@ -10348,6 +10477,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CompletionTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.*/",
           "setterMethodName" : "setCompletionTime",
           "setterModel" : {
@@ -10414,6 +10544,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -10480,6 +10611,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FailureReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.*/",
           "setterMethodName" : "setFailureReason",
           "setterModel" : {
@@ -10546,6 +10678,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the input speech.</p>\n@param languageCode The language code for the input speech.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -10612,6 +10745,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OutputLocationType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@param outputLocationType Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@see OutputLocationType*/",
           "setterMethodName" : "setOutputLocationType",
           "setterModel" : {
@@ -10678,6 +10812,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
@@ -10744,6 +10879,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the transcription job. When the status is <code>COMPLETED</code>, use the <code>GetTranscriptionJob</code> operation to get the results of the transcription.</p>\n@param transcriptionJobStatus The status of the transcription job. When the status is <code>COMPLETED</code>, use the <code>GetTranscriptionJob</code> operation to get the results of the transcription.\n@see TranscriptionJobStatus*/",
           "setterMethodName" : "setTranscriptionJobStatus",
           "setterModel" : {
@@ -10856,6 +10992,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the vocabulary to update. The name is case-sensitive.</p>\n@param vocabularyName The name of the vocabulary to update. The name is case-sensitive.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -10921,6 +11058,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -11023,6 +11161,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11066,6 +11205,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Phrases",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of strings containing the vocabulary entries.</p>\n@param phrases An array of strings containing the vocabulary entries.*/",
         "setterMethodName" : "setPhrases",
         "setterModel" : {
@@ -11133,6 +11273,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -11236,6 +11377,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11279,6 +11421,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Phrases",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of strings containing the vocabulary entries.</p>\n@param phrases An array of strings containing the vocabulary entries.*/",
           "setterMethodName" : "setPhrases",
           "setterModel" : {
@@ -11345,6 +11488,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the vocabulary to update. The name is case-sensitive.</p>\n@param vocabularyName The name of the vocabulary to update. The name is case-sensitive.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -11447,6 +11591,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the vocabulary that was updated.</p>\n@param vocabularyName The name of the vocabulary that was updated.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -11512,6 +11657,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -11577,6 +11723,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the vocabulary was updated.</p>\n@param lastModifiedTime The date and time that the vocabulary was updated.*/",
         "setterMethodName" : "setLastModifiedTime",
         "setterModel" : {
@@ -11642,6 +11789,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.</p>\n@param vocabularyState The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.\n@see VocabularyState*/",
         "setterMethodName" : "setVocabularyState",
         "setterModel" : {
@@ -11709,6 +11857,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -11775,6 +11924,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the vocabulary was updated.</p>\n@param lastModifiedTime The date and time that the vocabulary was updated.*/",
           "setterMethodName" : "setLastModifiedTime",
           "setterModel" : {
@@ -11841,6 +11991,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the vocabulary that was updated.</p>\n@param vocabularyName The name of the vocabulary that was updated.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -11907,6 +12058,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.</p>\n@param vocabularyState The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.\n@see VocabularyState*/",
           "setterMethodName" : "setVocabularyState",
           "setterModel" : {
@@ -12012,6 +12164,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the vocabulary.</p>\n@param vocabularyName The name of the vocabulary.*/",
         "setterMethodName" : "setVocabularyName",
         "setterModel" : {
@@ -12077,6 +12230,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -12142,6 +12296,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the vocabulary was last modified.</p>\n@param lastModifiedTime The date and time that the vocabulary was last modified.*/",
         "setterMethodName" : "setLastModifiedTime",
         "setterModel" : {
@@ -12207,6 +12362,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VocabularyState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The processing state of the vocabulary. If the state is <code>READY</code> you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>\n@param vocabularyState The processing state of the vocabulary. If the state is <code>READY</code> you can use the vocabulary in a <code>StartTranscriptionJob</code> request.\n@see VocabularyState*/",
         "setterMethodName" : "setVocabularyState",
         "setterModel" : {
@@ -12274,6 +12430,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code of the vocabulary entries.</p>\n@param languageCode The language code of the vocabulary entries.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -12340,6 +12497,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the vocabulary was last modified.</p>\n@param lastModifiedTime The date and time that the vocabulary was last modified.*/",
           "setterMethodName" : "setLastModifiedTime",
           "setterModel" : {
@@ -12406,6 +12564,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the vocabulary.</p>\n@param vocabularyName The name of the vocabulary.*/",
           "setterMethodName" : "setVocabularyName",
           "setterModel" : {
@@ -12472,6 +12631,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VocabularyState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The processing state of the vocabulary. If the state is <code>READY</code> you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>\n@param vocabularyState The processing state of the vocabulary. If the state is <code>READY</code> you can use the vocabulary in a <code>StartTranscriptionJob</code> request.\n@see VocabularyState*/",
           "setterMethodName" : "setVocabularyState",
           "setterModel" : {

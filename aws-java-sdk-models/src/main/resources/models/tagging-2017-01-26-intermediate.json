@@ -423,6 +423,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StatusCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HTTP status code of the common error.</p>\n@param statusCode The HTTP status code of the common error.*/",
         "setterMethodName" : "setStatusCode",
         "setterModel" : {
@@ -488,6 +489,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.</p>\n@param errorCode The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.\n@see ErrorCode*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
@@ -553,6 +555,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The message of the common error.</p>\n@param errorMessage The message of the common error.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
@@ -620,6 +623,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.</p>\n@param errorCode The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.\n@see ErrorCode*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
@@ -686,6 +690,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The message of the common error.</p>\n@param errorMessage The message of the common error.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
@@ -752,6 +757,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StatusCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HTTP status code of the common error.</p>\n@param statusCode The HTTP status code of the common error.*/",
           "setterMethodName" : "setStatusCode",
           "setterModel" : {
@@ -864,6 +870,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PaginationToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
@@ -966,6 +973,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1009,6 +1017,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagFilters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.</p>\n@param tagFilters A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.*/",
         "setterMethodName" : "setTagFilters",
         "setterModel" : {
@@ -1074,6 +1083,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ResourcesPerPage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items. </p>\n@param resourcesPerPage A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.*/",
         "setterMethodName" : "setResourcesPerPage",
         "setterModel" : {
@@ -1139,6 +1149,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TagsPerPage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.</p>\n@param tagsPerPage A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.*/",
         "setterMethodName" : "setTagsPerPage",
         "setterModel" : {
@@ -1241,6 +1252,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1284,6 +1296,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceTypeFilters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul>\n@param resourceTypeFilters The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li>*/",
         "setterMethodName" : "setResourceTypeFilters",
         "setterModel" : {
@@ -1351,6 +1364,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PaginationToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
@@ -1454,6 +1468,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1497,6 +1512,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceTypeFilters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul>\n@param resourceTypeFilters The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li>*/",
           "setterMethodName" : "setResourceTypeFilters",
           "setterModel" : {
@@ -1563,6 +1579,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ResourcesPerPage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items. </p>\n@param resourcesPerPage A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.*/",
           "setterMethodName" : "setResourcesPerPage",
           "setterModel" : {
@@ -1666,6 +1683,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1709,6 +1727,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagFilters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.</p>\n@param tagFilters A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.*/",
           "setterMethodName" : "setTagFilters",
           "setterModel" : {
@@ -1775,6 +1794,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TagsPerPage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.</p>\n@param tagsPerPage A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.*/",
           "setterMethodName" : "setTagsPerPage",
           "setterModel" : {
@@ -1877,6 +1897,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PaginationToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
@@ -1979,6 +2000,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2022,6 +2044,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceTagMappingList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of resource ARNs and the tags (keys and values) associated with each.</p>\n@param resourceTagMappingList A list of resource ARNs and the tags (keys and values) associated with each.*/",
         "setterMethodName" : "setResourceTagMappingList",
         "setterModel" : {
@@ -2089,6 +2112,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PaginationToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
@@ -2192,6 +2216,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2235,6 +2260,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceTagMappingList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of resource ARNs and the tags (keys and values) associated with each.</p>\n@param resourceTagMappingList A list of resource ARNs and the tags (keys and values) associated with each.*/",
           "setterMethodName" : "setResourceTagMappingList",
           "setterModel" : {
@@ -2347,6 +2373,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PaginationToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
@@ -2414,6 +2441,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PaginationToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
@@ -2516,6 +2544,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PaginationToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
@@ -2618,6 +2647,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2661,6 +2691,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagKeys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of all tag keys in the AWS account.</p>\n@param tagKeys A list of all tag keys in the AWS account.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
@@ -2728,6 +2759,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PaginationToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
@@ -2831,6 +2863,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2874,6 +2907,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagKeys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of all tag keys in the AWS account.</p>\n@param tagKeys A list of all tag keys in the AWS account.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
@@ -2986,6 +3020,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PaginationToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
@@ -3051,6 +3086,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key for which you want to list all existing values in the specified region for the AWS account.</p>\n@param key The key for which you want to list all existing values in the specified region for the AWS account.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -3118,6 +3154,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key for which you want to list all existing values in the specified region for the AWS account.</p>\n@param key The key for which you want to list all existing values in the specified region for the AWS account.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -3184,6 +3221,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PaginationToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
@@ -3286,6 +3324,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PaginationToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
@@ -3388,6 +3427,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3431,6 +3471,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of all tag values for the specified key in the AWS account.</p>\n@param tagValues A list of all tag values for the specified key in the AWS account.*/",
         "setterMethodName" : "setTagValues",
         "setterModel" : {
@@ -3498,6 +3539,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PaginationToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
@@ -3601,6 +3643,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3644,6 +3687,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of all tag values for the specified key in the AWS account.</p>\n@param tagValues A list of all tag values for the specified key in the AWS account.*/",
           "setterMethodName" : "setTagValues",
           "setterModel" : {
@@ -3860,6 +3904,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of resource ARN(s).</p>\n@param resourceARN An array of resource ARN(s).*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -3962,6 +4007,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4005,6 +4051,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags that have been applied to one or more AWS resources.</p>\n@param tags The tags that have been applied to one or more AWS resources.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -4072,6 +4119,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of resource ARN(s).</p>\n@param resourceARN An array of resource ARN(s).*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -4175,6 +4223,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4218,6 +4267,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags that have been applied to one or more AWS resources.</p>\n@param tags The tags that have been applied to one or more AWS resources.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -4323,6 +4373,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -4388,6 +4439,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param value The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -4455,6 +4507,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -4521,6 +4574,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param value The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -4626,6 +4680,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -4728,6 +4783,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4771,6 +4827,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param values The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -4838,6 +4895,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -4941,6 +4999,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4984,6 +5043,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param values The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -5133,6 +5193,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5176,6 +5237,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceARNList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
         "setterMethodName" : "setResourceARNList",
         "setterModel" : {
@@ -5284,6 +5346,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -5321,6 +5384,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>\n@param tags The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -5425,6 +5489,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5468,6 +5533,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceARNList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
           "setterMethodName" : "setResourceARNList",
           "setterModel" : {
@@ -5577,6 +5643,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -5614,6 +5681,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>\n@param tags The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -5759,6 +5827,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -5796,6 +5865,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "FailedResourcesMap",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.*/",
         "setterMethodName" : "setFailedResourcesMap",
         "setterModel" : {
@@ -5906,6 +5976,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -5943,6 +6014,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "FailedResourcesMap",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.*/",
           "setterMethodName" : "setFailedResourcesMap",
           "setterModel" : {
@@ -6129,6 +6201,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6172,6 +6245,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceARNList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
         "setterMethodName" : "setResourceARNList",
         "setterModel" : {
@@ -6274,6 +6348,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6317,6 +6392,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagKeys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of the tag keys that you want to remove from the specified resources.</p>\n@param tagKeys A list of the tag keys that you want to remove from the specified resources.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
@@ -6421,6 +6497,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6464,6 +6541,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceARNList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
           "setterMethodName" : "setResourceARNList",
           "setterModel" : {
@@ -6567,6 +6645,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6610,6 +6689,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagKeys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of the tag keys that you want to remove from the specified resources.</p>\n@param tagKeys A list of the tag keys that you want to remove from the specified resources.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
@@ -6755,6 +6835,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -6792,6 +6873,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "FailedResourcesMap",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.*/",
         "setterMethodName" : "setFailedResourcesMap",
         "setterModel" : {
@@ -6902,6 +6984,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -6939,6 +7022,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "FailedResourcesMap",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.*/",
           "setterMethodName" : "setFailedResourcesMap",
           "setterModel" : {

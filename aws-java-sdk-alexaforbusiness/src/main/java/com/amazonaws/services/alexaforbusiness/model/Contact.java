@@ -260,7 +260,8 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -279,7 +280,7 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
         if (getLastName() != null)
             sb.append("LastName: ").append(getLastName()).append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber());
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

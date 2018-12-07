@@ -80,6 +80,16 @@ public class RoleStaxUnmarshaller implements Unmarshaller<Role, StaxUnmarshaller
                     continue;
                 }
 
+                if (context.testExpression("MaxSessionDuration", targetDepth)) {
+                    role.setMaxSessionDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    role.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Tags", targetDepth)) {
                     role.withTags(new ArrayList<Tag>());
                     continue;
@@ -90,15 +100,6 @@ public class RoleStaxUnmarshaller implements Unmarshaller<Role, StaxUnmarshaller
                     continue;
                 }
 
-                if (context.testExpression("MaxSessionDuration", targetDepth)) {
-                    role.setMaxSessionDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("PermissionsBoundary", targetDepth)) {
-                    role.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return role;

@@ -784,7 +784,8 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -803,11 +804,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getAutoRenew() != null)
             sb.append("AutoRenew: ").append(getAutoRenew()).append(",");
         if (getAdminContact() != null)
-            sb.append("AdminContact: ").append(getAdminContact()).append(",");
+            sb.append("AdminContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getRegistrantContact() != null)
-            sb.append("RegistrantContact: ").append(getRegistrantContact()).append(",");
+            sb.append("RegistrantContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getTechContact() != null)
-            sb.append("TechContact: ").append(getTechContact()).append(",");
+            sb.append("TechContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getPrivacyProtectAdminContact() != null)
             sb.append("PrivacyProtectAdminContact: ").append(getPrivacyProtectAdminContact()).append(",");
         if (getPrivacyProtectRegistrantContact() != null)

@@ -731,6 +731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActiveDirectoryId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The directory ID of the directory that an error pertains to.</p>\n@param activeDirectoryId The directory ID of the directory that an error pertains to.*/",
         "setterMethodName" : "setActiveDirectoryId",
         "setterModel" : {
@@ -796,6 +797,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of Active Directory error.</p>\n@param type The type of Active Directory error.\n@see ActiveDirectoryErrorType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -863,6 +865,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActiveDirectoryId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The directory ID of the directory that an error pertains to.</p>\n@param activeDirectoryId The directory ID of the directory that an error pertains to.*/",
           "setterMethodName" : "setActiveDirectoryId",
           "setterModel" : {
@@ -929,6 +932,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of Active Directory error.</p>\n@param type The type of Active Directory error.\n@see ActiveDirectoryErrorType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -1083,6 +1087,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the backup.</p>\n@param backupId The ID of the backup.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -1148,6 +1153,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Lifecycle",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The lifecycle status of the backup.</p>\n@param lifecycle The lifecycle status of the backup.\n@see BackupLifecycle*/",
         "setterMethodName" : "setLifecycle",
         "setterModel" : {
@@ -1213,6 +1219,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "FailureDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details explaining any failures that occur when creating a backup.</p>\n@param failureDetails Details explaining any failures that occur when creating a backup.*/",
         "setterMethodName" : "setFailureDetails",
         "setterModel" : {
@@ -1278,6 +1285,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the backup.</p>\n@param type The type of the backup.\n@see BackupType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -1343,6 +1351,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ProgressPercent",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param progressPercent */",
         "setterMethodName" : "setProgressPercent",
         "setterModel" : {
@@ -1408,6 +1417,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when a particular backup was created.</p>\n@param creationTime The time when a particular backup was created.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -1473,6 +1483,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KmsKeyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup's data.</p>\n@param kmsKeyId The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup's data.*/",
         "setterMethodName" : "setKmsKeyId",
         "setterModel" : {
@@ -1538,6 +1549,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the backup resource.</p>\n@param resourceARN The Amazon Resource Name (ARN) for the backup resource.*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -1640,6 +1652,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1683,6 +1696,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Tags associated with a particular file system.</p>\n@param tags Tags associated with a particular file system.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -1748,6 +1762,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "FileSystem",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>\n@param fileSystem Metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.*/",
         "setterMethodName" : "setFileSystem",
         "setterModel" : {
@@ -1815,6 +1830,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the backup.</p>\n@param backupId The ID of the backup.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -1881,6 +1897,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when a particular backup was created.</p>\n@param creationTime The time when a particular backup was created.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -1947,6 +1964,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "FailureDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details explaining any failures that occur when creating a backup.</p>\n@param failureDetails Details explaining any failures that occur when creating a backup.*/",
           "setterMethodName" : "setFailureDetails",
           "setterModel" : {
@@ -2013,6 +2031,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "FileSystem",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>\n@param fileSystem Metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.*/",
           "setterMethodName" : "setFileSystem",
           "setterModel" : {
@@ -2079,6 +2098,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KmsKeyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup's data.</p>\n@param kmsKeyId The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup's data.*/",
           "setterMethodName" : "setKmsKeyId",
           "setterModel" : {
@@ -2145,6 +2165,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Lifecycle",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The lifecycle status of the backup.</p>\n@param lifecycle The lifecycle status of the backup.\n@see BackupLifecycle*/",
           "setterMethodName" : "setLifecycle",
           "setterModel" : {
@@ -2211,6 +2232,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ProgressPercent",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param progressPercent */",
           "setterMethodName" : "setProgressPercent",
           "setterModel" : {
@@ -2277,6 +2299,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the backup resource.</p>\n@param resourceARN The Amazon Resource Name (ARN) for the backup resource.*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -2380,6 +2403,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2423,6 +2447,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Tags associated with a particular file system.</p>\n@param tags Tags associated with a particular file system.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -2489,6 +2514,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the backup.</p>\n@param type The type of the backup.\n@see BackupType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -2594,6 +2620,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Message",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A message describing the backup creation failure.</p>\n@param message A message describing the backup creation failure.*/",
         "setterMethodName" : "setMessage",
         "setterModel" : {
@@ -2661,6 +2688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Message",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A message describing the backup creation failure.</p>\n@param message A message describing the backup creation failure.*/",
           "setterMethodName" : "setMessage",
           "setterModel" : {
@@ -2892,6 +2920,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileSystemId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of a file system being restored from the backup.</p>\n@param fileSystemId The ID of a file system being restored from the backup.*/",
         "setterMethodName" : "setFileSystemId",
         "setterModel" : {
@@ -2959,6 +2988,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileSystemId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of a file system being restored from the backup.</p>\n@param fileSystemId The ID of a file system being restored from the backup.*/",
           "setterMethodName" : "setFileSystemId",
           "setterModel" : {
@@ -3151,6 +3181,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileSystemId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the file system to back up.</p>\n@param fileSystemId The ID of the file system to back up.*/",
         "setterMethodName" : "setFileSystemId",
         "setterModel" : {
@@ -3216,6 +3247,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -3318,6 +3350,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3361,6 +3394,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name.</p>\n@param tags The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -3428,6 +3462,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -3494,6 +3529,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileSystemId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the file system to back up.</p>\n@param fileSystemId The ID of the file system to back up.*/",
           "setterMethodName" : "setFileSystemId",
           "setterModel" : {
@@ -3597,6 +3633,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3640,6 +3677,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name.</p>\n@param tags The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -3742,6 +3780,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Backup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the backup.</p>\n@param backup A description of the backup.*/",
         "setterMethodName" : "setBackup",
         "setterModel" : {
@@ -3809,6 +3848,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Backup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the backup.</p>\n@param backup A description of the backup.*/",
           "setterMethodName" : "setBackup",
           "setterModel" : {
@@ -3921,6 +3961,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param backupId */",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -3986,6 +4027,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -4088,6 +4130,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4131,6 +4174,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one subnet. The file server is also launched in that subnet's Availability Zone.</p>\n@param subnetIds A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one subnet. The file server is also launched in that subnet's Availability Zone.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -4233,6 +4277,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4276,6 +4321,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later describe requests.</p>\n@param securityGroupIds A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later describe requests.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -4378,6 +4424,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4421,6 +4468,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>\n@param tags The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -4486,6 +4534,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "WindowsConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for this Microsoft Windows file system.</p>\n@param windowsConfiguration The configuration for this Microsoft Windows file system.*/",
         "setterMethodName" : "setWindowsConfiguration",
         "setterModel" : {
@@ -4553,6 +4602,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param backupId */",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -4619,6 +4669,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -4722,6 +4773,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4765,6 +4817,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later describe requests.</p>\n@param securityGroupIds A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later describe requests.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -4868,6 +4921,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4911,6 +4965,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one subnet. The file server is also launched in that subnet's Availability Zone.</p>\n@param subnetIds A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one subnet. The file server is also launched in that subnet's Availability Zone.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -5014,6 +5069,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5057,6 +5113,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>\n@param tags The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -5123,6 +5180,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "WindowsConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for this Microsoft Windows file system.</p>\n@param windowsConfiguration The configuration for this Microsoft Windows file system.*/",
           "setterMethodName" : "setWindowsConfiguration",
           "setterModel" : {
@@ -5225,6 +5283,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "FileSystem",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the file system.</p>\n@param fileSystem A description of the file system.*/",
         "setterMethodName" : "setFileSystem",
         "setterModel" : {
@@ -5292,6 +5351,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "FileSystem",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the file system.</p>\n@param fileSystem A description of the file system.*/",
           "setterMethodName" : "setFileSystem",
           "setterModel" : {
@@ -5397,6 +5457,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WeeklyMaintenanceStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred time to perform weekly maintenance, in the UTC time zone.*/",
         "setterMethodName" : "setWeeklyMaintenanceStartTime",
         "setterModel" : {
@@ -5462,6 +5523,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ImportPath",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p>\n@param importPath (Optional) The path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.*/",
         "setterMethodName" : "setImportPath",
         "setterModel" : {
@@ -5527,6 +5589,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ImportedFileChunkSize",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p> <p>The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>\n@param importedFileChunkSize (Optional) For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p> <p>The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.*/",
         "setterMethodName" : "setImportedFileChunkSize",
         "setterModel" : {
@@ -5594,6 +5657,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ImportPath",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p>\n@param importPath (Optional) The path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.*/",
           "setterMethodName" : "setImportPath",
           "setterModel" : {
@@ -5660,6 +5724,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ImportedFileChunkSize",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p> <p>The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>\n@param importedFileChunkSize (Optional) For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p> <p>The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.*/",
           "setterMethodName" : "setImportedFileChunkSize",
           "setterModel" : {
@@ -5726,6 +5791,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WeeklyMaintenanceStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred time to perform weekly maintenance, in the UTC time zone.*/",
           "setterMethodName" : "setWeeklyMaintenanceStartTime",
           "setterModel" : {
@@ -5838,6 +5904,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -5903,6 +5970,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileSystemType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of file system.</p>\n@param fileSystemType The type of file system.\n@see FileSystemType*/",
         "setterMethodName" : "setFileSystemType",
         "setterModel" : {
@@ -5968,6 +6036,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StorageCapacity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The storage capacity of the file system.</p> <p>For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>\n@param storageCapacity The storage capacity of the file system.</p> <p>For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.*/",
         "setterMethodName" : "setStorageCapacity",
         "setterModel" : {
@@ -6070,6 +6139,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6113,6 +6183,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet. The file server is also launched in that subnet's Availability Zone.</p>\n@param subnetIds A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet. The file server is also launched in that subnet's Availability Zone.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -6215,6 +6286,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6258,6 +6330,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces. This list isn't returned in later describe requests.</p>\n@param securityGroupIds A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces. This list isn't returned in later describe requests.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -6360,6 +6433,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6403,6 +6477,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>\n@param tags The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -6468,6 +6543,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KmsKeyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param kmsKeyId */",
         "setterMethodName" : "setKmsKeyId",
         "setterModel" : {
@@ -6533,6 +6609,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "WindowsConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for this Microsoft Windows file system.</p>\n@param windowsConfiguration The configuration for this Microsoft Windows file system.*/",
         "setterMethodName" : "setWindowsConfiguration",
         "setterModel" : {
@@ -6598,6 +6675,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LustreConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param lustreConfiguration */",
         "setterMethodName" : "setLustreConfiguration",
         "setterModel" : {
@@ -6665,6 +6743,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -6731,6 +6810,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileSystemType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of file system.</p>\n@param fileSystemType The type of file system.\n@see FileSystemType*/",
           "setterMethodName" : "setFileSystemType",
           "setterModel" : {
@@ -6797,6 +6877,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KmsKeyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param kmsKeyId */",
           "setterMethodName" : "setKmsKeyId",
           "setterModel" : {
@@ -6863,6 +6944,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LustreConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param lustreConfiguration */",
           "setterMethodName" : "setLustreConfiguration",
           "setterModel" : {
@@ -6966,6 +7048,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7009,6 +7092,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces. This list isn't returned in later describe requests.</p>\n@param securityGroupIds A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces. This list isn't returned in later describe requests.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -7075,6 +7159,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StorageCapacity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The storage capacity of the file system.</p> <p>For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>\n@param storageCapacity The storage capacity of the file system.</p> <p>For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.*/",
           "setterMethodName" : "setStorageCapacity",
           "setterModel" : {
@@ -7178,6 +7263,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7221,6 +7307,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet. The file server is also launched in that subnet's Availability Zone.</p>\n@param subnetIds A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet. The file server is also launched in that subnet's Availability Zone.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -7324,6 +7411,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7367,6 +7455,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>\n@param tags The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -7433,6 +7522,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "WindowsConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for this Microsoft Windows file system.</p>\n@param windowsConfiguration The configuration for this Microsoft Windows file system.*/",
           "setterMethodName" : "setWindowsConfiguration",
           "setterModel" : {
@@ -7535,6 +7625,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "FileSystem",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the file system.</p>\n@param fileSystem A description of the file system.*/",
         "setterMethodName" : "setFileSystem",
         "setterModel" : {
@@ -7602,6 +7693,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "FileSystem",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the file system.</p>\n@param fileSystem A description of the file system.*/",
           "setterMethodName" : "setFileSystem",
           "setterModel" : {
@@ -7707,6 +7799,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActiveDirectoryId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.</p>\n@param activeDirectoryId The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.*/",
         "setterMethodName" : "setActiveDirectoryId",
         "setterModel" : {
@@ -7772,6 +7865,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ThroughputCapacity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The throughput of an Amazon FSx file system, measured in megabytes per second.</p>\n@param throughputCapacity The throughput of an Amazon FSx file system, measured in megabytes per second.*/",
         "setterMethodName" : "setThroughputCapacity",
         "setterModel" : {
@@ -7837,6 +7931,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WeeklyMaintenanceStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred start time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred start time to perform weekly maintenance, in the UTC time zone.*/",
         "setterMethodName" : "setWeeklyMaintenanceStartTime",
         "setterModel" : {
@@ -7902,6 +7997,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DailyAutomaticBackupStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred time to take daily automatic backups, in the UTC time zone.</p>\n@param dailyAutomaticBackupStartTime The preferred time to take daily automatic backups, in the UTC time zone.*/",
         "setterMethodName" : "setDailyAutomaticBackupStartTime",
         "setterModel" : {
@@ -7967,6 +8063,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "AutomaticBackupRetentionDays",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.</p>\n@param automaticBackupRetentionDays The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.*/",
         "setterMethodName" : "setAutomaticBackupRetentionDays",
         "setterModel" : {
@@ -8032,6 +8129,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "CopyTagsToBackups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.</p>\n@param copyTagsToBackups A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.*/",
         "setterMethodName" : "setCopyTagsToBackups",
         "setterModel" : {
@@ -8099,6 +8197,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActiveDirectoryId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.</p>\n@param activeDirectoryId The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.*/",
           "setterMethodName" : "setActiveDirectoryId",
           "setterModel" : {
@@ -8165,6 +8264,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "AutomaticBackupRetentionDays",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.</p>\n@param automaticBackupRetentionDays The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.*/",
           "setterMethodName" : "setAutomaticBackupRetentionDays",
           "setterModel" : {
@@ -8231,6 +8331,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "CopyTagsToBackups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.</p>\n@param copyTagsToBackups A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.*/",
           "setterMethodName" : "setCopyTagsToBackups",
           "setterModel" : {
@@ -8297,6 +8398,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DailyAutomaticBackupStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred time to take daily automatic backups, in the UTC time zone.</p>\n@param dailyAutomaticBackupStartTime The preferred time to take daily automatic backups, in the UTC time zone.*/",
           "setterMethodName" : "setDailyAutomaticBackupStartTime",
           "setterModel" : {
@@ -8363,6 +8465,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ThroughputCapacity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The throughput of an Amazon FSx file system, measured in megabytes per second.</p>\n@param throughputCapacity The throughput of an Amazon FSx file system, measured in megabytes per second.*/",
           "setterMethodName" : "setThroughputCapacity",
           "setterModel" : {
@@ -8429,6 +8532,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WeeklyMaintenanceStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred start time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred start time to perform weekly maintenance, in the UTC time zone.*/",
           "setterMethodName" : "setWeeklyMaintenanceStartTime",
           "setterModel" : {
@@ -8534,6 +8638,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ImportPath",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p>\n@param importPath The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.*/",
         "setterMethodName" : "setImportPath",
         "setterModel" : {
@@ -8599,6 +8704,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportPath",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the archive operation from the file system to Amazon S3. The value is <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different prefix in the Amazon S3 bucket, preventing input data from being overwritten.</p>\n@param exportPath The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the archive operation from the file system to Amazon S3. The value is <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different prefix in the Amazon S3 bucket, preventing input data from being overwritten.*/",
         "setterMethodName" : "setExportPath",
         "setterModel" : {
@@ -8664,6 +8770,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ImportedFileChunkSize",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p> <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>\n@param importedFileChunkSize For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p> <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.*/",
         "setterMethodName" : "setImportedFileChunkSize",
         "setterModel" : {
@@ -8731,6 +8838,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportPath",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the archive operation from the file system to Amazon S3. The value is <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different prefix in the Amazon S3 bucket, preventing input data from being overwritten.</p>\n@param exportPath The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the archive operation from the file system to Amazon S3. The value is <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different prefix in the Amazon S3 bucket, preventing input data from being overwritten.*/",
           "setterMethodName" : "setExportPath",
           "setterModel" : {
@@ -8797,6 +8905,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ImportPath",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p>\n@param importPath The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.*/",
           "setterMethodName" : "setImportPath",
           "setterModel" : {
@@ -8863,6 +8972,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ImportedFileChunkSize",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p> <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>\n@param importedFileChunkSize For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p> <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.*/",
           "setterMethodName" : "setImportedFileChunkSize",
           "setterModel" : {
@@ -8975,6 +9085,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the backup you want to delete.</p>\n@param backupId The ID of the backup you want to delete.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -9040,6 +9151,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -9107,6 +9219,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the backup you want to delete.</p>\n@param backupId The ID of the backup you want to delete.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -9173,6 +9286,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -9275,6 +9389,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the backup deleted.</p>\n@param backupId The ID of the backup deleted.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -9340,6 +9455,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Lifecycle",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The lifecycle of the backup. Should be <code>DELETED</code>.</p>\n@param lifecycle The lifecycle of the backup. Should be <code>DELETED</code>.\n@see BackupLifecycle*/",
         "setterMethodName" : "setLifecycle",
         "setterModel" : {
@@ -9407,6 +9523,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the backup deleted.</p>\n@param backupId The ID of the backup deleted.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -9473,6 +9590,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Lifecycle",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The lifecycle of the backup. Should be <code>DELETED</code>.</p>\n@param lifecycle The lifecycle of the backup. Should be <code>DELETED</code>.\n@see BackupLifecycle*/",
           "setterMethodName" : "setLifecycle",
           "setterModel" : {
@@ -9585,6 +9703,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileSystemId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the file system you want to delete.</p>\n@param fileSystemId The ID of the file system you want to delete.*/",
         "setterMethodName" : "setFileSystemId",
         "setterModel" : {
@@ -9650,6 +9769,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -9715,6 +9835,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "WindowsConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param windowsConfiguration */",
         "setterMethodName" : "setWindowsConfiguration",
         "setterModel" : {
@@ -9782,6 +9903,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -9848,6 +9970,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileSystemId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the file system you want to delete.</p>\n@param fileSystemId The ID of the file system you want to delete.*/",
           "setterMethodName" : "setFileSystemId",
           "setterModel" : {
@@ -9914,6 +10037,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "WindowsConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param windowsConfiguration */",
           "setterMethodName" : "setWindowsConfiguration",
           "setterModel" : {
@@ -10016,6 +10140,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileSystemId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the file system being deleted.</p>\n@param fileSystemId The ID of the file system being deleted.*/",
         "setterMethodName" : "setFileSystemId",
         "setterModel" : {
@@ -10081,6 +10206,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Lifecycle",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The file system lifecycle for the deletion request. Should be <code>DELETING</code>.</p>\n@param lifecycle The file system lifecycle for the deletion request. Should be <code>DELETING</code>.\n@see FileSystemLifecycle*/",
         "setterMethodName" : "setLifecycle",
         "setterModel" : {
@@ -10146,6 +10272,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "WindowsResponse",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param windowsResponse */",
         "setterMethodName" : "setWindowsResponse",
         "setterModel" : {
@@ -10213,6 +10340,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileSystemId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the file system being deleted.</p>\n@param fileSystemId The ID of the file system being deleted.*/",
           "setterMethodName" : "setFileSystemId",
           "setterModel" : {
@@ -10279,6 +10407,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Lifecycle",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The file system lifecycle for the deletion request. Should be <code>DELETING</code>.</p>\n@param lifecycle The file system lifecycle for the deletion request. Should be <code>DELETING</code>.\n@see FileSystemLifecycle*/",
           "setterMethodName" : "setLifecycle",
           "setterModel" : {
@@ -10345,6 +10474,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "WindowsResponse",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param windowsResponse */",
           "setterMethodName" : "setWindowsResponse",
           "setterModel" : {
@@ -10450,6 +10580,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SkipFinalBackup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>\n@param skipFinalBackup By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.*/",
         "setterMethodName" : "setSkipFinalBackup",
         "setterModel" : {
@@ -10552,6 +10683,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10595,6 +10727,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FinalBackupTags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of tags for your final backup.</p>\n@param finalBackupTags A set of tags for your final backup.*/",
         "setterMethodName" : "setFinalBackupTags",
         "setterModel" : {
@@ -10699,6 +10832,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10742,6 +10876,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FinalBackupTags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of tags for your final backup.</p>\n@param finalBackupTags A set of tags for your final backup.*/",
           "setterMethodName" : "setFinalBackupTags",
           "setterModel" : {
@@ -10808,6 +10943,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SkipFinalBackup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>\n@param skipFinalBackup By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.*/",
           "setterMethodName" : "setSkipFinalBackup",
           "setterModel" : {
@@ -10913,6 +11049,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FinalBackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the final backup for this file system.</p>\n@param finalBackupId The ID of the final backup for this file system.*/",
         "setterMethodName" : "setFinalBackupId",
         "setterModel" : {
@@ -11015,6 +11152,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11058,6 +11196,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FinalBackupTags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The set of tags applied to the final backup.</p>\n@param finalBackupTags The set of tags applied to the final backup.*/",
         "setterMethodName" : "setFinalBackupTags",
         "setterModel" : {
@@ -11125,6 +11264,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FinalBackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the final backup for this file system.</p>\n@param finalBackupId The ID of the final backup for this file system.*/",
           "setterMethodName" : "setFinalBackupId",
           "setterModel" : {
@@ -11228,6 +11368,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11271,6 +11412,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FinalBackupTags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The set of tags applied to the final backup.</p>\n@param finalBackupTags The set of tags applied to the final backup.*/",
           "setterMethodName" : "setFinalBackupTags",
           "setterModel" : {
@@ -11420,6 +11562,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11463,6 +11606,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "BackupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found, BackupNotFound will be thrown.</p>\n@param backupIds (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found, BackupNotFound will be thrown.*/",
         "setterMethodName" : "setBackupIds",
         "setterModel" : {
@@ -11565,6 +11709,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11608,6 +11753,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) Filters structure. Supported names are file-system-id and backup-type.</p>\n@param filters (Optional) Filters structure. Supported names are file-system-id and backup-type.*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -11673,6 +11819,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) Maximum number of backups to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>\n@param maxResults (Optional) Maximum number of backups to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11738,6 +11885,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>\n@param nextToken (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a token present, the action continues the list from where the returning call left off.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11842,6 +11990,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11885,6 +12034,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "BackupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found, BackupNotFound will be thrown.</p>\n@param backupIds (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found, BackupNotFound will be thrown.*/",
           "setterMethodName" : "setBackupIds",
           "setterModel" : {
@@ -11988,6 +12138,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12031,6 +12182,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) Filters structure. Supported names are file-system-id and backup-type.</p>\n@param filters (Optional) Filters structure. Supported names are file-system-id and backup-type.*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -12097,6 +12249,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) Maximum number of backups to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>\n@param maxResults (Optional) Maximum number of backups to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -12163,6 +12316,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>\n@param nextToken (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a token present, the action continues the list from where the returning call left off.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12302,6 +12456,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12345,6 +12500,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Backups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Any array of backups.</p>\n@param backups Any array of backups.*/",
         "setterMethodName" : "setBackups",
         "setterModel" : {
@@ -12410,6 +12566,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is present if there are more backups than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the backups. </p>\n@param nextToken This is present if there are more backups than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the backups.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12514,6 +12671,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12557,6 +12715,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Backups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Any array of backups.</p>\n@param backups Any array of backups.*/",
           "setterMethodName" : "setBackups",
           "setterModel" : {
@@ -12623,6 +12782,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is present if there are more backups than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the backups. </p>\n@param nextToken This is present if there are more backups than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the backups.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12772,6 +12932,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12815,6 +12976,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FileSystemIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) IDs of the file systems whose descriptions you want to retrieve (String).</p>\n@param fileSystemIds (Optional) IDs of the file systems whose descriptions you want to retrieve (String).*/",
         "setterMethodName" : "setFileSystemIds",
         "setterModel" : {
@@ -12880,6 +13042,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>\n@param maxResults (Optional) Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -12945,6 +13108,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>\n@param nextToken (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the action continues the list from where the returning call left off.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13049,6 +13213,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13092,6 +13257,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FileSystemIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) IDs of the file systems whose descriptions you want to retrieve (String).</p>\n@param fileSystemIds (Optional) IDs of the file systems whose descriptions you want to retrieve (String).*/",
           "setterMethodName" : "setFileSystemIds",
           "setterModel" : {
@@ -13158,6 +13324,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>\n@param maxResults (Optional) Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -13224,6 +13391,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>\n@param nextToken (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the action continues the list from where the returning call left off.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13363,6 +13531,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13406,6 +13575,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FileSystems",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of file system descriptions.</p>\n@param fileSystems An array of file system descriptions.*/",
         "setterMethodName" : "setFileSystems",
         "setterModel" : {
@@ -13471,6 +13641,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>\n@param nextToken Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13575,6 +13746,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13618,6 +13790,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FileSystems",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of file system descriptions.</p>\n@param fileSystems An array of file system descriptions.*/",
           "setterMethodName" : "setFileSystems",
           "setterModel" : {
@@ -13684,6 +13857,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>\n@param nextToken Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13789,6 +13963,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OwnerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS account that created the file system. If the file system was created by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>\n@param ownerId The AWS account that created the file system. If the file system was created by an IAM user, the AWS account to which the IAM user belongs is the owner.*/",
         "setterMethodName" : "setOwnerId",
         "setterModel" : {
@@ -13854,6 +14029,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>\n@param creationTime The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -13919,6 +14095,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileSystemId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The eight-digit ID of the file system that was automatically assigned by Amazon FSx.</p>\n@param fileSystemId The eight-digit ID of the file system that was automatically assigned by Amazon FSx.*/",
         "setterMethodName" : "setFileSystemId",
         "setterModel" : {
@@ -13984,6 +14161,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileSystemType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Type of file system. Currently the only supported type is WINDOWS.</p>\n@param fileSystemType Type of file system. Currently the only supported type is WINDOWS.\n@see FileSystemType*/",
         "setterMethodName" : "setFileSystemType",
         "setterModel" : {
@@ -14049,6 +14227,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Lifecycle",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The lifecycle status of the file system.</p>\n@param lifecycle The lifecycle status of the file system.\n@see FileSystemLifecycle*/",
         "setterMethodName" : "setLifecycle",
         "setterModel" : {
@@ -14114,6 +14293,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "FailureDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param failureDetails */",
         "setterMethodName" : "setFailureDetails",
         "setterModel" : {
@@ -14179,6 +14359,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StorageCapacity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The storage capacity of the file system in gigabytes.</p>\n@param storageCapacity The storage capacity of the file system in gigabytes.*/",
         "setterMethodName" : "setStorageCapacity",
         "setterModel" : {
@@ -14244,6 +14425,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VpcId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the primary VPC for the file system.</p>\n@param vpcId The ID of the primary VPC for the file system.*/",
         "setterMethodName" : "setVpcId",
         "setterModel" : {
@@ -14346,6 +14528,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14389,6 +14572,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file system is launched in the Availability Zone associated with this subnet.</p>\n@param subnetIds The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file system is launched in the Availability Zone associated with this subnet.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -14491,6 +14675,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14534,6 +14719,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "NetworkInterfaceIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IDs of the elastic network interface from which a specific file system is accessible. The elastic network interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html\">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx for Lustre file system, you can have more than one.</p>\n@param networkInterfaceIds The IDs of the elastic network interface from which a specific file system is accessible. The elastic network interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html\">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx for Lustre file system, you can have more than one.*/",
         "setterMethodName" : "setNetworkInterfaceIds",
         "setterModel" : {
@@ -14599,6 +14785,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DNSName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The DNS name for the file system.</p>\n@param dNSName The DNS name for the file system.*/",
         "setterMethodName" : "setDNSName",
         "setterModel" : {
@@ -14664,6 +14851,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KmsKeyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx for Windows File Server file system.</p>\n@param kmsKeyId The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx for Windows File Server file system.*/",
         "setterMethodName" : "setKmsKeyId",
         "setterModel" : {
@@ -14729,6 +14917,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource ARN of the file system.</p>\n@param resourceARN The resource ARN of the file system.*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -14831,6 +15020,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14874,6 +15064,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to associate with the file system. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>\n@param tags The tags to associate with the file system. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -14939,6 +15130,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "WindowsConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for this Microsoft Windows file system.</p>\n@param windowsConfiguration The configuration for this Microsoft Windows file system.*/",
         "setterMethodName" : "setWindowsConfiguration",
         "setterModel" : {
@@ -15004,6 +15196,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LustreConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param lustreConfiguration */",
         "setterMethodName" : "setLustreConfiguration",
         "setterModel" : {
@@ -15071,6 +15264,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>\n@param creationTime The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -15137,6 +15331,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DNSName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The DNS name for the file system.</p>\n@param dNSName The DNS name for the file system.*/",
           "setterMethodName" : "setDNSName",
           "setterModel" : {
@@ -15203,6 +15398,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "FailureDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param failureDetails */",
           "setterMethodName" : "setFailureDetails",
           "setterModel" : {
@@ -15269,6 +15465,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileSystemId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The eight-digit ID of the file system that was automatically assigned by Amazon FSx.</p>\n@param fileSystemId The eight-digit ID of the file system that was automatically assigned by Amazon FSx.*/",
           "setterMethodName" : "setFileSystemId",
           "setterModel" : {
@@ -15335,6 +15532,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileSystemType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Type of file system. Currently the only supported type is WINDOWS.</p>\n@param fileSystemType Type of file system. Currently the only supported type is WINDOWS.\n@see FileSystemType*/",
           "setterMethodName" : "setFileSystemType",
           "setterModel" : {
@@ -15401,6 +15599,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KmsKeyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx for Windows File Server file system.</p>\n@param kmsKeyId The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx for Windows File Server file system.*/",
           "setterMethodName" : "setKmsKeyId",
           "setterModel" : {
@@ -15467,6 +15666,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Lifecycle",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The lifecycle status of the file system.</p>\n@param lifecycle The lifecycle status of the file system.\n@see FileSystemLifecycle*/",
           "setterMethodName" : "setLifecycle",
           "setterModel" : {
@@ -15533,6 +15733,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LustreConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param lustreConfiguration */",
           "setterMethodName" : "setLustreConfiguration",
           "setterModel" : {
@@ -15636,6 +15837,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15679,6 +15881,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "NetworkInterfaceIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IDs of the elastic network interface from which a specific file system is accessible. The elastic network interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html\">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx for Lustre file system, you can have more than one.</p>\n@param networkInterfaceIds The IDs of the elastic network interface from which a specific file system is accessible. The elastic network interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html\">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an Amazon FSx for Lustre file system, you can have more than one.*/",
           "setterMethodName" : "setNetworkInterfaceIds",
           "setterModel" : {
@@ -15745,6 +15948,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OwnerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS account that created the file system. If the file system was created by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>\n@param ownerId The AWS account that created the file system. If the file system was created by an IAM user, the AWS account to which the IAM user belongs is the owner.*/",
           "setterMethodName" : "setOwnerId",
           "setterModel" : {
@@ -15811,6 +16015,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource ARN of the file system.</p>\n@param resourceARN The resource ARN of the file system.*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -15877,6 +16082,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StorageCapacity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The storage capacity of the file system in gigabytes.</p>\n@param storageCapacity The storage capacity of the file system in gigabytes.*/",
           "setterMethodName" : "setStorageCapacity",
           "setterModel" : {
@@ -15980,6 +16186,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16023,6 +16230,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file system is launched in the Availability Zone associated with this subnet.</p>\n@param subnetIds The IDs of the subnets to contain the endpoint for the file system. One and only one is supported. The file system is launched in the Availability Zone associated with this subnet.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -16126,6 +16334,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16169,6 +16378,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to associate with the file system. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>\n@param tags The tags to associate with the file system. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -16235,6 +16445,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VpcId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the primary VPC for the file system.</p>\n@param vpcId The ID of the primary VPC for the file system.*/",
           "setterMethodName" : "setVpcId",
           "setterModel" : {
@@ -16301,6 +16512,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "WindowsConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for this Microsoft Windows file system.</p>\n@param windowsConfiguration The configuration for this Microsoft Windows file system.*/",
           "setterMethodName" : "setWindowsConfiguration",
           "setterModel" : {
@@ -16406,6 +16618,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Message",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Message describing the failures that occurred during file system creation.</p>\n@param message Message describing the failures that occurred during file system creation.*/",
         "setterMethodName" : "setMessage",
         "setterModel" : {
@@ -16473,6 +16686,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Message",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Message describing the failures that occurred during file system creation.</p>\n@param message Message describing the failures that occurred during file system creation.*/",
           "setterMethodName" : "setMessage",
           "setterModel" : {
@@ -16759,6 +16973,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name for this filter.</p>\n@param name The name for this filter.\n@see FilterName*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -16861,6 +17076,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16904,6 +17120,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The values of the filter. These are all the values for any of the applied filters.</p>\n@param values The values of the filter. These are all the values for any of the applied filters.*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -16971,6 +17188,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name for this filter.</p>\n@param name The name for this filter.\n@see FilterName*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -17074,6 +17292,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -17117,6 +17336,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The values of the filter. These are all the values for any of the applied filters.</p>\n@param values The values of the filter. These are all the values for any of the applied filters.*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -17268,6 +17488,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Parameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A parameter that is incompatible with the earlier request.</p>\n@param parameter A parameter that is incompatible with the earlier request.*/",
         "setterMethodName" : "setParameter",
         "setterModel" : {
@@ -17335,6 +17556,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Parameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A parameter that is incompatible with the earlier request.</p>\n@param parameter A parameter that is incompatible with the earlier request.*/",
           "setterMethodName" : "setParameter",
           "setterModel" : {
@@ -17511,6 +17733,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidSubnetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param invalidSubnetId */",
         "setterMethodName" : "setInvalidSubnetId",
         "setterModel" : {
@@ -17576,6 +17799,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidSecurityGroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param invalidSecurityGroupId */",
         "setterMethodName" : "setInvalidSecurityGroupId",
         "setterModel" : {
@@ -17643,6 +17867,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidSecurityGroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param invalidSecurityGroupId */",
           "setterMethodName" : "setInvalidSecurityGroupId",
           "setterModel" : {
@@ -17709,6 +17934,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidSubnetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param invalidSubnetId */",
           "setterMethodName" : "setInvalidSubnetId",
           "setterModel" : {
@@ -17818,6 +18044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the Amazon FSx resource that will have its tags listed.</p>\n@param resourceARN The ARN of the Amazon FSx resource that will have its tags listed.*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -17883,6 +18110,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>\n@param maxResults (Optional) Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -17948,6 +18176,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>\n@param nextToken (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token present, the action continues the list from where the returning call left off.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -18015,6 +18244,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>\n@param maxResults (Optional) Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -18081,6 +18311,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>\n@param nextToken (Optional) Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token present, the action continues the list from where the returning call left off.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18147,6 +18378,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the Amazon FSx resource that will have its tags listed.</p>\n@param resourceARN The ARN of the Amazon FSx resource that will have its tags listed.*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -18286,6 +18518,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18329,6 +18562,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of tags on the resource.</p>\n@param tags A list of tags on the resource.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -18394,6 +18628,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags. </p>\n@param nextToken This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -18461,6 +18696,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags. </p>\n@param nextToken This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18564,6 +18800,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18607,6 +18844,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of tags on the resource.</p>\n@param tags A list of tags on the resource.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -18712,6 +18950,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WeeklyMaintenanceStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The UTC time that you want to begin your weekly maintenance window.</p>\n@param weeklyMaintenanceStartTime The UTC time that you want to begin your weekly maintenance window.*/",
         "setterMethodName" : "setWeeklyMaintenanceStartTime",
         "setterModel" : {
@@ -18777,6 +19016,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DataRepositoryConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param dataRepositoryConfiguration */",
         "setterMethodName" : "setDataRepositoryConfiguration",
         "setterModel" : {
@@ -18844,6 +19084,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DataRepositoryConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param dataRepositoryConfiguration */",
           "setterMethodName" : "setDataRepositoryConfiguration",
           "setterModel" : {
@@ -18910,6 +19151,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WeeklyMaintenanceStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The UTC time that you want to begin your weekly maintenance window.</p>\n@param weeklyMaintenanceStartTime The UTC time that you want to begin your weekly maintenance window.*/",
           "setterMethodName" : "setWeeklyMaintenanceStartTime",
           "setterModel" : {
@@ -19052,6 +19294,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the non-Amazon FSx resource.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the non-Amazon FSx resource.*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -19119,6 +19362,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the non-Amazon FSx resource.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the non-Amazon FSx resource.*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -19221,6 +19465,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the resource that doesn't support tagging.*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -19288,6 +19533,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the resource that doesn't support tagging.*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -19390,6 +19636,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource ARN of the resource that can't be found.</p>\n@param resourceARN The resource ARN of the resource that can't be found.*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -19457,6 +19704,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource ARN of the resource that can't be found.</p>\n@param resourceARN The resource ARN of the resource that can't be found.*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -19611,6 +19859,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Enumeration of the service limit that was exceeded. </p>\n@param limit Enumeration of the service limit that was exceeded.\n@see ServiceLimit*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -19678,6 +19927,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Enumeration of the service limit that was exceeded. </p>\n@param limit Enumeration of the service limit that was exceeded.\n@see ServiceLimit*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -19780,6 +20030,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A value that specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the resource to which they are attached.</p>\n@param key A value that specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the resource to which they are attached.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -19845,6 +20096,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A value that specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key-value pair in a tag set of <code>finances : April</code> and also of <code>payroll : April</code>.</p>\n@param value A value that specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key-value pair in a tag set of <code>finances : April</code> and also of <code>payroll : April</code>.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -19912,6 +20164,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A value that specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the resource to which they are attached.</p>\n@param key A value that specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the resource to which they are attached.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -19978,6 +20231,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A value that specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key-value pair in a tag set of <code>finances : April</code> and also of <code>payroll : April</code>.</p>\n@param value A value that specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key-value pair in a tag set of <code>finances : April</code> and also of <code>payroll : April</code>.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -20090,6 +20344,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -20192,6 +20447,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20235,6 +20491,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of tags for the resource. If a tag with a given key already exists, the value is replaced by the one specified in this parameter.</p>\n@param tags A list of tags for the resource. If a tag with a given key already exists, the value is replaced by the one specified in this parameter.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -20302,6 +20559,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -20405,6 +20663,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20448,6 +20707,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of tags for the resource. If a tag with a given key already exists, the value is replaced by the one specified in this parameter.</p>\n@param tags A list of tags for the resource. If a tag with a given key already exists, the value is replaced by the one specified in this parameter.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -20597,6 +20857,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the Amazon FSx resource to untag.</p>\n@param resourceARN The ARN of the Amazon FSx resource to untag.*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
@@ -20699,6 +20960,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20742,6 +21004,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagKeys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist, the call will still succeed to be idempotent.</p>\n@param tagKeys A list of keys of tags on the resource to untag. In case the tag key doesn't exist, the call will still succeed to be idempotent.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
@@ -20809,6 +21072,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the Amazon FSx resource to untag.</p>\n@param resourceARN The ARN of the Amazon FSx resource to untag.*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
@@ -20912,6 +21176,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20955,6 +21220,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagKeys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist, the call will still succeed to be idempotent.</p>\n@param tagKeys A list of keys of tags on the resource to untag. In case the tag key doesn't exist, the call will still succeed to be idempotent.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
@@ -21097,6 +21363,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WeeklyMaintenanceStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred time to perform weekly maintenance, in the UTC time zone.*/",
         "setterMethodName" : "setWeeklyMaintenanceStartTime",
         "setterModel" : {
@@ -21164,6 +21431,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WeeklyMaintenanceStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred time to perform weekly maintenance, in the UTC time zone.*/",
           "setterMethodName" : "setWeeklyMaintenanceStartTime",
           "setterModel" : {
@@ -21276,6 +21544,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileSystemId",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param fileSystemId */",
         "setterMethodName" : "setFileSystemId",
         "setterModel" : {
@@ -21341,6 +21610,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -21406,6 +21676,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "WindowsConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for this Microsoft Windows file system. The only supported options are for backup and maintenance.</p>\n@param windowsConfiguration The configuration for this Microsoft Windows file system. The only supported options are for backup and maintenance.*/",
         "setterMethodName" : "setWindowsConfiguration",
         "setterModel" : {
@@ -21471,6 +21742,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "LustreConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param lustreConfiguration */",
         "setterMethodName" : "setLustreConfiguration",
         "setterModel" : {
@@ -21538,6 +21810,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>\n@param clientRequestToken (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -21604,6 +21877,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileSystemId",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param fileSystemId */",
           "setterMethodName" : "setFileSystemId",
           "setterModel" : {
@@ -21670,6 +21944,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "LustreConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param lustreConfiguration */",
           "setterMethodName" : "setLustreConfiguration",
           "setterModel" : {
@@ -21736,6 +22011,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "WindowsConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for this Microsoft Windows file system. The only supported options are for backup and maintenance.</p>\n@param windowsConfiguration The configuration for this Microsoft Windows file system. The only supported options are for backup and maintenance.*/",
           "setterMethodName" : "setWindowsConfiguration",
           "setterModel" : {
@@ -21838,6 +22114,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "FileSystem",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the file system.</p>\n@param fileSystem A description of the file system.*/",
         "setterMethodName" : "setFileSystem",
         "setterModel" : {
@@ -21905,6 +22182,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "FileSystem",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the file system.</p>\n@param fileSystem A description of the file system.*/",
           "setterMethodName" : "setFileSystem",
           "setterModel" : {
@@ -22010,6 +22288,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WeeklyMaintenanceStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred time to perform weekly maintenance, in the UTC time zone.*/",
         "setterMethodName" : "setWeeklyMaintenanceStartTime",
         "setterModel" : {
@@ -22075,6 +22354,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DailyAutomaticBackupStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred time to take daily automatic backups, in the UTC time zone.</p>\n@param dailyAutomaticBackupStartTime The preferred time to take daily automatic backups, in the UTC time zone.*/",
         "setterMethodName" : "setDailyAutomaticBackupStartTime",
         "setterModel" : {
@@ -22140,6 +22420,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "AutomaticBackupRetentionDays",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.</p>\n@param automaticBackupRetentionDays The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.*/",
         "setterMethodName" : "setAutomaticBackupRetentionDays",
         "setterModel" : {
@@ -22207,6 +22488,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "AutomaticBackupRetentionDays",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.</p>\n@param automaticBackupRetentionDays The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.*/",
           "setterMethodName" : "setAutomaticBackupRetentionDays",
           "setterModel" : {
@@ -22273,6 +22555,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DailyAutomaticBackupStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred time to take daily automatic backups, in the UTC time zone.</p>\n@param dailyAutomaticBackupStartTime The preferred time to take daily automatic backups, in the UTC time zone.*/",
           "setterMethodName" : "setDailyAutomaticBackupStartTime",
           "setterModel" : {
@@ -22339,6 +22622,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WeeklyMaintenanceStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred time to perform weekly maintenance, in the UTC time zone.*/",
           "setterMethodName" : "setWeeklyMaintenanceStartTime",
           "setterModel" : {
@@ -22444,6 +22728,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActiveDirectoryId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.</p>\n@param activeDirectoryId The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.*/",
         "setterMethodName" : "setActiveDirectoryId",
         "setterModel" : {
@@ -22509,6 +22794,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ThroughputCapacity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The throughput of an Amazon FSx file system, measured in megabytes per second.</p>\n@param throughputCapacity The throughput of an Amazon FSx file system, measured in megabytes per second.*/",
         "setterMethodName" : "setThroughputCapacity",
         "setterModel" : {
@@ -22611,6 +22897,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see FileSystemMaintenanceOperation*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -22654,6 +22941,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "MaintenanceOperationsInProgress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of maintenance operations in progress for this file system.</p>\n@param maintenanceOperationsInProgress The list of maintenance operations in progress for this file system.\n@see FileSystemMaintenanceOperation*/",
         "setterMethodName" : "setMaintenanceOperationsInProgress",
         "setterModel" : {
@@ -22719,6 +23007,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WeeklyMaintenanceStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred time to perform weekly maintenance, in the UTC time zone.*/",
         "setterMethodName" : "setWeeklyMaintenanceStartTime",
         "setterModel" : {
@@ -22784,6 +23073,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DailyAutomaticBackupStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The preferred time to take daily automatic backups, in the UTC time zone.</p>\n@param dailyAutomaticBackupStartTime The preferred time to take daily automatic backups, in the UTC time zone.*/",
         "setterMethodName" : "setDailyAutomaticBackupStartTime",
         "setterModel" : {
@@ -22849,6 +23139,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "AutomaticBackupRetentionDays",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.</p>\n@param automaticBackupRetentionDays The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.*/",
         "setterMethodName" : "setAutomaticBackupRetentionDays",
         "setterModel" : {
@@ -22914,6 +23205,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "CopyTagsToBackups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.</p>\n@param copyTagsToBackups A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.*/",
         "setterMethodName" : "setCopyTagsToBackups",
         "setterModel" : {
@@ -22981,6 +23273,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActiveDirectoryId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.</p>\n@param activeDirectoryId The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.*/",
           "setterMethodName" : "setActiveDirectoryId",
           "setterModel" : {
@@ -23047,6 +23340,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "AutomaticBackupRetentionDays",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.</p>\n@param automaticBackupRetentionDays The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.*/",
           "setterMethodName" : "setAutomaticBackupRetentionDays",
           "setterModel" : {
@@ -23113,6 +23407,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "CopyTagsToBackups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.</p>\n@param copyTagsToBackups A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.*/",
           "setterMethodName" : "setCopyTagsToBackups",
           "setterModel" : {
@@ -23179,6 +23474,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DailyAutomaticBackupStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred time to take daily automatic backups, in the UTC time zone.</p>\n@param dailyAutomaticBackupStartTime The preferred time to take daily automatic backups, in the UTC time zone.*/",
           "setterMethodName" : "setDailyAutomaticBackupStartTime",
           "setterModel" : {
@@ -23282,6 +23578,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see FileSystemMaintenanceOperation*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -23325,6 +23622,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "MaintenanceOperationsInProgress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of maintenance operations in progress for this file system.</p>\n@param maintenanceOperationsInProgress The list of maintenance operations in progress for this file system.\n@see FileSystemMaintenanceOperation*/",
           "setterMethodName" : "setMaintenanceOperationsInProgress",
           "setterModel" : {
@@ -23391,6 +23689,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ThroughputCapacity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The throughput of an Amazon FSx file system, measured in megabytes per second.</p>\n@param throughputCapacity The throughput of an Amazon FSx file system, measured in megabytes per second.*/",
           "setterMethodName" : "setThroughputCapacity",
           "setterModel" : {
@@ -23457,6 +23756,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WeeklyMaintenanceStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>\n@param weeklyMaintenanceStartTime The preferred time to perform weekly maintenance, in the UTC time zone.*/",
           "setterMethodName" : "setWeeklyMaintenanceStartTime",
           "setterModel" : {

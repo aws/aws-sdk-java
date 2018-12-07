@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -923,6 +923,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AcceleratorArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator.*/",
         "setterMethodName" : "setAcceleratorArn",
         "setterModel" : {
@@ -988,6 +989,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>\n@param name The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -1053,6 +1055,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IpAddressType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value for the address type must be IPv4. </p>\n@param ipAddressType The value for the address type must be IPv4.\n@see IpAddressType*/",
         "setterMethodName" : "setIpAddressType",
         "setterModel" : {
@@ -1118,6 +1121,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether theaccelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>\n@param enabled Indicates whether theaccelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -1220,6 +1224,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1263,6 +1268,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "IpSets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>IP address set associated with the accelerator.</p>\n@param ipSets IP address set associated with the accelerator.*/",
         "setterMethodName" : "setIpSets",
         "setterModel" : {
@@ -1328,6 +1334,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Describes the deployment status of the accelerator.</p>\n@param status Describes the deployment status of the accelerator.\n@see AcceleratorStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -1393,6 +1400,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the accelerator was created.</p>\n@param createdTime The date and time that the accelerator was created.*/",
         "setterMethodName" : "setCreatedTime",
         "setterModel" : {
@@ -1458,6 +1466,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the accelerator was last modified.</p>\n@param lastModifiedTime The date and time that the accelerator was last modified.*/",
         "setterMethodName" : "setLastModifiedTime",
         "setterModel" : {
@@ -1525,6 +1534,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AcceleratorArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator.*/",
           "setterMethodName" : "setAcceleratorArn",
           "setterModel" : {
@@ -1591,6 +1601,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the accelerator was created.</p>\n@param createdTime The date and time that the accelerator was created.*/",
           "setterMethodName" : "setCreatedTime",
           "setterModel" : {
@@ -1657,6 +1668,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether theaccelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>\n@param enabled Indicates whether theaccelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
@@ -1723,6 +1735,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IpAddressType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value for the address type must be IPv4. </p>\n@param ipAddressType The value for the address type must be IPv4.\n@see IpAddressType*/",
           "setterMethodName" : "setIpAddressType",
           "setterModel" : {
@@ -1826,6 +1839,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1869,6 +1883,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "IpSets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>IP address set associated with the accelerator.</p>\n@param ipSets IP address set associated with the accelerator.*/",
           "setterMethodName" : "setIpSets",
           "setterModel" : {
@@ -1935,6 +1950,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the accelerator was last modified.</p>\n@param lastModifiedTime The date and time that the accelerator was last modified.*/",
           "setterMethodName" : "setLastModifiedTime",
           "setterModel" : {
@@ -2001,6 +2017,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>\n@param name The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -2067,6 +2084,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Describes the deployment status of the accelerator.</p>\n@param status Describes the deployment status of the accelerator.\n@see AcceleratorStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -2172,6 +2190,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FlowLogsEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.</p>\n@param flowLogsEnabled Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.*/",
         "setterMethodName" : "setFlowLogsEnabled",
         "setterModel" : {
@@ -2237,6 +2256,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowLogsS3Bucket",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>\n@param flowLogsS3Bucket The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.*/",
         "setterMethodName" : "setFlowLogsS3Bucket",
         "setterModel" : {
@@ -2302,6 +2322,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowLogsS3Prefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the flow logs are stored in the root of the bucket.</p>\n@param flowLogsS3Prefix The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the flow logs are stored in the root of the bucket.*/",
         "setterMethodName" : "setFlowLogsS3Prefix",
         "setterModel" : {
@@ -2369,6 +2390,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FlowLogsEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.</p>\n@param flowLogsEnabled Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.*/",
           "setterMethodName" : "setFlowLogsEnabled",
           "setterModel" : {
@@ -2435,6 +2457,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowLogsS3Bucket",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>\n@param flowLogsS3Bucket The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.*/",
           "setterMethodName" : "setFlowLogsS3Bucket",
           "setterModel" : {
@@ -2501,6 +2524,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowLogsS3Prefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the flow logs are stored in the root of the bucket.</p>\n@param flowLogsS3Prefix The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the flow logs are stored in the root of the bucket.*/",
           "setterMethodName" : "setFlowLogsS3Prefix",
           "setterModel" : {
@@ -2853,6 +2877,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>\n@param name The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2918,6 +2943,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IpAddressType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value for the address type must be IPv4. </p>\n@param ipAddressType The value for the address type must be IPv4.\n@see IpAddressType*/",
         "setterMethodName" : "setIpAddressType",
         "setterModel" : {
@@ -2983,6 +3009,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>\n@param enabled Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -3048,6 +3075,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdempotencyToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>\n@param idempotencyToken A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.*/",
         "setterMethodName" : "setIdempotencyToken",
         "setterModel" : {
@@ -3115,6 +3143,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>\n@param enabled Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
@@ -3181,6 +3210,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdempotencyToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>\n@param idempotencyToken A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.*/",
           "setterMethodName" : "setIdempotencyToken",
           "setterModel" : {
@@ -3247,6 +3277,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IpAddressType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value for the address type must be IPv4. </p>\n@param ipAddressType The value for the address type must be IPv4.\n@see IpAddressType*/",
           "setterMethodName" : "setIpAddressType",
           "setterModel" : {
@@ -3313,6 +3344,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>\n@param name The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3415,6 +3447,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Accelerator",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The accelerator that is created by specifying a listener and the supported IP address types.</p>\n@param accelerator The accelerator that is created by specifying a listener and the supported IP address types.*/",
         "setterMethodName" : "setAccelerator",
         "setterModel" : {
@@ -3482,6 +3515,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Accelerator",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The accelerator that is created by specifying a listener and the supported IP address types.</p>\n@param accelerator The accelerator that is created by specifying a listener and the supported IP address types.*/",
           "setterMethodName" : "setAccelerator",
           "setterModel" : {
@@ -3594,6 +3628,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ListenerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener.*/",
         "setterMethodName" : "setListenerArn",
         "setterModel" : {
@@ -3659,6 +3694,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointGroupRegion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>\n@param endpointGroupRegion The name of the AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.*/",
         "setterMethodName" : "setEndpointGroupRegion",
         "setterModel" : {
@@ -3761,6 +3797,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3804,6 +3841,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EndpointConfigurations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of endpoint objects.</p>\n@param endpointConfigurations The list of endpoint objects.*/",
         "setterMethodName" : "setEndpointConfigurations",
         "setterModel" : {
@@ -3869,6 +3907,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "TrafficDialPercentage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.</p>\n@param trafficDialPercentage The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.*/",
         "setterMethodName" : "setTrafficDialPercentage",
         "setterModel" : {
@@ -3934,6 +3973,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthCheckPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>\n@param healthCheckPort The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.*/",
         "setterMethodName" : "setHealthCheckPort",
         "setterModel" : {
@@ -3999,6 +4039,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HealthCheckProtocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>\n@param healthCheckProtocol The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.\n@see HealthCheckProtocol*/",
         "setterMethodName" : "setHealthCheckProtocol",
         "setterModel" : {
@@ -4064,6 +4105,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HealthCheckPath",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>\n@param healthCheckPath If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).*/",
         "setterMethodName" : "setHealthCheckPath",
         "setterModel" : {
@@ -4129,6 +4171,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthCheckIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in seconds, between each health check for an endpoint. The default value is 30.</p>\n@param healthCheckIntervalSeconds The time, in seconds, between each health check for an endpoint. The default value is 30.*/",
         "setterMethodName" : "setHealthCheckIntervalSeconds",
         "setterModel" : {
@@ -4194,6 +4237,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ThresholdCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>\n@param thresholdCount The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.*/",
         "setterMethodName" : "setThresholdCount",
         "setterModel" : {
@@ -4259,6 +4303,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdempotencyToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>\n@param idempotencyToken A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.*/",
         "setterMethodName" : "setIdempotencyToken",
         "setterModel" : {
@@ -4363,6 +4408,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4406,6 +4452,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EndpointConfigurations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of endpoint objects.</p>\n@param endpointConfigurations The list of endpoint objects.*/",
           "setterMethodName" : "setEndpointConfigurations",
           "setterModel" : {
@@ -4472,6 +4519,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointGroupRegion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>\n@param endpointGroupRegion The name of the AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.*/",
           "setterMethodName" : "setEndpointGroupRegion",
           "setterModel" : {
@@ -4538,6 +4586,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthCheckIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in seconds, between each health check for an endpoint. The default value is 30.</p>\n@param healthCheckIntervalSeconds The time, in seconds, between each health check for an endpoint. The default value is 30.*/",
           "setterMethodName" : "setHealthCheckIntervalSeconds",
           "setterModel" : {
@@ -4604,6 +4653,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HealthCheckPath",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>\n@param healthCheckPath If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).*/",
           "setterMethodName" : "setHealthCheckPath",
           "setterModel" : {
@@ -4670,6 +4720,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthCheckPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>\n@param healthCheckPort The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.*/",
           "setterMethodName" : "setHealthCheckPort",
           "setterModel" : {
@@ -4736,6 +4787,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HealthCheckProtocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>\n@param healthCheckProtocol The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.\n@see HealthCheckProtocol*/",
           "setterMethodName" : "setHealthCheckProtocol",
           "setterModel" : {
@@ -4802,6 +4854,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdempotencyToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>\n@param idempotencyToken A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.*/",
           "setterMethodName" : "setIdempotencyToken",
           "setterModel" : {
@@ -4868,6 +4921,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ListenerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener.*/",
           "setterMethodName" : "setListenerArn",
           "setterModel" : {
@@ -4934,6 +4988,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ThresholdCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>\n@param thresholdCount The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.*/",
           "setterMethodName" : "setThresholdCount",
           "setterModel" : {
@@ -5000,6 +5055,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "TrafficDialPercentage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.</p>\n@param trafficDialPercentage The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.*/",
           "setterMethodName" : "setTrafficDialPercentage",
           "setterModel" : {
@@ -5102,6 +5158,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EndpointGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The information about the endpoint group that was created.</p>\n@param endpointGroup The information about the endpoint group that was created.*/",
         "setterMethodName" : "setEndpointGroup",
         "setterModel" : {
@@ -5169,6 +5226,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EndpointGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The information about the endpoint group that was created.</p>\n@param endpointGroup The information about the endpoint group that was created.*/",
           "setterMethodName" : "setEndpointGroup",
           "setterModel" : {
@@ -5281,6 +5339,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AcceleratorArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of your accelerator.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of your accelerator.*/",
         "setterMethodName" : "setAcceleratorArn",
         "setterModel" : {
@@ -5383,6 +5442,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5426,6 +5486,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PortRanges",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of port ranges to support for connections from clients to your accelerator.</p>\n@param portRanges The list of port ranges to support for connections from clients to your accelerator.*/",
         "setterMethodName" : "setPortRanges",
         "setterModel" : {
@@ -5491,6 +5552,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The protocol for connections from clients to your accelerator.</p>\n@param protocol The protocol for connections from clients to your accelerator.\n@see Protocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -5556,6 +5618,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientAffinity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Clienty affinity gives you control over whether to always route each client to the same specific endpoint.</p> <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the \"five-tuple\" (5-tuple) properties—client IP address, client port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p> <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>CLIENT_IP</code> instead. When you use the <code>CLIENT_IP</code> setting, Global Accelerator uses the \"two-tuple\" (2-tuple) properties— client IP address and destination IP address—to select the hash value. For UDP, Global Accelerator always uses two-tuple properties to select the hash value.</p> <p>The default value is <code>NONE</code>.</p>\n@param clientAffinity Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Clienty affinity gives you control over whether to always route each client to the same specific endpoint.</p> <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the \"five-tuple\" (5-tuple) properties—client IP address, client port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p> <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>CLIENT_IP</code> instead. When you use the <code>CLIENT_IP</code> setting, Global Accelerator uses the \"two-tuple\" (2-tuple) properties— client IP address and destination IP address—to select the hash value. For UDP, Global Accelerator always uses two-tuple properties to select the hash value.</p> <p>The default value is <code>NONE</code>.\n@see ClientAffinity*/",
         "setterMethodName" : "setClientAffinity",
         "setterModel" : {
@@ -5621,6 +5684,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdempotencyToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>\n@param idempotencyToken A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.*/",
         "setterMethodName" : "setIdempotencyToken",
         "setterModel" : {
@@ -5688,6 +5752,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AcceleratorArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of your accelerator.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of your accelerator.*/",
           "setterMethodName" : "setAcceleratorArn",
           "setterModel" : {
@@ -5754,6 +5819,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientAffinity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Clienty affinity gives you control over whether to always route each client to the same specific endpoint.</p> <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the \"five-tuple\" (5-tuple) properties—client IP address, client port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p> <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>CLIENT_IP</code> instead. When you use the <code>CLIENT_IP</code> setting, Global Accelerator uses the \"two-tuple\" (2-tuple) properties— client IP address and destination IP address—to select the hash value. For UDP, Global Accelerator always uses two-tuple properties to select the hash value.</p> <p>The default value is <code>NONE</code>.</p>\n@param clientAffinity Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Clienty affinity gives you control over whether to always route each client to the same specific endpoint.</p> <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the \"five-tuple\" (5-tuple) properties—client IP address, client port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p> <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>CLIENT_IP</code> instead. When you use the <code>CLIENT_IP</code> setting, Global Accelerator uses the \"two-tuple\" (2-tuple) properties— client IP address and destination IP address—to select the hash value. For UDP, Global Accelerator always uses two-tuple properties to select the hash value.</p> <p>The default value is <code>NONE</code>.\n@see ClientAffinity*/",
           "setterMethodName" : "setClientAffinity",
           "setterModel" : {
@@ -5820,6 +5886,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdempotencyToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>\n@param idempotencyToken A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.*/",
           "setterMethodName" : "setIdempotencyToken",
           "setterModel" : {
@@ -5923,6 +5990,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5966,6 +6034,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PortRanges",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of port ranges to support for connections from clients to your accelerator.</p>\n@param portRanges The list of port ranges to support for connections from clients to your accelerator.*/",
           "setterMethodName" : "setPortRanges",
           "setterModel" : {
@@ -6032,6 +6101,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The protocol for connections from clients to your accelerator.</p>\n@param protocol The protocol for connections from clients to your accelerator.\n@see Protocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -6134,6 +6204,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Listener",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The listener that you've created.</p>\n@param listener The listener that you've created.*/",
         "setterMethodName" : "setListener",
         "setterModel" : {
@@ -6201,6 +6272,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Listener",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The listener that you've created.</p>\n@param listener The listener that you've created.*/",
           "setterMethodName" : "setListener",
           "setterModel" : {
@@ -6313,6 +6385,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AcceleratorArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of an accelerator.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of an accelerator.*/",
         "setterMethodName" : "setAcceleratorArn",
         "setterModel" : {
@@ -6380,6 +6453,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AcceleratorArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of an accelerator.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of an accelerator.*/",
           "setterMethodName" : "setAcceleratorArn",
           "setterModel" : {
@@ -6529,6 +6603,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointGroupArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>\n@param endpointGroupArn The Amazon Resource Name (ARN) of the endpoint group to delete.*/",
         "setterMethodName" : "setEndpointGroupArn",
         "setterModel" : {
@@ -6596,6 +6671,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointGroupArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>\n@param endpointGroupArn The Amazon Resource Name (ARN) of the endpoint group to delete.*/",
           "setterMethodName" : "setEndpointGroupArn",
           "setterModel" : {
@@ -6745,6 +6821,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ListenerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener.*/",
         "setterMethodName" : "setListenerArn",
         "setterModel" : {
@@ -6812,6 +6889,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ListenerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener.*/",
           "setterMethodName" : "setListenerArn",
           "setterModel" : {
@@ -6961,6 +7039,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AcceleratorArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.*/",
         "setterMethodName" : "setAcceleratorArn",
         "setterModel" : {
@@ -7028,6 +7107,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AcceleratorArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.*/",
           "setterMethodName" : "setAcceleratorArn",
           "setterModel" : {
@@ -7130,6 +7210,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AcceleratorAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attributes of the accelerator.</p>\n@param acceleratorAttributes The attributes of the accelerator.*/",
         "setterMethodName" : "setAcceleratorAttributes",
         "setterModel" : {
@@ -7197,6 +7278,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AcceleratorAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attributes of the accelerator.</p>\n@param acceleratorAttributes The attributes of the accelerator.*/",
           "setterMethodName" : "setAcceleratorAttributes",
           "setterModel" : {
@@ -7309,6 +7391,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AcceleratorArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator to describe.*/",
         "setterMethodName" : "setAcceleratorArn",
         "setterModel" : {
@@ -7376,6 +7459,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AcceleratorArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator to describe.*/",
           "setterMethodName" : "setAcceleratorArn",
           "setterModel" : {
@@ -7478,6 +7562,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Accelerator",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the accelerator.</p>\n@param accelerator The description of the accelerator.*/",
         "setterMethodName" : "setAccelerator",
         "setterModel" : {
@@ -7545,6 +7630,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Accelerator",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the accelerator.</p>\n@param accelerator The description of the accelerator.*/",
           "setterMethodName" : "setAccelerator",
           "setterModel" : {
@@ -7657,6 +7743,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointGroupArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>\n@param endpointGroupArn The Amazon Resource Name (ARN) of the endpoint group to describe.*/",
         "setterMethodName" : "setEndpointGroupArn",
         "setterModel" : {
@@ -7724,6 +7811,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointGroupArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>\n@param endpointGroupArn The Amazon Resource Name (ARN) of the endpoint group to describe.*/",
           "setterMethodName" : "setEndpointGroupArn",
           "setterModel" : {
@@ -7826,6 +7914,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EndpointGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of an endpoint group.</p>\n@param endpointGroup The description of an endpoint group.*/",
         "setterMethodName" : "setEndpointGroup",
         "setterModel" : {
@@ -7893,6 +7982,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EndpointGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of an endpoint group.</p>\n@param endpointGroup The description of an endpoint group.*/",
           "setterMethodName" : "setEndpointGroup",
           "setterModel" : {
@@ -8005,6 +8095,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ListenerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener to describe.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener to describe.*/",
         "setterMethodName" : "setListenerArn",
         "setterModel" : {
@@ -8072,6 +8163,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ListenerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener to describe.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener to describe.*/",
           "setterMethodName" : "setListenerArn",
           "setterModel" : {
@@ -8174,6 +8266,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Listener",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of a listener.</p>\n@param listener The description of a listener.*/",
         "setterMethodName" : "setListener",
         "setterModel" : {
@@ -8241,6 +8334,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Listener",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of a listener.</p>\n@param listener The description of a listener.*/",
           "setterMethodName" : "setListener",
           "setterModel" : {
@@ -8346,6 +8440,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.</p>\n@param endpointId An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -8411,6 +8506,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Weight",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>\n@param weight The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.*/",
         "setterMethodName" : "setWeight",
         "setterModel" : {
@@ -8478,6 +8574,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.</p>\n@param endpointId An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -8544,6 +8641,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Weight",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>\n@param weight The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.*/",
           "setterMethodName" : "setWeight",
           "setterModel" : {
@@ -8649,6 +8747,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.</p>\n@param endpointId An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.*/",
         "setterMethodName" : "setEndpointId",
         "setterModel" : {
@@ -8714,6 +8813,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Weight",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>\n@param weight The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.*/",
         "setterMethodName" : "setWeight",
         "setterModel" : {
@@ -8779,6 +8879,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HealthState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The health status of the endpoint.</p>\n@param healthState The health status of the endpoint.\n@see HealthState*/",
         "setterMethodName" : "setHealthState",
         "setterModel" : {
@@ -8844,6 +8945,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HealthReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.</p> </li> <li> <p> <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is <b>initial</b>, the reason code can be one of the following values:</p> <ul> <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks for the endpoint that are required to determine its health status.</p> </li> </ul>\n@param healthReason The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.</p> </li> <li> <p> <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is <b>initial</b>, the reason code can be one of the following values:</p> <ul> <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks for the endpoint that are required to determine its health status.</p> </li>*/",
         "setterMethodName" : "setHealthReason",
         "setterModel" : {
@@ -8911,6 +9013,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.</p>\n@param endpointId An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.*/",
           "setterMethodName" : "setEndpointId",
           "setterModel" : {
@@ -8977,6 +9080,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HealthReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.</p> </li> <li> <p> <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is <b>initial</b>, the reason code can be one of the following values:</p> <ul> <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks for the endpoint that are required to determine its health status.</p> </li> </ul>\n@param healthReason The reason code associated with why the endpoint is not healthy. If the endpoint state is healthy, a reason code is not provided.</p> <p>If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following values:</p> <ul> <li> <p> <b>Timeout</b>: The health check requests to the endpoint are timing out before returning a status.</p> </li> <li> <p> <b>Failed</b>: The health check failed, for example because the endpoint response was invalid (malformed).</p> </li> </ul> <p>If the endpoint state is <b>initial</b>, the reason code can be one of the following values:</p> <ul> <li> <p> <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.</p> </li> <li> <p> <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum number of health checks for the endpoint that are required to determine its health status.</p> </li>*/",
           "setterMethodName" : "setHealthReason",
           "setterModel" : {
@@ -9043,6 +9147,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HealthState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The health status of the endpoint.</p>\n@param healthState The health status of the endpoint.\n@see HealthState*/",
           "setterMethodName" : "setHealthState",
           "setterModel" : {
@@ -9109,6 +9214,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Weight",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>\n@param weight The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.*/",
           "setterMethodName" : "setWeight",
           "setterModel" : {
@@ -9214,6 +9320,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointGroupArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the endpoint group.</p>\n@param endpointGroupArn The Amazon Resource Name (ARN) of the endpoint group.*/",
         "setterMethodName" : "setEndpointGroupArn",
         "setterModel" : {
@@ -9279,6 +9386,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointGroupRegion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Region that this endpoint group belongs.</p>\n@param endpointGroupRegion The AWS Region that this endpoint group belongs.*/",
         "setterMethodName" : "setEndpointGroupRegion",
         "setterModel" : {
@@ -9381,6 +9489,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9424,6 +9533,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EndpointDescriptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of endpoint objects.</p>\n@param endpointDescriptions The list of endpoint objects.*/",
         "setterMethodName" : "setEndpointDescriptions",
         "setterModel" : {
@@ -9489,6 +9599,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "TrafficDialPercentage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.</p>\n@param trafficDialPercentage The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.*/",
         "setterMethodName" : "setTrafficDialPercentage",
         "setterModel" : {
@@ -9554,6 +9665,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthCheckPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p> <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a list, Global Accelerator uses the first specified port in the list of ports.</p>\n@param healthCheckPort The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p> <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a list, Global Accelerator uses the first specified port in the list of ports.*/",
         "setterMethodName" : "setHealthCheckPort",
         "setterModel" : {
@@ -9619,6 +9731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HealthCheckProtocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.</p>\n@param healthCheckProtocol The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.\n@see HealthCheckProtocol*/",
         "setterMethodName" : "setHealthCheckProtocol",
         "setterModel" : {
@@ -9684,6 +9797,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HealthCheckPath",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).</p>\n@param healthCheckPath If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).*/",
         "setterMethodName" : "setHealthCheckPath",
         "setterModel" : {
@@ -9749,6 +9863,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthCheckIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.</p>\n@param healthCheckIntervalSeconds The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.*/",
         "setterMethodName" : "setHealthCheckIntervalSeconds",
         "setterModel" : {
@@ -9814,6 +9929,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ThresholdCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>\n@param thresholdCount The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.*/",
         "setterMethodName" : "setThresholdCount",
         "setterModel" : {
@@ -9918,6 +10034,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9961,6 +10078,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EndpointDescriptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of endpoint objects.</p>\n@param endpointDescriptions The list of endpoint objects.*/",
           "setterMethodName" : "setEndpointDescriptions",
           "setterModel" : {
@@ -10027,6 +10145,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointGroupArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the endpoint group.</p>\n@param endpointGroupArn The Amazon Resource Name (ARN) of the endpoint group.*/",
           "setterMethodName" : "setEndpointGroupArn",
           "setterModel" : {
@@ -10093,6 +10212,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointGroupRegion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Region that this endpoint group belongs.</p>\n@param endpointGroupRegion The AWS Region that this endpoint group belongs.*/",
           "setterMethodName" : "setEndpointGroupRegion",
           "setterModel" : {
@@ -10159,6 +10279,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthCheckIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.</p>\n@param healthCheckIntervalSeconds The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.*/",
           "setterMethodName" : "setHealthCheckIntervalSeconds",
           "setterModel" : {
@@ -10225,6 +10346,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HealthCheckPath",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).</p>\n@param healthCheckPath If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the endpoints for health checks. The default is slash (/).*/",
           "setterMethodName" : "setHealthCheckPath",
           "setterModel" : {
@@ -10291,6 +10413,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthCheckPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p> <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a list, Global Accelerator uses the first specified port in the list of ports.</p>\n@param healthCheckPort The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p> <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a list, Global Accelerator uses the first specified port in the list of ports.*/",
           "setterMethodName" : "setHealthCheckPort",
           "setterModel" : {
@@ -10357,6 +10480,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HealthCheckProtocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.</p>\n@param healthCheckProtocol The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default value is TCP.\n@see HealthCheckProtocol*/",
           "setterMethodName" : "setHealthCheckProtocol",
           "setterModel" : {
@@ -10423,6 +10547,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ThresholdCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>\n@param thresholdCount The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.*/",
           "setterMethodName" : "setThresholdCount",
           "setterModel" : {
@@ -10489,6 +10614,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "TrafficDialPercentage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.</p>\n@param trafficDialPercentage The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.*/",
           "setterMethodName" : "setTrafficDialPercentage",
           "setterModel" : {
@@ -10957,6 +11083,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IpFamily",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The types of IP addresses included in this IP set.</p>\n@param ipFamily The types of IP addresses included in this IP set.*/",
         "setterMethodName" : "setIpFamily",
         "setterModel" : {
@@ -11059,6 +11186,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11102,6 +11230,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "IpAddresses",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>\n@param ipAddresses The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.*/",
         "setterMethodName" : "setIpAddresses",
         "setterModel" : {
@@ -11206,6 +11335,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11249,6 +11379,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "IpAddresses",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>\n@param ipAddresses The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.*/",
           "setterMethodName" : "setIpAddresses",
           "setterModel" : {
@@ -11315,6 +11446,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IpFamily",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The types of IP addresses included in this IP set.</p>\n@param ipFamily The types of IP addresses included in this IP set.*/",
           "setterMethodName" : "setIpFamily",
           "setterModel" : {
@@ -11464,6 +11596,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>\n@param maxResults The number of Global Accelerator objects that you want to return with this call. The default value is 10.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11529,6 +11662,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11596,6 +11730,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>\n@param maxResults The number of Global Accelerator objects that you want to return with this call. The default value is 10.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11662,6 +11797,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11801,6 +11937,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11844,6 +11981,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Accelerators",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of accelerators for a customer account.</p>\n@param accelerators The list of accelerators for a customer account.*/",
         "setterMethodName" : "setAccelerators",
         "setterModel" : {
@@ -11909,6 +12047,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12013,6 +12152,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12056,6 +12196,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Accelerators",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of accelerators for a customer account.</p>\n@param accelerators The list of accelerators for a customer account.*/",
           "setterMethodName" : "setAccelerators",
           "setterModel" : {
@@ -12122,6 +12263,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12234,6 +12376,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ListenerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener.*/",
         "setterMethodName" : "setListenerArn",
         "setterModel" : {
@@ -12299,6 +12442,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>\n@param maxResults The number of endpoint group objects that you want to return with this call. The default value is 10.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -12364,6 +12508,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12431,6 +12576,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ListenerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener.*/",
           "setterMethodName" : "setListenerArn",
           "setterModel" : {
@@ -12497,6 +12643,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>\n@param maxResults The number of endpoint group objects that you want to return with this call. The default value is 10.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -12563,6 +12710,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12702,6 +12850,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12745,6 +12894,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EndpointGroups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of the endpoint groups associated with a listener.</p>\n@param endpointGroups The list of the endpoint groups associated with a listener.*/",
         "setterMethodName" : "setEndpointGroups",
         "setterModel" : {
@@ -12810,6 +12960,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12914,6 +13065,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12957,6 +13109,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EndpointGroups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of the endpoint groups associated with a listener.</p>\n@param endpointGroups The list of the endpoint groups associated with a listener.*/",
           "setterMethodName" : "setEndpointGroups",
           "setterModel" : {
@@ -13023,6 +13176,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13135,6 +13289,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AcceleratorArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.*/",
         "setterMethodName" : "setAcceleratorArn",
         "setterModel" : {
@@ -13200,6 +13355,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of listener objects that you want to return with this call. The default value is 10.</p>\n@param maxResults The number of listener objects that you want to return with this call. The default value is 10.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -13265,6 +13421,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13332,6 +13489,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AcceleratorArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.*/",
           "setterMethodName" : "setAcceleratorArn",
           "setterModel" : {
@@ -13398,6 +13556,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of listener objects that you want to return with this call. The default value is 10.</p>\n@param maxResults The number of listener objects that you want to return with this call. The default value is 10.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -13464,6 +13623,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13603,6 +13763,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13646,6 +13807,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Listeners",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of listeners for an accelerator.</p>\n@param listeners The list of listeners for an accelerator.*/",
         "setterMethodName" : "setListeners",
         "setterModel" : {
@@ -13711,6 +13873,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13815,6 +13978,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13858,6 +14022,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Listeners",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of listeners for an accelerator.</p>\n@param listeners The list of listeners for an accelerator.*/",
           "setterMethodName" : "setListeners",
           "setterModel" : {
@@ -13924,6 +14089,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next set of results. You receive this token from a previous call.</p>\n@param nextToken The token for the next set of results. You receive this token from a previous call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14029,6 +14195,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ListenerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener.*/",
         "setterMethodName" : "setListenerArn",
         "setterModel" : {
@@ -14131,6 +14298,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14174,6 +14342,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PortRanges",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of port ranges for the connections from clients to the accelerator.</p>\n@param portRanges The list of port ranges for the connections from clients to the accelerator.*/",
         "setterMethodName" : "setPortRanges",
         "setterModel" : {
@@ -14239,6 +14408,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The protocol for the connections from clients to the accelerator.</p>\n@param protocol The protocol for the connections from clients to the accelerator.\n@see Protocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -14304,6 +14474,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientAffinity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The client properties that Global Accelerator uses to select an endpoint so that you can choose to route traffic from users to their original endpoint. The default value is <code>NONE</code>.</p>\n@param clientAffinity The client properties that Global Accelerator uses to select an endpoint so that you can choose to route traffic from users to their original endpoint. The default value is <code>NONE</code>.\n@see ClientAffinity*/",
         "setterMethodName" : "setClientAffinity",
         "setterModel" : {
@@ -14371,6 +14542,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientAffinity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The client properties that Global Accelerator uses to select an endpoint so that you can choose to route traffic from users to their original endpoint. The default value is <code>NONE</code>.</p>\n@param clientAffinity The client properties that Global Accelerator uses to select an endpoint so that you can choose to route traffic from users to their original endpoint. The default value is <code>NONE</code>.\n@see ClientAffinity*/",
           "setterMethodName" : "setClientAffinity",
           "setterModel" : {
@@ -14437,6 +14609,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ListenerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener.*/",
           "setterMethodName" : "setListenerArn",
           "setterModel" : {
@@ -14540,6 +14713,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14583,6 +14757,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PortRanges",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of port ranges for the connections from clients to the accelerator.</p>\n@param portRanges The list of port ranges for the connections from clients to the accelerator.*/",
           "setterMethodName" : "setPortRanges",
           "setterModel" : {
@@ -14649,6 +14824,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The protocol for the connections from clients to the accelerator.</p>\n@param protocol The protocol for the connections from clients to the accelerator.\n@see Protocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -14791,6 +14967,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "FromPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The first port in the range of ports, inclusive.</p>\n@param fromPort The first port in the range of ports, inclusive.*/",
         "setterMethodName" : "setFromPort",
         "setterModel" : {
@@ -14856,6 +15033,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ToPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The last port in the range of ports, inclusive.</p>\n@param toPort The last port in the range of ports, inclusive.*/",
         "setterMethodName" : "setToPort",
         "setterModel" : {
@@ -14923,6 +15101,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "FromPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The first port in the range of ports, inclusive.</p>\n@param fromPort The first port in the range of ports, inclusive.*/",
           "setterMethodName" : "setFromPort",
           "setterModel" : {
@@ -14989,6 +15168,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ToPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The last port in the range of ports, inclusive.</p>\n@param toPort The last port in the range of ports, inclusive.*/",
           "setterMethodName" : "setToPort",
           "setterModel" : {
@@ -15147,6 +15327,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AcceleratorArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator that you want to update.*/",
         "setterMethodName" : "setAcceleratorArn",
         "setterModel" : {
@@ -15212,6 +15393,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "FlowLogsEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Update whether flow logs are enabled.</p>\n@param flowLogsEnabled Update whether flow logs are enabled.*/",
         "setterMethodName" : "setFlowLogsEnabled",
         "setterModel" : {
@@ -15277,6 +15459,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowLogsS3Bucket",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Update the name of the Amazon S3 bucket for the flow logs.</p>\n@param flowLogsS3Bucket Update the name of the Amazon S3 bucket for the flow logs.*/",
         "setterMethodName" : "setFlowLogsS3Bucket",
         "setterModel" : {
@@ -15342,6 +15525,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowLogsS3Prefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.</p>\n@param flowLogsS3Prefix Update the prefix for the location in the Amazon S3 bucket for the flow logs.*/",
         "setterMethodName" : "setFlowLogsS3Prefix",
         "setterModel" : {
@@ -15409,6 +15593,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AcceleratorArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator that you want to update.*/",
           "setterMethodName" : "setAcceleratorArn",
           "setterModel" : {
@@ -15475,6 +15660,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "FlowLogsEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Update whether flow logs are enabled.</p>\n@param flowLogsEnabled Update whether flow logs are enabled.*/",
           "setterMethodName" : "setFlowLogsEnabled",
           "setterModel" : {
@@ -15541,6 +15727,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowLogsS3Bucket",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Update the name of the Amazon S3 bucket for the flow logs.</p>\n@param flowLogsS3Bucket Update the name of the Amazon S3 bucket for the flow logs.*/",
           "setterMethodName" : "setFlowLogsS3Bucket",
           "setterModel" : {
@@ -15607,6 +15794,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowLogsS3Prefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.</p>\n@param flowLogsS3Prefix Update the prefix for the location in the Amazon S3 bucket for the flow logs.*/",
           "setterMethodName" : "setFlowLogsS3Prefix",
           "setterModel" : {
@@ -15709,6 +15897,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AcceleratorAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Updated attributes for the accelerator.</p>\n@param acceleratorAttributes Updated attributes for the accelerator.*/",
         "setterMethodName" : "setAcceleratorAttributes",
         "setterModel" : {
@@ -15776,6 +15965,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AcceleratorAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Updated attributes for the accelerator.</p>\n@param acceleratorAttributes Updated attributes for the accelerator.*/",
           "setterMethodName" : "setAcceleratorAttributes",
           "setterModel" : {
@@ -15888,6 +16078,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AcceleratorArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator to update.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator to update.*/",
         "setterMethodName" : "setAcceleratorArn",
         "setterModel" : {
@@ -15953,6 +16144,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>\n@param name The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -16018,6 +16210,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IpAddressType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value for the address type must be IPv4. </p>\n@param ipAddressType The value for the address type must be IPv4.\n@see IpAddressType*/",
         "setterMethodName" : "setIpAddressType",
         "setterModel" : {
@@ -16083,6 +16276,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>\n@param enabled Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -16150,6 +16344,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AcceleratorArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the accelerator to update.</p>\n@param acceleratorArn The Amazon Resource Name (ARN) of the accelerator to update.*/",
           "setterMethodName" : "setAcceleratorArn",
           "setterModel" : {
@@ -16216,6 +16411,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>\n@param enabled Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
@@ -16282,6 +16478,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IpAddressType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value for the address type must be IPv4. </p>\n@param ipAddressType The value for the address type must be IPv4.\n@see IpAddressType*/",
           "setterMethodName" : "setIpAddressType",
           "setterModel" : {
@@ -16348,6 +16545,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>\n@param name The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -16450,6 +16648,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Accelerator",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the updated accelerator.</p>\n@param accelerator Information about the updated accelerator.*/",
         "setterMethodName" : "setAccelerator",
         "setterModel" : {
@@ -16517,6 +16716,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Accelerator",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the updated accelerator.</p>\n@param accelerator Information about the updated accelerator.*/",
           "setterMethodName" : "setAccelerator",
           "setterModel" : {
@@ -16629,6 +16829,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndpointGroupArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the endpoint group.</p>\n@param endpointGroupArn The Amazon Resource Name (ARN) of the endpoint group.*/",
         "setterMethodName" : "setEndpointGroupArn",
         "setterModel" : {
@@ -16731,6 +16932,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16774,6 +16976,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EndpointConfigurations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of endpoint objects.</p>\n@param endpointConfigurations The list of endpoint objects.*/",
         "setterMethodName" : "setEndpointConfigurations",
         "setterModel" : {
@@ -16839,6 +17042,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "TrafficDialPercentage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.</p>\n@param trafficDialPercentage The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.*/",
         "setterMethodName" : "setTrafficDialPercentage",
         "setterModel" : {
@@ -16904,6 +17108,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthCheckPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>\n@param healthCheckPort The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.*/",
         "setterMethodName" : "setHealthCheckPort",
         "setterModel" : {
@@ -16969,6 +17174,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HealthCheckProtocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>\n@param healthCheckProtocol The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.\n@see HealthCheckProtocol*/",
         "setterMethodName" : "setHealthCheckProtocol",
         "setterModel" : {
@@ -17034,6 +17240,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HealthCheckPath",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>\n@param healthCheckPath If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).*/",
         "setterMethodName" : "setHealthCheckPath",
         "setterModel" : {
@@ -17099,6 +17306,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthCheckIntervalSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in seconds, between each health check for an endpoint. The default value is 30.</p>\n@param healthCheckIntervalSeconds The time, in seconds, between each health check for an endpoint. The default value is 30.*/",
         "setterMethodName" : "setHealthCheckIntervalSeconds",
         "setterModel" : {
@@ -17164,6 +17372,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ThresholdCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>\n@param thresholdCount The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.*/",
         "setterMethodName" : "setThresholdCount",
         "setterModel" : {
@@ -17268,6 +17477,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -17311,6 +17521,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EndpointConfigurations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of endpoint objects.</p>\n@param endpointConfigurations The list of endpoint objects.*/",
           "setterMethodName" : "setEndpointConfigurations",
           "setterModel" : {
@@ -17377,6 +17588,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndpointGroupArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the endpoint group.</p>\n@param endpointGroupArn The Amazon Resource Name (ARN) of the endpoint group.*/",
           "setterMethodName" : "setEndpointGroupArn",
           "setterModel" : {
@@ -17443,6 +17655,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthCheckIntervalSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in seconds, between each health check for an endpoint. The default value is 30.</p>\n@param healthCheckIntervalSeconds The time, in seconds, between each health check for an endpoint. The default value is 30.*/",
           "setterMethodName" : "setHealthCheckIntervalSeconds",
           "setterModel" : {
@@ -17509,6 +17722,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HealthCheckPath",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>\n@param healthCheckPath If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).*/",
           "setterMethodName" : "setHealthCheckPath",
           "setterModel" : {
@@ -17575,6 +17789,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthCheckPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>\n@param healthCheckPort The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.*/",
           "setterMethodName" : "setHealthCheckPort",
           "setterModel" : {
@@ -17641,6 +17856,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HealthCheckProtocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>\n@param healthCheckProtocol The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.\n@see HealthCheckProtocol*/",
           "setterMethodName" : "setHealthCheckProtocol",
           "setterModel" : {
@@ -17707,6 +17923,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ThresholdCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>\n@param thresholdCount The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.*/",
           "setterMethodName" : "setThresholdCount",
           "setterModel" : {
@@ -17773,6 +17990,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "TrafficDialPercentage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.</p>\n@param trafficDialPercentage The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.*/",
           "setterMethodName" : "setTrafficDialPercentage",
           "setterModel" : {
@@ -17875,6 +18093,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EndpointGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The information about the endpoint group that was updated.</p>\n@param endpointGroup The information about the endpoint group that was updated.*/",
         "setterMethodName" : "setEndpointGroup",
         "setterModel" : {
@@ -17942,6 +18161,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EndpointGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The information about the endpoint group that was updated.</p>\n@param endpointGroup The information about the endpoint group that was updated.*/",
           "setterMethodName" : "setEndpointGroup",
           "setterModel" : {
@@ -18054,6 +18274,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ListenerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener to update.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener to update.*/",
         "setterMethodName" : "setListenerArn",
         "setterModel" : {
@@ -18156,6 +18377,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18199,6 +18421,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PortRanges",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The updated list of port ranges for the connections from clients to the accelerator.</p>\n@param portRanges The updated list of port ranges for the connections from clients to the accelerator.*/",
         "setterMethodName" : "setPortRanges",
         "setterModel" : {
@@ -18264,6 +18487,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The updated protocol for the connections from clients to the accelerator.</p>\n@param protocol The updated protocol for the connections from clients to the accelerator.\n@see Protocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -18329,6 +18553,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientAffinity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the source port and protocol of the user request. This gives you control over whether and how to maintain client affinity to a given endpoint.</p> <p>The default value is <code>NONE</code>.</p>\n@param clientAffinity Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the source port and protocol of the user request. This gives you control over whether and how to maintain client affinity to a given endpoint.</p> <p>The default value is <code>NONE</code>.\n@see ClientAffinity*/",
         "setterMethodName" : "setClientAffinity",
         "setterModel" : {
@@ -18396,6 +18621,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientAffinity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the source port and protocol of the user request. This gives you control over whether and how to maintain client affinity to a given endpoint.</p> <p>The default value is <code>NONE</code>.</p>\n@param clientAffinity Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the source port and protocol of the user request. This gives you control over whether and how to maintain client affinity to a given endpoint.</p> <p>The default value is <code>NONE</code>.\n@see ClientAffinity*/",
           "setterMethodName" : "setClientAffinity",
           "setterModel" : {
@@ -18462,6 +18688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ListenerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the listener to update.</p>\n@param listenerArn The Amazon Resource Name (ARN) of the listener to update.*/",
           "setterMethodName" : "setListenerArn",
           "setterModel" : {
@@ -18565,6 +18792,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18608,6 +18836,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PortRanges",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The updated list of port ranges for the connections from clients to the accelerator.</p>\n@param portRanges The updated list of port ranges for the connections from clients to the accelerator.*/",
           "setterMethodName" : "setPortRanges",
           "setterModel" : {
@@ -18674,6 +18903,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The updated protocol for the connections from clients to the accelerator.</p>\n@param protocol The updated protocol for the connections from clients to the accelerator.\n@see Protocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -18776,6 +19006,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Listener",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information for the updated listener.</p>\n@param listener Information for the updated listener.*/",
         "setterMethodName" : "setListener",
         "setterModel" : {
@@ -18843,6 +19074,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Listener",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information for the updated listener.</p>\n@param listener Information for the updated listener.*/",
           "setterMethodName" : "setListener",
           "setterModel" : {

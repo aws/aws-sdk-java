@@ -882,6 +882,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -925,6 +926,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Subnets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>\n@param subnets Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.*/",
         "setterMethodName" : "setSubnets",
         "setterModel" : {
@@ -1027,6 +1029,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1070,6 +1073,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>\n@param securityGroups Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.*/",
         "setterMethodName" : "setSecurityGroups",
         "setterModel" : {
@@ -1135,6 +1139,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AssignPublicIp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>\n@param assignPublicIp Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.\n@see AssignPublicIp*/",
         "setterMethodName" : "setAssignPublicIp",
         "setterModel" : {
@@ -1202,6 +1207,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AssignPublicIp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>\n@param assignPublicIp Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.\n@see AssignPublicIp*/",
           "setterMethodName" : "setAssignPublicIp",
           "setterModel" : {
@@ -1305,6 +1311,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1348,6 +1355,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>\n@param securityGroups Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.*/",
           "setterMethodName" : "setSecurityGroups",
           "setterModel" : {
@@ -1451,6 +1459,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1494,6 +1503,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Subnets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>\n@param subnets Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.*/",
           "setterMethodName" : "setSubnets",
           "setterModel" : {
@@ -1599,6 +1609,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Size",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>\n@param size The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.*/",
         "setterMethodName" : "setSize",
         "setterModel" : {
@@ -1666,6 +1677,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Size",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>\n@param size The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.*/",
           "setterMethodName" : "setSize",
           "setterModel" : {
@@ -1771,6 +1783,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobDefinition",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.</p>\n@param jobDefinition The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.*/",
         "setterMethodName" : "setJobDefinition",
         "setterModel" : {
@@ -1836,6 +1849,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name to use for this execution of the job, if the target is an AWS Batch job.</p>\n@param jobName The name to use for this execution of the job, if the target is an AWS Batch job.*/",
         "setterMethodName" : "setJobName",
         "setterModel" : {
@@ -1901,6 +1915,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ArrayProperties",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.</p>\n@param arrayProperties The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.*/",
         "setterMethodName" : "setArrayProperties",
         "setterModel" : {
@@ -1966,6 +1981,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RetryStrategy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>\n@param retryStrategy The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.*/",
         "setterMethodName" : "setRetryStrategy",
         "setterModel" : {
@@ -2033,6 +2049,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ArrayProperties",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.</p>\n@param arrayProperties The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.*/",
           "setterMethodName" : "setArrayProperties",
           "setterModel" : {
@@ -2099,6 +2116,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobDefinition",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.</p>\n@param jobDefinition The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.*/",
           "setterMethodName" : "setJobDefinition",
           "setterModel" : {
@@ -2165,6 +2183,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name to use for this execution of the job, if the target is an AWS Batch job.</p>\n@param jobName The name to use for this execution of the job, if the target is an AWS Batch job.*/",
           "setterMethodName" : "setJobName",
           "setterModel" : {
@@ -2231,6 +2250,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RetryStrategy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>\n@param retryStrategy The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.*/",
           "setterMethodName" : "setRetryStrategy",
           "setterModel" : {
@@ -2336,6 +2356,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Attempts",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>\n@param attempts The number of times to attempt to retry, if the job fails. Valid values are 1–10.*/",
         "setterMethodName" : "setAttempts",
         "setterModel" : {
@@ -2403,6 +2424,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Attempts",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of times to attempt to retry, if the job fails. Valid values are 1–10.</p>\n@param attempts The number of times to attempt to retry, if the job fails. Valid values are 1–10.*/",
           "setterMethodName" : "setAttempts",
           "setterModel" : {
@@ -2545,6 +2567,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>\n@param type Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -2610,6 +2633,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>\n@param key Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -2675,6 +2699,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>\n@param value Specifies the value for the key. Currently, this must be the ID of the organization.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -2742,6 +2767,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>\n@param key Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -2808,6 +2834,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>\n@param type Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -2874,6 +2901,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>\n@param value Specifies the value for the key. Currently, this must be the ID of the organization.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -2986,6 +3014,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3051,6 +3080,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Force",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>\n@param force If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.*/",
         "setterMethodName" : "setForce",
         "setterModel" : {
@@ -3118,6 +3148,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Force",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>\n@param force If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.*/",
           "setterMethodName" : "setForce",
           "setterModel" : {
@@ -3184,6 +3215,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3370,6 +3402,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3435,6 +3468,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -3500,6 +3534,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -3567,6 +3602,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -3633,6 +3669,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3699,6 +3736,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -3811,6 +3849,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3878,6 +3917,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3980,6 +4020,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -4045,6 +4086,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param arn The Amazon Resource Name (ARN) of the rule.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -4110,6 +4152,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventPattern",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.*/",
         "setterMethodName" : "setEventPattern",
         "setterModel" : {
@@ -4175,6 +4218,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ScheduleExpression",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".*/",
         "setterMethodName" : "setScheduleExpression",
         "setterModel" : {
@@ -4240,6 +4284,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether the rule is enabled or disabled.</p>\n@param state Specifies whether the rule is enabled or disabled.\n@see RuleState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -4305,6 +4350,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the rule.</p>\n@param description The description of the rule.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -4370,6 +4416,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -4435,6 +4482,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManagedBy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If this is a managed rule, created by an AWS service on your behalf, this field displays the principal name of the AWS service that created the rule.</p>\n@param managedBy If this is a managed rule, created by an AWS service on your behalf, this field displays the principal name of the AWS service that created the rule.*/",
         "setterMethodName" : "setManagedBy",
         "setterModel" : {
@@ -4502,6 +4550,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param arn The Amazon Resource Name (ARN) of the rule.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -4568,6 +4617,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the rule.</p>\n@param description The description of the rule.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -4634,6 +4684,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventPattern",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.*/",
           "setterMethodName" : "setEventPattern",
           "setterModel" : {
@@ -4700,6 +4751,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManagedBy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If this is a managed rule, created by an AWS service on your behalf, this field displays the principal name of the AWS service that created the rule.</p>\n@param managedBy If this is a managed rule, created by an AWS service on your behalf, this field displays the principal name of the AWS service that created the rule.*/",
           "setterMethodName" : "setManagedBy",
           "setterModel" : {
@@ -4766,6 +4818,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -4832,6 +4885,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -4898,6 +4952,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ScheduleExpression",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".*/",
           "setterMethodName" : "setScheduleExpression",
           "setterModel" : {
@@ -4964,6 +5019,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether the rule is enabled or disabled.</p>\n@param state Specifies whether the rule is enabled or disabled.\n@see RuleState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -5076,6 +5132,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5143,6 +5200,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5285,6 +5343,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TaskDefinitionArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>\n@param taskDefinitionArn The ARN of the task definition to use if the event target is an Amazon ECS task.*/",
         "setterMethodName" : "setTaskDefinitionArn",
         "setterModel" : {
@@ -5350,6 +5409,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TaskCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>\n@param taskCount The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.*/",
         "setterMethodName" : "setTaskCount",
         "setterModel" : {
@@ -5415,6 +5475,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LaunchType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where AWS Fargate with Amazon ECS is supported. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html\">AWS Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>\n@param launchType Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where AWS Fargate with Amazon ECS is supported. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html\">AWS Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.\n@see LaunchType*/",
         "setterMethodName" : "setLaunchType",
         "setterModel" : {
@@ -5480,6 +5541,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "NetworkConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>\n@param networkConfiguration Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.*/",
         "setterMethodName" : "setNetworkConfiguration",
         "setterModel" : {
@@ -5545,6 +5607,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html\">AWS Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>\n@param platformVersion Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html\">AWS Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.*/",
         "setterMethodName" : "setPlatformVersion",
         "setterModel" : {
@@ -5610,6 +5673,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Group",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>\n@param group Specifies an ECS task group for the task. The maximum length is 255 characters.*/",
         "setterMethodName" : "setGroup",
         "setterModel" : {
@@ -5677,6 +5741,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Group",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>\n@param group Specifies an ECS task group for the task. The maximum length is 255 characters.*/",
           "setterMethodName" : "setGroup",
           "setterModel" : {
@@ -5743,6 +5808,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LaunchType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where AWS Fargate with Amazon ECS is supported. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html\">AWS Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>\n@param launchType Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where AWS Fargate with Amazon ECS is supported. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html\">AWS Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.\n@see LaunchType*/",
           "setterMethodName" : "setLaunchType",
           "setterModel" : {
@@ -5809,6 +5875,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "NetworkConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>\n@param networkConfiguration Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.*/",
           "setterMethodName" : "setNetworkConfiguration",
           "setterModel" : {
@@ -5875,6 +5942,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html\">AWS Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>\n@param platformVersion Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html\">AWS Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.*/",
           "setterMethodName" : "setPlatformVersion",
           "setterModel" : {
@@ -5941,6 +6009,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TaskCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>\n@param taskCount The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.*/",
           "setterMethodName" : "setTaskCount",
           "setterModel" : {
@@ -6007,6 +6076,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TaskDefinitionArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>\n@param taskDefinitionArn The ARN of the task definition to use if the event target is an Amazon ECS task.*/",
           "setterMethodName" : "setTaskDefinitionArn",
           "setterModel" : {
@@ -6119,6 +6189,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -6186,6 +6257,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -6371,6 +6443,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -6408,6 +6481,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "InputPathsMap",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys cannot start with \"AWS.\" </p>\n@param inputPathsMap Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys cannot start with \"AWS.\"*/",
         "setterMethodName" : "setInputPathsMap",
         "setterModel" : {
@@ -6473,6 +6547,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InputTemplate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p> </li> </ul> <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code> \"InputTransformer\":</code> </p> <p> <code>{</code> </p> <p> <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code> </p> <p> <code>\"InputTemplate\": \"&lt;instance&gt; is in state &lt;status&gt;\"</code> </p> <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p> <p> <code> \"InputTransformer\":</code> </p> <p> <code>{</code> </p> <p> <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code> </p> <p> <code>\"InputTemplate\": \"&lt;instance&gt; is in state \\\"&lt;status&gt;\\\"\"</code> </p> <p> <code>}</code> </p>\n@param inputTemplate Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p> </li> </ul> <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code> \"InputTransformer\":</code> </p> <p> <code>{</code> </p> <p> <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code> </p> <p> <code>\"InputTemplate\": \"&lt;instance&gt; is in state &lt;status&gt;\"</code> </p> <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p> <p> <code> \"InputTransformer\":</code> </p> <p> <code>{</code> </p> <p> <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code> </p> <p> <code>\"InputTemplate\": \"&lt;instance&gt; is in state \\\"&lt;status&gt;\\\"\"</code> </p> <p> <code>}</code>*/",
         "setterMethodName" : "setInputTemplate",
         "setterModel" : {
@@ -6583,6 +6658,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -6620,6 +6696,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "InputPathsMap",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys cannot start with \"AWS.\" </p>\n@param inputPathsMap Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys cannot start with \"AWS.\"*/",
           "setterMethodName" : "setInputPathsMap",
           "setterModel" : {
@@ -6686,6 +6763,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InputTemplate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p> </li> </ul> <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code> \"InputTransformer\":</code> </p> <p> <code>{</code> </p> <p> <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code> </p> <p> <code>\"InputTemplate\": \"&lt;instance&gt; is in state &lt;status&gt;\"</code> </p> <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p> <p> <code> \"InputTransformer\":</code> </p> <p> <code>{</code> </p> <p> <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code> </p> <p> <code>\"InputTemplate\": \"&lt;instance&gt; is in state \\\"&lt;status&gt;\\\"\"</code> </p> <p> <code>}</code> </p>\n@param inputTemplate Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p> </li> </ul> <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code> \"InputTransformer\":</code> </p> <p> <code>{</code> </p> <p> <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code> </p> <p> <code>\"InputTemplate\": \"&lt;instance&gt; is in state &lt;status&gt;\"</code> </p> <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p> <p> <code> \"InputTransformer\":</code> </p> <p> <code>{</code> </p> <p> <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code> </p> <p> <code>\"InputTemplate\": \"&lt;instance&gt; is in state \\\"&lt;status&gt;\\\"\"</code> </p> <p> <code>}</code>*/",
           "setterMethodName" : "setInputTemplate",
           "setterModel" : {
@@ -6865,6 +6943,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PartitionKeyPath",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n@param partitionKeyPath The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.*/",
         "setterMethodName" : "setPartitionKeyPath",
         "setterModel" : {
@@ -6932,6 +7011,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PartitionKeyPath",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n@param partitionKeyPath The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.*/",
           "setterMethodName" : "setPartitionKeyPath",
           "setterModel" : {
@@ -7127,6 +7207,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TargetArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the target resource.</p>\n@param targetArn The Amazon Resource Name (ARN) of the target resource.*/",
         "setterMethodName" : "setTargetArn",
         "setterModel" : {
@@ -7192,6 +7273,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7257,6 +7339,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -7324,6 +7407,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -7390,6 +7474,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7456,6 +7541,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TargetArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the target resource.</p>\n@param targetArn The Amazon Resource Name (ARN) of the target resource.*/",
           "setterMethodName" : "setTargetArn",
           "setterModel" : {
@@ -7595,6 +7681,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7638,6 +7725,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "RuleNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The names of the rules that can invoke the given target.</p>\n@param ruleNames The names of the rules that can invoke the given target.*/",
         "setterMethodName" : "setRuleNames",
         "setterModel" : {
@@ -7703,6 +7791,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7770,6 +7859,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7873,6 +7963,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7916,6 +8007,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "RuleNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The names of the rules that can invoke the given target.</p>\n@param ruleNames The names of the rules that can invoke the given target.*/",
           "setterMethodName" : "setRuleNames",
           "setterModel" : {
@@ -8028,6 +8120,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NamePrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The prefix matching the rule name.</p>\n@param namePrefix The prefix matching the rule name.*/",
         "setterMethodName" : "setNamePrefix",
         "setterModel" : {
@@ -8093,6 +8186,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8158,6 +8252,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -8225,6 +8320,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -8291,6 +8387,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NamePrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The prefix matching the rule name.</p>\n@param namePrefix The prefix matching the rule name.*/",
           "setterMethodName" : "setNamePrefix",
           "setterModel" : {
@@ -8357,6 +8454,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8496,6 +8594,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8539,6 +8638,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Rules",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The rules that match the specified criteria.</p>\n@param rules The rules that match the specified criteria.*/",
         "setterMethodName" : "setRules",
         "setterModel" : {
@@ -8604,6 +8704,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8671,6 +8772,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8774,6 +8876,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8817,6 +8920,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Rules",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The rules that match the specified criteria.</p>\n@param rules The rules that match the specified criteria.*/",
           "setterMethodName" : "setRules",
           "setterModel" : {
@@ -8929,6 +9033,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Rule",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.*/",
         "setterMethodName" : "setRule",
         "setterModel" : {
@@ -8994,6 +9099,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9059,6 +9165,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -9126,6 +9233,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -9192,6 +9300,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9258,6 +9367,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Rule",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.*/",
           "setterMethodName" : "setRule",
           "setterModel" : {
@@ -9397,6 +9507,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9440,6 +9551,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Targets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The targets assigned to the rule.</p>\n@param targets The targets assigned to the rule.*/",
         "setterMethodName" : "setTargets",
         "setterModel" : {
@@ -9505,6 +9617,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9572,6 +9685,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9675,6 +9789,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9718,6 +9833,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Targets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The targets assigned to the rule.</p>\n@param targets The targets assigned to the rule.*/",
           "setterMethodName" : "setTargets",
           "setterModel" : {
@@ -9860,6 +9976,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AwsvpcConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>\n@param awsvpcConfiguration Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.*/",
         "setterMethodName" : "setAwsvpcConfiguration",
         "setterModel" : {
@@ -9927,6 +10044,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AwsvpcConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>\n@param awsvpcConfiguration Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.*/",
           "setterMethodName" : "setAwsvpcConfiguration",
           "setterModel" : {
@@ -10113,6 +10231,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10156,6 +10275,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>\n@param entries The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.*/",
         "setterMethodName" : "setEntries",
         "setterModel" : {
@@ -10260,6 +10380,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10303,6 +10424,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>\n@param entries The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.*/",
           "setterMethodName" : "setEntries",
           "setterModel" : {
@@ -10405,6 +10527,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "Time",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time stamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.</p>\n@param time The time stamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.*/",
         "setterMethodName" : "setTime",
         "setterModel" : {
@@ -10470,6 +10593,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The source of the event. This field is required.</p>\n@param source The source of the event. This field is required.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -10572,6 +10696,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10615,6 +10740,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Resources",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>\n@param resources AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.*/",
         "setterMethodName" : "setResources",
         "setterModel" : {
@@ -10680,6 +10806,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DetailType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Free-form string used to decide what fields to expect in the event detail.</p>\n@param detailType Free-form string used to decide what fields to expect in the event detail.*/",
         "setterMethodName" : "setDetailType",
         "setterModel" : {
@@ -10745,6 +10872,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Detail",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>\n@param detail A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.*/",
         "setterMethodName" : "setDetail",
         "setterModel" : {
@@ -10812,6 +10940,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Detail",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>\n@param detail A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.*/",
           "setterMethodName" : "setDetail",
           "setterModel" : {
@@ -10878,6 +11007,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DetailType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Free-form string used to decide what fields to expect in the event detail.</p>\n@param detailType Free-form string used to decide what fields to expect in the event detail.*/",
           "setterMethodName" : "setDetailType",
           "setterModel" : {
@@ -10981,6 +11111,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11024,6 +11155,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Resources",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>\n@param resources AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.*/",
           "setterMethodName" : "setResources",
           "setterModel" : {
@@ -11090,6 +11222,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The source of the event. This field is required.</p>\n@param source The source of the event. This field is required.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -11156,6 +11289,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "Time",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time stamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.</p>\n@param time The time stamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.*/",
           "setterMethodName" : "setTime",
           "setterModel" : {
@@ -11261,6 +11395,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "FailedEntryCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.*/",
         "setterMethodName" : "setFailedEntryCount",
         "setterModel" : {
@@ -11363,6 +11498,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11406,6 +11542,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>\n@param entries The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.*/",
         "setterMethodName" : "setEntries",
         "setterModel" : {
@@ -11510,6 +11647,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11553,6 +11691,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>\n@param entries The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.*/",
           "setterMethodName" : "setEntries",
           "setterModel" : {
@@ -11619,6 +11758,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "FailedEntryCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.*/",
           "setterMethodName" : "setFailedEntryCount",
           "setterModel" : {
@@ -11724,6 +11864,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the event.</p>\n@param eventId The ID of the event.*/",
         "setterMethodName" : "setEventId",
         "setterModel" : {
@@ -11789,6 +11930,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error code that indicates why the event submission failed.</p>\n@param errorCode The error code that indicates why the event submission failed.*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
@@ -11854,6 +11996,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error message that explains why the event submission failed.</p>\n@param errorMessage The error message that explains why the event submission failed.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
@@ -11921,6 +12064,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error code that indicates why the event submission failed.</p>\n@param errorCode The error code that indicates why the event submission failed.*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
@@ -11987,6 +12131,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error message that explains why the event submission failed.</p>\n@param errorMessage The error message that explains why the event submission failed.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
@@ -12053,6 +12198,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the event.</p>\n@param eventId The ID of the event.*/",
           "setterMethodName" : "setEventId",
           "setterModel" : {
@@ -12165,6 +12311,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Action",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.*/",
         "setterMethodName" : "setAction",
         "setterModel" : {
@@ -12230,6 +12377,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Principal",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.*/",
         "setterMethodName" : "setPrincipal",
         "setterModel" : {
@@ -12295,6 +12443,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatementId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.*/",
         "setterMethodName" : "setStatementId",
         "setterModel" : {
@@ -12360,6 +12509,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Condition",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain AWS organization. For more information about AWS Organizations, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html\">What Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If you specify <code>Condition</code> with an AWS organization ID, and specify \"*\" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>\n@param condition This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain AWS organization. For more information about AWS Organizations, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html\">What Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If you specify <code>Condition</code> with an AWS organization ID, and specify \"*\" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.*/",
         "setterMethodName" : "setCondition",
         "setterModel" : {
@@ -12427,6 +12577,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Action",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.*/",
           "setterMethodName" : "setAction",
           "setterModel" : {
@@ -12493,6 +12644,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Condition",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain AWS organization. For more information about AWS Organizations, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html\">What Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If you specify <code>Condition</code> with an AWS organization ID, and specify \"*\" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>\n@param condition This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain AWS organization. For more information about AWS Organizations, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html\">What Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If you specify <code>Condition</code> with an AWS organization ID, and specify \"*\" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.*/",
           "setterMethodName" : "setCondition",
           "setterModel" : {
@@ -12559,6 +12711,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Principal",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.*/",
           "setterMethodName" : "setPrincipal",
           "setterModel" : {
@@ -12625,6 +12778,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatementId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.*/",
           "setterMethodName" : "setStatementId",
           "setterModel" : {
@@ -12774,6 +12928,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule that you are creating or updating.</p>\n@param name The name of the rule that you are creating or updating.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -12839,6 +12994,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ScheduleExpression",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".*/",
         "setterMethodName" : "setScheduleExpression",
         "setterModel" : {
@@ -12904,6 +13060,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventPattern",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.*/",
         "setterMethodName" : "setEventPattern",
         "setterModel" : {
@@ -12969,6 +13126,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether the rule is enabled or disabled.</p>\n@param state Indicates whether the rule is enabled or disabled.\n@see RuleState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -13034,6 +13192,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the rule.</p>\n@param description A description of the rule.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -13099,6 +13258,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -13166,6 +13326,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the rule.</p>\n@param description A description of the rule.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -13232,6 +13393,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventPattern",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.*/",
           "setterMethodName" : "setEventPattern",
           "setterModel" : {
@@ -13298,6 +13460,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule that you are creating or updating.</p>\n@param name The name of the rule that you are creating or updating.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -13364,6 +13527,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -13430,6 +13594,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ScheduleExpression",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".*/",
           "setterMethodName" : "setScheduleExpression",
           "setterModel" : {
@@ -13496,6 +13661,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether the rule is enabled or disabled.</p>\n@param state Indicates whether the rule is enabled or disabled.\n@see RuleState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -13598,6 +13764,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RuleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param ruleArn The Amazon Resource Name (ARN) of the rule.*/",
         "setterMethodName" : "setRuleArn",
         "setterModel" : {
@@ -13665,6 +13832,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RuleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param ruleArn The Amazon Resource Name (ARN) of the rule.*/",
           "setterMethodName" : "setRuleArn",
           "setterModel" : {
@@ -13777,6 +13945,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Rule",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.*/",
         "setterMethodName" : "setRule",
         "setterModel" : {
@@ -13879,6 +14048,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13922,6 +14092,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Targets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The targets to update or add to the rule.</p>\n@param targets The targets to update or add to the rule.*/",
         "setterMethodName" : "setTargets",
         "setterModel" : {
@@ -13989,6 +14160,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Rule",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.*/",
           "setterMethodName" : "setRule",
           "setterModel" : {
@@ -14092,6 +14264,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14135,6 +14308,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Targets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The targets to update or add to the rule.</p>\n@param targets The targets to update or add to the rule.*/",
           "setterMethodName" : "setTargets",
           "setterModel" : {
@@ -14237,6 +14411,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "FailedEntryCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.*/",
         "setterMethodName" : "setFailedEntryCount",
         "setterModel" : {
@@ -14339,6 +14514,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14382,6 +14558,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FailedEntries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The failed target entries.</p>\n@param failedEntries The failed target entries.*/",
         "setterMethodName" : "setFailedEntries",
         "setterModel" : {
@@ -14486,6 +14663,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14529,6 +14707,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FailedEntries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The failed target entries.</p>\n@param failedEntries The failed target entries.*/",
           "setterMethodName" : "setFailedEntries",
           "setterModel" : {
@@ -14595,6 +14774,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "FailedEntryCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.*/",
           "setterMethodName" : "setFailedEntryCount",
           "setterModel" : {
@@ -14700,6 +14880,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TargetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the target.</p>\n@param targetId The ID of the target.*/",
         "setterMethodName" : "setTargetId",
         "setterModel" : {
@@ -14765,6 +14946,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>\n@param errorCode The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
@@ -14830,6 +15012,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error message that explains why the target addition failed.</p>\n@param errorMessage The error message that explains why the target addition failed.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
@@ -14897,6 +15080,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>\n@param errorCode The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
@@ -14963,6 +15147,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error message that explains why the target addition failed.</p>\n@param errorMessage The error message that explains why the target addition failed.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
@@ -15029,6 +15214,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TargetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the target.</p>\n@param targetId The ID of the target.*/",
           "setterMethodName" : "setTargetId",
           "setterModel" : {
@@ -15141,6 +15327,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatementId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.*/",
         "setterMethodName" : "setStatementId",
         "setterModel" : {
@@ -15208,6 +15395,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatementId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.*/",
           "setterMethodName" : "setStatementId",
           "setterModel" : {
@@ -15357,6 +15545,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Rule",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.*/",
         "setterMethodName" : "setRule",
         "setterModel" : {
@@ -15459,6 +15648,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15502,6 +15692,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Ids",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IDs of the targets to remove from the rule.</p>\n@param ids The IDs of the targets to remove from the rule.*/",
         "setterMethodName" : "setIds",
         "setterModel" : {
@@ -15567,6 +15758,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Force",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>\n@param force If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.*/",
         "setterMethodName" : "setForce",
         "setterModel" : {
@@ -15634,6 +15826,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Force",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>\n@param force If this is a managed rule, created by an AWS service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.*/",
           "setterMethodName" : "setForce",
           "setterModel" : {
@@ -15737,6 +15930,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15780,6 +15974,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Ids",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IDs of the targets to remove from the rule.</p>\n@param ids The IDs of the targets to remove from the rule.*/",
           "setterMethodName" : "setIds",
           "setterModel" : {
@@ -15846,6 +16041,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Rule",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.*/",
           "setterMethodName" : "setRule",
           "setterModel" : {
@@ -15948,6 +16144,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "FailedEntryCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.*/",
         "setterMethodName" : "setFailedEntryCount",
         "setterModel" : {
@@ -16050,6 +16247,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16093,6 +16291,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FailedEntries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The failed target entries.</p>\n@param failedEntries The failed target entries.*/",
         "setterMethodName" : "setFailedEntries",
         "setterModel" : {
@@ -16197,6 +16396,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16240,6 +16440,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FailedEntries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The failed target entries.</p>\n@param failedEntries The failed target entries.*/",
           "setterMethodName" : "setFailedEntries",
           "setterModel" : {
@@ -16306,6 +16507,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "FailedEntryCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.*/",
           "setterMethodName" : "setFailedEntryCount",
           "setterModel" : {
@@ -16411,6 +16613,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TargetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the target.</p>\n@param targetId The ID of the target.*/",
         "setterMethodName" : "setTargetId",
         "setterModel" : {
@@ -16476,6 +16679,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>\n@param errorCode The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
@@ -16541,6 +16745,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error message that explains why the target removal failed.</p>\n@param errorMessage The error message that explains why the target removal failed.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
@@ -16608,6 +16813,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>\n@param errorCode The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
@@ -16674,6 +16880,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error message that explains why the target removal failed.</p>\n@param errorMessage The error message that explains why the target removal failed.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
@@ -16740,6 +16947,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TargetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the target.</p>\n@param targetId The ID of the target.*/",
           "setterMethodName" : "setTargetId",
           "setterModel" : {
@@ -16882,6 +17090,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -16947,6 +17156,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param arn The Amazon Resource Name (ARN) of the rule.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -17012,6 +17222,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventPattern",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.*/",
         "setterMethodName" : "setEventPattern",
         "setterModel" : {
@@ -17077,6 +17288,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the rule.</p>\n@param state The state of the rule.\n@see RuleState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -17142,6 +17354,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the rule.</p>\n@param description The description of the rule.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -17207,6 +17420,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ScheduleExpression",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".*/",
         "setterMethodName" : "setScheduleExpression",
         "setterModel" : {
@@ -17272,6 +17486,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>\n@param roleArn The Amazon Resource Name (ARN) of the role that is used for target invocation.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -17337,6 +17552,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManagedBy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the rule was created on behalf of your account by an AWS service, this field displays the principal name of the service that created the rule.</p>\n@param managedBy If the rule was created on behalf of your account by an AWS service, this field displays the principal name of the service that created the rule.*/",
         "setterMethodName" : "setManagedBy",
         "setterModel" : {
@@ -17404,6 +17620,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param arn The Amazon Resource Name (ARN) of the rule.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -17470,6 +17687,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the rule.</p>\n@param description The description of the rule.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -17536,6 +17754,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventPattern",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.*/",
           "setterMethodName" : "setEventPattern",
           "setterModel" : {
@@ -17602,6 +17821,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManagedBy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the rule was created on behalf of your account by an AWS service, this field displays the principal name of the service that created the rule.</p>\n@param managedBy If the rule was created on behalf of your account by an AWS service, this field displays the principal name of the service that created the rule.*/",
           "setterMethodName" : "setManagedBy",
           "setterModel" : {
@@ -17668,6 +17888,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -17734,6 +17955,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>\n@param roleArn The Amazon Resource Name (ARN) of the role that is used for target invocation.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -17800,6 +18022,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ScheduleExpression",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".*/",
           "setterMethodName" : "setScheduleExpression",
           "setterModel" : {
@@ -17866,6 +18089,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the rule.</p>\n@param state The state of the rule.\n@see RuleState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -18054,6 +18278,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18097,6 +18322,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "RunCommandTargets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>\n@param runCommandTargets Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.*/",
         "setterMethodName" : "setRunCommandTargets",
         "setterModel" : {
@@ -18201,6 +18427,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18244,6 +18471,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "RunCommandTargets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>\n@param runCommandTargets Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.*/",
           "setterMethodName" : "setRunCommandTargets",
           "setterModel" : {
@@ -18349,6 +18577,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>\n@param key Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -18451,6 +18680,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18494,6 +18724,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>\n@param values If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -18561,6 +18792,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>\n@param key Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -18664,6 +18896,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18707,6 +18940,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>\n@param values If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -18812,6 +19046,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MessageGroupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@param messageGroupId The FIFO message group ID to use as the target.*/",
         "setterMethodName" : "setMessageGroupId",
         "setterModel" : {
@@ -18879,6 +19114,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MessageGroupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@param messageGroupId The FIFO message group ID to use as the target.*/",
           "setterMethodName" : "setMessageGroupId",
           "setterModel" : {
@@ -18984,6 +19220,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the target.</p>\n@param id The ID of the target.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -19049,6 +19286,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the target.</p>\n@param arn The Amazon Resource Name (ARN) of the target.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -19114,6 +19352,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -19179,6 +19418,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Input",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>\n@param input Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.*/",
         "setterMethodName" : "setInput",
         "setterModel" : {
@@ -19244,6 +19484,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InputPath",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>\n@param inputPath The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.*/",
         "setterMethodName" : "setInputPath",
         "setterModel" : {
@@ -19309,6 +19550,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "InputTransformer",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>\n@param inputTransformer Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.*/",
         "setterMethodName" : "setInputTransformer",
         "setterModel" : {
@@ -19374,6 +19616,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "KinesisParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>\n@param kinesisParameters The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.*/",
         "setterMethodName" : "setKinesisParameters",
         "setterModel" : {
@@ -19439,6 +19682,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RunCommandParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>\n@param runCommandParameters Parameters used when you are using the rule to invoke Amazon EC2 Run Command.*/",
         "setterMethodName" : "setRunCommandParameters",
         "setterModel" : {
@@ -19504,6 +19748,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EcsParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>\n@param ecsParameters Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.*/",
         "setterMethodName" : "setEcsParameters",
         "setterModel" : {
@@ -19569,6 +19814,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "BatchParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/jobs.html\">Jobs</a> in the <i>AWS Batch User Guide</i>.</p>\n@param batchParameters If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/jobs.html\">Jobs</a> in the <i>AWS Batch User Guide</i>.*/",
         "setterMethodName" : "setBatchParameters",
         "setterModel" : {
@@ -19634,6 +19880,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SqsParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p> <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>\n@param sqsParameters Contains the message group ID to use when the target is a FIFO queue.</p> <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.*/",
         "setterMethodName" : "setSqsParameters",
         "setterModel" : {
@@ -19701,6 +19948,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the target.</p>\n@param arn The Amazon Resource Name (ARN) of the target.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -19767,6 +20015,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "BatchParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/jobs.html\">Jobs</a> in the <i>AWS Batch User Guide</i>.</p>\n@param batchParameters If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/jobs.html\">Jobs</a> in the <i>AWS Batch User Guide</i>.*/",
           "setterMethodName" : "setBatchParameters",
           "setterModel" : {
@@ -19833,6 +20082,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EcsParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>\n@param ecsParameters Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.*/",
           "setterMethodName" : "setEcsParameters",
           "setterModel" : {
@@ -19899,6 +20149,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the target.</p>\n@param id The ID of the target.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -19965,6 +20216,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Input",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>\n@param input Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.*/",
           "setterMethodName" : "setInput",
           "setterModel" : {
@@ -20031,6 +20283,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InputPath",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>\n@param inputPath The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.*/",
           "setterMethodName" : "setInputPath",
           "setterModel" : {
@@ -20097,6 +20350,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "InputTransformer",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>\n@param inputTransformer Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.*/",
           "setterMethodName" : "setInputTransformer",
           "setterModel" : {
@@ -20163,6 +20417,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "KinesisParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>\n@param kinesisParameters The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.*/",
           "setterMethodName" : "setKinesisParameters",
           "setterModel" : {
@@ -20229,6 +20484,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -20295,6 +20551,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RunCommandParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>\n@param runCommandParameters Parameters used when you are using the rule to invoke Amazon EC2 Run Command.*/",
           "setterMethodName" : "setRunCommandParameters",
           "setterModel" : {
@@ -20361,6 +20618,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SqsParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p> <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>\n@param sqsParameters Contains the message group ID to use when the target is a FIFO queue.</p> <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.*/",
           "setterMethodName" : "setSqsParameters",
           "setterModel" : {
@@ -20473,6 +20731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventPattern",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.*/",
         "setterMethodName" : "setEventPattern",
         "setterModel" : {
@@ -20538,6 +20797,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Event",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The event, in JSON format, to test against the event pattern.</p>\n@param event The event, in JSON format, to test against the event pattern.*/",
         "setterMethodName" : "setEvent",
         "setterModel" : {
@@ -20605,6 +20865,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Event",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The event, in JSON format, to test against the event pattern.</p>\n@param event The event, in JSON format, to test against the event pattern.*/",
           "setterMethodName" : "setEvent",
           "setterModel" : {
@@ -20671,6 +20932,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventPattern",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.*/",
           "setterMethodName" : "setEventPattern",
           "setterModel" : {
@@ -20773,6 +21035,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Result",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether the event matches the event pattern.</p>\n@param result Indicates whether the event matches the event pattern.*/",
         "setterMethodName" : "setResult",
         "setterModel" : {
@@ -20840,6 +21103,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Result",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether the event matches the event pattern.</p>\n@param result Indicates whether the event matches the event pattern.*/",
           "setterMethodName" : "setResult",
           "setterModel" : {

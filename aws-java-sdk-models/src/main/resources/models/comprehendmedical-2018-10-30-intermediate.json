@@ -255,6 +255,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The type of attribute. </p>\n@param type The type of attribute.\n@see EntitySubType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -320,6 +321,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "Score",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>\n@param score The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.*/",
         "setterMethodName" : "setScore",
         "setterModel" : {
@@ -385,6 +387,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "RelationshipScore",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>\n@param relationshipScore The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity.*/",
         "setterMethodName" : "setRelationshipScore",
         "setterModel" : {
@@ -450,6 +453,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>\n@param id The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -515,6 +519,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "BeginOffset",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>\n@param beginOffset The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.*/",
         "setterMethodName" : "setBeginOffset",
         "setterModel" : {
@@ -580,6 +585,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "EndOffset",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>\n@param endOffset The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.*/",
         "setterMethodName" : "setEndOffset",
         "setterModel" : {
@@ -645,6 +651,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Text",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The segment of input text extracted as this attribute.</p>\n@param text The segment of input text extracted as this attribute.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
@@ -747,6 +754,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -790,6 +798,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Traits",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Contextual information for this attribute. </p>\n@param traits Contextual information for this attribute.*/",
         "setterMethodName" : "setTraits",
         "setterModel" : {
@@ -857,6 +866,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "BeginOffset",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>\n@param beginOffset The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.*/",
           "setterMethodName" : "setBeginOffset",
           "setterModel" : {
@@ -923,6 +933,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "EndOffset",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>\n@param endOffset The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.*/",
           "setterMethodName" : "setEndOffset",
           "setterModel" : {
@@ -989,6 +1000,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>\n@param id The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -1055,6 +1067,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "RelationshipScore",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>\n@param relationshipScore The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity.*/",
           "setterMethodName" : "setRelationshipScore",
           "setterModel" : {
@@ -1121,6 +1134,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "Score",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>\n@param score The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.*/",
           "setterMethodName" : "setScore",
           "setterModel" : {
@@ -1187,6 +1201,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Text",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The segment of input text extracted as this attribute.</p>\n@param text The segment of input text extracted as this attribute.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
@@ -1290,6 +1305,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1333,6 +1349,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Traits",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Contextual information for this attribute. </p>\n@param traits Contextual information for this attribute.*/",
           "setterMethodName" : "setTraits",
           "setterModel" : {
@@ -1399,6 +1416,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The type of attribute. </p>\n@param type The type of attribute.\n@see EntitySubType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -1563,6 +1581,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Text",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>\n@param text A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
@@ -1630,6 +1649,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Text",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>\n@param text A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
@@ -1769,6 +1789,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1812,6 +1833,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.</p>\n@param entities The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.*/",
         "setterMethodName" : "setEntities",
         "setterModel" : {
@@ -1914,6 +1936,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1957,6 +1980,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UnmappedAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Attributes extracted from the input text that we were unable to relate to an entity.</p>\n@param unmappedAttributes Attributes extracted from the input text that we were unable to relate to an entity.*/",
         "setterMethodName" : "setUnmappedAttributes",
         "setterModel" : {
@@ -2022,6 +2046,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PaginationToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to fetch the next page of entities.</p>\n@param paginationToken If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to fetch the next page of entities.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
@@ -2126,6 +2151,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2169,6 +2195,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.</p>\n@param entities The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.*/",
           "setterMethodName" : "setEntities",
           "setterModel" : {
@@ -2235,6 +2262,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PaginationToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to fetch the next page of entities.</p>\n@param paginationToken If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to fetch the next page of entities.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
@@ -2338,6 +2366,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2381,6 +2410,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UnmappedAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Attributes extracted from the input text that we were unable to relate to an entity.</p>\n@param unmappedAttributes Attributes extracted from the input text that we were unable to relate to an entity.*/",
           "setterMethodName" : "setUnmappedAttributes",
           "setterModel" : {
@@ -2493,6 +2523,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Text",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters. </p>\n@param text A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
@@ -2560,6 +2591,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Text",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters. </p>\n@param text A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
@@ -2699,6 +2731,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2742,6 +2775,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in its detection. </p>\n@param entities The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in its detection.*/",
         "setterMethodName" : "setEntities",
         "setterModel" : {
@@ -2807,6 +2841,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PaginationToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> If the result of the previous request to DetectPHI was truncated, include the Paginationtoken to fetch the next page of PHI entities. </p>\n@param paginationToken If the result of the previous request to DetectPHI was truncated, include the Paginationtoken to fetch the next page of PHI entities.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
@@ -2911,6 +2946,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2954,6 +2990,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in its detection. </p>\n@param entities The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in its detection.*/",
           "setterMethodName" : "setEntities",
           "setterModel" : {
@@ -3020,6 +3057,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PaginationToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> If the result of the previous request to DetectPHI was truncated, include the Paginationtoken to fetch the next page of PHI entities. </p>\n@param paginationToken If the result of the previous request to DetectPHI was truncated, include the Paginationtoken to fetch the next page of PHI entities.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
@@ -3125,6 +3163,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>\n@param id The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -3190,6 +3229,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "BeginOffset",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>\n@param beginOffset The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.*/",
         "setterMethodName" : "setBeginOffset",
         "setterModel" : {
@@ -3255,6 +3295,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "EndOffset",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>\n@param endOffset The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.*/",
         "setterMethodName" : "setEndOffset",
         "setterModel" : {
@@ -3320,6 +3361,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "Score",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The level of confidence that Comprehend Medical has in the accuracy of the detection.</p>\n@param score The level of confidence that Comprehend Medical has in the accuracy of the detection.*/",
         "setterMethodName" : "setScore",
         "setterModel" : {
@@ -3385,6 +3427,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Text",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The segment of input text extracted as this entity.</p>\n@param text The segment of input text extracted as this entity.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
@@ -3450,6 +3493,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Category",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The category of the entity.</p>\n@param category The category of the entity.\n@see EntityType*/",
         "setterMethodName" : "setCategory",
         "setterModel" : {
@@ -3515,6 +3559,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Describes the specific type of entity with category of entities. </p>\n@param type Describes the specific type of entity with category of entities.\n@see EntitySubType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -3617,6 +3662,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3660,6 +3706,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Traits",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contextual information for the entity</p>\n@param traits Contextual information for the entity*/",
         "setterMethodName" : "setTraits",
         "setterModel" : {
@@ -3762,6 +3809,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3805,6 +3853,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The extracted attributes that relate to this entity.</p>\n@param attributes The extracted attributes that relate to this entity.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -3909,6 +3958,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3952,6 +4002,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The extracted attributes that relate to this entity.</p>\n@param attributes The extracted attributes that relate to this entity.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -4018,6 +4069,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "BeginOffset",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>\n@param beginOffset The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.*/",
           "setterMethodName" : "setBeginOffset",
           "setterModel" : {
@@ -4084,6 +4136,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Category",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The category of the entity.</p>\n@param category The category of the entity.\n@see EntityType*/",
           "setterMethodName" : "setCategory",
           "setterModel" : {
@@ -4150,6 +4203,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "EndOffset",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>\n@param endOffset The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.*/",
           "setterMethodName" : "setEndOffset",
           "setterModel" : {
@@ -4216,6 +4270,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>\n@param id The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -4282,6 +4337,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "Score",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The level of confidence that Comprehend Medical has in the accuracy of the detection.</p>\n@param score The level of confidence that Comprehend Medical has in the accuracy of the detection.*/",
           "setterMethodName" : "setScore",
           "setterModel" : {
@@ -4348,6 +4404,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Text",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The segment of input text extracted as this entity.</p>\n@param text The segment of input text extracted as this entity.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
@@ -4451,6 +4508,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4494,6 +4552,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Traits",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contextual information for the entity</p>\n@param traits Contextual information for the entity*/",
           "setterMethodName" : "setTraits",
           "setterModel" : {
@@ -4560,6 +4619,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Describes the specific type of entity with category of entities. </p>\n@param type Describes the specific type of entity with category of entities.\n@see EntitySubType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -5066,6 +5126,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Provides a name or contextual description about the trait. </p>\n@param name Provides a name or contextual description about the trait.\n@see AttributeName*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5131,6 +5192,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "Score",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The level of confidence that Comprehend Medical has in the accuracy of this trait.</p>\n@param score The level of confidence that Comprehend Medical has in the accuracy of this trait.*/",
         "setterMethodName" : "setScore",
         "setterModel" : {
@@ -5198,6 +5260,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Provides a name or contextual description about the trait. </p>\n@param name Provides a name or contextual description about the trait.\n@see AttributeName*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5264,6 +5327,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "Score",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The level of confidence that Comprehend Medical has in the accuracy of this trait.</p>\n@param score The level of confidence that Comprehend Medical has in the accuracy of this trait.*/",
           "setterMethodName" : "setScore",
           "setterModel" : {
@@ -5369,6 +5433,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The type of the attribute, could be one of the following values: \"MEDICATION\", \"MEDICAL_CONDITION\", \"ANATOMY\", \"TEST_AND_TREATMENT_PROCEDURE\" or \"PERSONAL_HEALTH_INFORMATION\". </p>\n@param type The type of the attribute, could be one of the following values: \"MEDICATION\", \"MEDICAL_CONDITION\", \"ANATOMY\", \"TEST_AND_TREATMENT_PROCEDURE\" or \"PERSONAL_HEALTH_INFORMATION\".\n@see EntityType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -5434,6 +5499,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Attribute",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The specific attribute that has been extracted but not mapped to an entity. </p>\n@param attribute The specific attribute that has been extracted but not mapped to an entity.*/",
         "setterMethodName" : "setAttribute",
         "setterModel" : {
@@ -5501,6 +5567,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Attribute",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The specific attribute that has been extracted but not mapped to an entity. </p>\n@param attribute The specific attribute that has been extracted but not mapped to an entity.*/",
           "setterMethodName" : "setAttribute",
           "setterModel" : {
@@ -5567,6 +5634,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The type of the attribute, could be one of the following values: \"MEDICATION\", \"MEDICAL_CONDITION\", \"ANATOMY\", \"TEST_AND_TREATMENT_PROCEDURE\" or \"PERSONAL_HEALTH_INFORMATION\". </p>\n@param type The type of the attribute, could be one of the following values: \"MEDICATION\", \"MEDICAL_CONDITION\", \"ANATOMY\", \"TEST_AND_TREATMENT_PROCEDURE\" or \"PERSONAL_HEALTH_INFORMATION\".\n@see EntityType*/",
           "setterMethodName" : "setType",
           "setterModel" : {

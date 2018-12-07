@@ -1260,6 +1260,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AgentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The agent/connector ID.</p>\n@param agentId The agent/connector ID.*/",
         "setterMethodName" : "setAgentId",
         "setterModel" : {
@@ -1325,6 +1326,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "OperationSucceeded",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>\n@param operationSucceeded Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command.*/",
         "setterMethodName" : "setOperationSucceeded",
         "setterModel" : {
@@ -1390,6 +1392,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the operation performed.</p>\n@param description A description of the operation performed.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -1457,6 +1460,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AgentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The agent/connector ID.</p>\n@param agentId The agent/connector ID.*/",
           "setterMethodName" : "setAgentId",
           "setterModel" : {
@@ -1523,6 +1527,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the operation performed.</p>\n@param description A description of the operation performed.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -1589,6 +1594,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "OperationSucceeded",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>\n@param operationSucceeded Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command.*/",
           "setterMethodName" : "setOperationSucceeded",
           "setterModel" : {
@@ -1694,6 +1700,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AgentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The agent or connector ID.</p>\n@param agentId The agent or connector ID.*/",
         "setterMethodName" : "setAgentId",
         "setterModel" : {
@@ -1759,6 +1766,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HostName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the host where the agent or connector resides. The host can be a server or virtual machine.</p>\n@param hostName The name of the host where the agent or connector resides. The host can be a server or virtual machine.*/",
         "setterMethodName" : "setHostName",
         "setterModel" : {
@@ -1861,6 +1869,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1904,6 +1913,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AgentNetworkInfoList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Network details about the host where the agent or connector resides.</p>\n@param agentNetworkInfoList Network details about the host where the agent or connector resides.*/",
         "setterMethodName" : "setAgentNetworkInfoList",
         "setterModel" : {
@@ -1969,6 +1979,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConnectorId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the connector.</p>\n@param connectorId The ID of the connector.*/",
         "setterMethodName" : "setConnectorId",
         "setterModel" : {
@@ -2034,6 +2045,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Version",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The agent or connector version.</p>\n@param version The agent or connector version.*/",
         "setterMethodName" : "setVersion",
         "setterModel" : {
@@ -2099,6 +2111,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Health",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The health of the agent or connector.</p>\n@param health The health of the agent or connector.\n@see AgentStatus*/",
         "setterMethodName" : "setHealth",
         "setterModel" : {
@@ -2164,6 +2177,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LastHealthPingTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Time since agent or connector health was reported.</p>\n@param lastHealthPingTime Time since agent or connector health was reported.*/",
         "setterMethodName" : "setLastHealthPingTime",
         "setterModel" : {
@@ -2229,6 +2243,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CollectionStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Status of the collection process for an agent or connector.</p>\n@param collectionStatus Status of the collection process for an agent or connector.*/",
         "setterMethodName" : "setCollectionStatus",
         "setterModel" : {
@@ -2294,6 +2309,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AgentType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Type of agent.</p>\n@param agentType Type of agent.*/",
         "setterMethodName" : "setAgentType",
         "setterModel" : {
@@ -2359,6 +2375,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RegisteredTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Agent's first registration timestamp in UTC.</p>\n@param registeredTime Agent's first registration timestamp in UTC.*/",
         "setterMethodName" : "setRegisteredTime",
         "setterModel" : {
@@ -2426,6 +2443,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AgentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The agent or connector ID.</p>\n@param agentId The agent or connector ID.*/",
           "setterMethodName" : "setAgentId",
           "setterModel" : {
@@ -2529,6 +2547,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2572,6 +2591,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AgentNetworkInfoList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Network details about the host where the agent or connector resides.</p>\n@param agentNetworkInfoList Network details about the host where the agent or connector resides.*/",
           "setterMethodName" : "setAgentNetworkInfoList",
           "setterModel" : {
@@ -2638,6 +2658,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AgentType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Type of agent.</p>\n@param agentType Type of agent.*/",
           "setterMethodName" : "setAgentType",
           "setterModel" : {
@@ -2704,6 +2725,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CollectionStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Status of the collection process for an agent or connector.</p>\n@param collectionStatus Status of the collection process for an agent or connector.*/",
           "setterMethodName" : "setCollectionStatus",
           "setterModel" : {
@@ -2770,6 +2792,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConnectorId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the connector.</p>\n@param connectorId The ID of the connector.*/",
           "setterMethodName" : "setConnectorId",
           "setterModel" : {
@@ -2836,6 +2859,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Health",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The health of the agent or connector.</p>\n@param health The health of the agent or connector.\n@see AgentStatus*/",
           "setterMethodName" : "setHealth",
           "setterModel" : {
@@ -2902,6 +2926,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HostName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the host where the agent or connector resides. The host can be a server or virtual machine.</p>\n@param hostName The name of the host where the agent or connector resides. The host can be a server or virtual machine.*/",
           "setterMethodName" : "setHostName",
           "setterModel" : {
@@ -2968,6 +2993,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LastHealthPingTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Time since agent or connector health was reported.</p>\n@param lastHealthPingTime Time since agent or connector health was reported.*/",
           "setterMethodName" : "setLastHealthPingTime",
           "setterModel" : {
@@ -3034,6 +3060,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RegisteredTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Agent's first registration timestamp in UTC.</p>\n@param registeredTime Agent's first registration timestamp in UTC.*/",
           "setterMethodName" : "setRegisteredTime",
           "setterModel" : {
@@ -3100,6 +3127,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Version",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The agent or connector version.</p>\n@param version The agent or connector version.*/",
           "setterMethodName" : "setVersion",
           "setterModel" : {
@@ -3205,6 +3233,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IpAddress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IP address for the host where the agent/connector resides.</p>\n@param ipAddress The IP address for the host where the agent/connector resides.*/",
         "setterMethodName" : "setIpAddress",
         "setterModel" : {
@@ -3270,6 +3299,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MacAddress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The MAC address for the host where the agent/connector resides.</p>\n@param macAddress The MAC address for the host where the agent/connector resides.*/",
         "setterMethodName" : "setMacAddress",
         "setterModel" : {
@@ -3337,6 +3367,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IpAddress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IP address for the host where the agent/connector resides.</p>\n@param ipAddress The IP address for the host where the agent/connector resides.*/",
           "setterMethodName" : "setIpAddress",
           "setterModel" : {
@@ -3403,6 +3434,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MacAddress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The MAC address for the host where the agent/connector resides.</p>\n@param macAddress The MAC address for the host where the agent/connector resides.*/",
           "setterMethodName" : "setMacAddress",
           "setterModel" : {
@@ -3573,6 +3605,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ApplicationConfigurationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration ID of an application with which items are to be associated.</p>\n@param applicationConfigurationId The configuration ID of an application with which items are to be associated.*/",
         "setterMethodName" : "setApplicationConfigurationId",
         "setterModel" : {
@@ -3675,6 +3708,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3718,6 +3752,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ConfigurationIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of each configuration item to be associated with an application.</p>\n@param configurationIds The ID of each configuration item to be associated with an application.*/",
         "setterMethodName" : "setConfigurationIds",
         "setterModel" : {
@@ -3785,6 +3820,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ApplicationConfigurationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration ID of an application with which items are to be associated.</p>\n@param applicationConfigurationId The configuration ID of an application with which items are to be associated.*/",
           "setterMethodName" : "setApplicationConfigurationId",
           "setterModel" : {
@@ -3888,6 +3924,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3931,6 +3968,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ConfigurationIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of each configuration item to be associated with an application.</p>\n@param configurationIds The ID of each configuration item to be associated with an application.*/",
           "setterMethodName" : "setConfigurationIds",
           "setterModel" : {
@@ -4162,6 +4200,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A type of IT asset to tag.</p>\n@param configurationType A type of IT asset to tag.\n@see ConfigurationItemType*/",
         "setterMethodName" : "setConfigurationType",
         "setterModel" : {
@@ -4227,6 +4266,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>\n@param configurationId The configuration ID for the item to tag. You can specify a list of keys and values.*/",
         "setterMethodName" : "setConfigurationId",
         "setterModel" : {
@@ -4292,6 +4332,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A type of tag on which to filter. For example, <i>serverType</i>.</p>\n@param key A type of tag on which to filter. For example, <i>serverType</i>.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -4357,6 +4398,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>\n@param value A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -4422,6 +4464,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "TimeOfCreation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>\n@param timeOfCreation The time the configuration tag was created in Coordinated Universal Time (UTC).*/",
         "setterMethodName" : "setTimeOfCreation",
         "setterModel" : {
@@ -4489,6 +4532,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>\n@param configurationId The configuration ID for the item to tag. You can specify a list of keys and values.*/",
           "setterMethodName" : "setConfigurationId",
           "setterModel" : {
@@ -4555,6 +4599,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A type of IT asset to tag.</p>\n@param configurationType A type of IT asset to tag.\n@see ConfigurationItemType*/",
           "setterMethodName" : "setConfigurationType",
           "setterModel" : {
@@ -4621,6 +4666,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A type of tag on which to filter. For example, <i>serverType</i>.</p>\n@param key A type of tag on which to filter. For example, <i>serverType</i>.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -4687,6 +4733,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "TimeOfCreation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>\n@param timeOfCreation The time the configuration tag was created in Coordinated Universal Time (UTC).*/",
           "setterMethodName" : "setTimeOfCreation",
           "setterModel" : {
@@ -4753,6 +4800,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>\n@param value A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -4895,6 +4943,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique ID assigned to this export.</p>\n@param exportId The unique ID assigned to this export.*/",
         "setterMethodName" : "setExportId",
         "setterModel" : {
@@ -4960,6 +5009,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Describes the status of the export. Can be one of the following values:</p> <ul> <li> <p>START_IN_PROGRESS - setting up resources to start continuous export.</p> </li> <li> <p>START_FAILED - an error occurred setting up continuous export. To recover, call start-continuous-export again.</p> </li> <li> <p>ACTIVE - data is being exported to the customer bucket.</p> </li> <li> <p>ERROR - an error occurred during export. To fix the issue, call stop-continuous-export and start-continuous-export.</p> </li> <li> <p>STOP_IN_PROGRESS - stopping the export.</p> </li> <li> <p>STOP_FAILED - an error occurred stopping the export. To recover, call stop-continuous-export again.</p> </li> <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li> </ul>\n@param status Describes the status of the export. Can be one of the following values:</p> <ul> <li> <p>START_IN_PROGRESS - setting up resources to start continuous export.</p> </li> <li> <p>START_FAILED - an error occurred setting up continuous export. To recover, call start-continuous-export again.</p> </li> <li> <p>ACTIVE - data is being exported to the customer bucket.</p> </li> <li> <p>ERROR - an error occurred during export. To fix the issue, call stop-continuous-export and start-continuous-export.</p> </li> <li> <p>STOP_IN_PROGRESS - stopping the export.</p> </li> <li> <p>STOP_FAILED - an error occurred stopping the export. To recover, call stop-continuous-export again.</p> </li> <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li>\n@see ContinuousExportStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -5025,6 +5075,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusDetail",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains information about any errors that may have occurred.</p>\n@param statusDetail Contains information about any errors that may have occurred.*/",
         "setterMethodName" : "setStatusDetail",
         "setterModel" : {
@@ -5090,6 +5141,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3Bucket",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the s3 bucket where the export data parquet files are stored.</p>\n@param s3Bucket The name of the s3 bucket where the export data parquet files are stored.*/",
         "setterMethodName" : "setS3Bucket",
         "setterModel" : {
@@ -5155,6 +5207,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The timestamp representing when the continuous export was started.</p>\n@param startTime The timestamp representing when the continuous export was started.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -5220,6 +5273,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StopTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The timestamp that represents when this continuous export was stopped.</p>\n@param stopTime The timestamp that represents when this continuous export was stopped.*/",
         "setterMethodName" : "setStopTime",
         "setterModel" : {
@@ -5285,6 +5339,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DataSource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of data collector used to gather this data (currently only offered for AGENT).</p>\n@param dataSource The type of data collector used to gather this data (currently only offered for AGENT).\n@see DataSource*/",
         "setterMethodName" : "setDataSource",
         "setterModel" : {
@@ -5393,6 +5448,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -5430,6 +5486,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SchemaStorageConfig",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li> </ul>\n@param schemaStorageConfig An object which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>*/",
         "setterMethodName" : "setSchemaStorageConfig",
         "setterModel" : {
@@ -5497,6 +5554,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DataSource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of data collector used to gather this data (currently only offered for AGENT).</p>\n@param dataSource The type of data collector used to gather this data (currently only offered for AGENT).\n@see DataSource*/",
           "setterMethodName" : "setDataSource",
           "setterModel" : {
@@ -5563,6 +5621,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique ID assigned to this export.</p>\n@param exportId The unique ID assigned to this export.*/",
           "setterMethodName" : "setExportId",
           "setterModel" : {
@@ -5629,6 +5688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3Bucket",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the s3 bucket where the export data parquet files are stored.</p>\n@param s3Bucket The name of the s3 bucket where the export data parquet files are stored.*/",
           "setterMethodName" : "setS3Bucket",
           "setterModel" : {
@@ -5738,6 +5798,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -5775,6 +5836,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SchemaStorageConfig",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li> </ul>\n@param schemaStorageConfig An object which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>*/",
           "setterMethodName" : "setSchemaStorageConfig",
           "setterModel" : {
@@ -5841,6 +5903,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The timestamp representing when the continuous export was started.</p>\n@param startTime The timestamp representing when the continuous export was started.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -5907,6 +5970,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Describes the status of the export. Can be one of the following values:</p> <ul> <li> <p>START_IN_PROGRESS - setting up resources to start continuous export.</p> </li> <li> <p>START_FAILED - an error occurred setting up continuous export. To recover, call start-continuous-export again.</p> </li> <li> <p>ACTIVE - data is being exported to the customer bucket.</p> </li> <li> <p>ERROR - an error occurred during export. To fix the issue, call stop-continuous-export and start-continuous-export.</p> </li> <li> <p>STOP_IN_PROGRESS - stopping the export.</p> </li> <li> <p>STOP_FAILED - an error occurred stopping the export. To recover, call stop-continuous-export again.</p> </li> <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li> </ul>\n@param status Describes the status of the export. Can be one of the following values:</p> <ul> <li> <p>START_IN_PROGRESS - setting up resources to start continuous export.</p> </li> <li> <p>START_FAILED - an error occurred setting up continuous export. To recover, call start-continuous-export again.</p> </li> <li> <p>ACTIVE - data is being exported to the customer bucket.</p> </li> <li> <p>ERROR - an error occurred during export. To fix the issue, call stop-continuous-export and start-continuous-export.</p> </li> <li> <p>STOP_IN_PROGRESS - stopping the export.</p> </li> <li> <p>STOP_FAILED - an error occurred stopping the export. To recover, call stop-continuous-export again.</p> </li> <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li>\n@see ContinuousExportStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -5973,6 +6037,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusDetail",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains information about any errors that may have occurred.</p>\n@param statusDetail Contains information about any errors that may have occurred.*/",
           "setterMethodName" : "setStatusDetail",
           "setterModel" : {
@@ -6039,6 +6104,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StopTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The timestamp that represents when this continuous export was stopped.</p>\n@param stopTime The timestamp that represents when this continuous export was stopped.*/",
           "setterMethodName" : "setStopTime",
           "setterModel" : {
@@ -6212,6 +6278,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the application to be created.</p>\n@param name Name of the application to be created.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -6277,6 +6344,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Description of the application to be created.</p>\n@param description Description of the application to be created.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -6344,6 +6412,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Description of the application to be created.</p>\n@param description Description of the application to be created.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -6410,6 +6479,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the application to be created.</p>\n@param name Name of the application to be created.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -6512,6 +6582,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Configuration ID of an application to be created.</p>\n@param configurationId Configuration ID of an application to be created.*/",
         "setterMethodName" : "setConfigurationId",
         "setterModel" : {
@@ -6579,6 +6650,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Configuration ID of an application to be created.</p>\n@param configurationId Configuration ID of an application to be created.*/",
           "setterMethodName" : "setConfigurationId",
           "setterModel" : {
@@ -6728,6 +6800,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6771,6 +6844,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ConfigurationIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of configuration items that you want to tag.</p>\n@param configurationIds A list of configuration items that you want to tag.*/",
         "setterMethodName" : "setConfigurationIds",
         "setterModel" : {
@@ -6873,6 +6947,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6916,6 +6991,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p>\n@param tags Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code>*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -7020,6 +7096,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7063,6 +7140,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ConfigurationIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of configuration items that you want to tag.</p>\n@param configurationIds A list of configuration items that you want to tag.*/",
           "setterMethodName" : "setConfigurationIds",
           "setterModel" : {
@@ -7166,6 +7244,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7209,6 +7288,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p>\n@param tags Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code>*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -7351,6 +7431,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ActiveAgents",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of active discovery agents.</p>\n@param activeAgents Number of active discovery agents.*/",
         "setterMethodName" : "setActiveAgents",
         "setterModel" : {
@@ -7416,6 +7497,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthyAgents",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of healthy discovery agents</p>\n@param healthyAgents Number of healthy discovery agents*/",
         "setterMethodName" : "setHealthyAgents",
         "setterModel" : {
@@ -7481,6 +7563,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "BlackListedAgents",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of blacklisted discovery agents.</p>\n@param blackListedAgents Number of blacklisted discovery agents.*/",
         "setterMethodName" : "setBlackListedAgents",
         "setterModel" : {
@@ -7546,6 +7629,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ShutdownAgents",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of discovery agents with status SHUTDOWN.</p>\n@param shutdownAgents Number of discovery agents with status SHUTDOWN.*/",
         "setterMethodName" : "setShutdownAgents",
         "setterModel" : {
@@ -7611,6 +7695,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UnhealthyAgents",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of unhealthy discovery agents.</p>\n@param unhealthyAgents Number of unhealthy discovery agents.*/",
         "setterMethodName" : "setUnhealthyAgents",
         "setterModel" : {
@@ -7676,6 +7761,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TotalAgents",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Total number of discovery agents.</p>\n@param totalAgents Total number of discovery agents.*/",
         "setterMethodName" : "setTotalAgents",
         "setterModel" : {
@@ -7741,6 +7827,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UnknownAgents",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of unknown discovery agents.</p>\n@param unknownAgents Number of unknown discovery agents.*/",
         "setterMethodName" : "setUnknownAgents",
         "setterModel" : {
@@ -7808,6 +7895,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ActiveAgents",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of active discovery agents.</p>\n@param activeAgents Number of active discovery agents.*/",
           "setterMethodName" : "setActiveAgents",
           "setterModel" : {
@@ -7874,6 +7962,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "BlackListedAgents",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of blacklisted discovery agents.</p>\n@param blackListedAgents Number of blacklisted discovery agents.*/",
           "setterMethodName" : "setBlackListedAgents",
           "setterModel" : {
@@ -7940,6 +8029,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthyAgents",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of healthy discovery agents</p>\n@param healthyAgents Number of healthy discovery agents*/",
           "setterMethodName" : "setHealthyAgents",
           "setterModel" : {
@@ -8006,6 +8096,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ShutdownAgents",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of discovery agents with status SHUTDOWN.</p>\n@param shutdownAgents Number of discovery agents with status SHUTDOWN.*/",
           "setterMethodName" : "setShutdownAgents",
           "setterModel" : {
@@ -8072,6 +8163,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TotalAgents",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Total number of discovery agents.</p>\n@param totalAgents Total number of discovery agents.*/",
           "setterMethodName" : "setTotalAgents",
           "setterModel" : {
@@ -8138,6 +8230,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UnhealthyAgents",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of unhealthy discovery agents.</p>\n@param unhealthyAgents Number of unhealthy discovery agents.*/",
           "setterMethodName" : "setUnhealthyAgents",
           "setterModel" : {
@@ -8204,6 +8297,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UnknownAgents",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of unknown discovery agents.</p>\n@param unknownAgents Number of unknown discovery agents.*/",
           "setterMethodName" : "setUnknownAgents",
           "setterModel" : {
@@ -8309,6 +8403,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ActiveConnectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of active discovery connectors.</p>\n@param activeConnectors Number of active discovery connectors.*/",
         "setterMethodName" : "setActiveConnectors",
         "setterModel" : {
@@ -8374,6 +8469,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthyConnectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of healthy discovery connectors.</p>\n@param healthyConnectors Number of healthy discovery connectors.*/",
         "setterMethodName" : "setHealthyConnectors",
         "setterModel" : {
@@ -8439,6 +8535,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "BlackListedConnectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of blacklisted discovery connectors.</p>\n@param blackListedConnectors Number of blacklisted discovery connectors.*/",
         "setterMethodName" : "setBlackListedConnectors",
         "setterModel" : {
@@ -8504,6 +8601,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ShutdownConnectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of discovery connectors with status SHUTDOWN,</p>\n@param shutdownConnectors Number of discovery connectors with status SHUTDOWN,*/",
         "setterMethodName" : "setShutdownConnectors",
         "setterModel" : {
@@ -8569,6 +8667,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UnhealthyConnectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of unhealthy discovery connectors.</p>\n@param unhealthyConnectors Number of unhealthy discovery connectors.*/",
         "setterMethodName" : "setUnhealthyConnectors",
         "setterModel" : {
@@ -8634,6 +8733,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TotalConnectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Total number of discovery connectors.</p>\n@param totalConnectors Total number of discovery connectors.*/",
         "setterMethodName" : "setTotalConnectors",
         "setterModel" : {
@@ -8699,6 +8799,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UnknownConnectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of unknown discovery connectors.</p>\n@param unknownConnectors Number of unknown discovery connectors.*/",
         "setterMethodName" : "setUnknownConnectors",
         "setterModel" : {
@@ -8766,6 +8867,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ActiveConnectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of active discovery connectors.</p>\n@param activeConnectors Number of active discovery connectors.*/",
           "setterMethodName" : "setActiveConnectors",
           "setterModel" : {
@@ -8832,6 +8934,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "BlackListedConnectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of blacklisted discovery connectors.</p>\n@param blackListedConnectors Number of blacklisted discovery connectors.*/",
           "setterMethodName" : "setBlackListedConnectors",
           "setterModel" : {
@@ -8898,6 +9001,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthyConnectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of healthy discovery connectors.</p>\n@param healthyConnectors Number of healthy discovery connectors.*/",
           "setterMethodName" : "setHealthyConnectors",
           "setterModel" : {
@@ -8964,6 +9068,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ShutdownConnectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of discovery connectors with status SHUTDOWN,</p>\n@param shutdownConnectors Number of discovery connectors with status SHUTDOWN,*/",
           "setterMethodName" : "setShutdownConnectors",
           "setterModel" : {
@@ -9030,6 +9135,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TotalConnectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Total number of discovery connectors.</p>\n@param totalConnectors Total number of discovery connectors.*/",
           "setterMethodName" : "setTotalConnectors",
           "setterModel" : {
@@ -9096,6 +9202,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UnhealthyConnectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of unhealthy discovery connectors.</p>\n@param unhealthyConnectors Number of unhealthy discovery connectors.*/",
           "setterMethodName" : "setUnhealthyConnectors",
           "setterModel" : {
@@ -9162,6 +9269,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UnknownConnectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of unknown discovery connectors.</p>\n@param unknownConnectors Number of unknown discovery connectors.*/",
           "setterMethodName" : "setUnknownConnectors",
           "setterModel" : {
@@ -9354,6 +9462,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9397,6 +9506,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ConfigurationIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Configuration ID of an application to be deleted.</p>\n@param configurationIds Configuration ID of an application to be deleted.*/",
         "setterMethodName" : "setConfigurationIds",
         "setterModel" : {
@@ -9501,6 +9611,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9544,6 +9655,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ConfigurationIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Configuration ID of an application to be deleted.</p>\n@param configurationIds Configuration ID of an application to be deleted.*/",
           "setterMethodName" : "setConfigurationIds",
           "setterModel" : {
@@ -9730,6 +9842,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9773,6 +9886,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ConfigurationIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of configuration items with tags that you want to delete.</p>\n@param configurationIds A list of configuration items with tags that you want to delete.*/",
         "setterMethodName" : "setConfigurationIds",
         "setterModel" : {
@@ -9875,6 +9989,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9918,6 +10033,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p>\n@param tags Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code>*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -10022,6 +10138,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10065,6 +10182,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ConfigurationIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of configuration items with tags that you want to delete.</p>\n@param configurationIds A list of configuration items with tags that you want to delete.*/",
           "setterMethodName" : "setConfigurationIds",
           "setterModel" : {
@@ -10168,6 +10286,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10211,6 +10330,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p>\n@param tags Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code>*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -10397,6 +10517,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10440,6 +10561,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AgentIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>\n@param agentIds The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.*/",
         "setterMethodName" : "setAgentIds",
         "setterModel" : {
@@ -10542,6 +10664,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10585,6 +10708,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"collectionStatus\", \"value\": \"STARTED\"}</code> </p>\n@param filters You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"collectionStatus\", \"value\": \"STARTED\"}</code>*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -10650,6 +10774,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>\n@param maxResults The total number of agents/Connectors to return in a single page of output. The maximum value is 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10715,6 +10840,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10819,6 +10945,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10862,6 +10989,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AgentIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>\n@param agentIds The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.*/",
           "setterMethodName" : "setAgentIds",
           "setterModel" : {
@@ -10965,6 +11093,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11008,6 +11137,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"collectionStatus\", \"value\": \"STARTED\"}</code> </p>\n@param filters You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"collectionStatus\", \"value\": \"STARTED\"}</code>*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -11074,6 +11204,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>\n@param maxResults The total number of agents/Connectors to return in a single page of output. The maximum value is 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11140,6 +11271,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11279,6 +11411,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11322,6 +11455,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AgentsInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.</p>\n@param agentsInfo Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.*/",
         "setterMethodName" : "setAgentsInfo",
         "setterModel" : {
@@ -11387,6 +11521,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11491,6 +11626,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11534,6 +11670,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AgentsInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.</p>\n@param agentsInfo Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.*/",
           "setterMethodName" : "setAgentsInfo",
           "setterModel" : {
@@ -11600,6 +11737,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11749,6 +11887,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11792,6 +11931,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ConfigurationIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more configuration IDs.</p>\n@param configurationIds One or more configuration IDs.*/",
         "setterMethodName" : "setConfigurationIds",
         "setterModel" : {
@@ -11896,6 +12036,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11939,6 +12080,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ConfigurationIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more configuration IDs.</p>\n@param configurationIds One or more configuration IDs.*/",
           "setterMethodName" : "setConfigurationIds",
           "setterModel" : {
@@ -12121,6 +12263,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Value",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param value */",
                 "setterMethodName" : "setValue",
                 "setterModel" : {
@@ -12158,6 +12301,7 @@
             "marshallingTargetClass" : "Map",
             "marshallingType" : "MAP",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12201,6 +12345,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Configurations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A key in the response map. The value is an array of data.</p>\n@param configurations A key in the response map. The value is an array of data.*/",
         "setterMethodName" : "setConfigurations",
         "setterModel" : {
@@ -12348,6 +12493,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Value",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param value */",
                   "setterMethodName" : "setValue",
                   "setterModel" : {
@@ -12385,6 +12531,7 @@
               "marshallingTargetClass" : "Map",
               "marshallingType" : "MAP",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12428,6 +12575,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Configurations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A key in the response map. The value is an array of data.</p>\n@param configurations A key in the response map. The value is an array of data.*/",
           "setterMethodName" : "setConfigurations",
           "setterModel" : {
@@ -12577,6 +12725,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12620,6 +12769,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExportIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique IDs assigned to the exports.</p>\n@param exportIds The unique IDs assigned to the exports.*/",
         "setterMethodName" : "setExportIds",
         "setterModel" : {
@@ -12685,6 +12835,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>\n@param maxResults A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -12750,6 +12901,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token from the previous call to <code>DescribeExportTasks</code>.</p>\n@param nextToken The token from the previous call to <code>DescribeExportTasks</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12854,6 +13006,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12897,6 +13050,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExportIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique IDs assigned to the exports.</p>\n@param exportIds The unique IDs assigned to the exports.*/",
           "setterMethodName" : "setExportIds",
           "setterModel" : {
@@ -12963,6 +13117,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>\n@param maxResults A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -13029,6 +13184,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token from the previous call to <code>DescribeExportTasks</code>.</p>\n@param nextToken The token from the previous call to <code>DescribeExportTasks</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13168,6 +13324,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13211,6 +13368,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Descriptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of continuous export descriptions.</p>\n@param descriptions A list of continuous export descriptions.*/",
         "setterMethodName" : "setDescriptions",
         "setterModel" : {
@@ -13276,6 +13434,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token from the previous call to <code>DescribeExportTasks</code>.</p>\n@param nextToken The token from the previous call to <code>DescribeExportTasks</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13380,6 +13539,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13423,6 +13583,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Descriptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of continuous export descriptions.</p>\n@param descriptions A list of continuous export descriptions.*/",
           "setterMethodName" : "setDescriptions",
           "setterModel" : {
@@ -13489,6 +13650,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token from the previous call to <code>DescribeExportTasks</code>.</p>\n@param nextToken The token from the previous call to <code>DescribeExportTasks</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13638,6 +13800,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13681,6 +13844,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExportIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n@param exportIds A list of continuous export ids to search for.*/",
         "setterMethodName" : "setExportIds",
         "setterModel" : {
@@ -13746,6 +13910,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>\n@param maxResults A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -13811,6 +13976,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token from the previous call to describe-export-tasks.</p>\n@param nextToken The token from the previous call to describe-export-tasks.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13915,6 +14081,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13958,6 +14125,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExportIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n@param exportIds A list of continuous export ids to search for.*/",
           "setterMethodName" : "setExportIds",
           "setterModel" : {
@@ -14024,6 +14192,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>\n@param maxResults A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -14090,6 +14259,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token from the previous call to describe-export-tasks.</p>\n@param nextToken The token from the previous call to describe-export-tasks.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14229,6 +14399,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14272,6 +14443,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExportsInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p/>\n@param exportsInfo */",
         "setterMethodName" : "setExportsInfo",
         "setterModel" : {
@@ -14337,6 +14509,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token from the previous call to describe-export-tasks.</p>\n@param nextToken The token from the previous call to describe-export-tasks.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -14441,6 +14614,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14484,6 +14658,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExportsInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p/>\n@param exportsInfo */",
           "setterMethodName" : "setExportsInfo",
           "setterModel" : {
@@ -14550,6 +14725,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token from the previous call to describe-export-tasks.</p>\n@param nextToken The token from the previous call to describe-export-tasks.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14699,6 +14875,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14742,6 +14919,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExportIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more unique identifiers used to query the status of an export request.</p>\n@param exportIds One or more unique identifiers used to query the status of an export request.*/",
         "setterMethodName" : "setExportIds",
         "setterModel" : {
@@ -14844,6 +15022,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14887,6 +15066,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li> </ul>\n@param filters One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -14952,6 +15132,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>\n@param maxResults The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -15017,6 +15198,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15121,6 +15303,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15164,6 +15347,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExportIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more unique identifiers used to query the status of an export request.</p>\n@param exportIds One or more unique identifiers used to query the status of an export request.*/",
           "setterMethodName" : "setExportIds",
           "setterModel" : {
@@ -15267,6 +15451,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15310,6 +15495,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li> </ul>\n@param filters One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -15376,6 +15562,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>\n@param maxResults The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -15442,6 +15629,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -15581,6 +15769,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15624,6 +15813,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExportsInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>\n@param exportsInfo Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.*/",
         "setterMethodName" : "setExportsInfo",
         "setterModel" : {
@@ -15689,6 +15879,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15793,6 +15984,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15836,6 +16028,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExportsInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>\n@param exportsInfo Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.*/",
           "setterMethodName" : "setExportsInfo",
           "setterModel" : {
@@ -15902,6 +16095,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16051,6 +16245,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16094,6 +16289,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>\n@param filters You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -16159,6 +16355,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The total number of items to return in a single page of output. The maximum value is 100.</p>\n@param maxResults The total number of items to return in a single page of output. The maximum value is 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -16224,6 +16421,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A token to start the list. Use this token to get the next set of results.</p>\n@param nextToken A token to start the list. Use this token to get the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -16328,6 +16526,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16371,6 +16570,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>\n@param filters You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -16437,6 +16637,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The total number of items to return in a single page of output. The maximum value is 100.</p>\n@param maxResults The total number of items to return in a single page of output. The maximum value is 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -16503,6 +16704,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A token to start the list. Use this token to get the next set of results.</p>\n@param nextToken A token to start the list. Use this token to get the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16642,6 +16844,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16685,6 +16888,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>\n@param tags Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -16750,6 +16954,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The call returns a token. Use this token to get the next set of results.</p>\n@param nextToken The call returns a token. Use this token to get the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -16817,6 +17022,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The call returns a token. Use this token to get the next set of results.</p>\n@param nextToken The call returns a token. Use this token to get the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16920,6 +17126,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16963,6 +17170,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>\n@param tags Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -17075,6 +17283,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ApplicationConfigurationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Configuration ID of an application from which each item is disassociated.</p>\n@param applicationConfigurationId Configuration ID of an application from which each item is disassociated.*/",
         "setterMethodName" : "setApplicationConfigurationId",
         "setterModel" : {
@@ -17177,6 +17386,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17220,6 +17430,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ConfigurationIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Configuration ID of each item to be disassociated from an application.</p>\n@param configurationIds Configuration ID of each item to be disassociated from an application.*/",
         "setterMethodName" : "setConfigurationIds",
         "setterModel" : {
@@ -17287,6 +17498,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ApplicationConfigurationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Configuration ID of an application from which each item is disassociated.</p>\n@param applicationConfigurationId Configuration ID of an application from which each item is disassociated.*/",
           "setterMethodName" : "setApplicationConfigurationId",
           "setterModel" : {
@@ -17390,6 +17602,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -17433,6 +17646,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ConfigurationIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Configuration ID of each item to be disassociated from an application.</p>\n@param configurationIds Configuration ID of each item to be disassociated from an application.*/",
           "setterMethodName" : "setConfigurationIds",
           "setterModel" : {
@@ -17619,6 +17833,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier that you can use to query the export status.</p>\n@param exportId A unique identifier that you can use to query the export status.*/",
         "setterMethodName" : "setExportId",
         "setterModel" : {
@@ -17686,6 +17901,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier that you can use to query the export status.</p>\n@param exportId A unique identifier that you can use to query the export status.*/",
           "setterMethodName" : "setExportId",
           "setterModel" : {
@@ -17837,6 +18053,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.</p>\n@param name A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -17939,6 +18156,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17982,6 +18200,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html\">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.</p>\n@param values A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html\">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -18047,6 +18266,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Condition",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Supported condition: <code>EQUALS</code> </p>\n@param condition Supported condition: <code>EQUALS</code>*/",
         "setterMethodName" : "setCondition",
         "setterModel" : {
@@ -18114,6 +18334,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Condition",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Supported condition: <code>EQUALS</code> </p>\n@param condition Supported condition: <code>EQUALS</code>*/",
           "setterMethodName" : "setCondition",
           "setterModel" : {
@@ -18180,6 +18401,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.</p>\n@param name A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -18283,6 +18505,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18326,6 +18549,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html\">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.</p>\n@param values A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be found using the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html\">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -18431,6 +18655,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier used to query an export.</p>\n@param exportId A unique identifier used to query an export.*/",
         "setterMethodName" : "setExportId",
         "setterModel" : {
@@ -18496,6 +18721,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the data export job.</p>\n@param exportStatus The status of the data export job.\n@see ExportStatus*/",
         "setterMethodName" : "setExportStatus",
         "setterModel" : {
@@ -18561,6 +18787,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A status message provided for API callers.</p>\n@param statusMessage A status message provided for API callers.*/",
         "setterMethodName" : "setStatusMessage",
         "setterModel" : {
@@ -18626,6 +18853,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationsDownloadUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>\n@param configurationsDownloadUrl A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.*/",
         "setterMethodName" : "setConfigurationsDownloadUrl",
         "setterModel" : {
@@ -18691,6 +18919,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "ExportRequestTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time that the data export was initiated.</p>\n@param exportRequestTime The time that the data export was initiated.*/",
         "setterMethodName" : "setExportRequestTime",
         "setterModel" : {
@@ -18756,6 +18985,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IsTruncated",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.</p>\n@param isTruncated If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.*/",
         "setterMethodName" : "setIsTruncated",
         "setterModel" : {
@@ -18821,6 +19051,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "RequestedStartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>\n@param requestedStartTime The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.*/",
         "setterMethodName" : "setRequestedStartTime",
         "setterModel" : {
@@ -18886,6 +19117,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "RequestedEndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>\n@param requestedEndTime The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.*/",
         "setterMethodName" : "setRequestedEndTime",
         "setterModel" : {
@@ -18953,6 +19185,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationsDownloadUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>\n@param configurationsDownloadUrl A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.*/",
           "setterMethodName" : "setConfigurationsDownloadUrl",
           "setterModel" : {
@@ -19019,6 +19252,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier used to query an export.</p>\n@param exportId A unique identifier used to query an export.*/",
           "setterMethodName" : "setExportId",
           "setterModel" : {
@@ -19085,6 +19319,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "ExportRequestTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time that the data export was initiated.</p>\n@param exportRequestTime The time that the data export was initiated.*/",
           "setterMethodName" : "setExportRequestTime",
           "setterModel" : {
@@ -19151,6 +19386,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the data export job.</p>\n@param exportStatus The status of the data export job.\n@see ExportStatus*/",
           "setterMethodName" : "setExportStatus",
           "setterModel" : {
@@ -19217,6 +19453,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IsTruncated",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.</p>\n@param isTruncated If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.*/",
           "setterMethodName" : "setIsTruncated",
           "setterModel" : {
@@ -19283,6 +19520,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "RequestedEndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>\n@param requestedEndTime The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.*/",
           "setterMethodName" : "setRequestedEndTime",
           "setterModel" : {
@@ -19349,6 +19587,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "RequestedStartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>\n@param requestedStartTime The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.*/",
           "setterMethodName" : "setRequestedStartTime",
           "setterModel" : {
@@ -19415,6 +19654,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A status message provided for API callers.</p>\n@param statusMessage A status message provided for API callers.*/",
           "setterMethodName" : "setStatusMessage",
           "setterModel" : {
@@ -19569,6 +19809,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the filter.</p>\n@param name The name of the filter.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -19671,6 +19912,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -19714,6 +19956,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.</p>\n@param values A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -19779,6 +20022,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Condition",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.</p>\n@param condition A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.*/",
         "setterMethodName" : "setCondition",
         "setterModel" : {
@@ -19846,6 +20090,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Condition",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.</p>\n@param condition A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.*/",
           "setterMethodName" : "setCondition",
           "setterModel" : {
@@ -19912,6 +20157,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the filter.</p>\n@param name The name of the filter.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -20015,6 +20261,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20058,6 +20305,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.</p>\n@param values A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -20207,6 +20455,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Servers",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of servers discovered.</p>\n@param servers The number of servers discovered.*/",
         "setterMethodName" : "setServers",
         "setterModel" : {
@@ -20272,6 +20521,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Applications",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of applications discovered.</p>\n@param applications The number of applications discovered.*/",
         "setterMethodName" : "setApplications",
         "setterModel" : {
@@ -20337,6 +20587,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ServersMappedToApplications",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of servers mapped to applications.</p>\n@param serversMappedToApplications The number of servers mapped to applications.*/",
         "setterMethodName" : "setServersMappedToApplications",
         "setterModel" : {
@@ -20402,6 +20653,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ServersMappedtoTags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of servers mapped to tags.</p>\n@param serversMappedtoTags The number of servers mapped to tags.*/",
         "setterMethodName" : "setServersMappedtoTags",
         "setterModel" : {
@@ -20467,6 +20719,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AgentSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details about discovered agents, including agent status and health.</p>\n@param agentSummary Details about discovered agents, including agent status and health.*/",
         "setterMethodName" : "setAgentSummary",
         "setterModel" : {
@@ -20532,6 +20785,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ConnectorSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details about discovered connectors, including connector status and health.</p>\n@param connectorSummary Details about discovered connectors, including connector status and health.*/",
         "setterMethodName" : "setConnectorSummary",
         "setterModel" : {
@@ -20599,6 +20853,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AgentSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details about discovered agents, including agent status and health.</p>\n@param agentSummary Details about discovered agents, including agent status and health.*/",
           "setterMethodName" : "setAgentSummary",
           "setterModel" : {
@@ -20665,6 +20920,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Applications",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of applications discovered.</p>\n@param applications The number of applications discovered.*/",
           "setterMethodName" : "setApplications",
           "setterModel" : {
@@ -20731,6 +20987,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ConnectorSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details about discovered connectors, including connector status and health.</p>\n@param connectorSummary Details about discovered connectors, including connector status and health.*/",
           "setterMethodName" : "setConnectorSummary",
           "setterModel" : {
@@ -20797,6 +21054,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Servers",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of servers discovered.</p>\n@param servers The number of servers discovered.*/",
           "setterMethodName" : "setServers",
           "setterModel" : {
@@ -20863,6 +21121,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ServersMappedToApplications",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of servers mapped to applications.</p>\n@param serversMappedToApplications The number of servers mapped to applications.*/",
           "setterMethodName" : "setServersMappedToApplications",
           "setterModel" : {
@@ -20929,6 +21188,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ServersMappedtoTags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of servers mapped to tags.</p>\n@param serversMappedtoTags The number of servers mapped to tags.*/",
           "setterMethodName" : "setServersMappedtoTags",
           "setterModel" : {
@@ -21115,6 +21375,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A valid configuration identified by Application Discovery Service. </p>\n@param configurationType A valid configuration identified by Application Discovery Service.\n@see ConfigurationItemType*/",
         "setterMethodName" : "setConfigurationType",
         "setterModel" : {
@@ -21217,6 +21478,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -21260,6 +21522,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Querying Discovered Configuration Items</a>. </p>\n@param filters You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Querying Discovered Configuration Items</a>.*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -21325,6 +21588,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The total number of items to return. The maximum value is 100.</p>\n@param maxResults The total number of items to return. The maximum value is 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -21390,6 +21654,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -21492,6 +21757,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -21535,6 +21801,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "OrderBy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Using the ListConfigurations Action</a>.</p>\n@param orderBy Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Using the ListConfigurations Action</a>.*/",
         "setterMethodName" : "setOrderBy",
         "setterModel" : {
@@ -21602,6 +21869,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A valid configuration identified by Application Discovery Service. </p>\n@param configurationType A valid configuration identified by Application Discovery Service.\n@see ConfigurationItemType*/",
           "setterMethodName" : "setConfigurationType",
           "setterModel" : {
@@ -21705,6 +21973,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -21748,6 +22017,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Querying Discovered Configuration Items</a>. </p>\n@param filters You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Querying Discovered Configuration Items</a>.*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -21814,6 +22084,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The total number of items to return. The maximum value is 100.</p>\n@param maxResults The total number of items to return. The maximum value is 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -21880,6 +22151,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -21983,6 +22255,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22026,6 +22299,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "OrderBy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Using the ListConfigurations Action</a>.</p>\n@param orderBy Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Using the ListConfigurations Action</a>.*/",
           "setterMethodName" : "setOrderBy",
           "setterModel" : {
@@ -22208,6 +22482,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Value",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param value */",
                 "setterMethodName" : "setValue",
                 "setterModel" : {
@@ -22245,6 +22520,7 @@
             "marshallingTargetClass" : "Map",
             "marshallingType" : "MAP",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -22288,6 +22564,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Configurations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>\n@param configurations Returns configuration details, including the configuration ID, attribute names, and attribute values.*/",
         "setterMethodName" : "setConfigurations",
         "setterModel" : {
@@ -22353,6 +22630,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -22500,6 +22778,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Value",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param value */",
                   "setterMethodName" : "setValue",
                   "setterModel" : {
@@ -22537,6 +22816,7 @@
               "marshallingTargetClass" : "Map",
               "marshallingType" : "MAP",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22580,6 +22860,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Configurations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>\n@param configurations Returns configuration details, including the configuration ID, attribute names, and attribute values.*/",
           "setterMethodName" : "setConfigurations",
           "setterModel" : {
@@ -22646,6 +22927,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -22758,6 +23040,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Configuration ID of the server for which neighbors are being listed.</p>\n@param configurationId Configuration ID of the server for which neighbors are being listed.*/",
         "setterMethodName" : "setConfigurationId",
         "setterModel" : {
@@ -22823,6 +23106,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "PortInformationNeeded",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Flag to indicate if port and protocol information is needed as part of the response.</p>\n@param portInformationNeeded Flag to indicate if port and protocol information is needed as part of the response.*/",
         "setterMethodName" : "setPortInformationNeeded",
         "setterModel" : {
@@ -22925,6 +23209,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -22968,6 +23253,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "NeighborConfigurationIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of configuration IDs to test for one-hop-away.</p>\n@param neighborConfigurationIds List of configuration IDs to test for one-hop-away.*/",
         "setterMethodName" : "setNeighborConfigurationIds",
         "setterModel" : {
@@ -23033,6 +23319,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Maximum number of results to return in a single page of output.</p>\n@param maxResults Maximum number of results to return in a single page of output.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -23098,6 +23385,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -23165,6 +23453,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Configuration ID of the server for which neighbors are being listed.</p>\n@param configurationId Configuration ID of the server for which neighbors are being listed.*/",
           "setterMethodName" : "setConfigurationId",
           "setterModel" : {
@@ -23231,6 +23520,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Maximum number of results to return in a single page of output.</p>\n@param maxResults Maximum number of results to return in a single page of output.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -23334,6 +23624,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -23377,6 +23668,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "NeighborConfigurationIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of configuration IDs to test for one-hop-away.</p>\n@param neighborConfigurationIds List of configuration IDs to test for one-hop-away.*/",
           "setterMethodName" : "setNeighborConfigurationIds",
           "setterModel" : {
@@ -23443,6 +23735,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -23509,6 +23802,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "PortInformationNeeded",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Flag to indicate if port and protocol information is needed as part of the response.</p>\n@param portInformationNeeded Flag to indicate if port and protocol information is needed as part of the response.*/",
           "setterMethodName" : "setPortInformationNeeded",
           "setterModel" : {
@@ -23648,6 +23942,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -23691,6 +23986,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Neighbors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of distinct servers that are one hop away from the given server.</p>\n@param neighbors List of distinct servers that are one hop away from the given server.*/",
         "setterMethodName" : "setNeighbors",
         "setterModel" : {
@@ -23756,6 +24052,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -23821,6 +24118,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "KnownDependencyCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Count of distinct servers that are one hop away from the given server.</p>\n@param knownDependencyCount Count of distinct servers that are one hop away from the given server.*/",
         "setterMethodName" : "setKnownDependencyCount",
         "setterModel" : {
@@ -23888,6 +24186,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "KnownDependencyCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Count of distinct servers that are one hop away from the given server.</p>\n@param knownDependencyCount Count of distinct servers that are one hop away from the given server.*/",
           "setterMethodName" : "setKnownDependencyCount",
           "setterModel" : {
@@ -23991,6 +24290,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -24034,6 +24334,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Neighbors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of distinct servers that are one hop away from the given server.</p>\n@param neighbors List of distinct servers that are one hop away from the given server.*/",
           "setterMethodName" : "setNeighbors",
           "setterModel" : {
@@ -24100,6 +24401,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>\n@param nextToken Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -24205,6 +24507,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the server that opened the network connection.</p>\n@param sourceServerId The ID of the server that opened the network connection.*/",
         "setterMethodName" : "setSourceServerId",
         "setterModel" : {
@@ -24270,6 +24573,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DestinationServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the server that accepted the network connection.</p>\n@param destinationServerId The ID of the server that accepted the network connection.*/",
         "setterMethodName" : "setDestinationServerId",
         "setterModel" : {
@@ -24335,6 +24639,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "DestinationPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The destination network port for the connection.</p>\n@param destinationPort The destination network port for the connection.*/",
         "setterMethodName" : "setDestinationPort",
         "setterModel" : {
@@ -24400,6 +24705,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TransportProtocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The network protocol used for the connection.</p>\n@param transportProtocol The network protocol used for the connection.*/",
         "setterMethodName" : "setTransportProtocol",
         "setterModel" : {
@@ -24465,6 +24771,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ConnectionsCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of open network connections with the neighboring server.</p>\n@param connectionsCount The number of open network connections with the neighboring server.*/",
         "setterMethodName" : "setConnectionsCount",
         "setterModel" : {
@@ -24532,6 +24839,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ConnectionsCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of open network connections with the neighboring server.</p>\n@param connectionsCount The number of open network connections with the neighboring server.*/",
           "setterMethodName" : "setConnectionsCount",
           "setterModel" : {
@@ -24598,6 +24906,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "DestinationPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The destination network port for the connection.</p>\n@param destinationPort The destination network port for the connection.*/",
           "setterMethodName" : "setDestinationPort",
           "setterModel" : {
@@ -24664,6 +24973,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DestinationServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the server that accepted the network connection.</p>\n@param destinationServerId The ID of the server that accepted the network connection.*/",
           "setterMethodName" : "setDestinationServerId",
           "setterModel" : {
@@ -24730,6 +25040,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the server that opened the network connection.</p>\n@param sourceServerId The ID of the server that opened the network connection.*/",
           "setterMethodName" : "setSourceServerId",
           "setterModel" : {
@@ -24796,6 +25107,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TransportProtocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The network protocol used for the connection.</p>\n@param transportProtocol The network protocol used for the connection.*/",
           "setterMethodName" : "setTransportProtocol",
           "setterModel" : {
@@ -24938,6 +25250,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FieldName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The field on which to order.</p>\n@param fieldName The field on which to order.*/",
         "setterMethodName" : "setFieldName",
         "setterModel" : {
@@ -25003,6 +25316,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SortOrder",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Ordering direction.</p>\n@param sortOrder Ordering direction.\n@see OrderString*/",
         "setterMethodName" : "setSortOrder",
         "setterModel" : {
@@ -25070,6 +25384,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FieldName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The field on which to order.</p>\n@param fieldName The field on which to order.*/",
           "setterMethodName" : "setFieldName",
           "setterModel" : {
@@ -25136,6 +25451,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SortOrder",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Ordering direction.</p>\n@param sortOrder Ordering direction.\n@see OrderString*/",
           "setterMethodName" : "setSortOrder",
           "setterModel" : {
@@ -25442,6 +25758,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique ID assigned to this export.</p>\n@param exportId The unique ID assigned to this export.*/",
         "setterMethodName" : "setExportId",
         "setterModel" : {
@@ -25507,6 +25824,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3Bucket",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the s3 bucket where the export data parquet files are stored.</p>\n@param s3Bucket The name of the s3 bucket where the export data parquet files are stored.*/",
         "setterMethodName" : "setS3Bucket",
         "setterModel" : {
@@ -25572,6 +25890,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The timestamp representing when the continuous export was started.</p>\n@param startTime The timestamp representing when the continuous export was started.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -25637,6 +25956,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DataSource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of data collector used to gather this data (currently only offered for AGENT).</p>\n@param dataSource The type of data collector used to gather this data (currently only offered for AGENT).\n@see DataSource*/",
         "setterMethodName" : "setDataSource",
         "setterModel" : {
@@ -25745,6 +26065,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -25782,6 +26103,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SchemaStorageConfig",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A dictionary which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li> </ul>\n@param schemaStorageConfig A dictionary which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>*/",
         "setterMethodName" : "setSchemaStorageConfig",
         "setterModel" : {
@@ -25849,6 +26171,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DataSource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of data collector used to gather this data (currently only offered for AGENT).</p>\n@param dataSource The type of data collector used to gather this data (currently only offered for AGENT).\n@see DataSource*/",
           "setterMethodName" : "setDataSource",
           "setterModel" : {
@@ -25915,6 +26238,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique ID assigned to this export.</p>\n@param exportId The unique ID assigned to this export.*/",
           "setterMethodName" : "setExportId",
           "setterModel" : {
@@ -25981,6 +26305,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3Bucket",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the s3 bucket where the export data parquet files are stored.</p>\n@param s3Bucket The name of the s3 bucket where the export data parquet files are stored.*/",
           "setterMethodName" : "setS3Bucket",
           "setterModel" : {
@@ -26090,6 +26415,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -26127,6 +26453,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SchemaStorageConfig",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A dictionary which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li> </ul>\n@param schemaStorageConfig A dictionary which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>*/",
           "setterMethodName" : "setSchemaStorageConfig",
           "setterModel" : {
@@ -26193,6 +26520,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The timestamp representing when the continuous export was started.</p>\n@param startTime The timestamp representing when the continuous export was started.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -26342,6 +26670,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -26385,6 +26714,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AgentIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>\n@param agentIds The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.*/",
         "setterMethodName" : "setAgentIds",
         "setterModel" : {
@@ -26489,6 +26819,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -26532,6 +26863,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AgentIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>\n@param agentIds The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.*/",
           "setterMethodName" : "setAgentIds",
           "setterModel" : {
@@ -26671,6 +27003,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -26714,6 +27047,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AgentsConfigurationStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>\n@param agentsConfigurationStatus Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.*/",
         "setterMethodName" : "setAgentsConfigurationStatus",
         "setterModel" : {
@@ -26818,6 +27152,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -26861,6 +27196,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AgentsConfigurationStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>\n@param agentsConfigurationStatus Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.*/",
           "setterMethodName" : "setAgentsConfigurationStatus",
           "setterModel" : {
@@ -27010,6 +27346,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see ExportDataFormat*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -27053,6 +27390,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExportDataFormat",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>\n@param exportDataFormat The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i>\n@see ExportDataFormat*/",
         "setterMethodName" : "setExportDataFormat",
         "setterModel" : {
@@ -27155,6 +27493,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -27198,6 +27537,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>\n@param filters If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents.*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -27263,6 +27603,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>\n@param startTime The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -27328,6 +27669,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>\n@param endTime The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -27395,6 +27737,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>\n@param endTime The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -27498,6 +27841,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see ExportDataFormat*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -27541,6 +27885,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExportDataFormat",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>\n@param exportDataFormat The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i>\n@see ExportDataFormat*/",
           "setterMethodName" : "setExportDataFormat",
           "setterModel" : {
@@ -27644,6 +27989,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -27687,6 +28033,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>\n@param filters If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents.*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -27753,6 +28100,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>\n@param startTime The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -27855,6 +28203,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier used to query the status of an export request.</p>\n@param exportId A unique identifier used to query the status of an export request.*/",
         "setterMethodName" : "setExportId",
         "setterModel" : {
@@ -27922,6 +28271,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier used to query the status of an export request.</p>\n@param exportId A unique identifier used to query the status of an export request.*/",
           "setterMethodName" : "setExportId",
           "setterModel" : {
@@ -28034,6 +28384,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExportId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique ID assigned to this export.</p>\n@param exportId The unique ID assigned to this export.*/",
         "setterMethodName" : "setExportId",
         "setterModel" : {
@@ -28101,6 +28452,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExportId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique ID assigned to this export.</p>\n@param exportId The unique ID assigned to this export.*/",
           "setterMethodName" : "setExportId",
           "setterModel" : {
@@ -28203,6 +28555,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Timestamp that represents when this continuous export started collecting data.</p>\n@param startTime Timestamp that represents when this continuous export started collecting data.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -28268,6 +28621,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StopTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Timestamp that represents when this continuous export was stopped.</p>\n@param stopTime Timestamp that represents when this continuous export was stopped.*/",
         "setterMethodName" : "setStopTime",
         "setterModel" : {
@@ -28335,6 +28689,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Timestamp that represents when this continuous export started collecting data.</p>\n@param startTime Timestamp that represents when this continuous export started collecting data.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -28401,6 +28756,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StopTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Timestamp that represents when this continuous export was stopped.</p>\n@param stopTime Timestamp that represents when this continuous export was stopped.*/",
           "setterMethodName" : "setStopTime",
           "setterModel" : {
@@ -28550,6 +28906,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -28593,6 +28950,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AgentIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IDs of the agents or connectors from which to stop collecting data.</p>\n@param agentIds The IDs of the agents or connectors from which to stop collecting data.*/",
         "setterMethodName" : "setAgentIds",
         "setterModel" : {
@@ -28697,6 +29055,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -28740,6 +29099,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AgentIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IDs of the agents or connectors from which to stop collecting data.</p>\n@param agentIds The IDs of the agents or connectors from which to stop collecting data.*/",
           "setterMethodName" : "setAgentIds",
           "setterModel" : {
@@ -28879,6 +29239,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -28922,6 +29283,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AgentsConfigurationStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>\n@param agentsConfigurationStatus Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.*/",
         "setterMethodName" : "setAgentsConfigurationStatus",
         "setterModel" : {
@@ -29026,6 +29388,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -29069,6 +29432,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AgentsConfigurationStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>\n@param agentsConfigurationStatus Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.*/",
           "setterMethodName" : "setAgentsConfigurationStatus",
           "setterModel" : {
@@ -29174,6 +29538,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of tag on which to filter.</p>\n@param key The type of tag on which to filter.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -29239,6 +29604,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A value for a tag key on which to filter.</p>\n@param value A value for a tag key on which to filter.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -29306,6 +29672,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of tag on which to filter.</p>\n@param key The type of tag on which to filter.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -29372,6 +29739,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A value for a tag key on which to filter.</p>\n@param value A value for a tag key on which to filter.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -29477,6 +29845,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A name of the tag filter.</p>\n@param name A name of the tag filter.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -29579,6 +29948,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -29622,6 +29992,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Values for the tag filter.</p>\n@param values Values for the tag filter.*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -29689,6 +30060,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A name of the tag filter.</p>\n@param name A name of the tag filter.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -29792,6 +30164,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -29835,6 +30208,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Values for the tag filter.</p>\n@param values Values for the tag filter.*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -29947,6 +30321,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Configuration ID of the application to be updated.</p>\n@param configurationId Configuration ID of the application to be updated.*/",
         "setterMethodName" : "setConfigurationId",
         "setterModel" : {
@@ -30012,6 +30387,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>New name of the application to be updated.</p>\n@param name New name of the application to be updated.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -30077,6 +30453,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>New description of the application to be updated.</p>\n@param description New description of the application to be updated.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -30144,6 +30521,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Configuration ID of the application to be updated.</p>\n@param configurationId Configuration ID of the application to be updated.*/",
           "setterMethodName" : "setConfigurationId",
           "setterModel" : {
@@ -30210,6 +30588,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>New description of the application to be updated.</p>\n@param description New description of the application to be updated.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -30276,6 +30655,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>New name of the application to be updated.</p>\n@param name New name of the application to be updated.*/",
           "setterMethodName" : "setName",
           "setterModel" : {

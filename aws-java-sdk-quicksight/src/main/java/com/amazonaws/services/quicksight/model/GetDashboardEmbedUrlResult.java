@@ -177,7 +177,8 @@ public class GetDashboardEmbedUrlResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -188,7 +189,7 @@ public class GetDashboardEmbedUrlResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEmbedUrl() != null)
-            sb.append("EmbedUrl: ").append(getEmbedUrl()).append(",");
+            sb.append("EmbedUrl: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRequestId() != null)

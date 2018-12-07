@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -451,6 +451,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidParameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
         "setterMethodName" : "setInvalidParameter",
         "setterModel" : {
@@ -518,6 +519,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidParameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
           "setterMethodName" : "setInvalidParameter",
           "setterModel" : {
@@ -663,6 +665,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BrokerAZDistribution",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The distribution of broker nodes across Availability Zones.</p>\n@param brokerAZDistribution The distribution of broker nodes across Availability Zones.\n@see BrokerAZDistribution*/",
         "setterMethodName" : "setBrokerAZDistribution",
         "setterModel" : {
@@ -765,6 +768,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -808,6 +812,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ClientSubnets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>\n@param clientSubnets The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.*/",
         "setterMethodName" : "setClientSubnets",
         "setterModel" : {
@@ -873,6 +878,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,\nkafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>\n@param instanceType The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,\nkafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.*/",
         "setterMethodName" : "setInstanceType",
         "setterModel" : {
@@ -975,6 +981,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1018,6 +1025,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster.</p>\n@param securityGroups The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster.*/",
         "setterMethodName" : "setSecurityGroups",
         "setterModel" : {
@@ -1083,6 +1091,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StorageInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains information about storage volumes attached to MSK broker nodes.</p>\n@param storageInfo Contains information about storage volumes attached to MSK broker nodes.*/",
         "setterMethodName" : "setStorageInfo",
         "setterModel" : {
@@ -1150,6 +1159,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BrokerAZDistribution",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The distribution of broker nodes across Availability Zones.</p>\n@param brokerAZDistribution The distribution of broker nodes across Availability Zones.\n@see BrokerAZDistribution*/",
           "setterMethodName" : "setBrokerAZDistribution",
           "setterModel" : {
@@ -1253,6 +1263,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1296,6 +1307,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ClientSubnets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>\n@param clientSubnets The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.*/",
           "setterMethodName" : "setClientSubnets",
           "setterModel" : {
@@ -1362,6 +1374,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,\nkafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>\n@param instanceType The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,\nkafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.*/",
           "setterMethodName" : "setInstanceType",
           "setterModel" : {
@@ -1465,6 +1478,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1508,6 +1522,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster.</p>\n@param securityGroups The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster.*/",
           "setterMethodName" : "setSecurityGroups",
           "setterModel" : {
@@ -1574,6 +1589,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StorageInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains information about storage volumes attached to MSK broker nodes.</p>\n@param storageInfo Contains information about storage volumes attached to MSK broker nodes.*/",
           "setterMethodName" : "setStorageInfo",
           "setterModel" : {
@@ -1679,6 +1695,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttachedENIId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attached elastic network interface of the broker.</p>\n@param attachedENIId The attached elastic network interface of the broker.*/",
         "setterMethodName" : "setAttachedENIId",
         "setterModel" : {
@@ -1744,6 +1761,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "BrokerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the broker.</p>\n@param brokerId The ID of the broker.*/",
         "setterMethodName" : "setBrokerId",
         "setterModel" : {
@@ -1809,6 +1827,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientSubnet",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The client subnet to which this broker node belongs.</p>\n@param clientSubnet The client subnet to which this broker node belongs.*/",
         "setterMethodName" : "setClientSubnet",
         "setterModel" : {
@@ -1874,6 +1893,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientVpcIpAddress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual private cloud (VPC) of the client.</p>\n@param clientVpcIpAddress The virtual private cloud (VPC) of the client.*/",
         "setterMethodName" : "setClientVpcIpAddress",
         "setterModel" : {
@@ -1939,6 +1959,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CurrentBrokerSoftwareInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>\n@param currentBrokerSoftwareInfo Information about the version of software currently deployed on the Kafka brokers in the cluster.*/",
         "setterMethodName" : "setCurrentBrokerSoftwareInfo",
         "setterModel" : {
@@ -2006,6 +2027,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttachedENIId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attached elastic network interface of the broker.</p>\n@param attachedENIId The attached elastic network interface of the broker.*/",
           "setterMethodName" : "setAttachedENIId",
           "setterModel" : {
@@ -2072,6 +2094,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "BrokerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the broker.</p>\n@param brokerId The ID of the broker.*/",
           "setterMethodName" : "setBrokerId",
           "setterModel" : {
@@ -2138,6 +2161,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientSubnet",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The client subnet to which this broker node belongs.</p>\n@param clientSubnet The client subnet to which this broker node belongs.*/",
           "setterMethodName" : "setClientSubnet",
           "setterModel" : {
@@ -2204,6 +2228,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientVpcIpAddress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual private cloud (VPC) of the client.</p>\n@param clientVpcIpAddress The virtual private cloud (VPC) of the client.*/",
           "setterMethodName" : "setClientVpcIpAddress",
           "setterModel" : {
@@ -2270,6 +2295,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CurrentBrokerSoftwareInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>\n@param currentBrokerSoftwareInfo Information about the version of software currently deployed on the Kafka brokers in the cluster.*/",
           "setterMethodName" : "setCurrentBrokerSoftwareInfo",
           "setterModel" : {
@@ -2375,6 +2401,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the configuration used for the cluster.</p>\n@param configurationArn The Amazon Resource Name (ARN) of the configuration used for the cluster.*/",
         "setterMethodName" : "setConfigurationArn",
         "setterModel" : {
@@ -2440,6 +2467,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationRevision",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The revision of the configuration to use.</p>\n@param configurationRevision The revision of the configuration to use.*/",
         "setterMethodName" : "setConfigurationRevision",
         "setterModel" : {
@@ -2505,6 +2533,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KafkaVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The version of Apache Kafka.</p>\n@param kafkaVersion The version of Apache Kafka.*/",
         "setterMethodName" : "setKafkaVersion",
         "setterModel" : {
@@ -2572,6 +2601,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the configuration used for the cluster.</p>\n@param configurationArn The Amazon Resource Name (ARN) of the configuration used for the cluster.*/",
           "setterMethodName" : "setConfigurationArn",
           "setterModel" : {
@@ -2638,6 +2668,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationRevision",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The revision of the configuration to use.</p>\n@param configurationRevision The revision of the configuration to use.*/",
           "setterMethodName" : "setConfigurationRevision",
           "setterModel" : {
@@ -2704,6 +2735,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KafkaVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The version of Apache Kafka.</p>\n@param kafkaVersion The version of Apache Kafka.*/",
           "setterMethodName" : "setKafkaVersion",
           "setterModel" : {
@@ -2809,6 +2841,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "BrokerNodeGroupInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the broker nodes.</p>\n@param brokerNodeGroupInfo Information about the broker nodes.*/",
         "setterMethodName" : "setBrokerNodeGroupInfo",
         "setterModel" : {
@@ -2874,6 +2907,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
         "setterMethodName" : "setClusterArn",
         "setterModel" : {
@@ -2939,6 +2973,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the cluster.</p>\n@param clusterName The name of the cluster.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -3004,6 +3039,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the cluster was created.</p>\n@param creationTime The time when the cluster was created.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -3069,6 +3105,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CurrentBrokerSoftwareInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>\n@param currentBrokerSoftwareInfo Information about the version of software currently deployed on the Kafka brokers in the cluster.*/",
         "setterMethodName" : "setCurrentBrokerSoftwareInfo",
         "setterModel" : {
@@ -3134,6 +3171,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CurrentVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current version of the MSK cluster.</p>\n@param currentVersion The current version of the MSK cluster.*/",
         "setterMethodName" : "setCurrentVersion",
         "setterModel" : {
@@ -3199,6 +3237,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EncryptionInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Includes all encryption-related information.</p>\n@param encryptionInfo Includes all encryption-related information.*/",
         "setterMethodName" : "setEncryptionInfo",
         "setterModel" : {
@@ -3264,6 +3303,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnhancedMonitoring",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>\n@param enhancedMonitoring Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.\n@see EnhancedMonitoring*/",
         "setterMethodName" : "setEnhancedMonitoring",
         "setterModel" : {
@@ -3329,6 +3369,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "NumberOfBrokerNodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of Kafka broker nodes in the cluster.</p>\n@param numberOfBrokerNodes The number of Kafka broker nodes in the cluster.*/",
         "setterMethodName" : "setNumberOfBrokerNodes",
         "setterModel" : {
@@ -3394,6 +3435,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@param state The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.\n@see ClusterState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -3459,6 +3501,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ZookeeperConnectString",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>\n@param zookeeperConnectString The connection string to use to connect to the Apache ZooKeeper cluster.*/",
         "setterMethodName" : "setZookeeperConnectString",
         "setterModel" : {
@@ -3526,6 +3569,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "BrokerNodeGroupInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the broker nodes.</p>\n@param brokerNodeGroupInfo Information about the broker nodes.*/",
           "setterMethodName" : "setBrokerNodeGroupInfo",
           "setterModel" : {
@@ -3592,6 +3636,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
           "setterMethodName" : "setClusterArn",
           "setterModel" : {
@@ -3658,6 +3703,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the cluster.</p>\n@param clusterName The name of the cluster.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -3724,6 +3770,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the cluster was created.</p>\n@param creationTime The time when the cluster was created.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -3790,6 +3837,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CurrentBrokerSoftwareInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>\n@param currentBrokerSoftwareInfo Information about the version of software currently deployed on the Kafka brokers in the cluster.*/",
           "setterMethodName" : "setCurrentBrokerSoftwareInfo",
           "setterModel" : {
@@ -3856,6 +3904,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CurrentVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current version of the MSK cluster.</p>\n@param currentVersion The current version of the MSK cluster.*/",
           "setterMethodName" : "setCurrentVersion",
           "setterModel" : {
@@ -3922,6 +3971,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EncryptionInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Includes all encryption-related information.</p>\n@param encryptionInfo Includes all encryption-related information.*/",
           "setterMethodName" : "setEncryptionInfo",
           "setterModel" : {
@@ -3988,6 +4038,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnhancedMonitoring",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>\n@param enhancedMonitoring Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.\n@see EnhancedMonitoring*/",
           "setterMethodName" : "setEnhancedMonitoring",
           "setterModel" : {
@@ -4054,6 +4105,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "NumberOfBrokerNodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of Kafka broker nodes in the cluster.</p>\n@param numberOfBrokerNodes The number of Kafka broker nodes in the cluster.*/",
           "setterMethodName" : "setNumberOfBrokerNodes",
           "setterModel" : {
@@ -4120,6 +4172,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@param state The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.\n@see ClusterState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -4186,6 +4239,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ZookeeperConnectString",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>\n@param zookeeperConnectString The connection string to use to connect to the Apache ZooKeeper cluster.*/",
           "setterMethodName" : "setZookeeperConnectString",
           "setterModel" : {
@@ -4343,6 +4397,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidParameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
         "setterMethodName" : "setInvalidParameter",
         "setterModel" : {
@@ -4410,6 +4465,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidParameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
           "setterMethodName" : "setInvalidParameter",
           "setterModel" : {
@@ -4519,6 +4575,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "BrokerNodeGroupInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the broker nodes in the cluster.</p>\n@param brokerNodeGroupInfo Information about the broker nodes in the cluster.*/",
         "setterMethodName" : "setBrokerNodeGroupInfo",
         "setterModel" : {
@@ -4584,6 +4641,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the cluster.</p>\n@param clusterName The name of the cluster.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -4649,6 +4707,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EncryptionInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Includes all encryption-related information.</p>\n@param encryptionInfo Includes all encryption-related information.*/",
         "setterMethodName" : "setEncryptionInfo",
         "setterModel" : {
@@ -4714,6 +4773,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnhancedMonitoring",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>\n@param enhancedMonitoring Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.\n@see EnhancedMonitoring*/",
         "setterMethodName" : "setEnhancedMonitoring",
         "setterModel" : {
@@ -4779,6 +4839,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KafkaVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The version of Apache Kafka.</p>\n@param kafkaVersion The version of Apache Kafka.*/",
         "setterMethodName" : "setKafkaVersion",
         "setterModel" : {
@@ -4844,6 +4905,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "NumberOfBrokerNodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of Kafka broker nodes in the Amazon MSK cluster.</p>\n@param numberOfBrokerNodes The number of Kafka broker nodes in the Amazon MSK cluster.*/",
         "setterMethodName" : "setNumberOfBrokerNodes",
         "setterModel" : {
@@ -4911,6 +4973,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "BrokerNodeGroupInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the broker nodes in the cluster.</p>\n@param brokerNodeGroupInfo Information about the broker nodes in the cluster.*/",
           "setterMethodName" : "setBrokerNodeGroupInfo",
           "setterModel" : {
@@ -4977,6 +5040,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the cluster.</p>\n@param clusterName The name of the cluster.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -5043,6 +5107,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EncryptionInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Includes all encryption-related information.</p>\n@param encryptionInfo Includes all encryption-related information.*/",
           "setterMethodName" : "setEncryptionInfo",
           "setterModel" : {
@@ -5109,6 +5174,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnhancedMonitoring",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>\n@param enhancedMonitoring Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.\n@see EnhancedMonitoring*/",
           "setterMethodName" : "setEnhancedMonitoring",
           "setterModel" : {
@@ -5175,6 +5241,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KafkaVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The version of Apache Kafka.</p>\n@param kafkaVersion The version of Apache Kafka.*/",
           "setterMethodName" : "setKafkaVersion",
           "setterModel" : {
@@ -5241,6 +5308,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "NumberOfBrokerNodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of Kafka broker nodes in the Amazon MSK cluster.</p>\n@param numberOfBrokerNodes The number of Kafka broker nodes in the Amazon MSK cluster.*/",
           "setterMethodName" : "setNumberOfBrokerNodes",
           "setterModel" : {
@@ -5343,6 +5411,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) of the cluster.*/",
         "setterMethodName" : "setClusterArn",
         "setterModel" : {
@@ -5408,6 +5477,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the MSK cluster.</p>\n@param clusterName The name of the MSK cluster.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -5473,6 +5543,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@param state The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.\n@see ClusterState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -5540,6 +5611,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) of the cluster.*/",
           "setterMethodName" : "setClusterArn",
           "setterModel" : {
@@ -5606,6 +5678,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the MSK cluster.</p>\n@param clusterName The name of the MSK cluster.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -5672,6 +5745,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@param state The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.\n@see ClusterState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -5784,6 +5858,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
         "setterMethodName" : "setClusterArn",
         "setterModel" : {
@@ -5849,6 +5924,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CurrentVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current version of the MSK cluster.</p>\n@param currentVersion The current version of the MSK cluster.*/",
         "setterMethodName" : "setCurrentVersion",
         "setterModel" : {
@@ -5916,6 +5992,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
           "setterMethodName" : "setClusterArn",
           "setterModel" : {
@@ -5982,6 +6059,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CurrentVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current version of the MSK cluster.</p>\n@param currentVersion The current version of the MSK cluster.*/",
           "setterMethodName" : "setCurrentVersion",
           "setterModel" : {
@@ -6084,6 +6162,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) of the cluster.*/",
         "setterMethodName" : "setClusterArn",
         "setterModel" : {
@@ -6149,6 +6228,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@param state The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.\n@see ClusterState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -6216,6 +6296,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) of the cluster.*/",
           "setterMethodName" : "setClusterArn",
           "setterModel" : {
@@ -6282,6 +6363,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@param state The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.\n@see ClusterState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -6394,6 +6476,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
         "setterMethodName" : "setClusterArn",
         "setterModel" : {
@@ -6461,6 +6544,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
           "setterMethodName" : "setClusterArn",
           "setterModel" : {
@@ -6563,6 +6647,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ClusterInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster information.</p>\n@param clusterInfo The cluster information.*/",
         "setterMethodName" : "setClusterInfo",
         "setterModel" : {
@@ -6630,6 +6715,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ClusterInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster information.</p>\n@param clusterInfo The cluster information.*/",
           "setterMethodName" : "setClusterInfo",
           "setterModel" : {
@@ -6735,6 +6821,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "VolumeSize",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The size in GiB of the EBS volume for the data drive on each broker node.</p>\n@param volumeSize The size in GiB of the EBS volume for the data drive on each broker node.*/",
         "setterMethodName" : "setVolumeSize",
         "setterModel" : {
@@ -6802,6 +6889,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "VolumeSize",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The size in GiB of the EBS volume for the data drive on each broker node.</p>\n@param volumeSize The size in GiB of the EBS volume for the data drive on each broker node.*/",
           "setterMethodName" : "setVolumeSize",
           "setterModel" : {
@@ -6907,6 +6995,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DataVolumeKMSKeyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS KMS key used for data encryption.</p>\n@param dataVolumeKMSKeyId The AWS KMS key used for data encryption.*/",
         "setterMethodName" : "setDataVolumeKMSKeyId",
         "setterModel" : {
@@ -6974,6 +7063,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DataVolumeKMSKeyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS KMS key used for data encryption.</p>\n@param dataVolumeKMSKeyId The AWS KMS key used for data encryption.*/",
           "setterMethodName" : "setDataVolumeKMSKeyId",
           "setterModel" : {
@@ -7079,6 +7169,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EncryptionAtRest",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The data volume encryption details.</p>\n@param encryptionAtRest The data volume encryption details.*/",
         "setterMethodName" : "setEncryptionAtRest",
         "setterModel" : {
@@ -7146,6 +7237,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EncryptionAtRest",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The data volume encryption details.</p>\n@param encryptionAtRest The data volume encryption details.*/",
           "setterMethodName" : "setEncryptionAtRest",
           "setterModel" : {
@@ -7300,6 +7392,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidParameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
         "setterMethodName" : "setInvalidParameter",
         "setterModel" : {
@@ -7367,6 +7460,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidParameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
           "setterMethodName" : "setInvalidParameter",
           "setterModel" : {
@@ -7476,6 +7570,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
         "setterMethodName" : "setClusterArn",
         "setterModel" : {
@@ -7543,6 +7638,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
           "setterMethodName" : "setClusterArn",
           "setterModel" : {
@@ -7645,6 +7741,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BootstrapBrokerString",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string containing one or more hostname:port pairs.</p>\n@param bootstrapBrokerString A string containing one or more hostname:port pairs.*/",
         "setterMethodName" : "setBootstrapBrokerString",
         "setterModel" : {
@@ -7712,6 +7809,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BootstrapBrokerString",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string containing one or more hostname:port pairs.</p>\n@param bootstrapBrokerString A string containing one or more hostname:port pairs.*/",
           "setterMethodName" : "setBootstrapBrokerString",
           "setterModel" : {
@@ -7817,6 +7915,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidParameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
         "setterMethodName" : "setInvalidParameter",
         "setterModel" : {
@@ -7884,6 +7983,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidParameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
           "setterMethodName" : "setInvalidParameter",
           "setterModel" : {
@@ -7993,6 +8093,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterNameFilter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>\n@param clusterNameFilter Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.*/",
         "setterMethodName" : "setClusterNameFilter",
         "setterModel" : {
@@ -8058,6 +8159,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of clusters to return in the response. If there are more clusters, the response includes a NextToken parameter.</p>\n@param maxResults The maximum number of clusters to return in the response. If there are more clusters, the response includes a NextToken parameter.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -8123,6 +8225,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.</p>\n@param nextToken The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8190,6 +8293,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterNameFilter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>\n@param clusterNameFilter Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.*/",
           "setterMethodName" : "setClusterNameFilter",
           "setterModel" : {
@@ -8256,6 +8360,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of clusters to return in the response. If there are more clusters, the response includes a NextToken parameter.</p>\n@param maxResults The maximum number of clusters to return in the response. If there are more clusters, the response includes a NextToken parameter.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -8322,6 +8427,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.</p>\n@param nextToken The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8461,6 +8567,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8504,6 +8611,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ClusterInfoList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information on each of the MSK clusters in the response.</p>\n@param clusterInfoList Information on each of the MSK clusters in the response.*/",
         "setterMethodName" : "setClusterInfoList",
         "setterModel" : {
@@ -8569,6 +8677,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.</p>\n@param nextToken The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8673,6 +8782,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8716,6 +8826,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ClusterInfoList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information on each of the MSK clusters in the response.</p>\n@param clusterInfoList Information on each of the MSK clusters in the response.*/",
           "setterMethodName" : "setClusterInfoList",
           "setterModel" : {
@@ -8782,6 +8893,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.</p>\n@param nextToken The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8894,6 +9006,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
         "setterMethodName" : "setClusterArn",
         "setterModel" : {
@@ -8959,6 +9072,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of clusters to return in the response. If there are more clusters, the response includes a NextToken parameter.</p>\n@param maxResults The maximum number of clusters to return in the response. If there are more clusters, the response includes a NextToken parameter.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -9024,6 +9138,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.</p>\n@param nextToken The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9091,6 +9206,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
           "setterMethodName" : "setClusterArn",
           "setterModel" : {
@@ -9157,6 +9273,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of clusters to return in the response. If there are more clusters, the response includes a NextToken parameter.</p>\n@param maxResults The maximum number of clusters to return in the response. If there are more clusters, the response includes a NextToken parameter.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -9223,6 +9340,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.</p>\n@param nextToken The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. \n To get another batch of clusters, provide this token in your next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9325,6 +9443,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. \n To get another batch of nodes, provide this token in your next request.</p>\n@param nextToken The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. \n To get another batch of nodes, provide this token in your next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9427,6 +9546,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9470,6 +9590,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "NodeInfoList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List containing a NodeInfo object.</p>\n@param nodeInfoList List containing a NodeInfo object.*/",
         "setterMethodName" : "setNodeInfoList",
         "setterModel" : {
@@ -9537,6 +9658,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. \n To get another batch of nodes, provide this token in your next request.</p>\n@param nextToken The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. \n To get another batch of nodes, provide this token in your next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9640,6 +9762,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9683,6 +9806,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "NodeInfoList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List containing a NodeInfo object.</p>\n@param nodeInfoList List containing a NodeInfo object.*/",
           "setterMethodName" : "setNodeInfoList",
           "setterModel" : {
@@ -9788,6 +9912,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AddedToClusterTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start time.</p>\n@param addedToClusterTime The start time.*/",
         "setterMethodName" : "setAddedToClusterTime",
         "setterModel" : {
@@ -9853,6 +9978,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "BrokerNodeInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The broker node info.</p>\n@param brokerNodeInfo The broker node info.*/",
         "setterMethodName" : "setBrokerNodeInfo",
         "setterModel" : {
@@ -9918,6 +10044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The instance type.</p>\n@param instanceType The instance type.*/",
         "setterMethodName" : "setInstanceType",
         "setterModel" : {
@@ -9983,6 +10110,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the node.</p>\n@param nodeARN The Amazon Resource Name (ARN) of the node.*/",
         "setterMethodName" : "setNodeARN",
         "setterModel" : {
@@ -10048,6 +10176,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The node type.</p>\n@param nodeType The node type.\n@see NodeType*/",
         "setterMethodName" : "setNodeType",
         "setterModel" : {
@@ -10113,6 +10242,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ZookeeperNodeInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ZookeeperNodeInfo.</p>\n@param zookeeperNodeInfo The ZookeeperNodeInfo.*/",
         "setterMethodName" : "setZookeeperNodeInfo",
         "setterModel" : {
@@ -10180,6 +10310,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AddedToClusterTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start time.</p>\n@param addedToClusterTime The start time.*/",
           "setterMethodName" : "setAddedToClusterTime",
           "setterModel" : {
@@ -10246,6 +10377,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "BrokerNodeInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The broker node info.</p>\n@param brokerNodeInfo The broker node info.*/",
           "setterMethodName" : "setBrokerNodeInfo",
           "setterModel" : {
@@ -10312,6 +10444,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The instance type.</p>\n@param instanceType The instance type.*/",
           "setterMethodName" : "setInstanceType",
           "setterModel" : {
@@ -10378,6 +10511,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the node.</p>\n@param nodeARN The Amazon Resource Name (ARN) of the node.*/",
           "setterMethodName" : "setNodeARN",
           "setterModel" : {
@@ -10444,6 +10578,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The node type.</p>\n@param nodeType The node type.\n@see NodeType*/",
           "setterMethodName" : "setNodeType",
           "setterModel" : {
@@ -10510,6 +10645,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ZookeeperNodeInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ZookeeperNodeInfo.</p>\n@param zookeeperNodeInfo The ZookeeperNodeInfo.*/",
           "setterMethodName" : "setZookeeperNodeInfo",
           "setterModel" : {
@@ -10658,6 +10794,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidParameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
         "setterMethodName" : "setInvalidParameter",
         "setterModel" : {
@@ -10725,6 +10862,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidParameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
           "setterMethodName" : "setInvalidParameter",
           "setterModel" : {
@@ -10827,6 +10965,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidParameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
         "setterMethodName" : "setInvalidParameter",
         "setterModel" : {
@@ -10894,6 +11033,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidParameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
           "setterMethodName" : "setInvalidParameter",
           "setterModel" : {
@@ -10996,6 +11136,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EbsStorageInfo",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>EBS volume information.</p>\n@param ebsStorageInfo EBS volume information.*/",
         "setterMethodName" : "setEbsStorageInfo",
         "setterModel" : {
@@ -11063,6 +11204,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EbsStorageInfo",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>EBS volume information.</p>\n@param ebsStorageInfo EBS volume information.*/",
           "setterMethodName" : "setEbsStorageInfo",
           "setterModel" : {
@@ -11168,6 +11310,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidParameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
         "setterMethodName" : "setInvalidParameter",
         "setterModel" : {
@@ -11235,6 +11378,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidParameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
           "setterMethodName" : "setInvalidParameter",
           "setterModel" : {
@@ -11337,6 +11481,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvalidParameter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
         "setterMethodName" : "setInvalidParameter",
         "setterModel" : {
@@ -11404,6 +11549,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvalidParameter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter that caused the error.</p>\n@param invalidParameter The parameter that caused the error.*/",
           "setterMethodName" : "setInvalidParameter",
           "setterModel" : {
@@ -11506,6 +11652,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttachedENIId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attached elastic network interface of the broker.</p>\n@param attachedENIId The attached elastic network interface of the broker.*/",
         "setterMethodName" : "setAttachedENIId",
         "setterModel" : {
@@ -11571,6 +11718,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientVpcIpAddress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual private cloud (VPC) IP address of the client.</p>\n@param clientVpcIpAddress The virtual private cloud (VPC) IP address of the client.*/",
         "setterMethodName" : "setClientVpcIpAddress",
         "setterModel" : {
@@ -11636,6 +11784,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "ZookeeperId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The role-specific ID for Zookeeper.</p>\n@param zookeeperId The role-specific ID for Zookeeper.*/",
         "setterMethodName" : "setZookeeperId",
         "setterModel" : {
@@ -11701,6 +11850,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ZookeeperVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The version of Zookeeper.</p>\n@param zookeeperVersion The version of Zookeeper.*/",
         "setterMethodName" : "setZookeeperVersion",
         "setterModel" : {
@@ -11768,6 +11918,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttachedENIId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attached elastic network interface of the broker.</p>\n@param attachedENIId The attached elastic network interface of the broker.*/",
           "setterMethodName" : "setAttachedENIId",
           "setterModel" : {
@@ -11834,6 +11985,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientVpcIpAddress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual private cloud (VPC) IP address of the client.</p>\n@param clientVpcIpAddress The virtual private cloud (VPC) IP address of the client.*/",
           "setterMethodName" : "setClientVpcIpAddress",
           "setterModel" : {
@@ -11900,6 +12052,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "ZookeeperId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The role-specific ID for Zookeeper.</p>\n@param zookeeperId The role-specific ID for Zookeeper.*/",
           "setterMethodName" : "setZookeeperId",
           "setterModel" : {
@@ -11966,6 +12119,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ZookeeperVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The version of Zookeeper.</p>\n@param zookeeperVersion The version of Zookeeper.*/",
           "setterMethodName" : "setZookeeperVersion",
           "setterModel" : {

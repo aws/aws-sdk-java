@@ -134,7 +134,8 @@ public class NotificationOptions implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -147,7 +148,7 @@ public class NotificationOptions implements Serializable, Cloneable, StructuredP
         if (getSendEmail() != null)
             sb.append("SendEmail: ").append(getSendEmail()).append(",");
         if (getEmailMessage() != null)
-            sb.append("EmailMessage: ").append(getEmailMessage());
+            sb.append("EmailMessage: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

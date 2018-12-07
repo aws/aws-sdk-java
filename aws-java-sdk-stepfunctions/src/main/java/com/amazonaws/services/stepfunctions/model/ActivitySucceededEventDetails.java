@@ -76,7 +76,8 @@ public class ActivitySucceededEventDetails implements Serializable, Cloneable, S
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,7 +88,7 @@ public class ActivitySucceededEventDetails implements Serializable, Cloneable, S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutput() != null)
-            sb.append("Output: ").append(getOutput());
+            sb.append("Output: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

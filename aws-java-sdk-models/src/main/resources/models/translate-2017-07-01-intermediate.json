@@ -391,6 +391,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>\n@param name The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -493,6 +494,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -536,6 +538,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Terms",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>\n@param terms The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text.*/",
         "setterMethodName" : "setTerms",
         "setterModel" : {
@@ -603,6 +606,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>\n@param name The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -706,6 +710,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -749,6 +754,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Terms",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>\n@param terms The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text.*/",
           "setterMethodName" : "setTerms",
           "setterModel" : {
@@ -861,6 +867,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the custom terminology being deleted. </p>\n@param name The name of the custom terminology being deleted.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -928,6 +935,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the custom terminology being deleted. </p>\n@param name The name of the custom terminology being deleted.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1070,6 +1078,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DetectedLanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code of the auto-detected language from Amazon Comprehend.</p>\n@param detectedLanguageCode The language code of the auto-detected language from Amazon Comprehend.*/",
         "setterMethodName" : "setDetectedLanguageCode",
         "setterModel" : {
@@ -1137,6 +1146,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DetectedLanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code of the auto-detected language from Amazon Comprehend.</p>\n@param detectedLanguageCode The language code of the auto-detected language from Amazon Comprehend.*/",
           "setterMethodName" : "setDetectedLanguageCode",
           "setterModel" : {
@@ -1239,6 +1249,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of encryption key used by Amazon Translate to encrypt custom terminologies.</p>\n@param type The type of encryption key used by Amazon Translate to encrypt custom terminologies.\n@see EncryptionKeyType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -1304,6 +1315,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom terminology.</p>\n@param id The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom terminology.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -1371,6 +1383,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom terminology.</p>\n@param id The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom terminology.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -1437,6 +1450,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of encryption key used by Amazon Translate to encrypt custom terminologies.</p>\n@param type The type of encryption key used by Amazon Translate to encrypt custom terminologies.\n@see EncryptionKeyType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -1592,6 +1606,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the custom terminology being retrieved.</p>\n@param name The name of the custom terminology being retrieved.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -1657,6 +1672,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TerminologyDataFormat",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>\n@param terminologyDataFormat The data format of the custom terminology being retrieved, either CSV or TMX.\n@see TerminologyDataFormat*/",
         "setterMethodName" : "setTerminologyDataFormat",
         "setterModel" : {
@@ -1724,6 +1740,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the custom terminology being retrieved.</p>\n@param name The name of the custom terminology being retrieved.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1790,6 +1807,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TerminologyDataFormat",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The data format of the custom terminology being retrieved, either CSV or TMX.</p>\n@param terminologyDataFormat The data format of the custom terminology being retrieved, either CSV or TMX.\n@see TerminologyDataFormat*/",
           "setterMethodName" : "setTerminologyDataFormat",
           "setterModel" : {
@@ -1892,6 +1910,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TerminologyProperties",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The properties of the custom terminology being retrieved.</p>\n@param terminologyProperties The properties of the custom terminology being retrieved.*/",
         "setterMethodName" : "setTerminologyProperties",
         "setterModel" : {
@@ -1957,6 +1976,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TerminologyDataLocation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The data location of the custom terminology being retrieved. The custom terminology file is returned in a presigned url that has a 30 minute expiration.</p>\n@param terminologyDataLocation The data location of the custom terminology being retrieved. The custom terminology file is returned in a presigned url that has a 30 minute expiration.*/",
         "setterMethodName" : "setTerminologyDataLocation",
         "setterModel" : {
@@ -2024,6 +2044,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TerminologyDataLocation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The data location of the custom terminology being retrieved. The custom terminology file is returned in a presigned url that has a 30 minute expiration.</p>\n@param terminologyDataLocation The data location of the custom terminology being retrieved. The custom terminology file is returned in a presigned url that has a 30 minute expiration.*/",
           "setterMethodName" : "setTerminologyDataLocation",
           "setterModel" : {
@@ -2090,6 +2111,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TerminologyProperties",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The properties of the custom terminology being retrieved.</p>\n@param terminologyProperties The properties of the custom terminology being retrieved.*/",
           "setterMethodName" : "setTerminologyProperties",
           "setterModel" : {
@@ -2202,6 +2224,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the custom terminology being imported.</p>\n@param name The name of the custom terminology being imported.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2267,6 +2290,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MergeStrategy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>\n@param mergeStrategy The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.\n@see MergeStrategy*/",
         "setterMethodName" : "setMergeStrategy",
         "setterModel" : {
@@ -2332,6 +2356,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the custom terminology being imported.</p>\n@param description The description of the custom terminology being imported.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -2397,6 +2422,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TerminologyData",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The terminology data for the custom terminology being imported.</p>\n@param terminologyData The terminology data for the custom terminology being imported.*/",
         "setterMethodName" : "setTerminologyData",
         "setterModel" : {
@@ -2462,6 +2488,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EncryptionKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The encryption key for the custom terminology being imported.</p>\n@param encryptionKey The encryption key for the custom terminology being imported.*/",
         "setterMethodName" : "setEncryptionKey",
         "setterModel" : {
@@ -2529,6 +2556,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the custom terminology being imported.</p>\n@param description The description of the custom terminology being imported.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -2595,6 +2623,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EncryptionKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The encryption key for the custom terminology being imported.</p>\n@param encryptionKey The encryption key for the custom terminology being imported.*/",
           "setterMethodName" : "setEncryptionKey",
           "setterModel" : {
@@ -2661,6 +2690,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MergeStrategy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>\n@param mergeStrategy The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.\n@see MergeStrategy*/",
           "setterMethodName" : "setMergeStrategy",
           "setterModel" : {
@@ -2727,6 +2757,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the custom terminology being imported.</p>\n@param name The name of the custom terminology being imported.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -2793,6 +2824,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TerminologyData",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The terminology data for the custom terminology being imported.</p>\n@param terminologyData The terminology data for the custom terminology being imported.*/",
           "setterMethodName" : "setTerminologyData",
           "setterModel" : {
@@ -2895,6 +2927,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TerminologyProperties",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The properties of the custom terminology being imported.</p>\n@param terminologyProperties The properties of the custom terminology being imported.*/",
         "setterMethodName" : "setTerminologyProperties",
         "setterModel" : {
@@ -2962,6 +2995,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TerminologyProperties",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The properties of the custom terminology being imported.</p>\n@param terminologyProperties The properties of the custom terminology being imported.*/",
           "setterMethodName" : "setTerminologyProperties",
           "setterModel" : {
@@ -3222,6 +3256,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>\n@param nextToken If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -3287,6 +3322,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of custom terminologies returned per list request.</p>\n@param maxResults The maximum number of custom terminologies returned per list request.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -3354,6 +3390,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of custom terminologies returned per list request.</p>\n@param maxResults The maximum number of custom terminologies returned per list request.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -3420,6 +3457,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>\n@param nextToken If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -3559,6 +3597,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3602,6 +3641,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TerminologyPropertiesList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The properties list of the custom terminologies returned on the list request.</p>\n@param terminologyPropertiesList The properties list of the custom terminologies returned on the list request.*/",
         "setterMethodName" : "setTerminologyPropertiesList",
         "setterModel" : {
@@ -3667,6 +3707,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies. </p>\n@param nextToken If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -3734,6 +3775,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies. </p>\n@param nextToken If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -3837,6 +3879,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3880,6 +3923,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TerminologyPropertiesList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The properties list of the custom terminologies returned on the list request.</p>\n@param terminologyPropertiesList The properties list of the custom terminologies returned on the list request.*/",
           "setterMethodName" : "setTerminologyPropertiesList",
           "setterModel" : {
@@ -4102,6 +4146,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceText",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The source text of the term being translated by the custom terminology.</p>\n@param sourceText The source text of the term being translated by the custom terminology.*/",
         "setterMethodName" : "setSourceText",
         "setterModel" : {
@@ -4167,6 +4212,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TargetText",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The target text of the term being translated by the custom terminology.</p>\n@param targetText The target text of the term being translated by the custom terminology.*/",
         "setterMethodName" : "setTargetText",
         "setterModel" : {
@@ -4234,6 +4280,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceText",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The source text of the term being translated by the custom terminology.</p>\n@param sourceText The source text of the term being translated by the custom terminology.*/",
           "setterMethodName" : "setSourceText",
           "setterModel" : {
@@ -4300,6 +4347,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TargetText",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The target text of the term being translated by the custom terminology.</p>\n@param targetText The target text of the term being translated by the custom terminology.*/",
           "setterMethodName" : "setTargetText",
           "setterModel" : {
@@ -4405,6 +4453,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "File",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The file containing the custom terminology data.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param file The file containing the custom terminology data.*/",
         "setterMethodName" : "setFile",
         "setterModel" : {
@@ -4470,6 +4519,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Format",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The data format of the custom terminology. Either CSV or TMX.</p>\n@param format The data format of the custom terminology. Either CSV or TMX.\n@see TerminologyDataFormat*/",
         "setterMethodName" : "setFormat",
         "setterModel" : {
@@ -4537,6 +4587,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "File",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The file containing the custom terminology data.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param file The file containing the custom terminology data.*/",
           "setterMethodName" : "setFile",
           "setterModel" : {
@@ -4603,6 +4654,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Format",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The data format of the custom terminology. Either CSV or TMX.</p>\n@param format The data format of the custom terminology. Either CSV or TMX.\n@see TerminologyDataFormat*/",
           "setterMethodName" : "setFormat",
           "setterModel" : {
@@ -4754,6 +4806,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RepositoryType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The repository type for the custom terminology data.</p>\n@param repositoryType The repository type for the custom terminology data.*/",
         "setterMethodName" : "setRepositoryType",
         "setterModel" : {
@@ -4819,6 +4872,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Location",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The location of the custom terminology data.</p>\n@param location The location of the custom terminology data.*/",
         "setterMethodName" : "setLocation",
         "setterModel" : {
@@ -4886,6 +4940,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Location",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The location of the custom terminology data.</p>\n@param location The location of the custom terminology data.*/",
           "setterMethodName" : "setLocation",
           "setterModel" : {
@@ -4952,6 +5007,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RepositoryType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The repository type for the custom terminology data.</p>\n@param repositoryType The repository type for the custom terminology data.*/",
           "setterMethodName" : "setRepositoryType",
           "setterModel" : {
@@ -5057,6 +5113,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the custom terminology.</p>\n@param name The name of the custom terminology.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5122,6 +5179,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the custom terminology properties.</p>\n@param description The description of the custom terminology properties.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -5187,6 +5245,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The Amazon Resource Name (ARN) of the custom terminology. </p>\n@param arn The Amazon Resource Name (ARN) of the custom terminology.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -5252,6 +5311,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceLanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the source text of the translation request for which the custom terminology is being used.</p>\n@param sourceLanguageCode The language code for the source text of the translation request for which the custom terminology is being used.*/",
         "setterMethodName" : "setSourceLanguageCode",
         "setterModel" : {
@@ -5354,6 +5414,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5397,6 +5458,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TargetLanguageCodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language codes for the target languages available with the custom terminology file. All possible target languages are returned in array.</p>\n@param targetLanguageCodes The language codes for the target languages available with the custom terminology file. All possible target languages are returned in array.*/",
         "setterMethodName" : "setTargetLanguageCodes",
         "setterModel" : {
@@ -5462,6 +5524,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EncryptionKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The encryption key for the custom terminology.</p>\n@param encryptionKey The encryption key for the custom terminology.*/",
         "setterMethodName" : "setEncryptionKey",
         "setterModel" : {
@@ -5527,6 +5590,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SizeBytes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The size of the file used when importing a custom terminology.</p>\n@param sizeBytes The size of the file used when importing a custom terminology.*/",
         "setterMethodName" : "setSizeBytes",
         "setterModel" : {
@@ -5592,6 +5656,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TermCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of terms included in the custom terminology.</p>\n@param termCount The number of terms included in the custom terminology.*/",
         "setterMethodName" : "setTermCount",
         "setterModel" : {
@@ -5657,6 +5722,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time at which the custom terminology was created, based on the timestamp.</p>\n@param createdAt The time at which the custom terminology was created, based on the timestamp.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -5722,6 +5788,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time at which the custom terminology was last update, based on the timestamp.</p>\n@param lastUpdatedAt The time at which the custom terminology was last update, based on the timestamp.*/",
         "setterMethodName" : "setLastUpdatedAt",
         "setterModel" : {
@@ -5789,6 +5856,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The Amazon Resource Name (ARN) of the custom terminology. </p>\n@param arn The Amazon Resource Name (ARN) of the custom terminology.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -5855,6 +5923,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time at which the custom terminology was created, based on the timestamp.</p>\n@param createdAt The time at which the custom terminology was created, based on the timestamp.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -5921,6 +5990,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the custom terminology properties.</p>\n@param description The description of the custom terminology properties.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -5987,6 +6057,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EncryptionKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The encryption key for the custom terminology.</p>\n@param encryptionKey The encryption key for the custom terminology.*/",
           "setterMethodName" : "setEncryptionKey",
           "setterModel" : {
@@ -6053,6 +6124,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time at which the custom terminology was last update, based on the timestamp.</p>\n@param lastUpdatedAt The time at which the custom terminology was last update, based on the timestamp.*/",
           "setterMethodName" : "setLastUpdatedAt",
           "setterModel" : {
@@ -6119,6 +6191,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the custom terminology.</p>\n@param name The name of the custom terminology.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -6185,6 +6258,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SizeBytes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The size of the file used when importing a custom terminology.</p>\n@param sizeBytes The size of the file used when importing a custom terminology.*/",
           "setterMethodName" : "setSizeBytes",
           "setterModel" : {
@@ -6251,6 +6325,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceLanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the source text of the translation request for which the custom terminology is being used.</p>\n@param sourceLanguageCode The language code for the source text of the translation request for which the custom terminology is being used.*/",
           "setterMethodName" : "setSourceLanguageCode",
           "setterModel" : {
@@ -6354,6 +6429,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6397,6 +6473,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TargetLanguageCodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language codes for the target languages available with the custom terminology file. All possible target languages are returned in array.</p>\n@param targetLanguageCodes The language codes for the target languages available with the custom terminology file. All possible target languages are returned in array.*/",
           "setterMethodName" : "setTargetLanguageCodes",
           "setterModel" : {
@@ -6463,6 +6540,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TermCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of terms included in the custom terminology.</p>\n@param termCount The number of terms included in the custom terminology.*/",
           "setterMethodName" : "setTermCount",
           "setterModel" : {
@@ -6649,6 +6727,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Text",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>\n@param text The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
@@ -6751,6 +6830,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6794,6 +6874,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TerminologyNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and a maximum length of 1.</p>\n@param terminologyNames The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and a maximum length of 1.*/",
         "setterMethodName" : "setTerminologyNames",
         "setterModel" : {
@@ -6859,6 +6940,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceLanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. </p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.</p>\n@param sourceLanguageCode The language code for the language of the source text. The language must be a language supported by Amazon Translate. </p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.*/",
         "setterMethodName" : "setSourceLanguageCode",
         "setterModel" : {
@@ -6924,6 +7006,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TargetLanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>\n@param targetLanguageCode The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.*/",
         "setterMethodName" : "setTargetLanguageCode",
         "setterModel" : {
@@ -6991,6 +7074,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceLanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. </p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.</p>\n@param sourceLanguageCode The language code for the language of the source text. The language must be a language supported by Amazon Translate. </p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.*/",
           "setterMethodName" : "setSourceLanguageCode",
           "setterModel" : {
@@ -7057,6 +7141,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TargetLanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>\n@param targetLanguageCode The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.*/",
           "setterMethodName" : "setTargetLanguageCode",
           "setterModel" : {
@@ -7160,6 +7245,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7203,6 +7289,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TerminologyNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and a maximum length of 1.</p>\n@param terminologyNames The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and a maximum length of 1.*/",
           "setterMethodName" : "setTerminologyNames",
           "setterModel" : {
@@ -7269,6 +7356,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Text",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>\n@param text The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
@@ -7371,6 +7459,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranslatedText",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The the translated text. The maximum length of this text is 5kb.</p>\n@param translatedText The the translated text. The maximum length of this text is 5kb.*/",
         "setterMethodName" : "setTranslatedText",
         "setterModel" : {
@@ -7436,6 +7525,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceLanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the language of the source text. </p>\n@param sourceLanguageCode The language code for the language of the source text.*/",
         "setterMethodName" : "setSourceLanguageCode",
         "setterModel" : {
@@ -7501,6 +7591,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TargetLanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the language of the target text. </p>\n@param targetLanguageCode The language code for the language of the target text.*/",
         "setterMethodName" : "setTargetLanguageCode",
         "setterModel" : {
@@ -7603,6 +7694,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7646,6 +7738,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AppliedTerminologies",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>\n@param appliedTerminologies The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.*/",
         "setterMethodName" : "setAppliedTerminologies",
         "setterModel" : {
@@ -7750,6 +7843,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7793,6 +7887,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AppliedTerminologies",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>\n@param appliedTerminologies The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.*/",
           "setterMethodName" : "setAppliedTerminologies",
           "setterModel" : {
@@ -7859,6 +7954,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceLanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the language of the source text. </p>\n@param sourceLanguageCode The language code for the language of the source text.*/",
           "setterMethodName" : "setSourceLanguageCode",
           "setterModel" : {
@@ -7925,6 +8021,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TargetLanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the language of the target text. </p>\n@param targetLanguageCode The language code for the language of the target text.*/",
           "setterMethodName" : "setTargetLanguageCode",
           "setterModel" : {
@@ -7991,6 +8088,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranslatedText",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The the translated text. The maximum length of this text is 5kb.</p>\n@param translatedText The the translated text. The maximum length of this text is 5kb.*/",
           "setterMethodName" : "setTranslatedText",
           "setterModel" : {
@@ -8096,6 +8194,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceLanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the language of the input text. </p>\n@param sourceLanguageCode The language code for the language of the input text.*/",
         "setterMethodName" : "setSourceLanguageCode",
         "setterModel" : {
@@ -8161,6 +8260,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TargetLanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The language code for the language of the translated text. </p>\n@param targetLanguageCode The language code for the language of the translated text.*/",
         "setterMethodName" : "setTargetLanguageCode",
         "setterModel" : {
@@ -8228,6 +8328,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceLanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the language of the input text. </p>\n@param sourceLanguageCode The language code for the language of the input text.*/",
           "setterMethodName" : "setSourceLanguageCode",
           "setterModel" : {
@@ -8294,6 +8395,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TargetLanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The language code for the language of the translated text. </p>\n@param targetLanguageCode The language code for the language of the translated text.*/",
           "setterMethodName" : "setTargetLanguageCode",
           "setterModel" : {

@@ -1147,6 +1147,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for the Amplify App. </p>\n@param appId Unique Id for the Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -1212,6 +1213,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> ARN for the Amplify App. </p>\n@param appArn ARN for the Amplify App.*/",
         "setterMethodName" : "setAppArn",
         "setterModel" : {
@@ -1277,6 +1279,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the Amplify App. </p>\n@param name Name for the Amplify App.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -1385,6 +1388,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1422,6 +1426,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Tag for Amplify App. </p>\n@param tags Tag for Amplify App.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -1487,6 +1492,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Description for the Amplify App. </p>\n@param description Description for the Amplify App.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -1552,6 +1558,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Repository",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Repository for the Amplify App. </p>\n@param repository Repository for the Amplify App.*/",
         "setterMethodName" : "setRepository",
         "setterModel" : {
@@ -1617,6 +1624,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Platform",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Platform for the Amplify App. </p>\n@param platform Platform for the Amplify App.\n@see Platform*/",
         "setterMethodName" : "setPlatform",
         "setterModel" : {
@@ -1682,6 +1690,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Create date / time for the Amplify App. </p>\n@param createTime Create date / time for the Amplify App.*/",
         "setterMethodName" : "setCreateTime",
         "setterModel" : {
@@ -1747,6 +1756,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Update date / time for the Amplify App. </p>\n@param updateTime Update date / time for the Amplify App.*/",
         "setterMethodName" : "setUpdateTime",
         "setterModel" : {
@@ -1812,6 +1822,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IamServiceRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> IAM service role ARN for the Amplify App. </p>\n@param iamServiceRoleArn IAM service role ARN for the Amplify App.*/",
         "setterMethodName" : "setIamServiceRoleArn",
         "setterModel" : {
@@ -1920,6 +1931,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1957,6 +1969,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EnvironmentVariables",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Environment Variables for the Amplify App. </p>\n@param environmentVariables Environment Variables for the Amplify App.*/",
         "setterMethodName" : "setEnvironmentVariables",
         "setterModel" : {
@@ -2022,6 +2035,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultDomain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Default domain for the Amplify App. </p>\n@param defaultDomain Default domain for the Amplify App.*/",
         "setterMethodName" : "setDefaultDomain",
         "setterModel" : {
@@ -2087,6 +2101,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBranchAutoBuild",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables auto-building of branches for the Amplify App. </p>\n@param enableBranchAutoBuild Enables auto-building of branches for the Amplify App.*/",
         "setterMethodName" : "setEnableBranchAutoBuild",
         "setterModel" : {
@@ -2152,6 +2167,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBasicAuth",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables Basic Authorization for branches for the Amplify App. </p>\n@param enableBasicAuth Enables Basic Authorization for branches for the Amplify App.*/",
         "setterMethodName" : "setEnableBasicAuth",
         "setterModel" : {
@@ -2217,6 +2233,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BasicAuthCredentials",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Basic Authorization credentials for branches for the Amplify App. </p>\n@param basicAuthCredentials Basic Authorization credentials for branches for the Amplify App.*/",
         "setterMethodName" : "setBasicAuthCredentials",
         "setterModel" : {
@@ -2319,6 +2336,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2362,6 +2380,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CustomRules",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Custom redirect / rewrite rules for the Amplify App. </p>\n@param customRules Custom redirect / rewrite rules for the Amplify App.*/",
         "setterMethodName" : "setCustomRules",
         "setterModel" : {
@@ -2427,6 +2446,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ProductionBranch",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Structure with Production Branch information. </p>\n@param productionBranch Structure with Production Branch information.*/",
         "setterMethodName" : "setProductionBranch",
         "setterModel" : {
@@ -2492,6 +2512,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BuildSpec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> BuildSpec content for Amplify App. </p>\n@param buildSpec BuildSpec content for Amplify App.*/",
         "setterMethodName" : "setBuildSpec",
         "setterModel" : {
@@ -2559,6 +2580,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> ARN for the Amplify App. </p>\n@param appArn ARN for the Amplify App.*/",
           "setterMethodName" : "setAppArn",
           "setterModel" : {
@@ -2625,6 +2647,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for the Amplify App. </p>\n@param appId Unique Id for the Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -2691,6 +2714,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BasicAuthCredentials",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Basic Authorization credentials for branches for the Amplify App. </p>\n@param basicAuthCredentials Basic Authorization credentials for branches for the Amplify App.*/",
           "setterMethodName" : "setBasicAuthCredentials",
           "setterModel" : {
@@ -2757,6 +2781,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BuildSpec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> BuildSpec content for Amplify App. </p>\n@param buildSpec BuildSpec content for Amplify App.*/",
           "setterMethodName" : "setBuildSpec",
           "setterModel" : {
@@ -2823,6 +2848,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Create date / time for the Amplify App. </p>\n@param createTime Create date / time for the Amplify App.*/",
           "setterMethodName" : "setCreateTime",
           "setterModel" : {
@@ -2926,6 +2952,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2969,6 +2996,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CustomRules",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Custom redirect / rewrite rules for the Amplify App. </p>\n@param customRules Custom redirect / rewrite rules for the Amplify App.*/",
           "setterMethodName" : "setCustomRules",
           "setterModel" : {
@@ -3035,6 +3063,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultDomain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Default domain for the Amplify App. </p>\n@param defaultDomain Default domain for the Amplify App.*/",
           "setterMethodName" : "setDefaultDomain",
           "setterModel" : {
@@ -3101,6 +3130,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Description for the Amplify App. </p>\n@param description Description for the Amplify App.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -3167,6 +3197,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBasicAuth",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables Basic Authorization for branches for the Amplify App. </p>\n@param enableBasicAuth Enables Basic Authorization for branches for the Amplify App.*/",
           "setterMethodName" : "setEnableBasicAuth",
           "setterModel" : {
@@ -3233,6 +3264,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBranchAutoBuild",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables auto-building of branches for the Amplify App. </p>\n@param enableBranchAutoBuild Enables auto-building of branches for the Amplify App.*/",
           "setterMethodName" : "setEnableBranchAutoBuild",
           "setterModel" : {
@@ -3342,6 +3374,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -3379,6 +3412,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EnvironmentVariables",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Environment Variables for the Amplify App. </p>\n@param environmentVariables Environment Variables for the Amplify App.*/",
           "setterMethodName" : "setEnvironmentVariables",
           "setterModel" : {
@@ -3445,6 +3479,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IamServiceRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> IAM service role ARN for the Amplify App. </p>\n@param iamServiceRoleArn IAM service role ARN for the Amplify App.*/",
           "setterMethodName" : "setIamServiceRoleArn",
           "setterModel" : {
@@ -3511,6 +3546,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the Amplify App. </p>\n@param name Name for the Amplify App.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3577,6 +3613,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Platform",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Platform for the Amplify App. </p>\n@param platform Platform for the Amplify App.\n@see Platform*/",
           "setterMethodName" : "setPlatform",
           "setterModel" : {
@@ -3643,6 +3680,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ProductionBranch",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Structure with Production Branch information. </p>\n@param productionBranch Structure with Production Branch information.*/",
           "setterMethodName" : "setProductionBranch",
           "setterModel" : {
@@ -3709,6 +3747,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Repository",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Repository for the Amplify App. </p>\n@param repository Repository for the Amplify App.*/",
           "setterMethodName" : "setRepository",
           "setterModel" : {
@@ -3818,6 +3857,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -3855,6 +3895,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Tag for Amplify App. </p>\n@param tags Tag for Amplify App.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -3921,6 +3962,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Update date / time for the Amplify App. </p>\n@param updateTime Update date / time for the Amplify App.*/",
           "setterMethodName" : "setUpdateTime",
           "setterModel" : {
@@ -4063,6 +4105,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> ARN for a branch, part of an Amplify App. </p>\n@param branchArn ARN for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setBranchArn",
         "setterModel" : {
@@ -4128,6 +4171,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for a branch, part of an Amplify App. </p>\n@param branchName Name for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -4193,6 +4237,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Description for a branch, part of an Amplify App. </p>\n@param description Description for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -4301,6 +4346,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -4338,6 +4384,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Tag for branch for Amplify App. </p>\n@param tags Tag for branch for Amplify App.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -4403,6 +4450,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Stage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Stage for a branch, part of an Amplify App. </p>\n@param stage Stage for a branch, part of an Amplify App.\n@see Stage*/",
         "setterMethodName" : "setStage",
         "setterModel" : {
@@ -4468,6 +4516,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Display name for a branch, part of an Amplify App. </p>\n@param displayName Display name for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -4533,6 +4582,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableNotification",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables notifications for a branch, part of an Amplify App. </p>\n@param enableNotification Enables notifications for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setEnableNotification",
         "setterModel" : {
@@ -4598,6 +4648,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Creation date and time for a branch, part of an Amplify App. </p>\n@param createTime Creation date and time for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setCreateTime",
         "setterModel" : {
@@ -4663,6 +4714,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Last updated date and time for a branch, part of an Amplify App. </p>\n@param updateTime Last updated date and time for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setUpdateTime",
         "setterModel" : {
@@ -4771,6 +4823,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -4808,6 +4861,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EnvironmentVariables",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Environment Variables specific to a branch, part of an Amplify App. </p>\n@param environmentVariables Environment Variables specific to a branch, part of an Amplify App.*/",
         "setterMethodName" : "setEnvironmentVariables",
         "setterModel" : {
@@ -4873,6 +4927,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableAutoBuild",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables auto-building on push for a branch, part of an Amplify App. </p>\n@param enableAutoBuild Enables auto-building on push for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setEnableAutoBuild",
         "setterModel" : {
@@ -4975,6 +5030,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5018,6 +5074,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CustomDomains",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Custom domains for a branch, part of an Amplify App. </p>\n@param customDomains Custom domains for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setCustomDomains",
         "setterModel" : {
@@ -5083,6 +5140,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Framework",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Framework for a branch, part of an Amplify App. </p>\n@param framework Framework for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setFramework",
         "setterModel" : {
@@ -5148,6 +5206,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ActiveJobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Id of the active job for a branch, part of an Amplify App. </p>\n@param activeJobId Id of the active job for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setActiveJobId",
         "setterModel" : {
@@ -5213,6 +5272,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TotalNumberOfJobs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Total number of Jobs part of an Amplify App. </p>\n@param totalNumberOfJobs Total number of Jobs part of an Amplify App.*/",
         "setterMethodName" : "setTotalNumberOfJobs",
         "setterModel" : {
@@ -5278,6 +5338,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBasicAuth",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables Basic Authorization for a branch, part of an Amplify App. </p>\n@param enableBasicAuth Enables Basic Authorization for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setEnableBasicAuth",
         "setterModel" : {
@@ -5343,6 +5404,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ThumbnailUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Thumbnail Url for the branch. </p>\n@param thumbnailUrl Thumbnail Url for the branch.*/",
         "setterMethodName" : "setThumbnailUrl",
         "setterModel" : {
@@ -5408,6 +5470,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BasicAuthCredentials",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Basic Authorization credentials for a branch, part of an Amplify App. </p>\n@param basicAuthCredentials Basic Authorization credentials for a branch, part of an Amplify App.*/",
         "setterMethodName" : "setBasicAuthCredentials",
         "setterModel" : {
@@ -5473,6 +5536,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BuildSpec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> BuildSpec content for branch for Amplify App. </p>\n@param buildSpec BuildSpec content for branch for Amplify App.*/",
         "setterMethodName" : "setBuildSpec",
         "setterModel" : {
@@ -5538,6 +5602,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Ttl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The content TTL for the website in seconds. </p>\n@param ttl The content TTL for the website in seconds.*/",
         "setterMethodName" : "setTtl",
         "setterModel" : {
@@ -5605,6 +5670,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ActiveJobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Id of the active job for a branch, part of an Amplify App. </p>\n@param activeJobId Id of the active job for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setActiveJobId",
           "setterModel" : {
@@ -5671,6 +5737,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BasicAuthCredentials",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Basic Authorization credentials for a branch, part of an Amplify App. </p>\n@param basicAuthCredentials Basic Authorization credentials for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setBasicAuthCredentials",
           "setterModel" : {
@@ -5737,6 +5804,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> ARN for a branch, part of an Amplify App. </p>\n@param branchArn ARN for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setBranchArn",
           "setterModel" : {
@@ -5803,6 +5871,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for a branch, part of an Amplify App. </p>\n@param branchName Name for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -5869,6 +5938,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BuildSpec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> BuildSpec content for branch for Amplify App. </p>\n@param buildSpec BuildSpec content for branch for Amplify App.*/",
           "setterMethodName" : "setBuildSpec",
           "setterModel" : {
@@ -5935,6 +6005,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Creation date and time for a branch, part of an Amplify App. </p>\n@param createTime Creation date and time for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setCreateTime",
           "setterModel" : {
@@ -6038,6 +6109,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6081,6 +6153,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CustomDomains",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Custom domains for a branch, part of an Amplify App. </p>\n@param customDomains Custom domains for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setCustomDomains",
           "setterModel" : {
@@ -6147,6 +6220,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Description for a branch, part of an Amplify App. </p>\n@param description Description for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -6213,6 +6287,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Display name for a branch, part of an Amplify App. </p>\n@param displayName Display name for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -6279,6 +6354,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableAutoBuild",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables auto-building on push for a branch, part of an Amplify App. </p>\n@param enableAutoBuild Enables auto-building on push for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setEnableAutoBuild",
           "setterModel" : {
@@ -6345,6 +6421,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBasicAuth",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables Basic Authorization for a branch, part of an Amplify App. </p>\n@param enableBasicAuth Enables Basic Authorization for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setEnableBasicAuth",
           "setterModel" : {
@@ -6411,6 +6488,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableNotification",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables notifications for a branch, part of an Amplify App. </p>\n@param enableNotification Enables notifications for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setEnableNotification",
           "setterModel" : {
@@ -6520,6 +6598,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -6557,6 +6636,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EnvironmentVariables",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Environment Variables specific to a branch, part of an Amplify App. </p>\n@param environmentVariables Environment Variables specific to a branch, part of an Amplify App.*/",
           "setterMethodName" : "setEnvironmentVariables",
           "setterModel" : {
@@ -6623,6 +6703,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Framework",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Framework for a branch, part of an Amplify App. </p>\n@param framework Framework for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setFramework",
           "setterModel" : {
@@ -6689,6 +6770,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Stage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Stage for a branch, part of an Amplify App. </p>\n@param stage Stage for a branch, part of an Amplify App.\n@see Stage*/",
           "setterMethodName" : "setStage",
           "setterModel" : {
@@ -6798,6 +6880,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -6835,6 +6918,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Tag for branch for Amplify App. </p>\n@param tags Tag for branch for Amplify App.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -6901,6 +6985,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ThumbnailUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Thumbnail Url for the branch. </p>\n@param thumbnailUrl Thumbnail Url for the branch.*/",
           "setterMethodName" : "setThumbnailUrl",
           "setterModel" : {
@@ -6967,6 +7052,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TotalNumberOfJobs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Total number of Jobs part of an Amplify App. </p>\n@param totalNumberOfJobs Total number of Jobs part of an Amplify App.*/",
           "setterMethodName" : "setTotalNumberOfJobs",
           "setterModel" : {
@@ -7033,6 +7119,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Ttl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The content TTL for the website in seconds. </p>\n@param ttl The content TTL for the website in seconds.*/",
           "setterMethodName" : "setTtl",
           "setterModel" : {
@@ -7099,6 +7186,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Last updated date and time for a branch, part of an Amplify App. </p>\n@param updateTime Last updated date and time for a branch, part of an Amplify App.*/",
           "setterMethodName" : "setUpdateTime",
           "setterModel" : {
@@ -7211,6 +7299,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the Amplify App </p>\n@param name Name for the Amplify App*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -7276,6 +7365,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Description for an Amplify App </p>\n@param description Description for an Amplify App*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -7341,6 +7431,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Repository",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Repository for an Amplify App </p>\n@param repository Repository for an Amplify App*/",
         "setterMethodName" : "setRepository",
         "setterModel" : {
@@ -7406,6 +7497,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Platform",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Platform / framework for an Amplify App </p>\n@param platform Platform / framework for an Amplify App\n@see Platform*/",
         "setterMethodName" : "setPlatform",
         "setterModel" : {
@@ -7471,6 +7563,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IamServiceRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> AWS IAM service role for an Amplify App </p>\n@param iamServiceRoleArn AWS IAM service role for an Amplify App*/",
         "setterMethodName" : "setIamServiceRoleArn",
         "setterModel" : {
@@ -7536,6 +7629,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OauthToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. OAuth token is not stored. </p>\n@param oauthToken OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. OAuth token is not stored.*/",
         "setterMethodName" : "setOauthToken",
         "setterModel" : {
@@ -7644,6 +7738,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -7681,6 +7776,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EnvironmentVariables",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Environment variables map for an Amplify App. </p>\n@param environmentVariables Environment variables map for an Amplify App.*/",
         "setterMethodName" : "setEnvironmentVariables",
         "setterModel" : {
@@ -7746,6 +7842,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBranchAutoBuild",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enable the auto building of branches for an Amplify App. </p>\n@param enableBranchAutoBuild Enable the auto building of branches for an Amplify App.*/",
         "setterMethodName" : "setEnableBranchAutoBuild",
         "setterModel" : {
@@ -7811,6 +7908,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBasicAuth",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enable Basic Authorization for an Amplify App, this will apply to all branches part of this App. </p>\n@param enableBasicAuth Enable Basic Authorization for an Amplify App, this will apply to all branches part of this App.*/",
         "setterMethodName" : "setEnableBasicAuth",
         "setterModel" : {
@@ -7876,6 +7974,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BasicAuthCredentials",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Credentials for Basic Authorization for an Amplify App. </p>\n@param basicAuthCredentials Credentials for Basic Authorization for an Amplify App.*/",
         "setterMethodName" : "setBasicAuthCredentials",
         "setterModel" : {
@@ -7978,6 +8077,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8021,6 +8121,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CustomRules",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Custom rewrite / redirect rules for an Amplify App. </p>\n@param customRules Custom rewrite / redirect rules for an Amplify App.*/",
         "setterMethodName" : "setCustomRules",
         "setterModel" : {
@@ -8129,6 +8230,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -8166,6 +8268,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Tag for an Amplify App </p>\n@param tags Tag for an Amplify App*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -8231,6 +8334,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BuildSpec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> BuildSpec for an Amplify App </p>\n@param buildSpec BuildSpec for an Amplify App*/",
         "setterMethodName" : "setBuildSpec",
         "setterModel" : {
@@ -8298,6 +8402,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BasicAuthCredentials",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Credentials for Basic Authorization for an Amplify App. </p>\n@param basicAuthCredentials Credentials for Basic Authorization for an Amplify App.*/",
           "setterMethodName" : "setBasicAuthCredentials",
           "setterModel" : {
@@ -8364,6 +8469,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BuildSpec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> BuildSpec for an Amplify App </p>\n@param buildSpec BuildSpec for an Amplify App*/",
           "setterMethodName" : "setBuildSpec",
           "setterModel" : {
@@ -8467,6 +8573,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8510,6 +8617,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CustomRules",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Custom rewrite / redirect rules for an Amplify App. </p>\n@param customRules Custom rewrite / redirect rules for an Amplify App.*/",
           "setterMethodName" : "setCustomRules",
           "setterModel" : {
@@ -8576,6 +8684,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Description for an Amplify App </p>\n@param description Description for an Amplify App*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -8642,6 +8751,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBasicAuth",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enable Basic Authorization for an Amplify App, this will apply to all branches part of this App. </p>\n@param enableBasicAuth Enable Basic Authorization for an Amplify App, this will apply to all branches part of this App.*/",
           "setterMethodName" : "setEnableBasicAuth",
           "setterModel" : {
@@ -8708,6 +8818,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBranchAutoBuild",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enable the auto building of branches for an Amplify App. </p>\n@param enableBranchAutoBuild Enable the auto building of branches for an Amplify App.*/",
           "setterMethodName" : "setEnableBranchAutoBuild",
           "setterModel" : {
@@ -8817,6 +8928,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -8854,6 +8966,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EnvironmentVariables",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Environment variables map for an Amplify App. </p>\n@param environmentVariables Environment variables map for an Amplify App.*/",
           "setterMethodName" : "setEnvironmentVariables",
           "setterModel" : {
@@ -8920,6 +9033,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IamServiceRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> AWS IAM service role for an Amplify App </p>\n@param iamServiceRoleArn AWS IAM service role for an Amplify App*/",
           "setterMethodName" : "setIamServiceRoleArn",
           "setterModel" : {
@@ -8986,6 +9100,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the Amplify App </p>\n@param name Name for the Amplify App*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -9052,6 +9167,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OauthToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. OAuth token is not stored. </p>\n@param oauthToken OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. OAuth token is not stored.*/",
           "setterMethodName" : "setOauthToken",
           "setterModel" : {
@@ -9118,6 +9234,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Platform",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Platform / framework for an Amplify App </p>\n@param platform Platform / framework for an Amplify App\n@see Platform*/",
           "setterMethodName" : "setPlatform",
           "setterModel" : {
@@ -9184,6 +9301,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Repository",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Repository for an Amplify App </p>\n@param repository Repository for an Amplify App*/",
           "setterMethodName" : "setRepository",
           "setterModel" : {
@@ -9293,6 +9411,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -9330,6 +9449,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Tag for an Amplify App </p>\n@param tags Tag for an Amplify App*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -9432,6 +9552,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "App",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param app */",
         "setterMethodName" : "setApp",
         "setterModel" : {
@@ -9499,6 +9620,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "App",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param app */",
           "setterMethodName" : "setApp",
           "setterModel" : {
@@ -9611,6 +9733,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -9676,6 +9799,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the branch. </p>\n@param branchName Name for the branch.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -9741,6 +9865,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Description for the branch. </p>\n@param description Description for the branch.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -9806,6 +9931,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Stage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Stage for the branch. </p>\n@param stage Stage for the branch.\n@see Stage*/",
         "setterMethodName" : "setStage",
         "setterModel" : {
@@ -9871,6 +9997,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Framework",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Framework for the branch. </p>\n@param framework Framework for the branch.*/",
         "setterMethodName" : "setFramework",
         "setterModel" : {
@@ -9936,6 +10063,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableNotification",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables notifications for the branch. </p>\n@param enableNotification Enables notifications for the branch.*/",
         "setterMethodName" : "setEnableNotification",
         "setterModel" : {
@@ -10001,6 +10129,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableAutoBuild",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables auto building for the branch. </p>\n@param enableAutoBuild Enables auto building for the branch.*/",
         "setterMethodName" : "setEnableAutoBuild",
         "setterModel" : {
@@ -10109,6 +10238,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -10146,6 +10276,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EnvironmentVariables",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Environment Variables for the branch. </p>\n@param environmentVariables Environment Variables for the branch.*/",
         "setterMethodName" : "setEnvironmentVariables",
         "setterModel" : {
@@ -10211,6 +10342,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BasicAuthCredentials",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Basic Authorization credentials for the branch. </p>\n@param basicAuthCredentials Basic Authorization credentials for the branch.*/",
         "setterMethodName" : "setBasicAuthCredentials",
         "setterModel" : {
@@ -10276,6 +10408,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBasicAuth",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables Basic Auth for the branch. </p>\n@param enableBasicAuth Enables Basic Auth for the branch.*/",
         "setterMethodName" : "setEnableBasicAuth",
         "setterModel" : {
@@ -10384,6 +10517,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -10421,6 +10555,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Tag for the branch. </p>\n@param tags Tag for the branch.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -10486,6 +10621,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BuildSpec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> BuildSpec for the branch. </p>\n@param buildSpec BuildSpec for the branch.*/",
         "setterMethodName" : "setBuildSpec",
         "setterModel" : {
@@ -10551,6 +10687,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Ttl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The content TTL for the website in seconds. </p>\n@param ttl The content TTL for the website in seconds.*/",
         "setterMethodName" : "setTtl",
         "setterModel" : {
@@ -10618,6 +10755,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -10684,6 +10822,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BasicAuthCredentials",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Basic Authorization credentials for the branch. </p>\n@param basicAuthCredentials Basic Authorization credentials for the branch.*/",
           "setterMethodName" : "setBasicAuthCredentials",
           "setterModel" : {
@@ -10750,6 +10889,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the branch. </p>\n@param branchName Name for the branch.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -10816,6 +10956,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BuildSpec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> BuildSpec for the branch. </p>\n@param buildSpec BuildSpec for the branch.*/",
           "setterMethodName" : "setBuildSpec",
           "setterModel" : {
@@ -10882,6 +11023,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Description for the branch. </p>\n@param description Description for the branch.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -10948,6 +11090,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableAutoBuild",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables auto building for the branch. </p>\n@param enableAutoBuild Enables auto building for the branch.*/",
           "setterMethodName" : "setEnableAutoBuild",
           "setterModel" : {
@@ -11014,6 +11157,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBasicAuth",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables Basic Auth for the branch. </p>\n@param enableBasicAuth Enables Basic Auth for the branch.*/",
           "setterMethodName" : "setEnableBasicAuth",
           "setterModel" : {
@@ -11080,6 +11224,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableNotification",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables notifications for the branch. </p>\n@param enableNotification Enables notifications for the branch.*/",
           "setterMethodName" : "setEnableNotification",
           "setterModel" : {
@@ -11189,6 +11334,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11226,6 +11372,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EnvironmentVariables",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Environment Variables for the branch. </p>\n@param environmentVariables Environment Variables for the branch.*/",
           "setterMethodName" : "setEnvironmentVariables",
           "setterModel" : {
@@ -11292,6 +11439,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Framework",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Framework for the branch. </p>\n@param framework Framework for the branch.*/",
           "setterMethodName" : "setFramework",
           "setterModel" : {
@@ -11358,6 +11506,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Stage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Stage for the branch. </p>\n@param stage Stage for the branch.\n@see Stage*/",
           "setterMethodName" : "setStage",
           "setterModel" : {
@@ -11467,6 +11616,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11504,6 +11654,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Tag for the branch. </p>\n@param tags Tag for the branch.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -11570,6 +11721,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Ttl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The content TTL for the website in seconds. </p>\n@param ttl The content TTL for the website in seconds.*/",
           "setterMethodName" : "setTtl",
           "setterModel" : {
@@ -11672,6 +11824,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Branch",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Branch structure for an Amplify App. </p>\n@param branch Branch structure for an Amplify App.*/",
         "setterMethodName" : "setBranch",
         "setterModel" : {
@@ -11739,6 +11892,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Branch",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Branch structure for an Amplify App. </p>\n@param branch Branch structure for an Amplify App.*/",
           "setterMethodName" : "setBranch",
           "setterModel" : {
@@ -11851,6 +12005,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -11916,6 +12071,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Domain name for the Domain Association. </p>\n@param domainName Domain name for the Domain Association.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -11981,6 +12137,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableAutoSubDomain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables automated creation of Subdomains for branches. </p>\n@param enableAutoSubDomain Enables automated creation of Subdomains for branches.*/",
         "setterMethodName" : "setEnableAutoSubDomain",
         "setterModel" : {
@@ -12083,6 +12240,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12126,6 +12284,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubDomainSettings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Setting structure for the Subdomain. </p>\n@param subDomainSettings Setting structure for the Subdomain.*/",
         "setterMethodName" : "setSubDomainSettings",
         "setterModel" : {
@@ -12193,6 +12352,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -12259,6 +12419,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Domain name for the Domain Association. </p>\n@param domainName Domain name for the Domain Association.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -12325,6 +12486,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableAutoSubDomain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables automated creation of Subdomains for branches. </p>\n@param enableAutoSubDomain Enables automated creation of Subdomains for branches.*/",
           "setterMethodName" : "setEnableAutoSubDomain",
           "setterModel" : {
@@ -12428,6 +12590,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12471,6 +12634,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubDomainSettings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Setting structure for the Subdomain. </p>\n@param subDomainSettings Setting structure for the Subdomain.*/",
           "setterMethodName" : "setSubDomainSettings",
           "setterModel" : {
@@ -12573,6 +12737,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DomainAssociation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Domain Association structure. </p>\n@param domainAssociation Domain Association structure.*/",
         "setterMethodName" : "setDomainAssociation",
         "setterModel" : {
@@ -12640,6 +12805,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DomainAssociation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Domain Association structure. </p>\n@param domainAssociation Domain Association structure.*/",
           "setterMethodName" : "setDomainAssociation",
           "setterModel" : {
@@ -12745,6 +12911,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The source pattern for a URL rewrite or redirect rule. </p>\n@param source The source pattern for a URL rewrite or redirect rule.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -12810,6 +12977,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Target",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The target pattern for a URL rewrite or redirect rule. </p>\n@param target The target pattern for a URL rewrite or redirect rule.*/",
         "setterMethodName" : "setTarget",
         "setterModel" : {
@@ -12875,6 +13043,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The status code for a URL rewrite or redirect rule. </p>\n@param status The status code for a URL rewrite or redirect rule.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -12940,6 +13109,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Condition",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>\n@param condition The condition for a URL rewrite or redirect rule, e.g. country code.*/",
         "setterMethodName" : "setCondition",
         "setterModel" : {
@@ -13007,6 +13177,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Condition",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>\n@param condition The condition for a URL rewrite or redirect rule, e.g. country code.*/",
           "setterMethodName" : "setCondition",
           "setterModel" : {
@@ -13073,6 +13244,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The source pattern for a URL rewrite or redirect rule. </p>\n@param source The source pattern for a URL rewrite or redirect rule.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -13139,6 +13311,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The status code for a URL rewrite or redirect rule. </p>\n@param status The status code for a URL rewrite or redirect rule.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -13205,6 +13378,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Target",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The target pattern for a URL rewrite or redirect rule. </p>\n@param target The target pattern for a URL rewrite or redirect rule.*/",
           "setterMethodName" : "setTarget",
           "setterModel" : {
@@ -13317,6 +13491,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -13384,6 +13559,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -13486,6 +13662,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "App",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param app */",
         "setterMethodName" : "setApp",
         "setterModel" : {
@@ -13553,6 +13730,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "App",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param app */",
           "setterMethodName" : "setApp",
           "setterModel" : {
@@ -13665,6 +13843,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -13730,6 +13909,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the branch. </p>\n@param branchName Name for the branch.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -13797,6 +13977,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -13863,6 +14044,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the branch. </p>\n@param branchName Name for the branch.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -13965,6 +14147,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Branch",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Branch structure for an Amplify App. </p>\n@param branch Branch structure for an Amplify App.*/",
         "setterMethodName" : "setBranch",
         "setterModel" : {
@@ -14032,6 +14215,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Branch",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Branch structure for an Amplify App. </p>\n@param branch Branch structure for an Amplify App.*/",
           "setterMethodName" : "setBranch",
           "setterModel" : {
@@ -14144,6 +14328,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -14209,6 +14394,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name of the domain. </p>\n@param domainName Name of the domain.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -14276,6 +14462,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -14342,6 +14529,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name of the domain. </p>\n@param domainName Name of the domain.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -14444,6 +14632,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DomainAssociation",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param domainAssociation */",
         "setterMethodName" : "setDomainAssociation",
         "setterModel" : {
@@ -14511,6 +14700,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DomainAssociation",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param domainAssociation */",
           "setterMethodName" : "setDomainAssociation",
           "setterModel" : {
@@ -14623,6 +14813,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -14688,6 +14879,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the branch, for the Job. </p>\n@param branchName Name for the branch, for the Job.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -14753,6 +14945,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -14820,6 +15013,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -14886,6 +15080,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the branch, for the Job. </p>\n@param branchName Name for the branch, for the Job.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -14952,6 +15147,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -15054,6 +15250,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "JobSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param jobSummary */",
         "setterMethodName" : "setJobSummary",
         "setterModel" : {
@@ -15121,6 +15318,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "JobSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param jobSummary */",
           "setterMethodName" : "setJobSummary",
           "setterModel" : {
@@ -15263,6 +15461,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainAssociationArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> ARN for the Domain Association. </p>\n@param domainAssociationArn ARN for the Domain Association.*/",
         "setterMethodName" : "setDomainAssociationArn",
         "setterModel" : {
@@ -15328,6 +15527,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name of the domain. </p>\n@param domainName Name of the domain.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -15393,6 +15593,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableAutoSubDomain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables automated creation of Subdomains for branches. </p>\n@param enableAutoSubDomain Enables automated creation of Subdomains for branches.*/",
         "setterMethodName" : "setEnableAutoSubDomain",
         "setterModel" : {
@@ -15458,6 +15659,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Status fo the Domain Association. </p>\n@param domainStatus Status fo the Domain Association.\n@see DomainStatus*/",
         "setterMethodName" : "setDomainStatus",
         "setterModel" : {
@@ -15523,6 +15725,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Reason for the current status of the Domain Association. </p>\n@param statusReason Reason for the current status of the Domain Association.*/",
         "setterMethodName" : "setStatusReason",
         "setterModel" : {
@@ -15588,6 +15791,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateVerificationDNSRecord",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> DNS Record for certificate verification. </p>\n@param certificateVerificationDNSRecord DNS Record for certificate verification.*/",
         "setterMethodName" : "setCertificateVerificationDNSRecord",
         "setterModel" : {
@@ -15690,6 +15894,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15733,6 +15938,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubDomains",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Subdomains for the Domain Association. </p>\n@param subDomains Subdomains for the Domain Association.*/",
         "setterMethodName" : "setSubDomains",
         "setterModel" : {
@@ -15800,6 +16006,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateVerificationDNSRecord",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> DNS Record for certificate verification. </p>\n@param certificateVerificationDNSRecord DNS Record for certificate verification.*/",
           "setterMethodName" : "setCertificateVerificationDNSRecord",
           "setterModel" : {
@@ -15866,6 +16073,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainAssociationArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> ARN for the Domain Association. </p>\n@param domainAssociationArn ARN for the Domain Association.*/",
           "setterMethodName" : "setDomainAssociationArn",
           "setterModel" : {
@@ -15932,6 +16140,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name of the domain. </p>\n@param domainName Name of the domain.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -15998,6 +16207,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Status fo the Domain Association. </p>\n@param domainStatus Status fo the Domain Association.\n@see DomainStatus*/",
           "setterMethodName" : "setDomainStatus",
           "setterModel" : {
@@ -16064,6 +16274,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableAutoSubDomain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables automated creation of Subdomains for branches. </p>\n@param enableAutoSubDomain Enables automated creation of Subdomains for branches.*/",
           "setterMethodName" : "setEnableAutoSubDomain",
           "setterModel" : {
@@ -16130,6 +16341,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Reason for the current status of the Domain Association. </p>\n@param statusReason Reason for the current status of the Domain Association.*/",
           "setterMethodName" : "setStatusReason",
           "setterModel" : {
@@ -16233,6 +16445,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16276,6 +16489,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubDomains",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Subdomains for the Domain Association. </p>\n@param subDomains Subdomains for the Domain Association.*/",
           "setterMethodName" : "setSubDomains",
           "setterModel" : {
@@ -16443,6 +16657,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -16510,6 +16725,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -16612,6 +16828,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "App",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param app */",
         "setterMethodName" : "setApp",
         "setterModel" : {
@@ -16679,6 +16896,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "App",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param app */",
           "setterMethodName" : "setApp",
           "setterModel" : {
@@ -16791,6 +17009,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -16856,6 +17075,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the branch. </p>\n@param branchName Name for the branch.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -16923,6 +17143,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -16989,6 +17210,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the branch. </p>\n@param branchName Name for the branch.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -17091,6 +17313,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Branch",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param branch */",
         "setterMethodName" : "setBranch",
         "setterModel" : {
@@ -17158,6 +17381,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Branch",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param branch */",
           "setterMethodName" : "setBranch",
           "setterModel" : {
@@ -17270,6 +17494,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -17335,6 +17560,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name of the domain. </p>\n@param domainName Name of the domain.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -17402,6 +17628,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -17468,6 +17695,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name of the domain. </p>\n@param domainName Name of the domain.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -17570,6 +17798,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DomainAssociation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Domain Association structure. </p>\n@param domainAssociation Domain Association structure.*/",
         "setterMethodName" : "setDomainAssociation",
         "setterModel" : {
@@ -17637,6 +17866,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DomainAssociation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Domain Association structure. </p>\n@param domainAssociation Domain Association structure.*/",
           "setterMethodName" : "setDomainAssociation",
           "setterModel" : {
@@ -17749,6 +17979,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -17814,6 +18045,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the branch, for the Job. </p>\n@param branchName Name for the branch, for the Job.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -17879,6 +18111,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -17946,6 +18179,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -18012,6 +18246,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the branch, for the Job. </p>\n@param branchName Name for the branch, for the Job.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -18078,6 +18313,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -18180,6 +18416,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Job",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param job */",
         "setterMethodName" : "setJob",
         "setterModel" : {
@@ -18247,6 +18484,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Job",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param job */",
           "setterMethodName" : "setJob",
           "setterModel" : {
@@ -18389,6 +18627,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Summary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Summary for an execution job for an Amplify App. </p>\n@param summary Summary for an execution job for an Amplify App.*/",
         "setterMethodName" : "setSummary",
         "setterModel" : {
@@ -18491,6 +18730,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18534,6 +18774,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Steps",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Execution steps for an execution job, for an Amplify App. </p>\n@param steps Execution steps for an execution job, for an Amplify App.*/",
         "setterMethodName" : "setSteps",
         "setterModel" : {
@@ -18638,6 +18879,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18681,6 +18923,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Steps",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Execution steps for an execution job, for an Amplify App. </p>\n@param steps Execution steps for an execution job, for an Amplify App.*/",
           "setterMethodName" : "setSteps",
           "setterModel" : {
@@ -18747,6 +18990,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Summary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Summary for an execution job for an Amplify App. </p>\n@param summary Summary for an execution job for an Amplify App.*/",
           "setterMethodName" : "setSummary",
           "setterModel" : {
@@ -18913,6 +19157,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Arn for the Job. </p>\n@param jobArn Arn for the Job.*/",
         "setterMethodName" : "setJobArn",
         "setterModel" : {
@@ -18978,6 +19223,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -19043,6 +19289,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CommitId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Commit Id from 3rd party repository provider for the Job. </p>\n@param commitId Commit Id from 3rd party repository provider for the Job.*/",
         "setterMethodName" : "setCommitId",
         "setterModel" : {
@@ -19108,6 +19355,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CommitMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Commit message from 3rd party repository provider for the Job. </p>\n@param commitMessage Commit message from 3rd party repository provider for the Job.*/",
         "setterMethodName" : "setCommitMessage",
         "setterModel" : {
@@ -19173,6 +19421,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CommitTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Commit date / time for the Job. </p>\n@param commitTime Commit date / time for the Job.*/",
         "setterMethodName" : "setCommitTime",
         "setterModel" : {
@@ -19238,6 +19487,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Start date / time for the Job. </p>\n@param startTime Start date / time for the Job.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -19303,6 +19553,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Status for the Job. </p>\n@param status Status for the Job.\n@see JobStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -19368,6 +19619,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> End date / time for the Job. </p>\n@param endTime End date / time for the Job.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -19433,6 +19685,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Type for the Job. </p>\n@param jobType Type for the Job.\n@see JobType*/",
         "setterMethodName" : "setJobType",
         "setterModel" : {
@@ -19500,6 +19753,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CommitId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Commit Id from 3rd party repository provider for the Job. </p>\n@param commitId Commit Id from 3rd party repository provider for the Job.*/",
           "setterMethodName" : "setCommitId",
           "setterModel" : {
@@ -19566,6 +19820,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CommitMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Commit message from 3rd party repository provider for the Job. </p>\n@param commitMessage Commit message from 3rd party repository provider for the Job.*/",
           "setterMethodName" : "setCommitMessage",
           "setterModel" : {
@@ -19632,6 +19887,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CommitTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Commit date / time for the Job. </p>\n@param commitTime Commit date / time for the Job.*/",
           "setterMethodName" : "setCommitTime",
           "setterModel" : {
@@ -19698,6 +19954,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> End date / time for the Job. </p>\n@param endTime End date / time for the Job.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -19764,6 +20021,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Arn for the Job. </p>\n@param jobArn Arn for the Job.*/",
           "setterMethodName" : "setJobArn",
           "setterModel" : {
@@ -19830,6 +20088,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -19896,6 +20155,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Type for the Job. </p>\n@param jobType Type for the Job.\n@see JobType*/",
           "setterMethodName" : "setJobType",
           "setterModel" : {
@@ -19962,6 +20222,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Start date / time for the Job. </p>\n@param startTime Start date / time for the Job.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -20028,6 +20289,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Status for the Job. </p>\n@param status Status for the Job.\n@see JobStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -20226,6 +20488,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -20291,6 +20554,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -20358,6 +20622,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -20424,6 +20689,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -20563,6 +20829,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20606,6 +20873,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Apps",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> List of Amplify Apps. </p>\n@param apps List of Amplify Apps.*/",
         "setterMethodName" : "setApps",
         "setterModel" : {
@@ -20671,6 +20939,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a result, then pass its value in here to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a result, then pass its value in here to list more projects.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -20775,6 +21044,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20818,6 +21088,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Apps",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> List of Amplify Apps. </p>\n@param apps List of Amplify Apps.*/",
           "setterMethodName" : "setApps",
           "setterModel" : {
@@ -20884,6 +21155,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a result, then pass its value in here to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a result, then pass its value in here to list more projects.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -20996,6 +21268,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -21061,6 +21334,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing branches from start. If a non-null pagination token is returned in a result, then pass its value in here to list more branches. </p>\n@param nextToken Pagination token. Set to null to start listing branches from start. If a non-null pagination token is returned in a result, then pass its value in here to list more branches.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -21126,6 +21400,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -21193,6 +21468,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -21259,6 +21535,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -21325,6 +21602,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing branches from start. If a non-null pagination token is returned in a result, then pass its value in here to list more branches. </p>\n@param nextToken Pagination token. Set to null to start listing branches from start. If a non-null pagination token is returned in a result, then pass its value in here to list more branches.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -21464,6 +21742,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -21507,6 +21786,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Branches",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> List of branches for an Amplify App. </p>\n@param branches List of branches for an Amplify App.*/",
         "setterMethodName" : "setBranches",
         "setterModel" : {
@@ -21572,6 +21852,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -21676,6 +21957,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -21719,6 +22001,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Branches",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> List of branches for an Amplify App. </p>\n@param branches List of branches for an Amplify App.*/",
           "setterMethodName" : "setBranches",
           "setterModel" : {
@@ -21785,6 +22068,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -21897,6 +22181,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -21962,6 +22247,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a result, then pass its value in here to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a result, then pass its value in here to list more projects.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -22027,6 +22313,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -22094,6 +22381,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -22160,6 +22448,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -22226,6 +22515,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a result, then pass its value in here to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a result, then pass its value in here to list more projects.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -22365,6 +22655,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -22408,6 +22699,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DomainAssociations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> List of Domain Associations. </p>\n@param domainAssociations List of Domain Associations.*/",
         "setterMethodName" : "setDomainAssociations",
         "setterModel" : {
@@ -22473,6 +22765,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -22577,6 +22870,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22620,6 +22914,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DomainAssociations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> List of Domain Associations. </p>\n@param domainAssociations List of Domain Associations.*/",
           "setterMethodName" : "setDomainAssociations",
           "setterModel" : {
@@ -22686,6 +22981,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -22798,6 +23094,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -22863,6 +23160,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for a branch. </p>\n@param branchName Name for a branch.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -22928,6 +23226,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing steps from start. If a non-null pagination token is returned in a result, then pass its value in here to list more steps. </p>\n@param nextToken Pagination token. Set to null to start listing steps from start. If a non-null pagination token is returned in a result, then pass its value in here to list more steps.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -22993,6 +23292,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -23060,6 +23360,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -23126,6 +23427,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for a branch. </p>\n@param branchName Name for a branch.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -23192,6 +23494,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -23258,6 +23561,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing steps from start. If a non-null pagination token is returned in a result, then pass its value in here to list more steps. </p>\n@param nextToken Pagination token. Set to null to start listing steps from start. If a non-null pagination token is returned in a result, then pass its value in here to list more steps.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -23397,6 +23701,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -23440,6 +23745,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "JobSummaries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Result structure for list job result request. </p>\n@param jobSummaries Result structure for list job result request.*/",
         "setterMethodName" : "setJobSummaries",
         "setterModel" : {
@@ -23505,6 +23811,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -23609,6 +23916,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -23652,6 +23960,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "JobSummaries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Result structure for list job result request. </p>\n@param jobSummaries Result structure for list job result request.*/",
           "setterMethodName" : "setJobSummaries",
           "setterModel" : {
@@ -23718,6 +24027,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -23912,6 +24222,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastDeployTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Last Deploy Time of Production Branch. </p>\n@param lastDeployTime Last Deploy Time of Production Branch.*/",
         "setterMethodName" : "setLastDeployTime",
         "setterModel" : {
@@ -23977,6 +24288,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Status of Production Branch. </p>\n@param status Status of Production Branch.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -24042,6 +24354,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ThumbnailUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Thumbnail Url for Production Branch. </p>\n@param thumbnailUrl Thumbnail Url for Production Branch.*/",
         "setterMethodName" : "setThumbnailUrl",
         "setterModel" : {
@@ -24107,6 +24420,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Branch Name for Production Branch. </p>\n@param branchName Branch Name for Production Branch.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -24174,6 +24488,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Branch Name for Production Branch. </p>\n@param branchName Branch Name for Production Branch.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -24240,6 +24555,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastDeployTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Last Deploy Time of Production Branch. </p>\n@param lastDeployTime Last Deploy Time of Production Branch.*/",
           "setterMethodName" : "setLastDeployTime",
           "setterModel" : {
@@ -24306,6 +24622,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Status of Production Branch. </p>\n@param status Status of Production Branch.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -24372,6 +24689,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ThumbnailUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Thumbnail Url for Production Branch. </p>\n@param thumbnailUrl Thumbnail Url for Production Branch.*/",
           "setterMethodName" : "setThumbnailUrl",
           "setterModel" : {
@@ -24536,6 +24854,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -24601,6 +24920,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the branch, for the Job. </p>\n@param branchName Name for the branch, for the Job.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -24666,6 +24986,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -24731,6 +25052,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Type for the Job. </p>\n@param jobType Type for the Job.\n@see JobType*/",
         "setterMethodName" : "setJobType",
         "setterModel" : {
@@ -24796,6 +25118,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Reason for the Job. </p>\n@param jobReason Reason for the Job.*/",
         "setterMethodName" : "setJobReason",
         "setterModel" : {
@@ -24861,6 +25184,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CommitId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Commit Id from 3rd party repository provider for the Job. </p>\n@param commitId Commit Id from 3rd party repository provider for the Job.*/",
         "setterMethodName" : "setCommitId",
         "setterModel" : {
@@ -24926,6 +25250,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CommitMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Commit message from 3rd party repository provider for the Job. </p>\n@param commitMessage Commit message from 3rd party repository provider for the Job.*/",
         "setterMethodName" : "setCommitMessage",
         "setterModel" : {
@@ -24991,6 +25316,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CommitTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Commit date / time for the Job. </p>\n@param commitTime Commit date / time for the Job.*/",
         "setterMethodName" : "setCommitTime",
         "setterModel" : {
@@ -25058,6 +25384,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -25124,6 +25451,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the branch, for the Job. </p>\n@param branchName Name for the branch, for the Job.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -25190,6 +25518,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CommitId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Commit Id from 3rd party repository provider for the Job. </p>\n@param commitId Commit Id from 3rd party repository provider for the Job.*/",
           "setterMethodName" : "setCommitId",
           "setterModel" : {
@@ -25256,6 +25585,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CommitMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Commit message from 3rd party repository provider for the Job. </p>\n@param commitMessage Commit message from 3rd party repository provider for the Job.*/",
           "setterMethodName" : "setCommitMessage",
           "setterModel" : {
@@ -25322,6 +25652,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CommitTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Commit date / time for the Job. </p>\n@param commitTime Commit date / time for the Job.*/",
           "setterMethodName" : "setCommitTime",
           "setterModel" : {
@@ -25388,6 +25719,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -25454,6 +25786,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Reason for the Job. </p>\n@param jobReason Reason for the Job.*/",
           "setterMethodName" : "setJobReason",
           "setterModel" : {
@@ -25520,6 +25853,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Type for the Job. </p>\n@param jobType Type for the Job.\n@see JobType*/",
           "setterMethodName" : "setJobType",
           "setterModel" : {
@@ -25622,6 +25956,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "JobSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Summary for the Job. </p>\n@param jobSummary Summary for the Job.*/",
         "setterMethodName" : "setJobSummary",
         "setterModel" : {
@@ -25689,6 +26024,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "JobSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Summary for the Job. </p>\n@param jobSummary Summary for the Job.*/",
           "setterMethodName" : "setJobSummary",
           "setterModel" : {
@@ -25794,6 +26130,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StepName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name of the execution step. </p>\n@param stepName Name of the execution step.*/",
         "setterMethodName" : "setStepName",
         "setterModel" : {
@@ -25859,6 +26196,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Start date/ time of the execution step. </p>\n@param startTime Start date/ time of the execution step.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -25924,6 +26262,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Status of the execution step. </p>\n@param status Status of the execution step.\n@see JobStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -25989,6 +26328,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> End date/ time of the execution step. </p>\n@param endTime End date/ time of the execution step.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -26054,6 +26394,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LogUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Url to the logs for the execution step. </p>\n@param logUrl Url to the logs for the execution step.*/",
         "setterMethodName" : "setLogUrl",
         "setterModel" : {
@@ -26119,6 +26460,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ArtifactsUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Url to teh artifact for the execution step. </p>\n@param artifactsUrl Url to teh artifact for the execution step.*/",
         "setterMethodName" : "setArtifactsUrl",
         "setterModel" : {
@@ -26227,6 +26569,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -26264,6 +26607,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Screenshots",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> List of screenshot Urls for the execution step, if relevant. </p>\n@param screenshots List of screenshot Urls for the execution step, if relevant.*/",
         "setterMethodName" : "setScreenshots",
         "setterModel" : {
@@ -26331,6 +26675,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ArtifactsUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Url to teh artifact for the execution step. </p>\n@param artifactsUrl Url to teh artifact for the execution step.*/",
           "setterMethodName" : "setArtifactsUrl",
           "setterModel" : {
@@ -26397,6 +26742,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> End date/ time of the execution step. </p>\n@param endTime End date/ time of the execution step.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -26463,6 +26809,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LogUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Url to the logs for the execution step. </p>\n@param logUrl Url to the logs for the execution step.*/",
           "setterMethodName" : "setLogUrl",
           "setterModel" : {
@@ -26572,6 +26919,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -26609,6 +26957,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Screenshots",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> List of screenshot Urls for the execution step, if relevant. </p>\n@param screenshots List of screenshot Urls for the execution step, if relevant.*/",
           "setterMethodName" : "setScreenshots",
           "setterModel" : {
@@ -26675,6 +27024,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Start date/ time of the execution step. </p>\n@param startTime Start date/ time of the execution step.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -26741,6 +27091,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Status of the execution step. </p>\n@param status Status of the execution step.\n@see JobStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -26807,6 +27158,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StepName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name of the execution step. </p>\n@param stepName Name of the execution step.*/",
           "setterMethodName" : "setStepName",
           "setterModel" : {
@@ -26919,6 +27271,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -26984,6 +27337,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the branch, for the Job. </p>\n@param branchName Name for the branch, for the Job.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -27049,6 +27403,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -27116,6 +27471,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -27182,6 +27538,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the branch, for the Job. </p>\n@param branchName Name for the branch, for the Job.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -27248,6 +27605,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for the Job. </p>\n@param jobId Unique Id for the Job.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -27350,6 +27708,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "JobSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Summary for the Job. </p>\n@param jobSummary Summary for the Job.*/",
         "setterMethodName" : "setJobSummary",
         "setterModel" : {
@@ -27417,6 +27776,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "JobSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Summary for the Job. </p>\n@param jobSummary Summary for the Job.*/",
           "setterMethodName" : "setJobSummary",
           "setterModel" : {
@@ -27522,6 +27882,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SubDomainSetting",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Setting structure for the Subdomain. </p>\n@param subDomainSetting Setting structure for the Subdomain.*/",
         "setterMethodName" : "setSubDomainSetting",
         "setterModel" : {
@@ -27587,6 +27948,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Verified",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Verified status of the Subdomain </p>\n@param verified Verified status of the Subdomain*/",
         "setterMethodName" : "setVerified",
         "setterModel" : {
@@ -27652,6 +28014,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DnsRecord",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> DNS record for the Subdomain. </p>\n@param dnsRecord DNS record for the Subdomain.*/",
         "setterMethodName" : "setDnsRecord",
         "setterModel" : {
@@ -27719,6 +28082,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DnsRecord",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> DNS record for the Subdomain. </p>\n@param dnsRecord DNS record for the Subdomain.*/",
           "setterMethodName" : "setDnsRecord",
           "setterModel" : {
@@ -27785,6 +28149,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SubDomainSetting",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Setting structure for the Subdomain. </p>\n@param subDomainSetting Setting structure for the Subdomain.*/",
           "setterMethodName" : "setSubDomainSetting",
           "setterModel" : {
@@ -27851,6 +28216,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Verified",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Verified status of the Subdomain </p>\n@param verified Verified status of the Subdomain*/",
           "setterMethodName" : "setVerified",
           "setterModel" : {
@@ -27956,6 +28322,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Prefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Prefix setting for the Subdomain. </p>\n@param prefix Prefix setting for the Subdomain.*/",
         "setterMethodName" : "setPrefix",
         "setterModel" : {
@@ -28021,6 +28388,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Branch name setting for the Subdomain. </p>\n@param branchName Branch name setting for the Subdomain.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -28088,6 +28456,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Branch name setting for the Subdomain. </p>\n@param branchName Branch name setting for the Subdomain.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -28154,6 +28523,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Prefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Prefix setting for the Subdomain. </p>\n@param prefix Prefix setting for the Subdomain.*/",
           "setterMethodName" : "setPrefix",
           "setterModel" : {
@@ -28303,6 +28673,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -28368,6 +28739,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for an Amplify App. </p>\n@param name Name for an Amplify App.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -28433,6 +28805,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Description for an Amplify App. </p>\n@param description Description for an Amplify App.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -28498,6 +28871,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Platform",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Platform for an Amplify App. </p>\n@param platform Platform for an Amplify App.\n@see Platform*/",
         "setterMethodName" : "setPlatform",
         "setterModel" : {
@@ -28563,6 +28937,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IamServiceRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> IAM service role for an Amplify App. </p>\n@param iamServiceRoleArn IAM service role for an Amplify App.*/",
         "setterMethodName" : "setIamServiceRoleArn",
         "setterModel" : {
@@ -28671,6 +29046,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -28708,6 +29084,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EnvironmentVariables",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Environment Variables for an Amplify App. </p>\n@param environmentVariables Environment Variables for an Amplify App.*/",
         "setterMethodName" : "setEnvironmentVariables",
         "setterModel" : {
@@ -28773,6 +29150,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBranchAutoBuild",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables branch auto-building for an Amplify App. </p>\n@param enableBranchAutoBuild Enables branch auto-building for an Amplify App.*/",
         "setterMethodName" : "setEnableBranchAutoBuild",
         "setterModel" : {
@@ -28838,6 +29216,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBasicAuth",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables Basic Authorization for an Amplify App. </p>\n@param enableBasicAuth Enables Basic Authorization for an Amplify App.*/",
         "setterMethodName" : "setEnableBasicAuth",
         "setterModel" : {
@@ -28903,6 +29282,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BasicAuthCredentials",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Basic Authorization credentials for an Amplify App. </p>\n@param basicAuthCredentials Basic Authorization credentials for an Amplify App.*/",
         "setterMethodName" : "setBasicAuthCredentials",
         "setterModel" : {
@@ -29005,6 +29385,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -29048,6 +29429,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CustomRules",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Custom redirect / rewrite rules for an Amplify App. </p>\n@param customRules Custom redirect / rewrite rules for an Amplify App.*/",
         "setterMethodName" : "setCustomRules",
         "setterModel" : {
@@ -29113,6 +29495,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BuildSpec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> BuildSpec for an Amplify App. </p>\n@param buildSpec BuildSpec for an Amplify App.*/",
         "setterMethodName" : "setBuildSpec",
         "setterModel" : {
@@ -29180,6 +29563,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -29246,6 +29630,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BasicAuthCredentials",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Basic Authorization credentials for an Amplify App. </p>\n@param basicAuthCredentials Basic Authorization credentials for an Amplify App.*/",
           "setterMethodName" : "setBasicAuthCredentials",
           "setterModel" : {
@@ -29312,6 +29697,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BuildSpec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> BuildSpec for an Amplify App. </p>\n@param buildSpec BuildSpec for an Amplify App.*/",
           "setterMethodName" : "setBuildSpec",
           "setterModel" : {
@@ -29415,6 +29801,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -29458,6 +29845,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CustomRules",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Custom redirect / rewrite rules for an Amplify App. </p>\n@param customRules Custom redirect / rewrite rules for an Amplify App.*/",
           "setterMethodName" : "setCustomRules",
           "setterModel" : {
@@ -29524,6 +29912,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Description for an Amplify App. </p>\n@param description Description for an Amplify App.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -29590,6 +29979,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBasicAuth",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables Basic Authorization for an Amplify App. </p>\n@param enableBasicAuth Enables Basic Authorization for an Amplify App.*/",
           "setterMethodName" : "setEnableBasicAuth",
           "setterModel" : {
@@ -29656,6 +30046,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBranchAutoBuild",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables branch auto-building for an Amplify App. </p>\n@param enableBranchAutoBuild Enables branch auto-building for an Amplify App.*/",
           "setterMethodName" : "setEnableBranchAutoBuild",
           "setterModel" : {
@@ -29765,6 +30156,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -29802,6 +30194,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EnvironmentVariables",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Environment Variables for an Amplify App. </p>\n@param environmentVariables Environment Variables for an Amplify App.*/",
           "setterMethodName" : "setEnvironmentVariables",
           "setterModel" : {
@@ -29868,6 +30261,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IamServiceRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> IAM service role for an Amplify App. </p>\n@param iamServiceRoleArn IAM service role for an Amplify App.*/",
           "setterMethodName" : "setIamServiceRoleArn",
           "setterModel" : {
@@ -29934,6 +30328,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for an Amplify App. </p>\n@param name Name for an Amplify App.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -30000,6 +30395,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Platform",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Platform for an Amplify App. </p>\n@param platform Platform for an Amplify App.\n@see Platform*/",
           "setterMethodName" : "setPlatform",
           "setterModel" : {
@@ -30102,6 +30498,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "App",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> App structure for the updated App. </p>\n@param app App structure for the updated App.*/",
         "setterMethodName" : "setApp",
         "setterModel" : {
@@ -30169,6 +30566,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "App",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> App structure for the updated App. </p>\n@param app App structure for the updated App.*/",
           "setterMethodName" : "setApp",
           "setterModel" : {
@@ -30281,6 +30679,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -30346,6 +30745,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BranchName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name for the branch. </p>\n@param branchName Name for the branch.*/",
         "setterMethodName" : "setBranchName",
         "setterModel" : {
@@ -30411,6 +30811,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Description for the branch. </p>\n@param description Description for the branch.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -30476,6 +30877,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Framework",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Framework for the branch. </p>\n@param framework Framework for the branch.*/",
         "setterMethodName" : "setFramework",
         "setterModel" : {
@@ -30541,6 +30943,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Stage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Stage for the branch. </p>\n@param stage Stage for the branch.\n@see Stage*/",
         "setterMethodName" : "setStage",
         "setterModel" : {
@@ -30606,6 +31009,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableNotification",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables notifications for the branch. </p>\n@param enableNotification Enables notifications for the branch.*/",
         "setterMethodName" : "setEnableNotification",
         "setterModel" : {
@@ -30671,6 +31075,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableAutoBuild",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables auto building for the branch. </p>\n@param enableAutoBuild Enables auto building for the branch.*/",
         "setterMethodName" : "setEnableAutoBuild",
         "setterModel" : {
@@ -30779,6 +31184,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -30816,6 +31222,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EnvironmentVariables",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Environment Variables for the branch. </p>\n@param environmentVariables Environment Variables for the branch.*/",
         "setterMethodName" : "setEnvironmentVariables",
         "setterModel" : {
@@ -30881,6 +31288,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BasicAuthCredentials",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Basic Authorization credentials for the branch. </p>\n@param basicAuthCredentials Basic Authorization credentials for the branch.*/",
         "setterMethodName" : "setBasicAuthCredentials",
         "setterModel" : {
@@ -30946,6 +31354,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableBasicAuth",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables Basic Auth for the branch. </p>\n@param enableBasicAuth Enables Basic Auth for the branch.*/",
         "setterMethodName" : "setEnableBasicAuth",
         "setterModel" : {
@@ -31011,6 +31420,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BuildSpec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> BuildSpec for the branch. </p>\n@param buildSpec BuildSpec for the branch.*/",
         "setterMethodName" : "setBuildSpec",
         "setterModel" : {
@@ -31076,6 +31486,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Ttl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> The content TTL for the website in seconds. </p>\n@param ttl The content TTL for the website in seconds.*/",
         "setterMethodName" : "setTtl",
         "setterModel" : {
@@ -31143,6 +31554,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -31209,6 +31621,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BasicAuthCredentials",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Basic Authorization credentials for the branch. </p>\n@param basicAuthCredentials Basic Authorization credentials for the branch.*/",
           "setterMethodName" : "setBasicAuthCredentials",
           "setterModel" : {
@@ -31275,6 +31688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BranchName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name for the branch. </p>\n@param branchName Name for the branch.*/",
           "setterMethodName" : "setBranchName",
           "setterModel" : {
@@ -31341,6 +31755,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BuildSpec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> BuildSpec for the branch. </p>\n@param buildSpec BuildSpec for the branch.*/",
           "setterMethodName" : "setBuildSpec",
           "setterModel" : {
@@ -31407,6 +31822,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Description for the branch. </p>\n@param description Description for the branch.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -31473,6 +31889,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableAutoBuild",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables auto building for the branch. </p>\n@param enableAutoBuild Enables auto building for the branch.*/",
           "setterMethodName" : "setEnableAutoBuild",
           "setterModel" : {
@@ -31539,6 +31956,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableBasicAuth",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables Basic Auth for the branch. </p>\n@param enableBasicAuth Enables Basic Auth for the branch.*/",
           "setterMethodName" : "setEnableBasicAuth",
           "setterModel" : {
@@ -31605,6 +32023,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableNotification",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables notifications for the branch. </p>\n@param enableNotification Enables notifications for the branch.*/",
           "setterMethodName" : "setEnableNotification",
           "setterModel" : {
@@ -31714,6 +32133,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -31751,6 +32171,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EnvironmentVariables",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Environment Variables for the branch. </p>\n@param environmentVariables Environment Variables for the branch.*/",
           "setterMethodName" : "setEnvironmentVariables",
           "setterModel" : {
@@ -31817,6 +32238,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Framework",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Framework for the branch. </p>\n@param framework Framework for the branch.*/",
           "setterMethodName" : "setFramework",
           "setterModel" : {
@@ -31883,6 +32305,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Stage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Stage for the branch. </p>\n@param stage Stage for the branch.\n@see Stage*/",
           "setterMethodName" : "setStage",
           "setterModel" : {
@@ -31949,6 +32372,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Ttl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> The content TTL for the website in seconds. </p>\n@param ttl The content TTL for the website in seconds.*/",
           "setterMethodName" : "setTtl",
           "setterModel" : {
@@ -32051,6 +32475,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Branch",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Branch structure for an Amplify App. </p>\n@param branch Branch structure for an Amplify App.*/",
         "setterMethodName" : "setBranch",
         "setterModel" : {
@@ -32118,6 +32543,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Branch",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Branch structure for an Amplify App. </p>\n@param branch Branch structure for an Amplify App.*/",
           "setterMethodName" : "setBranch",
           "setterModel" : {
@@ -32230,6 +32656,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AppId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
         "setterMethodName" : "setAppId",
         "setterModel" : {
@@ -32295,6 +32722,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Name of the domain. </p>\n@param domainName Name of the domain.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -32360,6 +32788,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableAutoSubDomain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Enables automated creation of Subdomains for branches. </p>\n@param enableAutoSubDomain Enables automated creation of Subdomains for branches.*/",
         "setterMethodName" : "setEnableAutoSubDomain",
         "setterModel" : {
@@ -32462,6 +32891,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -32505,6 +32935,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubDomainSettings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Setting structure for the Subdomain. </p>\n@param subDomainSettings Setting structure for the Subdomain.*/",
         "setterMethodName" : "setSubDomainSettings",
         "setterModel" : {
@@ -32572,6 +33003,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AppId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Unique Id for an Amplify App. </p>\n@param appId Unique Id for an Amplify App.*/",
           "setterMethodName" : "setAppId",
           "setterModel" : {
@@ -32638,6 +33070,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Name of the domain. </p>\n@param domainName Name of the domain.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -32704,6 +33137,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableAutoSubDomain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Enables automated creation of Subdomains for branches. </p>\n@param enableAutoSubDomain Enables automated creation of Subdomains for branches.*/",
           "setterMethodName" : "setEnableAutoSubDomain",
           "setterModel" : {
@@ -32807,6 +33241,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -32850,6 +33285,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubDomainSettings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Setting structure for the Subdomain. </p>\n@param subDomainSettings Setting structure for the Subdomain.*/",
           "setterMethodName" : "setSubDomainSettings",
           "setterModel" : {
@@ -32952,6 +33388,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DomainAssociation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Domain Association structure. </p>\n@param domainAssociation Domain Association structure.*/",
         "setterMethodName" : "setDomainAssociation",
         "setterModel" : {
@@ -33019,6 +33456,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DomainAssociation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Domain Association structure. </p>\n@param domainAssociation Domain Association structure.*/",
           "setterMethodName" : "setDomainAssociation",
           "setterModel" : {

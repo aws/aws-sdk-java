@@ -105,6 +105,11 @@ public class RoleDetailStaxUnmarshaller implements Unmarshaller<RoleDetail, Stax
                     continue;
                 }
 
+                if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    roleDetail.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Tags", targetDepth)) {
                     roleDetail.withTags(new ArrayList<Tag>());
                     continue;
@@ -115,10 +120,6 @@ public class RoleDetailStaxUnmarshaller implements Unmarshaller<RoleDetail, Stax
                     continue;
                 }
 
-                if (context.testExpression("PermissionsBoundary", targetDepth)) {
-                    roleDetail.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return roleDetail;

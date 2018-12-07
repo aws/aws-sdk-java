@@ -276,7 +276,8 @@ public class UpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -289,11 +290,11 @@ public class UpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWebServi
         if (getUserPoolId() != null)
             sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername()).append(",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getEventId() != null)
             sb.append("EventId: ").append(getEventId()).append(",");
         if (getFeedbackToken() != null)
-            sb.append("FeedbackToken: ").append(getFeedbackToken()).append(",");
+            sb.append("FeedbackToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getFeedbackValue() != null)
             sb.append("FeedbackValue: ").append(getFeedbackValue());
         sb.append("}");

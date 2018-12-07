@@ -663,7 +663,8 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -684,7 +685,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
         if (getTaskType() != null)
             sb.append("TaskType: ").append(getTaskType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
@@ -694,7 +695,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
+            sb.append("OwnerInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getWindowTargetId() != null)
             sb.append("WindowTargetId: ").append(getWindowTargetId());
         sb.append("}");

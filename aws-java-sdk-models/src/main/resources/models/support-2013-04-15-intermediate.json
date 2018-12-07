@@ -731,6 +731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttachmentSetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>\n@param attachmentSetId The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.*/",
         "setterMethodName" : "setAttachmentSetId",
         "setterModel" : {
@@ -833,6 +834,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -876,6 +878,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Attachments",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per attachment.</p>\n@param attachments One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per attachment.*/",
         "setterMethodName" : "setAttachments",
         "setterModel" : {
@@ -943,6 +946,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttachmentSetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>\n@param attachmentSetId The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.*/",
           "setterMethodName" : "setAttachmentSetId",
           "setterModel" : {
@@ -1046,6 +1050,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1089,6 +1094,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Attachments",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per attachment.</p>\n@param attachments One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per attachment.*/",
           "setterMethodName" : "setAttachments",
           "setterModel" : {
@@ -1191,6 +1197,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttachmentSetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>\n@param attachmentSetId The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.*/",
         "setterMethodName" : "setAttachmentSetId",
         "setterModel" : {
@@ -1256,6 +1263,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExpiryTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time and date when the attachment set expires.</p>\n@param expiryTime The time and date when the attachment set expires.*/",
         "setterMethodName" : "setExpiryTime",
         "setterModel" : {
@@ -1323,6 +1331,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttachmentSetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>\n@param attachmentSetId The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.*/",
           "setterMethodName" : "setAttachmentSetId",
           "setterModel" : {
@@ -1389,6 +1398,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExpiryTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time and date when the attachment set expires.</p>\n@param expiryTime The time and date when the attachment set expires.*/",
           "setterMethodName" : "setExpiryTime",
           "setterModel" : {
@@ -1501,6 +1511,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CaseId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
         "setterMethodName" : "setCaseId",
         "setterModel" : {
@@ -1566,6 +1577,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CommunicationBody",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The body of an email communication to add to the support case.</p>\n@param communicationBody The body of an email communication to add to the support case.*/",
         "setterMethodName" : "setCommunicationBody",
         "setterModel" : {
@@ -1668,6 +1680,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1711,6 +1724,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CcEmailAddresses",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email addresses in the CC line of an email to be added to the support case.</p>\n@param ccEmailAddresses The email addresses in the CC line of an email to be added to the support case.*/",
         "setterMethodName" : "setCcEmailAddresses",
         "setterModel" : {
@@ -1776,6 +1790,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttachmentSetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>\n@param attachmentSetId The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <a>AddAttachmentsToSet</a>*/",
         "setterMethodName" : "setAttachmentSetId",
         "setterModel" : {
@@ -1843,6 +1858,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttachmentSetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>\n@param attachmentSetId The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <a>AddAttachmentsToSet</a>*/",
           "setterMethodName" : "setAttachmentSetId",
           "setterModel" : {
@@ -1909,6 +1925,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CaseId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
           "setterMethodName" : "setCaseId",
           "setterModel" : {
@@ -2012,6 +2029,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2055,6 +2073,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CcEmailAddresses",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email addresses in the CC line of an email to be added to the support case.</p>\n@param ccEmailAddresses The email addresses in the CC line of an email to be added to the support case.*/",
           "setterMethodName" : "setCcEmailAddresses",
           "setterModel" : {
@@ -2121,6 +2140,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CommunicationBody",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The body of an email communication to add to the support case.</p>\n@param communicationBody The body of an email communication to add to the support case.*/",
           "setterMethodName" : "setCommunicationBody",
           "setterModel" : {
@@ -2223,6 +2243,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Result",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.</p>\n@param result True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.*/",
         "setterMethodName" : "setResult",
         "setterModel" : {
@@ -2290,6 +2311,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Result",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.</p>\n@param result True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.*/",
           "setterMethodName" : "setResult",
           "setterModel" : {
@@ -2395,6 +2417,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the attachment file.</p>\n@param fileName The name of the attachment file.*/",
         "setterMethodName" : "setFileName",
         "setterModel" : {
@@ -2460,6 +2483,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Data",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The content of the attachment file.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param data The content of the attachment file.*/",
         "setterMethodName" : "setData",
         "setterModel" : {
@@ -2527,6 +2551,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Data",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The content of the attachment file.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param data The content of the attachment file.*/",
           "setterMethodName" : "setData",
           "setterModel" : {
@@ -2593,6 +2618,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the attachment file.</p>\n@param fileName The name of the attachment file.*/",
           "setterMethodName" : "setFileName",
           "setterModel" : {
@@ -2698,6 +2724,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttachmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the attachment.</p>\n@param attachmentId The ID of the attachment.*/",
         "setterMethodName" : "setAttachmentId",
         "setterModel" : {
@@ -2763,6 +2790,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The file name of the attachment.</p>\n@param fileName The file name of the attachment.*/",
         "setterMethodName" : "setFileName",
         "setterModel" : {
@@ -2830,6 +2858,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttachmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the attachment.</p>\n@param attachmentId The ID of the attachment.*/",
           "setterMethodName" : "setAttachmentId",
           "setterModel" : {
@@ -2896,6 +2925,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The file name of the attachment.</p>\n@param fileName The file name of the attachment.*/",
           "setterMethodName" : "setFileName",
           "setterModel" : {
@@ -3223,6 +3253,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CaseId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
         "setterMethodName" : "setCaseId",
         "setterModel" : {
@@ -3288,6 +3319,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>\n@param displayId The ID displayed for the case in the AWS Support Center. This is a numeric string.*/",
         "setterMethodName" : "setDisplayId",
         "setterModel" : {
@@ -3353,6 +3385,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Subject",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The subject line for the case in the AWS Support Center.</p>\n@param subject The subject line for the case in the AWS Support Center.*/",
         "setterMethodName" : "setSubject",
         "setterModel" : {
@@ -3418,6 +3451,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the case.</p>\n@param status The status of the case.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -3483,6 +3517,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code for the AWS service returned by the call to <a>DescribeServices</a>.</p>\n@param serviceCode The code for the AWS service returned by the call to <a>DescribeServices</a>.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
@@ -3548,6 +3583,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CategoryCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category of problem for the AWS Support case.</p>\n@param categoryCode The category of problem for the AWS Support case.*/",
         "setterMethodName" : "setCategoryCode",
         "setterModel" : {
@@ -3613,6 +3649,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SeverityCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>\n@param severityCode The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.*/",
         "setterMethodName" : "setSeverityCode",
         "setterModel" : {
@@ -3678,6 +3715,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubmittedBy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email address of the account that submitted the case.</p>\n@param submittedBy The email address of the account that submitted the case.*/",
         "setterMethodName" : "setSubmittedBy",
         "setterModel" : {
@@ -3743,6 +3781,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TimeCreated",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time that the case was case created in the AWS Support Center.</p>\n@param timeCreated The time that the case was case created in the AWS Support Center.*/",
         "setterMethodName" : "setTimeCreated",
         "setterModel" : {
@@ -3808,6 +3847,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RecentCommunications",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>\n@param recentCommunications The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.*/",
         "setterMethodName" : "setRecentCommunications",
         "setterModel" : {
@@ -3910,6 +3950,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3953,6 +3994,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CcEmailAddresses",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email addresses that receive copies of communication about the case.</p>\n@param ccEmailAddresses The email addresses that receive copies of communication about the case.*/",
         "setterMethodName" : "setCcEmailAddresses",
         "setterModel" : {
@@ -4018,6 +4060,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Language",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
         "setterMethodName" : "setLanguage",
         "setterModel" : {
@@ -4085,6 +4128,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CaseId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
           "setterMethodName" : "setCaseId",
           "setterModel" : {
@@ -4151,6 +4195,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CategoryCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category of problem for the AWS Support case.</p>\n@param categoryCode The category of problem for the AWS Support case.*/",
           "setterMethodName" : "setCategoryCode",
           "setterModel" : {
@@ -4254,6 +4299,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4297,6 +4343,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CcEmailAddresses",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email addresses that receive copies of communication about the case.</p>\n@param ccEmailAddresses The email addresses that receive copies of communication about the case.*/",
           "setterMethodName" : "setCcEmailAddresses",
           "setterModel" : {
@@ -4363,6 +4410,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>\n@param displayId The ID displayed for the case in the AWS Support Center. This is a numeric string.*/",
           "setterMethodName" : "setDisplayId",
           "setterModel" : {
@@ -4429,6 +4477,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Language",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
           "setterMethodName" : "setLanguage",
           "setterModel" : {
@@ -4495,6 +4544,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RecentCommunications",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>\n@param recentCommunications The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.*/",
           "setterMethodName" : "setRecentCommunications",
           "setterModel" : {
@@ -4561,6 +4611,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code for the AWS service returned by the call to <a>DescribeServices</a>.</p>\n@param serviceCode The code for the AWS service returned by the call to <a>DescribeServices</a>.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
@@ -4627,6 +4678,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SeverityCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>\n@param severityCode The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.*/",
           "setterMethodName" : "setSeverityCode",
           "setterModel" : {
@@ -4693,6 +4745,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the case.</p>\n@param status The status of the case.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -4759,6 +4812,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Subject",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The subject line for the case in the AWS Support Center.</p>\n@param subject The subject line for the case in the AWS Support Center.*/",
           "setterMethodName" : "setSubject",
           "setterModel" : {
@@ -4825,6 +4879,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubmittedBy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email address of the account that submitted the case.</p>\n@param submittedBy The email address of the account that submitted the case.*/",
           "setterMethodName" : "setSubmittedBy",
           "setterModel" : {
@@ -4891,6 +4946,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TimeCreated",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time that the case was case created in the AWS Support Center.</p>\n@param timeCreated The time that the case was case created in the AWS Support Center.*/",
           "setterMethodName" : "setTimeCreated",
           "setterModel" : {
@@ -5033,6 +5089,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category code for the support case.</p>\n@param code The category code for the support case.*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -5098,6 +5155,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category name for the support case.</p>\n@param name The category name for the support case.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5165,6 +5223,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category code for the support case.</p>\n@param code The category code for the support case.*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -5231,6 +5290,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category name for the support case.</p>\n@param name The category name for the support case.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5336,6 +5396,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CaseId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
         "setterMethodName" : "setCaseId",
         "setterModel" : {
@@ -5401,6 +5462,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Body",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The text of the communication between the customer and AWS Support.</p>\n@param body The text of the communication between the customer and AWS Support.*/",
         "setterMethodName" : "setBody",
         "setterModel" : {
@@ -5466,6 +5528,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubmittedBy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The email address of the account that submitted the AWS Support case.</p>\n@param submittedBy The email address of the account that submitted the AWS Support case.*/",
         "setterMethodName" : "setSubmittedBy",
         "setterModel" : {
@@ -5531,6 +5594,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TimeCreated",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time the communication was created.</p>\n@param timeCreated The time the communication was created.*/",
         "setterMethodName" : "setTimeCreated",
         "setterModel" : {
@@ -5633,6 +5697,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5676,6 +5741,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttachmentSet",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the attachments to the case communication.</p>\n@param attachmentSet Information about the attachments to the case communication.*/",
         "setterMethodName" : "setAttachmentSet",
         "setterModel" : {
@@ -5780,6 +5846,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5823,6 +5890,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttachmentSet",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the attachments to the case communication.</p>\n@param attachmentSet Information about the attachments to the case communication.*/",
           "setterMethodName" : "setAttachmentSet",
           "setterModel" : {
@@ -5889,6 +5957,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Body",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The text of the communication between the customer and AWS Support.</p>\n@param body The text of the communication between the customer and AWS Support.*/",
           "setterMethodName" : "setBody",
           "setterModel" : {
@@ -5955,6 +6024,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CaseId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
           "setterMethodName" : "setCaseId",
           "setterModel" : {
@@ -6021,6 +6091,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubmittedBy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The email address of the account that submitted the AWS Support case.</p>\n@param submittedBy The email address of the account that submitted the AWS Support case.*/",
           "setterMethodName" : "setSubmittedBy",
           "setterModel" : {
@@ -6087,6 +6158,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TimeCreated",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time the communication was created.</p>\n@param timeCreated The time the communication was created.*/",
           "setterMethodName" : "setTimeCreated",
           "setterModel" : {
@@ -6199,6 +6271,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Subject",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The title of the AWS Support case.</p>\n@param subject The title of the AWS Support case.*/",
         "setterMethodName" : "setSubject",
         "setterModel" : {
@@ -6264,6 +6337,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code for the AWS service returned by the call to <a>DescribeServices</a>.</p>\n@param serviceCode The code for the AWS service returned by the call to <a>DescribeServices</a>.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
@@ -6329,6 +6403,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SeverityCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p> </note>\n@param severityCode The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p>*/",
         "setterMethodName" : "setSeverityCode",
         "setterModel" : {
@@ -6394,6 +6469,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CategoryCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category of problem for the AWS Support case.</p>\n@param categoryCode The category of problem for the AWS Support case.*/",
         "setterMethodName" : "setCategoryCode",
         "setterModel" : {
@@ -6459,6 +6535,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CommunicationBody",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.</p>\n@param communicationBody The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.*/",
         "setterMethodName" : "setCommunicationBody",
         "setterModel" : {
@@ -6561,6 +6638,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6604,6 +6682,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CcEmailAddresses",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of email addresses that AWS Support copies on case correspondence.</p>\n@param ccEmailAddresses A list of email addresses that AWS Support copies on case correspondence.*/",
         "setterMethodName" : "setCcEmailAddresses",
         "setterModel" : {
@@ -6669,6 +6748,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Language",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
         "setterMethodName" : "setLanguage",
         "setterModel" : {
@@ -6734,6 +6814,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IssueType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"</p>\n@param issueType The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"*/",
         "setterMethodName" : "setIssueType",
         "setterModel" : {
@@ -6799,6 +6880,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttachmentSetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.</p>\n@param attachmentSetId The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.*/",
         "setterMethodName" : "setAttachmentSetId",
         "setterModel" : {
@@ -6866,6 +6948,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttachmentSetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.</p>\n@param attachmentSetId The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.*/",
           "setterMethodName" : "setAttachmentSetId",
           "setterModel" : {
@@ -6932,6 +7015,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CategoryCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category of problem for the AWS Support case.</p>\n@param categoryCode The category of problem for the AWS Support case.*/",
           "setterMethodName" : "setCategoryCode",
           "setterModel" : {
@@ -7035,6 +7119,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7078,6 +7163,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CcEmailAddresses",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of email addresses that AWS Support copies on case correspondence.</p>\n@param ccEmailAddresses A list of email addresses that AWS Support copies on case correspondence.*/",
           "setterMethodName" : "setCcEmailAddresses",
           "setterModel" : {
@@ -7144,6 +7230,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CommunicationBody",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.</p>\n@param communicationBody The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.*/",
           "setterMethodName" : "setCommunicationBody",
           "setterModel" : {
@@ -7210,6 +7297,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IssueType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"</p>\n@param issueType The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"*/",
           "setterMethodName" : "setIssueType",
           "setterModel" : {
@@ -7276,6 +7364,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Language",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
           "setterMethodName" : "setLanguage",
           "setterModel" : {
@@ -7342,6 +7431,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code for the AWS service returned by the call to <a>DescribeServices</a>.</p>\n@param serviceCode The code for the AWS service returned by the call to <a>DescribeServices</a>.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
@@ -7408,6 +7498,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SeverityCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p> </note>\n@param severityCode The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p>*/",
           "setterMethodName" : "setSeverityCode",
           "setterModel" : {
@@ -7474,6 +7565,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Subject",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The title of the AWS Support case.</p>\n@param subject The title of the AWS Support case.*/",
           "setterMethodName" : "setSubject",
           "setterModel" : {
@@ -7576,6 +7668,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CaseId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
         "setterMethodName" : "setCaseId",
         "setterModel" : {
@@ -7643,6 +7736,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CaseId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
           "setterMethodName" : "setCaseId",
           "setterModel" : {
@@ -7792,6 +7886,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttachmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>\n@param attachmentId The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.*/",
         "setterMethodName" : "setAttachmentId",
         "setterModel" : {
@@ -7859,6 +7954,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttachmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>\n@param attachmentId The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.*/",
           "setterMethodName" : "setAttachmentId",
           "setterModel" : {
@@ -7961,6 +8057,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Attachment",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attachment content and file name.</p>\n@param attachment The attachment content and file name.*/",
         "setterMethodName" : "setAttachment",
         "setterModel" : {
@@ -8028,6 +8125,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Attachment",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attachment content and file name.</p>\n@param attachment The attachment content and file name.*/",
           "setterMethodName" : "setAttachment",
           "setterModel" : {
@@ -8177,6 +8275,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8220,6 +8319,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CaseIdList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>\n@param caseIdList A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.*/",
         "setterMethodName" : "setCaseIdList",
         "setterModel" : {
@@ -8285,6 +8385,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID displayed for a case in the AWS Support Center user interface.</p>\n@param displayId The ID displayed for a case in the AWS Support Center user interface.*/",
         "setterMethodName" : "setDisplayId",
         "setterModel" : {
@@ -8350,6 +8451,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AfterTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param afterTime The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.*/",
         "setterMethodName" : "setAfterTime",
         "setterModel" : {
@@ -8415,6 +8517,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BeforeTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param beforeTime The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.*/",
         "setterMethodName" : "setBeforeTime",
         "setterModel" : {
@@ -8480,6 +8583,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeResolvedCases",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.</p>\n@param includeResolvedCases Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.*/",
         "setterMethodName" : "setIncludeResolvedCases",
         "setterModel" : {
@@ -8545,6 +8649,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8610,6 +8715,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return before paginating.</p>\n@param maxResults The maximum number of results to return before paginating.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -8675,6 +8781,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Language",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
         "setterMethodName" : "setLanguage",
         "setterModel" : {
@@ -8740,6 +8847,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeCommunications",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.</p>\n@param includeCommunications Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.*/",
         "setterMethodName" : "setIncludeCommunications",
         "setterModel" : {
@@ -8807,6 +8915,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AfterTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param afterTime The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.*/",
           "setterMethodName" : "setAfterTime",
           "setterModel" : {
@@ -8873,6 +8982,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BeforeTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param beforeTime The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.*/",
           "setterMethodName" : "setBeforeTime",
           "setterModel" : {
@@ -8976,6 +9086,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9019,6 +9130,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CaseIdList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>\n@param caseIdList A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.*/",
           "setterMethodName" : "setCaseIdList",
           "setterModel" : {
@@ -9085,6 +9197,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID displayed for a case in the AWS Support Center user interface.</p>\n@param displayId The ID displayed for a case in the AWS Support Center user interface.*/",
           "setterMethodName" : "setDisplayId",
           "setterModel" : {
@@ -9151,6 +9264,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeCommunications",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.</p>\n@param includeCommunications Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.*/",
           "setterMethodName" : "setIncludeCommunications",
           "setterModel" : {
@@ -9217,6 +9331,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeResolvedCases",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.</p>\n@param includeResolvedCases Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.*/",
           "setterMethodName" : "setIncludeResolvedCases",
           "setterModel" : {
@@ -9283,6 +9398,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Language",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
           "setterMethodName" : "setLanguage",
           "setterModel" : {
@@ -9349,6 +9465,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return before paginating.</p>\n@param maxResults The maximum number of results to return before paginating.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -9415,6 +9532,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9554,6 +9672,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9597,6 +9716,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Cases",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The details for the cases that match the request.</p>\n@param cases The details for the cases that match the request.*/",
         "setterMethodName" : "setCases",
         "setterModel" : {
@@ -9662,6 +9782,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9766,6 +9887,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9809,6 +9931,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Cases",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The details for the cases that match the request.</p>\n@param cases The details for the cases that match the request.*/",
           "setterMethodName" : "setCases",
           "setterModel" : {
@@ -9875,6 +9998,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9987,6 +10111,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CaseId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
         "setterMethodName" : "setCaseId",
         "setterModel" : {
@@ -10052,6 +10177,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BeforeTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param beforeTime The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.*/",
         "setterMethodName" : "setBeforeTime",
         "setterModel" : {
@@ -10117,6 +10243,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AfterTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param afterTime The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.*/",
         "setterMethodName" : "setAfterTime",
         "setterModel" : {
@@ -10182,6 +10309,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10247,6 +10375,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return before paginating.</p>\n@param maxResults The maximum number of results to return before paginating.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10314,6 +10443,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AfterTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param afterTime The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.*/",
           "setterMethodName" : "setAfterTime",
           "setterModel" : {
@@ -10380,6 +10510,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BeforeTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param beforeTime The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.*/",
           "setterMethodName" : "setBeforeTime",
           "setterModel" : {
@@ -10446,6 +10577,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CaseId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
           "setterMethodName" : "setCaseId",
           "setterModel" : {
@@ -10512,6 +10644,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return before paginating.</p>\n@param maxResults The maximum number of results to return before paginating.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10578,6 +10711,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10717,6 +10851,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10760,6 +10895,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Communications",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The communications for the case.</p>\n@param communications The communications for the case.*/",
         "setterMethodName" : "setCommunications",
         "setterModel" : {
@@ -10825,6 +10961,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10929,6 +11066,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10972,6 +11110,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Communications",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The communications for the case.</p>\n@param communications The communications for the case.*/",
           "setterMethodName" : "setCommunications",
           "setterModel" : {
@@ -11038,6 +11177,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11187,6 +11327,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11230,6 +11371,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ServiceCodeList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JSON-formatted list of service codes available for AWS services.</p>\n@param serviceCodeList A JSON-formatted list of service codes available for AWS services.*/",
         "setterMethodName" : "setServiceCodeList",
         "setterModel" : {
@@ -11295,6 +11437,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Language",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
         "setterMethodName" : "setLanguage",
         "setterModel" : {
@@ -11362,6 +11505,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Language",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
           "setterMethodName" : "setLanguage",
           "setterModel" : {
@@ -11465,6 +11609,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11508,6 +11653,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ServiceCodeList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JSON-formatted list of service codes available for AWS services.</p>\n@param serviceCodeList A JSON-formatted list of service codes available for AWS services.*/",
           "setterMethodName" : "setServiceCodeList",
           "setterModel" : {
@@ -11647,6 +11793,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11690,6 +11837,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Services",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JSON-formatted list of AWS services.</p>\n@param services A JSON-formatted list of AWS services.*/",
         "setterMethodName" : "setServices",
         "setterModel" : {
@@ -11794,6 +11942,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11837,6 +11986,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Services",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JSON-formatted list of AWS services.</p>\n@param services A JSON-formatted list of AWS services.*/",
           "setterMethodName" : "setServices",
           "setterModel" : {
@@ -11949,6 +12099,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Language",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
         "setterMethodName" : "setLanguage",
         "setterModel" : {
@@ -12016,6 +12167,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Language",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
           "setterMethodName" : "setLanguage",
           "setterModel" : {
@@ -12155,6 +12307,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12198,6 +12351,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SeverityLevels",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.</p>\n@param severityLevels The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.*/",
         "setterMethodName" : "setSeverityLevels",
         "setterModel" : {
@@ -12302,6 +12456,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12345,6 +12500,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SeverityLevels",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.</p>\n@param severityLevels The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.*/",
           "setterMethodName" : "setSeverityLevels",
           "setterModel" : {
@@ -12494,6 +12650,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12537,6 +12694,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CheckIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>\n@param checkIds The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.*/",
         "setterMethodName" : "setCheckIds",
         "setterModel" : {
@@ -12641,6 +12799,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12684,6 +12843,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CheckIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>\n@param checkIds The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.*/",
           "setterMethodName" : "setCheckIds",
           "setterModel" : {
@@ -12823,6 +12983,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12866,6 +13027,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Statuses",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The refresh status of the specified Trusted Advisor checks.</p>\n@param statuses The refresh status of the specified Trusted Advisor checks.*/",
         "setterMethodName" : "setStatuses",
         "setterModel" : {
@@ -12970,6 +13132,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13013,6 +13176,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Statuses",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The refresh status of the specified Trusted Advisor checks.</p>\n@param statuses The refresh status of the specified Trusted Advisor checks.*/",
           "setterMethodName" : "setStatuses",
           "setterModel" : {
@@ -13125,6 +13289,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CheckId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.*/",
         "setterMethodName" : "setCheckId",
         "setterModel" : {
@@ -13190,6 +13355,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Language",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
         "setterMethodName" : "setLanguage",
         "setterModel" : {
@@ -13257,6 +13423,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CheckId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.*/",
           "setterMethodName" : "setCheckId",
           "setterModel" : {
@@ -13323,6 +13490,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Language",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
           "setterMethodName" : "setLanguage",
           "setterModel" : {
@@ -13425,6 +13593,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Result",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The detailed results of the Trusted Advisor check.</p>\n@param result The detailed results of the Trusted Advisor check.*/",
         "setterMethodName" : "setResult",
         "setterModel" : {
@@ -13492,6 +13661,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Result",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The detailed results of the Trusted Advisor check.</p>\n@param result The detailed results of the Trusted Advisor check.*/",
           "setterMethodName" : "setResult",
           "setterModel" : {
@@ -13641,6 +13811,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13684,6 +13855,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CheckIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IDs of the Trusted Advisor checks.</p>\n@param checkIds The IDs of the Trusted Advisor checks.*/",
         "setterMethodName" : "setCheckIds",
         "setterModel" : {
@@ -13788,6 +13960,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13831,6 +14004,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CheckIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IDs of the Trusted Advisor checks.</p>\n@param checkIds The IDs of the Trusted Advisor checks.*/",
           "setterMethodName" : "setCheckIds",
           "setterModel" : {
@@ -13970,6 +14144,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14013,6 +14188,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Summaries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The summary information for the requested Trusted Advisor checks.</p>\n@param summaries The summary information for the requested Trusted Advisor checks.*/",
         "setterMethodName" : "setSummaries",
         "setterModel" : {
@@ -14117,6 +14293,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14160,6 +14337,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Summaries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The summary information for the requested Trusted Advisor checks.</p>\n@param summaries The summary information for the requested Trusted Advisor checks.*/",
           "setterMethodName" : "setSummaries",
           "setterModel" : {
@@ -14272,6 +14450,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Language",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
         "setterMethodName" : "setLanguage",
         "setterModel" : {
@@ -14339,6 +14518,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Language",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.*/",
           "setterMethodName" : "setLanguage",
           "setterModel" : {
@@ -14478,6 +14658,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14521,6 +14702,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Checks",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about all available Trusted Advisor checks.</p>\n@param checks Information about all available Trusted Advisor checks.*/",
         "setterMethodName" : "setChecks",
         "setterModel" : {
@@ -14625,6 +14807,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14668,6 +14851,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Checks",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about all available Trusted Advisor checks.</p>\n@param checks Information about all available Trusted Advisor checks.*/",
           "setterMethodName" : "setChecks",
           "setterModel" : {
@@ -14847,6 +15031,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14890,6 +15075,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Communications",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The five most recent communications associated with the case.</p>\n@param communications The five most recent communications associated with the case.*/",
         "setterMethodName" : "setCommunications",
         "setterModel" : {
@@ -14955,6 +15141,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15059,6 +15246,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15102,6 +15290,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Communications",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The five most recent communications associated with the case.</p>\n@param communications The five most recent communications associated with the case.*/",
           "setterMethodName" : "setCommunications",
           "setterModel" : {
@@ -15168,6 +15357,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -15280,6 +15470,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CheckId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>\n@param checkId The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.*/",
         "setterMethodName" : "setCheckId",
         "setterModel" : {
@@ -15347,6 +15538,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CheckId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>\n@param checkId The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.*/",
           "setterMethodName" : "setCheckId",
           "setterModel" : {
@@ -15449,6 +15641,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>\n@param status The current refresh status for a check, including the amount of time until the check is eligible for refresh.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -15516,6 +15709,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>\n@param status The current refresh status for a check, including the amount of time until the check is eligible for refresh.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -15628,6 +15822,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CaseId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
         "setterMethodName" : "setCaseId",
         "setterModel" : {
@@ -15695,6 +15890,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CaseId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>*/",
           "setterMethodName" : "setCaseId",
           "setterModel" : {
@@ -15797,6 +15993,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InitialCaseStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the case when the <a>ResolveCase</a> request was sent.</p>\n@param initialCaseStatus The status of the case when the <a>ResolveCase</a> request was sent.*/",
         "setterMethodName" : "setInitialCaseStatus",
         "setterModel" : {
@@ -15862,6 +16059,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FinalCaseStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the case after the <a>ResolveCase</a> request was processed.</p>\n@param finalCaseStatus The status of the case after the <a>ResolveCase</a> request was processed.*/",
         "setterMethodName" : "setFinalCaseStatus",
         "setterModel" : {
@@ -15929,6 +16127,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FinalCaseStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the case after the <a>ResolveCase</a> request was processed.</p>\n@param finalCaseStatus The status of the case after the <a>ResolveCase</a> request was processed.*/",
           "setterMethodName" : "setFinalCaseStatus",
           "setterModel" : {
@@ -15995,6 +16194,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InitialCaseStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the case when the <a>ResolveCase</a> request was sent.</p>\n@param initialCaseStatus The status of the case when the <a>ResolveCase</a> request was sent.*/",
           "setterMethodName" : "setInitialCaseStatus",
           "setterModel" : {
@@ -16100,6 +16300,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code for an AWS service returned by the <a>DescribeServices</a> response. The <code>name</code> element contains the corresponding friendly name.</p>\n@param code The code for an AWS service returned by the <a>DescribeServices</a> response. The <code>name</code> element contains the corresponding friendly name.*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -16165,6 +16366,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.</p>\n@param name The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -16267,6 +16469,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16310,6 +16513,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Categories",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.</p>\n@param categories A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.*/",
         "setterMethodName" : "setCategories",
         "setterModel" : {
@@ -16414,6 +16618,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16457,6 +16662,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Categories",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.</p>\n@param categories A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.*/",
           "setterMethodName" : "setCategories",
           "setterModel" : {
@@ -16523,6 +16729,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code for an AWS service returned by the <a>DescribeServices</a> response. The <code>name</code> element contains the corresponding friendly name.</p>\n@param code The code for an AWS service returned by the <a>DescribeServices</a> response. The <code>name</code> element contains the corresponding friendly name.*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -16589,6 +16796,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.</p>\n@param name The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -16694,6 +16902,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One of four values: \"low,\" \"medium,\" \"high,\" and \"urgent\". These values correspond to response times returned to the caller in <code>severityLevel.name</code>. </p>\n@param code One of four values: \"low,\" \"medium,\" \"high,\" and \"urgent\". These values correspond to response times returned to the caller in <code>severityLevel.name</code>.*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -16759,6 +16968,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the severity level that corresponds to the severity level code.</p>\n@param name The name of the severity level that corresponds to the severity level code.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -16826,6 +17036,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One of four values: \"low,\" \"medium,\" \"high,\" and \"urgent\". These values correspond to response times returned to the caller in <code>severityLevel.name</code>. </p>\n@param code One of four values: \"low,\" \"medium,\" \"high,\" and \"urgent\". These values correspond to response times returned to the caller in <code>severityLevel.name</code>.*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -16892,6 +17103,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the severity level that corresponds to the severity level code.</p>\n@param name The name of the severity level that corresponds to the severity level code.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -16997,6 +17209,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CostOptimizing",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>\n@param costOptimizing The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.*/",
         "setterMethodName" : "setCostOptimizing",
         "setterModel" : {
@@ -17064,6 +17277,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CostOptimizing",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>\n@param costOptimizing The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.*/",
           "setterMethodName" : "setCostOptimizing",
           "setterModel" : {
@@ -17169,6 +17383,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param id The unique identifier for the Trusted Advisor check.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -17234,6 +17449,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The display name for the Trusted Advisor check.</p>\n@param name The display name for the Trusted Advisor check.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -17299,6 +17515,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).</p>\n@param description The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -17364,6 +17581,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Category",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category of the Trusted Advisor check.</p>\n@param category The category of the Trusted Advisor check.*/",
         "setterMethodName" : "setCategory",
         "setterModel" : {
@@ -17466,6 +17684,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17509,6 +17728,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Metadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>\n@param metadata The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.*/",
         "setterMethodName" : "setMetadata",
         "setterModel" : {
@@ -17576,6 +17796,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Category",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category of the Trusted Advisor check.</p>\n@param category The category of the Trusted Advisor check.*/",
           "setterMethodName" : "setCategory",
           "setterModel" : {
@@ -17642,6 +17863,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).</p>\n@param description The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -17708,6 +17930,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param id The unique identifier for the Trusted Advisor check.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -17811,6 +18034,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -17854,6 +18078,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Metadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>\n@param metadata The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.*/",
           "setterMethodName" : "setMetadata",
           "setterModel" : {
@@ -17920,6 +18145,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The display name for the Trusted Advisor check.</p>\n@param name The display name for the Trusted Advisor check.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -18025,6 +18251,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CheckId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.*/",
         "setterMethodName" : "setCheckId",
         "setterModel" : {
@@ -18090,6 +18317,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the Trusted Advisor check for which a refresh has been requested: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".</p>\n@param status The status of the Trusted Advisor check for which a refresh has been requested: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -18155,6 +18383,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "MillisUntilNextRefreshable",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>\n@param millisUntilNextRefreshable The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.*/",
         "setterMethodName" : "setMillisUntilNextRefreshable",
         "setterModel" : {
@@ -18222,6 +18451,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CheckId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.*/",
           "setterMethodName" : "setCheckId",
           "setterModel" : {
@@ -18288,6 +18518,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "MillisUntilNextRefreshable",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>\n@param millisUntilNextRefreshable The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.*/",
           "setterMethodName" : "setMillisUntilNextRefreshable",
           "setterModel" : {
@@ -18354,6 +18585,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the Trusted Advisor check for which a refresh has been requested: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".</p>\n@param status The status of the Trusted Advisor check for which a refresh has been requested: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -18459,6 +18691,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CheckId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.*/",
         "setterMethodName" : "setCheckId",
         "setterModel" : {
@@ -18524,6 +18757,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Timestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time of the last refresh of the check.</p>\n@param timestamp The time of the last refresh of the check.*/",
         "setterMethodName" : "setTimestamp",
         "setterModel" : {
@@ -18589,6 +18823,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</p>\n@param status The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -18654,6 +18889,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourcesSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param resourcesSummary */",
         "setterMethodName" : "setResourcesSummary",
         "setterModel" : {
@@ -18719,6 +18955,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CategorySpecificSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>\n@param categorySpecificSummary Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.*/",
         "setterMethodName" : "setCategorySpecificSummary",
         "setterModel" : {
@@ -18821,6 +19058,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18864,6 +19102,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FlaggedResources",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The details about each resource listed in the check result.</p>\n@param flaggedResources The details about each resource listed in the check result.*/",
         "setterMethodName" : "setFlaggedResources",
         "setterModel" : {
@@ -18931,6 +19170,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CategorySpecificSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>\n@param categorySpecificSummary Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.*/",
           "setterMethodName" : "setCategorySpecificSummary",
           "setterModel" : {
@@ -18997,6 +19237,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CheckId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.*/",
           "setterMethodName" : "setCheckId",
           "setterModel" : {
@@ -19100,6 +19341,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -19143,6 +19385,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FlaggedResources",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The details about each resource listed in the check result.</p>\n@param flaggedResources The details about each resource listed in the check result.*/",
           "setterMethodName" : "setFlaggedResources",
           "setterModel" : {
@@ -19209,6 +19452,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourcesSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param resourcesSummary */",
           "setterMethodName" : "setResourcesSummary",
           "setterModel" : {
@@ -19275,6 +19519,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</p>\n@param status The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -19341,6 +19586,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Timestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time of the last refresh of the check.</p>\n@param timestamp The time of the last refresh of the check.*/",
           "setterMethodName" : "setTimestamp",
           "setterModel" : {
@@ -19446,6 +19692,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CheckId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.*/",
         "setterMethodName" : "setCheckId",
         "setterModel" : {
@@ -19511,6 +19758,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Timestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time of the last refresh of the check.</p>\n@param timestamp The time of the last refresh of the check.*/",
         "setterMethodName" : "setTimestamp",
         "setterModel" : {
@@ -19576,6 +19824,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</p>\n@param status The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -19641,6 +19890,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "HasFlaggedResources",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether the Trusted Advisor check has flagged resources.</p>\n@param hasFlaggedResources Specifies whether the Trusted Advisor check has flagged resources.*/",
         "setterMethodName" : "setHasFlaggedResources",
         "setterModel" : {
@@ -19706,6 +19956,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourcesSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param resourcesSummary */",
         "setterMethodName" : "setResourcesSummary",
         "setterModel" : {
@@ -19771,6 +20022,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CategorySpecificSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>\n@param categorySpecificSummary Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.*/",
         "setterMethodName" : "setCategorySpecificSummary",
         "setterModel" : {
@@ -19838,6 +20090,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CategorySpecificSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>\n@param categorySpecificSummary Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.*/",
           "setterMethodName" : "setCategorySpecificSummary",
           "setterModel" : {
@@ -19904,6 +20157,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CheckId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.*/",
           "setterMethodName" : "setCheckId",
           "setterModel" : {
@@ -19970,6 +20224,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "HasFlaggedResources",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether the Trusted Advisor check has flagged resources.</p>\n@param hasFlaggedResources Specifies whether the Trusted Advisor check has flagged resources.*/",
           "setterMethodName" : "setHasFlaggedResources",
           "setterModel" : {
@@ -20036,6 +20291,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourcesSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param resourcesSummary */",
           "setterMethodName" : "setResourcesSummary",
           "setterModel" : {
@@ -20102,6 +20358,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</p>\n@param status The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -20168,6 +20425,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Timestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time of the last refresh of the check.</p>\n@param timestamp The time of the last refresh of the check.*/",
           "setterMethodName" : "setTimestamp",
           "setterModel" : {
@@ -20273,6 +20531,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "EstimatedMonthlySavings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The estimated monthly savings that might be realized if the recommended actions are taken.</p>\n@param estimatedMonthlySavings The estimated monthly savings that might be realized if the recommended actions are taken.*/",
         "setterMethodName" : "setEstimatedMonthlySavings",
         "setterModel" : {
@@ -20338,6 +20597,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "EstimatedPercentMonthlySavings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The estimated percentage of savings that might be realized if the recommended actions are taken.</p>\n@param estimatedPercentMonthlySavings The estimated percentage of savings that might be realized if the recommended actions are taken.*/",
         "setterMethodName" : "setEstimatedPercentMonthlySavings",
         "setterModel" : {
@@ -20405,6 +20665,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "EstimatedMonthlySavings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The estimated monthly savings that might be realized if the recommended actions are taken.</p>\n@param estimatedMonthlySavings The estimated monthly savings that might be realized if the recommended actions are taken.*/",
           "setterMethodName" : "setEstimatedMonthlySavings",
           "setterModel" : {
@@ -20471,6 +20732,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "EstimatedPercentMonthlySavings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The estimated percentage of savings that might be realized if the recommended actions are taken.</p>\n@param estimatedPercentMonthlySavings The estimated percentage of savings that might be realized if the recommended actions are taken.*/",
           "setterMethodName" : "setEstimatedPercentMonthlySavings",
           "setterModel" : {
@@ -20576,6 +20838,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status code for the resource identified in the Trusted Advisor check.</p>\n@param status The status code for the resource identified in the Trusted Advisor check.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -20641,6 +20904,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Region",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS region in which the identified resource is located.</p>\n@param region The AWS region in which the identified resource is located.*/",
         "setterMethodName" : "setRegion",
         "setterModel" : {
@@ -20706,6 +20970,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the identified resource.</p>\n@param resourceId The unique identifier for the identified resource.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -20771,6 +21036,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IsSuppressed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>\n@param isSuppressed Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.*/",
         "setterMethodName" : "setIsSuppressed",
         "setterModel" : {
@@ -20873,6 +21139,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20916,6 +21183,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Metadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>\n@param metadata Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.*/",
         "setterMethodName" : "setMetadata",
         "setterModel" : {
@@ -20983,6 +21251,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IsSuppressed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>\n@param isSuppressed Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.*/",
           "setterMethodName" : "setIsSuppressed",
           "setterModel" : {
@@ -21086,6 +21355,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -21129,6 +21399,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Metadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>\n@param metadata Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.*/",
           "setterMethodName" : "setMetadata",
           "setterModel" : {
@@ -21195,6 +21466,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Region",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS region in which the identified resource is located.</p>\n@param region The AWS region in which the identified resource is located.*/",
           "setterMethodName" : "setRegion",
           "setterModel" : {
@@ -21261,6 +21533,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the identified resource.</p>\n@param resourceId The unique identifier for the identified resource.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -21327,6 +21600,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status code for the resource identified in the Trusted Advisor check.</p>\n@param status The status code for the resource identified in the Trusted Advisor check.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -21432,6 +21706,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ResourcesProcessed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>\n@param resourcesProcessed The number of AWS resources that were analyzed by the Trusted Advisor check.*/",
         "setterMethodName" : "setResourcesProcessed",
         "setterModel" : {
@@ -21497,6 +21772,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ResourcesFlagged",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>\n@param resourcesFlagged The number of AWS resources that were flagged (listed) by the Trusted Advisor check.*/",
         "setterMethodName" : "setResourcesFlagged",
         "setterModel" : {
@@ -21562,6 +21838,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ResourcesIgnored",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>\n@param resourcesIgnored The number of AWS resources ignored by Trusted Advisor because information was unavailable.*/",
         "setterMethodName" : "setResourcesIgnored",
         "setterModel" : {
@@ -21627,6 +21904,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ResourcesSuppressed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>\n@param resourcesSuppressed The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.*/",
         "setterMethodName" : "setResourcesSuppressed",
         "setterModel" : {
@@ -21694,6 +21972,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ResourcesFlagged",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>\n@param resourcesFlagged The number of AWS resources that were flagged (listed) by the Trusted Advisor check.*/",
           "setterMethodName" : "setResourcesFlagged",
           "setterModel" : {
@@ -21760,6 +22039,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ResourcesIgnored",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>\n@param resourcesIgnored The number of AWS resources ignored by Trusted Advisor because information was unavailable.*/",
           "setterMethodName" : "setResourcesIgnored",
           "setterModel" : {
@@ -21826,6 +22106,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ResourcesProcessed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>\n@param resourcesProcessed The number of AWS resources that were analyzed by the Trusted Advisor check.*/",
           "setterMethodName" : "setResourcesProcessed",
           "setterModel" : {
@@ -21892,6 +22173,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ResourcesSuppressed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>\n@param resourcesSuppressed The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.*/",
           "setterMethodName" : "setResourcesSuppressed",
           "setterModel" : {

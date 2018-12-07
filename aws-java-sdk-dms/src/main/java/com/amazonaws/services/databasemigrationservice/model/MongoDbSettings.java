@@ -955,7 +955,8 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -968,7 +969,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword()).append(",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getServerName() != null)
             sb.append("ServerName: ").append(getServerName()).append(",");
         if (getPort() != null)

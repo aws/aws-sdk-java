@@ -553,7 +553,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -570,11 +571,11 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
+            sb.append("OwnerInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");

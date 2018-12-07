@@ -126,7 +126,8 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -137,7 +138,7 @@ public class AssociateSoftwareTokenRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: ").append(getAccessToken()).append(",");
+            sb.append("AccessToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getSession() != null)
             sb.append("Session: ").append(getSession());
         sb.append("}");

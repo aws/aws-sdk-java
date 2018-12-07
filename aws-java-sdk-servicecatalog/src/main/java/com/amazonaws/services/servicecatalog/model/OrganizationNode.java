@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Information about the organization node.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/OrganizationNode" target="_top">AWS
  *      API Documentation</a>
@@ -26,15 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OrganizationNode implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The organization node type.
+     * </p>
+     */
     private String type;
-    /** <p/> */
+    /**
+     * <p>
+     * The identifier of the organization node.
+     * </p>
+     */
     private String value;
 
     /**
-     * <p/>
+     * <p>
+     * The organization node type.
+     * </p>
      * 
      * @param type
+     *        The organization node type.
      * @see OrganizationNodeType
      */
 
@@ -43,9 +56,11 @@ public class OrganizationNode implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * The organization node type.
+     * </p>
      * 
-     * @return
+     * @return The organization node type.
      * @see OrganizationNodeType
      */
 
@@ -54,9 +69,12 @@ public class OrganizationNode implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * The organization node type.
+     * </p>
      * 
      * @param type
+     *        The organization node type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrganizationNodeType
      */
@@ -67,9 +85,12 @@ public class OrganizationNode implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * The organization node type.
+     * </p>
      * 
      * @param type
+     *        The organization node type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrganizationNodeType
      */
@@ -80,9 +101,12 @@ public class OrganizationNode implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier of the organization node.
+     * </p>
      * 
      * @param value
+     *        The identifier of the organization node.
      */
 
     public void setValue(String value) {
@@ -90,9 +114,11 @@ public class OrganizationNode implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier of the organization node.
+     * </p>
      * 
-     * @return
+     * @return The identifier of the organization node.
      */
 
     public String getValue() {
@@ -100,9 +126,12 @@ public class OrganizationNode implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier of the organization node.
+     * </p>
      * 
      * @param value
+     *        The identifier of the organization node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +141,8 @@ public class OrganizationNode implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

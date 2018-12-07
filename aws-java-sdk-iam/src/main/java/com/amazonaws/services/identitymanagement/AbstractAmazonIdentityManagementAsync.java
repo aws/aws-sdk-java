@@ -753,6 +753,21 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
+            GenerateServiceLastAccessedDetailsRequest request) {
+
+        return generateServiceLastAccessedDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
+            GenerateServiceLastAccessedDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GenerateServiceLastAccessedDetailsRequest, GenerateServiceLastAccessedDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccessKeyLastUsedResult> getAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request) {
 
         return getAccessKeyLastUsedAsync(request, null);
@@ -1090,6 +1105,34 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<GetServerCertificateResult> getServerCertificateAsync(GetServerCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetServerCertificateRequest, GetServerCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsResult> getServiceLastAccessedDetailsAsync(GetServiceLastAccessedDetailsRequest request) {
+
+        return getServiceLastAccessedDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsResult> getServiceLastAccessedDetailsAsync(GetServiceLastAccessedDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetServiceLastAccessedDetailsRequest, GetServiceLastAccessedDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsWithEntitiesResult> getServiceLastAccessedDetailsWithEntitiesAsync(
+            GetServiceLastAccessedDetailsWithEntitiesRequest request) {
+
+        return getServiceLastAccessedDetailsWithEntitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsWithEntitiesResult> getServiceLastAccessedDetailsWithEntitiesAsync(
+            GetServiceLastAccessedDetailsWithEntitiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetServiceLastAccessedDetailsWithEntitiesRequest, GetServiceLastAccessedDetailsWithEntitiesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1497,6 +1540,21 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
             com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult> asyncHandler) {
 
         return listPoliciesAsync(new ListPoliciesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesGrantingServiceAccessResult> listPoliciesGrantingServiceAccessAsync(
+            ListPoliciesGrantingServiceAccessRequest request) {
+
+        return listPoliciesGrantingServiceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesGrantingServiceAccessResult> listPoliciesGrantingServiceAccessAsync(
+            ListPoliciesGrantingServiceAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPoliciesGrantingServiceAccessRequest, ListPoliciesGrantingServiceAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -403,6 +403,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -468,6 +469,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ThingName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The thing name associated with the device the job execution is running on.</p>\n@param thingName The thing name associated with the device the job execution is running on.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
@@ -533,6 +535,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeJobDocument",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.*/",
         "setterMethodName" : "setIncludeJobDocument",
         "setterModel" : {
@@ -598,6 +601,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ExecutionNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.*/",
         "setterMethodName" : "setExecutionNumber",
         "setterModel" : {
@@ -665,6 +669,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ExecutionNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.*/",
           "setterMethodName" : "setExecutionNumber",
           "setterModel" : {
@@ -731,6 +736,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeJobDocument",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.*/",
           "setterMethodName" : "setIncludeJobDocument",
           "setterModel" : {
@@ -797,6 +803,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -863,6 +870,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ThingName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The thing name associated with the device the job execution is running on.</p>\n@param thingName The thing name associated with the device the job execution is running on.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
@@ -965,6 +973,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Execution",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains data about a job execution.</p>\n@param execution Contains data about a job execution.*/",
         "setterMethodName" : "setExecution",
         "setterModel" : {
@@ -1032,6 +1041,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Execution",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains data about a job execution.</p>\n@param execution Contains data about a job execution.*/",
           "setterMethodName" : "setExecution",
           "setterModel" : {
@@ -1144,6 +1154,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ThingName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
@@ -1211,6 +1222,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ThingName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
@@ -1350,6 +1362,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1393,6 +1406,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "InProgressJobs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n@param inProgressJobs A list of JobExecutionSummary objects with status IN_PROGRESS.*/",
         "setterMethodName" : "setInProgressJobs",
         "setterModel" : {
@@ -1495,6 +1509,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1538,6 +1553,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "QueuedJobs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status QUEUED.</p>\n@param queuedJobs A list of JobExecutionSummary objects with status QUEUED.*/",
         "setterMethodName" : "setQueuedJobs",
         "setterModel" : {
@@ -1642,6 +1658,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1685,6 +1702,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "InProgressJobs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n@param inProgressJobs A list of JobExecutionSummary objects with status IN_PROGRESS.*/",
           "setterMethodName" : "setInProgressJobs",
           "setterModel" : {
@@ -1788,6 +1806,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1831,6 +1850,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "QueuedJobs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status QUEUED.</p>\n@param queuedJobs A list of JobExecutionSummary objects with status QUEUED.*/",
           "setterMethodName" : "setQueuedJobs",
           "setterModel" : {
@@ -2010,6 +2030,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -2075,6 +2096,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ThingName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
@@ -2140,6 +2162,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@see JobExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -2248,6 +2271,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -2285,6 +2309,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "StatusDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.*/",
         "setterMethodName" : "setStatusDetails",
         "setterModel" : {
@@ -2350,6 +2375,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "QueuedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.*/",
         "setterMethodName" : "setQueuedAt",
         "setterModel" : {
@@ -2415,6 +2441,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "StartedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution was started.*/",
         "setterMethodName" : "setStartedAt",
         "setterModel" : {
@@ -2480,6 +2507,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "LastUpdatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.*/",
         "setterMethodName" : "setLastUpdatedAt",
         "setterModel" : {
@@ -2545,6 +2573,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ApproximateSecondsBeforeTimedOut",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>\n@param approximateSecondsBeforeTimedOut The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.*/",
         "setterMethodName" : "setApproximateSecondsBeforeTimedOut",
         "setterModel" : {
@@ -2610,6 +2639,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "VersionNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.*/",
         "setterMethodName" : "setVersionNumber",
         "setterModel" : {
@@ -2675,6 +2705,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ExecutionNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.*/",
         "setterMethodName" : "setExecutionNumber",
         "setterModel" : {
@@ -2740,6 +2771,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobDocument",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The content of the job document.</p>\n@param jobDocument The content of the job document.*/",
         "setterMethodName" : "setJobDocument",
         "setterModel" : {
@@ -2807,6 +2839,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ApproximateSecondsBeforeTimedOut",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>\n@param approximateSecondsBeforeTimedOut The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.*/",
           "setterMethodName" : "setApproximateSecondsBeforeTimedOut",
           "setterModel" : {
@@ -2873,6 +2906,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ExecutionNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.*/",
           "setterMethodName" : "setExecutionNumber",
           "setterModel" : {
@@ -2939,6 +2973,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobDocument",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The content of the job document.</p>\n@param jobDocument The content of the job document.*/",
           "setterMethodName" : "setJobDocument",
           "setterModel" : {
@@ -3005,6 +3040,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -3071,6 +3107,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "LastUpdatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.*/",
           "setterMethodName" : "setLastUpdatedAt",
           "setterModel" : {
@@ -3137,6 +3174,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "QueuedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.*/",
           "setterMethodName" : "setQueuedAt",
           "setterModel" : {
@@ -3203,6 +3241,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "StartedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution was started.*/",
           "setterMethodName" : "setStartedAt",
           "setterModel" : {
@@ -3269,6 +3308,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@see JobExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -3378,6 +3418,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -3415,6 +3456,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "StatusDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.*/",
           "setterMethodName" : "setStatusDetails",
           "setterModel" : {
@@ -3481,6 +3523,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ThingName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
@@ -3547,6 +3590,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "VersionNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.*/",
           "setterMethodName" : "setVersionNumber",
           "setterModel" : {
@@ -3652,6 +3696,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@see JobExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -3760,6 +3805,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -3797,6 +3843,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "StatusDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.*/",
         "setterMethodName" : "setStatusDetails",
         "setterModel" : {
@@ -3862,6 +3909,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "VersionNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.*/",
         "setterMethodName" : "setVersionNumber",
         "setterModel" : {
@@ -3929,6 +3977,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@see JobExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -4038,6 +4087,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -4075,6 +4125,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "StatusDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.*/",
           "setterMethodName" : "setStatusDetails",
           "setterModel" : {
@@ -4141,6 +4192,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "VersionNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.*/",
           "setterMethodName" : "setVersionNumber",
           "setterModel" : {
@@ -4310,6 +4362,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -4375,6 +4428,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "QueuedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.*/",
         "setterMethodName" : "setQueuedAt",
         "setterModel" : {
@@ -4440,6 +4494,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "StartedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution started.*/",
         "setterMethodName" : "setStartedAt",
         "setterModel" : {
@@ -4505,6 +4560,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "LastUpdatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.*/",
         "setterMethodName" : "setLastUpdatedAt",
         "setterModel" : {
@@ -4570,6 +4626,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "VersionNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.*/",
         "setterMethodName" : "setVersionNumber",
         "setterModel" : {
@@ -4635,6 +4692,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ExecutionNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device.*/",
         "setterMethodName" : "setExecutionNumber",
         "setterModel" : {
@@ -4702,6 +4760,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ExecutionNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device.*/",
           "setterMethodName" : "setExecutionNumber",
           "setterModel" : {
@@ -4768,6 +4827,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -4834,6 +4894,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "LastUpdatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.*/",
           "setterMethodName" : "setLastUpdatedAt",
           "setterModel" : {
@@ -4900,6 +4961,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "QueuedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.*/",
           "setterMethodName" : "setQueuedAt",
           "setterModel" : {
@@ -4966,6 +5028,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "StartedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution started.*/",
           "setterMethodName" : "setStartedAt",
           "setterModel" : {
@@ -5032,6 +5095,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "VersionNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.*/",
           "setterMethodName" : "setVersionNumber",
           "setterModel" : {
@@ -5218,6 +5282,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ThingName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
@@ -5326,6 +5391,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -5363,6 +5429,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "StatusDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.*/",
         "setterMethodName" : "setStatusDetails",
         "setterModel" : {
@@ -5428,6 +5495,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "StepTimeoutInMinutes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n@param stepTimeoutInMinutes Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).*/",
         "setterMethodName" : "setStepTimeoutInMinutes",
         "setterModel" : {
@@ -5538,6 +5606,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -5575,6 +5644,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "StatusDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.*/",
           "setterMethodName" : "setStatusDetails",
           "setterModel" : {
@@ -5641,6 +5711,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "StepTimeoutInMinutes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n@param stepTimeoutInMinutes Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).*/",
           "setterMethodName" : "setStepTimeoutInMinutes",
           "setterModel" : {
@@ -5707,6 +5778,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ThingName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
@@ -5809,6 +5881,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Execution",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JobExecution object.</p>\n@param execution A JobExecution object.*/",
         "setterMethodName" : "setExecution",
         "setterModel" : {
@@ -5876,6 +5949,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Execution",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JobExecution object.</p>\n@param execution A JobExecution object.*/",
           "setterMethodName" : "setExecution",
           "setterModel" : {
@@ -6018,6 +6092,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Payload",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The payload associated with the exception.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The payload associated with the exception.*/",
         "setterMethodName" : "setPayload",
         "setterModel" : {
@@ -6085,6 +6160,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Payload",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The payload associated with the exception.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The payload associated with the exception.*/",
           "setterMethodName" : "setPayload",
           "setterModel" : {
@@ -6194,6 +6270,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -6259,6 +6336,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ThingName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
@@ -6324,6 +6402,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>\n@param status The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.\n@see JobExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -6432,6 +6511,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -6469,6 +6549,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "StatusDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.*/",
         "setterMethodName" : "setStatusDetails",
         "setterModel" : {
@@ -6534,6 +6615,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "StepTimeoutInMinutes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n@param stepTimeoutInMinutes Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).*/",
         "setterMethodName" : "setStepTimeoutInMinutes",
         "setterModel" : {
@@ -6599,6 +6681,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ExpectedVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>\n@param expectedVersion Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)*/",
         "setterMethodName" : "setExpectedVersion",
         "setterModel" : {
@@ -6664,6 +6747,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeJobExecutionState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>\n@param includeJobExecutionState Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.*/",
         "setterMethodName" : "setIncludeJobExecutionState",
         "setterModel" : {
@@ -6729,6 +6813,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeJobDocument",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.*/",
         "setterMethodName" : "setIncludeJobDocument",
         "setterModel" : {
@@ -6794,6 +6879,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ExecutionNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device.*/",
         "setterMethodName" : "setExecutionNumber",
         "setterModel" : {
@@ -6861,6 +6947,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ExecutionNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device.*/",
           "setterMethodName" : "setExecutionNumber",
           "setterModel" : {
@@ -6927,6 +7014,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ExpectedVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>\n@param expectedVersion Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)*/",
           "setterMethodName" : "setExpectedVersion",
           "setterModel" : {
@@ -6993,6 +7081,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeJobDocument",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.*/",
           "setterMethodName" : "setIncludeJobDocument",
           "setterModel" : {
@@ -7059,6 +7148,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeJobExecutionState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>\n@param includeJobExecutionState Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.*/",
           "setterMethodName" : "setIncludeJobExecutionState",
           "setterModel" : {
@@ -7125,6 +7215,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -7191,6 +7282,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>\n@param status The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.\n@see JobExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -7300,6 +7392,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -7337,6 +7430,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "StatusDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.*/",
           "setterMethodName" : "setStatusDetails",
           "setterModel" : {
@@ -7403,6 +7497,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "StepTimeoutInMinutes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n@param stepTimeoutInMinutes Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).*/",
           "setterMethodName" : "setStepTimeoutInMinutes",
           "setterModel" : {
@@ -7469,6 +7564,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ThingName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
@@ -7571,6 +7667,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ExecutionState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A JobExecutionState object.</p>\n@param executionState A JobExecutionState object.*/",
         "setterMethodName" : "setExecutionState",
         "setterModel" : {
@@ -7636,6 +7733,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobDocument",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The contents of the Job Documents.</p>\n@param jobDocument The contents of the Job Documents.*/",
         "setterMethodName" : "setJobDocument",
         "setterModel" : {
@@ -7703,6 +7801,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ExecutionState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A JobExecutionState object.</p>\n@param executionState A JobExecutionState object.*/",
           "setterMethodName" : "setExecutionState",
           "setterModel" : {
@@ -7769,6 +7868,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobDocument",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The contents of the Job Documents.</p>\n@param jobDocument The contents of the Job Documents.*/",
           "setterMethodName" : "setJobDocument",
           "setterModel" : {

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -978,6 +978,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project to which you will add the IAM user.</p>\n@param projectId The ID of the project to which you will add the IAM user.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
@@ -1043,6 +1044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -1108,6 +1110,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>\n@param userArn The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -1173,6 +1176,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>\n@param projectRole The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.*/",
         "setterMethodName" : "setProjectRole",
         "setterModel" : {
@@ -1238,6 +1242,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RemoteAccessAllowed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>\n@param remoteAccessAllowed Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.*/",
         "setterMethodName" : "setRemoteAccessAllowed",
         "setterModel" : {
@@ -1305,6 +1310,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -1371,6 +1377,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project to which you will add the IAM user.</p>\n@param projectId The ID of the project to which you will add the IAM user.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
@@ -1437,6 +1444,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>\n@param projectRole The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.*/",
           "setterMethodName" : "setProjectRole",
           "setterModel" : {
@@ -1503,6 +1511,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RemoteAccessAllowed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>\n@param remoteAccessAllowed Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.*/",
           "setterMethodName" : "setRemoteAccessAllowed",
           "setterModel" : {
@@ -1569,6 +1578,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>\n@param userArn The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -1671,6 +1681,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>\n@param clientRequestToken The user- or system-generated token from the initial request that can be used to repeat the request.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -1738,6 +1749,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>\n@param clientRequestToken The user- or system-generated token from the initial request that can be used to repeat the request.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -1843,6 +1855,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>\n@param source The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -1908,6 +1921,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Destination",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>\n@param destination The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.*/",
         "setterMethodName" : "setDestination",
         "setterModel" : {
@@ -1975,6 +1989,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Destination",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>\n@param destination The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.*/",
           "setterMethodName" : "setDestination",
           "setterModel" : {
@@ -2041,6 +2056,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>\n@param source The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -2146,6 +2162,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>\n@param name The name of the AWS CodeCommit repository to be created in AWS CodeStar.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2213,6 +2230,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>\n@param name The name of the AWS CodeCommit repository to be created in AWS CodeStar.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -2318,6 +2336,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CodeCommit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>\n@param codeCommit Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.*/",
         "setterMethodName" : "setCodeCommit",
         "setterModel" : {
@@ -2383,6 +2402,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "GitHub",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>\n@param gitHub Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.*/",
         "setterMethodName" : "setGitHub",
         "setterModel" : {
@@ -2450,6 +2470,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CodeCommit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>\n@param codeCommit Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.*/",
           "setterMethodName" : "setCodeCommit",
           "setterModel" : {
@@ -2516,6 +2537,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "GitHub",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>\n@param gitHub Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.*/",
           "setterMethodName" : "setGitHub",
           "setterModel" : {
@@ -2621,6 +2643,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "S3",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>\n@param s3 Information about the Amazon S3 location where the source code files provided with the project request are stored.*/",
         "setterMethodName" : "setS3",
         "setterModel" : {
@@ -2688,6 +2711,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "S3",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>\n@param s3 Information about the Amazon S3 location where the source code files provided with the project request are stored.*/",
           "setterMethodName" : "setS3",
           "setterModel" : {
@@ -2837,6 +2861,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The display name for the project to be created in AWS CodeStar.</p>\n@param name The display name for the project to be created in AWS CodeStar.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2902,6 +2927,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project to be created in AWS CodeStar.</p>\n@param id The ID of the project to be created in AWS CodeStar.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -2967,6 +2993,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -3032,6 +3059,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -3134,6 +3162,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3177,6 +3206,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SourceCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>\n@param sourceCode A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.*/",
         "setterMethodName" : "setSourceCode",
         "setterModel" : {
@@ -3242,6 +3272,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Toolchain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>\n@param toolchain The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.*/",
         "setterMethodName" : "setToolchain",
         "setterModel" : {
@@ -3350,6 +3381,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -3387,6 +3419,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags created for the project.</p>\n@param tags The tags created for the project.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -3454,6 +3487,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -3520,6 +3554,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -3586,6 +3621,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project to be created in AWS CodeStar.</p>\n@param id The ID of the project to be created in AWS CodeStar.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -3652,6 +3688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The display name for the project to be created in AWS CodeStar.</p>\n@param name The display name for the project to be created in AWS CodeStar.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3755,6 +3792,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3798,6 +3836,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SourceCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>\n@param sourceCode A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.*/",
           "setterMethodName" : "setSourceCode",
           "setterModel" : {
@@ -3907,6 +3946,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -3944,6 +3984,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags created for the project.</p>\n@param tags The tags created for the project.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -4010,6 +4051,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Toolchain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>\n@param toolchain The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.*/",
           "setterMethodName" : "setToolchain",
           "setterModel" : {
@@ -4112,6 +4154,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -4177,6 +4220,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the created project.</p>\n@param arn The Amazon Resource Name (ARN) of the created project.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -4242,6 +4286,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project creation.</p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project creation.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -4307,6 +4352,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectTemplateId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param projectTemplateId Reserved for future use.*/",
         "setterMethodName" : "setProjectTemplateId",
         "setterModel" : {
@@ -4374,6 +4420,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the created project.</p>\n@param arn The Amazon Resource Name (ARN) of the created project.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -4440,6 +4487,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project creation.</p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project creation.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -4506,6 +4554,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -4572,6 +4621,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectTemplateId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param projectTemplateId Reserved for future use.*/",
           "setterMethodName" : "setProjectTemplateId",
           "setterModel" : {
@@ -4684,6 +4734,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -4749,6 +4800,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>\n@param displayName The name that will be displayed as the friendly name for the user in AWS CodeStar.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -4814,6 +4866,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that will be displayed as part of the user's profile in AWS CodeStar.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -4879,6 +4932,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.*/",
         "setterMethodName" : "setSshPublicKey",
         "setterModel" : {
@@ -4946,6 +5000,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>\n@param displayName The name that will be displayed as the friendly name for the user in AWS CodeStar.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -5012,6 +5067,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that will be displayed as part of the user's profile in AWS CodeStar.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -5078,6 +5134,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.*/",
           "setterMethodName" : "setSshPublicKey",
           "setterModel" : {
@@ -5144,6 +5201,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -5246,6 +5304,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -5311,6 +5370,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -5376,6 +5436,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -5441,6 +5502,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.*/",
         "setterMethodName" : "setSshPublicKey",
         "setterModel" : {
@@ -5506,6 +5568,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the user profile was created, in timestamp format.</p>\n@param createdTimestamp The date the user profile was created, in timestamp format.*/",
         "setterMethodName" : "setCreatedTimestamp",
         "setterModel" : {
@@ -5571,6 +5634,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date the user profile was last modified, in timestamp format.*/",
         "setterMethodName" : "setLastModifiedTimestamp",
         "setterModel" : {
@@ -5638,6 +5702,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the user profile was created, in timestamp format.</p>\n@param createdTimestamp The date the user profile was created, in timestamp format.*/",
           "setterMethodName" : "setCreatedTimestamp",
           "setterModel" : {
@@ -5704,6 +5769,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -5770,6 +5836,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -5836,6 +5903,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date the user profile was last modified, in timestamp format.*/",
           "setterMethodName" : "setLastModifiedTimestamp",
           "setterModel" : {
@@ -5902,6 +5970,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.*/",
           "setterMethodName" : "setSshPublicKey",
           "setterModel" : {
@@ -5968,6 +6037,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -6080,6 +6150,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project to be deleted in AWS CodeStar.</p>\n@param id The ID of the project to be deleted in AWS CodeStar.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -6145,6 +6216,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -6210,6 +6282,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DeleteStack",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>\n@param deleteStack Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.*/",
         "setterMethodName" : "setDeleteStack",
         "setterModel" : {
@@ -6277,6 +6350,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -6343,6 +6417,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DeleteStack",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>\n@param deleteStack Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.*/",
           "setterMethodName" : "setDeleteStack",
           "setterModel" : {
@@ -6409,6 +6484,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project to be deleted in AWS CodeStar.</p>\n@param id The ID of the project to be deleted in AWS CodeStar.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -6511,6 +6587,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StackId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>\n@param stackId The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.*/",
         "setterMethodName" : "setStackId",
         "setterModel" : {
@@ -6576,6 +6653,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted project.</p>\n@param projectArn The Amazon Resource Name (ARN) of the deleted project.*/",
         "setterMethodName" : "setProjectArn",
         "setterModel" : {
@@ -6643,6 +6721,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted project.</p>\n@param projectArn The Amazon Resource Name (ARN) of the deleted project.*/",
           "setterMethodName" : "setProjectArn",
           "setterModel" : {
@@ -6709,6 +6788,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StackId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>\n@param stackId The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.*/",
           "setterMethodName" : "setStackId",
           "setterModel" : {
@@ -6821,6 +6901,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>\n@param userArn The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -6888,6 +6969,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>\n@param userArn The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -6990,6 +7072,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>\n@param userArn The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -7057,6 +7140,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>\n@param userArn The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -7169,6 +7253,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -7236,6 +7321,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -7338,6 +7424,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The display name for the project.</p>\n@param name The display name for the project.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -7403,6 +7490,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -7468,6 +7556,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the project.</p>\n@param arn The Amazon Resource Name (ARN) for the project.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -7533,6 +7622,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -7598,6 +7688,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project creation. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project creation.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -7663,6 +7754,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedTimeStamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time the project was created, in timestamp format.</p>\n@param createdTimeStamp The date and time the project was created, in timestamp format.*/",
         "setterMethodName" : "setCreatedTimeStamp",
         "setterModel" : {
@@ -7728,6 +7820,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StackId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>\n@param stackId The ID of the primary stack in AWS CloudFormation used to generate resources for the project.*/",
         "setterMethodName" : "setStackId",
         "setterModel" : {
@@ -7793,6 +7886,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectTemplateId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID for the AWS CodeStar project template used to create the project.</p>\n@param projectTemplateId The ID for the AWS CodeStar project template used to create the project.*/",
         "setterMethodName" : "setProjectTemplateId",
         "setterModel" : {
@@ -7858,6 +7952,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The project creation or deletion status.</p>\n@param status The project creation or deletion status.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -7925,6 +8020,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the project.</p>\n@param arn The Amazon Resource Name (ARN) for the project.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -7991,6 +8087,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project creation. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project creation.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -8057,6 +8154,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedTimeStamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time the project was created, in timestamp format.</p>\n@param createdTimeStamp The date and time the project was created, in timestamp format.*/",
           "setterMethodName" : "setCreatedTimeStamp",
           "setterModel" : {
@@ -8123,6 +8221,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -8189,6 +8288,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -8255,6 +8355,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The display name for the project.</p>\n@param name The display name for the project.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -8321,6 +8422,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectTemplateId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID for the AWS CodeStar project template used to create the project.</p>\n@param projectTemplateId The ID for the AWS CodeStar project template used to create the project.*/",
           "setterMethodName" : "setProjectTemplateId",
           "setterModel" : {
@@ -8387,6 +8489,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StackId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>\n@param stackId The ID of the primary stack in AWS CloudFormation used to generate resources for the project.*/",
           "setterMethodName" : "setStackId",
           "setterModel" : {
@@ -8453,6 +8556,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The project creation or deletion status.</p>\n@param status The project creation or deletion status.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -8565,6 +8669,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user.</p>\n@param userArn The Amazon Resource Name (ARN) of the user.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -8632,6 +8737,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user.</p>\n@param userArn The Amazon Resource Name (ARN) of the user.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -8734,6 +8840,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user.</p>\n@param userArn The Amazon Resource Name (ARN) of the user.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -8799,6 +8906,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").</p>\n@param displayName The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -8864,6 +8972,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address for the user. Optional.</p>\n@param emailAddress The email address for the user. Optional.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -8929,6 +9038,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.*/",
         "setterMethodName" : "setSshPublicKey",
         "setterModel" : {
@@ -8994,6 +9104,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>\n@param createdTimestamp The date and time when the user profile was created in AWS CodeStar, in timestamp format.*/",
         "setterMethodName" : "setCreatedTimestamp",
         "setterModel" : {
@@ -9059,6 +9170,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date and time when the user profile was last modified, in timestamp format.*/",
         "setterMethodName" : "setLastModifiedTimestamp",
         "setterModel" : {
@@ -9126,6 +9238,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>\n@param createdTimestamp The date and time when the user profile was created in AWS CodeStar, in timestamp format.*/",
           "setterMethodName" : "setCreatedTimestamp",
           "setterModel" : {
@@ -9192,6 +9305,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").</p>\n@param displayName The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -9258,6 +9372,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address for the user. Optional.</p>\n@param emailAddress The email address for the user. Optional.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -9324,6 +9439,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date and time when the user profile was last modified, in timestamp format.*/",
           "setterMethodName" : "setLastModifiedTimestamp",
           "setterModel" : {
@@ -9390,6 +9506,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.*/",
           "setterMethodName" : "setSshPublicKey",
           "setterModel" : {
@@ -9456,6 +9573,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user.</p>\n@param userArn The Amazon Resource Name (ARN) of the user.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -9568,6 +9686,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>\n@param projectId The ID of the AWS CodeStar project from which you want to remove a team member.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
@@ -9633,6 +9752,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>\n@param userArn The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -9700,6 +9820,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>\n@param projectId The ID of the AWS CodeStar project from which you want to remove a team member.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
@@ -9766,6 +9887,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>\n@param userArn The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -9908,6 +10030,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the GitHub repository to be created in AWS CodeStar.</p>\n@param name Name of the GitHub repository to be created in AWS CodeStar.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -9973,6 +10096,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>\n@param description Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -10038,6 +10162,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>\n@param type The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -10103,6 +10228,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Owner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>\n@param owner The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.*/",
         "setterMethodName" : "setOwner",
         "setterModel" : {
@@ -10168,6 +10294,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "PrivateRepository",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the GitHub repository is to be a private repository.</p>\n@param privateRepository Whether the GitHub repository is to be a private repository.*/",
         "setterMethodName" : "setPrivateRepository",
         "setterModel" : {
@@ -10233,6 +10360,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IssuesEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether to enable issues for the GitHub repository.</p>\n@param issuesEnabled Whether to enable issues for the GitHub repository.*/",
         "setterMethodName" : "setIssuesEnabled",
         "setterModel" : {
@@ -10298,6 +10426,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Token",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The GitHub user's personal access token for the GitHub repository.</p>\n@param token The GitHub user's personal access token for the GitHub repository.*/",
         "setterMethodName" : "setToken",
         "setterModel" : {
@@ -10365,6 +10494,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>\n@param description Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -10431,6 +10561,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IssuesEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether to enable issues for the GitHub repository.</p>\n@param issuesEnabled Whether to enable issues for the GitHub repository.*/",
           "setterMethodName" : "setIssuesEnabled",
           "setterModel" : {
@@ -10497,6 +10628,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the GitHub repository to be created in AWS CodeStar.</p>\n@param name Name of the GitHub repository to be created in AWS CodeStar.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -10563,6 +10695,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Owner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>\n@param owner The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.*/",
           "setterMethodName" : "setOwner",
           "setterModel" : {
@@ -10629,6 +10762,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "PrivateRepository",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the GitHub repository is to be a private repository.</p>\n@param privateRepository Whether the GitHub repository is to be a private repository.*/",
           "setterMethodName" : "setPrivateRepository",
           "setterModel" : {
@@ -10695,6 +10829,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Token",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The GitHub user's personal access token for the GitHub repository.</p>\n@param token The GitHub user's personal access token for the GitHub repository.*/",
           "setterMethodName" : "setToken",
           "setterModel" : {
@@ -10761,6 +10896,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>\n@param type The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -10984,6 +11120,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token to be used to return the next set of results, if the results cannot be returned in one response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11049,6 +11186,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum amount of data that can be contained in a single set of results.</p>\n@param maxResults The maximum amount of data that can be contained in a single set of results.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11116,6 +11254,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum amount of data that can be contained in a single set of results.</p>\n@param maxResults The maximum amount of data that can be contained in a single set of results.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11182,6 +11321,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token to be used to return the next set of results, if the results cannot be returned in one response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11321,6 +11461,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11364,6 +11505,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Projects",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of projects.</p>\n@param projects A list of projects.*/",
         "setterMethodName" : "setProjects",
         "setterModel" : {
@@ -11429,6 +11571,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11496,6 +11639,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11599,6 +11743,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11642,6 +11787,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Projects",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of projects.</p>\n@param projects A list of projects.*/",
           "setterMethodName" : "setProjects",
           "setterModel" : {
@@ -11754,6 +11900,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
@@ -11819,6 +11966,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11884,6 +12032,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum amount of data that can be contained in a single set of results.</p>\n@param maxResults The maximum amount of data that can be contained in a single set of results.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11951,6 +12100,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum amount of data that can be contained in a single set of results.</p>\n@param maxResults The maximum amount of data that can be contained in a single set of results.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -12017,6 +12167,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12083,6 +12234,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
@@ -12222,6 +12374,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12265,6 +12418,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Resources",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of resources associated with the project. </p>\n@param resources An array of resources associated with the project.*/",
         "setterMethodName" : "setResources",
         "setterModel" : {
@@ -12330,6 +12484,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12397,6 +12552,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12500,6 +12656,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12543,6 +12700,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Resources",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of resources associated with the project. </p>\n@param resources An array of resources associated with the project.*/",
           "setterMethodName" : "setResources",
           "setterModel" : {
@@ -12655,6 +12813,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project to get tags for.</p>\n@param id The ID of the project to get tags for.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -12720,6 +12879,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param nextToken Reserved for future use.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12785,6 +12945,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param maxResults Reserved for future use.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -12852,6 +13013,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project to get tags for.</p>\n@param id The ID of the project to get tags for.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -12918,6 +13080,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param maxResults Reserved for future use.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -12984,6 +13147,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param nextToken Reserved for future use.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13129,6 +13293,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -13166,6 +13331,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags for the project.</p>\n@param tags The tags for the project.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -13231,6 +13397,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param nextToken Reserved for future use.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13298,6 +13465,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param nextToken Reserved for future use.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13407,6 +13575,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -13444,6 +13613,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags for the project.</p>\n@param tags The tags for the project.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -13556,6 +13726,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project for which you want to list team members.</p>\n@param projectId The ID of the project for which you want to list team members.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
@@ -13621,6 +13792,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13686,6 +13858,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of team members you want returned in a response.</p>\n@param maxResults The maximum number of team members you want returned in a response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -13753,6 +13926,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of team members you want returned in a response.</p>\n@param maxResults The maximum number of team members you want returned in a response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -13819,6 +13993,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13885,6 +14060,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project for which you want to list team members.</p>\n@param projectId The ID of the project for which you want to list team members.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
@@ -14024,6 +14200,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14067,6 +14244,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TeamMembers",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of team member objects for the project.</p>\n@param teamMembers A list of team member objects for the project.*/",
         "setterMethodName" : "setTeamMembers",
         "setterModel" : {
@@ -14132,6 +14310,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -14199,6 +14378,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14302,6 +14482,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14345,6 +14526,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TeamMembers",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of team member objects for the project.</p>\n@param teamMembers A list of team member objects for the project.*/",
           "setterMethodName" : "setTeamMembers",
           "setterModel" : {
@@ -14457,6 +14639,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -14522,6 +14705,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a response.</p>\n@param maxResults The maximum number of results to return in a response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -14589,6 +14773,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a response.</p>\n@param maxResults The maximum number of results to return in a response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -14655,6 +14840,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14794,6 +14980,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14837,6 +15024,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UserProfiles",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>All the user profiles configured in AWS CodeStar for an AWS account.</p>\n@param userProfiles All the user profiles configured in AWS CodeStar for an AWS account.*/",
         "setterMethodName" : "setUserProfiles",
         "setterModel" : {
@@ -14902,6 +15090,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -14969,6 +15158,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -15072,6 +15262,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15115,6 +15306,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UserProfiles",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>All the user profiles configured in AWS CodeStar for an AWS account.</p>\n@param userProfiles All the user profiles configured in AWS CodeStar for an AWS account.*/",
           "setterMethodName" : "setUserProfiles",
           "setterModel" : {
@@ -15368,6 +15560,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The phase of completion for a project creation or deletion.</p>\n@param state The phase of completion for a project creation or deletion.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -15433,6 +15626,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Reason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>In the case of a project creation or deletion failure, a reason for the failure.</p>\n@param reason In the case of a project creation or deletion failure, a reason for the failure.*/",
         "setterMethodName" : "setReason",
         "setterModel" : {
@@ -15500,6 +15694,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Reason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>In the case of a project creation or deletion failure, a reason for the failure.</p>\n@param reason In the case of a project creation or deletion failure, a reason for the failure.*/",
           "setterMethodName" : "setReason",
           "setterModel" : {
@@ -15566,6 +15761,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The phase of completion for a project creation or deletion.</p>\n@param state The phase of completion for a project creation or deletion.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -15671,6 +15867,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
@@ -15736,6 +15933,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the project.</p>\n@param projectArn The Amazon Resource Name (ARN) of the project.*/",
         "setterMethodName" : "setProjectArn",
         "setterModel" : {
@@ -15803,6 +16001,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the project.</p>\n@param projectArn The Amazon Resource Name (ARN) of the project.*/",
           "setterMethodName" : "setProjectArn",
           "setterModel" : {
@@ -15869,6 +16068,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
@@ -15974,6 +16174,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param id The Amazon Resource Name (ARN) of the resource.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -16041,6 +16242,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param id The Amazon Resource Name (ARN) of the resource.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -16146,6 +16348,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BucketName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>\n@param bucketName The Amazon S3 bucket name where the source code files provided with the project request are stored.*/",
         "setterMethodName" : "setBucketName",
         "setterModel" : {
@@ -16211,6 +16414,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BucketKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>\n@param bucketKey The Amazon S3 object key where the source code files provided with the project request are stored.*/",
         "setterMethodName" : "setBucketKey",
         "setterModel" : {
@@ -16278,6 +16482,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BucketKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>\n@param bucketKey The Amazon S3 object key where the source code files provided with the project request are stored.*/",
           "setterMethodName" : "setBucketKey",
           "setterModel" : {
@@ -16344,6 +16549,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BucketName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>\n@param bucketName The Amazon S3 bucket name where the source code files provided with the project request are stored.*/",
           "setterMethodName" : "setBucketName",
           "setterModel" : {
@@ -16456,6 +16662,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project you want to add a tag to.</p>\n@param id The ID of the project you want to add a tag to.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -16564,6 +16771,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -16601,6 +16809,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags you want to add to the project.</p>\n@param tags The tags you want to add to the project.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -16668,6 +16877,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project you want to add a tag to.</p>\n@param id The ID of the project you want to add a tag to.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -16777,6 +16987,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -16814,6 +17025,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags you want to add to the project.</p>\n@param tags The tags you want to add to the project.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -16959,6 +17171,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -16996,6 +17209,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags for the project.</p>\n@param tags The tags for the project.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -17106,6 +17320,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -17143,6 +17358,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags for the project.</p>\n@param tags The tags for the project.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -17248,6 +17464,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -17313,6 +17530,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>\n@param projectRole The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.*/",
         "setterMethodName" : "setProjectRole",
         "setterModel" : {
@@ -17378,6 +17596,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RemoteAccessAllowed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>\n@param remoteAccessAllowed Whether the user is allowed to remotely access project resources using an SSH public/private key pair.*/",
         "setterMethodName" : "setRemoteAccessAllowed",
         "setterModel" : {
@@ -17445,6 +17664,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>\n@param projectRole The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.*/",
           "setterMethodName" : "setProjectRole",
           "setterModel" : {
@@ -17511,6 +17731,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RemoteAccessAllowed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>\n@param remoteAccessAllowed Whether the user is allowed to remotely access project resources using an SSH public/private key pair.*/",
           "setterMethodName" : "setRemoteAccessAllowed",
           "setterModel" : {
@@ -17577,6 +17798,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -17756,6 +17978,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>\n@param source The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -17821,6 +18044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>\n@param roleArn The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -17929,6 +18153,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : true,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -17966,6 +18191,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "StackParameters",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>\n@param stackParameters The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.*/",
         "setterMethodName" : "setStackParameters",
         "setterModel" : {
@@ -18033,6 +18259,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>\n@param roleArn The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -18099,6 +18326,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>\n@param source The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -18208,6 +18436,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : true,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -18245,6 +18474,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "StackParameters",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>\n@param stackParameters The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.*/",
           "setterMethodName" : "setStackParameters",
           "setterModel" : {
@@ -18350,6 +18580,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "S3",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>\n@param s3 The Amazon S3 bucket where the toolchain template file provided with the project request is stored.*/",
         "setterMethodName" : "setS3",
         "setterModel" : {
@@ -18417,6 +18648,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "S3",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>\n@param s3 The Amazon S3 bucket where the toolchain template file provided with the project request is stored.*/",
           "setterMethodName" : "setS3",
           "setterModel" : {
@@ -18529,6 +18761,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project to remove tags from.</p>\n@param id The ID of the project to remove tags from.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -18631,6 +18864,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18674,6 +18908,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to remove from the project.</p>\n@param tags The tags to remove from the project.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -18741,6 +18976,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project to remove tags from.</p>\n@param id The ID of the project to remove tags from.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -18844,6 +19080,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18887,6 +19124,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to remove from the project.</p>\n@param tags The tags to remove from the project.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -19036,6 +19274,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project you want to update.</p>\n@param id The ID of the project you want to update.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -19101,6 +19340,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The name of the project you want to update.</p>\n@param name The name of the project you want to update.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -19166,6 +19406,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -19233,6 +19474,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -19299,6 +19541,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project you want to update.</p>\n@param id The ID of the project you want to update.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -19365,6 +19608,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The name of the project you want to update.</p>\n@param name The name of the project you want to update.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -19514,6 +19758,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
@@ -19579,6 +19824,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>\n@param userArn The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -19644,6 +19890,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>\n@param projectRole The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.*/",
         "setterMethodName" : "setProjectRole",
         "setterModel" : {
@@ -19709,6 +19956,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RemoteAccessAllowed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>\n@param remoteAccessAllowed Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.*/",
         "setterMethodName" : "setRemoteAccessAllowed",
         "setterModel" : {
@@ -19776,6 +20024,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
@@ -19842,6 +20091,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>\n@param projectRole The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.*/",
           "setterMethodName" : "setProjectRole",
           "setterModel" : {
@@ -19908,6 +20158,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RemoteAccessAllowed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>\n@param remoteAccessAllowed Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.*/",
           "setterMethodName" : "setRemoteAccessAllowed",
           "setterModel" : {
@@ -19974,6 +20225,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>\n@param userArn The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -20076,6 +20328,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>\n@param userArn The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -20141,6 +20394,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The project role granted to the user.</p>\n@param projectRole The project role granted to the user.*/",
         "setterMethodName" : "setProjectRole",
         "setterModel" : {
@@ -20206,6 +20460,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RemoteAccessAllowed",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>\n@param remoteAccessAllowed Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.*/",
         "setterMethodName" : "setRemoteAccessAllowed",
         "setterModel" : {
@@ -20273,6 +20528,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The project role granted to the user.</p>\n@param projectRole The project role granted to the user.*/",
           "setterMethodName" : "setProjectRole",
           "setterModel" : {
@@ -20339,6 +20595,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RemoteAccessAllowed",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>\n@param remoteAccessAllowed Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.*/",
           "setterMethodName" : "setRemoteAccessAllowed",
           "setterModel" : {
@@ -20405,6 +20662,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>\n@param userArn The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -20517,6 +20775,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>\n@param userArn The name that will be displayed as the friendly name for the user in AWS CodeStar.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -20582,6 +20841,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -20647,6 +20907,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -20712,6 +20973,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.*/",
         "setterMethodName" : "setSshPublicKey",
         "setterModel" : {
@@ -20779,6 +21041,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -20845,6 +21108,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -20911,6 +21175,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.*/",
           "setterMethodName" : "setSshPublicKey",
           "setterModel" : {
@@ -20977,6 +21242,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>\n@param userArn The name that will be displayed as the friendly name for the user in AWS CodeStar.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -21079,6 +21345,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -21144,6 +21411,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -21209,6 +21477,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -21274,6 +21543,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.*/",
         "setterMethodName" : "setSshPublicKey",
         "setterModel" : {
@@ -21339,6 +21609,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the user profile was created, in timestamp format.</p>\n@param createdTimestamp The date the user profile was created, in timestamp format.*/",
         "setterMethodName" : "setCreatedTimestamp",
         "setterModel" : {
@@ -21404,6 +21675,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date the user profile was last modified, in timestamp format.*/",
         "setterMethodName" : "setLastModifiedTimestamp",
         "setterModel" : {
@@ -21471,6 +21743,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the user profile was created, in timestamp format.</p>\n@param createdTimestamp The date the user profile was created, in timestamp format.*/",
           "setterMethodName" : "setCreatedTimestamp",
           "setterModel" : {
@@ -21537,6 +21810,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -21603,6 +21877,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -21669,6 +21944,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date the user profile was last modified, in timestamp format.*/",
           "setterMethodName" : "setLastModifiedTimestamp",
           "setterModel" : {
@@ -21735,6 +22011,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.*/",
           "setterMethodName" : "setSshPublicKey",
           "setterModel" : {
@@ -21801,6 +22078,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -21980,6 +22258,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -22045,6 +22324,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").</p>\n@param displayName The display name of a user in AWS CodeStar. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -22110,6 +22390,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address associated with the user.</p>\n@param emailAddress The email address associated with the user.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -22175,6 +22456,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.*/",
         "setterMethodName" : "setSshPublicKey",
         "setterModel" : {
@@ -22242,6 +22524,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").</p>\n@param displayName The display name of a user in AWS CodeStar. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -22308,6 +22591,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address associated with the user.</p>\n@param emailAddress The email address associated with the user.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -22374,6 +22658,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.*/",
           "setterMethodName" : "setSshPublicKey",
           "setterModel" : {
@@ -22440,6 +22725,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {

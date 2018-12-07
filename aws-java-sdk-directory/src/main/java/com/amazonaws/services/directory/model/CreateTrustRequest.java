@@ -498,7 +498,8 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -513,7 +514,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getRemoteDomainName() != null)
             sb.append("RemoteDomainName: ").append(getRemoteDomainName()).append(",");
         if (getTrustPassword() != null)
-            sb.append("TrustPassword: ").append(getTrustPassword()).append(",");
+            sb.append("TrustPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getTrustDirection() != null)
             sb.append("TrustDirection: ").append(getTrustDirection()).append(",");
         if (getTrustType() != null)

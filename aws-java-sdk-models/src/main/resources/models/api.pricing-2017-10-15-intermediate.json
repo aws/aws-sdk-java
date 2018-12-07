@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -299,6 +299,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The specific value of an <code>attributeName</code>.</p>\n@param value The specific value of an <code>attributeName</code>.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -366,6 +367,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The specific value of an <code>attributeName</code>.</p>\n@param value The specific value of an <code>attributeName</code>.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -478,6 +480,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>\n@param serviceCode The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
@@ -543,6 +546,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FormatVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>*/",
         "setterMethodName" : "setFormatVersion",
         "setterModel" : {
@@ -608,6 +612,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -673,6 +678,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results that you want returned in the response.</p>\n@param maxResults The maximum number of results that you want returned in the response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -740,6 +746,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FormatVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>*/",
           "setterMethodName" : "setFormatVersion",
           "setterModel" : {
@@ -806,6 +813,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results that you want returned in the response.</p>\n@param maxResults The maximum number of results that you want returned in the response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -872,6 +880,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -938,6 +947,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>\n@param serviceCode The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
@@ -1077,6 +1087,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1120,6 +1131,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Services",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service metadata for the service or services in the response.</p>\n@param services The service metadata for the service or services in the response.*/",
         "setterMethodName" : "setServices",
         "setterModel" : {
@@ -1185,6 +1197,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FormatVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The format version of the response. For example, <code>aws_v1</code>.</p>\n@param formatVersion The format version of the response. For example, <code>aws_v1</code>.*/",
         "setterMethodName" : "setFormatVersion",
         "setterModel" : {
@@ -1250,6 +1263,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The pagination token for the next set of retreivable results.</p>\n@param nextToken The pagination token for the next set of retreivable results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -1317,6 +1331,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FormatVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The format version of the response. For example, <code>aws_v1</code>.</p>\n@param formatVersion The format version of the response. For example, <code>aws_v1</code>.*/",
           "setterMethodName" : "setFormatVersion",
           "setterModel" : {
@@ -1383,6 +1398,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The pagination token for the next set of retreivable results.</p>\n@param nextToken The pagination token for the next set of retreivable results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -1486,6 +1502,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1529,6 +1546,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Services",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service metadata for the service or services in the response.</p>\n@param services The service metadata for the service or services in the response.*/",
           "setterMethodName" : "setServices",
           "setterModel" : {
@@ -1671,6 +1689,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>\n@param type The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.\n@see FilterType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -1736,6 +1755,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Field",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>\n@param field The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.*/",
         "setterMethodName" : "setField",
         "setterModel" : {
@@ -1801,6 +1821,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>\n@param value The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -1868,6 +1889,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Field",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>\n@param field The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.*/",
           "setterMethodName" : "setField",
           "setterModel" : {
@@ -1934,6 +1956,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>\n@param type The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.\n@see FilterType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -2000,6 +2023,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>\n@param value The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -2155,6 +2179,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>\n@param serviceCode The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
@@ -2220,6 +2245,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttributeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>\n@param attributeName The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.*/",
         "setterMethodName" : "setAttributeName",
         "setterModel" : {
@@ -2285,6 +2311,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -2350,6 +2377,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in response.</p>\n@param maxResults The maximum number of results to return in response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -2417,6 +2445,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttributeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>\n@param attributeName The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.*/",
           "setterMethodName" : "setAttributeName",
           "setterModel" : {
@@ -2483,6 +2512,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in response.</p>\n@param maxResults The maximum number of results to return in response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -2549,6 +2579,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -2615,6 +2646,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>\n@param serviceCode The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
@@ -2754,6 +2786,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2797,6 +2830,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttributeValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>\n@param attributeValues The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.*/",
         "setterMethodName" : "setAttributeValues",
         "setterModel" : {
@@ -2862,6 +2896,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -2966,6 +3001,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3009,6 +3045,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttributeValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>\n@param attributeValues The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.*/",
           "setterMethodName" : "setAttributeValues",
           "setterModel" : {
@@ -3075,6 +3112,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -3187,6 +3225,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code for the service whose products you want to retrieve. </p>\n@param serviceCode The code for the service whose products you want to retrieve.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
@@ -3289,6 +3328,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3332,6 +3372,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of filters that limit the returned products. only products that match all filters are returned.</p>\n@param filters The list of filters that limit the returned products. only products that match all filters are returned.*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -3397,6 +3438,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FormatVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>*/",
         "setterMethodName" : "setFormatVersion",
         "setterModel" : {
@@ -3462,6 +3504,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -3527,6 +3570,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in the response.</p>\n@param maxResults The maximum number of results to return in the response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -3631,6 +3675,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3674,6 +3719,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of filters that limit the returned products. only products that match all filters are returned.</p>\n@param filters The list of filters that limit the returned products. only products that match all filters are returned.*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -3740,6 +3786,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FormatVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>*/",
           "setterMethodName" : "setFormatVersion",
           "setterModel" : {
@@ -3806,6 +3853,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in the response.</p>\n@param maxResults The maximum number of results to return in the response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -3872,6 +3920,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -3938,6 +3987,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code for the service whose products you want to retrieve. </p>\n@param serviceCode The code for the service whose products you want to retrieve.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
@@ -4040,6 +4090,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FormatVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The format version of the response. For example, aws_v1.</p>\n@param formatVersion The format version of the response. For example, aws_v1.*/",
         "setterMethodName" : "setFormatVersion",
         "setterModel" : {
@@ -4142,6 +4193,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "JSON_VALUE",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**<p>\nThis field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For example: '{\"key\": \"value\"}'.\n</p>\n<p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4185,6 +4237,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PriceList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>\n@param priceList The list of products that match your filters. The list contains both the product metadata and the price information.*/",
         "setterMethodName" : "setPriceList",
         "setterModel" : {
@@ -4250,6 +4303,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4317,6 +4371,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FormatVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The format version of the response. For example, aws_v1.</p>\n@param formatVersion The format version of the response. For example, aws_v1.*/",
           "setterMethodName" : "setFormatVersion",
           "setterModel" : {
@@ -4383,6 +4438,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4486,6 +4542,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "JSON_VALUE",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**<p>\nThis field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For example: '{\"key\": \"value\"}'.\n</p>\n<p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4529,6 +4586,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PriceList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>\n@param priceList The list of products that match your filters. The list contains both the product metadata and the price information.*/",
           "setterMethodName" : "setPriceList",
           "setterModel" : {
@@ -4782,6 +4840,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The code for the AWS service.</p>\n@param serviceCode The code for the AWS service.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
@@ -4884,6 +4943,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4927,6 +4987,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttributeNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attributes that are available for this service.</p>\n@param attributeNames The attributes that are available for this service.*/",
         "setterMethodName" : "setAttributeNames",
         "setterModel" : {
@@ -5031,6 +5092,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5074,6 +5136,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttributeNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attributes that are available for this service.</p>\n@param attributeNames The attributes that are available for this service.*/",
           "setterMethodName" : "setAttributeNames",
           "setterModel" : {
@@ -5140,6 +5203,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The code for the AWS service.</p>\n@param serviceCode The code for the AWS service.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {

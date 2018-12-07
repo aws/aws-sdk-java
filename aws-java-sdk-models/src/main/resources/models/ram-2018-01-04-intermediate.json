@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -1126,6 +1126,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareInvitationArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the invitation.</p>\n@param resourceShareInvitationArn The Amazon Resource Name (ARN) of the invitation.*/",
         "setterMethodName" : "setResourceShareInvitationArn",
         "setterModel" : {
@@ -1191,6 +1192,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -1258,6 +1260,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -1324,6 +1327,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareInvitationArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the invitation.</p>\n@param resourceShareInvitationArn The Amazon Resource Name (ARN) of the invitation.*/",
           "setterMethodName" : "setResourceShareInvitationArn",
           "setterModel" : {
@@ -1426,6 +1430,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceShareInvitation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the invitation.</p>\n@param resourceShareInvitation Information about the invitation.*/",
         "setterMethodName" : "setResourceShareInvitation",
         "setterModel" : {
@@ -1491,6 +1496,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -1558,6 +1564,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -1624,6 +1631,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceShareInvitation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the invitation.</p>\n@param resourceShareInvitation Information about the invitation.*/",
           "setterMethodName" : "setResourceShareInvitation",
           "setterModel" : {
@@ -1736,6 +1744,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -1838,6 +1847,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1881,6 +1891,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources.*/",
         "setterMethodName" : "setResourceArns",
         "setterModel" : {
@@ -1983,6 +1994,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2026,6 +2038,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Principals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The principals.</p>\n@param principals The principals.*/",
         "setterMethodName" : "setPrincipals",
         "setterModel" : {
@@ -2091,6 +2104,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -2158,6 +2172,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -2261,6 +2276,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2304,6 +2320,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Principals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The principals.</p>\n@param principals The principals.*/",
           "setterMethodName" : "setPrincipals",
           "setterModel" : {
@@ -2407,6 +2424,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2450,6 +2468,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources.*/",
           "setterMethodName" : "setResourceArns",
           "setterModel" : {
@@ -2516,6 +2535,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -2655,6 +2675,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2698,6 +2719,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareAssociations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the associations.</p>\n@param resourceShareAssociations Information about the associations.*/",
         "setterMethodName" : "setResourceShareAssociations",
         "setterModel" : {
@@ -2763,6 +2785,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -2830,6 +2853,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -2933,6 +2957,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2976,6 +3001,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareAssociations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the associations.</p>\n@param resourceShareAssociations Information about the associations.*/",
           "setterMethodName" : "setResourceShareAssociations",
           "setterModel" : {
@@ -3088,6 +3114,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param name The name of the resource share.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3190,6 +3217,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3233,6 +3261,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources to associate with the resource share.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources to associate with the resource share.*/",
         "setterMethodName" : "setResourceArns",
         "setterModel" : {
@@ -3335,6 +3364,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3378,6 +3408,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Principals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The principals to associate with the resource share. The possible values are IDs of AWS accounts, the ARN of an OU or organization from AWS Organizations.</p>\n@param principals The principals to associate with the resource share. The possible values are IDs of AWS accounts, the ARN of an OU or organization from AWS Organizations.*/",
         "setterMethodName" : "setPrincipals",
         "setterModel" : {
@@ -3480,6 +3511,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3523,6 +3555,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -3588,6 +3621,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AllowExternalPrincipals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether principals outside your organization can be associated with a resource share.</p>\n@param allowExternalPrincipals Indicates whether principals outside your organization can be associated with a resource share.*/",
         "setterMethodName" : "setAllowExternalPrincipals",
         "setterModel" : {
@@ -3653,6 +3687,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -3720,6 +3755,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AllowExternalPrincipals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether principals outside your organization can be associated with a resource share.</p>\n@param allowExternalPrincipals Indicates whether principals outside your organization can be associated with a resource share.*/",
           "setterMethodName" : "setAllowExternalPrincipals",
           "setterModel" : {
@@ -3786,6 +3822,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -3852,6 +3889,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param name The name of the resource share.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3955,6 +3993,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3998,6 +4037,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Principals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The principals to associate with the resource share. The possible values are IDs of AWS accounts, the ARN of an OU or organization from AWS Organizations.</p>\n@param principals The principals to associate with the resource share. The possible values are IDs of AWS accounts, the ARN of an OU or organization from AWS Organizations.*/",
           "setterMethodName" : "setPrincipals",
           "setterModel" : {
@@ -4101,6 +4141,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4144,6 +4185,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources to associate with the resource share.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources to associate with the resource share.*/",
           "setterMethodName" : "setResourceArns",
           "setterModel" : {
@@ -4247,6 +4289,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4290,6 +4333,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -4392,6 +4436,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceShare",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the resource share.</p>\n@param resourceShare Information about the resource share.*/",
         "setterMethodName" : "setResourceShare",
         "setterModel" : {
@@ -4457,6 +4502,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -4524,6 +4570,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -4590,6 +4637,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceShare",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the resource share.</p>\n@param resourceShare Information about the resource share.*/",
           "setterMethodName" : "setResourceShare",
           "setterModel" : {
@@ -4702,6 +4750,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -4767,6 +4816,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -4834,6 +4884,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -4900,6 +4951,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -5002,6 +5054,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether the request succeeded.</p>\n@param returnValue Indicates whether the request succeeded.*/",
         "setterMethodName" : "setReturnValue",
         "setterModel" : {
@@ -5067,6 +5120,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -5134,6 +5188,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -5200,6 +5255,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether the request succeeded.</p>\n@param returnValue Indicates whether the request succeeded.*/",
           "setterMethodName" : "setReturnValue",
           "setterModel" : {
@@ -5312,6 +5368,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -5414,6 +5471,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5457,6 +5515,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources.*/",
         "setterMethodName" : "setResourceArns",
         "setterModel" : {
@@ -5559,6 +5618,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5602,6 +5662,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Principals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The principals.</p>\n@param principals The principals.*/",
         "setterMethodName" : "setPrincipals",
         "setterModel" : {
@@ -5667,6 +5728,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -5734,6 +5796,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -5837,6 +5900,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5880,6 +5944,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Principals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The principals.</p>\n@param principals The principals.*/",
           "setterMethodName" : "setPrincipals",
           "setterModel" : {
@@ -5983,6 +6048,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6026,6 +6092,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources.*/",
           "setterMethodName" : "setResourceArns",
           "setterModel" : {
@@ -6092,6 +6159,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -6231,6 +6299,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6274,6 +6343,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareAssociations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the associations.</p>\n@param resourceShareAssociations Information about the associations.*/",
         "setterMethodName" : "setResourceShareAssociations",
         "setterModel" : {
@@ -6339,6 +6409,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -6406,6 +6477,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -6509,6 +6581,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6552,6 +6625,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareAssociations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the associations.</p>\n@param resourceShareAssociations Information about the associations.*/",
           "setterMethodName" : "setResourceShareAssociations",
           "setterModel" : {
@@ -6701,6 +6775,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ReturnValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether the request succeeded.</p>\n@param returnValue Indicates whether the request succeeded.*/",
         "setterMethodName" : "setReturnValue",
         "setterModel" : {
@@ -6768,6 +6843,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ReturnValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether the request succeeded.</p>\n@param returnValue Indicates whether the request succeeded.*/",
           "setterMethodName" : "setReturnValue",
           "setterModel" : {
@@ -6917,6 +6993,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6960,6 +7037,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources.*/",
         "setterMethodName" : "setResourceArns",
         "setterModel" : {
@@ -7025,6 +7103,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Principal",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.*/",
         "setterMethodName" : "setPrincipal",
         "setterModel" : {
@@ -7090,6 +7169,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7155,6 +7235,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -7222,6 +7303,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -7288,6 +7370,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7354,6 +7437,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Principal",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.*/",
           "setterMethodName" : "setPrincipal",
           "setterModel" : {
@@ -7457,6 +7541,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7500,6 +7585,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources.*/",
           "setterMethodName" : "setResourceArns",
           "setterModel" : {
@@ -7639,6 +7725,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7682,6 +7769,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Policies",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A key policy document, in JSON format.</p>\n@param policies A key policy document, in JSON format.*/",
         "setterMethodName" : "setPolicies",
         "setterModel" : {
@@ -7747,6 +7835,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7814,6 +7903,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7917,6 +8007,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7960,6 +8051,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Policies",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A key policy document, in JSON format.</p>\n@param policies A key policy document, in JSON format.*/",
           "setterMethodName" : "setPolicies",
           "setterModel" : {
@@ -8072,6 +8164,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AssociationType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The association type.</p>\n@param associationType The association type.\n@see ResourceShareAssociationType*/",
         "setterMethodName" : "setAssociationType",
         "setterModel" : {
@@ -8174,6 +8267,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8217,6 +8311,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
         "setterMethodName" : "setResourceShareArns",
         "setterModel" : {
@@ -8282,6 +8377,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
         "setterMethodName" : "setResourceArn",
         "setterModel" : {
@@ -8347,6 +8443,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Principal",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.*/",
         "setterMethodName" : "setPrincipal",
         "setterModel" : {
@@ -8412,6 +8509,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AssociationStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the association.</p>\n@param associationStatus The status of the association.\n@see ResourceShareAssociationStatus*/",
         "setterMethodName" : "setAssociationStatus",
         "setterModel" : {
@@ -8477,6 +8575,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8542,6 +8641,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -8609,6 +8709,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AssociationStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the association.</p>\n@param associationStatus The status of the association.\n@see ResourceShareAssociationStatus*/",
           "setterMethodName" : "setAssociationStatus",
           "setterModel" : {
@@ -8675,6 +8776,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AssociationType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The association type.</p>\n@param associationType The association type.\n@see ResourceShareAssociationType*/",
           "setterMethodName" : "setAssociationType",
           "setterModel" : {
@@ -8741,6 +8843,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -8807,6 +8910,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8873,6 +8977,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Principal",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.*/",
           "setterMethodName" : "setPrincipal",
           "setterModel" : {
@@ -8939,6 +9044,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
           "setterMethodName" : "setResourceArn",
           "setterModel" : {
@@ -9042,6 +9148,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9085,6 +9192,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
           "setterMethodName" : "setResourceShareArns",
           "setterModel" : {
@@ -9224,6 +9332,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9267,6 +9376,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareAssociations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the association.</p>\n@param resourceShareAssociations Information about the association.*/",
         "setterMethodName" : "setResourceShareAssociations",
         "setterModel" : {
@@ -9332,6 +9442,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9399,6 +9510,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9502,6 +9614,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9545,6 +9658,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareAssociations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the association.</p>\n@param resourceShareAssociations Information about the association.*/",
           "setterMethodName" : "setResourceShareAssociations",
           "setterModel" : {
@@ -9694,6 +9808,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9737,6 +9852,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareInvitationArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the invitations.</p>\n@param resourceShareInvitationArns The Amazon Resource Names (ARN) of the invitations.*/",
         "setterMethodName" : "setResourceShareInvitationArns",
         "setterModel" : {
@@ -9839,6 +9955,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9882,6 +9999,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
         "setterMethodName" : "setResourceShareArns",
         "setterModel" : {
@@ -9947,6 +10065,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10012,6 +10131,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10079,6 +10199,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10145,6 +10266,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10248,6 +10370,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10291,6 +10414,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
           "setterMethodName" : "setResourceShareArns",
           "setterModel" : {
@@ -10394,6 +10518,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10437,6 +10562,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareInvitationArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the invitations.</p>\n@param resourceShareInvitationArns The Amazon Resource Names (ARN) of the invitations.*/",
           "setterMethodName" : "setResourceShareInvitationArns",
           "setterModel" : {
@@ -10576,6 +10702,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10619,6 +10746,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareInvitations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the invitations.</p>\n@param resourceShareInvitations Information about the invitations.*/",
         "setterMethodName" : "setResourceShareInvitations",
         "setterModel" : {
@@ -10684,6 +10812,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10751,6 +10880,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10854,6 +10984,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10897,6 +11028,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareInvitations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the invitations.</p>\n@param resourceShareInvitations Information about the invitations.*/",
           "setterMethodName" : "setResourceShareInvitations",
           "setterModel" : {
@@ -11046,6 +11178,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11089,6 +11222,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
         "setterMethodName" : "setResourceShareArns",
         "setterModel" : {
@@ -11154,6 +11288,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the resource share.</p>\n@param resourceShareStatus The status of the resource share.\n@see ResourceShareStatus*/",
         "setterMethodName" : "setResourceShareStatus",
         "setterModel" : {
@@ -11219,6 +11354,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceOwner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of owner.</p>\n@param resourceOwner The type of owner.\n@see ResourceOwner*/",
         "setterMethodName" : "setResourceOwner",
         "setterModel" : {
@@ -11284,6 +11420,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param name The name of the resource share.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -11386,6 +11523,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11429,6 +11567,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagFilters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more tag filters.</p>\n@param tagFilters One or more tag filters.*/",
         "setterMethodName" : "setTagFilters",
         "setterModel" : {
@@ -11494,6 +11633,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11559,6 +11699,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11626,6 +11767,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11692,6 +11834,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param name The name of the resource share.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -11758,6 +11901,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11824,6 +11968,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceOwner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of owner.</p>\n@param resourceOwner The type of owner.\n@see ResourceOwner*/",
           "setterMethodName" : "setResourceOwner",
           "setterModel" : {
@@ -11927,6 +12072,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11970,6 +12116,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
           "setterMethodName" : "setResourceShareArns",
           "setterModel" : {
@@ -12036,6 +12183,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the resource share.</p>\n@param resourceShareStatus The status of the resource share.\n@see ResourceShareStatus*/",
           "setterMethodName" : "setResourceShareStatus",
           "setterModel" : {
@@ -12139,6 +12287,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12182,6 +12331,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagFilters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more tag filters.</p>\n@param tagFilters One or more tag filters.*/",
           "setterMethodName" : "setTagFilters",
           "setterModel" : {
@@ -12321,6 +12471,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12364,6 +12515,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShares",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the resource shares.</p>\n@param resourceShares Information about the resource shares.*/",
         "setterMethodName" : "setResourceShares",
         "setterModel" : {
@@ -12429,6 +12581,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12496,6 +12649,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12599,6 +12753,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12642,6 +12797,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShares",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the resource shares.</p>\n@param resourceShares Information about the resource shares.*/",
           "setterMethodName" : "setResourceShares",
           "setterModel" : {
@@ -13013,6 +13169,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceOwner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of owner.</p>\n@param resourceOwner The type of owner.\n@see ResourceOwner*/",
         "setterMethodName" : "setResourceOwner",
         "setterModel" : {
@@ -13078,6 +13235,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
         "setterMethodName" : "setResourceArn",
         "setterModel" : {
@@ -13180,6 +13338,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13223,6 +13382,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Principals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The principals.</p>\n@param principals The principals.*/",
         "setterMethodName" : "setPrincipals",
         "setterModel" : {
@@ -13288,6 +13448,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -13390,6 +13551,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13433,6 +13595,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
         "setterMethodName" : "setResourceShareArns",
         "setterModel" : {
@@ -13498,6 +13661,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13563,6 +13727,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -13630,6 +13795,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -13696,6 +13862,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13799,6 +13966,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13842,6 +14010,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Principals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The principals.</p>\n@param principals The principals.*/",
           "setterMethodName" : "setPrincipals",
           "setterModel" : {
@@ -13908,6 +14077,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
           "setterMethodName" : "setResourceArn",
           "setterModel" : {
@@ -13974,6 +14144,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceOwner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of owner.</p>\n@param resourceOwner The type of owner.\n@see ResourceOwner*/",
           "setterMethodName" : "setResourceOwner",
           "setterModel" : {
@@ -14077,6 +14248,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14120,6 +14292,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
           "setterMethodName" : "setResourceShareArns",
           "setterModel" : {
@@ -14186,6 +14359,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -14325,6 +14499,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14368,6 +14543,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Principals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The principals.</p>\n@param principals The principals.*/",
         "setterMethodName" : "setPrincipals",
         "setterModel" : {
@@ -14433,6 +14609,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -14500,6 +14677,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14603,6 +14781,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14646,6 +14825,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Principals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The principals.</p>\n@param principals The principals.*/",
           "setterMethodName" : "setPrincipals",
           "setterModel" : {
@@ -14758,6 +14938,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceOwner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of owner.</p>\n@param resourceOwner The type of owner.\n@see ResourceOwner*/",
         "setterMethodName" : "setResourceOwner",
         "setterModel" : {
@@ -14823,6 +15004,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Principal",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.*/",
         "setterMethodName" : "setPrincipal",
         "setterModel" : {
@@ -14888,6 +15070,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -14990,6 +15173,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15033,6 +15217,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources.*/",
         "setterMethodName" : "setResourceArns",
         "setterModel" : {
@@ -15135,6 +15320,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15178,6 +15364,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
         "setterMethodName" : "setResourceShareArns",
         "setterModel" : {
@@ -15243,6 +15430,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15308,6 +15496,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -15375,6 +15564,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n@param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -15441,6 +15631,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token for the next page of results.</p>\n@param nextToken The token for the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -15507,6 +15698,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Principal",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.*/",
           "setterMethodName" : "setPrincipal",
           "setterModel" : {
@@ -15610,6 +15802,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15653,6 +15846,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resources.</p>\n@param resourceArns The Amazon Resource Names (ARN) of the resources.*/",
           "setterMethodName" : "setResourceArns",
           "setterModel" : {
@@ -15719,6 +15913,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceOwner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of owner.</p>\n@param resourceOwner The type of owner.\n@see ResourceOwner*/",
           "setterMethodName" : "setResourceOwner",
           "setterModel" : {
@@ -15822,6 +16017,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15865,6 +16061,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Names (ARN) of the resource shares.</p>\n@param resourceShareArns The Amazon Resource Names (ARN) of the resource shares.*/",
           "setterMethodName" : "setResourceShareArns",
           "setterModel" : {
@@ -15931,6 +16128,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -16070,6 +16268,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16113,6 +16312,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Resources",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the resources.</p>\n@param resources Information about the resources.*/",
         "setterMethodName" : "setResources",
         "setterModel" : {
@@ -16178,6 +16378,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -16245,6 +16446,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16348,6 +16550,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16391,6 +16594,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Resources",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the resources.</p>\n@param resources Information about the resources.*/",
           "setterMethodName" : "setResources",
           "setterModel" : {
@@ -16607,6 +16811,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the principal.</p>\n@param id The ID of the principal.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -16672,6 +16877,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -16737,6 +16943,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the principal was associated with the resource share.</p>\n@param creationTime The time when the principal was associated with the resource share.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -16802,6 +17009,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the association was last updated.</p>\n@param lastUpdatedTime The time when the association was last updated.*/",
         "setterMethodName" : "setLastUpdatedTime",
         "setterModel" : {
@@ -16867,6 +17075,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "External",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.</p>\n@param external Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.*/",
         "setterMethodName" : "setExternal",
         "setterModel" : {
@@ -16934,6 +17143,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the principal was associated with the resource share.</p>\n@param creationTime The time when the principal was associated with the resource share.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -17000,6 +17210,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "External",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.</p>\n@param external Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.*/",
           "setterMethodName" : "setExternal",
           "setterModel" : {
@@ -17066,6 +17277,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the principal.</p>\n@param id The ID of the principal.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -17132,6 +17344,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the association was last updated.</p>\n@param lastUpdatedTime The time when the association was last updated.*/",
           "setterMethodName" : "setLastUpdatedTime",
           "setterModel" : {
@@ -17198,6 +17411,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -17310,6 +17524,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareInvitationArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the invitation.</p>\n@param resourceShareInvitationArn The Amazon Resource Name (ARN) of the invitation.*/",
         "setterMethodName" : "setResourceShareInvitationArn",
         "setterModel" : {
@@ -17375,6 +17590,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -17442,6 +17658,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -17508,6 +17725,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareInvitationArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the invitation.</p>\n@param resourceShareInvitationArn The Amazon Resource Name (ARN) of the invitation.*/",
           "setterMethodName" : "setResourceShareInvitationArn",
           "setterModel" : {
@@ -17610,6 +17828,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceShareInvitation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the invitation.</p>\n@param resourceShareInvitation Information about the invitation.*/",
         "setterMethodName" : "setResourceShareInvitation",
         "setterModel" : {
@@ -17675,6 +17894,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -17742,6 +17962,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -17808,6 +18029,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceShareInvitation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the invitation.</p>\n@param resourceShareInvitation Information about the invitation.*/",
           "setterMethodName" : "setResourceShareInvitation",
           "setterModel" : {
@@ -17913,6 +18135,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param arn The Amazon Resource Name (ARN) of the resource.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -17978,6 +18201,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource type.</p>\n@param type The resource type.*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -18043,6 +18267,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -18108,6 +18333,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the resource.</p>\n@param status The status of the resource.\n@see ResourceStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -18173,6 +18399,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A message about the status of the resource.</p>\n@param statusMessage A message about the status of the resource.*/",
         "setterMethodName" : "setStatusMessage",
         "setterModel" : {
@@ -18238,6 +18465,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the resource was associated with the resource share.</p>\n@param creationTime The time when the resource was associated with the resource share.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -18303,6 +18531,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the association was last updated.</p>\n@param lastUpdatedTime The time when the association was last updated.*/",
         "setterMethodName" : "setLastUpdatedTime",
         "setterModel" : {
@@ -18370,6 +18599,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param arn The Amazon Resource Name (ARN) of the resource.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -18436,6 +18666,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the resource was associated with the resource share.</p>\n@param creationTime The time when the resource was associated with the resource share.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -18502,6 +18733,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the association was last updated.</p>\n@param lastUpdatedTime The time when the association was last updated.*/",
           "setterMethodName" : "setLastUpdatedTime",
           "setterModel" : {
@@ -18568,6 +18800,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -18634,6 +18867,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the resource.</p>\n@param status The status of the resource.\n@see ResourceStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -18700,6 +18934,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A message about the status of the resource.</p>\n@param statusMessage A message about the status of the resource.*/",
           "setterMethodName" : "setStatusMessage",
           "setterModel" : {
@@ -18766,6 +19001,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource type.</p>\n@param type The resource type.*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -18954,6 +19190,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -19019,6 +19256,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param name The name of the resource share.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -19084,6 +19322,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OwningAccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS account that owns the resource share.</p>\n@param owningAccountId The ID of the AWS account that owns the resource share.*/",
         "setterMethodName" : "setOwningAccountId",
         "setterModel" : {
@@ -19149,6 +19388,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AllowExternalPrincipals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether principals outside your organization can be associated with a resource share.</p>\n@param allowExternalPrincipals Indicates whether principals outside your organization can be associated with a resource share.*/",
         "setterMethodName" : "setAllowExternalPrincipals",
         "setterModel" : {
@@ -19214,6 +19454,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the resource share.</p>\n@param status The status of the resource share.\n@see ResourceShareStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -19279,6 +19520,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A message about the status of the resource share.</p>\n@param statusMessage A message about the status of the resource share.*/",
         "setterMethodName" : "setStatusMessage",
         "setterModel" : {
@@ -19381,6 +19623,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -19424,6 +19667,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags for the resource share.</p>\n@param tags The tags for the resource share.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -19489,6 +19733,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the resource share was created.</p>\n@param creationTime The time when the resource share was created.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -19554,6 +19799,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the resource share was last updated.</p>\n@param lastUpdatedTime The time when the resource share was last updated.*/",
         "setterMethodName" : "setLastUpdatedTime",
         "setterModel" : {
@@ -19621,6 +19867,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AllowExternalPrincipals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether principals outside your organization can be associated with a resource share.</p>\n@param allowExternalPrincipals Indicates whether principals outside your organization can be associated with a resource share.*/",
           "setterMethodName" : "setAllowExternalPrincipals",
           "setterModel" : {
@@ -19687,6 +19934,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the resource share was created.</p>\n@param creationTime The time when the resource share was created.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -19753,6 +20001,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the resource share was last updated.</p>\n@param lastUpdatedTime The time when the resource share was last updated.*/",
           "setterMethodName" : "setLastUpdatedTime",
           "setterModel" : {
@@ -19819,6 +20068,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param name The name of the resource share.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -19885,6 +20135,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OwningAccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS account that owns the resource share.</p>\n@param owningAccountId The ID of the AWS account that owns the resource share.*/",
           "setterMethodName" : "setOwningAccountId",
           "setterModel" : {
@@ -19951,6 +20202,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -20017,6 +20269,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the resource share.</p>\n@param status The status of the resource share.\n@see ResourceShareStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -20083,6 +20336,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A message about the status of the resource share.</p>\n@param statusMessage A message about the status of the resource share.*/",
           "setterMethodName" : "setStatusMessage",
           "setterModel" : {
@@ -20186,6 +20440,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20229,6 +20484,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags for the resource share.</p>\n@param tags The tags for the resource share.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -20334,6 +20590,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -20399,6 +20656,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AssociatedEntity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The associated entity. For resource associations, this is the ARN of the resource. For principal associations, this is the ID of an AWS account or the ARN of an OU or organization from AWS Organizations.</p>\n@param associatedEntity The associated entity. For resource associations, this is the ARN of the resource. For principal associations, this is the ID of an AWS account or the ARN of an OU or organization from AWS Organizations.*/",
         "setterMethodName" : "setAssociatedEntity",
         "setterModel" : {
@@ -20464,6 +20722,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AssociationType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The association type.</p>\n@param associationType The association type.\n@see ResourceShareAssociationType*/",
         "setterMethodName" : "setAssociationType",
         "setterModel" : {
@@ -20529,6 +20788,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the association.</p>\n@param status The status of the association.\n@see ResourceShareAssociationStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -20594,6 +20854,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A message about the status of the association.</p>\n@param statusMessage A message about the status of the association.*/",
         "setterMethodName" : "setStatusMessage",
         "setterModel" : {
@@ -20659,6 +20920,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the association was created.</p>\n@param creationTime The time when the association was created.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -20724,6 +20986,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time when the association was last updated.</p>\n@param lastUpdatedTime The time when the association was last updated.*/",
         "setterMethodName" : "setLastUpdatedTime",
         "setterModel" : {
@@ -20789,6 +21052,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "External",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.</p>\n@param external Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.*/",
         "setterMethodName" : "setExternal",
         "setterModel" : {
@@ -20856,6 +21120,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AssociatedEntity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The associated entity. For resource associations, this is the ARN of the resource. For principal associations, this is the ID of an AWS account or the ARN of an OU or organization from AWS Organizations.</p>\n@param associatedEntity The associated entity. For resource associations, this is the ARN of the resource. For principal associations, this is the ID of an AWS account or the ARN of an OU or organization from AWS Organizations.*/",
           "setterMethodName" : "setAssociatedEntity",
           "setterModel" : {
@@ -20922,6 +21187,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AssociationType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The association type.</p>\n@param associationType The association type.\n@see ResourceShareAssociationType*/",
           "setterMethodName" : "setAssociationType",
           "setterModel" : {
@@ -20988,6 +21254,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the association was created.</p>\n@param creationTime The time when the association was created.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -21054,6 +21321,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "External",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.</p>\n@param external Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.*/",
           "setterMethodName" : "setExternal",
           "setterModel" : {
@@ -21120,6 +21388,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time when the association was last updated.</p>\n@param lastUpdatedTime The time when the association was last updated.*/",
           "setterMethodName" : "setLastUpdatedTime",
           "setterModel" : {
@@ -21186,6 +21455,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -21252,6 +21522,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the association.</p>\n@param status The status of the association.\n@see ResourceShareAssociationStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -21318,6 +21589,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A message about the status of the association.</p>\n@param statusMessage A message about the status of the association.*/",
           "setterMethodName" : "setStatusMessage",
           "setterModel" : {
@@ -21524,6 +21796,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareInvitationArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the invitation.</p>\n@param resourceShareInvitationArn The Amazon Resource Name (ARN) of the invitation.*/",
         "setterMethodName" : "setResourceShareInvitationArn",
         "setterModel" : {
@@ -21589,6 +21862,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param resourceShareName The name of the resource share.*/",
         "setterMethodName" : "setResourceShareName",
         "setterModel" : {
@@ -21654,6 +21928,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -21719,6 +21994,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SenderAccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS account that sent the invitation.</p>\n@param senderAccountId The ID of the AWS account that sent the invitation.*/",
         "setterMethodName" : "setSenderAccountId",
         "setterModel" : {
@@ -21784,6 +22060,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ReceiverAccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS account that received the invitation.</p>\n@param receiverAccountId The ID of the AWS account that received the invitation.*/",
         "setterMethodName" : "setReceiverAccountId",
         "setterModel" : {
@@ -21849,6 +22126,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "InvitationTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when the invitation was sent.</p>\n@param invitationTimestamp The date and time when the invitation was sent.*/",
         "setterMethodName" : "setInvitationTimestamp",
         "setterModel" : {
@@ -21914,6 +22192,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the invitation.</p>\n@param status The status of the invitation.\n@see ResourceShareInvitationStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -22016,6 +22295,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -22059,6 +22339,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceShareAssociations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resources associated with the resource share.</p>\n@param resourceShareAssociations The resources associated with the resource share.*/",
         "setterMethodName" : "setResourceShareAssociations",
         "setterModel" : {
@@ -22126,6 +22407,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "InvitationTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when the invitation was sent.</p>\n@param invitationTimestamp The date and time when the invitation was sent.*/",
           "setterMethodName" : "setInvitationTimestamp",
           "setterModel" : {
@@ -22192,6 +22474,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ReceiverAccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS account that received the invitation.</p>\n@param receiverAccountId The ID of the AWS account that received the invitation.*/",
           "setterMethodName" : "setReceiverAccountId",
           "setterModel" : {
@@ -22258,6 +22541,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -22361,6 +22645,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22404,6 +22689,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceShareAssociations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resources associated with the resource share.</p>\n@param resourceShareAssociations The resources associated with the resource share.*/",
           "setterMethodName" : "setResourceShareAssociations",
           "setterModel" : {
@@ -22470,6 +22756,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareInvitationArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the invitation.</p>\n@param resourceShareInvitationArn The Amazon Resource Name (ARN) of the invitation.*/",
           "setterMethodName" : "setResourceShareInvitationArn",
           "setterModel" : {
@@ -22536,6 +22823,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param resourceShareName The name of the resource share.*/",
           "setterMethodName" : "setResourceShareName",
           "setterModel" : {
@@ -22602,6 +22890,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SenderAccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS account that sent the invitation.</p>\n@param senderAccountId The ID of the AWS account that sent the invitation.*/",
           "setterMethodName" : "setSenderAccountId",
           "setterModel" : {
@@ -22668,6 +22957,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the invitation.</p>\n@param status The status of the invitation.\n@see ResourceShareInvitationStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -23191,6 +23481,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -23256,6 +23547,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -23323,6 +23615,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -23389,6 +23682,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -23494,6 +23788,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TagKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tag key.</p>\n@param tagKey The tag key.*/",
         "setterMethodName" : "setTagKey",
         "setterModel" : {
@@ -23596,6 +23891,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -23639,6 +23935,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tag values.</p>\n@param tagValues The tag values.*/",
         "setterMethodName" : "setTagValues",
         "setterModel" : {
@@ -23706,6 +24003,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TagKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tag key.</p>\n@param tagKey The tag key.*/",
           "setterMethodName" : "setTagKey",
           "setterModel" : {
@@ -23809,6 +24107,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -23852,6 +24151,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tag values.</p>\n@param tagValues The tag values.*/",
           "setterMethodName" : "setTagValues",
           "setterModel" : {
@@ -24001,6 +24301,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -24103,6 +24404,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -24146,6 +24448,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -24213,6 +24516,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -24316,6 +24620,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -24359,6 +24664,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more tags.</p>\n@param tags One or more tags.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -24545,6 +24851,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -24647,6 +24954,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -24690,6 +24998,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagKeys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tag keys of the tags to remove.</p>\n@param tagKeys The tag keys of the tags to remove.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
@@ -24757,6 +25066,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -24860,6 +25170,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -24903,6 +25214,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagKeys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tag keys of the tags to remove.</p>\n@param tagKeys The tag keys of the tags to remove.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
@@ -25052,6 +25364,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceShareArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
         "setterMethodName" : "setResourceShareArn",
         "setterModel" : {
@@ -25117,6 +25430,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param name The name of the resource share.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -25182,6 +25496,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AllowExternalPrincipals",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether principals outside your organization can be associated with a resource share.</p>\n@param allowExternalPrincipals Indicates whether principals outside your organization can be associated with a resource share.*/",
         "setterMethodName" : "setAllowExternalPrincipals",
         "setterModel" : {
@@ -25247,6 +25562,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -25314,6 +25630,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AllowExternalPrincipals",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether principals outside your organization can be associated with a resource share.</p>\n@param allowExternalPrincipals Indicates whether principals outside your organization can be associated with a resource share.*/",
           "setterMethodName" : "setAllowExternalPrincipals",
           "setterModel" : {
@@ -25380,6 +25697,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -25446,6 +25764,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource share.</p>\n@param name The name of the resource share.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -25512,6 +25831,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceShareArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource share.</p>\n@param resourceShareArn The Amazon Resource Name (ARN) of the resource share.*/",
           "setterMethodName" : "setResourceShareArn",
           "setterModel" : {
@@ -25614,6 +25934,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceShare",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the resource share.</p>\n@param resourceShare Information about the resource share.*/",
         "setterMethodName" : "setResourceShare",
         "setterModel" : {
@@ -25679,6 +26000,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -25746,6 +26068,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>\n@param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -25812,6 +26135,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceShare",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the resource share.</p>\n@param resourceShare Information about the resource share.*/",
           "setterMethodName" : "setResourceShare",
           "setterModel" : {

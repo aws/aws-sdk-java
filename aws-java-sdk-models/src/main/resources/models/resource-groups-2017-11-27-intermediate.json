@@ -855,6 +855,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.</p>\n@param name The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -920,6 +921,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.</p>\n@param description The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -985,6 +987,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceQuery",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource query that determines which AWS resources are members of this group.</p>\n@param resourceQuery The resource query that determines which AWS resources are members of this group.*/",
         "setterMethodName" : "setResourceQuery",
         "setterModel" : {
@@ -1093,6 +1096,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1130,6 +1134,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>\n@param tags The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -1197,6 +1202,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.</p>\n@param description The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -1263,6 +1269,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.</p>\n@param name The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1329,6 +1336,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceQuery",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource query that determines which AWS resources are members of this group.</p>\n@param resourceQuery The resource query that determines which AWS resources are members of this group.*/",
           "setterMethodName" : "setResourceQuery",
           "setterModel" : {
@@ -1438,6 +1446,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -1475,6 +1484,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>\n@param tags The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -1577,6 +1587,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Group",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A full description of the resource group after it is created.</p>\n@param group A full description of the resource group after it is created.*/",
         "setterMethodName" : "setGroup",
         "setterModel" : {
@@ -1642,6 +1653,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceQuery",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource query associated with the group.</p>\n@param resourceQuery The resource query associated with the group.*/",
         "setterMethodName" : "setResourceQuery",
         "setterModel" : {
@@ -1750,6 +1762,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1787,6 +1800,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags associated with the group.</p>\n@param tags The tags associated with the group.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -1854,6 +1868,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Group",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A full description of the resource group after it is created.</p>\n@param group A full description of the resource group after it is created.*/",
           "setterMethodName" : "setGroup",
           "setterModel" : {
@@ -1920,6 +1935,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceQuery",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource query associated with the group.</p>\n@param resourceQuery The resource query associated with the group.*/",
           "setterMethodName" : "setResourceQuery",
           "setterModel" : {
@@ -2029,6 +2045,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -2066,6 +2083,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags associated with the group.</p>\n@param tags The tags associated with the group.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -2178,6 +2196,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource group to delete.</p>\n@param groupName The name of the resource group to delete.*/",
         "setterMethodName" : "setGroupName",
         "setterModel" : {
@@ -2245,6 +2264,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource group to delete.</p>\n@param groupName The name of the resource group to delete.*/",
           "setterMethodName" : "setGroupName",
           "setterModel" : {
@@ -2347,6 +2367,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Group",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A full description of the deleted resource group.</p>\n@param group A full description of the deleted resource group.*/",
         "setterMethodName" : "setGroup",
         "setterModel" : {
@@ -2414,6 +2435,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Group",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A full description of the deleted resource group.</p>\n@param group A full description of the deleted resource group.*/",
           "setterMethodName" : "setGroup",
           "setterModel" : {
@@ -2563,6 +2585,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource group.</p>\n@param groupName The name of the resource group.*/",
         "setterMethodName" : "setGroupName",
         "setterModel" : {
@@ -2630,6 +2653,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource group.</p>\n@param groupName The name of the resource group.*/",
           "setterMethodName" : "setGroupName",
           "setterModel" : {
@@ -2732,6 +2756,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "GroupQuery",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource query associated with the specified group.</p>\n@param groupQuery The resource query associated with the specified group.*/",
         "setterMethodName" : "setGroupQuery",
         "setterModel" : {
@@ -2799,6 +2824,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "GroupQuery",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource query associated with the specified group.</p>\n@param groupQuery The resource query associated with the specified group.*/",
           "setterMethodName" : "setGroupQuery",
           "setterModel" : {
@@ -2911,6 +2937,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource group.</p>\n@param groupName The name of the resource group.*/",
         "setterMethodName" : "setGroupName",
         "setterModel" : {
@@ -2978,6 +3005,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource group.</p>\n@param groupName The name of the resource group.*/",
           "setterMethodName" : "setGroupName",
           "setterModel" : {
@@ -3080,6 +3108,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Group",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A full description of the resource group.</p>\n@param group A full description of the resource group.*/",
         "setterMethodName" : "setGroup",
         "setterModel" : {
@@ -3147,6 +3176,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Group",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A full description of the resource group.</p>\n@param group A full description of the resource group.*/",
           "setterMethodName" : "setGroup",
           "setterModel" : {
@@ -3259,6 +3289,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.</p>\n@param arn The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -3326,6 +3357,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.</p>\n@param arn The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -3428,6 +3460,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the tagged resource.</p>\n@param arn The ARN of the tagged resource.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -3536,6 +3569,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -3573,6 +3607,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags associated with the specified resource.</p>\n@param tags The tags associated with the specified resource.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -3640,6 +3675,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the tagged resource.</p>\n@param arn The ARN of the tagged resource.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -3749,6 +3785,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -3786,6 +3823,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags associated with the specified resource.</p>\n@param tags The tags associated with the specified resource.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -3891,6 +3929,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of a resource group.</p>\n@param groupArn The ARN of a resource group.*/",
         "setterMethodName" : "setGroupArn",
         "setterModel" : {
@@ -3956,6 +3995,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of a resource group.</p>\n@param name The name of a resource group.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -4021,6 +4061,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the resource group.</p>\n@param description The description of the resource group.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -4088,6 +4129,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the resource group.</p>\n@param description The description of the resource group.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -4154,6 +4196,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of a resource group.</p>\n@param groupArn The ARN of a resource group.*/",
           "setterMethodName" : "setGroupArn",
           "setterModel" : {
@@ -4220,6 +4263,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of a resource group.</p>\n@param name The name of a resource group.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -4325,6 +4369,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the filter. Filter names are case-sensitive.</p>\n@param name The name of the filter. Filter names are case-sensitive.\n@see GroupFilterName*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -4427,6 +4472,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4470,6 +4516,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>\n@param values One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -4537,6 +4584,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the filter. Filter names are case-sensitive.</p>\n@param name The name of the filter. Filter names are case-sensitive.\n@see GroupFilterName*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -4640,6 +4688,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4683,6 +4732,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>\n@param values One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -4831,6 +4881,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of a resource group.</p>\n@param groupName The name of a resource group.*/",
         "setterMethodName" : "setGroupName",
         "setterModel" : {
@@ -4896,6 +4947,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of a resource group.</p>\n@param groupArn The ARN of a resource group.*/",
         "setterMethodName" : "setGroupArn",
         "setterModel" : {
@@ -4963,6 +5015,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of a resource group.</p>\n@param groupArn The ARN of a resource group.*/",
           "setterMethodName" : "setGroupArn",
           "setterModel" : {
@@ -5029,6 +5082,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of a resource group.</p>\n@param groupName The name of a resource group.*/",
           "setterMethodName" : "setGroupName",
           "setterModel" : {
@@ -5134,6 +5188,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of a resource group that is associated with a specific resource query.</p>\n@param groupName The name of a resource group that is associated with a specific resource query.*/",
         "setterMethodName" : "setGroupName",
         "setterModel" : {
@@ -5199,6 +5254,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceQuery",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource query which determines which AWS resources are members of the associated resource group.</p>\n@param resourceQuery The resource query which determines which AWS resources are members of the associated resource group.*/",
         "setterMethodName" : "setResourceQuery",
         "setterModel" : {
@@ -5266,6 +5322,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of a resource group that is associated with a specific resource query.</p>\n@param groupName The name of a resource group that is associated with a specific resource query.*/",
           "setterMethodName" : "setGroupName",
           "setterModel" : {
@@ -5332,6 +5389,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceQuery",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource query which determines which AWS resources are members of the associated resource group.</p>\n@param resourceQuery The resource query which determines which AWS resources are members of the associated resource group.*/",
           "setterMethodName" : "setResourceQuery",
           "setterModel" : {
@@ -5481,6 +5539,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource group.</p>\n@param groupName The name of the resource group.*/",
         "setterMethodName" : "setGroupName",
         "setterModel" : {
@@ -5583,6 +5642,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5626,6 +5686,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li> </ul>\n@param filters Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li>*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -5691,6 +5752,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated output. By default, this number is 50.</p>\n@param maxResults The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated output. By default, this number is 50.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -5756,6 +5818,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The NextToken value that is returned in a paginated ListGroupResources request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n@param nextToken The NextToken value that is returned in a paginated ListGroupResources request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5860,6 +5923,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5903,6 +5967,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li> </ul>\n@param filters Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li>*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -5969,6 +6034,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource group.</p>\n@param groupName The name of the resource group.*/",
           "setterMethodName" : "setGroupName",
           "setterModel" : {
@@ -6035,6 +6101,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated output. By default, this number is 50.</p>\n@param maxResults The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated output. By default, this number is 50.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -6101,6 +6168,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The NextToken value that is returned in a paginated ListGroupResources request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n@param nextToken The NextToken value that is returned in a paginated ListGroupResources request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6240,6 +6308,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6283,6 +6352,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceIdentifiers",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARNs and resource types of resources that are members of the group that you specified.</p>\n@param resourceIdentifiers The ARNs and resource types of resources that are members of the group that you specified.*/",
         "setterMethodName" : "setResourceIdentifiers",
         "setterModel" : {
@@ -6348,6 +6418,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.</p>\n@param nextToken The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6450,6 +6521,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6493,6 +6565,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "QueryErrors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n@param queryErrors A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.*/",
         "setterMethodName" : "setQueryErrors",
         "setterModel" : {
@@ -6560,6 +6633,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.</p>\n@param nextToken The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6663,6 +6737,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6706,6 +6781,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "QueryErrors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n@param queryErrors A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.*/",
           "setterMethodName" : "setQueryErrors",
           "setterModel" : {
@@ -6809,6 +6885,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6852,6 +6929,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceIdentifiers",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARNs and resource types of resources that are members of the group that you specified.</p>\n@param resourceIdentifiers The ARNs and resource types of resources that are members of the group that you specified.*/",
           "setterMethodName" : "setResourceIdentifiers",
           "setterModel" : {
@@ -7001,6 +7079,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7044,6 +7123,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li> </ul>\n@param filters Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li>*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -7109,6 +7189,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of resource group results that are returned by ListGroups in paginated output. By default, this number is 50.</p>\n@param maxResults The maximum number of resource group results that are returned by ListGroups in paginated output. By default, this number is 50.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -7174,6 +7255,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n@param nextToken The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7278,6 +7360,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7321,6 +7404,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li> </ul>\n@param filters Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li>*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -7387,6 +7471,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of resource group results that are returned by ListGroups in paginated output. By default, this number is 50.</p>\n@param maxResults The maximum number of resource group results that are returned by ListGroups in paginated output. By default, this number is 50.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -7453,6 +7538,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n@param nextToken The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7592,6 +7678,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7635,6 +7722,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "GroupIdentifiers",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the GroupArn.</p>\n@param groupIdentifiers A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the GroupArn.*/",
         "setterMethodName" : "setGroupIdentifiers",
         "setterModel" : {
@@ -7737,6 +7825,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7780,6 +7869,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Groups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of resource groups.</p>\n@param groups A list of resource groups.*/",
         "setterMethodName" : "setGroups",
         "setterModel" : {
@@ -7845,6 +7935,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.</p>\n@param nextToken The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7949,6 +8040,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7992,6 +8084,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "GroupIdentifiers",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the GroupArn.</p>\n@param groupIdentifiers A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the GroupArn.*/",
           "setterMethodName" : "setGroupIdentifiers",
           "setterModel" : {
@@ -8095,6 +8188,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8138,6 +8232,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Groups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of resource groups.</p>\n@param groups A list of resource groups.*/",
           "setterMethodName" : "setGroups",
           "setterModel" : {
@@ -8204,6 +8299,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.</p>\n@param nextToken The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8383,6 +8479,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n@param errorCode Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.\n@see QueryErrorCode*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
@@ -8448,6 +8545,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Message",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>\n@param message A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.*/",
         "setterMethodName" : "setMessage",
         "setterModel" : {
@@ -8515,6 +8613,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n@param errorCode Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.\n@see QueryErrorCode*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
@@ -8581,6 +8680,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Message",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>\n@param message A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.*/",
           "setterMethodName" : "setMessage",
           "setterModel" : {
@@ -8778,6 +8878,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the filter. Filter names are case-sensitive.</p>\n@param name The name of the filter. Filter names are case-sensitive.\n@see ResourceFilterName*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -8880,6 +8981,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8923,6 +9025,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Values",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>\n@param values One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
@@ -8990,6 +9093,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the filter. Filter names are case-sensitive.</p>\n@param name The name of the filter. Filter names are case-sensitive.\n@see ResourceFilterName*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -9093,6 +9197,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9136,6 +9241,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Values",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>\n@param values One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
@@ -9284,6 +9390,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of a resource.</p>\n@param resourceArn The ARN of a resource.*/",
         "setterMethodName" : "setResourceArn",
         "setterModel" : {
@@ -9349,6 +9456,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>\n@param resourceType The resource type of a resource, such as <code>AWS::EC2::Instance</code>.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -9416,6 +9524,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of a resource.</p>\n@param resourceArn The ARN of a resource.*/",
           "setterMethodName" : "setResourceArn",
           "setterModel" : {
@@ -9482,6 +9591,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>\n@param resourceType The resource type of a resource, such as <code>AWS::EC2::Instance</code>.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -9587,6 +9697,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p> <ul> <li> <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code> </p> </li> <li> <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p> </li> </ul> <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p> </li> <li> <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code> </p> </li> </ul> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.</p>\n@param type The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p> <ul> <li> <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code> </p> </li> <li> <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p> </li> </ul> <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p> </li> <li> <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code> </p> </li> </ul> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.\n@see QueryType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -9652,6 +9763,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Query",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The query that defines a group or a search.</p>\n@param query The query that defines a group or a search.*/",
         "setterMethodName" : "setQuery",
         "setterModel" : {
@@ -9719,6 +9831,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Query",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The query that defines a group or a search.</p>\n@param query The query that defines a group or a search.*/",
           "setterMethodName" : "setQuery",
           "setterModel" : {
@@ -9785,6 +9898,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p> <ul> <li> <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code> </p> </li> <li> <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p> </li> </ul> <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p> </li> <li> <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code> </p> </li> </ul> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.</p>\n@param type The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p> <ul> <li> <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code> </p> </li> <li> <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p> </li> </ul> <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p> </li> <li> <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code> </p> </li> </ul> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.\n@see QueryType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -9897,6 +10011,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceQuery",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The search query, using the same formats that are supported for resource group definition.</p>\n@param resourceQuery The search query, using the same formats that are supported for resource group definition.*/",
         "setterMethodName" : "setResourceQuery",
         "setterModel" : {
@@ -9962,6 +10077,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default, this number is 50.</p>\n@param maxResults The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default, this number is 50.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10027,6 +10143,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n@param nextToken The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10094,6 +10211,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default, this number is 50.</p>\n@param maxResults The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default, this number is 50.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10160,6 +10278,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n@param nextToken The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10226,6 +10345,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceQuery",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The search query, using the same formats that are supported for resource group definition.</p>\n@param resourceQuery The search query, using the same formats that are supported for resource group definition.*/",
           "setterMethodName" : "setResourceQuery",
           "setterModel" : {
@@ -10365,6 +10485,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10408,6 +10529,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceIdentifiers",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARNs and resource types of resources that are members of the group that you specified.</p>\n@param resourceIdentifiers The ARNs and resource types of resources that are members of the group that you specified.*/",
         "setterMethodName" : "setResourceIdentifiers",
         "setterModel" : {
@@ -10473,6 +10595,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The NextToken value to include in a subsequent <code>SearchResources</code> request, to get more results.</p>\n@param nextToken The NextToken value to include in a subsequent <code>SearchResources</code> request, to get more results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10575,6 +10698,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10618,6 +10742,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "QueryErrors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n@param queryErrors A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.*/",
         "setterMethodName" : "setQueryErrors",
         "setterModel" : {
@@ -10685,6 +10810,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The NextToken value to include in a subsequent <code>SearchResources</code> request, to get more results.</p>\n@param nextToken The NextToken value to include in a subsequent <code>SearchResources</code> request, to get more results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10788,6 +10914,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10831,6 +10958,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "QueryErrors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n@param queryErrors A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.*/",
           "setterMethodName" : "setQueryErrors",
           "setterModel" : {
@@ -10934,6 +11062,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10977,6 +11106,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceIdentifiers",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARNs and resource types of resources that are members of the group that you specified.</p>\n@param resourceIdentifiers The ARNs and resource types of resources that are members of the group that you specified.*/",
           "setterMethodName" : "setResourceIdentifiers",
           "setterModel" : {
@@ -11089,6 +11219,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the resource to which to add tags.</p>\n@param arn The ARN of the resource to which to add tags.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -11197,6 +11328,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -11234,6 +11366,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>\n@param tags The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -11301,6 +11434,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the resource to which to add tags.</p>\n@param arn The ARN of the resource to which to add tags.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -11410,6 +11544,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11447,6 +11582,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>\n@param tags The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -11549,6 +11685,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the tagged resource.</p>\n@param arn The ARN of the tagged resource.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -11657,6 +11794,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -11694,6 +11832,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags that have been added to the specified resource.</p>\n@param tags The tags that have been added to the specified resource.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -11761,6 +11900,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the tagged resource.</p>\n@param arn The ARN of the tagged resource.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -11870,6 +12010,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11907,6 +12048,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags that have been added to the specified resource.</p>\n@param tags The tags that have been added to the specified resource.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -12093,6 +12235,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the resource from which to remove tags.</p>\n@param arn The ARN of the resource from which to remove tags.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -12195,6 +12338,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12238,6 +12382,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Keys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The keys of the tags to be removed.</p>\n@param keys The keys of the tags to be removed.*/",
         "setterMethodName" : "setKeys",
         "setterModel" : {
@@ -12305,6 +12450,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the resource from which to remove tags.</p>\n@param arn The ARN of the resource from which to remove tags.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -12408,6 +12554,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12451,6 +12598,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Keys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The keys of the tags to be removed.</p>\n@param keys The keys of the tags to be removed.*/",
           "setterMethodName" : "setKeys",
           "setterModel" : {
@@ -12553,6 +12701,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the resource from which tags have been removed.</p>\n@param arn The ARN of the resource from which tags have been removed.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -12655,6 +12804,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12698,6 +12848,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Keys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The keys of tags that have been removed.</p>\n@param keys The keys of tags that have been removed.*/",
         "setterMethodName" : "setKeys",
         "setterModel" : {
@@ -12765,6 +12916,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the resource from which tags have been removed.</p>\n@param arn The ARN of the resource from which tags have been removed.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -12868,6 +13020,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12911,6 +13064,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Keys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The keys of tags that have been removed.</p>\n@param keys The keys of tags that have been removed.*/",
           "setterMethodName" : "setKeys",
           "setterModel" : {
@@ -13023,6 +13177,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource group for which you want to edit the query.</p>\n@param groupName The name of the resource group for which you want to edit the query.*/",
         "setterMethodName" : "setGroupName",
         "setterModel" : {
@@ -13088,6 +13243,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceQuery",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource query that determines which AWS resources are members of the resource group.</p>\n@param resourceQuery The resource query that determines which AWS resources are members of the resource group.*/",
         "setterMethodName" : "setResourceQuery",
         "setterModel" : {
@@ -13155,6 +13311,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource group for which you want to edit the query.</p>\n@param groupName The name of the resource group for which you want to edit the query.*/",
           "setterMethodName" : "setGroupName",
           "setterModel" : {
@@ -13221,6 +13378,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceQuery",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource query that determines which AWS resources are members of the resource group.</p>\n@param resourceQuery The resource query that determines which AWS resources are members of the resource group.*/",
           "setterMethodName" : "setResourceQuery",
           "setterModel" : {
@@ -13323,6 +13481,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "GroupQuery",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource query associated with the resource group after the update.</p>\n@param groupQuery The resource query associated with the resource group after the update.*/",
         "setterMethodName" : "setGroupQuery",
         "setterModel" : {
@@ -13390,6 +13549,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "GroupQuery",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource query associated with the resource group after the update.</p>\n@param groupQuery The resource query associated with the resource group after the update.*/",
           "setterMethodName" : "setGroupQuery",
           "setterModel" : {
@@ -13502,6 +13662,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "GroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the resource group for which you want to update its description.</p>\n@param groupName The name of the resource group for which you want to update its description.*/",
         "setterMethodName" : "setGroupName",
         "setterModel" : {
@@ -13567,6 +13728,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.</p>\n@param description The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -13634,6 +13796,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.</p>\n@param description The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -13700,6 +13863,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "GroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the resource group for which you want to update its description.</p>\n@param groupName The name of the resource group for which you want to update its description.*/",
           "setterMethodName" : "setGroupName",
           "setterModel" : {
@@ -13802,6 +13966,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Group",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of the resource group after it has been updated.</p>\n@param group The full description of the resource group after it has been updated.*/",
         "setterMethodName" : "setGroup",
         "setterModel" : {
@@ -13869,6 +14034,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Group",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of the resource group after it has been updated.</p>\n@param group The full description of the resource group after it has been updated.*/",
           "setterMethodName" : "setGroup",
           "setterModel" : {

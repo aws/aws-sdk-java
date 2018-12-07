@@ -174,9 +174,9 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
-     * Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     * Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
+     * VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
      * the <i>Amazon EC2 User Guide</i>.
@@ -187,7 +187,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-Classic-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group
+     * instance, image, security group
      * </p>
      * </li>
      * <li>
@@ -195,7 +195,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-Classic-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, volume
+     * instance, image, security group, volume
      * </p>
      * </li>
      * <li>
@@ -203,7 +203,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface
+     * instance, image, security group, network interface
      * </p>
      * </li>
      * <li>
@@ -211,7 +211,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-InstanceStore-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet
+     * instance, image, security group, network interface, subnet
      * </p>
      * </li>
      * <li>
@@ -219,7 +219,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, volume
+     * instance, image, security group, network interface, volume
      * </p>
      * </li>
      * <li>
@@ -227,7 +227,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-EBS-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet, volume
+     * instance, image, security group, network interface, subnet, volume
      * </p>
      * </li>
      * </ul>
@@ -235,15 +235,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     private String resourceHandlingOption;
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      */
     private Integer maxItems;
@@ -1336,9 +1336,9 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
-     * Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     * Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
+     * VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
      * the <i>Amazon EC2 User Guide</i>.
@@ -1349,7 +1349,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-Classic-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group
+     * instance, image, security group
      * </p>
      * </li>
      * <li>
@@ -1357,7 +1357,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-Classic-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, volume
+     * instance, image, security group, volume
      * </p>
      * </li>
      * <li>
@@ -1365,7 +1365,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface
+     * instance, image, security group, network interface
      * </p>
      * </li>
      * <li>
@@ -1373,7 +1373,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-InstanceStore-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet
+     * instance, image, security group, network interface, subnet
      * </p>
      * </li>
      * <li>
@@ -1381,7 +1381,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, volume
+     * instance, image, security group, network interface, volume
      * </p>
      * </li>
      * <li>
@@ -1389,7 +1389,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-EBS-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet, volume
+     * instance, image, security group, network interface, subnet, volume
      * </p>
      * </li>
      * </ul>
@@ -1402,9 +1402,9 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        following list shows each of the supported scenario values and the resources that you must define to run
      *        the simulation.</p>
      *        <p>
-     *        Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     *        Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      *        scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario
-     *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
+     *        includes VPC, then you must supply the network interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a> in the <i>Amazon EC2 User Guide</i>.
@@ -1415,7 +1415,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-Classic-InstanceStore</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group
+     *        instance, image, security group
      *        </p>
      *        </li>
      *        <li>
@@ -1423,7 +1423,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-Classic-EBS</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, volume
+     *        instance, image, security group, volume
      *        </p>
      *        </li>
      *        <li>
@@ -1431,7 +1431,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-VPC-InstanceStore</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface
+     *        instance, image, security group, network interface
      *        </p>
      *        </li>
      *        <li>
@@ -1439,7 +1439,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-VPC-InstanceStore-Subnet</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, subnet
+     *        instance, image, security group, network interface, subnet
      *        </p>
      *        </li>
      *        <li>
@@ -1447,7 +1447,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-VPC-EBS</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, volume
+     *        instance, image, security group, network interface, volume
      *        </p>
      *        </li>
      *        <li>
@@ -1455,7 +1455,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-VPC-EBS-Subnet</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, subnet, volume
+     *        instance, image, security group, network interface, subnet, volume
      *        </p>
      *        </li>
      */
@@ -1473,9 +1473,9 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
-     * Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     * Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
+     * VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
      * the <i>Amazon EC2 User Guide</i>.
@@ -1486,7 +1486,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-Classic-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group
+     * instance, image, security group
      * </p>
      * </li>
      * <li>
@@ -1494,7 +1494,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-Classic-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, volume
+     * instance, image, security group, volume
      * </p>
      * </li>
      * <li>
@@ -1502,7 +1502,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface
+     * instance, image, security group, network interface
      * </p>
      * </li>
      * <li>
@@ -1510,7 +1510,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-InstanceStore-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet
+     * instance, image, security group, network interface, subnet
      * </p>
      * </li>
      * <li>
@@ -1518,7 +1518,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, volume
+     * instance, image, security group, network interface, volume
      * </p>
      * </li>
      * <li>
@@ -1526,7 +1526,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-EBS-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet, volume
+     * instance, image, security group, network interface, subnet, volume
      * </p>
      * </li>
      * </ul>
@@ -1538,9 +1538,9 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         following list shows each of the supported scenario values and the resources that you must define to run
      *         the simulation.</p>
      *         <p>
-     *         Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If
+     *         Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If
      *         your scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2
-     *         scenario includes VPC, then you must supply the network-interface resource. If it includes an IP subnet,
+     *         scenario includes VPC, then you must supply the network interface resource. If it includes an IP subnet,
      *         then you must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *         Platforms</a> in the <i>Amazon EC2 User Guide</i>.
@@ -1551,7 +1551,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         <b>EC2-Classic-InstanceStore</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group
+     *         instance, image, security group
      *         </p>
      *         </li>
      *         <li>
@@ -1559,7 +1559,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         <b>EC2-Classic-EBS</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, volume
+     *         instance, image, security group, volume
      *         </p>
      *         </li>
      *         <li>
@@ -1567,7 +1567,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         <b>EC2-VPC-InstanceStore</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, network-interface
+     *         instance, image, security group, network interface
      *         </p>
      *         </li>
      *         <li>
@@ -1575,7 +1575,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         <b>EC2-VPC-InstanceStore-Subnet</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, network-interface, subnet
+     *         instance, image, security group, network interface, subnet
      *         </p>
      *         </li>
      *         <li>
@@ -1583,7 +1583,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         <b>EC2-VPC-EBS</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, network-interface, volume
+     *         instance, image, security group, network interface, volume
      *         </p>
      *         </li>
      *         <li>
@@ -1591,7 +1591,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         <b>EC2-VPC-EBS-Subnet</b>
      *         </p>
      *         <p>
-     *         instance, image, security-group, network-interface, subnet, volume
+     *         instance, image, security group, network interface, subnet, volume
      *         </p>
      *         </li>
      */
@@ -1609,9 +1609,9 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
-     * Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     * Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
+     * VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
      * the <i>Amazon EC2 User Guide</i>.
@@ -1622,7 +1622,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-Classic-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group
+     * instance, image, security group
      * </p>
      * </li>
      * <li>
@@ -1630,7 +1630,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-Classic-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, volume
+     * instance, image, security group, volume
      * </p>
      * </li>
      * <li>
@@ -1638,7 +1638,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-InstanceStore</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface
+     * instance, image, security group, network interface
      * </p>
      * </li>
      * <li>
@@ -1646,7 +1646,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-InstanceStore-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet
+     * instance, image, security group, network interface, subnet
      * </p>
      * </li>
      * <li>
@@ -1654,7 +1654,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-EBS</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, volume
+     * instance, image, security group, network interface, volume
      * </p>
      * </li>
      * <li>
@@ -1662,7 +1662,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <b>EC2-VPC-EBS-Subnet</b>
      * </p>
      * <p>
-     * instance, image, security-group, network-interface, subnet, volume
+     * instance, image, security group, network interface, subnet, volume
      * </p>
      * </li>
      * </ul>
@@ -1675,9 +1675,9 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        following list shows each of the supported scenario values and the resources that you must define to run
      *        the simulation.</p>
      *        <p>
-     *        Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
+     *        Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your
      *        scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario
-     *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
+     *        includes VPC, then you must supply the network interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a> in the <i>Amazon EC2 User Guide</i>.
@@ -1688,7 +1688,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-Classic-InstanceStore</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group
+     *        instance, image, security group
      *        </p>
      *        </li>
      *        <li>
@@ -1696,7 +1696,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-Classic-EBS</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, volume
+     *        instance, image, security group, volume
      *        </p>
      *        </li>
      *        <li>
@@ -1704,7 +1704,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-VPC-InstanceStore</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface
+     *        instance, image, security group, network interface
      *        </p>
      *        </li>
      *        <li>
@@ -1712,7 +1712,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-VPC-InstanceStore-Subnet</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, subnet
+     *        instance, image, security group, network interface, subnet
      *        </p>
      *        </li>
      *        <li>
@@ -1720,7 +1720,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-VPC-EBS</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, volume
+     *        instance, image, security group, network interface, volume
      *        </p>
      *        </li>
      *        <li>
@@ -1728,7 +1728,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <b>EC2-VPC-EBS-Subnet</b>
      *        </p>
      *        <p>
-     *        instance, image, security-group, network-interface, subnet, volume
+     *        instance, image, security group, network interface, subnet, volume
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1741,26 +1741,26 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *        element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -1769,25 +1769,25 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
-     * @return (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *         response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.</p>
+     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
+     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>.</p>
      *         <p>
-     *         If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *         when there are more results available. In that case, the <code>IsTruncated</code> response element
-     *         returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that
-     *         tells the service where to continue from.
+     *         If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *         response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *         subsequent call that tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -1796,26 +1796,26 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *        element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1877,7 +1877,8 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

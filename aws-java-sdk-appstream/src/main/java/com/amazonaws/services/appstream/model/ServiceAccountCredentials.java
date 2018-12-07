@@ -136,7 +136,8 @@ public class ServiceAccountCredentials implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -147,9 +148,9 @@ public class ServiceAccountCredentials implements Serializable, Cloneable, Struc
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountName() != null)
-            sb.append("AccountName: ").append(getAccountName()).append(",");
+            sb.append("AccountName: ").append("***Sensitive Data Redacted***").append(",");
         if (getAccountPassword() != null)
-            sb.append("AccountPassword: ").append(getAccountPassword());
+            sb.append("AccountPassword: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

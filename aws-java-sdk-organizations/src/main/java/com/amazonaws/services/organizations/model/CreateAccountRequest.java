@@ -501,7 +501,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -512,9 +513,9 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEmail() != null)
-            sb.append("Email: ").append(getEmail()).append(",");
+            sb.append("Email: ").append("***Sensitive Data Redacted***").append(",");
         if (getAccountName() != null)
-            sb.append("AccountName: ").append(getAccountName()).append(",");
+            sb.append("AccountName: ").append("***Sensitive Data Redacted***").append(",");
         if (getRoleName() != null)
             sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getIamUserAccessToBilling() != null)

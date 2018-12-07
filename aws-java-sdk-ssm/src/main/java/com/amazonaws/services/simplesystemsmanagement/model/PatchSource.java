@@ -301,7 +301,8 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -316,7 +317,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
         if (getProducts() != null)
             sb.append("Products: ").append(getProducts()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

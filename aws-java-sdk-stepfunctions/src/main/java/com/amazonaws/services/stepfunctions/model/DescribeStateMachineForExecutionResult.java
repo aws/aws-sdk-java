@@ -277,7 +277,8 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -292,7 +293,7 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDefinition() != null)
-            sb.append("Definition: ").append(getDefinition()).append(",");
+            sb.append("Definition: ").append("***Sensitive Data Redacted***").append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getUpdateDate() != null)

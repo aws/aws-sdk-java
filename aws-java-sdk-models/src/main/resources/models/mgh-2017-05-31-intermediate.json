@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -1156,6 +1156,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -1221,6 +1222,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -1286,6 +1288,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CreatedArtifact",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>\n@param createdArtifact An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)*/",
         "setterMethodName" : "setCreatedArtifact",
         "setterModel" : {
@@ -1351,6 +1354,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -1418,6 +1422,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CreatedArtifact",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>\n@param createdArtifact An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)*/",
           "setterMethodName" : "setCreatedArtifact",
           "setterModel" : {
@@ -1484,6 +1489,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -1550,6 +1556,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -1616,6 +1623,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -1765,6 +1773,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -1830,6 +1839,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier given to the MigrationTask.</p>\n@param migrationTaskName The identifier given to the MigrationTask.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -1895,6 +1905,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DiscoveredResource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Object representing a Resource.</p>\n@param discoveredResource Object representing a Resource.*/",
         "setterMethodName" : "setDiscoveredResource",
         "setterModel" : {
@@ -1960,6 +1971,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -2027,6 +2039,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DiscoveredResource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Object representing a Resource.</p>\n@param discoveredResource Object representing a Resource.*/",
           "setterMethodName" : "setDiscoveredResource",
           "setterModel" : {
@@ -2093,6 +2106,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -2159,6 +2173,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier given to the MigrationTask.</p>\n@param migrationTaskName The identifier given to the MigrationTask.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -2225,6 +2240,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -2374,6 +2390,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStreamName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStreamName",
         "setterModel" : {
@@ -2439,6 +2456,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -2506,6 +2524,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -2572,6 +2591,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStreamName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStreamName",
           "setterModel" : {
@@ -2714,6 +2734,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An ARN that uniquely identifies the result of a migration task.</p>\n@param name An ARN that uniquely identifies the result of a migration task.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2779,6 +2800,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>\n@param description A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -2846,6 +2868,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>\n@param description A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -2912,6 +2935,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An ARN that uniquely identifies the result of a migration task.</p>\n@param name An ARN that uniquely identifies the result of a migration task.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3024,6 +3048,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStreamName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStreamName",
         "setterModel" : {
@@ -3089,6 +3114,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -3156,6 +3182,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -3222,6 +3249,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStreamName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStreamName",
           "setterModel" : {
@@ -3371,6 +3399,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ApplicationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configurationId in ADS that uniquely identifies the grouped application.</p>\n@param applicationId The configurationId in ADS that uniquely identifies the grouped application.*/",
         "setterMethodName" : "setApplicationId",
         "setterModel" : {
@@ -3438,6 +3467,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ApplicationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configurationId in ADS that uniquely identifies the grouped application.</p>\n@param applicationId The configurationId in ADS that uniquely identifies the grouped application.*/",
           "setterMethodName" : "setApplicationId",
           "setterModel" : {
@@ -3540,6 +3570,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ApplicationStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Status of the application - Not Started, In-Progress, Complete.</p>\n@param applicationStatus Status of the application - Not Started, In-Progress, Complete.\n@see ApplicationStatus*/",
         "setterMethodName" : "setApplicationStatus",
         "setterModel" : {
@@ -3605,6 +3636,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The timestamp when the application status was last updated.</p>\n@param lastUpdatedTime The timestamp when the application status was last updated.*/",
         "setterMethodName" : "setLastUpdatedTime",
         "setterModel" : {
@@ -3672,6 +3704,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ApplicationStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Status of the application - Not Started, In-Progress, Complete.</p>\n@param applicationStatus Status of the application - Not Started, In-Progress, Complete.\n@see ApplicationStatus*/",
           "setterMethodName" : "setApplicationStatus",
           "setterModel" : {
@@ -3738,6 +3771,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The timestamp when the application status was last updated.</p>\n@param lastUpdatedTime The timestamp when the application status was last updated.*/",
           "setterMethodName" : "setLastUpdatedTime",
           "setterModel" : {
@@ -3850,6 +3884,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -3915,6 +3950,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier given to the MigrationTask.</p>\n@param migrationTaskName The identifier given to the MigrationTask.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -3982,6 +4018,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier given to the MigrationTask.</p>\n@param migrationTaskName The identifier given to the MigrationTask.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -4048,6 +4085,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -4150,6 +4188,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "MigrationTask",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Object encapsulating information about the migration task.</p>\n@param migrationTask Object encapsulating information about the migration task.*/",
         "setterMethodName" : "setMigrationTask",
         "setterModel" : {
@@ -4217,6 +4256,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "MigrationTask",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Object encapsulating information about the migration task.</p>\n@param migrationTask Object encapsulating information about the migration task.*/",
           "setterMethodName" : "setMigrationTask",
           "setterModel" : {
@@ -4329,6 +4369,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -4394,6 +4435,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique identifier that references the migration task to be disassociated with the artifact.</p>\n@param migrationTaskName Unique identifier that references the migration task to be disassociated with the artifact.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -4459,6 +4501,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CreatedArtifactName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>\n@param createdArtifactName An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)*/",
         "setterMethodName" : "setCreatedArtifactName",
         "setterModel" : {
@@ -4524,6 +4567,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -4591,6 +4635,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CreatedArtifactName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>\n@param createdArtifactName An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)*/",
           "setterMethodName" : "setCreatedArtifactName",
           "setterModel" : {
@@ -4657,6 +4702,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -4723,6 +4769,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique identifier that references the migration task to be disassociated with the artifact.</p>\n@param migrationTaskName Unique identifier that references the migration task to be disassociated with the artifact.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -4789,6 +4836,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -4938,6 +4986,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -5003,6 +5052,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier given to the MigrationTask.</p>\n@param migrationTaskName The identifier given to the MigrationTask.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -5068,6 +5118,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>ConfigurationId of the ADS resource to be disassociated.</p>\n@param configurationId ConfigurationId of the ADS resource to be disassociated.*/",
         "setterMethodName" : "setConfigurationId",
         "setterModel" : {
@@ -5133,6 +5184,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -5200,6 +5252,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>ConfigurationId of the ADS resource to be disassociated.</p>\n@param configurationId ConfigurationId of the ADS resource to be disassociated.*/",
           "setterMethodName" : "setConfigurationId",
           "setterModel" : {
@@ -5266,6 +5319,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -5332,6 +5386,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier given to the MigrationTask.</p>\n@param migrationTaskName The identifier given to the MigrationTask.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -5398,6 +5453,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -5540,6 +5596,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configurationId in ADS that uniquely identifies the on-premise resource.</p>\n@param configurationId The configurationId in ADS that uniquely identifies the on-premise resource.*/",
         "setterMethodName" : "setConfigurationId",
         "setterModel" : {
@@ -5605,6 +5662,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>\n@param description A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -5672,6 +5730,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configurationId in ADS that uniquely identifies the on-premise resource.</p>\n@param configurationId The configurationId in ADS that uniquely identifies the on-premise resource.*/",
           "setterMethodName" : "setConfigurationId",
           "setterModel" : {
@@ -5738,6 +5797,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>\n@param description A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -5887,6 +5947,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -5952,6 +6013,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -6017,6 +6079,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -6084,6 +6147,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -6150,6 +6214,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -6216,6 +6281,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -6439,6 +6505,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -6504,6 +6571,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -6569,6 +6637,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6634,6 +6703,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Maximum number of results to be returned per page.</p>\n@param maxResults Maximum number of results to be returned per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -6701,6 +6771,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Maximum number of results to be returned per page.</p>\n@param maxResults Maximum number of results to be returned per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -6767,6 +6838,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -6833,6 +6905,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6899,6 +6972,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -7001,6 +7075,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7103,6 +7178,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7146,6 +7222,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CreatedArtifactList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of created artifacts up to the maximum number of results specified in the request.</p>\n@param createdArtifactList List of created artifacts up to the maximum number of results specified in the request.*/",
         "setterMethodName" : "setCreatedArtifactList",
         "setterModel" : {
@@ -7250,6 +7327,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7293,6 +7371,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CreatedArtifactList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of created artifacts up to the maximum number of results specified in the request.</p>\n@param createdArtifactList List of created artifacts up to the maximum number of results specified in the request.*/",
           "setterMethodName" : "setCreatedArtifactList",
           "setterModel" : {
@@ -7359,6 +7438,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7471,6 +7551,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -7536,6 +7617,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the MigrationTask.</p>\n@param migrationTaskName The name of the MigrationTask.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -7601,6 +7683,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7666,6 +7749,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results returned per page.</p>\n@param maxResults The maximum number of results returned per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -7733,6 +7817,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results returned per page.</p>\n@param maxResults The maximum number of results returned per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -7799,6 +7884,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the MigrationTask.</p>\n@param migrationTaskName The name of the MigrationTask.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -7865,6 +7951,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7931,6 +8018,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream.</p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -8033,6 +8121,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8135,6 +8224,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8178,6 +8268,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DiscoveredResourceList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Returned list of discovered resources associated with the given MigrationTask.</p>\n@param discoveredResourceList Returned list of discovered resources associated with the given MigrationTask.*/",
         "setterMethodName" : "setDiscoveredResourceList",
         "setterModel" : {
@@ -8282,6 +8373,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8325,6 +8417,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DiscoveredResourceList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Returned list of discovered resources associated with the given MigrationTask.</p>\n@param discoveredResourceList Returned list of discovered resources associated with the given MigrationTask.*/",
           "setterMethodName" : "setDiscoveredResourceList",
           "setterModel" : {
@@ -8391,6 +8484,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8503,6 +8597,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8568,6 +8663,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value to specify how many results are returned per page.</p>\n@param maxResults Value to specify how many results are returned per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -8633,6 +8729,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Filter migration tasks by discovered resource name.</p>\n@param resourceName Filter migration tasks by discovered resource name.*/",
         "setterMethodName" : "setResourceName",
         "setterModel" : {
@@ -8700,6 +8797,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value to specify how many results are returned per page.</p>\n@param maxResults Value to specify how many results are returned per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -8766,6 +8864,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8832,6 +8931,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Filter migration tasks by discovered resource name.</p>\n@param resourceName Filter migration tasks by discovered resource name.*/",
           "setterMethodName" : "setResourceName",
           "setterModel" : {
@@ -8934,6 +9034,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9036,6 +9137,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9079,6 +9181,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "MigrationTaskSummaryList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>\n@param migrationTaskSummaryList Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.*/",
         "setterMethodName" : "setMigrationTaskSummaryList",
         "setterModel" : {
@@ -9183,6 +9286,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9226,6 +9330,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "MigrationTaskSummaryList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>\n@param migrationTaskSummaryList Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.*/",
           "setterMethodName" : "setMigrationTaskSummaryList",
           "setterModel" : {
@@ -9292,6 +9397,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9404,6 +9510,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9469,6 +9576,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Filter to limit the maximum number of results to list per page.</p>\n@param maxResults Filter to limit the maximum number of results to list per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -9536,6 +9644,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Filter to limit the maximum number of results to list per page.</p>\n@param maxResults Filter to limit the maximum number of results to list per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -9602,6 +9711,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9741,6 +9851,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9784,6 +9895,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ProgressUpdateStreamSummaryList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of progress update streams up to the max number of results passed in the input.</p>\n@param progressUpdateStreamSummaryList List of progress update streams up to the max number of results passed in the input.*/",
         "setterMethodName" : "setProgressUpdateStreamSummaryList",
         "setterModel" : {
@@ -9849,6 +9961,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9916,6 +10029,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>\n@param nextToken If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10019,6 +10133,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10062,6 +10177,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ProgressUpdateStreamSummaryList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of progress update streams up to the max number of results passed in the input.</p>\n@param progressUpdateStreamSummaryList List of progress update streams up to the max number of results passed in the input.*/",
           "setterMethodName" : "setProgressUpdateStreamSummaryList",
           "setterModel" : {
@@ -10167,6 +10283,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A name that identifies the vendor of the migration tool being used.</p>\n@param progressUpdateStream A name that identifies the vendor of the migration tool being used.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -10232,6 +10349,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -10297,6 +10415,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Task",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Task object encapsulating task information.</p>\n@param task Task object encapsulating task information.*/",
         "setterMethodName" : "setTask",
         "setterModel" : {
@@ -10362,6 +10481,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdateDateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.*/",
         "setterMethodName" : "setUpdateDateTime",
         "setterModel" : {
@@ -10464,6 +10584,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10507,6 +10628,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceAttributeList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p/>\n@param resourceAttributeList */",
         "setterMethodName" : "setResourceAttributeList",
         "setterModel" : {
@@ -10574,6 +10696,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -10640,6 +10763,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A name that identifies the vendor of the migration tool being used.</p>\n@param progressUpdateStream A name that identifies the vendor of the migration tool being used.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -10743,6 +10867,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10786,6 +10911,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceAttributeList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p/>\n@param resourceAttributeList */",
           "setterMethodName" : "setResourceAttributeList",
           "setterModel" : {
@@ -10852,6 +10978,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Task",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Task object encapsulating task information.</p>\n@param task Task object encapsulating task information.*/",
           "setterMethodName" : "setTask",
           "setterModel" : {
@@ -10918,6 +11045,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdateDateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.*/",
           "setterMethodName" : "setUpdateDateTime",
           "setterModel" : {
@@ -11023,6 +11151,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.</p>\n@param progressUpdateStream An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -11088,6 +11217,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -11153,6 +11283,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Status of the task.</p>\n@param status Status of the task.\n@see Status*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -11218,6 +11349,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ProgressPercent",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p/>\n@param progressPercent */",
         "setterMethodName" : "setProgressPercent",
         "setterModel" : {
@@ -11283,6 +11415,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusDetail",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Detail information of what is being done within the overall status state.</p>\n@param statusDetail Detail information of what is being done within the overall status state.*/",
         "setterMethodName" : "setStatusDetail",
         "setterModel" : {
@@ -11348,6 +11481,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdateDateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.*/",
         "setterMethodName" : "setUpdateDateTime",
         "setterModel" : {
@@ -11415,6 +11549,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -11481,6 +11616,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ProgressPercent",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p/>\n@param progressPercent */",
           "setterMethodName" : "setProgressPercent",
           "setterModel" : {
@@ -11547,6 +11683,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.</p>\n@param progressUpdateStream An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -11613,6 +11750,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Status of the task.</p>\n@param status Status of the task.\n@see Status*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -11679,6 +11817,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusDetail",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Detail information of what is being done within the overall status state.</p>\n@param statusDetail Detail information of what is being done within the overall status state.*/",
           "setterMethodName" : "setStatusDetail",
           "setterModel" : {
@@ -11745,6 +11884,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdateDateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.*/",
           "setterMethodName" : "setUpdateDateTime",
           "setterModel" : {
@@ -11857,6 +11997,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ApplicationId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configurationId in ADS that uniquely identifies the grouped application.</p>\n@param applicationId The configurationId in ADS that uniquely identifies the grouped application.*/",
         "setterMethodName" : "setApplicationId",
         "setterModel" : {
@@ -11922,6 +12063,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Status of the application - Not Started, In-Progress, Complete.</p>\n@param status Status of the application - Not Started, In-Progress, Complete.\n@see ApplicationStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -11987,6 +12129,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -12054,6 +12197,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ApplicationId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configurationId in ADS that uniquely identifies the grouped application.</p>\n@param applicationId The configurationId in ADS that uniquely identifies the grouped application.*/",
           "setterMethodName" : "setApplicationId",
           "setterModel" : {
@@ -12120,6 +12264,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -12186,6 +12331,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Status of the application - Not Started, In-Progress, Complete.</p>\n@param status Status of the application - Not Started, In-Progress, Complete.\n@see ApplicationStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -12335,6 +12481,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -12400,6 +12547,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -12465,6 +12613,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Task",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the task's progress and status.</p>\n@param task Information about the task's progress and status.*/",
         "setterMethodName" : "setTask",
         "setterModel" : {
@@ -12530,6 +12679,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdateDateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.*/",
         "setterMethodName" : "setUpdateDateTime",
         "setterModel" : {
@@ -12595,6 +12745,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "NextUpdateSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>\n@param nextUpdateSeconds Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.*/",
         "setterMethodName" : "setNextUpdateSeconds",
         "setterModel" : {
@@ -12660,6 +12811,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -12727,6 +12879,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -12793,6 +12946,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -12859,6 +13013,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "NextUpdateSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>\n@param nextUpdateSeconds Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.*/",
           "setterMethodName" : "setNextUpdateSeconds",
           "setterModel" : {
@@ -12925,6 +13080,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -12991,6 +13147,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Task",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the task's progress and status.</p>\n@param task Information about the task's progress and status.*/",
           "setterMethodName" : "setTask",
           "setterModel" : {
@@ -13057,6 +13214,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdateDateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The timestamp when the task was gathered.</p>\n@param updateDateTime The timestamp when the task was gathered.*/",
           "setterMethodName" : "setUpdateDateTime",
           "setterModel" : {
@@ -13236,6 +13394,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStreamName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStreamName",
         "setterModel" : {
@@ -13303,6 +13462,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStreamName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStreamName The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStreamName",
           "setterModel" : {
@@ -13415,6 +13575,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProgressUpdateStream",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
         "setterMethodName" : "setProgressUpdateStream",
         "setterModel" : {
@@ -13480,6 +13641,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MigrationTaskName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
         "setterMethodName" : "setMigrationTaskName",
         "setterModel" : {
@@ -13582,6 +13744,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13625,6 +13788,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceAttributeList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service (ADS)'s repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any \"VM\" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all \"VM\" fields will be discarded and \"VM\" fields will not be used for matching the migration task to a server in Application Discovery Service (ADS)'s repository. See the <a href=\"https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples\">Example</a> section below for a use case of specifying \"VM\" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul> </important>\n@param resourceAttributeList Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service (ADS)'s repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any \"VM\" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all \"VM\" fields will be discarded and \"VM\" fields will not be used for matching the migration task to a server in Application Discovery Service (ADS)'s repository. See the <a href=\"https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples\">Example</a> section below for a use case of specifying \"VM\" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul>*/",
         "setterMethodName" : "setResourceAttributeList",
         "setterModel" : {
@@ -13690,6 +13854,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
@@ -13757,6 +13922,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>\n@param dryRun Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
@@ -13823,6 +13989,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MigrationTaskName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique identifier that references the migration task.</p>\n@param migrationTaskName Unique identifier that references the migration task.*/",
           "setterMethodName" : "setMigrationTaskName",
           "setterModel" : {
@@ -13889,6 +14056,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProgressUpdateStream",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the ProgressUpdateStream. </p>\n@param progressUpdateStream The name of the ProgressUpdateStream.*/",
           "setterMethodName" : "setProgressUpdateStream",
           "setterModel" : {
@@ -13992,6 +14160,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14035,6 +14204,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceAttributeList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service (ADS)'s repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any \"VM\" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all \"VM\" fields will be discarded and \"VM\" fields will not be used for matching the migration task to a server in Application Discovery Service (ADS)'s repository. See the <a href=\"https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples\">Example</a> section below for a use case of specifying \"VM\" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul> </important>\n@param resourceAttributeList Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service (ADS)'s repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any \"VM\" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all \"VM\" fields will be discarded and \"VM\" fields will not be used for matching the migration task to a server in Application Discovery Service (ADS)'s repository. See the <a href=\"https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples\">Example</a> section below for a use case of specifying \"VM\" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul>*/",
           "setterMethodName" : "setResourceAttributeList",
           "setterModel" : {
@@ -14177,6 +14347,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Type of resource.</p>\n@param type Type of resource.\n@see ResourceAttributeType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -14242,6 +14413,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value of the resource type.</p>\n@param value Value of the resource type.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -14309,6 +14481,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Type of resource.</p>\n@param type Type of resource.\n@see ResourceAttributeType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -14375,6 +14548,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value of the resource type.</p>\n@param value Value of the resource type.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -14676,6 +14850,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Status of the task - Not Started, In-Progress, Complete.</p>\n@param status Status of the task - Not Started, In-Progress, Complete.\n@see Status*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -14741,6 +14916,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusDetail",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>\n@param statusDetail Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.*/",
         "setterMethodName" : "setStatusDetail",
         "setterModel" : {
@@ -14806,6 +14982,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ProgressPercent",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indication of the percentage completion of the task.</p>\n@param progressPercent Indication of the percentage completion of the task.*/",
         "setterMethodName" : "setProgressPercent",
         "setterModel" : {
@@ -14873,6 +15050,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ProgressPercent",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indication of the percentage completion of the task.</p>\n@param progressPercent Indication of the percentage completion of the task.*/",
           "setterMethodName" : "setProgressPercent",
           "setterModel" : {
@@ -14939,6 +15117,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Status of the task - Not Started, In-Progress, Complete.</p>\n@param status Status of the task - Not Started, In-Progress, Complete.\n@see Status*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -15005,6 +15184,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusDetail",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>\n@param statusDetail Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.*/",
           "setterMethodName" : "setStatusDetail",
           "setterModel" : {

@@ -1329,6 +1329,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DAX cluster.</p>\n@param clusterName The name of the DAX cluster.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -1394,6 +1395,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the cluster.</p>\n@param description The description of the cluster.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -1459,6 +1461,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
         "setterMethodName" : "setClusterArn",
         "setterModel" : {
@@ -1524,6 +1527,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "TotalNodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The total number of nodes in the cluster.</p>\n@param totalNodes The total number of nodes in the cluster.*/",
         "setterMethodName" : "setTotalNodes",
         "setterModel" : {
@@ -1589,6 +1593,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ActiveNodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of nodes in the cluster that are active (i.e., capable of serving requests).</p>\n@param activeNodes The number of nodes in the cluster that are active (i.e., capable of serving requests).*/",
         "setterMethodName" : "setActiveNodes",
         "setterModel" : {
@@ -1654,6 +1659,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)</p>\n@param nodeType The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)*/",
         "setterMethodName" : "setNodeType",
         "setterModel" : {
@@ -1719,6 +1725,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the cluster.</p>\n@param status The current status of the cluster.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -1784,6 +1791,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ClusterDiscoveryEndpoint",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client applications can specify this endpoint, rather than an individual node endpoint, and allow the DAX client software to intelligently route requests and responses to nodes in the DAX cluster.</p>\n@param clusterDiscoveryEndpoint The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client applications can specify this endpoint, rather than an individual node endpoint, and allow the DAX client software to intelligently route requests and responses to nodes in the DAX cluster.*/",
         "setterMethodName" : "setClusterDiscoveryEndpoint",
         "setterModel" : {
@@ -1886,6 +1894,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1929,6 +1938,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "NodeIdsToRemove",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of nodes to be removed from the cluster.</p>\n@param nodeIdsToRemove A list of nodes to be removed from the cluster.*/",
         "setterMethodName" : "setNodeIdsToRemove",
         "setterModel" : {
@@ -2031,6 +2041,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2074,6 +2085,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Nodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of nodes that are currently in the cluster.</p>\n@param nodes A list of nodes that are currently in the cluster.*/",
         "setterMethodName" : "setNodes",
         "setterModel" : {
@@ -2139,6 +2151,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredMaintenanceWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>\n@param preferredMaintenanceWindow A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.*/",
         "setterMethodName" : "setPreferredMaintenanceWindow",
         "setterModel" : {
@@ -2204,6 +2217,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "NotificationConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>\n@param notificationConfiguration Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).*/",
         "setterMethodName" : "setNotificationConfiguration",
         "setterModel" : {
@@ -2269,6 +2283,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The subnet group where the DAX cluster is running.</p>\n@param subnetGroup The subnet group where the DAX cluster is running.*/",
         "setterMethodName" : "setSubnetGroup",
         "setterModel" : {
@@ -2371,6 +2386,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2414,6 +2430,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of security groups, and the status of each, for the nodes in the cluster.</p>\n@param securityGroups A list of security groups, and the status of each, for the nodes in the cluster.*/",
         "setterMethodName" : "setSecurityGroups",
         "setterModel" : {
@@ -2479,6 +2496,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IamRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>\n@param iamRoleArn A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.*/",
         "setterMethodName" : "setIamRoleArn",
         "setterModel" : {
@@ -2544,6 +2562,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ParameterGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter group being used by nodes in the cluster.</p>\n@param parameterGroup The parameter group being used by nodes in the cluster.*/",
         "setterMethodName" : "setParameterGroup",
         "setterModel" : {
@@ -2609,6 +2628,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SSEDescription",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@param sSEDescription The description of the server-side encryption status on the specified DAX cluster.*/",
         "setterMethodName" : "setSSEDescription",
         "setterModel" : {
@@ -2676,6 +2696,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ActiveNodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of nodes in the cluster that are active (i.e., capable of serving requests).</p>\n@param activeNodes The number of nodes in the cluster that are active (i.e., capable of serving requests).*/",
           "setterMethodName" : "setActiveNodes",
           "setterModel" : {
@@ -2742,6 +2763,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>\n@param clusterArn The Amazon Resource Name (ARN) that uniquely identifies the cluster.*/",
           "setterMethodName" : "setClusterArn",
           "setterModel" : {
@@ -2808,6 +2830,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ClusterDiscoveryEndpoint",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client applications can specify this endpoint, rather than an individual node endpoint, and allow the DAX client software to intelligently route requests and responses to nodes in the DAX cluster.</p>\n@param clusterDiscoveryEndpoint The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client applications can specify this endpoint, rather than an individual node endpoint, and allow the DAX client software to intelligently route requests and responses to nodes in the DAX cluster.*/",
           "setterMethodName" : "setClusterDiscoveryEndpoint",
           "setterModel" : {
@@ -2874,6 +2897,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DAX cluster.</p>\n@param clusterName The name of the DAX cluster.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -2940,6 +2964,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the cluster.</p>\n@param description The description of the cluster.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -3006,6 +3031,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IamRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>\n@param iamRoleArn A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.*/",
           "setterMethodName" : "setIamRoleArn",
           "setterModel" : {
@@ -3109,6 +3135,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3152,6 +3179,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "NodeIdsToRemove",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of nodes to be removed from the cluster.</p>\n@param nodeIdsToRemove A list of nodes to be removed from the cluster.*/",
           "setterMethodName" : "setNodeIdsToRemove",
           "setterModel" : {
@@ -3218,6 +3246,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)</p>\n@param nodeType The node type for the nodes in the cluster. (All nodes in a DAX cluster are of the same type.)*/",
           "setterMethodName" : "setNodeType",
           "setterModel" : {
@@ -3321,6 +3350,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3364,6 +3394,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Nodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of nodes that are currently in the cluster.</p>\n@param nodes A list of nodes that are currently in the cluster.*/",
           "setterMethodName" : "setNodes",
           "setterModel" : {
@@ -3430,6 +3461,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "NotificationConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>\n@param notificationConfiguration Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).*/",
           "setterMethodName" : "setNotificationConfiguration",
           "setterModel" : {
@@ -3496,6 +3528,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ParameterGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter group being used by nodes in the cluster.</p>\n@param parameterGroup The parameter group being used by nodes in the cluster.*/",
           "setterMethodName" : "setParameterGroup",
           "setterModel" : {
@@ -3562,6 +3595,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredMaintenanceWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>\n@param preferredMaintenanceWindow A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.*/",
           "setterMethodName" : "setPreferredMaintenanceWindow",
           "setterModel" : {
@@ -3628,6 +3662,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SSEDescription",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@param sSEDescription The description of the server-side encryption status on the specified DAX cluster.*/",
           "setterMethodName" : "setSSEDescription",
           "setterModel" : {
@@ -3731,6 +3766,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3774,6 +3810,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of security groups, and the status of each, for the nodes in the cluster.</p>\n@param securityGroups A list of security groups, and the status of each, for the nodes in the cluster.*/",
           "setterMethodName" : "setSecurityGroups",
           "setterModel" : {
@@ -3840,6 +3877,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the cluster.</p>\n@param status The current status of the cluster.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -3906,6 +3944,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The subnet group where the DAX cluster is running.</p>\n@param subnetGroup The subnet group where the DAX cluster is running.*/",
           "setterMethodName" : "setSubnetGroup",
           "setterModel" : {
@@ -3972,6 +4011,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "TotalNodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The total number of nodes in the cluster.</p>\n@param totalNodes The total number of nodes in the cluster.*/",
           "setterMethodName" : "setTotalNodes",
           "setterModel" : {
@@ -4195,6 +4235,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster identifier. This parameter is stored as a lowercase string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@param clusterName The cluster identifier. This parameter is stored as a lowercase string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -4260,6 +4301,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The compute and memory capacity of the nodes in the cluster.</p>\n@param nodeType The compute and memory capacity of the nodes in the cluster.*/",
         "setterMethodName" : "setNodeType",
         "setterModel" : {
@@ -4325,6 +4367,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the cluster.</p>\n@param description A description of the cluster.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -4390,6 +4433,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ReplicationFactor",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
         "setterMethodName" : "setReplicationFactor",
         "setterModel" : {
@@ -4492,6 +4536,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4535,6 +4580,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AvailabilityZones",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.*/",
         "setterMethodName" : "setAvailabilityZones",
         "setterModel" : {
@@ -4600,6 +4646,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the subnet group to be used for the replication group.</p> <important> <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p> </important>\n@param subnetGroupName The name of the subnet group to be used for the replication group.</p> <important> <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>*/",
         "setterMethodName" : "setSubnetGroupName",
         "setterModel" : {
@@ -4702,6 +4749,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4745,6 +4793,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p> <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>\n@param securityGroupIds A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p> <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -4810,6 +4859,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredMaintenanceWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p> </note>\n@param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>*/",
         "setterMethodName" : "setPreferredMaintenanceWindow",
         "setterModel" : {
@@ -4875,6 +4925,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NotificationTopicArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p> </note>\n@param notificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>*/",
         "setterMethodName" : "setNotificationTopicArn",
         "setterModel" : {
@@ -4940,6 +4991,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IamRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>\n@param iamRoleArn A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.*/",
         "setterMethodName" : "setIamRoleArn",
         "setterModel" : {
@@ -5005,6 +5057,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter group to be associated with the DAX cluster.</p>\n@param parameterGroupName The parameter group to be associated with the DAX cluster.*/",
         "setterMethodName" : "setParameterGroupName",
         "setterModel" : {
@@ -5107,6 +5160,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5150,6 +5204,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of tags to associate with the DAX cluster. </p>\n@param tags A set of tags to associate with the DAX cluster.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -5215,6 +5270,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SSESpecification",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@param sSESpecification Represents the settings used to enable server-side encryption on the cluster.*/",
         "setterMethodName" : "setSSESpecification",
         "setterModel" : {
@@ -5319,6 +5375,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5362,6 +5419,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AvailabilityZones",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.*/",
           "setterMethodName" : "setAvailabilityZones",
           "setterModel" : {
@@ -5428,6 +5486,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster identifier. This parameter is stored as a lowercase string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@param clusterName The cluster identifier. This parameter is stored as a lowercase string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -5494,6 +5553,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the cluster.</p>\n@param description A description of the cluster.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -5560,6 +5620,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IamRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>\n@param iamRoleArn A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.*/",
           "setterMethodName" : "setIamRoleArn",
           "setterModel" : {
@@ -5626,6 +5687,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The compute and memory capacity of the nodes in the cluster.</p>\n@param nodeType The compute and memory capacity of the nodes in the cluster.*/",
           "setterMethodName" : "setNodeType",
           "setterModel" : {
@@ -5692,6 +5754,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NotificationTopicArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p> </note>\n@param notificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>*/",
           "setterMethodName" : "setNotificationTopicArn",
           "setterModel" : {
@@ -5758,6 +5821,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter group to be associated with the DAX cluster.</p>\n@param parameterGroupName The parameter group to be associated with the DAX cluster.*/",
           "setterMethodName" : "setParameterGroupName",
           "setterModel" : {
@@ -5824,6 +5888,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredMaintenanceWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p> </note>\n@param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>*/",
           "setterMethodName" : "setPreferredMaintenanceWindow",
           "setterModel" : {
@@ -5890,6 +5955,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ReplicationFactor",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
           "setterMethodName" : "setReplicationFactor",
           "setterModel" : {
@@ -5956,6 +6022,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SSESpecification",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@param sSESpecification Represents the settings used to enable server-side encryption on the cluster.*/",
           "setterMethodName" : "setSSESpecification",
           "setterModel" : {
@@ -6059,6 +6126,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6102,6 +6170,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p> <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>\n@param securityGroupIds A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p> <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -6168,6 +6237,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the subnet group to be used for the replication group.</p> <important> <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p> </important>\n@param subnetGroupName The name of the subnet group to be used for the replication group.</p> <important> <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>*/",
           "setterMethodName" : "setSubnetGroupName",
           "setterModel" : {
@@ -6271,6 +6341,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6314,6 +6385,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of tags to associate with the DAX cluster. </p>\n@param tags A set of tags to associate with the DAX cluster.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -6416,6 +6488,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the DAX cluster that you have created.</p>\n@param cluster A description of the DAX cluster that you have created.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -6483,6 +6556,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the DAX cluster that you have created.</p>\n@param cluster A description of the DAX cluster that you have created.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -6595,6 +6669,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the parameter group to apply to all of the clusters in this replication group.</p>\n@param parameterGroupName The name of the parameter group to apply to all of the clusters in this replication group.*/",
         "setterMethodName" : "setParameterGroupName",
         "setterModel" : {
@@ -6660,6 +6735,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the parameter group.</p>\n@param description A description of the parameter group.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -6727,6 +6803,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the parameter group.</p>\n@param description A description of the parameter group.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -6793,6 +6870,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the parameter group to apply to all of the clusters in this replication group.</p>\n@param parameterGroupName The name of the parameter group to apply to all of the clusters in this replication group.*/",
           "setterMethodName" : "setParameterGroupName",
           "setterModel" : {
@@ -6895,6 +6973,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ParameterGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Represents the output of a <i>CreateParameterGroup</i> action.</p>\n@param parameterGroup Represents the output of a <i>CreateParameterGroup</i> action.*/",
         "setterMethodName" : "setParameterGroup",
         "setterModel" : {
@@ -6962,6 +7041,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ParameterGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Represents the output of a <i>CreateParameterGroup</i> action.</p>\n@param parameterGroup Represents the output of a <i>CreateParameterGroup</i> action.*/",
           "setterMethodName" : "setParameterGroup",
           "setterModel" : {
@@ -7074,6 +7154,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A name for the subnet group. This value is stored as a lowercase string. </p>\n@param subnetGroupName A name for the subnet group. This value is stored as a lowercase string.*/",
         "setterMethodName" : "setSubnetGroupName",
         "setterModel" : {
@@ -7139,6 +7220,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description for the subnet group</p>\n@param description A description for the subnet group*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -7241,6 +7323,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7284,6 +7367,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of VPC subnet IDs for the subnet group.</p>\n@param subnetIds A list of VPC subnet IDs for the subnet group.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -7351,6 +7435,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description for the subnet group</p>\n@param description A description for the subnet group*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -7417,6 +7502,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A name for the subnet group. This value is stored as a lowercase string. </p>\n@param subnetGroupName A name for the subnet group. This value is stored as a lowercase string.*/",
           "setterMethodName" : "setSubnetGroupName",
           "setterModel" : {
@@ -7520,6 +7606,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7563,6 +7650,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of VPC subnet IDs for the subnet group.</p>\n@param subnetIds A list of VPC subnet IDs for the subnet group.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -7665,6 +7753,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SubnetGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>\n@param subnetGroup Represents the output of a <i>CreateSubnetGroup</i> operation.*/",
         "setterMethodName" : "setSubnetGroup",
         "setterModel" : {
@@ -7732,6 +7821,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SubnetGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>\n@param subnetGroup Represents the output of a <i>CreateSubnetGroup</i> operation.*/",
           "setterMethodName" : "setSubnetGroup",
           "setterModel" : {
@@ -7844,6 +7934,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DAX cluster from which you want to remove nodes.</p>\n@param clusterName The name of the DAX cluster from which you want to remove nodes.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -7909,6 +8000,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "NewReplicationFactor",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The new number of nodes for the DAX cluster.</p>\n@param newReplicationFactor The new number of nodes for the DAX cluster.*/",
         "setterMethodName" : "setNewReplicationFactor",
         "setterModel" : {
@@ -8011,6 +8103,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8054,6 +8147,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AvailabilityZones",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Availability Zone(s) from which to remove nodes.</p>\n@param availabilityZones The Availability Zone(s) from which to remove nodes.*/",
         "setterMethodName" : "setAvailabilityZones",
         "setterModel" : {
@@ -8156,6 +8250,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8199,6 +8294,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "NodeIdsToRemove",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifiers of the nodes to be removed from the cluster.</p>\n@param nodeIdsToRemove The unique identifiers of the nodes to be removed from the cluster.*/",
         "setterMethodName" : "setNodeIdsToRemove",
         "setterModel" : {
@@ -8303,6 +8399,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8346,6 +8443,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AvailabilityZones",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Availability Zone(s) from which to remove nodes.</p>\n@param availabilityZones The Availability Zone(s) from which to remove nodes.*/",
           "setterMethodName" : "setAvailabilityZones",
           "setterModel" : {
@@ -8412,6 +8510,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DAX cluster from which you want to remove nodes.</p>\n@param clusterName The name of the DAX cluster from which you want to remove nodes.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -8478,6 +8577,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "NewReplicationFactor",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The new number of nodes for the DAX cluster.</p>\n@param newReplicationFactor The new number of nodes for the DAX cluster.*/",
           "setterMethodName" : "setNewReplicationFactor",
           "setterModel" : {
@@ -8581,6 +8681,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8624,6 +8725,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "NodeIdsToRemove",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifiers of the nodes to be removed from the cluster.</p>\n@param nodeIdsToRemove The unique identifiers of the nodes to be removed from the cluster.*/",
           "setterMethodName" : "setNodeIdsToRemove",
           "setterModel" : {
@@ -8726,6 +8828,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the DAX cluster, after you have decreased its replication factor.</p>\n@param cluster A description of the DAX cluster, after you have decreased its replication factor.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -8793,6 +8896,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the DAX cluster, after you have decreased its replication factor.</p>\n@param cluster A description of the DAX cluster, after you have decreased its replication factor.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -8905,6 +9009,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the cluster to be deleted.</p>\n@param clusterName The name of the cluster to be deleted.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -8972,6 +9077,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the cluster to be deleted.</p>\n@param clusterName The name of the cluster to be deleted.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -9074,6 +9180,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the DAX cluster that is being deleted.</p>\n@param cluster A description of the DAX cluster that is being deleted.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -9141,6 +9248,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the DAX cluster that is being deleted.</p>\n@param cluster A description of the DAX cluster that is being deleted.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -9253,6 +9361,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the parameter group to delete.</p>\n@param parameterGroupName The name of the parameter group to delete.*/",
         "setterMethodName" : "setParameterGroupName",
         "setterModel" : {
@@ -9320,6 +9429,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the parameter group to delete.</p>\n@param parameterGroupName The name of the parameter group to delete.*/",
           "setterMethodName" : "setParameterGroupName",
           "setterModel" : {
@@ -9422,6 +9532,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeletionMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>\n@param deletionMessage A user-specified message for this action (i.e., a reason for deleting the parameter group).*/",
         "setterMethodName" : "setDeletionMessage",
         "setterModel" : {
@@ -9489,6 +9600,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeletionMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>\n@param deletionMessage A user-specified message for this action (i.e., a reason for deleting the parameter group).*/",
           "setterMethodName" : "setDeletionMessage",
           "setterModel" : {
@@ -9601,6 +9713,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the subnet group to delete.</p>\n@param subnetGroupName The name of the subnet group to delete.*/",
         "setterMethodName" : "setSubnetGroupName",
         "setterModel" : {
@@ -9668,6 +9781,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the subnet group to delete.</p>\n@param subnetGroupName The name of the subnet group to delete.*/",
           "setterMethodName" : "setSubnetGroupName",
           "setterModel" : {
@@ -9770,6 +9884,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeletionMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>\n@param deletionMessage A user-specified message for this action (i.e., a reason for deleting the subnet group).*/",
         "setterMethodName" : "setDeletionMessage",
         "setterModel" : {
@@ -9837,6 +9952,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeletionMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>\n@param deletionMessage A user-specified message for this action (i.e., a reason for deleting the subnet group).*/",
           "setterMethodName" : "setDeletionMessage",
           "setterModel" : {
@@ -9986,6 +10102,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10029,6 +10146,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ClusterNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The names of the DAX clusters being described.</p>\n@param clusterNames The names of the DAX clusters being described.*/",
         "setterMethodName" : "setClusterNames",
         "setterModel" : {
@@ -10094,6 +10212,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10159,6 +10278,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10263,6 +10383,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10306,6 +10427,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ClusterNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The names of the DAX clusters being described.</p>\n@param clusterNames The names of the DAX clusters being described.*/",
           "setterMethodName" : "setClusterNames",
           "setterModel" : {
@@ -10372,6 +10494,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10438,6 +10561,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10540,6 +10664,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10642,6 +10767,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10685,6 +10811,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Clusters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>\n@param clusters The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.*/",
         "setterMethodName" : "setClusters",
         "setterModel" : {
@@ -10789,6 +10916,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10832,6 +10960,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Clusters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>\n@param clusters The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.*/",
           "setterMethodName" : "setClusters",
           "setterModel" : {
@@ -10898,6 +11027,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11010,6 +11140,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11075,6 +11206,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11142,6 +11274,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11208,6 +11341,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11310,6 +11444,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11412,6 +11547,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11455,6 +11591,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Parameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of parameters. Each element in the list represents one parameter.</p>\n@param parameters A list of parameters. Each element in the list represents one parameter.*/",
         "setterMethodName" : "setParameters",
         "setterModel" : {
@@ -11522,6 +11659,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11625,6 +11763,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11668,6 +11807,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Parameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of parameters. Each element in the list represents one parameter.</p>\n@param parameters A list of parameters. Each element in the list represents one parameter.*/",
           "setterMethodName" : "setParameters",
           "setterModel" : {
@@ -11780,6 +11920,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>\n@param sourceName The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.*/",
         "setterMethodName" : "setSourceName",
         "setterModel" : {
@@ -11845,6 +11986,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The event source to retrieve events for. If no value is specified, all events are returned.</p>\n@param sourceType The event source to retrieve events for. If no value is specified, all events are returned.\n@see SourceType*/",
         "setterMethodName" : "setSourceType",
         "setterModel" : {
@@ -11910,6 +12052,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>\n@param startTime The beginning of the time interval to retrieve events for, specified in ISO 8601 format.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -11975,6 +12118,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>\n@param endTime The end of the time interval for which to retrieve events, specified in ISO 8601 format.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -12040,6 +12184,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Duration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of minutes' worth of events to retrieve.</p>\n@param duration The number of minutes' worth of events to retrieve.*/",
         "setterMethodName" : "setDuration",
         "setterModel" : {
@@ -12105,6 +12250,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -12170,6 +12316,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12237,6 +12384,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Duration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of minutes' worth of events to retrieve.</p>\n@param duration The number of minutes' worth of events to retrieve.*/",
           "setterMethodName" : "setDuration",
           "setterModel" : {
@@ -12303,6 +12451,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>\n@param endTime The end of the time interval for which to retrieve events, specified in ISO 8601 format.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -12369,6 +12518,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -12435,6 +12585,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12501,6 +12652,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>\n@param sourceName The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.*/",
           "setterMethodName" : "setSourceName",
           "setterModel" : {
@@ -12567,6 +12719,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The event source to retrieve events for. If no value is specified, all events are returned.</p>\n@param sourceType The event source to retrieve events for. If no value is specified, all events are returned.\n@see SourceType*/",
           "setterMethodName" : "setSourceType",
           "setterModel" : {
@@ -12633,6 +12786,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>\n@param startTime The beginning of the time interval to retrieve events for, specified in ISO 8601 format.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -12735,6 +12889,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12837,6 +12992,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12880,6 +13036,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Events",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of events. Each element in the array represents one event.</p>\n@param events An array of events. Each element in the array represents one event.*/",
         "setterMethodName" : "setEvents",
         "setterModel" : {
@@ -12984,6 +13141,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13027,6 +13185,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Events",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of events. Each element in the array represents one event.</p>\n@param events An array of events. Each element in the array represents one event.*/",
           "setterMethodName" : "setEvents",
           "setterModel" : {
@@ -13093,6 +13252,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13242,6 +13402,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13285,6 +13446,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ParameterGroupNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The names of the parameter groups.</p>\n@param parameterGroupNames The names of the parameter groups.*/",
         "setterMethodName" : "setParameterGroupNames",
         "setterModel" : {
@@ -13350,6 +13512,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -13415,6 +13578,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13482,6 +13646,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -13548,6 +13713,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13651,6 +13817,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13694,6 +13861,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ParameterGroupNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The names of the parameter groups.</p>\n@param parameterGroupNames The names of the parameter groups.*/",
           "setterMethodName" : "setParameterGroupNames",
           "setterModel" : {
@@ -13796,6 +13964,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13898,6 +14067,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13941,6 +14111,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ParameterGroups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of parameter groups. Each element in the array represents one parameter group.</p>\n@param parameterGroups An array of parameter groups. Each element in the array represents one parameter group.*/",
         "setterMethodName" : "setParameterGroups",
         "setterModel" : {
@@ -14008,6 +14179,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14111,6 +14283,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14154,6 +14327,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ParameterGroups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of parameter groups. Each element in the array represents one parameter group.</p>\n@param parameterGroups An array of parameter groups. Each element in the array represents one parameter group.*/",
           "setterMethodName" : "setParameterGroups",
           "setterModel" : {
@@ -14266,6 +14440,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the parameter group.</p>\n@param parameterGroupName The name of the parameter group.*/",
         "setterMethodName" : "setParameterGroupName",
         "setterModel" : {
@@ -14331,6 +14506,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>\n@param source How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -14396,6 +14572,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -14461,6 +14638,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -14528,6 +14706,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -14594,6 +14773,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14660,6 +14840,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the parameter group.</p>\n@param parameterGroupName The name of the parameter group.*/",
           "setterMethodName" : "setParameterGroupName",
           "setterModel" : {
@@ -14726,6 +14907,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>\n@param source How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -14828,6 +15010,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -14930,6 +15113,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14973,6 +15157,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Parameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>\n@param parameters A list of parameters within a parameter group. Each element in the list represents one parameter.*/",
         "setterMethodName" : "setParameters",
         "setterModel" : {
@@ -15040,6 +15225,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -15143,6 +15329,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15186,6 +15373,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Parameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>\n@param parameters A list of parameters within a parameter group. Each element in the list represents one parameter.*/",
           "setterMethodName" : "setParameters",
           "setterModel" : {
@@ -15335,6 +15523,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15378,6 +15567,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetGroupNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the subnet group.</p>\n@param subnetGroupNames The name of the subnet group.*/",
         "setterMethodName" : "setSubnetGroupNames",
         "setterModel" : {
@@ -15443,6 +15633,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -15508,6 +15699,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15575,6 +15767,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>\n@param maxResults The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> <p>The value for <code>MaxResults</code> must be between 20 and 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -15641,6 +15834,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -15744,6 +15938,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15787,6 +15982,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetGroupNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the subnet group.</p>\n@param subnetGroupNames The name of the subnet group.*/",
           "setterMethodName" : "setSubnetGroupNames",
           "setterModel" : {
@@ -15889,6 +16085,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15991,6 +16188,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16034,6 +16232,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetGroups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of subnet groups. Each element in the array represents a single subnet group.</p>\n@param subnetGroups An array of subnet groups. Each element in the array represents a single subnet group.*/",
         "setterMethodName" : "setSubnetGroups",
         "setterModel" : {
@@ -16101,6 +16300,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Provides an identifier to allow retrieval of paginated results.</p>\n@param nextToken Provides an identifier to allow retrieval of paginated results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16204,6 +16404,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16247,6 +16448,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetGroups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of subnet groups. Each element in the array represents a single subnet group.</p>\n@param subnetGroups An array of subnet groups. Each element in the array represents a single subnet group.*/",
           "setterMethodName" : "setSubnetGroups",
           "setterModel" : {
@@ -16352,6 +16554,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Address",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The DNS hostname of the endpoint.</p>\n@param address The DNS hostname of the endpoint.*/",
         "setterMethodName" : "setAddress",
         "setterModel" : {
@@ -16417,6 +16620,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Port",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The port number that applications should use to connect to the endpoint.</p>\n@param port The port number that applications should use to connect to the endpoint.*/",
         "setterMethodName" : "setPort",
         "setterModel" : {
@@ -16484,6 +16688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Address",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The DNS hostname of the endpoint.</p>\n@param address The DNS hostname of the endpoint.*/",
           "setterMethodName" : "setAddress",
           "setterModel" : {
@@ -16550,6 +16755,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Port",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The port number that applications should use to connect to the endpoint.</p>\n@param port The port number that applications should use to connect to the endpoint.*/",
           "setterMethodName" : "setPort",
           "setterModel" : {
@@ -16655,6 +16861,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>\n@param sourceName The source of the event. For example, if the event occurred at the node level, the source would be the node ID.*/",
         "setterMethodName" : "setSourceName",
         "setterModel" : {
@@ -16720,6 +16927,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>\n@param sourceType Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.\n@see SourceType*/",
         "setterMethodName" : "setSourceType",
         "setterModel" : {
@@ -16785,6 +16993,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Message",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user-defined message associated with the event.</p>\n@param message A user-defined message associated with the event.*/",
         "setterMethodName" : "setMessage",
         "setterModel" : {
@@ -16850,6 +17059,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "Date",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when the event occurred.</p>\n@param date The date and time when the event occurred.*/",
         "setterMethodName" : "setDate",
         "setterModel" : {
@@ -16917,6 +17127,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "Date",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when the event occurred.</p>\n@param date The date and time when the event occurred.*/",
           "setterMethodName" : "setDate",
           "setterModel" : {
@@ -16983,6 +17194,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Message",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user-defined message associated with the event.</p>\n@param message A user-defined message associated with the event.*/",
           "setterMethodName" : "setMessage",
           "setterModel" : {
@@ -17049,6 +17261,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>\n@param sourceName The source of the event. For example, if the event occurred at the node level, the source would be the node ID.*/",
           "setterMethodName" : "setSourceName",
           "setterModel" : {
@@ -17115,6 +17328,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>\n@param sourceType Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.\n@see SourceType*/",
           "setterMethodName" : "setSourceType",
           "setterModel" : {
@@ -17227,6 +17441,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DAX cluster that will receive additional nodes.</p>\n@param clusterName The name of the DAX cluster that will receive additional nodes.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -17292,6 +17507,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "NewReplicationFactor",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The new number of nodes for the DAX cluster.</p>\n@param newReplicationFactor The new number of nodes for the DAX cluster.*/",
         "setterMethodName" : "setNewReplicationFactor",
         "setterModel" : {
@@ -17394,6 +17610,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17437,6 +17654,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AvailabilityZones",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.*/",
         "setterMethodName" : "setAvailabilityZones",
         "setterModel" : {
@@ -17541,6 +17759,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -17584,6 +17803,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AvailabilityZones",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.*/",
           "setterMethodName" : "setAvailabilityZones",
           "setterModel" : {
@@ -17650,6 +17870,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DAX cluster that will receive additional nodes.</p>\n@param clusterName The name of the DAX cluster that will receive additional nodes.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -17716,6 +17937,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "NewReplicationFactor",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The new number of nodes for the DAX cluster.</p>\n@param newReplicationFactor The new number of nodes for the DAX cluster.*/",
           "setterMethodName" : "setNewReplicationFactor",
           "setterModel" : {
@@ -17818,6 +18040,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the DAX cluster. with its new replication factor.</p>\n@param cluster A description of the DAX cluster. with its new replication factor.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -17885,6 +18108,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the DAX cluster. with its new replication factor.</p>\n@param cluster A description of the DAX cluster. with its new replication factor.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -18342,6 +18566,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DAX resource to which the tags belong.</p>\n@param resourceName The name of the DAX resource to which the tags belong.*/",
         "setterMethodName" : "setResourceName",
         "setterModel" : {
@@ -18407,6 +18632,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -18474,6 +18700,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>\n@param nextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18540,6 +18767,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DAX resource to which the tags belong.</p>\n@param resourceName The name of the DAX resource to which the tags belong.*/",
           "setterMethodName" : "setResourceName",
           "setterModel" : {
@@ -18679,6 +18907,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -18722,6 +18951,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of tags currently associated with the DAX cluster.</p>\n@param tags A list of tags currently associated with the DAX cluster.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -18787,6 +19017,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>\n@param nextToken If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -18854,6 +19085,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>\n@param nextToken If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18957,6 +19189,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -19000,6 +19233,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of tags currently associated with the DAX cluster.</p>\n@param tags A list of tags currently associated with the DAX cluster.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -19105,6 +19339,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-generated identifier for the node.</p>\n@param nodeId A system-generated identifier for the node.*/",
         "setterMethodName" : "setNodeId",
         "setterModel" : {
@@ -19170,6 +19405,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Endpoint",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The endpoint for the node, consisting of a DNS name and a port number. Client applications can connect directly to a node endpoint, if desired (as an alternative to allowing DAX client software to intelligently route requests and responses to nodes in the DAX cluster.</p>\n@param endpoint The endpoint for the node, consisting of a DNS name and a port number. Client applications can connect directly to a node endpoint, if desired (as an alternative to allowing DAX client software to intelligently route requests and responses to nodes in the DAX cluster.*/",
         "setterMethodName" : "setEndpoint",
         "setterModel" : {
@@ -19235,6 +19471,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "NodeCreateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time (in UNIX epoch format) when the node was launched.</p>\n@param nodeCreateTime The date and time (in UNIX epoch format) when the node was launched.*/",
         "setterMethodName" : "setNodeCreateTime",
         "setterModel" : {
@@ -19300,6 +19537,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AvailabilityZone",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Availability Zone (AZ) in which the node has been deployed.</p>\n@param availabilityZone The Availability Zone (AZ) in which the node has been deployed.*/",
         "setterMethodName" : "setAvailabilityZone",
         "setterModel" : {
@@ -19365,6 +19603,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the node. For example: <code>available</code>.</p>\n@param nodeStatus The current status of the node. For example: <code>available</code>.*/",
         "setterMethodName" : "setNodeStatus",
         "setterModel" : {
@@ -19430,6 +19669,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>\n@param parameterGroupStatus The status of the parameter group associated with this node. For example, <code>in-sync</code>.*/",
         "setterMethodName" : "setParameterGroupStatus",
         "setterModel" : {
@@ -19497,6 +19737,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AvailabilityZone",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Availability Zone (AZ) in which the node has been deployed.</p>\n@param availabilityZone The Availability Zone (AZ) in which the node has been deployed.*/",
           "setterMethodName" : "setAvailabilityZone",
           "setterModel" : {
@@ -19563,6 +19804,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Endpoint",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The endpoint for the node, consisting of a DNS name and a port number. Client applications can connect directly to a node endpoint, if desired (as an alternative to allowing DAX client software to intelligently route requests and responses to nodes in the DAX cluster.</p>\n@param endpoint The endpoint for the node, consisting of a DNS name and a port number. Client applications can connect directly to a node endpoint, if desired (as an alternative to allowing DAX client software to intelligently route requests and responses to nodes in the DAX cluster.*/",
           "setterMethodName" : "setEndpoint",
           "setterModel" : {
@@ -19629,6 +19871,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "NodeCreateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time (in UNIX epoch format) when the node was launched.</p>\n@param nodeCreateTime The date and time (in UNIX epoch format) when the node was launched.*/",
           "setterMethodName" : "setNodeCreateTime",
           "setterModel" : {
@@ -19695,6 +19938,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-generated identifier for the node.</p>\n@param nodeId A system-generated identifier for the node.*/",
           "setterMethodName" : "setNodeId",
           "setterModel" : {
@@ -19761,6 +20005,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the node. For example: <code>available</code>.</p>\n@param nodeStatus The current status of the node. For example: <code>available</code>.*/",
           "setterMethodName" : "setNodeStatus",
           "setterModel" : {
@@ -19827,6 +20072,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>\n@param parameterGroupStatus The status of the parameter group associated with this node. For example, <code>in-sync</code>.*/",
           "setterMethodName" : "setParameterGroupStatus",
           "setterModel" : {
@@ -20043,6 +20289,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A node type to which the parameter value applies.</p>\n@param nodeType A node type to which the parameter value applies.*/",
         "setterMethodName" : "setNodeType",
         "setterModel" : {
@@ -20108,6 +20355,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter value for this node type.</p>\n@param value The parameter value for this node type.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -20175,6 +20423,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A node type to which the parameter value applies.</p>\n@param nodeType A node type to which the parameter value applies.*/",
           "setterMethodName" : "setNodeType",
           "setterModel" : {
@@ -20241,6 +20490,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter value for this node type.</p>\n@param value The parameter value for this node type.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -20346,6 +20596,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TopicArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the topic. </p>\n@param topicArn The Amazon Resource Name (ARN) that identifies the topic.*/",
         "setterMethodName" : "setTopicArn",
         "setterModel" : {
@@ -20411,6 +20662,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TopicStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current state of the topic.</p>\n@param topicStatus The current state of the topic.*/",
         "setterMethodName" : "setTopicStatus",
         "setterModel" : {
@@ -20478,6 +20730,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TopicArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the topic. </p>\n@param topicArn The Amazon Resource Name (ARN) that identifies the topic.*/",
           "setterMethodName" : "setTopicArn",
           "setterModel" : {
@@ -20544,6 +20797,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TopicStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current state of the topic.</p>\n@param topicStatus The current state of the topic.*/",
           "setterMethodName" : "setTopicStatus",
           "setterModel" : {
@@ -20649,6 +20903,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the parameter.</p>\n@param parameterName The name of the parameter.*/",
         "setterMethodName" : "setParameterName",
         "setterModel" : {
@@ -20714,6 +20969,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.</p>\n@param parameterType Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.\n@see ParameterType*/",
         "setterMethodName" : "setParameterType",
         "setterModel" : {
@@ -20779,6 +21035,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value for the parameter.</p>\n@param parameterValue The value for the parameter.*/",
         "setterMethodName" : "setParameterValue",
         "setterModel" : {
@@ -20881,6 +21138,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20924,6 +21182,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "NodeTypeSpecificValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of node types, and specific parameter values for each node.</p>\n@param nodeTypeSpecificValues A list of node types, and specific parameter values for each node.*/",
         "setterMethodName" : "setNodeTypeSpecificValues",
         "setterModel" : {
@@ -20989,6 +21248,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the parameter</p>\n@param description A description of the parameter*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -21054,6 +21314,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>\n@param source How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -21119,6 +21380,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DataType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The data type of the parameter. For example, <code>integer</code>:</p>\n@param dataType The data type of the parameter. For example, <code>integer</code>:*/",
         "setterMethodName" : "setDataType",
         "setterModel" : {
@@ -21184,6 +21446,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AllowedValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A range of values within which the parameter can be set.</p>\n@param allowedValues A range of values within which the parameter can be set.*/",
         "setterMethodName" : "setAllowedValues",
         "setterModel" : {
@@ -21249,6 +21512,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IsModifiable",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Whether the customer is allowed to modify the parameter.</p>\n@param isModifiable Whether the customer is allowed to modify the parameter.\n@see IsModifiable*/",
         "setterMethodName" : "setIsModifiable",
         "setterModel" : {
@@ -21314,6 +21578,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ChangeType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.</p>\n@param changeType The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.\n@see ChangeType*/",
         "setterMethodName" : "setChangeType",
         "setterModel" : {
@@ -21381,6 +21646,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AllowedValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A range of values within which the parameter can be set.</p>\n@param allowedValues A range of values within which the parameter can be set.*/",
           "setterMethodName" : "setAllowedValues",
           "setterModel" : {
@@ -21447,6 +21713,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ChangeType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.</p>\n@param changeType The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.\n@see ChangeType*/",
           "setterMethodName" : "setChangeType",
           "setterModel" : {
@@ -21513,6 +21780,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DataType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The data type of the parameter. For example, <code>integer</code>:</p>\n@param dataType The data type of the parameter. For example, <code>integer</code>:*/",
           "setterMethodName" : "setDataType",
           "setterModel" : {
@@ -21579,6 +21847,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the parameter</p>\n@param description A description of the parameter*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -21645,6 +21914,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IsModifiable",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Whether the customer is allowed to modify the parameter.</p>\n@param isModifiable Whether the customer is allowed to modify the parameter.\n@see IsModifiable*/",
           "setterMethodName" : "setIsModifiable",
           "setterModel" : {
@@ -21748,6 +22018,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -21791,6 +22062,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "NodeTypeSpecificValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of node types, and specific parameter values for each node.</p>\n@param nodeTypeSpecificValues A list of node types, and specific parameter values for each node.*/",
           "setterMethodName" : "setNodeTypeSpecificValues",
           "setterModel" : {
@@ -21857,6 +22129,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the parameter.</p>\n@param parameterName The name of the parameter.*/",
           "setterMethodName" : "setParameterName",
           "setterModel" : {
@@ -21923,6 +22196,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.</p>\n@param parameterType Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.\n@see ParameterType*/",
           "setterMethodName" : "setParameterType",
           "setterModel" : {
@@ -21989,6 +22263,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value for the parameter.</p>\n@param parameterValue The value for the parameter.*/",
           "setterMethodName" : "setParameterValue",
           "setterModel" : {
@@ -22055,6 +22330,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>\n@param source How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -22160,6 +22436,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the parameter group.</p>\n@param parameterGroupName The name of the parameter group.*/",
         "setterMethodName" : "setParameterGroupName",
         "setterModel" : {
@@ -22225,6 +22502,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the parameter group.</p>\n@param description A description of the parameter group.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -22292,6 +22570,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the parameter group.</p>\n@param description A description of the parameter group.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -22358,6 +22637,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the parameter group.</p>\n@param parameterGroupName The name of the parameter group.*/",
           "setterMethodName" : "setParameterGroupName",
           "setterModel" : {
@@ -22574,6 +22854,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the parameter group.</p>\n@param parameterGroupName The name of the parameter group.*/",
         "setterMethodName" : "setParameterGroupName",
         "setterModel" : {
@@ -22639,6 +22920,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterApplyStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of parameter updates. </p>\n@param parameterApplyStatus The status of parameter updates.*/",
         "setterMethodName" : "setParameterApplyStatus",
         "setterModel" : {
@@ -22741,6 +23023,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -22784,6 +23067,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "NodeIdsToReboot",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The node IDs of one or more nodes to be rebooted.</p>\n@param nodeIdsToReboot The node IDs of one or more nodes to be rebooted.*/",
         "setterMethodName" : "setNodeIdsToReboot",
         "setterModel" : {
@@ -22888,6 +23172,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22931,6 +23216,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "NodeIdsToReboot",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The node IDs of one or more nodes to be rebooted.</p>\n@param nodeIdsToReboot The node IDs of one or more nodes to be rebooted.*/",
           "setterMethodName" : "setNodeIdsToReboot",
           "setterModel" : {
@@ -22997,6 +23283,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterApplyStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of parameter updates. </p>\n@param parameterApplyStatus The status of parameter updates.*/",
           "setterMethodName" : "setParameterApplyStatus",
           "setterModel" : {
@@ -23063,6 +23350,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the parameter group.</p>\n@param parameterGroupName The name of the parameter group.*/",
           "setterMethodName" : "setParameterGroupName",
           "setterModel" : {
@@ -23168,6 +23456,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the parameter.</p>\n@param parameterName The name of the parameter.*/",
         "setterMethodName" : "setParameterName",
         "setterModel" : {
@@ -23233,6 +23522,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of the parameter.</p>\n@param parameterValue The value of the parameter.*/",
         "setterMethodName" : "setParameterValue",
         "setterModel" : {
@@ -23300,6 +23590,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the parameter.</p>\n@param parameterName The name of the parameter.*/",
           "setterMethodName" : "setParameterName",
           "setterModel" : {
@@ -23366,6 +23657,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of the parameter.</p>\n@param parameterValue The value of the parameter.*/",
           "setterMethodName" : "setParameterValue",
           "setterModel" : {
@@ -23524,6 +23816,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DAX cluster containing the node to be rebooted.</p>\n@param clusterName The name of the DAX cluster containing the node to be rebooted.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -23589,6 +23882,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NodeId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The system-assigned ID of the node to be rebooted.</p>\n@param nodeId The system-assigned ID of the node to be rebooted.*/",
         "setterMethodName" : "setNodeId",
         "setterModel" : {
@@ -23656,6 +23950,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DAX cluster containing the node to be rebooted.</p>\n@param clusterName The name of the DAX cluster containing the node to be rebooted.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -23722,6 +24017,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NodeId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The system-assigned ID of the node to be rebooted.</p>\n@param nodeId The system-assigned ID of the node to be rebooted.*/",
           "setterMethodName" : "setNodeId",
           "setterModel" : {
@@ -23824,6 +24120,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the DAX cluster after a node has been rebooted.</p>\n@param cluster A description of the DAX cluster after a node has been rebooted.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -23891,6 +24188,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the DAX cluster after a node has been rebooted.</p>\n@param cluster A description of the DAX cluster after a node has been rebooted.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -23996,6 +24294,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@param status The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@see SSEStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -24063,6 +24362,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@param status The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@see SSEStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -24168,6 +24468,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@param enabled Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -24235,6 +24536,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@param enabled Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
@@ -24392,6 +24694,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SecurityGroupIdentifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique ID for this security group.</p>\n@param securityGroupIdentifier The unique ID for this security group.*/",
         "setterMethodName" : "setSecurityGroupIdentifier",
         "setterModel" : {
@@ -24457,6 +24760,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of this security group.</p>\n@param status The status of this security group.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -24524,6 +24828,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SecurityGroupIdentifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique ID for this security group.</p>\n@param securityGroupIdentifier The unique ID for this security group.*/",
           "setterMethodName" : "setSecurityGroupIdentifier",
           "setterModel" : {
@@ -24590,6 +24895,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of this security group.</p>\n@param status The status of this security group.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -24781,6 +25087,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetIdentifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The system-assigned identifier for the subnet.</p>\n@param subnetIdentifier The system-assigned identifier for the subnet.*/",
         "setterMethodName" : "setSubnetIdentifier",
         "setterModel" : {
@@ -24846,6 +25153,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetAvailabilityZone",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for subnet subnet.*/",
         "setterMethodName" : "setSubnetAvailabilityZone",
         "setterModel" : {
@@ -24913,6 +25221,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetAvailabilityZone",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for subnet subnet.*/",
           "setterMethodName" : "setSubnetAvailabilityZone",
           "setterModel" : {
@@ -24979,6 +25288,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetIdentifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The system-assigned identifier for the subnet.</p>\n@param subnetIdentifier The system-assigned identifier for the subnet.*/",
           "setterMethodName" : "setSubnetIdentifier",
           "setterModel" : {
@@ -25084,6 +25394,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the subnet group.</p>\n@param subnetGroupName The name of the subnet group.*/",
         "setterMethodName" : "setSubnetGroupName",
         "setterModel" : {
@@ -25149,6 +25460,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the subnet group.</p>\n@param description The description of the subnet group.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -25214,6 +25526,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VpcId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>\n@param vpcId The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.*/",
         "setterMethodName" : "setVpcId",
         "setterModel" : {
@@ -25316,6 +25629,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -25359,6 +25673,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Subnets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of subnets associated with the subnet group. </p>\n@param subnets A list of subnets associated with the subnet group.*/",
         "setterMethodName" : "setSubnets",
         "setterModel" : {
@@ -25426,6 +25741,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the subnet group.</p>\n@param description The description of the subnet group.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -25492,6 +25808,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the subnet group.</p>\n@param subnetGroupName The name of the subnet group.*/",
           "setterMethodName" : "setSubnetGroupName",
           "setterModel" : {
@@ -25595,6 +25912,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -25638,6 +25956,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Subnets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of subnets associated with the subnet group. </p>\n@param subnets A list of subnets associated with the subnet group.*/",
           "setterMethodName" : "setSubnets",
           "setterModel" : {
@@ -25704,6 +26023,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VpcId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>\n@param vpcId The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.*/",
           "setterMethodName" : "setVpcId",
           "setterModel" : {
@@ -26031,6 +26351,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key for the tag. Tag keys are case sensitive. Every DAX cluster can only have one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.</p>\n@param key The key for the tag. Tag keys are case sensitive. Every DAX cluster can only have one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -26096,6 +26417,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of the tag. Tag values are case-sensitive and can be null. </p>\n@param value The value of the tag. Tag values are case-sensitive and can be null.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -26163,6 +26485,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key for the tag. Tag keys are case sensitive. Every DAX cluster can only have one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.</p>\n@param key The key for the tag. Tag keys are case sensitive. Every DAX cluster can only have one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -26229,6 +26552,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of the tag. Tag values are case-sensitive and can be null. </p>\n@param value The value of the tag. Tag values are case-sensitive and can be null.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -26415,6 +26739,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DAX resource to which tags should be added.</p>\n@param resourceName The name of the DAX resource to which tags should be added.*/",
         "setterMethodName" : "setResourceName",
         "setterModel" : {
@@ -26517,6 +26842,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -26560,6 +26886,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to be assigned to the DAX resource. </p>\n@param tags The tags to be assigned to the DAX resource.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -26627,6 +26954,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DAX resource to which tags should be added.</p>\n@param resourceName The name of the DAX resource to which tags should be added.*/",
           "setterMethodName" : "setResourceName",
           "setterModel" : {
@@ -26730,6 +27058,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -26773,6 +27102,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to be assigned to the DAX resource. </p>\n@param tags The tags to be assigned to the DAX resource.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -26912,6 +27242,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -26955,6 +27286,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of tags that are associated with the DAX resource.</p>\n@param tags The list of tags that are associated with the DAX resource.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -27059,6 +27391,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -27102,6 +27435,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of tags that are associated with the DAX resource.</p>\n@param tags The list of tags that are associated with the DAX resource.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -27214,6 +27548,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DAX resource from which the tags should be removed.</p>\n@param resourceName The name of the DAX resource from which the tags should be removed.*/",
         "setterMethodName" : "setResourceName",
         "setterModel" : {
@@ -27316,6 +27651,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -27359,6 +27695,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagKeys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>\n@param tagKeys A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
@@ -27426,6 +27763,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DAX resource from which the tags should be removed.</p>\n@param resourceName The name of the DAX resource from which the tags should be removed.*/",
           "setterMethodName" : "setResourceName",
           "setterModel" : {
@@ -27529,6 +27867,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -27572,6 +27911,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagKeys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>\n@param tagKeys A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
@@ -27711,6 +28051,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -27754,6 +28095,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tag keys that have been removed from the cluster.</p>\n@param tags The tag keys that have been removed from the cluster.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -27858,6 +28200,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -27901,6 +28244,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tag keys that have been removed from the cluster.</p>\n@param tags The tag keys that have been removed from the cluster.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -28013,6 +28357,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DAX cluster to be modified.</p>\n@param clusterName The name of the DAX cluster to be modified.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -28078,6 +28423,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the changes being made to the cluster.</p>\n@param description A description of the changes being made to the cluster.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -28143,6 +28489,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreferredMaintenanceWindow",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>\n@param preferredMaintenanceWindow A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.*/",
         "setterMethodName" : "setPreferredMaintenanceWindow",
         "setterModel" : {
@@ -28208,6 +28555,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NotificationTopicArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the topic.</p>\n@param notificationTopicArn The Amazon Resource Name (ARN) that identifies the topic.*/",
         "setterMethodName" : "setNotificationTopicArn",
         "setterModel" : {
@@ -28273,6 +28621,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NotificationTopicStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current state of the topic.</p>\n@param notificationTopicStatus The current state of the topic.*/",
         "setterMethodName" : "setNotificationTopicStatus",
         "setterModel" : {
@@ -28338,6 +28687,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of a parameter group for this cluster.</p>\n@param parameterGroupName The name of a parameter group for this cluster.*/",
         "setterMethodName" : "setParameterGroupName",
         "setterModel" : {
@@ -28440,6 +28790,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -28483,6 +28834,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>\n@param securityGroupIds A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -28550,6 +28902,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DAX cluster to be modified.</p>\n@param clusterName The name of the DAX cluster to be modified.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -28616,6 +28969,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the changes being made to the cluster.</p>\n@param description A description of the changes being made to the cluster.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -28682,6 +29036,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NotificationTopicArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the topic.</p>\n@param notificationTopicArn The Amazon Resource Name (ARN) that identifies the topic.*/",
           "setterMethodName" : "setNotificationTopicArn",
           "setterModel" : {
@@ -28748,6 +29103,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NotificationTopicStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current state of the topic.</p>\n@param notificationTopicStatus The current state of the topic.*/",
           "setterMethodName" : "setNotificationTopicStatus",
           "setterModel" : {
@@ -28814,6 +29170,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of a parameter group for this cluster.</p>\n@param parameterGroupName The name of a parameter group for this cluster.*/",
           "setterMethodName" : "setParameterGroupName",
           "setterModel" : {
@@ -28880,6 +29237,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreferredMaintenanceWindow",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>\n@param preferredMaintenanceWindow A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.*/",
           "setterMethodName" : "setPreferredMaintenanceWindow",
           "setterModel" : {
@@ -28983,6 +29341,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -29026,6 +29385,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>\n@param securityGroupIds A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -29128,6 +29488,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the DAX cluster, after it has been modified.</p>\n@param cluster A description of the DAX cluster, after it has been modified.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -29195,6 +29556,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the DAX cluster, after it has been modified.</p>\n@param cluster A description of the DAX cluster, after it has been modified.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -29307,6 +29669,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParameterGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the parameter group.</p>\n@param parameterGroupName The name of the parameter group.*/",
         "setterMethodName" : "setParameterGroupName",
         "setterModel" : {
@@ -29409,6 +29772,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -29452,6 +29816,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ParameterNameValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p>\n@param parameterNameValues An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.*/",
         "setterMethodName" : "setParameterNameValues",
         "setterModel" : {
@@ -29519,6 +29884,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParameterGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the parameter group.</p>\n@param parameterGroupName The name of the parameter group.*/",
           "setterMethodName" : "setParameterGroupName",
           "setterModel" : {
@@ -29622,6 +29988,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -29665,6 +30032,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ParameterNameValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p>\n@param parameterNameValues An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.*/",
           "setterMethodName" : "setParameterNameValues",
           "setterModel" : {
@@ -29767,6 +30135,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ParameterGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameter group that has been modified.</p>\n@param parameterGroup The parameter group that has been modified.*/",
         "setterMethodName" : "setParameterGroup",
         "setterModel" : {
@@ -29834,6 +30203,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ParameterGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameter group that has been modified.</p>\n@param parameterGroup The parameter group that has been modified.*/",
           "setterMethodName" : "setParameterGroup",
           "setterModel" : {
@@ -29946,6 +30316,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetGroupName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the subnet group.</p>\n@param subnetGroupName The name of the subnet group.*/",
         "setterMethodName" : "setSubnetGroupName",
         "setterModel" : {
@@ -30011,6 +30382,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the subnet group.</p>\n@param description A description of the subnet group.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -30113,6 +30485,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -30156,6 +30529,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of subnet IDs in the subnet group.</p>\n@param subnetIds A list of subnet IDs in the subnet group.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -30223,6 +30597,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the subnet group.</p>\n@param description A description of the subnet group.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -30289,6 +30664,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetGroupName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the subnet group.</p>\n@param subnetGroupName The name of the subnet group.*/",
           "setterMethodName" : "setSubnetGroupName",
           "setterModel" : {
@@ -30392,6 +30768,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -30435,6 +30812,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of subnet IDs in the subnet group.</p>\n@param subnetIds A list of subnet IDs in the subnet group.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -30537,6 +30915,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SubnetGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The subnet group that has been modified.</p>\n@param subnetGroup The subnet group that has been modified.*/",
         "setterMethodName" : "setSubnetGroup",
         "setterModel" : {
@@ -30604,6 +30983,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SubnetGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The subnet group that has been modified.</p>\n@param subnetGroup The subnet group that has been modified.*/",
           "setterMethodName" : "setSubnetGroup",
           "setterModel" : {

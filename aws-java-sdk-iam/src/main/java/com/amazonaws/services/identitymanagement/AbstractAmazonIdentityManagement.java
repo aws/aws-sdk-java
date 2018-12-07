@@ -304,6 +304,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public GenerateServiceLastAccessedDetailsResult generateServiceLastAccessedDetails(GenerateServiceLastAccessedDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccessKeyLastUsedResult getAccessKeyLastUsed(GetAccessKeyLastUsedRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -415,6 +420,16 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
 
     @Override
     public GetServerCertificateResult getServerCertificate(GetServerCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetServiceLastAccessedDetailsResult getServiceLastAccessedDetails(GetServiceLastAccessedDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetServiceLastAccessedDetailsWithEntitiesResult getServiceLastAccessedDetailsWithEntities(GetServiceLastAccessedDetailsWithEntitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -541,6 +556,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     @Override
     public ListPoliciesResult listPolicies() {
         return listPolicies(new ListPoliciesRequest());
+    }
+
+    @Override
+    public ListPoliciesGrantingServiceAccessResult listPoliciesGrantingServiceAccess(ListPoliciesGrantingServiceAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

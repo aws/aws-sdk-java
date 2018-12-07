@@ -168,7 +168,8 @@ public class TerminologyData implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -179,7 +180,7 @@ public class TerminologyData implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFile() != null)
-            sb.append("File: ").append(getFile()).append(",");
+            sb.append("File: ").append("***Sensitive Data Redacted***").append(",");
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat());
         sb.append("}");

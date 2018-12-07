@@ -710,7 +710,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -723,7 +724,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         if (getFunctionName() != null)
             sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getZipFile() != null)
-            sb.append("ZipFile: ").append(getZipFile()).append(",");
+            sb.append("ZipFile: ").append("***Sensitive Data Redacted***").append(",");
         if (getS3Bucket() != null)
             sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
         if (getS3Key() != null)

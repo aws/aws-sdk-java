@@ -746,6 +746,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project containing the placement in which to associate the device.</p>\n@param projectName The name of the project containing the placement in which to associate the device.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -811,6 +812,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the placement in which to associate the device.</p>\n@param placementName The name of the placement in which to associate the device.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -876,6 +878,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>\n@param deviceId The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
@@ -941,6 +944,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceTemplateName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The device template name to associate with the device ID.</p>\n@param deviceTemplateName The device template name to associate with the device ID.*/",
         "setterMethodName" : "setDeviceTemplateName",
         "setterModel" : {
@@ -1008,6 +1012,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>\n@param deviceId The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
@@ -1074,6 +1079,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceTemplateName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The device template name to associate with the device ID.</p>\n@param deviceTemplateName The device template name to associate with the device ID.*/",
           "setterMethodName" : "setDeviceTemplateName",
           "setterModel" : {
@@ -1140,6 +1146,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the placement in which to associate the device.</p>\n@param placementName The name of the placement in which to associate the device.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -1206,6 +1213,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project containing the placement in which to associate the device.</p>\n@param projectName The name of the project containing the placement in which to associate the device.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -1355,6 +1363,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the placement to be created.</p>\n@param placementName The name of the placement to be created.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -1420,6 +1429,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project in which to create the placement.</p>\n@param projectName The name of the project in which to create the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -1528,6 +1538,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1565,6 +1576,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>\n@param attributes Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -1675,6 +1687,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -1712,6 +1725,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>\n@param attributes Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -1778,6 +1792,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the placement to be created.</p>\n@param placementName The name of the placement to be created.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -1844,6 +1859,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project in which to create the placement.</p>\n@param projectName The name of the project in which to create the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -1993,6 +2009,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project to create.</p>\n@param projectName The name of the project to create.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -2058,6 +2075,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional description for the project.</p>\n@param description An optional description for the project.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -2123,6 +2141,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PlacementTemplate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>\n@param placementTemplate The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.*/",
         "setterMethodName" : "setPlacementTemplate",
         "setterModel" : {
@@ -2190,6 +2209,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional description for the project.</p>\n@param description An optional description for the project.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -2256,6 +2276,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PlacementTemplate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>\n@param placementTemplate The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.*/",
           "setterMethodName" : "setPlacementTemplate",
           "setterModel" : {
@@ -2322,6 +2343,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project to create.</p>\n@param projectName The name of the project to create.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -2471,6 +2493,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the empty placement to delete.</p>\n@param placementName The name of the empty placement to delete.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -2536,6 +2559,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The project containing the empty placement to delete.</p>\n@param projectName The project containing the empty placement to delete.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -2603,6 +2627,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the empty placement to delete.</p>\n@param placementName The name of the empty placement to delete.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -2669,6 +2694,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The project containing the empty placement to delete.</p>\n@param projectName The project containing the empty placement to delete.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -2818,6 +2844,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the empty project to delete.</p>\n@param projectName The name of the empty project to delete.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -2885,6 +2912,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the empty project to delete.</p>\n@param projectName The name of the empty project to delete.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -3034,6 +3062,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the placement within a project.</p>\n@param placementName The name of the placement within a project.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -3099,6 +3128,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The project containing the placement to be described.</p>\n@param projectName The project containing the placement to be described.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -3166,6 +3196,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the placement within a project.</p>\n@param placementName The name of the placement within a project.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -3232,6 +3263,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The project containing the placement to be described.</p>\n@param projectName The project containing the placement to be described.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -3334,6 +3366,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Placement",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object describing the placement.</p>\n@param placement An object describing the placement.*/",
         "setterMethodName" : "setPlacement",
         "setterModel" : {
@@ -3401,6 +3434,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Placement",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object describing the placement.</p>\n@param placement An object describing the placement.*/",
           "setterMethodName" : "setPlacement",
           "setterModel" : {
@@ -3513,6 +3547,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project to be described.</p>\n@param projectName The name of the project to be described.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -3580,6 +3615,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project to be described.</p>\n@param projectName The name of the project to be described.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -3682,6 +3718,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Project",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object describing the project.</p>\n@param project An object describing the project.*/",
         "setterMethodName" : "setProject",
         "setterModel" : {
@@ -3749,6 +3786,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Project",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object describing the project.</p>\n@param project An object describing the project.*/",
           "setterMethodName" : "setProject",
           "setterModel" : {
@@ -3854,6 +3892,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The device type, which currently must be <code>\"button\"</code>.</p>\n@param deviceType The device type, which currently must be <code>\"button\"</code>.*/",
         "setterMethodName" : "setDeviceType",
         "setterModel" : {
@@ -3962,6 +4001,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -3999,6 +4039,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "CallbackOverrides",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>\n@param callbackOverrides An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.*/",
         "setterMethodName" : "setCallbackOverrides",
         "setterModel" : {
@@ -4109,6 +4150,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -4146,6 +4188,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "CallbackOverrides",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>\n@param callbackOverrides An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.*/",
           "setterMethodName" : "setCallbackOverrides",
           "setterModel" : {
@@ -4212,6 +4255,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The device type, which currently must be <code>\"button\"</code>.</p>\n@param deviceType The device type, which currently must be <code>\"button\"</code>.*/",
           "setterMethodName" : "setDeviceType",
           "setterModel" : {
@@ -4324,6 +4368,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project that contains the placement.</p>\n@param projectName The name of the project that contains the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -4389,6 +4434,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the placement that the device should be removed from.</p>\n@param placementName The name of the placement that the device should be removed from.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -4454,6 +4500,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeviceTemplateName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The device ID that should be removed from the placement.</p>\n@param deviceTemplateName The device ID that should be removed from the placement.*/",
         "setterMethodName" : "setDeviceTemplateName",
         "setterModel" : {
@@ -4521,6 +4568,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeviceTemplateName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The device ID that should be removed from the placement.</p>\n@param deviceTemplateName The device ID that should be removed from the placement.*/",
           "setterMethodName" : "setDeviceTemplateName",
           "setterModel" : {
@@ -4587,6 +4635,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the placement that the device should be removed from.</p>\n@param placementName The name of the placement that the device should be removed from.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -4653,6 +4702,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project that contains the placement.</p>\n@param projectName The name of the project that contains the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -4802,6 +4852,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -4867,6 +4918,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the placement to get the devices from.</p>\n@param placementName The name of the placement to get the devices from.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -4934,6 +4986,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the placement to get the devices from.</p>\n@param placementName The name of the placement to get the devices from.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -5000,6 +5053,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -5145,6 +5199,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -5182,6 +5237,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Devices",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object containing the devices (zero or more) within the placement.</p>\n@param devices An object containing the devices (zero or more) within the placement.*/",
         "setterMethodName" : "setDevices",
         "setterModel" : {
@@ -5292,6 +5348,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -5329,6 +5386,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Devices",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object containing the devices (zero or more) within the placement.</p>\n@param devices An object containing the devices (zero or more) within the placement.*/",
           "setterMethodName" : "setDevices",
           "setterModel" : {
@@ -5434,6 +5492,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -5501,6 +5560,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -5603,6 +5663,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -5670,6 +5731,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -5779,6 +5841,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The project containing the placements to be listed.</p>\n@param projectName The project containing the placements to be listed.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -5844,6 +5907,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5909,6 +5973,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -5976,6 +6041,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -6042,6 +6108,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6108,6 +6175,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The project containing the placements to be listed.</p>\n@param projectName The project containing the placements to be listed.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -6247,6 +6315,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6290,6 +6359,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Placements",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object listing the requested placements.</p>\n@param placements An object listing the requested placements.*/",
         "setterMethodName" : "setPlacements",
         "setterModel" : {
@@ -6355,6 +6425,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6422,6 +6493,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6525,6 +6597,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6568,6 +6641,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Placements",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object listing the requested placements.</p>\n@param placements An object listing the requested placements.*/",
           "setterMethodName" : "setPlacements",
           "setterModel" : {
@@ -6680,6 +6754,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6745,6 +6820,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -6812,6 +6888,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -6878,6 +6955,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7017,6 +7095,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7060,6 +7139,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Projects",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object containing the list of projects.</p>\n@param projects An object containing the list of projects.*/",
         "setterMethodName" : "setProjects",
         "setterModel" : {
@@ -7125,6 +7205,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7192,6 +7273,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7295,6 +7377,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7338,6 +7421,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Projects",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object containing the list of projects.</p>\n@param projects An object containing the list of projects.*/",
           "setterMethodName" : "setProjects",
           "setterModel" : {
@@ -7443,6 +7527,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -7508,6 +7593,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the placement.</p>\n@param placementName The name of the placement.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -7616,6 +7702,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -7653,6 +7740,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user-defined attributes associated with the placement.</p>\n@param attributes The user-defined attributes associated with the placement.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -7718,6 +7806,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date when the placement was initially created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was initially created, in UNIX epoch time format.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
@@ -7783,6 +7872,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdatedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
         "setterMethodName" : "setUpdatedDate",
         "setterModel" : {
@@ -7893,6 +7983,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -7930,6 +8021,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user-defined attributes associated with the placement.</p>\n@param attributes The user-defined attributes associated with the placement.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -7996,6 +8088,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date when the placement was initially created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was initially created, in UNIX epoch time format.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
@@ -8062,6 +8155,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the placement.</p>\n@param placementName The name of the placement.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -8128,6 +8222,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -8194,6 +8289,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdatedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
           "setterMethodName" : "setUpdatedDate",
           "setterModel" : {
@@ -8299,6 +8395,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -8364,6 +8461,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the placement being summarized.</p>\n@param placementName The name of the placement being summarized.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -8429,6 +8527,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date when the placement was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was originally created, in UNIX epoch time format.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
@@ -8494,6 +8593,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdatedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
         "setterMethodName" : "setUpdatedDate",
         "setterModel" : {
@@ -8561,6 +8661,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date when the placement was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was originally created, in UNIX epoch time format.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
@@ -8627,6 +8728,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the placement being summarized.</p>\n@param placementName The name of the placement being summarized.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -8693,6 +8795,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -8759,6 +8862,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdatedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
           "setterMethodName" : "setUpdatedDate",
           "setterModel" : {
@@ -8907,6 +9011,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -8944,6 +9049,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "DefaultAttributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>\n@param defaultAttributes The default attributes (key/value pairs) to be applied to all placements using this template.*/",
         "setterMethodName" : "setDefaultAttributes",
         "setterModel" : {
@@ -9052,6 +9158,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -9089,6 +9196,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "DeviceTemplates",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>\n@param deviceTemplates An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.*/",
         "setterMethodName" : "setDeviceTemplates",
         "setterModel" : {
@@ -9199,6 +9307,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -9236,6 +9345,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "DefaultAttributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>\n@param defaultAttributes The default attributes (key/value pairs) to be applied to all placements using this template.*/",
           "setterMethodName" : "setDefaultAttributes",
           "setterModel" : {
@@ -9345,6 +9455,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -9382,6 +9493,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "DeviceTemplates",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>\n@param deviceTemplates An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.*/",
           "setterMethodName" : "setDeviceTemplates",
           "setterModel" : {
@@ -9487,6 +9599,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project for which to obtain information from.</p>\n@param projectName The name of the project for which to obtain information from.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -9552,6 +9665,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the project.</p>\n@param description The description of the project.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -9617,6 +9731,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
@@ -9682,6 +9797,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdatedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
         "setterMethodName" : "setUpdatedDate",
         "setterModel" : {
@@ -9747,6 +9863,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PlacementTemplate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object describing the project's placement specifications.</p>\n@param placementTemplate An object describing the project's placement specifications.*/",
         "setterMethodName" : "setPlacementTemplate",
         "setterModel" : {
@@ -9814,6 +9931,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
@@ -9880,6 +9998,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the project.</p>\n@param description The description of the project.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -9946,6 +10065,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PlacementTemplate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object describing the project's placement specifications.</p>\n@param placementTemplate An object describing the project's placement specifications.*/",
           "setterMethodName" : "setPlacementTemplate",
           "setterModel" : {
@@ -10012,6 +10132,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project for which to obtain information from.</p>\n@param projectName The name of the project for which to obtain information from.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -10078,6 +10199,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdatedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
           "setterMethodName" : "setUpdatedDate",
           "setterModel" : {
@@ -10183,6 +10305,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project being summarized.</p>\n@param projectName The name of the project being summarized.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -10248,6 +10371,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
@@ -10313,6 +10437,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "UpdatedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
         "setterMethodName" : "setUpdatedDate",
         "setterModel" : {
@@ -10380,6 +10505,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
@@ -10446,6 +10572,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project being summarized.</p>\n@param projectName The name of the project being summarized.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -10512,6 +10639,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "UpdatedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
           "setterMethodName" : "setUpdatedDate",
           "setterModel" : {
@@ -10617,6 +10745,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -10684,6 +10813,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -10786,6 +10916,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -10853,6 +10984,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -10955,6 +11087,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -11022,6 +11155,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -11131,6 +11265,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlacementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the placement to update.</p>\n@param placementName The name of the placement to update.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
@@ -11196,6 +11331,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project containing the placement to be updated.</p>\n@param projectName The name of the project containing the placement to be updated.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -11304,6 +11440,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -11341,6 +11478,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Attributes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>\n@param attributes The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
@@ -11451,6 +11589,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11488,6 +11627,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Attributes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>\n@param attributes The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
@@ -11554,6 +11694,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlacementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the placement to update.</p>\n@param placementName The name of the placement to update.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
@@ -11620,6 +11761,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project containing the placement to be updated.</p>\n@param projectName The name of the project containing the placement to be updated.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
@@ -11769,6 +11911,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProjectName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the project to be updated.</p>\n@param projectName The name of the project to be updated.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
@@ -11834,6 +11977,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional user-defined description for the project.</p>\n@param description An optional user-defined description for the project.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -11899,6 +12043,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PlacementTemplate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>\n@param placementTemplate An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.*/",
         "setterMethodName" : "setPlacementTemplate",
         "setterModel" : {
@@ -11966,6 +12111,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional user-defined description for the project.</p>\n@param description An optional user-defined description for the project.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -12032,6 +12178,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PlacementTemplate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>\n@param placementTemplate An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.*/",
           "setterMethodName" : "setPlacementTemplate",
           "setterModel" : {
@@ -12098,6 +12245,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProjectName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the project to be updated.</p>\n@param projectName The name of the project to be updated.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {

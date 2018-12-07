@@ -546,7 +546,8 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -561,9 +562,9 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getPrimaryEmail() != null)
-            sb.append("PrimaryEmail: ").append(getPrimaryEmail()).append(",");
+            sb.append("PrimaryEmail: ").append("***Sensitive Data Redacted***").append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+            sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLicenseType() != null)
             sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getUserRegistrationStatus() != null)

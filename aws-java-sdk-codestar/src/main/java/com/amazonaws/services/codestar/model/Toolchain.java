@@ -200,7 +200,8 @@ public class Toolchain implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -215,7 +216,7 @@ public class Toolchain implements Serializable, Cloneable, StructuredPojo {
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStackParameters() != null)
-            sb.append("StackParameters: ").append(getStackParameters());
+            sb.append("StackParameters: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

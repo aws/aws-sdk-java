@@ -41,6 +41,8 @@ public class Member {
 
     private boolean deprecated;
 
+    private boolean sensitive;
+
     private String timestampFormat;
 
     public String getShape() {
@@ -139,7 +141,13 @@ public class Member {
         this.deprecated = deprecated;
     }
 
+    public boolean isSensitive() {
+        return sensitive;
+    }
 
+    public void setSensitive(boolean sensitive) {
+        this.sensitive = sensitive;
+    }
     public String getTimestampFormat() {
         return timestampFormat;
     }

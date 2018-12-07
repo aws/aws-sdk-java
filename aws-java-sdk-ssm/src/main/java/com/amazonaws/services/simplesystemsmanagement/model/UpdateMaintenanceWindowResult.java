@@ -595,7 +595,8 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -610,7 +611,7 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getStartDate() != null)
             sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getEndDate() != null)

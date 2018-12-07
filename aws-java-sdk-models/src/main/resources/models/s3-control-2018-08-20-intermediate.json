@@ -336,6 +336,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to remove.</p>\n@param accountId The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to remove.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -403,6 +404,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to remove.</p>\n@param accountId The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to remove.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -552,6 +554,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.</p>\n@param accountId The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -619,6 +622,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.</p>\n@param accountId The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -721,6 +725,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PublicAccessBlockConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Public Access Block configuration currently in effect for this Amazon Web Services account.</p>\n@param publicAccessBlockConfiguration The Public Access Block configuration currently in effect for this Amazon Web Services account.*/",
         "setterMethodName" : "setPublicAccessBlockConfiguration",
         "setterModel" : {
@@ -788,6 +793,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PublicAccessBlockConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Public Access Block configuration currently in effect for this Amazon Web Services account.</p>\n@param publicAccessBlockConfiguration The Public Access Block configuration currently in effect for this Amazon Web Services account.*/",
           "setterMethodName" : "setPublicAccessBlockConfiguration",
           "setterModel" : {
@@ -930,6 +936,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "BlockPublicAcls",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p> <ul> <li> <p>PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.</p> </li> <li> <p>PUT Object calls will fail if the request includes an object ACL.</p> </li> </ul> <p>Note that enabling this setting doesn't affect existing policies or ACLs.</p>\n@param blockPublicAcls Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p> <ul> <li> <p>PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.</p> </li> <li> <p>PUT Object calls will fail if the request includes an object ACL.</p> </li> </ul> <p>Note that enabling this setting doesn't affect existing policies or ACLs.*/",
         "setterMethodName" : "setBlockPublicAcls",
         "setterModel" : {
@@ -995,6 +1002,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IgnorePublicAcls",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p> <p>Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>\n@param ignorePublicAcls Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p> <p>Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.*/",
         "setterMethodName" : "setIgnorePublicAcls",
         "setterModel" : {
@@ -1060,6 +1068,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "BlockPublicPolicy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p> <p>Note that enabling this setting doesn't affect existing bucket policies.</p>\n@param blockPublicPolicy Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p> <p>Note that enabling this setting doesn't affect existing bucket policies.*/",
         "setterMethodName" : "setBlockPublicPolicy",
         "setterModel" : {
@@ -1125,6 +1134,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RestrictPublicBuckets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.</p> <p>Note that enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked. </p>\n@param restrictPublicBuckets Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.</p> <p>Note that enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.*/",
         "setterMethodName" : "setRestrictPublicBuckets",
         "setterModel" : {
@@ -1192,6 +1202,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "BlockPublicAcls",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p> <ul> <li> <p>PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.</p> </li> <li> <p>PUT Object calls will fail if the request includes an object ACL.</p> </li> </ul> <p>Note that enabling this setting doesn't affect existing policies or ACLs.</p>\n@param blockPublicAcls Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p> <ul> <li> <p>PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.</p> </li> <li> <p>PUT Object calls will fail if the request includes an object ACL.</p> </li> </ul> <p>Note that enabling this setting doesn't affect existing policies or ACLs.*/",
           "setterMethodName" : "setBlockPublicAcls",
           "setterModel" : {
@@ -1258,6 +1269,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "BlockPublicPolicy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p> <p>Note that enabling this setting doesn't affect existing bucket policies.</p>\n@param blockPublicPolicy Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p> <p>Note that enabling this setting doesn't affect existing bucket policies.*/",
           "setterMethodName" : "setBlockPublicPolicy",
           "setterModel" : {
@@ -1324,6 +1336,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IgnorePublicAcls",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p> <p>Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>\n@param ignorePublicAcls Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain. </p> <p>Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.*/",
           "setterMethodName" : "setIgnorePublicAcls",
           "setterModel" : {
@@ -1390,6 +1403,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RestrictPublicBuckets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.</p> <p>Note that enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked. </p>\n@param restrictPublicBuckets Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. If this element is set to <code>TRUE</code>, then only the bucket owner and AWS Services can access buckets with public policies.</p> <p>Note that enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.*/",
           "setterMethodName" : "setRestrictPublicBuckets",
           "setterModel" : {
@@ -1502,6 +1516,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PublicAccessBlockConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Public Access Block configuration that you want to apply to this Amazon Web Services account.</p>\n@param publicAccessBlockConfiguration The Public Access Block configuration that you want to apply to this Amazon Web Services account.*/",
         "setterMethodName" : "setPublicAccessBlockConfiguration",
         "setterModel" : {
@@ -1567,6 +1582,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to set.</p>\n@param accountId The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to set.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -1634,6 +1650,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to set.</p>\n@param accountId The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to set.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -1700,6 +1717,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PublicAccessBlockConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Public Access Block configuration that you want to apply to this Amazon Web Services account.</p>\n@param publicAccessBlockConfiguration The Public Access Block configuration that you want to apply to this Amazon Web Services account.*/",
           "setterMethodName" : "setPublicAccessBlockConfiguration",
           "setterModel" : {

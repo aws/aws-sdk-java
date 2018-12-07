@@ -248,7 +248,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -259,7 +260,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getZipFile() != null)
-            sb.append("ZipFile: ").append(getZipFile()).append(",");
+            sb.append("ZipFile: ").append("***Sensitive Data Redacted***").append(",");
         if (getS3Bucket() != null)
             sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
         if (getS3Key() != null)

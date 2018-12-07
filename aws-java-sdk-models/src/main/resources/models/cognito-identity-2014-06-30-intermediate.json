@@ -1205,6 +1205,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProviderName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>\n@param providerName The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.*/",
         "setterMethodName" : "setProviderName",
         "setterModel" : {
@@ -1270,6 +1271,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The client ID for the Amazon Cognito Identity User Pool.</p>\n@param clientId The client ID for the Amazon Cognito Identity User Pool.*/",
         "setterMethodName" : "setClientId",
         "setterModel" : {
@@ -1335,6 +1337,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ServerSideTokenCheck",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.*/",
         "setterMethodName" : "setServerSideTokenCheck",
         "setterModel" : {
@@ -1402,6 +1405,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The client ID for the Amazon Cognito Identity User Pool.</p>\n@param clientId The client ID for the Amazon Cognito Identity User Pool.*/",
           "setterMethodName" : "setClientId",
           "setterModel" : {
@@ -1468,6 +1472,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProviderName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>\n@param providerName The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.*/",
           "setterMethodName" : "setProviderName",
           "setterModel" : {
@@ -1534,6 +1539,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ServerSideTokenCheck",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.*/",
           "setterMethodName" : "setServerSideTokenCheck",
           "setterModel" : {
@@ -1683,6 +1689,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
         "setterMethodName" : "setIdentityPoolName",
         "setterModel" : {
@@ -1748,6 +1755,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AllowUnauthenticatedIdentities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
         "setterMethodName" : "setAllowUnauthenticatedIdentities",
         "setterModel" : {
@@ -1856,6 +1864,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1893,6 +1902,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SupportedLoginProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
         "setterMethodName" : "setSupportedLoginProviders",
         "setterModel" : {
@@ -1958,6 +1968,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperProviderName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.*/",
         "setterMethodName" : "setDeveloperProviderName",
         "setterModel" : {
@@ -2060,6 +2071,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2103,6 +2115,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "OpenIdConnectProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
         "setterMethodName" : "setOpenIdConnectProviderARNs",
         "setterModel" : {
@@ -2205,6 +2218,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2248,6 +2262,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CognitoIdentityProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of Amazon Cognito Identity user pools and their client IDs.</p>\n@param cognitoIdentityProviders An array of Amazon Cognito Identity user pools and their client IDs.*/",
         "setterMethodName" : "setCognitoIdentityProviders",
         "setterModel" : {
@@ -2350,6 +2365,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2393,6 +2409,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SamlProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
         "setterMethodName" : "setSamlProviderARNs",
         "setterModel" : {
@@ -2460,6 +2477,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AllowUnauthenticatedIdentities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
           "setterMethodName" : "setAllowUnauthenticatedIdentities",
           "setterModel" : {
@@ -2563,6 +2581,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2606,6 +2625,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CognitoIdentityProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of Amazon Cognito Identity user pools and their client IDs.</p>\n@param cognitoIdentityProviders An array of Amazon Cognito Identity user pools and their client IDs.*/",
           "setterMethodName" : "setCognitoIdentityProviders",
           "setterModel" : {
@@ -2672,6 +2692,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperProviderName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.*/",
           "setterMethodName" : "setDeveloperProviderName",
           "setterModel" : {
@@ -2738,6 +2759,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
           "setterMethodName" : "setIdentityPoolName",
           "setterModel" : {
@@ -2841,6 +2863,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2884,6 +2907,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "OpenIdConnectProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
           "setterMethodName" : "setOpenIdConnectProviderARNs",
           "setterModel" : {
@@ -2987,6 +3011,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3030,6 +3055,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SamlProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
           "setterMethodName" : "setSamlProviderARNs",
           "setterModel" : {
@@ -3139,6 +3165,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -3176,6 +3203,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SupportedLoginProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
           "setterMethodName" : "setSupportedLoginProviders",
           "setterModel" : {
@@ -3278,6 +3306,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -3343,6 +3372,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
         "setterMethodName" : "setIdentityPoolName",
         "setterModel" : {
@@ -3408,6 +3438,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AllowUnauthenticatedIdentities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
         "setterMethodName" : "setAllowUnauthenticatedIdentities",
         "setterModel" : {
@@ -3516,6 +3547,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -3553,6 +3585,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SupportedLoginProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
         "setterMethodName" : "setSupportedLoginProviders",
         "setterModel" : {
@@ -3618,6 +3651,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperProviderName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
         "setterMethodName" : "setDeveloperProviderName",
         "setterModel" : {
@@ -3720,6 +3754,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3763,6 +3798,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "OpenIdConnectProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
         "setterMethodName" : "setOpenIdConnectProviderARNs",
         "setterModel" : {
@@ -3865,6 +3901,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3908,6 +3945,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CognitoIdentityProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.*/",
         "setterMethodName" : "setCognitoIdentityProviders",
         "setterModel" : {
@@ -4010,6 +4048,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4053,6 +4092,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SamlProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
         "setterMethodName" : "setSamlProviderARNs",
         "setterModel" : {
@@ -4120,6 +4160,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AllowUnauthenticatedIdentities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
           "setterMethodName" : "setAllowUnauthenticatedIdentities",
           "setterModel" : {
@@ -4223,6 +4264,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4266,6 +4308,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CognitoIdentityProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.*/",
           "setterMethodName" : "setCognitoIdentityProviders",
           "setterModel" : {
@@ -4332,6 +4375,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperProviderName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
           "setterMethodName" : "setDeveloperProviderName",
           "setterModel" : {
@@ -4398,6 +4442,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -4464,6 +4509,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
           "setterMethodName" : "setIdentityPoolName",
           "setterModel" : {
@@ -4567,6 +4613,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4610,6 +4657,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "OpenIdConnectProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
           "setterMethodName" : "setOpenIdConnectProviderARNs",
           "setterModel" : {
@@ -4713,6 +4761,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4756,6 +4805,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SamlProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
           "setterMethodName" : "setSamlProviderARNs",
           "setterModel" : {
@@ -4865,6 +4915,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -4902,6 +4953,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SupportedLoginProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
           "setterMethodName" : "setSupportedLoginProviders",
           "setterModel" : {
@@ -5007,6 +5059,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccessKeyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Access Key portion of the credentials.</p>\n@param accessKeyId The Access Key portion of the credentials.*/",
         "setterMethodName" : "setAccessKeyId",
         "setterModel" : {
@@ -5072,6 +5125,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SecretKey",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Secret Access Key portion of the credentials</p>\n@param secretKey The Secret Access Key portion of the credentials*/",
         "setterMethodName" : "setSecretKey",
         "setterModel" : {
@@ -5137,6 +5191,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SessionToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Session Token portion of the credentials</p>\n@param sessionToken The Session Token portion of the credentials*/",
         "setterMethodName" : "setSessionToken",
         "setterModel" : {
@@ -5202,6 +5257,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "Expiration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date at which these credentials will expire.</p>\n@param expiration The date at which these credentials will expire.*/",
         "setterMethodName" : "setExpiration",
         "setterModel" : {
@@ -5269,6 +5325,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccessKeyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Access Key portion of the credentials.</p>\n@param accessKeyId The Access Key portion of the credentials.*/",
           "setterMethodName" : "setAccessKeyId",
           "setterModel" : {
@@ -5335,6 +5392,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "Expiration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date at which these credentials will expire.</p>\n@param expiration The date at which these credentials will expire.*/",
           "setterMethodName" : "setExpiration",
           "setterModel" : {
@@ -5401,6 +5459,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SecretKey",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Secret Access Key portion of the credentials</p>\n@param secretKey The Secret Access Key portion of the credentials*/",
           "setterMethodName" : "setSecretKey",
           "setterModel" : {
@@ -5467,6 +5526,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SessionToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Session Token portion of the credentials</p>\n@param sessionToken The Session Token portion of the credentials*/",
           "setterMethodName" : "setSessionToken",
           "setterModel" : {
@@ -5616,6 +5676,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5659,6 +5720,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "IdentityIdsToDelete",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of 1-60 identities that you want to delete.</p>\n@param identityIdsToDelete A list of 1-60 identities that you want to delete.*/",
         "setterMethodName" : "setIdentityIdsToDelete",
         "setterModel" : {
@@ -5763,6 +5825,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5806,6 +5869,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "IdentityIdsToDelete",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of 1-60 identities that you want to delete.</p>\n@param identityIdsToDelete A list of 1-60 identities that you want to delete.*/",
           "setterMethodName" : "setIdentityIdsToDelete",
           "setterModel" : {
@@ -5945,6 +6009,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5988,6 +6053,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UnprocessedIdentityIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>\n@param unprocessedIdentityIds An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.*/",
         "setterMethodName" : "setUnprocessedIdentityIds",
         "setterModel" : {
@@ -6092,6 +6158,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6135,6 +6202,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UnprocessedIdentityIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>\n@param unprocessedIdentityIds An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.*/",
           "setterMethodName" : "setUnprocessedIdentityIds",
           "setterModel" : {
@@ -6247,6 +6315,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -6314,6 +6383,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -6463,6 +6533,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -6530,6 +6601,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -6632,6 +6704,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -6697,6 +6770,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
         "setterMethodName" : "setIdentityPoolName",
         "setterModel" : {
@@ -6762,6 +6836,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AllowUnauthenticatedIdentities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
         "setterMethodName" : "setAllowUnauthenticatedIdentities",
         "setterModel" : {
@@ -6870,6 +6945,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -6907,6 +6983,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SupportedLoginProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
         "setterMethodName" : "setSupportedLoginProviders",
         "setterModel" : {
@@ -6972,6 +7049,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperProviderName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
         "setterMethodName" : "setDeveloperProviderName",
         "setterModel" : {
@@ -7074,6 +7152,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7117,6 +7196,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "OpenIdConnectProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
         "setterMethodName" : "setOpenIdConnectProviderARNs",
         "setterModel" : {
@@ -7219,6 +7299,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7262,6 +7343,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CognitoIdentityProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.*/",
         "setterMethodName" : "setCognitoIdentityProviders",
         "setterModel" : {
@@ -7364,6 +7446,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7407,6 +7490,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SamlProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
         "setterMethodName" : "setSamlProviderARNs",
         "setterModel" : {
@@ -7474,6 +7558,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AllowUnauthenticatedIdentities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
           "setterMethodName" : "setAllowUnauthenticatedIdentities",
           "setterModel" : {
@@ -7577,6 +7662,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7620,6 +7706,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CognitoIdentityProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.*/",
           "setterMethodName" : "setCognitoIdentityProviders",
           "setterModel" : {
@@ -7686,6 +7773,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperProviderName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
           "setterMethodName" : "setDeveloperProviderName",
           "setterModel" : {
@@ -7752,6 +7840,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -7818,6 +7907,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
           "setterMethodName" : "setIdentityPoolName",
           "setterModel" : {
@@ -7921,6 +8011,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7964,6 +8055,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "OpenIdConnectProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
           "setterMethodName" : "setOpenIdConnectProviderARNs",
           "setterModel" : {
@@ -8067,6 +8159,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8110,6 +8203,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SamlProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
           "setterMethodName" : "setSamlProviderARNs",
           "setterModel" : {
@@ -8219,6 +8313,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -8256,6 +8351,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SupportedLoginProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
           "setterMethodName" : "setSupportedLoginProviders",
           "setterModel" : {
@@ -8368,6 +8464,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -8435,6 +8532,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -8537,6 +8635,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -8639,6 +8738,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8682,6 +8782,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Logins",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.*/",
         "setterMethodName" : "setLogins",
         "setterModel" : {
@@ -8747,6 +8848,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date on which the identity was created.</p>\n@param creationDate Date on which the identity was created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -8812,6 +8914,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date on which the identity was last modified.</p>\n@param lastModifiedDate Date on which the identity was last modified.*/",
         "setterMethodName" : "setLastModifiedDate",
         "setterModel" : {
@@ -8879,6 +8982,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date on which the identity was created.</p>\n@param creationDate Date on which the identity was created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -8945,6 +9049,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -9011,6 +9116,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date on which the identity was last modified.</p>\n@param lastModifiedDate Date on which the identity was last modified.*/",
           "setterMethodName" : "setLastModifiedDate",
           "setterModel" : {
@@ -9114,6 +9220,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9157,6 +9264,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Logins",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.*/",
           "setterMethodName" : "setLogins",
           "setterModel" : {
@@ -9389,6 +9497,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -9497,6 +9606,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -9534,6 +9644,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Logins",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.*/",
         "setterMethodName" : "setLogins",
         "setterModel" : {
@@ -9599,6 +9710,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CustomRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>\n@param customRoleArn The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.*/",
         "setterMethodName" : "setCustomRoleArn",
         "setterModel" : {
@@ -9666,6 +9778,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CustomRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>\n@param customRoleArn The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.*/",
           "setterMethodName" : "setCustomRoleArn",
           "setterModel" : {
@@ -9732,6 +9845,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -9841,6 +9955,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -9878,6 +9993,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Logins",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.*/",
           "setterMethodName" : "setLogins",
           "setterModel" : {
@@ -9980,6 +10096,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -10045,6 +10162,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Credentials",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Credentials for the provided identity ID.</p>\n@param credentials Credentials for the provided identity ID.*/",
         "setterMethodName" : "setCredentials",
         "setterModel" : {
@@ -10112,6 +10230,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Credentials",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Credentials for the provided identity ID.</p>\n@param credentials Credentials for the provided identity ID.*/",
           "setterMethodName" : "setCredentials",
           "setterModel" : {
@@ -10178,6 +10297,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -10290,6 +10410,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A standard AWS account ID (9+ digits).</p>\n@param accountId A standard AWS account ID (9+ digits).*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -10355,6 +10476,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -10463,6 +10585,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -10500,6 +10623,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Logins",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li> </ul>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li>*/",
         "setterMethodName" : "setLogins",
         "setterModel" : {
@@ -10567,6 +10691,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A standard AWS account ID (9+ digits).</p>\n@param accountId A standard AWS account ID (9+ digits).*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -10633,6 +10758,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -10742,6 +10868,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -10779,6 +10906,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Logins",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li> </ul>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li>*/",
           "setterMethodName" : "setLogins",
           "setterModel" : {
@@ -10881,6 +11009,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -10948,6 +11077,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -11060,6 +11190,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -11127,6 +11258,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -11229,6 +11361,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -11337,6 +11470,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -11374,6 +11508,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Roles",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>\n@param roles The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.*/",
         "setterMethodName" : "setRoles",
         "setterModel" : {
@@ -11482,6 +11617,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -11519,6 +11655,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "RoleMappings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p>\n@param roleMappings How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".*/",
         "setterMethodName" : "setRoleMappings",
         "setterModel" : {
@@ -11586,6 +11723,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -11695,6 +11833,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11732,6 +11871,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "RoleMappings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p>\n@param roleMappings How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".*/",
           "setterMethodName" : "setRoleMappings",
           "setterModel" : {
@@ -11841,6 +11981,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11878,6 +12019,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Roles",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>\n@param roles The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.*/",
           "setterMethodName" : "setRoles",
           "setterModel" : {
@@ -11990,6 +12132,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -12055,6 +12198,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -12163,6 +12307,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -12200,6 +12345,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Logins",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.*/",
         "setterMethodName" : "setLogins",
         "setterModel" : {
@@ -12265,6 +12411,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "TokenDuration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p>\n@param tokenDuration The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.*/",
         "setterMethodName" : "setTokenDuration",
         "setterModel" : {
@@ -12332,6 +12479,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -12398,6 +12546,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -12507,6 +12656,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -12544,6 +12694,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Logins",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.*/",
           "setterMethodName" : "setLogins",
           "setterModel" : {
@@ -12610,6 +12761,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "TokenDuration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p>\n@param tokenDuration The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.*/",
           "setterMethodName" : "setTokenDuration",
           "setterModel" : {
@@ -12712,6 +12864,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -12777,6 +12930,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Token",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An OpenID token.</p>\n@param token An OpenID token.*/",
         "setterMethodName" : "setToken",
         "setterModel" : {
@@ -12844,6 +12998,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -12910,6 +13065,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Token",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An OpenID token.</p>\n@param token An OpenID token.*/",
           "setterMethodName" : "setToken",
           "setterModel" : {
@@ -13022,6 +13178,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -13130,6 +13287,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -13167,6 +13325,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Logins",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.*/",
         "setterMethodName" : "setLogins",
         "setterModel" : {
@@ -13234,6 +13393,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -13343,6 +13503,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -13380,6 +13541,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Logins",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.*/",
           "setterMethodName" : "setLogins",
           "setterModel" : {
@@ -13482,6 +13644,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>\n@param identityId A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -13547,6 +13710,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Token",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An OpenID token, valid for 15 minutes.</p>\n@param token An OpenID token, valid for 15 minutes.*/",
         "setterMethodName" : "setToken",
         "setterModel" : {
@@ -13614,6 +13778,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>\n@param identityId A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -13680,6 +13845,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Token",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An OpenID token, valid for 15 minutes.</p>\n@param token An OpenID token, valid for 15 minutes.*/",
           "setterMethodName" : "setToken",
           "setterModel" : {
@@ -13785,6 +13951,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -13887,6 +14054,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13930,6 +14098,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Logins",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.*/",
         "setterMethodName" : "setLogins",
         "setterModel" : {
@@ -13995,6 +14164,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date on which the identity was created.</p>\n@param creationDate Date on which the identity was created.*/",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
@@ -14060,6 +14230,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastModifiedDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date on which the identity was last modified.</p>\n@param lastModifiedDate Date on which the identity was last modified.*/",
         "setterMethodName" : "setLastModifiedDate",
         "setterModel" : {
@@ -14127,6 +14298,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date on which the identity was created.</p>\n@param creationDate Date on which the identity was created.*/",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
@@ -14193,6 +14365,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -14259,6 +14432,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastModifiedDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date on which the identity was last modified.</p>\n@param lastModifiedDate Date on which the identity was last modified.*/",
           "setterMethodName" : "setLastModifiedDate",
           "setterModel" : {
@@ -14362,6 +14536,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14405,6 +14580,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Logins",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.*/",
           "setterMethodName" : "setLogins",
           "setterModel" : {
@@ -14510,6 +14686,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -14575,6 +14752,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
         "setterMethodName" : "setIdentityPoolName",
         "setterModel" : {
@@ -14642,6 +14820,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -14708,6 +14887,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
           "setterMethodName" : "setIdentityPoolName",
           "setterModel" : {
@@ -14968,6 +15148,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -15033,6 +15214,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -15098,6 +15280,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15163,6 +15346,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "HideDisabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>\n@param hideDisabled An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.*/",
         "setterMethodName" : "setHideDisabled",
         "setterModel" : {
@@ -15230,6 +15414,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "HideDisabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>\n@param hideDisabled An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.*/",
           "setterMethodName" : "setHideDisabled",
           "setterModel" : {
@@ -15296,6 +15481,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -15362,6 +15548,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -15428,6 +15615,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -15530,6 +15718,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -15632,6 +15821,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15675,6 +15865,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Identities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object containing a set of identities and associated mappings.</p>\n@param identities An object containing a set of identities and associated mappings.*/",
         "setterMethodName" : "setIdentities",
         "setterModel" : {
@@ -15740,6 +15931,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -15844,6 +16036,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15887,6 +16080,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Identities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object containing a set of identities and associated mappings.</p>\n@param identities An object containing a set of identities and associated mappings.*/",
           "setterMethodName" : "setIdentities",
           "setterModel" : {
@@ -15953,6 +16147,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -16019,6 +16214,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16131,6 +16327,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -16196,6 +16393,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -16263,6 +16461,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -16329,6 +16528,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16468,6 +16668,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16511,6 +16712,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "IdentityPools",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identity pools returned by the ListIdentityPools action.</p>\n@param identityPools The identity pools returned by the ListIdentityPools action.*/",
         "setterMethodName" : "setIdentityPools",
         "setterModel" : {
@@ -16576,6 +16778,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -16680,6 +16883,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16723,6 +16927,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "IdentityPools",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identity pools returned by the ListIdentityPools action.</p>\n@param identityPools The identity pools returned by the ListIdentityPools action.*/",
           "setterMethodName" : "setIdentityPools",
           "setterModel" : {
@@ -16789,6 +16994,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -16901,6 +17107,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -16966,6 +17173,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -17031,6 +17239,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperUserIdentifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>\n@param developerUserIdentifier A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.*/",
         "setterMethodName" : "setDeveloperUserIdentifier",
         "setterModel" : {
@@ -17096,6 +17305,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -17161,6 +17371,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>\n@param nextToken A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -17228,6 +17439,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperUserIdentifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>\n@param developerUserIdentifier A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.*/",
           "setterMethodName" : "setDeveloperUserIdentifier",
           "setterModel" : {
@@ -17294,6 +17506,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -17360,6 +17573,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -17426,6 +17640,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -17492,6 +17707,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>\n@param nextToken A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -17594,6 +17810,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -17696,6 +17913,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17739,6 +17957,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DeveloperUserIdentifierList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>\n@param developerUserIdentifierList This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.*/",
         "setterMethodName" : "setDeveloperUserIdentifierList",
         "setterModel" : {
@@ -17804,6 +18023,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>\n@param nextToken A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -17908,6 +18128,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -17951,6 +18172,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DeveloperUserIdentifierList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>\n@param developerUserIdentifierList This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.*/",
           "setterMethodName" : "setDeveloperUserIdentifierList",
           "setterModel" : {
@@ -18017,6 +18239,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -18083,6 +18306,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>\n@param nextToken A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -18188,6 +18412,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Claim",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".</p>\n@param claim The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".*/",
         "setterMethodName" : "setClaim",
         "setterModel" : {
@@ -18253,6 +18478,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MatchType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>\n@param matchType The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.\n@see MappingRuleMatchType*/",
         "setterMethodName" : "setMatchType",
         "setterModel" : {
@@ -18318,6 +18544,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A brief string that the claim must match, for example, \"paid\" or \"yes\".</p>\n@param value A brief string that the claim must match, for example, \"paid\" or \"yes\".*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -18383,6 +18610,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The role ARN.</p>\n@param roleARN The role ARN.*/",
         "setterMethodName" : "setRoleARN",
         "setterModel" : {
@@ -18450,6 +18678,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Claim",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".</p>\n@param claim The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".*/",
           "setterMethodName" : "setClaim",
           "setterModel" : {
@@ -18516,6 +18745,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MatchType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>\n@param matchType The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.\n@see MappingRuleMatchType*/",
           "setterMethodName" : "setMatchType",
           "setterModel" : {
@@ -18582,6 +18812,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The role ARN.</p>\n@param roleARN The role ARN.*/",
           "setterMethodName" : "setRoleARN",
           "setterModel" : {
@@ -18648,6 +18879,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A brief string that the claim must match, for example, \"paid\" or \"yes\".</p>\n@param value A brief string that the claim must match, for example, \"paid\" or \"yes\".*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -18812,6 +19044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceUserIdentifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>\n@param sourceUserIdentifier User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.*/",
         "setterMethodName" : "setSourceUserIdentifier",
         "setterModel" : {
@@ -18877,6 +19110,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DestinationUserIdentifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>\n@param destinationUserIdentifier User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.*/",
         "setterMethodName" : "setDestinationUserIdentifier",
         "setterModel" : {
@@ -18942,6 +19176,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperProviderName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).*/",
         "setterMethodName" : "setDeveloperProviderName",
         "setterModel" : {
@@ -19007,6 +19242,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -19074,6 +19310,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DestinationUserIdentifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>\n@param destinationUserIdentifier User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.*/",
           "setterMethodName" : "setDestinationUserIdentifier",
           "setterModel" : {
@@ -19140,6 +19377,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperProviderName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).*/",
           "setterMethodName" : "setDeveloperProviderName",
           "setterModel" : {
@@ -19206,6 +19444,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -19272,6 +19511,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceUserIdentifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>\n@param sourceUserIdentifier User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.*/",
           "setterMethodName" : "setSourceUserIdentifier",
           "setterModel" : {
@@ -19374,6 +19614,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -19441,6 +19682,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -19657,6 +19899,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>\n@param type The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.\n@see RoleMappingType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -19722,6 +19965,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AmbiguousRoleResolution",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>\n@param ambiguousRoleResolution If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.\n@see AmbiguousRoleResolutionType*/",
         "setterMethodName" : "setAmbiguousRoleResolution",
         "setterModel" : {
@@ -19787,6 +20031,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RulesConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>\n@param rulesConfiguration The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.*/",
         "setterMethodName" : "setRulesConfiguration",
         "setterModel" : {
@@ -19854,6 +20099,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AmbiguousRoleResolution",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>\n@param ambiguousRoleResolution If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.\n@see AmbiguousRoleResolutionType*/",
           "setterMethodName" : "setAmbiguousRoleResolution",
           "setterModel" : {
@@ -19920,6 +20166,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RulesConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>\n@param rulesConfiguration The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.*/",
           "setterMethodName" : "setRulesConfiguration",
           "setterModel" : {
@@ -19986,6 +20233,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>\n@param type The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.\n@see RoleMappingType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -20174,6 +20422,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20217,6 +20466,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Rules",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.</p>\n@param rules An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.*/",
         "setterMethodName" : "setRules",
         "setterModel" : {
@@ -20321,6 +20571,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -20364,6 +20615,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Rules",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.</p>\n@param rules An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.*/",
           "setterMethodName" : "setRules",
           "setterModel" : {
@@ -20476,6 +20728,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -20584,6 +20837,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -20621,6 +20875,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Roles",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.</p>\n@param roles The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.*/",
         "setterMethodName" : "setRoles",
         "setterModel" : {
@@ -20729,6 +20984,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -20766,6 +21022,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "RoleMappings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.</p>\n@param roleMappings How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.*/",
         "setterMethodName" : "setRoleMappings",
         "setterModel" : {
@@ -20833,6 +21090,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -20942,6 +21200,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -20979,6 +21238,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "RoleMappings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.</p>\n@param roleMappings How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.*/",
           "setterMethodName" : "setRoleMappings",
           "setterModel" : {
@@ -21088,6 +21348,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -21125,6 +21386,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Roles",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.</p>\n@param roles The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.*/",
           "setterMethodName" : "setRoles",
           "setterModel" : {
@@ -21311,6 +21573,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -21376,6 +21639,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -21441,6 +21705,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperProviderName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
         "setterMethodName" : "setDeveloperProviderName",
         "setterModel" : {
@@ -21506,6 +21771,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperUserIdentifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique ID used by your backend authentication process to identify a user.</p>\n@param developerUserIdentifier A unique ID used by your backend authentication process to identify a user.*/",
         "setterMethodName" : "setDeveloperUserIdentifier",
         "setterModel" : {
@@ -21573,6 +21839,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperProviderName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
           "setterMethodName" : "setDeveloperProviderName",
           "setterModel" : {
@@ -21639,6 +21906,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperUserIdentifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique ID used by your backend authentication process to identify a user.</p>\n@param developerUserIdentifier A unique ID used by your backend authentication process to identify a user.*/",
           "setterMethodName" : "setDeveloperUserIdentifier",
           "setterModel" : {
@@ -21705,6 +21973,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -21771,6 +22040,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -21920,6 +22190,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -22028,6 +22299,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -22065,6 +22337,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Logins",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.*/",
         "setterMethodName" : "setLogins",
         "setterModel" : {
@@ -22167,6 +22440,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -22210,6 +22484,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "LoginsToRemove",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Provider names to unlink from this identity.</p>\n@param loginsToRemove Provider names to unlink from this identity.*/",
         "setterMethodName" : "setLoginsToRemove",
         "setterModel" : {
@@ -22277,6 +22552,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -22386,6 +22662,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -22423,6 +22700,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Logins",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.*/",
           "setterMethodName" : "setLogins",
           "setterModel" : {
@@ -22526,6 +22804,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22569,6 +22848,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "LoginsToRemove",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Provider names to unlink from this identity.</p>\n@param loginsToRemove Provider names to unlink from this identity.*/",
           "setterMethodName" : "setLoginsToRemove",
           "setterModel" : {
@@ -22711,6 +22991,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityId",
         "setterModel" : {
@@ -22776,6 +23057,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error code indicating the type of error that occurred.</p>\n@param errorCode The error code indicating the type of error that occurred.\n@see ErrorCode*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
@@ -22843,6 +23125,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error code indicating the type of error that occurred.</p>\n@param errorCode The error code indicating the type of error that occurred.\n@see ErrorCode*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
@@ -22909,6 +23192,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityId",
           "setterModel" : {
@@ -23021,6 +23305,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -23086,6 +23371,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
         "setterMethodName" : "setIdentityPoolName",
         "setterModel" : {
@@ -23151,6 +23437,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AllowUnauthenticatedIdentities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
         "setterMethodName" : "setAllowUnauthenticatedIdentities",
         "setterModel" : {
@@ -23259,6 +23546,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -23296,6 +23584,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SupportedLoginProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
         "setterMethodName" : "setSupportedLoginProviders",
         "setterModel" : {
@@ -23361,6 +23650,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperProviderName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
         "setterMethodName" : "setDeveloperProviderName",
         "setterModel" : {
@@ -23463,6 +23753,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -23506,6 +23797,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "OpenIdConnectProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
         "setterMethodName" : "setOpenIdConnectProviderARNs",
         "setterModel" : {
@@ -23608,6 +23900,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -23651,6 +23944,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CognitoIdentityProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.*/",
         "setterMethodName" : "setCognitoIdentityProviders",
         "setterModel" : {
@@ -23753,6 +24047,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -23796,6 +24091,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SamlProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
         "setterMethodName" : "setSamlProviderARNs",
         "setterModel" : {
@@ -23863,6 +24159,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AllowUnauthenticatedIdentities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
           "setterMethodName" : "setAllowUnauthenticatedIdentities",
           "setterModel" : {
@@ -23966,6 +24263,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -24009,6 +24307,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CognitoIdentityProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.*/",
           "setterMethodName" : "setCognitoIdentityProviders",
           "setterModel" : {
@@ -24075,6 +24374,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperProviderName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
           "setterMethodName" : "setDeveloperProviderName",
           "setterModel" : {
@@ -24141,6 +24441,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -24207,6 +24508,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
           "setterMethodName" : "setIdentityPoolName",
           "setterModel" : {
@@ -24310,6 +24612,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -24353,6 +24656,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "OpenIdConnectProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
           "setterMethodName" : "setOpenIdConnectProviderARNs",
           "setterModel" : {
@@ -24456,6 +24760,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -24499,6 +24804,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SamlProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
           "setterMethodName" : "setSamlProviderARNs",
           "setterModel" : {
@@ -24608,6 +24914,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -24645,6 +24952,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SupportedLoginProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
           "setterMethodName" : "setSupportedLoginProviders",
           "setterModel" : {
@@ -24747,6 +25055,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
         "setterMethodName" : "setIdentityPoolId",
         "setterModel" : {
@@ -24812,6 +25121,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityPoolName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
         "setterMethodName" : "setIdentityPoolName",
         "setterModel" : {
@@ -24877,6 +25187,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "AllowUnauthenticatedIdentities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
         "setterMethodName" : "setAllowUnauthenticatedIdentities",
         "setterModel" : {
@@ -24985,6 +25296,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -25022,6 +25334,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SupportedLoginProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
         "setterMethodName" : "setSupportedLoginProviders",
         "setterModel" : {
@@ -25087,6 +25400,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeveloperProviderName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
         "setterMethodName" : "setDeveloperProviderName",
         "setterModel" : {
@@ -25189,6 +25503,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -25232,6 +25547,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "OpenIdConnectProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
         "setterMethodName" : "setOpenIdConnectProviderARNs",
         "setterModel" : {
@@ -25334,6 +25650,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -25377,6 +25694,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CognitoIdentityProviders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.*/",
         "setterMethodName" : "setCognitoIdentityProviders",
         "setterModel" : {
@@ -25479,6 +25797,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -25522,6 +25841,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SamlProviderARNs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
         "setterMethodName" : "setSamlProviderARNs",
         "setterModel" : {
@@ -25589,6 +25909,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "AllowUnauthenticatedIdentities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.*/",
           "setterMethodName" : "setAllowUnauthenticatedIdentities",
           "setterModel" : {
@@ -25692,6 +26013,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -25735,6 +26057,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CognitoIdentityProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.*/",
           "setterMethodName" : "setCognitoIdentityProviders",
           "setterModel" : {
@@ -25801,6 +26124,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeveloperProviderName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.*/",
           "setterMethodName" : "setDeveloperProviderName",
           "setterModel" : {
@@ -25867,6 +26191,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.*/",
           "setterMethodName" : "setIdentityPoolId",
           "setterModel" : {
@@ -25933,6 +26258,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityPoolName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.*/",
           "setterMethodName" : "setIdentityPoolName",
           "setterModel" : {
@@ -26036,6 +26362,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -26079,6 +26406,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "OpenIdConnectProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.*/",
           "setterMethodName" : "setOpenIdConnectProviderARNs",
           "setterModel" : {
@@ -26182,6 +26510,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -26225,6 +26554,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SamlProviderARNs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.*/",
           "setterMethodName" : "setSamlProviderARNs",
           "setterModel" : {
@@ -26334,6 +26664,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -26371,6 +26702,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SupportedLoginProviders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.*/",
           "setterMethodName" : "setSupportedLoginProviders",
           "setterModel" : {

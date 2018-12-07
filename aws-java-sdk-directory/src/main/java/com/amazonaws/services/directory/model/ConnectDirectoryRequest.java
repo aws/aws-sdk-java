@@ -339,7 +339,8 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -354,7 +355,7 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
         if (getShortName() != null)
             sb.append("ShortName: ").append(getShortName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword()).append(",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSize() != null)

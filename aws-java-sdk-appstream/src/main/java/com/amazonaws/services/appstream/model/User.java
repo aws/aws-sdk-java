@@ -615,7 +615,8 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -628,15 +629,15 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: ").append(getUserName()).append(",");
+            sb.append("UserName: ").append("***Sensitive Data Redacted***").append(",");
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getFirstName() != null)
-            sb.append("FirstName: ").append(getFirstName()).append(",");
+            sb.append("FirstName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastName() != null)
-            sb.append("LastName: ").append(getLastName()).append(",");
+            sb.append("LastName: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getAuthenticationType() != null)

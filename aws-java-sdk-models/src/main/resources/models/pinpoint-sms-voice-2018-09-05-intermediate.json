@@ -561,6 +561,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Text",
+        "sensitive" : false,
         "setterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param text The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
@@ -628,6 +629,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Text",
+          "sensitive" : false,
           "setterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param text The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
@@ -733,6 +735,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IamRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.\n@param iamRoleArn The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.*/",
         "setterMethodName" : "setIamRoleArn",
         "setterModel" : {
@@ -798,6 +801,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LogGroupArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the Amazon CloudWatch Log Group that you want to record events in.\n@param logGroupArn The name of the Amazon CloudWatch Log Group that you want to record events in.*/",
         "setterMethodName" : "setLogGroupArn",
         "setterModel" : {
@@ -865,6 +869,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IamRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.\n@param iamRoleArn The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.*/",
           "setterMethodName" : "setIamRoleArn",
           "setterModel" : {
@@ -931,6 +936,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LogGroupArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the Amazon CloudWatch Log Group that you want to record events in.\n@param logGroupArn The name of the Amazon CloudWatch Log Group that you want to record events in.*/",
           "setterMethodName" : "setLogGroupArn",
           "setterModel" : {
@@ -1043,6 +1049,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationSetName",
+        "sensitive" : false,
         "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
         "setterMethodName" : "setConfigurationSetName",
         "setterModel" : {
@@ -1108,6 +1115,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EventDestination",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param eventDestination */",
         "setterMethodName" : "setEventDestination",
         "setterModel" : {
@@ -1173,6 +1181,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventDestinationName",
+        "sensitive" : false,
         "setterDocumentation" : "/**A name that identifies the event destination.\n@param eventDestinationName A name that identifies the event destination.*/",
         "setterMethodName" : "setEventDestinationName",
         "setterModel" : {
@@ -1240,6 +1249,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationSetName",
+          "sensitive" : false,
           "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
           "setterMethodName" : "setConfigurationSetName",
           "setterModel" : {
@@ -1306,6 +1316,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EventDestination",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param eventDestination */",
           "setterMethodName" : "setEventDestination",
           "setterModel" : {
@@ -1372,6 +1383,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventDestinationName",
+          "sensitive" : false,
           "setterDocumentation" : "/**A name that identifies the event destination.\n@param eventDestinationName A name that identifies the event destination.*/",
           "setterMethodName" : "setEventDestinationName",
           "setterModel" : {
@@ -1521,6 +1533,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationSetName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name that you want to give the configuration set.\n@param configurationSetName The name that you want to give the configuration set.*/",
         "setterMethodName" : "setConfigurationSetName",
         "setterModel" : {
@@ -1588,6 +1601,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationSetName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name that you want to give the configuration set.\n@param configurationSetName The name that you want to give the configuration set.*/",
           "setterMethodName" : "setConfigurationSetName",
           "setterModel" : {
@@ -1737,6 +1751,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationSetName",
+        "sensitive" : false,
         "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
         "setterMethodName" : "setConfigurationSetName",
         "setterModel" : {
@@ -1802,6 +1817,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventDestinationName",
+        "sensitive" : false,
         "setterDocumentation" : "/**EventDestinationName\n@param eventDestinationName EventDestinationName*/",
         "setterMethodName" : "setEventDestinationName",
         "setterModel" : {
@@ -1869,6 +1885,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationSetName",
+          "sensitive" : false,
           "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
           "setterMethodName" : "setConfigurationSetName",
           "setterModel" : {
@@ -1935,6 +1952,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventDestinationName",
+          "sensitive" : false,
           "setterDocumentation" : "/**EventDestinationName\n@param eventDestinationName EventDestinationName*/",
           "setterMethodName" : "setEventDestinationName",
           "setterModel" : {
@@ -2084,6 +2102,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationSetName",
+        "sensitive" : false,
         "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
         "setterMethodName" : "setConfigurationSetName",
         "setterModel" : {
@@ -2151,6 +2170,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationSetName",
+          "sensitive" : false,
           "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
           "setterMethodName" : "setConfigurationSetName",
           "setterModel" : {
@@ -2293,6 +2313,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CloudWatchLogsDestination",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param cloudWatchLogsDestination */",
         "setterMethodName" : "setCloudWatchLogsDestination",
         "setterModel" : {
@@ -2358,6 +2379,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@param enabled Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -2423,6 +2445,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "KinesisFirehoseDestination",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param kinesisFirehoseDestination */",
         "setterMethodName" : "setKinesisFirehoseDestination",
         "setterModel" : {
@@ -2525,6 +2548,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see EventType*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2568,6 +2592,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "MatchingEventTypes",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param matchingEventTypes \n@see EventType*/",
         "setterMethodName" : "setMatchingEventTypes",
         "setterModel" : {
@@ -2633,6 +2658,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**A name that identifies the event destination configuration.\n@param name A name that identifies the event destination configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2700,6 +2726,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CloudWatchLogsDestination",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param cloudWatchLogsDestination */",
           "setterMethodName" : "setCloudWatchLogsDestination",
           "setterModel" : {
@@ -2766,6 +2793,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@param enabled Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
@@ -2832,6 +2860,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "KinesisFirehoseDestination",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param kinesisFirehoseDestination */",
           "setterMethodName" : "setKinesisFirehoseDestination",
           "setterModel" : {
@@ -2935,6 +2964,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see EventType*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2978,6 +3008,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "MatchingEventTypes",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param matchingEventTypes \n@see EventType*/",
           "setterMethodName" : "setMatchingEventTypes",
           "setterModel" : {
@@ -3044,6 +3075,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**A name that identifies the event destination configuration.\n@param name A name that identifies the event destination configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3149,6 +3181,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CloudWatchLogsDestination",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param cloudWatchLogsDestination */",
         "setterMethodName" : "setCloudWatchLogsDestination",
         "setterModel" : {
@@ -3214,6 +3247,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Enabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@param enabled Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
@@ -3279,6 +3313,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "KinesisFirehoseDestination",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param kinesisFirehoseDestination */",
         "setterMethodName" : "setKinesisFirehoseDestination",
         "setterModel" : {
@@ -3381,6 +3416,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see EventType*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3424,6 +3460,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "MatchingEventTypes",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param matchingEventTypes \n@see EventType*/",
         "setterMethodName" : "setMatchingEventTypes",
         "setterModel" : {
@@ -3491,6 +3528,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CloudWatchLogsDestination",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param cloudWatchLogsDestination */",
           "setterMethodName" : "setCloudWatchLogsDestination",
           "setterModel" : {
@@ -3557,6 +3595,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Enabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.\n@param enabled Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
@@ -3623,6 +3662,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "KinesisFirehoseDestination",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param kinesisFirehoseDestination */",
           "setterMethodName" : "setKinesisFirehoseDestination",
           "setterModel" : {
@@ -3726,6 +3766,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see EventType*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3769,6 +3810,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "MatchingEventTypes",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param matchingEventTypes \n@see EventType*/",
           "setterMethodName" : "setMatchingEventTypes",
           "setterModel" : {
@@ -3942,6 +3984,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationSetName",
+        "sensitive" : false,
         "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
         "setterMethodName" : "setConfigurationSetName",
         "setterModel" : {
@@ -4009,6 +4052,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationSetName",
+          "sensitive" : false,
           "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
           "setterMethodName" : "setConfigurationSetName",
           "setterModel" : {
@@ -4148,6 +4192,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4191,6 +4236,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventDestinations",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param eventDestinations */",
         "setterMethodName" : "setEventDestinations",
         "setterModel" : {
@@ -4295,6 +4341,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4338,6 +4385,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventDestinations",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param eventDestinations */",
           "setterMethodName" : "setEventDestinations",
           "setterModel" : {
@@ -4480,6 +4528,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DeliveryStreamArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.\n@param deliveryStreamArn The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.*/",
         "setterMethodName" : "setDeliveryStreamArn",
         "setterModel" : {
@@ -4545,6 +4594,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IamRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.\n@param iamRoleArn The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.*/",
         "setterMethodName" : "setIamRoleArn",
         "setterModel" : {
@@ -4612,6 +4662,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DeliveryStreamArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.\n@param deliveryStreamArn The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.*/",
           "setterMethodName" : "setDeliveryStreamArn",
           "setterModel" : {
@@ -4678,6 +4729,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IamRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.\n@param iamRoleArn The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.*/",
           "setterMethodName" : "setIamRoleArn",
           "setterModel" : {
@@ -4857,6 +4909,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param languageCode The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -4922,6 +4975,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Text",
+        "sensitive" : false,
         "setterDocumentation" : "/**The plain (not SSML-formatted) text to deliver to the recipient.\n@param text The plain (not SSML-formatted) text to deliver to the recipient.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
@@ -4987,6 +5041,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VoiceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@param voiceId The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.*/",
         "setterMethodName" : "setVoiceId",
         "setterModel" : {
@@ -5054,6 +5109,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param languageCode The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -5120,6 +5176,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Text",
+          "sensitive" : false,
           "setterDocumentation" : "/**The plain (not SSML-formatted) text to deliver to the recipient.\n@param text The plain (not SSML-formatted) text to deliver to the recipient.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
@@ -5186,6 +5243,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VoiceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@param voiceId The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.*/",
           "setterMethodName" : "setVoiceId",
           "setterModel" : {
@@ -5291,6 +5349,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LanguageCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param languageCode The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.*/",
         "setterMethodName" : "setLanguageCode",
         "setterModel" : {
@@ -5356,6 +5415,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Text",
+        "sensitive" : false,
         "setterDocumentation" : "/**The SSML-formatted text to deliver to the recipient.\n@param text The SSML-formatted text to deliver to the recipient.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
@@ -5421,6 +5481,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VoiceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@param voiceId The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.*/",
         "setterMethodName" : "setVoiceId",
         "setterModel" : {
@@ -5488,6 +5549,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LanguageCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.\n@param languageCode The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.*/",
           "setterMethodName" : "setLanguageCode",
           "setterModel" : {
@@ -5554,6 +5616,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Text",
+          "sensitive" : false,
           "setterDocumentation" : "/**The SSML-formatted text to deliver to the recipient.\n@param text The SSML-formatted text to deliver to the recipient.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
@@ -5620,6 +5683,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VoiceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.\n@param voiceId The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.*/",
           "setterMethodName" : "setVoiceId",
           "setterModel" : {
@@ -5732,6 +5796,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CallerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The phone number that appears on recipients' devices when they receive the message.\n@param callerId The phone number that appears on recipients' devices when they receive the message.*/",
         "setterMethodName" : "setCallerId",
         "setterModel" : {
@@ -5797,6 +5862,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationSetName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the configuration set that you want to use to send the message.\n@param configurationSetName The name of the configuration set that you want to use to send the message.*/",
         "setterMethodName" : "setConfigurationSetName",
         "setterModel" : {
@@ -5862,6 +5928,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Content",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param content */",
         "setterMethodName" : "setContent",
         "setterModel" : {
@@ -5927,6 +5994,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DestinationPhoneNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**The phone number that you want to send the voice message to.\n@param destinationPhoneNumber The phone number that you want to send the voice message to.*/",
         "setterMethodName" : "setDestinationPhoneNumber",
         "setterModel" : {
@@ -5992,6 +6060,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OriginationPhoneNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.\n@param originationPhoneNumber The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.*/",
         "setterMethodName" : "setOriginationPhoneNumber",
         "setterModel" : {
@@ -6059,6 +6128,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CallerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The phone number that appears on recipients' devices when they receive the message.\n@param callerId The phone number that appears on recipients' devices when they receive the message.*/",
           "setterMethodName" : "setCallerId",
           "setterModel" : {
@@ -6125,6 +6195,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationSetName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the configuration set that you want to use to send the message.\n@param configurationSetName The name of the configuration set that you want to use to send the message.*/",
           "setterMethodName" : "setConfigurationSetName",
           "setterModel" : {
@@ -6191,6 +6262,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Content",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param content */",
           "setterMethodName" : "setContent",
           "setterModel" : {
@@ -6257,6 +6329,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DestinationPhoneNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**The phone number that you want to send the voice message to.\n@param destinationPhoneNumber The phone number that you want to send the voice message to.*/",
           "setterMethodName" : "setDestinationPhoneNumber",
           "setterModel" : {
@@ -6323,6 +6396,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OriginationPhoneNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.\n@param originationPhoneNumber The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.*/",
           "setterMethodName" : "setOriginationPhoneNumber",
           "setterModel" : {
@@ -6425,6 +6499,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MessageId",
+        "sensitive" : false,
         "setterDocumentation" : "/**A unique identifier for the voice message.\n@param messageId A unique identifier for the voice message.*/",
         "setterMethodName" : "setMessageId",
         "setterModel" : {
@@ -6492,6 +6567,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MessageId",
+          "sensitive" : false,
           "setterDocumentation" : "/**A unique identifier for the voice message.\n@param messageId A unique identifier for the voice message.*/",
           "setterMethodName" : "setMessageId",
           "setterModel" : {
@@ -6641,6 +6717,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ConfigurationSetName",
+        "sensitive" : false,
         "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
         "setterMethodName" : "setConfigurationSetName",
         "setterModel" : {
@@ -6706,6 +6783,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EventDestination",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param eventDestination */",
         "setterMethodName" : "setEventDestination",
         "setterModel" : {
@@ -6771,6 +6849,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventDestinationName",
+        "sensitive" : false,
         "setterDocumentation" : "/**EventDestinationName\n@param eventDestinationName EventDestinationName*/",
         "setterMethodName" : "setEventDestinationName",
         "setterModel" : {
@@ -6838,6 +6917,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ConfigurationSetName",
+          "sensitive" : false,
           "setterDocumentation" : "/**ConfigurationSetName\n@param configurationSetName ConfigurationSetName*/",
           "setterMethodName" : "setConfigurationSetName",
           "setterModel" : {
@@ -6904,6 +6984,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EventDestination",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param eventDestination */",
           "setterMethodName" : "setEventDestination",
           "setterModel" : {
@@ -6970,6 +7051,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventDestinationName",
+          "sensitive" : false,
           "setterDocumentation" : "/**EventDestinationName\n@param eventDestinationName EventDestinationName*/",
           "setterMethodName" : "setEventDestinationName",
           "setterModel" : {
@@ -7112,6 +7194,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CallInstructionsMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param callInstructionsMessage */",
         "setterMethodName" : "setCallInstructionsMessage",
         "setterModel" : {
@@ -7177,6 +7260,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PlainTextMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param plainTextMessage */",
         "setterMethodName" : "setPlainTextMessage",
         "setterModel" : {
@@ -7242,6 +7326,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SSMLMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sSMLMessage */",
         "setterMethodName" : "setSSMLMessage",
         "setterModel" : {
@@ -7309,6 +7394,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CallInstructionsMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param callInstructionsMessage */",
           "setterMethodName" : "setCallInstructionsMessage",
           "setterModel" : {
@@ -7375,6 +7461,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PlainTextMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param plainTextMessage */",
           "setterMethodName" : "setPlainTextMessage",
           "setterModel" : {
@@ -7441,6 +7528,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SSMLMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sSMLMessage */",
           "setterMethodName" : "setSSMLMessage",
           "setterModel" : {

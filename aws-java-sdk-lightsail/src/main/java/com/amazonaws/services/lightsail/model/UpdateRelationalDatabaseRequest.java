@@ -1120,7 +1120,8 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1133,7 +1134,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
         if (getRelationalDatabaseName() != null)
             sb.append("RelationalDatabaseName: ").append(getRelationalDatabaseName()).append(",");
         if (getMasterUserPassword() != null)
-            sb.append("MasterUserPassword: ").append(getMasterUserPassword()).append(",");
+            sb.append("MasterUserPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getRotateMasterUserPassword() != null)
             sb.append("RotateMasterUserPassword: ").append(getRotateMasterUserPassword()).append(",");
         if (getPreferredBackupWindow() != null)

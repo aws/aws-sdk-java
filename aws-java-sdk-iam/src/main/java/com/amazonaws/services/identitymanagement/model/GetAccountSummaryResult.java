@@ -28,17 +28,17 @@ public class GetAccountSummaryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A set of key value pairs containing information about IAM entity usage and IAM quotas.
+     * A set of key–value pairs containing information about IAM entity usage and IAM quotas.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, Integer> summaryMap;
 
     /**
      * <p>
-     * A set of key value pairs containing information about IAM entity usage and IAM quotas.
+     * A set of key–value pairs containing information about IAM entity usage and IAM quotas.
      * </p>
      * 
-     * @return A set of key value pairs containing information about IAM entity usage and IAM quotas.
+     * @return A set of key–value pairs containing information about IAM entity usage and IAM quotas.
      */
 
     public java.util.Map<String, Integer> getSummaryMap() {
@@ -50,11 +50,11 @@ public class GetAccountSummaryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A set of key value pairs containing information about IAM entity usage and IAM quotas.
+     * A set of key–value pairs containing information about IAM entity usage and IAM quotas.
      * </p>
      * 
      * @param summaryMap
-     *        A set of key value pairs containing information about IAM entity usage and IAM quotas.
+     *        A set of key–value pairs containing information about IAM entity usage and IAM quotas.
      */
 
     public void setSummaryMap(java.util.Map<String, Integer> summaryMap) {
@@ -63,11 +63,11 @@ public class GetAccountSummaryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A set of key value pairs containing information about IAM entity usage and IAM quotas.
+     * A set of key–value pairs containing information about IAM entity usage and IAM quotas.
      * </p>
      * 
      * @param summaryMap
-     *        A set of key value pairs containing information about IAM entity usage and IAM quotas.
+     *        A set of key–value pairs containing information about IAM entity usage and IAM quotas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +98,8 @@ public class GetAccountSummaryResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

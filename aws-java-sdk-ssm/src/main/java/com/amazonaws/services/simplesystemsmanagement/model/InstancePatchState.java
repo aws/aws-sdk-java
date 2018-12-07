@@ -882,7 +882,8 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -903,7 +904,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
         if (getInstallOverrideList() != null)
             sb.append("InstallOverrideList: ").append(getInstallOverrideList()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
+            sb.append("OwnerInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getInstalledCount() != null)
             sb.append("InstalledCount: ").append(getInstalledCount()).append(",");
         if (getInstalledOtherCount() != null)

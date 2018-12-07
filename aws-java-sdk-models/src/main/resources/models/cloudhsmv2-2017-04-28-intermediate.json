@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -815,6 +815,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the backup.</p>\n@param backupId The identifier (ID) of the backup.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -880,6 +881,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The state of the backup.</p>\n@param backupState The state of the backup.\n@see BackupState*/",
         "setterMethodName" : "setBackupState",
         "setterModel" : {
@@ -945,6 +947,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that was backed up.</p>\n@param clusterId The identifier (ID) of the cluster that was backed up.*/",
         "setterMethodName" : "setClusterId",
         "setterModel" : {
@@ -1010,6 +1013,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreateTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when the backup was created.</p>\n@param createTimestamp The date and time when the backup was created.*/",
         "setterMethodName" : "setCreateTimestamp",
         "setterModel" : {
@@ -1075,6 +1079,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CopyTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param copyTimestamp */",
         "setterMethodName" : "setCopyTimestamp",
         "setterModel" : {
@@ -1140,6 +1145,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceRegion",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceRegion */",
         "setterMethodName" : "setSourceRegion",
         "setterModel" : {
@@ -1205,6 +1211,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceBackup",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceBackup */",
         "setterMethodName" : "setSourceBackup",
         "setterModel" : {
@@ -1270,6 +1277,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceCluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceCluster */",
         "setterMethodName" : "setSourceCluster",
         "setterModel" : {
@@ -1335,6 +1343,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DeleteTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when the backup will be permanently deleted.</p>\n@param deleteTimestamp The date and time when the backup will be permanently deleted.*/",
         "setterMethodName" : "setDeleteTimestamp",
         "setterModel" : {
@@ -1402,6 +1411,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the backup.</p>\n@param backupId The identifier (ID) of the backup.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -1468,6 +1478,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The state of the backup.</p>\n@param backupState The state of the backup.\n@see BackupState*/",
           "setterMethodName" : "setBackupState",
           "setterModel" : {
@@ -1534,6 +1545,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that was backed up.</p>\n@param clusterId The identifier (ID) of the cluster that was backed up.*/",
           "setterMethodName" : "setClusterId",
           "setterModel" : {
@@ -1600,6 +1612,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CopyTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param copyTimestamp */",
           "setterMethodName" : "setCopyTimestamp",
           "setterModel" : {
@@ -1666,6 +1679,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreateTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when the backup was created.</p>\n@param createTimestamp The date and time when the backup was created.*/",
           "setterMethodName" : "setCreateTimestamp",
           "setterModel" : {
@@ -1732,6 +1746,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DeleteTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when the backup will be permanently deleted.</p>\n@param deleteTimestamp The date and time when the backup will be permanently deleted.*/",
           "setterMethodName" : "setDeleteTimestamp",
           "setterModel" : {
@@ -1798,6 +1813,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceBackup",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceBackup */",
           "setterMethodName" : "setSourceBackup",
           "setterModel" : {
@@ -1864,6 +1880,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceCluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceCluster */",
           "setterMethodName" : "setSourceCluster",
           "setterModel" : {
@@ -1930,6 +1947,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceRegion",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceRegion */",
           "setterMethodName" : "setSourceRegion",
           "setterModel" : {
@@ -2130,6 +2148,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterCsr",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>\n@param clusterCsr The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.*/",
         "setterMethodName" : "setClusterCsr",
         "setterModel" : {
@@ -2195,6 +2214,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HsmCertificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HSM certificate issued (signed) by the HSM hardware.</p>\n@param hsmCertificate The HSM certificate issued (signed) by the HSM hardware.*/",
         "setterMethodName" : "setHsmCertificate",
         "setterModel" : {
@@ -2260,6 +2280,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AwsHardwareCertificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>\n@param awsHardwareCertificate The HSM hardware certificate issued (signed) by AWS CloudHSM.*/",
         "setterMethodName" : "setAwsHardwareCertificate",
         "setterModel" : {
@@ -2325,6 +2346,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManufacturerHardwareCertificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>\n@param manufacturerHardwareCertificate The HSM hardware certificate issued (signed) by the hardware manufacturer.*/",
         "setterMethodName" : "setManufacturerHardwareCertificate",
         "setterModel" : {
@@ -2390,6 +2412,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterCertificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>\n@param clusterCertificate The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.*/",
         "setterMethodName" : "setClusterCertificate",
         "setterModel" : {
@@ -2457,6 +2480,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AwsHardwareCertificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>\n@param awsHardwareCertificate The HSM hardware certificate issued (signed) by AWS CloudHSM.*/",
           "setterMethodName" : "setAwsHardwareCertificate",
           "setterModel" : {
@@ -2523,6 +2547,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterCertificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>\n@param clusterCertificate The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.*/",
           "setterMethodName" : "setClusterCertificate",
           "setterModel" : {
@@ -2589,6 +2614,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterCsr",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>\n@param clusterCsr The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.*/",
           "setterMethodName" : "setClusterCsr",
           "setterModel" : {
@@ -2655,6 +2681,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HsmCertificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HSM certificate issued (signed) by the HSM hardware.</p>\n@param hsmCertificate The HSM certificate issued (signed) by the HSM hardware.*/",
           "setterMethodName" : "setHsmCertificate",
           "setterModel" : {
@@ -2721,6 +2748,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManufacturerHardwareCertificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>\n@param manufacturerHardwareCertificate The HSM hardware certificate issued (signed) by the hardware manufacturer.*/",
           "setterMethodName" : "setManufacturerHardwareCertificate",
           "setterModel" : {
@@ -3011,6 +3039,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupPolicy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster's backup policy.</p>\n@param backupPolicy The cluster's backup policy.\n@see BackupPolicy*/",
         "setterMethodName" : "setBackupPolicy",
         "setterModel" : {
@@ -3076,6 +3105,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster's identifier (ID).</p>\n@param clusterId The cluster's identifier (ID).*/",
         "setterMethodName" : "setClusterId",
         "setterModel" : {
@@ -3141,6 +3171,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreateTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when the cluster was created.</p>\n@param createTimestamp The date and time when the cluster was created.*/",
         "setterMethodName" : "setCreateTimestamp",
         "setterModel" : {
@@ -3243,6 +3274,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3286,6 +3318,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Hsms",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains information about the HSMs in the cluster.</p>\n@param hsms Contains information about the HSMs in the cluster.*/",
         "setterMethodName" : "setHsms",
         "setterModel" : {
@@ -3351,6 +3384,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HsmType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of HSM that the cluster contains.</p>\n@param hsmType The type of HSM that the cluster contains.*/",
         "setterMethodName" : "setHsmType",
         "setterModel" : {
@@ -3416,6 +3450,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PreCoPassword",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>\n@param preCoPassword The default password for the cluster's Pre-Crypto Officer (PRECO) user.*/",
         "setterMethodName" : "setPreCoPassword",
         "setterModel" : {
@@ -3481,6 +3516,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SecurityGroup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the cluster's security group.</p>\n@param securityGroup The identifier (ID) of the cluster's security group.*/",
         "setterMethodName" : "setSecurityGroup",
         "setterModel" : {
@@ -3546,6 +3582,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceBackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>\n@param sourceBackupId The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.*/",
         "setterMethodName" : "setSourceBackupId",
         "setterModel" : {
@@ -3611,6 +3648,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster's state.</p>\n@param state The cluster's state.\n@see ClusterState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -3676,6 +3714,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the cluster's state.</p>\n@param stateMessage A description of the cluster's state.*/",
         "setterMethodName" : "setStateMessage",
         "setterModel" : {
@@ -3784,6 +3823,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -3821,6 +3861,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SubnetMapping",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@param subnetMapping A map of the cluster's subnets and their corresponding Availability Zones.*/",
         "setterMethodName" : "setSubnetMapping",
         "setterModel" : {
@@ -3886,6 +3927,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VpcId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>\n@param vpcId The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.*/",
         "setterMethodName" : "setVpcId",
         "setterModel" : {
@@ -3951,6 +3993,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Certificates",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains one or more certificates or a certificate signing request (CSR).</p>\n@param certificates Contains one or more certificates or a certificate signing request (CSR).*/",
         "setterMethodName" : "setCertificates",
         "setterModel" : {
@@ -4018,6 +4061,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupPolicy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster's backup policy.</p>\n@param backupPolicy The cluster's backup policy.\n@see BackupPolicy*/",
           "setterMethodName" : "setBackupPolicy",
           "setterModel" : {
@@ -4084,6 +4128,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Certificates",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains one or more certificates or a certificate signing request (CSR).</p>\n@param certificates Contains one or more certificates or a certificate signing request (CSR).*/",
           "setterMethodName" : "setCertificates",
           "setterModel" : {
@@ -4150,6 +4195,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster's identifier (ID).</p>\n@param clusterId The cluster's identifier (ID).*/",
           "setterMethodName" : "setClusterId",
           "setterModel" : {
@@ -4216,6 +4262,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreateTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when the cluster was created.</p>\n@param createTimestamp The date and time when the cluster was created.*/",
           "setterMethodName" : "setCreateTimestamp",
           "setterModel" : {
@@ -4282,6 +4329,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HsmType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of HSM that the cluster contains.</p>\n@param hsmType The type of HSM that the cluster contains.*/",
           "setterMethodName" : "setHsmType",
           "setterModel" : {
@@ -4385,6 +4433,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4428,6 +4477,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Hsms",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains information about the HSMs in the cluster.</p>\n@param hsms Contains information about the HSMs in the cluster.*/",
           "setterMethodName" : "setHsms",
           "setterModel" : {
@@ -4494,6 +4544,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PreCoPassword",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>\n@param preCoPassword The default password for the cluster's Pre-Crypto Officer (PRECO) user.*/",
           "setterMethodName" : "setPreCoPassword",
           "setterModel" : {
@@ -4560,6 +4611,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SecurityGroup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the cluster's security group.</p>\n@param securityGroup The identifier (ID) of the cluster's security group.*/",
           "setterMethodName" : "setSecurityGroup",
           "setterModel" : {
@@ -4626,6 +4678,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceBackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>\n@param sourceBackupId The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.*/",
           "setterMethodName" : "setSourceBackupId",
           "setterModel" : {
@@ -4692,6 +4745,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster's state.</p>\n@param state The cluster's state.\n@see ClusterState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -4758,6 +4812,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the cluster's state.</p>\n@param stateMessage A description of the cluster's state.*/",
           "setterMethodName" : "setStateMessage",
           "setterModel" : {
@@ -4867,6 +4922,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -4904,6 +4960,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SubnetMapping",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@param subnetMapping A map of the cluster's subnets and their corresponding Availability Zones.*/",
           "setterMethodName" : "setSubnetMapping",
           "setterModel" : {
@@ -4970,6 +5027,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VpcId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>\n@param vpcId The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.*/",
           "setterMethodName" : "setVpcId",
           "setterModel" : {
@@ -5149,6 +5207,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DestinationRegion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS region that will contain your copied CloudHSM cluster backup.</p>\n@param destinationRegion The AWS region that will contain your copied CloudHSM cluster backup.*/",
         "setterMethodName" : "setDestinationRegion",
         "setterModel" : {
@@ -5214,6 +5273,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the backup that will be copied to the destination region. </p>\n@param backupId The ID of the backup that will be copied to the destination region.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -5281,6 +5341,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the backup that will be copied to the destination region. </p>\n@param backupId The ID of the backup that will be copied to the destination region.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -5347,6 +5408,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DestinationRegion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS region that will contain your copied CloudHSM cluster backup.</p>\n@param destinationRegion The AWS region that will contain your copied CloudHSM cluster backup.*/",
           "setterMethodName" : "setDestinationRegion",
           "setterModel" : {
@@ -5449,6 +5511,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DestinationBackup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.</p>\n@param destinationBackup Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.*/",
         "setterMethodName" : "setDestinationBackup",
         "setterModel" : {
@@ -5516,6 +5579,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DestinationBackup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.</p>\n@param destinationBackup Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.*/",
           "setterMethodName" : "setDestinationBackup",
           "setterModel" : {
@@ -5665,6 +5729,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5708,6 +5773,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li> </ul>\n@param subnetIds The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li>*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -5773,6 +5839,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HsmType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>\n@param hsmType The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.*/",
         "setterMethodName" : "setHsmType",
         "setterModel" : {
@@ -5838,6 +5905,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceBackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>\n@param sourceBackupId The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.*/",
         "setterMethodName" : "setSourceBackupId",
         "setterModel" : {
@@ -5905,6 +5973,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HsmType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>\n@param hsmType The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.*/",
           "setterMethodName" : "setHsmType",
           "setterModel" : {
@@ -5971,6 +6040,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceBackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>\n@param sourceBackupId The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.*/",
           "setterMethodName" : "setSourceBackupId",
           "setterModel" : {
@@ -6074,6 +6144,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6117,6 +6188,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li> </ul>\n@param subnetIds The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li>*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -6219,6 +6291,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the cluster that was created.</p>\n@param cluster Information about the cluster that was created.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -6286,6 +6359,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the cluster that was created.</p>\n@param cluster Information about the cluster that was created.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -6398,6 +6472,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.*/",
         "setterMethodName" : "setClusterId",
         "setterModel" : {
@@ -6463,6 +6538,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AvailabilityZone",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <a>DescribeClusters</a>.</p>\n@param availabilityZone The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <a>DescribeClusters</a>.*/",
         "setterMethodName" : "setAvailabilityZone",
         "setterModel" : {
@@ -6528,6 +6604,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IpAddress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>\n@param ipAddress The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.*/",
         "setterMethodName" : "setIpAddress",
         "setterModel" : {
@@ -6595,6 +6672,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AvailabilityZone",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <a>DescribeClusters</a>.</p>\n@param availabilityZone The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <a>DescribeClusters</a>.*/",
           "setterMethodName" : "setAvailabilityZone",
           "setterModel" : {
@@ -6661,6 +6739,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.*/",
           "setterMethodName" : "setClusterId",
           "setterModel" : {
@@ -6727,6 +6806,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IpAddress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>\n@param ipAddress The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.*/",
           "setterMethodName" : "setIpAddress",
           "setterModel" : {
@@ -6829,6 +6909,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Hsm",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the HSM that was created.</p>\n@param hsm Information about the HSM that was created.*/",
         "setterMethodName" : "setHsm",
         "setterModel" : {
@@ -6896,6 +6977,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Hsm",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the HSM that was created.</p>\n@param hsm Information about the HSM that was created.*/",
           "setterMethodName" : "setHsm",
           "setterModel" : {
@@ -7008,6 +7090,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n@param backupId The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -7075,6 +7158,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n@param backupId The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -7177,6 +7261,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Backup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information on the <code>Backup</code> object deleted.</p>\n@param backup Information on the <code>Backup</code> object deleted.*/",
         "setterMethodName" : "setBackup",
         "setterModel" : {
@@ -7244,6 +7329,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Backup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information on the <code>Backup</code> object deleted.</p>\n@param backup Information on the <code>Backup</code> object deleted.*/",
           "setterMethodName" : "setBackup",
           "setterModel" : {
@@ -7356,6 +7442,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <a>DescribeClusters</a>.*/",
         "setterMethodName" : "setClusterId",
         "setterModel" : {
@@ -7423,6 +7510,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <a>DescribeClusters</a>.*/",
           "setterMethodName" : "setClusterId",
           "setterModel" : {
@@ -7525,6 +7613,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the cluster that was deleted.</p>\n@param cluster Information about the cluster that was deleted.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -7592,6 +7681,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the cluster that was deleted.</p>\n@param cluster Information about the cluster that was deleted.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -7704,6 +7794,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>\n@param clusterId The identifier (ID) of the cluster that contains the HSM that you are deleting.*/",
         "setterMethodName" : "setClusterId",
         "setterModel" : {
@@ -7769,6 +7860,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HsmId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the HSM that you are deleting.</p>\n@param hsmId The identifier (ID) of the HSM that you are deleting.*/",
         "setterMethodName" : "setHsmId",
         "setterModel" : {
@@ -7834,6 +7926,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EniId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>\n@param eniId The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.*/",
         "setterMethodName" : "setEniId",
         "setterModel" : {
@@ -7899,6 +7992,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EniIp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>\n@param eniIp The IP address of the elastic network interface (ENI) of the HSM that you are deleting.*/",
         "setterMethodName" : "setEniIp",
         "setterModel" : {
@@ -7966,6 +8060,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>\n@param clusterId The identifier (ID) of the cluster that contains the HSM that you are deleting.*/",
           "setterMethodName" : "setClusterId",
           "setterModel" : {
@@ -8032,6 +8127,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EniId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>\n@param eniId The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.*/",
           "setterMethodName" : "setEniId",
           "setterModel" : {
@@ -8098,6 +8194,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EniIp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>\n@param eniIp The IP address of the elastic network interface (ENI) of the HSM that you are deleting.*/",
           "setterMethodName" : "setEniIp",
           "setterModel" : {
@@ -8164,6 +8261,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HsmId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the HSM that you are deleting.</p>\n@param hsmId The identifier (ID) of the HSM that you are deleting.*/",
           "setterMethodName" : "setHsmId",
           "setterModel" : {
@@ -8266,6 +8364,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HsmId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the HSM that was deleted.</p>\n@param hsmId The identifier (ID) of the HSM that was deleted.*/",
         "setterMethodName" : "setHsmId",
         "setterModel" : {
@@ -8333,6 +8432,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HsmId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the HSM that was deleted.</p>\n@param hsmId The identifier (ID) of the HSM that was deleted.*/",
           "setterMethodName" : "setHsmId",
           "setterModel" : {
@@ -8445,6 +8545,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8510,6 +8611,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -8655,6 +8757,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Member",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param member */",
                 "setterMethodName" : "setMember",
                 "setterModel" : {
@@ -8698,6 +8801,7 @@
             "marshallingTargetClass" : "List",
             "marshallingType" : "LIST",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -8735,6 +8839,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>\n@param filters One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -8800,6 +8905,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "SortAscending",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sortAscending */",
         "setterMethodName" : "setSortAscending",
         "setterModel" : {
@@ -8947,6 +9053,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Member",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param member */",
                   "setterMethodName" : "setMember",
                   "setterModel" : {
@@ -8990,6 +9097,7 @@
               "marshallingTargetClass" : "List",
               "marshallingType" : "LIST",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -9027,6 +9135,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>\n@param filters One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -9093,6 +9202,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -9159,6 +9269,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9225,6 +9336,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "SortAscending",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sortAscending */",
           "setterMethodName" : "setSortAscending",
           "setterModel" : {
@@ -9364,6 +9476,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9407,6 +9520,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Backups",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of backups.</p>\n@param backups A list of backups.*/",
         "setterMethodName" : "setBackups",
         "setterModel" : {
@@ -9472,6 +9586,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9576,6 +9691,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9619,6 +9735,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Backups",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of backups.</p>\n@param backups A list of backups.*/",
           "setterMethodName" : "setBackups",
           "setterModel" : {
@@ -9685,6 +9802,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9877,6 +9995,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Member",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param member */",
                 "setterMethodName" : "setMember",
                 "setterModel" : {
@@ -9920,6 +10039,7 @@
             "marshallingTargetClass" : "List",
             "marshallingType" : "LIST",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -9957,6 +10077,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Filters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>\n@param filters One or more filters to limit the items returned in the response.</p> <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the <code>states</code> filter to return only clusters that match the specified state.*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
@@ -10022,6 +10143,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10087,6 +10209,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10234,6 +10357,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Member",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param member */",
                   "setterMethodName" : "setMember",
                   "setterModel" : {
@@ -10277,6 +10401,7 @@
               "marshallingTargetClass" : "List",
               "marshallingType" : "LIST",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -10314,6 +10439,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Filters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>\n@param filters One or more filters to limit the items returned in the response.</p> <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the <code>states</code> filter to return only clusters that match the specified state.*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
@@ -10380,6 +10506,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10446,6 +10573,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10585,6 +10713,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10628,6 +10757,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Clusters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of clusters.</p>\n@param clusters A list of clusters.*/",
         "setterMethodName" : "setClusters",
         "setterModel" : {
@@ -10693,6 +10823,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10797,6 +10928,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10840,6 +10972,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Clusters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of clusters.</p>\n@param clusters A list of clusters.*/",
           "setterMethodName" : "setClusters",
           "setterModel" : {
@@ -10906,6 +11039,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11011,6 +11145,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreateTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param createTimestamp */",
         "setterMethodName" : "setCreateTimestamp",
         "setterModel" : {
@@ -11076,6 +11211,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceRegion",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceRegion */",
         "setterMethodName" : "setSourceRegion",
         "setterModel" : {
@@ -11141,6 +11277,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceBackup",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceBackup */",
         "setterMethodName" : "setSourceBackup",
         "setterModel" : {
@@ -11206,6 +11343,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceCluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param sourceCluster */",
         "setterMethodName" : "setSourceCluster",
         "setterModel" : {
@@ -11273,6 +11411,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreateTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param createTimestamp */",
           "setterMethodName" : "setCreateTimestamp",
           "setterModel" : {
@@ -11339,6 +11478,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceBackup",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceBackup */",
           "setterMethodName" : "setSourceBackup",
           "setterModel" : {
@@ -11405,6 +11545,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceCluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceCluster */",
           "setterMethodName" : "setSourceCluster",
           "setterModel" : {
@@ -11471,6 +11612,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceRegion",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param sourceRegion */",
           "setterMethodName" : "setSourceRegion",
           "setterModel" : {
@@ -11576,6 +11718,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AvailabilityZone",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Availability Zone that contains the HSM.</p>\n@param availabilityZone The Availability Zone that contains the HSM.*/",
         "setterMethodName" : "setAvailabilityZone",
         "setterModel" : {
@@ -11641,6 +11784,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that contains the HSM.</p>\n@param clusterId The identifier (ID) of the cluster that contains the HSM.*/",
         "setterMethodName" : "setClusterId",
         "setterModel" : {
@@ -11706,6 +11850,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The subnet that contains the HSM's elastic network interface (ENI).</p>\n@param subnetId The subnet that contains the HSM's elastic network interface (ENI).*/",
         "setterMethodName" : "setSubnetId",
         "setterModel" : {
@@ -11771,6 +11916,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EniId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>\n@param eniId The identifier (ID) of the HSM's elastic network interface (ENI).*/",
         "setterMethodName" : "setEniId",
         "setterModel" : {
@@ -11836,6 +11982,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EniIp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IP address of the HSM's elastic network interface (ENI).</p>\n@param eniIp The IP address of the HSM's elastic network interface (ENI).*/",
         "setterMethodName" : "setEniIp",
         "setterModel" : {
@@ -11901,6 +12048,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HsmId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HSM's identifier (ID).</p>\n@param hsmId The HSM's identifier (ID).*/",
         "setterMethodName" : "setHsmId",
         "setterModel" : {
@@ -11966,6 +12114,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HSM's state.</p>\n@param state The HSM's state.\n@see HsmState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -12031,6 +12180,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the HSM's state.</p>\n@param stateMessage A description of the HSM's state.*/",
         "setterMethodName" : "setStateMessage",
         "setterModel" : {
@@ -12098,6 +12248,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AvailabilityZone",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Availability Zone that contains the HSM.</p>\n@param availabilityZone The Availability Zone that contains the HSM.*/",
           "setterMethodName" : "setAvailabilityZone",
           "setterModel" : {
@@ -12164,6 +12315,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that contains the HSM.</p>\n@param clusterId The identifier (ID) of the cluster that contains the HSM.*/",
           "setterMethodName" : "setClusterId",
           "setterModel" : {
@@ -12230,6 +12382,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EniId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>\n@param eniId The identifier (ID) of the HSM's elastic network interface (ENI).*/",
           "setterMethodName" : "setEniId",
           "setterModel" : {
@@ -12296,6 +12449,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EniIp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IP address of the HSM's elastic network interface (ENI).</p>\n@param eniIp The IP address of the HSM's elastic network interface (ENI).*/",
           "setterMethodName" : "setEniIp",
           "setterModel" : {
@@ -12362,6 +12516,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HsmId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HSM's identifier (ID).</p>\n@param hsmId The HSM's identifier (ID).*/",
           "setterMethodName" : "setHsmId",
           "setterModel" : {
@@ -12428,6 +12583,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HSM's state.</p>\n@param state The HSM's state.\n@see HsmState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -12494,6 +12650,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the HSM's state.</p>\n@param stateMessage A description of the HSM's state.*/",
           "setterMethodName" : "setStateMessage",
           "setterModel" : {
@@ -12560,6 +12717,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The subnet that contains the HSM's elastic network interface (ENI).</p>\n@param subnetId The subnet that contains the HSM's elastic network interface (ENI).*/",
           "setterMethodName" : "setSubnetId",
           "setterModel" : {
@@ -12727,6 +12885,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <a>DescribeClusters</a>.*/",
         "setterMethodName" : "setClusterId",
         "setterModel" : {
@@ -12792,6 +12951,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SignedCert",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param signedCert The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.*/",
         "setterMethodName" : "setSignedCert",
         "setterModel" : {
@@ -12857,6 +13017,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TrustAnchor",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.*/",
         "setterMethodName" : "setTrustAnchor",
         "setterModel" : {
@@ -12924,6 +13085,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param clusterId The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <a>DescribeClusters</a>.*/",
           "setterMethodName" : "setClusterId",
           "setterModel" : {
@@ -12990,6 +13152,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SignedCert",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param signedCert The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.*/",
           "setterMethodName" : "setSignedCert",
           "setterModel" : {
@@ -13056,6 +13219,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TrustAnchor",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.*/",
           "setterMethodName" : "setTrustAnchor",
           "setterModel" : {
@@ -13158,6 +13322,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster's state.</p>\n@param state The cluster's state.\n@see ClusterState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -13223,6 +13388,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StateMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the cluster's state.</p>\n@param stateMessage A description of the cluster's state.*/",
         "setterMethodName" : "setStateMessage",
         "setterModel" : {
@@ -13290,6 +13456,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster's state.</p>\n@param state The cluster's state.\n@see ClusterState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -13356,6 +13523,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StateMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the cluster's state.</p>\n@param stateMessage A description of the cluster's state.*/",
           "setterMethodName" : "setStateMessage",
           "setterModel" : {
@@ -13468,6 +13636,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -13533,6 +13702,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13598,6 +13768,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -13665,6 +13836,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>\n@param maxResults The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -13731,6 +13903,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>\n@param nextToken The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13797,6 +13970,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -13936,6 +14110,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13979,6 +14154,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of tags.</p>\n@param tagList A list of tags.*/",
         "setterMethodName" : "setTagList",
         "setterModel" : {
@@ -14044,6 +14220,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -14111,6 +14288,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>\n@param nextToken An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -14214,6 +14392,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14257,6 +14436,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of tags.</p>\n@param tagList A list of tags.*/",
           "setterMethodName" : "setTagList",
           "setterModel" : {
@@ -14369,6 +14549,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BackupId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n@param backupId The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.*/",
         "setterMethodName" : "setBackupId",
         "setterModel" : {
@@ -14436,6 +14617,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BackupId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n@param backupId The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.*/",
           "setterMethodName" : "setBackupId",
           "setterModel" : {
@@ -14538,6 +14720,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Backup",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information on the <code>Backup</code> object created.</p>\n@param backup Information on the <code>Backup</code> object created.*/",
         "setterMethodName" : "setBackup",
         "setterModel" : {
@@ -14605,6 +14788,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Backup",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information on the <code>Backup</code> object created.</p>\n@param backup Information on the <code>Backup</code> object created.*/",
           "setterMethodName" : "setBackup",
           "setterModel" : {
@@ -14710,6 +14894,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -14775,6 +14960,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -14842,6 +15028,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -14908,6 +15095,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -15020,6 +15208,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -15122,6 +15311,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15165,6 +15355,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of one or more tags.</p>\n@param tagList A list of one or more tags.*/",
         "setterMethodName" : "setTagList",
         "setterModel" : {
@@ -15232,6 +15423,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -15335,6 +15527,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15378,6 +15571,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of one or more tags.</p>\n@param tagList A list of one or more tags.*/",
           "setterMethodName" : "setTagList",
           "setterModel" : {
@@ -15527,6 +15721,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -15629,6 +15824,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15672,6 +15868,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagKeyList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>\n@param tagKeyList A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.*/",
         "setterMethodName" : "setTagKeyList",
         "setterModel" : {
@@ -15739,6 +15936,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.</p>\n@param resourceId The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -15842,6 +16040,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15885,6 +16084,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagKeyList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>\n@param tagKeyList A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.*/",
           "setterMethodName" : "setTagKeyList",
           "setterModel" : {

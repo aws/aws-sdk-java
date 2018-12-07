@@ -824,6 +824,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the environment to create.</p> <p>This name is visible to other AWS IAM users in the same AWS account.</p>\n@param name The name of the environment to create.</p> <p>This name is visible to other AWS IAM users in the same AWS account.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -889,6 +890,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the environment to create.</p>\n@param description The description of the environment to create.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -954,6 +956,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>\n@param clientRequestToken A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -1019,6 +1022,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to connect to the environment (for example, <code>t2.micro</code>).*/",
         "setterMethodName" : "setInstanceType",
         "setterModel" : {
@@ -1084,6 +1088,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubnetId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.</p>\n@param subnetId The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.*/",
         "setterMethodName" : "setSubnetId",
         "setterModel" : {
@@ -1149,6 +1154,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "AutomaticStopTimeMinutes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of minutes until the running instance is shut down after the environment has last been used.</p>\n@param automaticStopTimeMinutes The number of minutes until the running instance is shut down after the environment has last been used.*/",
         "setterMethodName" : "setAutomaticStopTimeMinutes",
         "setterModel" : {
@@ -1214,6 +1220,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OwnerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>\n@param ownerArn The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If this value is not specified, the ARN defaults to this environment's creator.*/",
         "setterMethodName" : "setOwnerArn",
         "setterModel" : {
@@ -1281,6 +1288,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "AutomaticStopTimeMinutes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of minutes until the running instance is shut down after the environment has last been used.</p>\n@param automaticStopTimeMinutes The number of minutes until the running instance is shut down after the environment has last been used.*/",
           "setterMethodName" : "setAutomaticStopTimeMinutes",
           "setterModel" : {
@@ -1347,6 +1355,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>\n@param clientRequestToken A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -1413,6 +1422,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the environment to create.</p>\n@param description The description of the environment to create.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -1479,6 +1489,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to connect to the environment (for example, <code>t2.micro</code>).*/",
           "setterMethodName" : "setInstanceType",
           "setterModel" : {
@@ -1545,6 +1556,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the environment to create.</p> <p>This name is visible to other AWS IAM users in the same AWS account.</p>\n@param name The name of the environment to create.</p> <p>This name is visible to other AWS IAM users in the same AWS account.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1611,6 +1623,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OwnerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>\n@param ownerArn The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If this value is not specified, the ARN defaults to this environment's creator.*/",
           "setterMethodName" : "setOwnerArn",
           "setterModel" : {
@@ -1677,6 +1690,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubnetId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.</p>\n@param subnetId The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.*/",
           "setterMethodName" : "setSubnetId",
           "setterModel" : {
@@ -1779,6 +1793,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment that was created.</p>\n@param environmentId The ID of the environment that was created.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -1846,6 +1861,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment that was created.</p>\n@param environmentId The ID of the environment that was created.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -1958,6 +1974,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment that contains the environment member you want to add.</p>\n@param environmentId The ID of the environment that contains the environment member you want to add.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -2023,6 +2040,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>\n@param userArn The Amazon Resource Name (ARN) of the environment member you want to add.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -2088,6 +2106,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Permissions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of environment member permissions you want to associate with this environment member. Available values include:</p> <ul> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul>\n@param permissions The type of environment member permissions you want to associate with this environment member. Available values include:</p> <ul> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>\n@see MemberPermissions*/",
         "setterMethodName" : "setPermissions",
         "setterModel" : {
@@ -2155,6 +2174,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment that contains the environment member you want to add.</p>\n@param environmentId The ID of the environment that contains the environment member you want to add.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -2221,6 +2241,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Permissions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of environment member permissions you want to associate with this environment member. Available values include:</p> <ul> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul>\n@param permissions The type of environment member permissions you want to associate with this environment member. Available values include:</p> <ul> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>\n@see MemberPermissions*/",
           "setterMethodName" : "setPermissions",
           "setterModel" : {
@@ -2287,6 +2308,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>\n@param userArn The Amazon Resource Name (ARN) of the environment member you want to add.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -2389,6 +2411,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Membership",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the environment member that was added.</p>\n@param membership Information about the environment member that was added.*/",
         "setterMethodName" : "setMembership",
         "setterModel" : {
@@ -2456,6 +2479,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Membership",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the environment member that was added.</p>\n@param membership Information about the environment member that was added.*/",
           "setterMethodName" : "setMembership",
           "setterModel" : {
@@ -2568,6 +2592,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment to delete the environment member from.</p>\n@param environmentId The ID of the environment to delete the environment member from.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -2633,6 +2658,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>\n@param userArn The Amazon Resource Name (ARN) of the environment member to delete from the environment.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -2700,6 +2726,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment to delete the environment member from.</p>\n@param environmentId The ID of the environment to delete the environment member from.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -2766,6 +2793,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>\n@param userArn The Amazon Resource Name (ARN) of the environment member to delete from the environment.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -2915,6 +2943,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment to delete.</p>\n@param environmentId The ID of the environment to delete.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -2982,6 +3011,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment to delete.</p>\n@param environmentId The ID of the environment to delete.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -3131,6 +3161,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>\n@param userArn The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -3196,6 +3227,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment to get environment member information about.</p>\n@param environmentId The ID of the environment to get environment member information about.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -3298,6 +3330,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see Permissions*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3341,6 +3374,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Permissions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of environment member permissions to get information about. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul> <p>If no value is specified, information about all environment members are returned.</p>\n@param permissions The type of environment member permissions to get information about. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul> <p>If no value is specified, information about all environment members are returned.\n@see Permissions*/",
         "setterMethodName" : "setPermissions",
         "setterModel" : {
@@ -3406,6 +3440,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>\n@param nextToken During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -3471,6 +3506,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of environment members to get information about.</p>\n@param maxResults The maximum number of environment members to get information about.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -3538,6 +3574,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment to get environment member information about.</p>\n@param environmentId The ID of the environment to get environment member information about.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -3604,6 +3641,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of environment members to get information about.</p>\n@param maxResults The maximum number of environment members to get information about.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -3670,6 +3708,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>\n@param nextToken During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -3773,6 +3812,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see Permissions*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3816,6 +3856,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Permissions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of environment member permissions to get information about. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul> <p>If no value is specified, information about all environment members are returned.</p>\n@param permissions The type of environment member permissions to get information about. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul> <p>If no value is specified, information about all environment members are returned.\n@see Permissions*/",
           "setterMethodName" : "setPermissions",
           "setterModel" : {
@@ -3882,6 +3923,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>\n@param userArn The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -4021,6 +4063,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4064,6 +4107,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Memberships",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the environment members for the environment.</p>\n@param memberships Information about the environment members for the environment.*/",
         "setterMethodName" : "setMemberships",
         "setterModel" : {
@@ -4129,6 +4173,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>\n@param nextToken If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4233,6 +4278,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4276,6 +4322,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Memberships",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the environment members for the environment.</p>\n@param memberships Information about the environment members for the environment.*/",
           "setterMethodName" : "setMemberships",
           "setterModel" : {
@@ -4342,6 +4389,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>\n@param nextToken If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4454,6 +4502,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment to get status information about.</p>\n@param environmentId The ID of the environment to get status information about.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -4521,6 +4570,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment to get status information about.</p>\n@param environmentId The ID of the environment to get status information about.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -4623,6 +4673,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the environment. Available values include:</p> <ul> <li> <p> <code>connecting</code>: The environment is connecting.</p> </li> <li> <p> <code>creating</code>: The environment is being created.</p> </li> <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li> <li> <p> <code>error</code>: The environment is in an error state.</p> </li> <li> <p> <code>ready</code>: The environment is ready.</p> </li> <li> <p> <code>stopped</code>: The environment is stopped.</p> </li> <li> <p> <code>stopping</code>: The environment is stopping.</p> </li> </ul>\n@param status The status of the environment. Available values include:</p> <ul> <li> <p> <code>connecting</code>: The environment is connecting.</p> </li> <li> <p> <code>creating</code>: The environment is being created.</p> </li> <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li> <li> <p> <code>error</code>: The environment is in an error state.</p> </li> <li> <p> <code>ready</code>: The environment is ready.</p> </li> <li> <p> <code>stopped</code>: The environment is stopped.</p> </li> <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>\n@see EnvironmentStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -4688,6 +4739,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Message",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Any informational message about the status of the environment.</p>\n@param message Any informational message about the status of the environment.*/",
         "setterMethodName" : "setMessage",
         "setterModel" : {
@@ -4755,6 +4807,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Message",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Any informational message about the status of the environment.</p>\n@param message Any informational message about the status of the environment.*/",
           "setterMethodName" : "setMessage",
           "setterModel" : {
@@ -4821,6 +4874,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the environment. Available values include:</p> <ul> <li> <p> <code>connecting</code>: The environment is connecting.</p> </li> <li> <p> <code>creating</code>: The environment is being created.</p> </li> <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li> <li> <p> <code>error</code>: The environment is in an error state.</p> </li> <li> <p> <code>ready</code>: The environment is ready.</p> </li> <li> <p> <code>stopped</code>: The environment is stopped.</p> </li> <li> <p> <code>stopping</code>: The environment is stopping.</p> </li> </ul>\n@param status The status of the environment. Available values include:</p> <ul> <li> <p> <code>connecting</code>: The environment is connecting.</p> </li> <li> <p> <code>creating</code>: The environment is being created.</p> </li> <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li> <li> <p> <code>error</code>: The environment is in an error state.</p> </li> <li> <p> <code>ready</code>: The environment is ready.</p> </li> <li> <p> <code>stopped</code>: The environment is stopped.</p> </li> <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>\n@see EnvironmentStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -4970,6 +5024,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5013,6 +5068,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EnvironmentIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n@param environmentIds The IDs of individual environments to get information about.*/",
         "setterMethodName" : "setEnvironmentIds",
         "setterModel" : {
@@ -5117,6 +5173,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5160,6 +5217,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EnvironmentIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n@param environmentIds The IDs of individual environments to get information about.*/",
           "setterMethodName" : "setEnvironmentIds",
           "setterModel" : {
@@ -5299,6 +5357,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5342,6 +5401,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Environments",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the environments that are returned.</p>\n@param environments Information about the environments that are returned.*/",
         "setterMethodName" : "setEnvironments",
         "setterModel" : {
@@ -5446,6 +5506,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5489,6 +5550,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Environments",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the environments that are returned.</p>\n@param environments Information about the environments that are returned.*/",
           "setterMethodName" : "setEnvironments",
           "setterModel" : {
@@ -5594,6 +5656,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment.</p>\n@param id The ID of the environment.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -5659,6 +5722,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the environment.</p>\n@param name The name of the environment.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5724,6 +5788,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description for the environment.</p>\n@param description The description for the environment.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -5789,6 +5854,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@see EnvironmentType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -5854,6 +5920,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment.</p>\n@param arn The Amazon Resource Name (ARN) of the environment.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -5919,6 +5986,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OwnerArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment owner.</p>\n@param ownerArn The Amazon Resource Name (ARN) of the environment owner.*/",
         "setterMethodName" : "setOwnerArn",
         "setterModel" : {
@@ -5986,6 +6054,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment.</p>\n@param arn The Amazon Resource Name (ARN) of the environment.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -6052,6 +6121,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description for the environment.</p>\n@param description The description for the environment.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -6118,6 +6188,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment.</p>\n@param id The ID of the environment.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -6184,6 +6255,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the environment.</p>\n@param name The name of the environment.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -6250,6 +6322,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OwnerArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment owner.</p>\n@param ownerArn The Amazon Resource Name (ARN) of the environment owner.*/",
           "setterMethodName" : "setOwnerArn",
           "setterModel" : {
@@ -6316,6 +6389,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@see EnvironmentType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -6421,6 +6495,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Permissions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of environment member permissions associated with this environment member. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul>\n@param permissions The type of environment member permissions associated with this environment member. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>\n@see Permissions*/",
         "setterMethodName" : "setPermissions",
         "setterModel" : {
@@ -6486,6 +6561,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.</p>\n@param userId The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -6551,6 +6627,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment member.</p>\n@param userArn The Amazon Resource Name (ARN) of the environment member.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -6616,6 +6693,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment for the environment member.</p>\n@param environmentId The ID of the environment for the environment member.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -6681,6 +6759,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastAccess",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>\n@param lastAccess The time, expressed in epoch time format, when the environment member last opened the environment.*/",
         "setterMethodName" : "setLastAccess",
         "setterModel" : {
@@ -6748,6 +6827,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment for the environment member.</p>\n@param environmentId The ID of the environment for the environment member.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -6814,6 +6894,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastAccess",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>\n@param lastAccess The time, expressed in epoch time format, when the environment member last opened the environment.*/",
           "setterMethodName" : "setLastAccess",
           "setterModel" : {
@@ -6880,6 +6961,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Permissions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of environment member permissions associated with this environment member. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul>\n@param permissions The type of environment member permissions associated with this environment member. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>\n@see Permissions*/",
           "setterMethodName" : "setPermissions",
           "setterModel" : {
@@ -6946,6 +7028,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment member.</p>\n@param userArn The Amazon Resource Name (ARN) of the environment member.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -7012,6 +7095,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.</p>\n@param userId The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -7342,6 +7426,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>\n@param nextToken During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7407,6 +7492,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of environments to get identifiers for.</p>\n@param maxResults The maximum number of environments to get identifiers for.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -7474,6 +7560,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of environments to get identifiers for.</p>\n@param maxResults The maximum number of environments to get identifiers for.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -7540,6 +7627,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>\n@param nextToken During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7642,6 +7730,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>\n@param nextToken If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7744,6 +7833,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7787,6 +7877,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EnvironmentIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of environment identifiers.</p>\n@param environmentIds The list of environment identifiers.*/",
         "setterMethodName" : "setEnvironmentIds",
         "setterModel" : {
@@ -7891,6 +7982,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7934,6 +8026,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EnvironmentIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of environment identifiers.</p>\n@param environmentIds The list of environment identifiers.*/",
           "setterMethodName" : "setEnvironmentIds",
           "setterModel" : {
@@ -8000,6 +8093,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>\n@param nextToken If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8281,6 +8375,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment for the environment member whose settings you want to change.</p>\n@param environmentId The ID of the environment for the environment member whose settings you want to change.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -8346,6 +8441,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>\n@param userArn The Amazon Resource Name (ARN) of the environment member whose settings you want to change.*/",
         "setterMethodName" : "setUserArn",
         "setterModel" : {
@@ -8411,6 +8507,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Permissions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p> <ul> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul>\n@param permissions The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p> <ul> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>\n@see MemberPermissions*/",
         "setterMethodName" : "setPermissions",
         "setterModel" : {
@@ -8478,6 +8575,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment for the environment member whose settings you want to change.</p>\n@param environmentId The ID of the environment for the environment member whose settings you want to change.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -8544,6 +8642,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Permissions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p> <ul> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> </ul>\n@param permissions The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p> <ul> <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>\n@see MemberPermissions*/",
           "setterMethodName" : "setPermissions",
           "setterModel" : {
@@ -8610,6 +8709,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>\n@param userArn The Amazon Resource Name (ARN) of the environment member whose settings you want to change.*/",
           "setterMethodName" : "setUserArn",
           "setterModel" : {
@@ -8712,6 +8812,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Membership",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the environment member whose settings were changed.</p>\n@param membership Information about the environment member whose settings were changed.*/",
         "setterMethodName" : "setMembership",
         "setterModel" : {
@@ -8779,6 +8880,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Membership",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the environment member whose settings were changed.</p>\n@param membership Information about the environment member whose settings were changed.*/",
           "setterMethodName" : "setMembership",
           "setterModel" : {
@@ -8891,6 +8993,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EnvironmentId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the environment to change settings.</p>\n@param environmentId The ID of the environment to change settings.*/",
         "setterMethodName" : "setEnvironmentId",
         "setterModel" : {
@@ -8956,6 +9059,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@param name A replacement name for the environment.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -9021,6 +9125,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Any new or replacement description for the environment.</p>\n@param description Any new or replacement description for the environment.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -9088,6 +9193,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Any new or replacement description for the environment.</p>\n@param description Any new or replacement description for the environment.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -9154,6 +9260,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EnvironmentId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the environment to change settings.</p>\n@param environmentId The ID of the environment to change settings.*/",
           "setterMethodName" : "setEnvironmentId",
           "setterModel" : {
@@ -9220,6 +9327,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@param name A replacement name for the environment.*/",
           "setterMethodName" : "setName",
           "setterModel" : {

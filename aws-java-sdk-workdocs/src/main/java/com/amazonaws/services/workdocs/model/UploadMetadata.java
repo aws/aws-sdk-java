@@ -143,7 +143,8 @@ public class UploadMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -154,7 +155,7 @@ public class UploadMetadata implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUploadUrl() != null)
-            sb.append("UploadUrl: ").append(getUploadUrl()).append(",");
+            sb.append("UploadUrl: ").append("***Sensitive Data Redacted***").append(",");
         if (getSignedHeaders() != null)
             sb.append("SignedHeaders: ").append(getSignedHeaders());
         sb.append("}");

@@ -615,6 +615,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the signing profile to be canceled.</p>\n@param profileName The name of the signing profile to be canceled.*/",
         "setterMethodName" : "setProfileName",
         "setterModel" : {
@@ -682,6 +683,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the signing profile to be canceled.</p>\n@param profileName The name of the signing profile to be canceled.*/",
           "setterMethodName" : "setProfileName",
           "setterModel" : {
@@ -874,6 +876,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the signing job on input.</p>\n@param jobId The ID of the signing job on input.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -941,6 +944,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the signing job on input.</p>\n@param jobId The ID of the signing job on input.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -1043,6 +1047,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the signing job on output.</p>\n@param jobId The ID of the signing job on output.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -1108,6 +1113,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The object that contains the name of your S3 bucket or your raw code.</p>\n@param source The object that contains the name of your S3 bucket or your raw code.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -1173,6 +1179,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningMaterial",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of your code signing certificate.</p>\n@param signingMaterial Amazon Resource Name (ARN) of your code signing certificate.*/",
         "setterMethodName" : "setSigningMaterial",
         "setterModel" : {
@@ -1238,6 +1245,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The microcontroller platform to which your signed code image will be distributed.</p>\n@param platformId The microcontroller platform to which your signed code image will be distributed.*/",
         "setterMethodName" : "setPlatformId",
         "setterModel" : {
@@ -1303,6 +1311,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the profile that initiated the signing operation.</p>\n@param profileName The name of the profile that initiated the signing operation.*/",
         "setterMethodName" : "setProfileName",
         "setterModel" : {
@@ -1368,6 +1377,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Overrides",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of any overrides that were applied to the signing operation.</p>\n@param overrides A list of any overrides that were applied to the signing operation.*/",
         "setterMethodName" : "setOverrides",
         "setterModel" : {
@@ -1476,6 +1486,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1513,6 +1524,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SigningParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>\n@param signingParameters Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.*/",
         "setterMethodName" : "setSigningParameters",
         "setterModel" : {
@@ -1578,6 +1590,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date and time that the signing job was created.</p>\n@param createdAt Date and time that the signing job was created.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -1643,6 +1656,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CompletedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date and time that the signing job was completed.</p>\n@param completedAt Date and time that the signing job was completed.*/",
         "setterMethodName" : "setCompletedAt",
         "setterModel" : {
@@ -1708,6 +1722,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RequestedBy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IAM principal that requested the signing job.</p>\n@param requestedBy The IAM principal that requested the signing job.*/",
         "setterMethodName" : "setRequestedBy",
         "setterModel" : {
@@ -1773,6 +1788,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Status of the signing job.</p>\n@param status Status of the signing job.\n@see SigningStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -1838,6 +1854,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String value that contains the status reason.</p>\n@param statusReason String value that contains the status reason.*/",
         "setterMethodName" : "setStatusReason",
         "setterModel" : {
@@ -1903,6 +1920,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SignedObject",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the S3 bucket where the signed code image is saved by AWS Signer.</p>\n@param signedObject Name of the S3 bucket where the signed code image is saved by AWS Signer.*/",
         "setterMethodName" : "setSignedObject",
         "setterModel" : {
@@ -1970,6 +1988,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CompletedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date and time that the signing job was completed.</p>\n@param completedAt Date and time that the signing job was completed.*/",
           "setterMethodName" : "setCompletedAt",
           "setterModel" : {
@@ -2036,6 +2055,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date and time that the signing job was created.</p>\n@param createdAt Date and time that the signing job was created.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -2102,6 +2122,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the signing job on output.</p>\n@param jobId The ID of the signing job on output.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -2168,6 +2189,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Overrides",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of any overrides that were applied to the signing operation.</p>\n@param overrides A list of any overrides that were applied to the signing operation.*/",
           "setterMethodName" : "setOverrides",
           "setterModel" : {
@@ -2234,6 +2256,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The microcontroller platform to which your signed code image will be distributed.</p>\n@param platformId The microcontroller platform to which your signed code image will be distributed.*/",
           "setterMethodName" : "setPlatformId",
           "setterModel" : {
@@ -2300,6 +2323,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the profile that initiated the signing operation.</p>\n@param profileName The name of the profile that initiated the signing operation.*/",
           "setterMethodName" : "setProfileName",
           "setterModel" : {
@@ -2366,6 +2390,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RequestedBy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IAM principal that requested the signing job.</p>\n@param requestedBy The IAM principal that requested the signing job.*/",
           "setterMethodName" : "setRequestedBy",
           "setterModel" : {
@@ -2432,6 +2457,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SignedObject",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the S3 bucket where the signed code image is saved by AWS Signer.</p>\n@param signedObject Name of the S3 bucket where the signed code image is saved by AWS Signer.*/",
           "setterMethodName" : "setSignedObject",
           "setterModel" : {
@@ -2498,6 +2524,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningMaterial",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of your code signing certificate.</p>\n@param signingMaterial Amazon Resource Name (ARN) of your code signing certificate.*/",
           "setterMethodName" : "setSigningMaterial",
           "setterModel" : {
@@ -2607,6 +2634,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -2644,6 +2672,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SigningParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>\n@param signingParameters Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job.*/",
           "setterMethodName" : "setSigningParameters",
           "setterModel" : {
@@ -2710,6 +2739,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The object that contains the name of your S3 bucket or your raw code.</p>\n@param source The object that contains the name of your S3 bucket or your raw code.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -2776,6 +2806,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Status of the signing job.</p>\n@param status Status of the signing job.\n@see SigningStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -2842,6 +2873,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String value that contains the status reason.</p>\n@param statusReason String value that contains the status reason.*/",
           "setterMethodName" : "setStatusReason",
           "setterModel" : {
@@ -2947,6 +2979,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "S3",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>S3Destination</code> object.</p>\n@param s3 The <code>S3Destination</code> object.*/",
         "setterMethodName" : "setS3",
         "setterModel" : {
@@ -3014,6 +3047,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "S3",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>S3Destination</code> object.</p>\n@param s3 The <code>S3Destination</code> object.*/",
           "setterMethodName" : "setS3",
           "setterModel" : {
@@ -3202,6 +3236,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see EncryptionAlgorithm*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3245,6 +3280,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AllowedValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The set of accepted encryption algorithms that are allowed in an AWS Signer job.</p>\n@param allowedValues The set of accepted encryption algorithms that are allowed in an AWS Signer job.\n@see EncryptionAlgorithm*/",
         "setterMethodName" : "setAllowedValues",
         "setterModel" : {
@@ -3310,6 +3346,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The default encryption algorithm that is used by an AWS Signer job.</p>\n@param defaultValue The default encryption algorithm that is used by an AWS Signer job.\n@see EncryptionAlgorithm*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -3414,6 +3451,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see EncryptionAlgorithm*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3457,6 +3495,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AllowedValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The set of accepted encryption algorithms that are allowed in an AWS Signer job.</p>\n@param allowedValues The set of accepted encryption algorithms that are allowed in an AWS Signer job.\n@see EncryptionAlgorithm*/",
           "setterMethodName" : "setAllowedValues",
           "setterModel" : {
@@ -3523,6 +3562,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The default encryption algorithm that is used by an AWS Signer job.</p>\n@param defaultValue The default encryption algorithm that is used by an AWS Signer job.\n@see EncryptionAlgorithm*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -3635,6 +3675,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the target signing platform.</p>\n@param platformId The ID of the target signing platform.*/",
         "setterMethodName" : "setPlatformId",
         "setterModel" : {
@@ -3702,6 +3743,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the target signing platform.</p>\n@param platformId The ID of the target signing platform.*/",
           "setterMethodName" : "setPlatformId",
           "setterModel" : {
@@ -3804,6 +3846,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the target signing platform.</p>\n@param platformId The ID of the target signing platform.*/",
         "setterMethodName" : "setPlatformId",
         "setterModel" : {
@@ -3869,6 +3912,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The display name of the target signing platform.</p>\n@param displayName The display name of the target signing platform.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -3934,6 +3978,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Partner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of partner entities that use the target signing platform.</p>\n@param partner A list of partner entities that use the target signing platform.*/",
         "setterMethodName" : "setPartner",
         "setterModel" : {
@@ -3999,6 +4044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Target",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The validation template that is used by the target signing platform.</p>\n@param target The validation template that is used by the target signing platform.*/",
         "setterMethodName" : "setTarget",
         "setterModel" : {
@@ -4064,6 +4110,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Category",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category type of the target signing platform.</p>\n@param category The category type of the target signing platform.\n@see Category*/",
         "setterMethodName" : "setCategory",
         "setterModel" : {
@@ -4129,6 +4176,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of configurations applied to the target platform at signing.</p>\n@param signingConfiguration A list of configurations applied to the target platform at signing.*/",
         "setterMethodName" : "setSigningConfiguration",
         "setterModel" : {
@@ -4194,6 +4242,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningImageFormat",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The format of the target platform's signing image.</p>\n@param signingImageFormat The format of the target platform's signing image.*/",
         "setterMethodName" : "setSigningImageFormat",
         "setterModel" : {
@@ -4259,6 +4308,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxSizeInMB",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>\n@param maxSizeInMB The maximum size (in MB) of the payload that can be signed by the target platform.*/",
         "setterMethodName" : "setMaxSizeInMB",
         "setterModel" : {
@@ -4326,6 +4376,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Category",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category type of the target signing platform.</p>\n@param category The category type of the target signing platform.\n@see Category*/",
           "setterMethodName" : "setCategory",
           "setterModel" : {
@@ -4392,6 +4443,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The display name of the target signing platform.</p>\n@param displayName The display name of the target signing platform.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -4458,6 +4510,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxSizeInMB",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>\n@param maxSizeInMB The maximum size (in MB) of the payload that can be signed by the target platform.*/",
           "setterMethodName" : "setMaxSizeInMB",
           "setterModel" : {
@@ -4524,6 +4577,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Partner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of partner entities that use the target signing platform.</p>\n@param partner A list of partner entities that use the target signing platform.*/",
           "setterMethodName" : "setPartner",
           "setterModel" : {
@@ -4590,6 +4644,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the target signing platform.</p>\n@param platformId The ID of the target signing platform.*/",
           "setterMethodName" : "setPlatformId",
           "setterModel" : {
@@ -4656,6 +4711,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of configurations applied to the target platform at signing.</p>\n@param signingConfiguration A list of configurations applied to the target platform at signing.*/",
           "setterMethodName" : "setSigningConfiguration",
           "setterModel" : {
@@ -4722,6 +4778,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningImageFormat",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The format of the target platform's signing image.</p>\n@param signingImageFormat The format of the target platform's signing image.*/",
           "setterMethodName" : "setSigningImageFormat",
           "setterModel" : {
@@ -4788,6 +4845,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Target",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The validation template that is used by the target signing platform.</p>\n@param target The validation template that is used by the target signing platform.*/",
           "setterMethodName" : "setTarget",
           "setterModel" : {
@@ -4900,6 +4958,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the target signing profile.</p>\n@param profileName The name of the target signing profile.*/",
         "setterMethodName" : "setProfileName",
         "setterModel" : {
@@ -4967,6 +5026,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the target signing profile.</p>\n@param profileName The name of the target signing profile.*/",
           "setterMethodName" : "setProfileName",
           "setterModel" : {
@@ -5069,6 +5129,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the target signing profile.</p>\n@param profileName The name of the target signing profile.*/",
         "setterMethodName" : "setProfileName",
         "setterModel" : {
@@ -5134,6 +5195,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningMaterial",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN of the certificate that the target profile uses for signing operations.</p>\n@param signingMaterial The ARN of the certificate that the target profile uses for signing operations.*/",
         "setterMethodName" : "setSigningMaterial",
         "setterModel" : {
@@ -5199,6 +5261,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the platform that is used by the target signing profile.</p>\n@param platformId The ID of the platform that is used by the target signing profile.*/",
         "setterMethodName" : "setPlatformId",
         "setterModel" : {
@@ -5264,6 +5327,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Overrides",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of overrides applied by the target signing profile for signing operations.</p>\n@param overrides A list of overrides applied by the target signing profile for signing operations.*/",
         "setterMethodName" : "setOverrides",
         "setterModel" : {
@@ -5372,6 +5436,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -5409,6 +5474,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SigningParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>\n@param signingParameters A map of key-value pairs for signing operations that is attached to the target signing profile.*/",
         "setterMethodName" : "setSigningParameters",
         "setterModel" : {
@@ -5474,6 +5540,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the target signing profile.</p>\n@param status The status of the target signing profile.\n@see SigningProfileStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -5541,6 +5608,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Overrides",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of overrides applied by the target signing profile for signing operations.</p>\n@param overrides A list of overrides applied by the target signing profile for signing operations.*/",
           "setterMethodName" : "setOverrides",
           "setterModel" : {
@@ -5607,6 +5675,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the platform that is used by the target signing profile.</p>\n@param platformId The ID of the platform that is used by the target signing profile.*/",
           "setterMethodName" : "setPlatformId",
           "setterModel" : {
@@ -5673,6 +5742,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the target signing profile.</p>\n@param profileName The name of the target signing profile.*/",
           "setterMethodName" : "setProfileName",
           "setterModel" : {
@@ -5739,6 +5809,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningMaterial",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN of the certificate that the target profile uses for signing operations.</p>\n@param signingMaterial The ARN of the certificate that the target profile uses for signing operations.*/",
           "setterMethodName" : "setSigningMaterial",
           "setterModel" : {
@@ -5848,6 +5919,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -5885,6 +5957,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SigningParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>\n@param signingParameters A map of key-value pairs for signing operations that is attached to the target signing profile.*/",
           "setterMethodName" : "setSigningParameters",
           "setterModel" : {
@@ -5951,6 +6024,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the target signing profile.</p>\n@param status The status of the target signing profile.\n@see SigningProfileStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -6139,6 +6213,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see HashAlgorithm*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6182,6 +6257,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AllowedValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The set of accepted hash algorithms allowed in an AWS Signer job.</p>\n@param allowedValues The set of accepted hash algorithms allowed in an AWS Signer job.\n@see HashAlgorithm*/",
         "setterMethodName" : "setAllowedValues",
         "setterModel" : {
@@ -6247,6 +6323,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The default hash algorithm that is used in an AWS Signer job.</p>\n@param defaultValue The default hash algorithm that is used in an AWS Signer job.\n@see HashAlgorithm*/",
         "setterMethodName" : "setDefaultValue",
         "setterModel" : {
@@ -6351,6 +6428,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see HashAlgorithm*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6394,6 +6472,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AllowedValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The set of accepted hash algorithms allowed in an AWS Signer job.</p>\n@param allowedValues The set of accepted hash algorithms allowed in an AWS Signer job.\n@see HashAlgorithm*/",
           "setterMethodName" : "setAllowedValues",
           "setterModel" : {
@@ -6460,6 +6539,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The default hash algorithm that is used in an AWS Signer job.</p>\n@param defaultValue The default hash algorithm that is used in an AWS Signer job.\n@see HashAlgorithm*/",
           "setterMethodName" : "setDefaultValue",
           "setterModel" : {
@@ -6652,6 +6732,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A status value with which to filter your results.</p>\n@param status A status value with which to filter your results.\n@see SigningStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -6717,6 +6798,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>\n@param platformId The ID of microcontroller platform that you specified for the distribution of your code image.*/",
         "setterMethodName" : "setPlatformId",
         "setterModel" : {
@@ -6782,6 +6864,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RequestedBy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IAM principal that requested the signing job.</p>\n@param requestedBy The IAM principal that requested the signing job.*/",
         "setterMethodName" : "setRequestedBy",
         "setterModel" : {
@@ -6847,6 +6930,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>\n@param maxResults Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -6912,6 +6996,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6979,6 +7064,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>\n@param maxResults Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -7045,6 +7131,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7111,6 +7198,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>\n@param platformId The ID of microcontroller platform that you specified for the distribution of your code image.*/",
           "setterMethodName" : "setPlatformId",
           "setterModel" : {
@@ -7177,6 +7265,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RequestedBy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IAM principal that requested the signing job.</p>\n@param requestedBy The IAM principal that requested the signing job.*/",
           "setterMethodName" : "setRequestedBy",
           "setterModel" : {
@@ -7243,6 +7332,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A status value with which to filter your results.</p>\n@param status A status value with which to filter your results.\n@see SigningStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -7382,6 +7472,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7425,6 +7516,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Jobs",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of your signing jobs.</p>\n@param jobs A list of your signing jobs.*/",
         "setterMethodName" : "setJobs",
         "setterModel" : {
@@ -7490,6 +7582,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String for specifying the next set of paginated results.</p>\n@param nextToken String for specifying the next set of paginated results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7594,6 +7687,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7637,6 +7731,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Jobs",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of your signing jobs.</p>\n@param jobs A list of your signing jobs.*/",
           "setterMethodName" : "setJobs",
           "setterModel" : {
@@ -7703,6 +7798,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String for specifying the next set of paginated results.</p>\n@param nextToken String for specifying the next set of paginated results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7815,6 +7911,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Category",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category type of a signing platform.</p>\n@param category The category type of a signing platform.*/",
         "setterMethodName" : "setCategory",
         "setterModel" : {
@@ -7880,6 +7977,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Partner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Any partner entities connected to a signing platform.</p>\n@param partner Any partner entities connected to a signing platform.*/",
         "setterMethodName" : "setPartner",
         "setterModel" : {
@@ -7945,6 +8043,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Target",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The validation template that is used by the target signing platform.</p>\n@param target The validation template that is used by the target signing platform.*/",
         "setterMethodName" : "setTarget",
         "setterModel" : {
@@ -8010,6 +8109,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to be returned by this operation.</p>\n@param maxResults The maximum number of results to be returned by this operation.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -8075,6 +8175,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8142,6 +8243,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Category",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category type of a signing platform.</p>\n@param category The category type of a signing platform.*/",
           "setterMethodName" : "setCategory",
           "setterModel" : {
@@ -8208,6 +8310,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to be returned by this operation.</p>\n@param maxResults The maximum number of results to be returned by this operation.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -8274,6 +8377,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8340,6 +8444,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Partner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Any partner entities connected to a signing platform.</p>\n@param partner Any partner entities connected to a signing platform.*/",
           "setterMethodName" : "setPartner",
           "setterModel" : {
@@ -8406,6 +8511,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Target",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The validation template that is used by the target signing platform.</p>\n@param target The validation template that is used by the target signing platform.*/",
           "setterMethodName" : "setTarget",
           "setterModel" : {
@@ -8545,6 +8651,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8588,6 +8695,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Platforms",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of all platforms that match the request parameters.</p>\n@param platforms A list of all platforms that match the request parameters.*/",
         "setterMethodName" : "setPlatforms",
         "setterModel" : {
@@ -8653,6 +8761,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return.</p>\n@param nextToken Value for specifying the next set of paginated results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -8720,6 +8829,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return.</p>\n@param nextToken Value for specifying the next set of paginated results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -8823,6 +8933,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8866,6 +8977,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Platforms",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of all platforms that match the request parameters.</p>\n@param platforms A list of all platforms that match the request parameters.*/",
           "setterMethodName" : "setPlatforms",
           "setterModel" : {
@@ -8978,6 +9090,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeCanceled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>\n@param includeCanceled Designates whether to include profiles with the status of <code>CANCELED</code>.*/",
         "setterMethodName" : "setIncludeCanceled",
         "setterModel" : {
@@ -9043,6 +9156,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of profiles to be returned.</p>\n@param maxResults The maximum number of profiles to be returned.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -9108,6 +9222,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9175,6 +9290,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeCanceled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>\n@param includeCanceled Designates whether to include profiles with the status of <code>CANCELED</code>.*/",
           "setterMethodName" : "setIncludeCanceled",
           "setterModel" : {
@@ -9241,6 +9357,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of profiles to be returned.</p>\n@param maxResults The maximum number of profiles to be returned.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -9307,6 +9424,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>\n@param nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9446,6 +9564,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9489,6 +9608,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Profiles",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>\n@param profiles A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.*/",
         "setterMethodName" : "setProfiles",
         "setterModel" : {
@@ -9554,6 +9674,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return.</p>\n@param nextToken Value for specifying the next set of paginated results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9621,6 +9742,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value for specifying the next set of paginated results to return.</p>\n@param nextToken Value for specifying the next set of paginated results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9724,6 +9846,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9767,6 +9890,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Profiles",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>\n@param profiles A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.*/",
           "setterMethodName" : "setProfiles",
           "setterModel" : {
@@ -9879,6 +10003,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the signing profile to be created.</p>\n@param profileName The name of the signing profile to be created.*/",
         "setterMethodName" : "setProfileName",
         "setterModel" : {
@@ -9944,6 +10069,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningMaterial",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>\n@param signingMaterial The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.*/",
         "setterMethodName" : "setSigningMaterial",
         "setterModel" : {
@@ -10009,6 +10135,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the signing profile to be created.</p>\n@param platformId The ID of the signing profile to be created.*/",
         "setterMethodName" : "setPlatformId",
         "setterModel" : {
@@ -10074,6 +10201,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Overrides",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>\n@param overrides A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).*/",
         "setterMethodName" : "setOverrides",
         "setterModel" : {
@@ -10182,6 +10310,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -10219,6 +10348,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SigningParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>\n@param signingParameters Map of key-value pairs for signing. These can include any information that you want to use during signing.*/",
         "setterMethodName" : "setSigningParameters",
         "setterModel" : {
@@ -10286,6 +10416,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Overrides",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>\n@param overrides A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).*/",
           "setterMethodName" : "setOverrides",
           "setterModel" : {
@@ -10352,6 +10483,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the signing profile to be created.</p>\n@param platformId The ID of the signing profile to be created.*/",
           "setterMethodName" : "setPlatformId",
           "setterModel" : {
@@ -10418,6 +10550,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the signing profile to be created.</p>\n@param profileName The name of the signing profile to be created.*/",
           "setterMethodName" : "setProfileName",
           "setterModel" : {
@@ -10484,6 +10617,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningMaterial",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>\n@param signingMaterial The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.*/",
           "setterMethodName" : "setSigningMaterial",
           "setterModel" : {
@@ -10593,6 +10727,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -10630,6 +10765,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SigningParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>\n@param signingParameters Map of key-value pairs for signing. These can include any information that you want to use during signing.*/",
           "setterMethodName" : "setSigningParameters",
           "setterModel" : {
@@ -10732,6 +10868,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signing profile created.</p>\n@param arn The Amazon Resource Name (ARN) of the signing profile created.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -10799,6 +10936,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signing profile created.</p>\n@param arn The Amazon Resource Name (ARN) of the signing profile created.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -10941,6 +11079,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BucketName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.*/",
         "setterMethodName" : "setBucketName",
         "setterModel" : {
@@ -11006,6 +11145,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Prefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.</p>\n@param prefix An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.*/",
         "setterMethodName" : "setPrefix",
         "setterModel" : {
@@ -11073,6 +11213,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BucketName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.*/",
           "setterMethodName" : "setBucketName",
           "setterModel" : {
@@ -11139,6 +11280,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Prefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.</p>\n@param prefix An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.*/",
           "setterMethodName" : "setPrefix",
           "setterModel" : {
@@ -11244,6 +11386,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BucketName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.*/",
         "setterMethodName" : "setBucketName",
         "setterModel" : {
@@ -11309,6 +11452,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Key name that uniquely identifies a signed code image in your bucket.</p>\n@param key Key name that uniquely identifies a signed code image in your bucket.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -11376,6 +11520,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BucketName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.*/",
           "setterMethodName" : "setBucketName",
           "setterModel" : {
@@ -11442,6 +11587,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Key name that uniquely identifies a signed code image in your bucket.</p>\n@param key Key name that uniquely identifies a signed code image in your bucket.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -11547,6 +11693,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "BucketName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.*/",
         "setterMethodName" : "setBucketName",
         "setterModel" : {
@@ -11612,6 +11759,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Key name of the bucket object that contains your unsigned code.</p>\n@param key Key name of the bucket object that contains your unsigned code.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -11677,6 +11825,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Version",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Version of your source image in your version enabled S3 bucket.</p>\n@param version Version of your source image in your version enabled S3 bucket.*/",
         "setterMethodName" : "setVersion",
         "setterModel" : {
@@ -11744,6 +11893,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "BucketName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the S3 bucket.</p>\n@param bucketName Name of the S3 bucket.*/",
           "setterMethodName" : "setBucketName",
           "setterModel" : {
@@ -11810,6 +11960,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Key name of the bucket object that contains your unsigned code.</p>\n@param key Key name of the bucket object that contains your unsigned code.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -11876,6 +12027,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Version",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Version of your source image in your version enabled S3 bucket.</p>\n@param version Version of your source image in your version enabled S3 bucket.*/",
           "setterMethodName" : "setVersion",
           "setterModel" : {
@@ -11981,6 +12133,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "S3",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>S3SignedObject</code>.</p>\n@param s3 The <code>S3SignedObject</code>.*/",
         "setterMethodName" : "setS3",
         "setterModel" : {
@@ -12048,6 +12201,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "S3",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>S3SignedObject</code>.</p>\n@param s3 The <code>S3SignedObject</code>.*/",
           "setterMethodName" : "setS3",
           "setterModel" : {
@@ -12153,6 +12307,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EncryptionAlgorithmOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The encryption algorithm options that are available for an AWS Signer job.</p>\n@param encryptionAlgorithmOptions The encryption algorithm options that are available for an AWS Signer job.*/",
         "setterMethodName" : "setEncryptionAlgorithmOptions",
         "setterModel" : {
@@ -12218,6 +12373,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HashAlgorithmOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The hash algorithm options that are available for an AWS Signer job.</p>\n@param hashAlgorithmOptions The hash algorithm options that are available for an AWS Signer job.*/",
         "setterMethodName" : "setHashAlgorithmOptions",
         "setterModel" : {
@@ -12285,6 +12441,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EncryptionAlgorithmOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The encryption algorithm options that are available for an AWS Signer job.</p>\n@param encryptionAlgorithmOptions The encryption algorithm options that are available for an AWS Signer job.*/",
           "setterMethodName" : "setEncryptionAlgorithmOptions",
           "setterModel" : {
@@ -12351,6 +12508,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HashAlgorithmOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The hash algorithm options that are available for an AWS Signer job.</p>\n@param hashAlgorithmOptions The hash algorithm options that are available for an AWS Signer job.*/",
           "setterMethodName" : "setHashAlgorithmOptions",
           "setterModel" : {
@@ -12456,6 +12614,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EncryptionAlgorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A specified override of the default encryption algorithm that is used in an AWS Signer job.</p>\n@param encryptionAlgorithm A specified override of the default encryption algorithm that is used in an AWS Signer job.\n@see EncryptionAlgorithm*/",
         "setterMethodName" : "setEncryptionAlgorithm",
         "setterModel" : {
@@ -12521,6 +12680,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HashAlgorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A specified override of the default hash algorithm that is used in an AWS Signer job.</p>\n@param hashAlgorithm A specified override of the default hash algorithm that is used in an AWS Signer job.\n@see HashAlgorithm*/",
         "setterMethodName" : "setHashAlgorithm",
         "setterModel" : {
@@ -12588,6 +12748,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EncryptionAlgorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A specified override of the default encryption algorithm that is used in an AWS Signer job.</p>\n@param encryptionAlgorithm A specified override of the default encryption algorithm that is used in an AWS Signer job.\n@see EncryptionAlgorithm*/",
           "setterMethodName" : "setEncryptionAlgorithm",
           "setterModel" : {
@@ -12654,6 +12815,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HashAlgorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A specified override of the default hash algorithm that is used in an AWS Signer job.</p>\n@param hashAlgorithm A specified override of the default hash algorithm that is used in an AWS Signer job.\n@see HashAlgorithm*/",
           "setterMethodName" : "setHashAlgorithm",
           "setterModel" : {
@@ -12796,6 +12958,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see ImageFormat*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12839,6 +13002,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SupportedFormats",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The supported formats of an AWS Signer signing image.</p>\n@param supportedFormats The supported formats of an AWS Signer signing image.\n@see ImageFormat*/",
         "setterMethodName" : "setSupportedFormats",
         "setterModel" : {
@@ -12904,6 +13068,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultFormat",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The default format of an AWS Signer signing image.</p>\n@param defaultFormat The default format of an AWS Signer signing image.\n@see ImageFormat*/",
         "setterMethodName" : "setDefaultFormat",
         "setterModel" : {
@@ -12971,6 +13136,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultFormat",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The default format of an AWS Signer signing image.</p>\n@param defaultFormat The default format of an AWS Signer signing image.\n@see ImageFormat*/",
           "setterMethodName" : "setDefaultFormat",
           "setterModel" : {
@@ -13074,6 +13240,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see ImageFormat*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13117,6 +13284,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SupportedFormats",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The supported formats of an AWS Signer signing image.</p>\n@param supportedFormats The supported formats of an AWS Signer signing image.\n@see ImageFormat*/",
           "setterMethodName" : "setSupportedFormats",
           "setterModel" : {
@@ -13222,6 +13390,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the signing job.</p>\n@param jobId The ID of the signing job.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -13287,6 +13456,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A <code>Source</code> that contains information about a signing job's code image source.</p>\n@param source A <code>Source</code> that contains information about a signing job's code image source.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -13352,6 +13522,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SignedObject",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>\n@param signedObject A <code>SignedObject</code> structure that contains information about a signing job's signed code image.*/",
         "setterMethodName" : "setSignedObject",
         "setterModel" : {
@@ -13417,6 +13588,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningMaterial",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>\n@param signingMaterial A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.*/",
         "setterMethodName" : "setSigningMaterial",
         "setterModel" : {
@@ -13482,6 +13654,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the signing job was created.</p>\n@param createdAt The date and time that the signing job was created.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -13547,6 +13720,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the signing job.</p>\n@param status The status of the signing job.\n@see SigningStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -13614,6 +13788,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the signing job was created.</p>\n@param createdAt The date and time that the signing job was created.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -13680,6 +13855,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the signing job.</p>\n@param jobId The ID of the signing job.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
@@ -13746,6 +13922,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SignedObject",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>\n@param signedObject A <code>SignedObject</code> structure that contains information about a signing job's signed code image.*/",
           "setterMethodName" : "setSignedObject",
           "setterModel" : {
@@ -13812,6 +13989,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningMaterial",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>\n@param signingMaterial A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.*/",
           "setterMethodName" : "setSigningMaterial",
           "setterModel" : {
@@ -13878,6 +14056,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A <code>Source</code> that contains information about a signing job's code image source.</p>\n@param source A <code>Source</code> that contains information about a signing job's code image source.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -13944,6 +14123,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the signing job.</p>\n@param status The status of the signing job.\n@see SigningStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -14049,6 +14229,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the certificates that is used to sign your code.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -14116,6 +14297,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the certificates that is used to sign your code.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -14221,6 +14403,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of an AWS Signer platform.</p>\n@param platformId The ID of an AWS Signer platform.*/",
         "setterMethodName" : "setPlatformId",
         "setterModel" : {
@@ -14286,6 +14469,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The display name of an AWS Signer platform.</p>\n@param displayName The display name of an AWS Signer platform.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -14351,6 +14535,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Partner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Any partner entities linked to an AWS Signer platform.</p>\n@param partner Any partner entities linked to an AWS Signer platform.*/",
         "setterMethodName" : "setPartner",
         "setterModel" : {
@@ -14416,6 +14601,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Target",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The types of targets that can be signed by an AWS Signer platform.</p>\n@param target The types of targets that can be signed by an AWS Signer platform.*/",
         "setterMethodName" : "setTarget",
         "setterModel" : {
@@ -14481,6 +14667,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Category",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category of an AWS Signer platform.</p>\n@param category The category of an AWS Signer platform.\n@see Category*/",
         "setterMethodName" : "setCategory",
         "setterModel" : {
@@ -14546,6 +14733,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>\n@param signingConfiguration The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.*/",
         "setterMethodName" : "setSigningConfiguration",
         "setterModel" : {
@@ -14611,6 +14799,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningImageFormat",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The signing image format that is used by an AWS Signer platform.</p>\n@param signingImageFormat The signing image format that is used by an AWS Signer platform.*/",
         "setterMethodName" : "setSigningImageFormat",
         "setterModel" : {
@@ -14676,6 +14865,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxSizeInMB",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum size (in MB) of code that can be signed by a AWS Signer platform.</p>\n@param maxSizeInMB The maximum size (in MB) of code that can be signed by a AWS Signer platform.*/",
         "setterMethodName" : "setMaxSizeInMB",
         "setterModel" : {
@@ -14743,6 +14933,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Category",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category of an AWS Signer platform.</p>\n@param category The category of an AWS Signer platform.\n@see Category*/",
           "setterMethodName" : "setCategory",
           "setterModel" : {
@@ -14809,6 +15000,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The display name of an AWS Signer platform.</p>\n@param displayName The display name of an AWS Signer platform.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -14875,6 +15067,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxSizeInMB",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum size (in MB) of code that can be signed by a AWS Signer platform.</p>\n@param maxSizeInMB The maximum size (in MB) of code that can be signed by a AWS Signer platform.*/",
           "setterMethodName" : "setMaxSizeInMB",
           "setterModel" : {
@@ -14941,6 +15134,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Partner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Any partner entities linked to an AWS Signer platform.</p>\n@param partner Any partner entities linked to an AWS Signer platform.*/",
           "setterMethodName" : "setPartner",
           "setterModel" : {
@@ -15007,6 +15201,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of an AWS Signer platform.</p>\n@param platformId The ID of an AWS Signer platform.*/",
           "setterMethodName" : "setPlatformId",
           "setterModel" : {
@@ -15073,6 +15268,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.</p>\n@param signingConfiguration The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.*/",
           "setterMethodName" : "setSigningConfiguration",
           "setterModel" : {
@@ -15139,6 +15335,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningImageFormat",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The signing image format that is used by an AWS Signer platform.</p>\n@param signingImageFormat The signing image format that is used by an AWS Signer platform.*/",
           "setterMethodName" : "setSigningImageFormat",
           "setterModel" : {
@@ -15205,6 +15402,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Target",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The types of targets that can be signed by an AWS Signer platform.</p>\n@param target The types of targets that can be signed by an AWS Signer platform.*/",
           "setterMethodName" : "setTarget",
           "setterModel" : {
@@ -15310,6 +15508,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param signingConfiguration */",
         "setterMethodName" : "setSigningConfiguration",
         "setterModel" : {
@@ -15377,6 +15576,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param signingConfiguration */",
           "setterMethodName" : "setSigningConfiguration",
           "setterModel" : {
@@ -15482,6 +15682,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the AWS Signer profile.</p>\n@param profileName The name of the AWS Signer profile.*/",
         "setterMethodName" : "setProfileName",
         "setterModel" : {
@@ -15547,6 +15748,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SigningMaterial",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ACM certificate that is available for use by a signing profile.</p>\n@param signingMaterial The ACM certificate that is available for use by a signing profile.*/",
         "setterMethodName" : "setSigningMaterial",
         "setterModel" : {
@@ -15612,6 +15814,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of a platform that is available for use by a signing profile.</p>\n@param platformId The ID of a platform that is available for use by a signing profile.*/",
         "setterMethodName" : "setPlatformId",
         "setterModel" : {
@@ -15720,6 +15923,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -15757,6 +15961,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "SigningParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The parameters that are available for use by an AWS Signer user.</p>\n@param signingParameters The parameters that are available for use by an AWS Signer user.*/",
         "setterMethodName" : "setSigningParameters",
         "setterModel" : {
@@ -15822,6 +16027,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of an AWS Signer profile.</p>\n@param status The status of an AWS Signer profile.\n@see SigningProfileStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -15889,6 +16095,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of a platform that is available for use by a signing profile.</p>\n@param platformId The ID of a platform that is available for use by a signing profile.*/",
           "setterMethodName" : "setPlatformId",
           "setterModel" : {
@@ -15955,6 +16162,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the AWS Signer profile.</p>\n@param profileName The name of the AWS Signer profile.*/",
           "setterMethodName" : "setProfileName",
           "setterModel" : {
@@ -16021,6 +16229,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SigningMaterial",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ACM certificate that is available for use by a signing profile.</p>\n@param signingMaterial The ACM certificate that is available for use by a signing profile.*/",
           "setterMethodName" : "setSigningMaterial",
           "setterModel" : {
@@ -16130,6 +16339,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -16167,6 +16377,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "SigningParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The parameters that are available for use by an AWS Signer user.</p>\n@param signingParameters The parameters that are available for use by an AWS Signer user.*/",
           "setterMethodName" : "setSigningParameters",
           "setterModel" : {
@@ -16233,6 +16444,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of an AWS Signer profile.</p>\n@param status The status of an AWS Signer profile.\n@see SigningProfileStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -16433,6 +16645,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "S3",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>S3Source</code> object.</p>\n@param s3 The <code>S3Source</code> object.*/",
         "setterMethodName" : "setS3",
         "setterModel" : {
@@ -16500,6 +16713,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "S3",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>S3Source</code> object.</p>\n@param s3 The <code>S3Source</code> object.*/",
           "setterMethodName" : "setS3",
           "setterModel" : {
@@ -16612,6 +16826,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>\n@param source The S3 bucket that contains the object to sign or a BLOB that contains your raw code.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -16677,6 +16892,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Destination",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>\n@param destination The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.*/",
         "setterMethodName" : "setDestination",
         "setterModel" : {
@@ -16742,6 +16958,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the signing profile.</p>\n@param profileName The name of the signing profile.*/",
         "setterMethodName" : "setProfileName",
         "setterModel" : {
@@ -16807,6 +17024,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>\n@param clientRequestToken String that identifies the signing request. All calls after the first that use this token return the same response as the first call.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -16874,6 +17092,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>\n@param clientRequestToken String that identifies the signing request. All calls after the first that use this token return the same response as the first call.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -16940,6 +17159,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Destination",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>\n@param destination The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.*/",
           "setterMethodName" : "setDestination",
           "setterModel" : {
@@ -17006,6 +17226,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the signing profile.</p>\n@param profileName The name of the signing profile.*/",
           "setterMethodName" : "setProfileName",
           "setterModel" : {
@@ -17072,6 +17293,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>\n@param source The S3 bucket that contains the object to sign or a BLOB that contains your raw code.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -17174,6 +17396,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "JobId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of your signing job.</p>\n@param jobId The ID of your signing job.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
@@ -17241,6 +17464,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "JobId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of your signing job.</p>\n@param jobId The ID of your signing job.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {

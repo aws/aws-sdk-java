@@ -122,7 +122,8 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,7 +136,7 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
         if (getUserPoolId() != null)
             sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

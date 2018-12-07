@@ -1111,6 +1111,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AwsAccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS account ID.</p>\n@param awsAccountId The AWS account ID.*/",
         "setterMethodName" : "setAwsAccountId",
         "setterModel" : {
@@ -1176,6 +1177,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -1241,6 +1243,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account name.</p>\n@param name The Amazon Chime account name.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -1306,6 +1309,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account type. For more information about different account types, see <a href=\"http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html\">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>\n@param accountType The Amazon Chime account type. For more information about different account types, see <a href=\"http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html\">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.\n@see AccountType*/",
         "setterMethodName" : "setAccountType",
         "setterModel" : {
@@ -1371,6 +1375,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedTimestamp",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>\n@param createdTimestamp The Amazon Chime account creation timestamp, in ISO 8601 format.*/",
         "setterMethodName" : "setCreatedTimestamp",
         "setterModel" : {
@@ -1436,6 +1441,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DefaultLicense",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The default license for the Amazon Chime account.</p>\n@param defaultLicense The default license for the Amazon Chime account.\n@see License*/",
         "setterMethodName" : "setDefaultLicense",
         "setterModel" : {
@@ -1538,6 +1544,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see License*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1581,6 +1588,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SupportedLicenses",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Supported licenses for the Amazon Chime account.</p>\n@param supportedLicenses Supported licenses for the Amazon Chime account.\n@see License*/",
         "setterMethodName" : "setSupportedLicenses",
         "setterModel" : {
@@ -1648,6 +1656,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -1714,6 +1723,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account type. For more information about different account types, see <a href=\"http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html\">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>\n@param accountType The Amazon Chime account type. For more information about different account types, see <a href=\"http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html\">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.\n@see AccountType*/",
           "setterMethodName" : "setAccountType",
           "setterModel" : {
@@ -1780,6 +1790,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AwsAccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS account ID.</p>\n@param awsAccountId The AWS account ID.*/",
           "setterMethodName" : "setAwsAccountId",
           "setterModel" : {
@@ -1846,6 +1857,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedTimestamp",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>\n@param createdTimestamp The Amazon Chime account creation timestamp, in ISO 8601 format.*/",
           "setterMethodName" : "setCreatedTimestamp",
           "setterModel" : {
@@ -1912,6 +1924,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DefaultLicense",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The default license for the Amazon Chime account.</p>\n@param defaultLicense The default license for the Amazon Chime account.\n@see License*/",
           "setterMethodName" : "setDefaultLicense",
           "setterModel" : {
@@ -1978,6 +1991,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account name.</p>\n@param name The Amazon Chime account name.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -2081,6 +2095,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see License*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2124,6 +2139,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SupportedLicenses",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Supported licenses for the Amazon Chime account.</p>\n@param supportedLicenses Supported licenses for the Amazon Chime account.\n@see License*/",
           "setterMethodName" : "setSupportedLicenses",
           "setterModel" : {
@@ -2229,6 +2245,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "DisableRemoteControl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Setting that stops or starts remote control of shared screens during meetings.</p>\n@param disableRemoteControl Setting that stops or starts remote control of shared screens during meetings.*/",
         "setterMethodName" : "setDisableRemoteControl",
         "setterModel" : {
@@ -2294,6 +2311,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EnableDialOut",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href=\"http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html\">Join a Meeting without the Amazon Chime App</a>.</p>\n@param enableDialOut Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href=\"http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html\">Join a Meeting without the Amazon Chime App</a>.*/",
         "setterMethodName" : "setEnableDialOut",
         "setterModel" : {
@@ -2361,6 +2379,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "DisableRemoteControl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Setting that stops or starts remote control of shared screens during meetings.</p>\n@param disableRemoteControl Setting that stops or starts remote control of shared screens during meetings.*/",
           "setterMethodName" : "setDisableRemoteControl",
           "setterModel" : {
@@ -2427,6 +2446,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EnableDialOut",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href=\"http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html\">Join a Meeting without the Amazon Chime App</a>.</p>\n@param enableDialOut Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href=\"http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html\">Join a Meeting without the Amazon Chime App</a>.*/",
           "setterMethodName" : "setEnableDialOut",
           "setterModel" : {
@@ -2584,6 +2604,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -2651,6 +2672,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -2760,6 +2782,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -2862,6 +2885,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2905,6 +2929,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UserIdList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The request containing the user IDs to suspend.</p>\n@param userIdList The request containing the user IDs to suspend.*/",
         "setterMethodName" : "setUserIdList",
         "setterModel" : {
@@ -2972,6 +2997,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -3075,6 +3101,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3118,6 +3145,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UserIdList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The request containing the user IDs to suspend.</p>\n@param userIdList The request containing the user IDs to suspend.*/",
           "setterMethodName" : "setUserIdList",
           "setterModel" : {
@@ -3257,6 +3285,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3300,6 +3329,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UserErrors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>\n@param userErrors If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.*/",
         "setterMethodName" : "setUserErrors",
         "setterModel" : {
@@ -3404,6 +3434,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3447,6 +3478,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UserErrors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>\n@param userErrors If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.*/",
           "setterMethodName" : "setUserErrors",
           "setterModel" : {
@@ -3559,6 +3591,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -3661,6 +3694,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3704,6 +3738,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UserIdList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The request containing the user IDs to unsuspend.</p>\n@param userIdList The request containing the user IDs to unsuspend.*/",
         "setterMethodName" : "setUserIdList",
         "setterModel" : {
@@ -3771,6 +3806,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -3874,6 +3910,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3917,6 +3954,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UserIdList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The request containing the user IDs to unsuspend.</p>\n@param userIdList The request containing the user IDs to unsuspend.*/",
           "setterMethodName" : "setUserIdList",
           "setterModel" : {
@@ -4056,6 +4094,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4099,6 +4138,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UserErrors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>\n@param userErrors If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.*/",
         "setterMethodName" : "setUserErrors",
         "setterModel" : {
@@ -4203,6 +4243,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4246,6 +4287,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UserErrors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>\n@param userErrors If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.*/",
           "setterMethodName" : "setUserErrors",
           "setterModel" : {
@@ -4358,6 +4400,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -4460,6 +4503,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4503,6 +4547,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UpdateUserRequestItems",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The request containing the user IDs and details to update.</p>\n@param updateUserRequestItems The request containing the user IDs and details to update.*/",
         "setterMethodName" : "setUpdateUserRequestItems",
         "setterModel" : {
@@ -4570,6 +4615,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -4673,6 +4719,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4716,6 +4763,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UpdateUserRequestItems",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The request containing the user IDs and details to update.</p>\n@param updateUserRequestItems The request containing the user IDs and details to update.*/",
           "setterMethodName" : "setUpdateUserRequestItems",
           "setterModel" : {
@@ -4855,6 +4903,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4898,6 +4947,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UserErrors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>\n@param userErrors If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.*/",
         "setterMethodName" : "setUserErrors",
         "setterModel" : {
@@ -5002,6 +5052,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5045,6 +5096,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UserErrors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>\n@param userErrors If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.*/",
           "setterMethodName" : "setUserErrors",
           "setterModel" : {
@@ -5150,6 +5202,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -5217,6 +5270,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -5326,6 +5380,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the Amazon Chime account.</p>\n@param name The name of the Amazon Chime account.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5393,6 +5448,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the Amazon Chime account.</p>\n@param name The name of the Amazon Chime account.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5495,6 +5551,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Account",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account details.</p>\n@param account The Amazon Chime account details.*/",
         "setterMethodName" : "setAccount",
         "setterModel" : {
@@ -5562,6 +5619,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Account",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account details.</p>\n@param account The Amazon Chime account details.*/",
           "setterMethodName" : "setAccount",
           "setterModel" : {
@@ -5674,6 +5732,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -5741,6 +5800,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -6002,6 +6062,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -6069,6 +6130,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -6178,6 +6240,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -6245,6 +6308,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -6347,6 +6411,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Account",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account details.</p>\n@param account The Amazon Chime account details.*/",
         "setterMethodName" : "setAccount",
         "setterModel" : {
@@ -6414,6 +6479,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Account",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account details.</p>\n@param account The Amazon Chime account details.*/",
           "setterMethodName" : "setAccount",
           "setterModel" : {
@@ -6526,6 +6592,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -6593,6 +6660,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -6695,6 +6763,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AccountSettings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account settings.</p>\n@param accountSettings The Amazon Chime account settings.*/",
         "setterMethodName" : "setAccountSettings",
         "setterModel" : {
@@ -6762,6 +6831,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AccountSettings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account settings.</p>\n@param accountSettings The Amazon Chime account settings.*/",
           "setterMethodName" : "setAccountSettings",
           "setterModel" : {
@@ -6874,6 +6944,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -6939,6 +7010,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -7006,6 +7078,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -7072,6 +7145,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -7174,6 +7248,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "User",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user details.</p>\n@param user The user details.*/",
         "setterMethodName" : "setUser",
         "setterModel" : {
@@ -7241,6 +7316,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "User",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user details.</p>\n@param user The user details.*/",
           "setterMethodName" : "setUser",
           "setterModel" : {
@@ -7346,6 +7422,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InviteId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The invite ID.</p>\n@param inviteId The invite ID.*/",
         "setterMethodName" : "setInviteId",
         "setterModel" : {
@@ -7411,6 +7488,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the invite.</p>\n@param status The status of the invite.\n@see InviteStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -7476,6 +7554,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address to which the invite is sent.</p>\n@param emailAddress The email address to which the invite is sent.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -7541,6 +7620,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the invite email.</p>\n@param emailStatus The status of the invite email.\n@see EmailStatus*/",
         "setterMethodName" : "setEmailStatus",
         "setterModel" : {
@@ -7608,6 +7688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address to which the invite is sent.</p>\n@param emailAddress The email address to which the invite is sent.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -7674,6 +7755,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the invite email.</p>\n@param emailStatus The status of the invite email.\n@see EmailStatus*/",
           "setterMethodName" : "setEmailStatus",
           "setterModel" : {
@@ -7740,6 +7822,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InviteId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The invite ID.</p>\n@param inviteId The invite ID.*/",
           "setterMethodName" : "setInviteId",
           "setterModel" : {
@@ -7806,6 +7889,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the invite.</p>\n@param status The status of the invite.\n@see InviteStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -7967,6 +8051,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -8069,6 +8154,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : true,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8112,6 +8198,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "UserEmailList",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The user email addresses to which to send the invite.</p>\n@param userEmailList The user email addresses to which to send the invite.*/",
         "setterMethodName" : "setUserEmailList",
         "setterModel" : {
@@ -8179,6 +8266,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -8282,6 +8370,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : true,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8325,6 +8414,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "UserEmailList",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The user email addresses to which to send the invite.</p>\n@param userEmailList The user email addresses to which to send the invite.*/",
           "setterMethodName" : "setUserEmailList",
           "setterModel" : {
@@ -8464,6 +8554,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8507,6 +8598,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Invites",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The invite details.</p>\n@param invites The invite details.*/",
         "setterMethodName" : "setInvites",
         "setterModel" : {
@@ -8611,6 +8703,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8654,6 +8747,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Invites",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The invite details.</p>\n@param invites The invite details.*/",
           "setterMethodName" : "setInvites",
           "setterModel" : {
@@ -8818,6 +8912,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Amazon Chime account name prefix with which to filter results.</p>\n@param name Amazon Chime account name prefix with which to filter results.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -8883,6 +8978,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserEmail",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>User email address with which to filter results.</p>\n@param userEmail User email address with which to filter results.*/",
         "setterMethodName" : "setUserEmail",
         "setterModel" : {
@@ -8948,6 +9044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results.</p>\n@param nextToken The token to use to retrieve the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9013,6 +9110,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call. Defaults to 100.</p>\n@param maxResults The maximum number of results to return in a single call. Defaults to 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -9080,6 +9178,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call. Defaults to 100.</p>\n@param maxResults The maximum number of results to return in a single call. Defaults to 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -9146,6 +9245,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Amazon Chime account name prefix with which to filter results.</p>\n@param name Amazon Chime account name prefix with which to filter results.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -9212,6 +9312,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results.</p>\n@param nextToken The token to use to retrieve the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9278,6 +9379,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserEmail",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>User email address with which to filter results.</p>\n@param userEmail User email address with which to filter results.*/",
           "setterMethodName" : "setUserEmail",
           "setterModel" : {
@@ -9417,6 +9519,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9460,6 +9563,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Accounts",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of Amazon Chime accounts and account details.</p>\n@param accounts List of Amazon Chime accounts and account details.*/",
         "setterMethodName" : "setAccounts",
         "setterModel" : {
@@ -9525,6 +9629,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results.</p>\n@param nextToken The token to use to retrieve the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9629,6 +9734,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9672,6 +9778,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Accounts",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of Amazon Chime accounts and account details.</p>\n@param accounts List of Amazon Chime accounts and account details.*/",
           "setterMethodName" : "setAccounts",
           "setterModel" : {
@@ -9738,6 +9845,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results.</p>\n@param nextToken The token to use to retrieve the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9850,6 +9958,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -9915,6 +10024,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserEmail",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>Optional. The user email address used to filter results. Maximum 1.</p>\n@param userEmail Optional. The user email address used to filter results. Maximum 1.*/",
         "setterMethodName" : "setUserEmail",
         "setterModel" : {
@@ -9980,6 +10090,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of results to return in a single call. Defaults to 100.</p>\n@param maxResults The maximum number of results to return in a single call. Defaults to 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10045,6 +10156,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results.</p>\n@param nextToken The token to use to retrieve the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10112,6 +10224,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -10178,6 +10291,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of results to return in a single call. Defaults to 100.</p>\n@param maxResults The maximum number of results to return in a single call. Defaults to 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10244,6 +10358,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results.</p>\n@param nextToken The token to use to retrieve the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10310,6 +10425,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserEmail",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>Optional. The user email address used to filter results. Maximum 1.</p>\n@param userEmail Optional. The user email address used to filter results. Maximum 1.*/",
           "setterMethodName" : "setUserEmail",
           "setterModel" : {
@@ -10449,6 +10565,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10492,6 +10609,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Users",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of users and user details.</p>\n@param users List of users and user details.*/",
         "setterMethodName" : "setUsers",
         "setterModel" : {
@@ -10557,6 +10675,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results.</p>\n@param nextToken The token to use to retrieve the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10624,6 +10743,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token to use to retrieve the next page of results.</p>\n@param nextToken The token to use to retrieve the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10727,6 +10847,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10770,6 +10891,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Users",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of users and user details.</p>\n@param users List of users and user details.*/",
           "setterMethodName" : "setUsers",
           "setterModel" : {
@@ -10882,6 +11004,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -10947,6 +11070,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -11014,6 +11138,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -11080,6 +11205,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -11222,6 +11348,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -11289,6 +11416,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -11447,6 +11575,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -11512,6 +11641,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -11579,6 +11709,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -11645,6 +11776,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -11747,6 +11879,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "User",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user details and new personal meeting PIN.</p>\n@param user The user details and new personal meeting PIN.*/",
         "setterMethodName" : "setUser",
         "setterModel" : {
@@ -11814,6 +11947,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "User",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user details and new personal meeting PIN.</p>\n@param user The user details and new personal meeting PIN.*/",
           "setterMethodName" : "setUser",
           "setterModel" : {
@@ -11919,6 +12053,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -11986,6 +12121,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -12088,6 +12224,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -12155,6 +12292,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -12257,6 +12395,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -12324,6 +12463,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -12426,6 +12566,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -12493,6 +12634,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -12595,6 +12737,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -12662,6 +12805,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code \n@see ErrorCode*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -12771,6 +12915,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -12836,6 +12981,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The new name for the specified Amazon Chime account.</p>\n@param name The new name for the specified Amazon Chime account.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -12903,6 +13049,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -12969,6 +13116,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The new name for the specified Amazon Chime account.</p>\n@param name The new name for the specified Amazon Chime account.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -13071,6 +13219,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Account",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The updated Amazon Chime account details.</p>\n@param account The updated Amazon Chime account details.*/",
         "setterMethodName" : "setAccount",
         "setterModel" : {
@@ -13138,6 +13287,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Account",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The updated Amazon Chime account details.</p>\n@param account The updated Amazon Chime account details.*/",
           "setterMethodName" : "setAccount",
           "setterModel" : {
@@ -13250,6 +13400,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -13315,6 +13466,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AccountSettings",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account settings to update.</p>\n@param accountSettings The Amazon Chime account settings to update.*/",
         "setterMethodName" : "setAccountSettings",
         "setterModel" : {
@@ -13382,6 +13534,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -13448,6 +13601,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AccountSettings",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account settings to update.</p>\n@param accountSettings The Amazon Chime account settings to update.*/",
           "setterMethodName" : "setAccountSettings",
           "setterModel" : {
@@ -13597,6 +13751,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -13662,6 +13817,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -13727,6 +13883,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LicenseType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>\n@param licenseType The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.\n@see License*/",
         "setterMethodName" : "setLicenseType",
         "setterModel" : {
@@ -13794,6 +13951,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -13860,6 +14018,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LicenseType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>\n@param licenseType The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.\n@see License*/",
           "setterMethodName" : "setLicenseType",
           "setterModel" : {
@@ -13926,6 +14085,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -14028,6 +14188,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -14093,6 +14254,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LicenseType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user license type.</p>\n@param licenseType The user license type.\n@see License*/",
         "setterMethodName" : "setLicenseType",
         "setterModel" : {
@@ -14160,6 +14322,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LicenseType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user license type.</p>\n@param licenseType The user license type.\n@see License*/",
           "setterMethodName" : "setLicenseType",
           "setterModel" : {
@@ -14226,6 +14389,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -14331,6 +14495,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "User",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The updated user details.</p>\n@param user The updated user details.*/",
         "setterMethodName" : "setUser",
         "setterModel" : {
@@ -14398,6 +14563,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "User",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The updated user details.</p>\n@param user The updated user details.*/",
           "setterMethodName" : "setUser",
           "setterModel" : {
@@ -14503,6 +14669,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -14568,6 +14735,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
@@ -14633,6 +14801,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PrimaryEmail",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The primary email address of the user.</p>\n@param primaryEmail The primary email address of the user.*/",
         "setterMethodName" : "setPrimaryEmail",
         "setterModel" : {
@@ -14698,6 +14867,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DisplayName",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The display name of the user.</p>\n@param displayName The display name of the user.*/",
         "setterMethodName" : "setDisplayName",
         "setterModel" : {
@@ -14763,6 +14933,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LicenseType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The license type for the user.</p>\n@param licenseType The license type for the user.\n@see License*/",
         "setterMethodName" : "setLicenseType",
         "setterModel" : {
@@ -14828,6 +14999,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserRegistrationStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user registration status.</p>\n@param userRegistrationStatus The user registration status.\n@see RegistrationStatus*/",
         "setterMethodName" : "setUserRegistrationStatus",
         "setterModel" : {
@@ -14893,6 +15065,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserInvitationStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user invite status.</p>\n@param userInvitationStatus The user invite status.\n@see InviteStatus*/",
         "setterMethodName" : "setUserInvitationStatus",
         "setterModel" : {
@@ -14958,6 +15131,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "RegisteredOn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date and time when the user is registered, in ISO 8601 format.</p>\n@param registeredOn Date and time when the user is registered, in ISO 8601 format.*/",
         "setterMethodName" : "setRegisteredOn",
         "setterModel" : {
@@ -15023,6 +15197,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "InvitedOn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>\n@param invitedOn Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.*/",
         "setterMethodName" : "setInvitedOn",
         "setterModel" : {
@@ -15088,6 +15263,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PersonalPIN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user's personal meeting PIN.</p>\n@param personalPIN The user's personal meeting PIN.*/",
         "setterMethodName" : "setPersonalPIN",
         "setterModel" : {
@@ -15155,6 +15331,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Chime account ID.</p>\n@param accountId The Amazon Chime account ID.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
@@ -15221,6 +15398,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DisplayName",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The display name of the user.</p>\n@param displayName The display name of the user.*/",
           "setterMethodName" : "setDisplayName",
           "setterModel" : {
@@ -15287,6 +15465,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "InvitedOn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>\n@param invitedOn Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.*/",
           "setterMethodName" : "setInvitedOn",
           "setterModel" : {
@@ -15353,6 +15532,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LicenseType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The license type for the user.</p>\n@param licenseType The license type for the user.\n@see License*/",
           "setterMethodName" : "setLicenseType",
           "setterModel" : {
@@ -15419,6 +15599,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PersonalPIN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user's personal meeting PIN.</p>\n@param personalPIN The user's personal meeting PIN.*/",
           "setterMethodName" : "setPersonalPIN",
           "setterModel" : {
@@ -15485,6 +15666,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PrimaryEmail",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The primary email address of the user.</p>\n@param primaryEmail The primary email address of the user.*/",
           "setterMethodName" : "setPrimaryEmail",
           "setterModel" : {
@@ -15551,6 +15733,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "RegisteredOn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Date and time when the user is registered, in ISO 8601 format.</p>\n@param registeredOn Date and time when the user is registered, in ISO 8601 format.*/",
           "setterMethodName" : "setRegisteredOn",
           "setterModel" : {
@@ -15617,6 +15800,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user ID.</p>\n@param userId The user ID.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {
@@ -15683,6 +15867,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserInvitationStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user invite status.</p>\n@param userInvitationStatus The user invite status.\n@see InviteStatus*/",
           "setterMethodName" : "setUserInvitationStatus",
           "setterModel" : {
@@ -15749,6 +15934,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserRegistrationStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user registration status.</p>\n@param userRegistrationStatus The user registration status.\n@see RegistrationStatus*/",
           "setterMethodName" : "setUserRegistrationStatus",
           "setterModel" : {
@@ -15854,6 +16040,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The user ID for which the action failed.</p>\n@param userId The user ID for which the action failed.*/",
         "setterMethodName" : "setUserId",
         "setterModel" : {
@@ -15919,6 +16106,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error code.</p>\n@param errorCode The error code.\n@see ErrorCode*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
@@ -15984,6 +16172,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The error message.</p>\n@param errorMessage The error message.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
@@ -16051,6 +16240,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error code.</p>\n@param errorCode The error code.\n@see ErrorCode*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
@@ -16117,6 +16307,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The error message.</p>\n@param errorMessage The error message.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
@@ -16183,6 +16374,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The user ID for which the action failed.</p>\n@param userId The user ID for which the action failed.*/",
           "setterMethodName" : "setUserId",
           "setterModel" : {

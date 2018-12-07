@@ -299,7 +299,8 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -314,7 +315,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
+            sb.append("PrivateKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getCertificateChain() != null)
             sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");

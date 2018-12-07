@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -1014,6 +1014,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "IdentityProviderDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> An array containing all of the information required to call a customer-supplied authentication API. This parameter is not required when the <code>IdentityProviderType</code> value of server that is created uses the <code>SERVICE_MANAGED</code> authentication method.</p>\n@param identityProviderDetails An array containing all of the information required to call a customer-supplied authentication API. This parameter is not required when the <code>IdentityProviderType</code> value of server that is created uses the <code>SERVICE_MANAGED</code> authentication method.*/",
         "setterMethodName" : "setIdentityProviderDetails",
         "setterModel" : {
@@ -1079,6 +1080,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityProviderType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The mode of authentication enabled for this service. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user credentials within the service. An <code>IdentityProviderType</code> value of <code>API_GATEWAY</code> indicates that user authentication requires a call to an API Gateway endpoint URL provided by you to integrate an identity provider of your choice.</p>\n@param identityProviderType The mode of authentication enabled for this service. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user credentials within the service. An <code>IdentityProviderType</code> value of <code>API_GATEWAY</code> indicates that user authentication requires a call to an API Gateway endpoint URL provided by you to integrate an identity provider of your choice.\n@see IdentityProviderType*/",
         "setterMethodName" : "setIdentityProviderType",
         "setterModel" : {
@@ -1144,6 +1146,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LoggingRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for monitoring and auditing purposes.</p>\n@param loggingRole A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for monitoring and auditing purposes.*/",
         "setterMethodName" : "setLoggingRole",
         "setterModel" : {
@@ -1246,6 +1249,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1289,6 +1293,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Key-value pairs that can be used to group and search for servers.</p>\n@param tags Key-value pairs that can be used to group and search for servers.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -1356,6 +1361,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "IdentityProviderDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> An array containing all of the information required to call a customer-supplied authentication API. This parameter is not required when the <code>IdentityProviderType</code> value of server that is created uses the <code>SERVICE_MANAGED</code> authentication method.</p>\n@param identityProviderDetails An array containing all of the information required to call a customer-supplied authentication API. This parameter is not required when the <code>IdentityProviderType</code> value of server that is created uses the <code>SERVICE_MANAGED</code> authentication method.*/",
           "setterMethodName" : "setIdentityProviderDetails",
           "setterModel" : {
@@ -1422,6 +1428,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityProviderType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The mode of authentication enabled for this service. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user credentials within the service. An <code>IdentityProviderType</code> value of <code>API_GATEWAY</code> indicates that user authentication requires a call to an API Gateway endpoint URL provided by you to integrate an identity provider of your choice.</p>\n@param identityProviderType The mode of authentication enabled for this service. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user credentials within the service. An <code>IdentityProviderType</code> value of <code>API_GATEWAY</code> indicates that user authentication requires a call to an API Gateway endpoint URL provided by you to integrate an identity provider of your choice.\n@see IdentityProviderType*/",
           "setterMethodName" : "setIdentityProviderType",
           "setterModel" : {
@@ -1488,6 +1495,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LoggingRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for monitoring and auditing purposes.</p>\n@param loggingRole A value that allows the service to write your SFTP users’ activity to your Amazon CloudWatch logs for monitoring and auditing purposes.*/",
           "setterMethodName" : "setLoggingRole",
           "setterModel" : {
@@ -1591,6 +1599,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1634,6 +1643,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Key-value pairs that can be used to group and search for servers.</p>\n@param tags Key-value pairs that can be used to group and search for servers.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -1736,6 +1746,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service-assigned ID of the SFTP server that is created.</p>\n@param serverId The service-assigned ID of the SFTP server that is created.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -1803,6 +1814,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service-assigned ID of the SFTP server that is created.</p>\n@param serverId The service-assigned ID of the SFTP server that is created.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -1915,6 +1927,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HomeDirectory",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The landing directory (folder) for a user when they log in to the server using their SFTP client. An example is <code>/home/<i>username</i> </code>.</p>\n@param homeDirectory The landing directory (folder) for a user when they log in to the server using their SFTP client. An example is <code>/home/<i>username</i> </code>.*/",
         "setterMethodName" : "setHomeDirectory",
         "setterModel" : {
@@ -1980,6 +1993,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A scope-down policy for your user so you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>\n@param policy A scope-down policy for your user so you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -2045,6 +2059,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Role",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.</p>\n@param role The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.*/",
         "setterMethodName" : "setRole",
         "setterModel" : {
@@ -2110,6 +2125,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance. This is the specific SFTP server that you added your user to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance. This is the specific SFTP server that you added your user to.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -2175,6 +2191,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKeyBody",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The public portion of the Secure Shall (SSH) key used to authenticate the user to the SFTP server.</p>\n@param sshPublicKeyBody The public portion of the Secure Shall (SSH) key used to authenticate the user to the SFTP server.*/",
         "setterMethodName" : "setSshPublicKeyBody",
         "setterModel" : {
@@ -2277,6 +2294,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2320,6 +2338,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>\n@param tags Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -2385,6 +2404,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.</p>\n@param userName A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -2452,6 +2472,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HomeDirectory",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The landing directory (folder) for a user when they log in to the server using their SFTP client. An example is <code>/home/<i>username</i> </code>.</p>\n@param homeDirectory The landing directory (folder) for a user when they log in to the server using their SFTP client. An example is <code>/home/<i>username</i> </code>.*/",
           "setterMethodName" : "setHomeDirectory",
           "setterModel" : {
@@ -2518,6 +2539,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A scope-down policy for your user so you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>\n@param policy A scope-down policy for your user so you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -2584,6 +2606,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Role",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.</p>\n@param role The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.*/",
           "setterMethodName" : "setRole",
           "setterModel" : {
@@ -2650,6 +2673,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance. This is the specific SFTP server that you added your user to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance. This is the specific SFTP server that you added your user to.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -2716,6 +2740,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKeyBody",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The public portion of the Secure Shall (SSH) key used to authenticate the user to the SFTP server.</p>\n@param sshPublicKeyBody The public portion of the Secure Shall (SSH) key used to authenticate the user to the SFTP server.*/",
           "setterMethodName" : "setSshPublicKeyBody",
           "setterModel" : {
@@ -2819,6 +2844,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2862,6 +2888,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>\n@param tags Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -2928,6 +2955,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.</p>\n@param userName A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -3030,6 +3058,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the SFTP server that the user is attached to.</p>\n@param serverId The ID of the SFTP server that the user is attached to.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -3095,6 +3124,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique string that identifies a user account associated with an SFTP server.</p>\n@param userName A unique string that identifies a user account associated with an SFTP server.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -3162,6 +3192,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the SFTP server that the user is attached to.</p>\n@param serverId The ID of the SFTP server that the user is attached to.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -3228,6 +3259,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique string that identifies a user account associated with an SFTP server.</p>\n@param userName A unique string that identifies a user account associated with an SFTP server.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -3340,6 +3372,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique system-assigned identifier for an SFTP server instance.</p>\n@param serverId A unique system-assigned identifier for an SFTP server instance.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -3407,6 +3440,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique system-assigned identifier for an SFTP server instance.</p>\n@param serverId A unique system-assigned identifier for an SFTP server instance.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -3556,6 +3590,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server instance that has the user assigned to it.</p>\n@param serverId A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server instance that has the user assigned to it.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -3621,6 +3656,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKeyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier used to reference your user’s specific SSH key.</p>\n@param sshPublicKeyId A unique identifier used to reference your user’s specific SSH key.*/",
         "setterMethodName" : "setSshPublicKeyId",
         "setterModel" : {
@@ -3686,6 +3722,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique string that identifies a user whose public key is being deleted.</p>\n@param userName A unique string that identifies a user whose public key is being deleted.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -3753,6 +3790,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server instance that has the user assigned to it.</p>\n@param serverId A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server instance that has the user assigned to it.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -3819,6 +3857,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKeyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier used to reference your user’s specific SSH key.</p>\n@param sshPublicKeyId A unique identifier used to reference your user’s specific SSH key.*/",
           "setterMethodName" : "setSshPublicKeyId",
           "setterModel" : {
@@ -3885,6 +3924,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique string that identifies a user whose public key is being deleted.</p>\n@param userName A unique string that identifies a user whose public key is being deleted.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -4034,6 +4074,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance that has the user assigned to it.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance that has the user assigned to it.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -4099,6 +4140,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique string that identifies a user that is being deleted from the server.</p>\n@param userName A unique string that identifies a user that is being deleted from the server.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -4166,6 +4208,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance that has the user assigned to it.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance that has the user assigned to it.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -4232,6 +4275,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique string that identifies a user that is being deleted from the server.</p>\n@param userName A unique string that identifies a user that is being deleted from the server.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -4381,6 +4425,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server.</p>\n@param serverId A system-assigned unique identifier for an SFTP server.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -4448,6 +4493,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server.</p>\n@param serverId A system-assigned unique identifier for an SFTP server.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -4550,6 +4596,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Server",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array containing the properties of the server with the <code>ServerID</code> you specified.</p>\n@param server An array containing the properties of the server with the <code>ServerID</code> you specified.*/",
         "setterMethodName" : "setServer",
         "setterModel" : {
@@ -4617,6 +4664,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Server",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array containing the properties of the server with the <code>ServerID</code> you specified.</p>\n@param server An array containing the properties of the server with the <code>ServerID</code> you specified.*/",
           "setterMethodName" : "setServer",
           "setterModel" : {
@@ -4729,6 +4777,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that has this user assigned.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that has this user assigned.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -4794,6 +4843,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the AWS Transfer service and perform file transfer tasks.</p>\n@param userName The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the AWS Transfer service and perform file transfer tasks.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -4861,6 +4911,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that has this user assigned.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that has this user assigned.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -4927,6 +4978,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the AWS Transfer service and perform file transfer tasks.</p>\n@param userName The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the AWS Transfer service and perform file transfer tasks.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -5029,6 +5081,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that has this user assigned.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that has this user assigned.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -5094,6 +5147,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "User",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>\n@param user An array containing the properties of the user account for the <code>ServerID</code> value that you specified.*/",
         "setterMethodName" : "setUser",
         "setterModel" : {
@@ -5161,6 +5215,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that has this user assigned.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that has this user assigned.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -5227,6 +5282,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "User",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>\n@param user An array containing the properties of the user account for the <code>ServerID</code> value that you specified.*/",
           "setterMethodName" : "setUser",
           "setterModel" : {
@@ -5332,6 +5388,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the unique Amazon Resource Name (ARN) for the server to be described.</p>\n@param arn Specifies the unique Amazon Resource Name (ARN) for the server to be described.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -5397,6 +5454,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "IdentityProviderDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of the server is <code>SERVICE_MANAGED</code>&gt;.</p>\n@param identityProviderDetails Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of the server is <code>SERVICE_MANAGED</code>&gt;.*/",
         "setterMethodName" : "setIdentityProviderDetails",
         "setterModel" : {
@@ -5462,6 +5520,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityProviderType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>, means that you are using this Server to store and access SFTP user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.</p>\n@param identityProviderType This property defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>, means that you are using this Server to store and access SFTP user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.\n@see IdentityProviderType*/",
         "setterMethodName" : "setIdentityProviderType",
         "setterModel" : {
@@ -5527,6 +5586,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LoggingRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property is an AWS Identity and Access Management (IAM) entity that allows the server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be view in your CloudWatch logs.</p>\n@param loggingRole This property is an AWS Identity and Access Management (IAM) entity that allows the server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be view in your CloudWatch logs.*/",
         "setterMethodName" : "setLoggingRole",
         "setterModel" : {
@@ -5592,6 +5652,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property is a unique system assigned identifier for the SFTP server that you instantiate.</p>\n@param serverId This property is a unique system assigned identifier for the SFTP server that you instantiate.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -5657,6 +5718,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The condition of the SFTP server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>\n@param state The condition of the SFTP server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.\n@see State*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -5759,6 +5821,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5802,6 +5865,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property contains the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>\n@param tags This property contains the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -5867,6 +5931,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UserCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.</p>\n@param userCount The number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.*/",
         "setterMethodName" : "setUserCount",
         "setterModel" : {
@@ -5934,6 +5999,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the unique Amazon Resource Name (ARN) for the server to be described.</p>\n@param arn Specifies the unique Amazon Resource Name (ARN) for the server to be described.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -6000,6 +6066,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "IdentityProviderDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of the server is <code>SERVICE_MANAGED</code>&gt;.</p>\n@param identityProviderDetails Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of the server is <code>SERVICE_MANAGED</code>&gt;.*/",
           "setterMethodName" : "setIdentityProviderDetails",
           "setterModel" : {
@@ -6066,6 +6133,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityProviderType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>, means that you are using this Server to store and access SFTP user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.</p>\n@param identityProviderType This property defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>, means that you are using this Server to store and access SFTP user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.\n@see IdentityProviderType*/",
           "setterMethodName" : "setIdentityProviderType",
           "setterModel" : {
@@ -6132,6 +6200,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LoggingRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property is an AWS Identity and Access Management (IAM) entity that allows the server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be view in your CloudWatch logs.</p>\n@param loggingRole This property is an AWS Identity and Access Management (IAM) entity that allows the server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be view in your CloudWatch logs.*/",
           "setterMethodName" : "setLoggingRole",
           "setterModel" : {
@@ -6198,6 +6267,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property is a unique system assigned identifier for the SFTP server that you instantiate.</p>\n@param serverId This property is a unique system assigned identifier for the SFTP server that you instantiate.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -6264,6 +6334,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The condition of the SFTP server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>\n@param state The condition of the SFTP server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.\n@see State*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -6367,6 +6438,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6410,6 +6482,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property contains the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>\n@param tags This property contains the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -6476,6 +6549,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UserCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.</p>\n@param userCount The number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.*/",
           "setterMethodName" : "setUserCount",
           "setterModel" : {
@@ -6581,6 +6655,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.</p>\n@param arn This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -6646,6 +6721,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HomeDirectory",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property specifies the landing directory (or folder) which is the location that files are written to or read from in an Amazon S3 bucket for the described user. An example would be: <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>\n@param homeDirectory This property specifies the landing directory (or folder) which is the location that files are written to or read from in an Amazon S3 bucket for the described user. An example would be: <code>/<i>bucket_name</i>/home/<i>username</i> </code>.*/",
         "setterMethodName" : "setHomeDirectory",
         "setterModel" : {
@@ -6711,6 +6787,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the name of the policy in use for the described user.</p>\n@param policy Specifies the name of the policy in use for the described user.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -6776,6 +6853,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Role",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.</p>\n@param role This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.*/",
         "setterMethodName" : "setRole",
         "setterModel" : {
@@ -6878,6 +6956,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6921,6 +7000,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SshPublicKeys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>\n@param sshPublicKeys This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.*/",
         "setterMethodName" : "setSshPublicKeys",
         "setterModel" : {
@@ -7023,6 +7103,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7066,6 +7147,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety of purposes.</p>\n@param tags This property contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety of purposes.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -7131,6 +7213,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property is the name of the user that was requested to be described. User names are used for authentication purposes. This is the string that will be used by your user when they log in to your SFTP server.</p>\n@param userName This property is the name of the user that was requested to be described. User names are used for authentication purposes. This is the string that will be used by your user when they log in to your SFTP server.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -7198,6 +7281,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.</p>\n@param arn This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -7264,6 +7348,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HomeDirectory",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property specifies the landing directory (or folder) which is the location that files are written to or read from in an Amazon S3 bucket for the described user. An example would be: <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>\n@param homeDirectory This property specifies the landing directory (or folder) which is the location that files are written to or read from in an Amazon S3 bucket for the described user. An example would be: <code>/<i>bucket_name</i>/home/<i>username</i> </code>.*/",
           "setterMethodName" : "setHomeDirectory",
           "setterModel" : {
@@ -7330,6 +7415,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the name of the policy in use for the described user.</p>\n@param policy Specifies the name of the policy in use for the described user.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -7396,6 +7482,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Role",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.</p>\n@param role This property specifies the IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the SFTP server to access your resources when servicing your SFTP user’s transfer requests.*/",
           "setterMethodName" : "setRole",
           "setterModel" : {
@@ -7499,6 +7586,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7542,6 +7630,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SshPublicKeys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>\n@param sshPublicKeys This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.*/",
           "setterMethodName" : "setSshPublicKeys",
           "setterModel" : {
@@ -7645,6 +7734,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7688,6 +7778,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety of purposes.</p>\n@param tags This property contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety of purposes.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -7754,6 +7845,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property is the name of the user that was requested to be described. User names are used for authentication purposes. This is the string that will be used by your user when they log in to your SFTP server.</p>\n@param userName This property is the name of the user that was requested to be described. User names are used for authentication purposes. This is the string that will be used by your user when they log in to your SFTP server.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -7859,6 +7951,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to authenticate users.</p>\n@param url The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to authenticate users.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -7924,6 +8017,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InvocationRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>\n@param invocationRole The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the user account.*/",
         "setterMethodName" : "setInvocationRole",
         "setterModel" : {
@@ -7991,6 +8085,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InvocationRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>\n@param invocationRole The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the user account.*/",
           "setterMethodName" : "setInvocationRole",
           "setterModel" : {
@@ -8057,6 +8152,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to authenticate users.</p>\n@param url The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to authenticate users.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -8215,6 +8311,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server.</p>\n@param serverId A system-assigned unique identifier for an SFTP server.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -8280,6 +8377,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKeyBody",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The public key portion of an SSH key pair.</p>\n@param sshPublicKeyBody The public key portion of an SSH key pair.*/",
         "setterMethodName" : "setSshPublicKeyBody",
         "setterModel" : {
@@ -8345,6 +8443,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the user account that is assigned to one or more servers.</p>\n@param userName The name of the user account that is assigned to one or more servers.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -8412,6 +8511,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server.</p>\n@param serverId A system-assigned unique identifier for an SFTP server.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -8478,6 +8578,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKeyBody",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The public key portion of an SSH key pair.</p>\n@param sshPublicKeyBody The public key portion of an SSH key pair.*/",
           "setterMethodName" : "setSshPublicKeyBody",
           "setterModel" : {
@@ -8544,6 +8645,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the user account that is assigned to one or more servers.</p>\n@param userName The name of the user account that is assigned to one or more servers.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -8646,6 +8748,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server.</p>\n@param serverId A system-assigned unique identifier for an SFTP server.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -8711,6 +8814,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKeyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This identifier is the name given to a public key by the system that was imported.</p>\n@param sshPublicKeyId This identifier is the name given to a public key by the system that was imported.*/",
         "setterMethodName" : "setSshPublicKeyId",
         "setterModel" : {
@@ -8776,6 +8880,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A user name assigned to the <code>ServerID</code> value that you specified.</p>\n@param userName A user name assigned to the <code>ServerID</code> value that you specified.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -8843,6 +8948,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server.</p>\n@param serverId A system-assigned unique identifier for an SFTP server.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -8909,6 +9015,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKeyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This identifier is the name given to a public key by the system that was imported.</p>\n@param sshPublicKeyId This identifier is the name given to a public key by the system that was imported.*/",
           "setterMethodName" : "setSshPublicKeyId",
           "setterModel" : {
@@ -8975,6 +9082,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A user name assigned to the <code>ServerID</code> value that you specified.</p>\n@param userName A user name assigned to the <code>ServerID</code> value that you specified.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -9198,6 +9306,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p>\n@param maxResults Specifies the number of servers to return as a response to the <code>ListServers</code> query.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -9263,6 +9372,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.</p>\n@param nextToken When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9330,6 +9440,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p>\n@param maxResults Specifies the number of servers to return as a response to the <code>ListServers</code> query.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -9396,6 +9507,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.</p>\n@param nextToken When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9498,6 +9610,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>\n@param nextToken When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -9600,6 +9713,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9643,6 +9757,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Servers",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of servers that were listed.</p>\n@param servers An array of servers that were listed.*/",
         "setterMethodName" : "setServers",
         "setterModel" : {
@@ -9710,6 +9825,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>\n@param nextToken When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -9813,6 +9929,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9856,6 +9973,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Servers",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of servers that were listed.</p>\n@param servers An array of servers that were listed.*/",
           "setterMethodName" : "setServers",
           "setterModel" : {
@@ -9968,6 +10086,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific AWS resource, such as a server, user, or role.</p>\n@param arn Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific AWS resource, such as a server, user, or role.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -10033,6 +10152,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param maxResults */",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10098,6 +10218,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param nextToken */",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10165,6 +10286,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific AWS resource, such as a server, user, or role.</p>\n@param arn Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific AWS resource, such as a server, user, or role.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -10231,6 +10353,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param maxResults */",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10297,6 +10420,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param nextToken */",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10399,6 +10523,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This value is the ARN you specified to list the tags of.</p>\n@param arn This value is the ARN you specified to list the tags of.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -10464,6 +10589,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param nextToken */",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10566,6 +10692,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10609,6 +10736,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define that you can use for any purpose.</p>\n@param tags Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define that you can use for any purpose.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -10676,6 +10804,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This value is the ARN you specified to list the tags of.</p>\n@param arn This value is the ARN you specified to list the tags of.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -10742,6 +10871,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param nextToken */",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10845,6 +10975,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10888,6 +11019,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define that you can use for any purpose.</p>\n@param tags Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define that you can use for any purpose.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -11000,6 +11132,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>\n@param maxResults Specifies the number of users to return as a response to the <code>ListUsers</code> request.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11065,6 +11198,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When you can get additional results from the <code>ListUsers</code>ListUsers call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to continue listing additional users.</p>\n@param nextToken When you can get additional results from the <code>ListUsers</code>ListUsers call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to continue listing additional users.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11130,6 +11264,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are assigned to it.</p>\n@param serverId A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are assigned to it.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -11197,6 +11332,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>\n@param maxResults Specifies the number of users to return as a response to the <code>ListUsers</code> request.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11263,6 +11399,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When you can get additional results from the <code>ListUsers</code>ListUsers call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to continue listing additional users.</p>\n@param nextToken When you can get additional results from the <code>ListUsers</code>ListUsers call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to continue listing additional users.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11329,6 +11466,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are assigned to it.</p>\n@param serverId A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are assigned to it.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -11431,6 +11569,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to continue listing additional users.</p>\n@param nextToken When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to continue listing additional users.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11496,6 +11635,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that the users are assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that the users are assigned to.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -11598,6 +11738,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11641,6 +11782,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Users",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>\n@param users Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.*/",
         "setterMethodName" : "setUsers",
         "setterModel" : {
@@ -11708,6 +11850,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to continue listing additional users.</p>\n@param nextToken When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to continue listing additional users.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11774,6 +11917,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that the users are assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that the users are assigned to.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -11877,6 +12021,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11920,6 +12065,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Users",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>\n@param users Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.*/",
           "setterMethodName" : "setUsers",
           "setterModel" : {
@@ -12025,6 +12171,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique Amazon Resource Name (ARN) for the server to be listed.</p>\n@param arn The unique Amazon Resource Name (ARN) for the server to be listed.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -12090,6 +12237,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdentityProviderType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The authentication method used to validate a user for the server that was specified. listed. This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>\n@param identityProviderType The authentication method used to validate a user for the server that was specified. listed. This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.\n@see IdentityProviderType*/",
         "setterMethodName" : "setIdentityProviderType",
         "setterModel" : {
@@ -12155,6 +12303,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LoggingRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Identity and Access Management entity that allows the server to turn on Amazon CloudWatch logging.</p>\n@param loggingRole The AWS Identity and Access Management entity that allows the server to turn on Amazon CloudWatch logging.*/",
         "setterMethodName" : "setLoggingRole",
         "setterModel" : {
@@ -12220,6 +12369,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This value is the unique system assigned identifier for the SFTP servers that were listed.</p>\n@param serverId This value is the unique system assigned identifier for the SFTP servers that were listed.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -12285,6 +12435,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property describes the condition of the SFTP server for the server that was described. A value of <code>ONLINE</code>&gt; indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>\n@param state This property describes the condition of the SFTP server for the server that was described. A value of <code>ONLINE</code>&gt; indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.\n@see State*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -12350,6 +12501,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UserCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property is a numeric value that indicates the number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.</p>\n@param userCount This property is a numeric value that indicates the number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.*/",
         "setterMethodName" : "setUserCount",
         "setterModel" : {
@@ -12417,6 +12569,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique Amazon Resource Name (ARN) for the server to be listed.</p>\n@param arn The unique Amazon Resource Name (ARN) for the server to be listed.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -12483,6 +12636,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdentityProviderType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The authentication method used to validate a user for the server that was specified. listed. This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>\n@param identityProviderType The authentication method used to validate a user for the server that was specified. listed. This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.\n@see IdentityProviderType*/",
           "setterMethodName" : "setIdentityProviderType",
           "setterModel" : {
@@ -12549,6 +12703,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LoggingRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Identity and Access Management entity that allows the server to turn on Amazon CloudWatch logging.</p>\n@param loggingRole The AWS Identity and Access Management entity that allows the server to turn on Amazon CloudWatch logging.*/",
           "setterMethodName" : "setLoggingRole",
           "setterModel" : {
@@ -12615,6 +12770,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This value is the unique system assigned identifier for the SFTP servers that were listed.</p>\n@param serverId This value is the unique system assigned identifier for the SFTP servers that were listed.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -12681,6 +12837,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property describes the condition of the SFTP server for the server that was described. A value of <code>ONLINE</code>&gt; indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>\n@param state This property describes the condition of the SFTP server for the server that was described. A value of <code>ONLINE</code>&gt; indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.\n@see State*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -12747,6 +12904,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UserCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property is a numeric value that indicates the number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.</p>\n@param userCount This property is a numeric value that indicates the number of users that are assigned to the SFTP server you specified with the <code>ServerId</code>.*/",
           "setterMethodName" : "setUserCount",
           "setterModel" : {
@@ -12852,6 +13010,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.</p>\n@param arn This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -12917,6 +13076,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HomeDirectory",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This value specifies the location that files are written to or read from an Amazon S3 bucket for the user you specify by their ARN.</p>\n@param homeDirectory This value specifies the location that files are written to or read from an Amazon S3 bucket for the user you specify by their ARN.*/",
         "setterMethodName" : "setHomeDirectory",
         "setterModel" : {
@@ -12982,6 +13142,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Role",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in this case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.</p>\n@param role The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in this case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.*/",
         "setterMethodName" : "setRole",
         "setterModel" : {
@@ -13047,6 +13208,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SshPublicKeyCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This value is the number of SSH public keys stored for the user you specified.</p>\n@param sshPublicKeyCount This value is the number of SSH public keys stored for the user you specified.*/",
         "setterMethodName" : "setSshPublicKeyCount",
         "setterModel" : {
@@ -13112,6 +13274,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the user whose ARN was specified. User names are used for authentication purposes.</p>\n@param userName The name of the user whose ARN was specified. User names are used for authentication purposes.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -13179,6 +13342,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.</p>\n@param arn This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -13245,6 +13409,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HomeDirectory",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This value specifies the location that files are written to or read from an Amazon S3 bucket for the user you specify by their ARN.</p>\n@param homeDirectory This value specifies the location that files are written to or read from an Amazon S3 bucket for the user you specify by their ARN.*/",
           "setterMethodName" : "setHomeDirectory",
           "setterModel" : {
@@ -13311,6 +13476,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Role",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in this case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.</p>\n@param role The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in this case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.*/",
           "setterMethodName" : "setRole",
           "setterModel" : {
@@ -13377,6 +13543,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SshPublicKeyCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This value is the number of SSH public keys stored for the user you specified.</p>\n@param sshPublicKeyCount This value is the number of SSH public keys stored for the user you specified.*/",
           "setterMethodName" : "setSshPublicKeyCount",
           "setterModel" : {
@@ -13443,6 +13610,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the user whose ARN was specified. User names are used for authentication purposes.</p>\n@param userName The name of the user whose ARN was specified. User names are used for authentication purposes.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -13548,6 +13716,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param resource */",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -13613,6 +13782,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param resourceType */",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -13680,6 +13850,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param resource */",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -13746,6 +13917,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param resourceType */",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -13848,6 +14020,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Resource",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param resource */",
         "setterMethodName" : "setResource",
         "setterModel" : {
@@ -13913,6 +14086,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param resourceType */",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -13980,6 +14154,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Resource",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param resource */",
           "setterMethodName" : "setResource",
           "setterModel" : {
@@ -14046,6 +14221,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param resourceType */",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -14185,6 +14361,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DateImported",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date that the public key was added to the user account.</p>\n@param dateImported The date that the public key was added to the user account.*/",
         "setterMethodName" : "setDateImported",
         "setterModel" : {
@@ -14250,6 +14427,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKeyBody",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>\n@param sshPublicKeyBody The content of the SSH public key as specified by the <code>PublicKeyId</code>.*/",
         "setterMethodName" : "setSshPublicKeyBody",
         "setterModel" : {
@@ -14315,6 +14493,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SshPublicKeyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>\n@param sshPublicKeyId The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.*/",
         "setterMethodName" : "setSshPublicKeyId",
         "setterModel" : {
@@ -14382,6 +14561,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DateImported",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date that the public key was added to the user account.</p>\n@param dateImported The date that the public key was added to the user account.*/",
           "setterMethodName" : "setDateImported",
           "setterModel" : {
@@ -14448,6 +14628,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKeyBody",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>\n@param sshPublicKeyBody The content of the SSH public key as specified by the <code>PublicKeyId</code>.*/",
           "setterMethodName" : "setSshPublicKeyBody",
           "setterModel" : {
@@ -14514,6 +14695,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SshPublicKeyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>\n@param sshPublicKeyId The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.*/",
           "setterMethodName" : "setSshPublicKeyId",
           "setterModel" : {
@@ -14626,6 +14808,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that you start.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that you start.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -14693,6 +14876,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that you start.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that you start.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -14900,6 +15084,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that you stopped.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that you stopped.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -14967,6 +15152,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that you stopped.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that you stopped.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -15109,6 +15295,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name assigned to the tag that you create.</p>\n@param key The name assigned to the tag that you create.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -15174,6 +15361,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This property contains one or more values that you assigned to the key name you create.</p>\n@param value This property contains one or more values that you assigned to the key name you create.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -15241,6 +15429,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name assigned to the tag that you create.</p>\n@param key The name assigned to the tag that you create.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -15307,6 +15496,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This property contains one or more values that you assigned to the key name you create.</p>\n@param value This property contains one or more values that you assigned to the key name you create.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -15419,6 +15609,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.</p>\n@param arn An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -15521,6 +15712,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15564,6 +15756,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.</p>\n@param tags Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -15631,6 +15824,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.</p>\n@param arn An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -15734,6 +15928,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15777,6 +15972,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.</p>\n@param tags Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -15926,6 +16122,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>\n@param serverId A system assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -15991,6 +16188,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This request parameter is name of the user account to be tested.</p>\n@param userName This request parameter is name of the user account to be tested.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -16056,6 +16254,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserPassword",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The password of the user account to be tested.</p>\n@param userPassword The password of the user account to be tested.*/",
         "setterMethodName" : "setUserPassword",
         "setterModel" : {
@@ -16123,6 +16322,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>\n@param serverId A system assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -16189,6 +16389,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This request parameter is name of the user account to be tested.</p>\n@param userName This request parameter is name of the user account to be tested.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -16255,6 +16456,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserPassword",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The password of the user account to be tested.</p>\n@param userPassword The password of the user account to be tested.*/",
           "setterMethodName" : "setUserPassword",
           "setterModel" : {
@@ -16357,6 +16559,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Message",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The result of the authorization test as a message. </p>\n@param message The result of the authorization test as a message.*/",
         "setterMethodName" : "setMessage",
         "setterModel" : {
@@ -16422,6 +16625,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "StatusCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HTTP status code that is the response from your API Gateway.</p>\n@param statusCode The HTTP status code that is the response from your API Gateway.*/",
         "setterMethodName" : "setStatusCode",
         "setterModel" : {
@@ -16487,6 +16691,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Url",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The endpoint of the service used to authenticate a user.</p>\n@param url The endpoint of the service used to authenticate a user.*/",
         "setterMethodName" : "setUrl",
         "setterModel" : {
@@ -16554,6 +16759,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Message",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The result of the authorization test as a message. </p>\n@param message The result of the authorization test as a message.*/",
           "setterMethodName" : "setMessage",
           "setterModel" : {
@@ -16620,6 +16826,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "StatusCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HTTP status code that is the response from your API Gateway.</p>\n@param statusCode The HTTP status code that is the response from your API Gateway.*/",
           "setterMethodName" : "setStatusCode",
           "setterModel" : {
@@ -16686,6 +16893,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Url",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The endpoint of the service used to authenticate a user.</p>\n@param url The endpoint of the service used to authenticate a user.*/",
           "setterMethodName" : "setUrl",
           "setterModel" : {
@@ -16798,6 +17006,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific AWS resource, such as a server, user, or role.</p>\n@param arn This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific AWS resource, such as a server, user, or role.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -16900,6 +17109,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16943,6 +17153,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagKeys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.</p>\n@param tagKeys TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
@@ -17010,6 +17221,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific AWS resource, such as a server, user, or role.</p>\n@param arn This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific AWS resource, such as a server, user, or role.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -17113,6 +17325,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -17156,6 +17369,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagKeys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.</p>\n@param tagKeys TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
@@ -17305,6 +17519,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "IdentityProviderDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>This response parameter is an array containing all of the information required to call a customer's authentication API method.</p>\n@param identityProviderDetails This response parameter is an array containing all of the information required to call a customer's authentication API method.*/",
         "setterMethodName" : "setIdentityProviderDetails",
         "setterModel" : {
@@ -17370,6 +17585,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LoggingRole",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>\n@param loggingRole Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or off.*/",
         "setterMethodName" : "setLoggingRole",
         "setterModel" : {
@@ -17435,6 +17651,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -17502,6 +17719,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "IdentityProviderDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>This response parameter is an array containing all of the information required to call a customer's authentication API method.</p>\n@param identityProviderDetails This response parameter is an array containing all of the information required to call a customer's authentication API method.*/",
           "setterMethodName" : "setIdentityProviderDetails",
           "setterModel" : {
@@ -17568,6 +17786,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LoggingRole",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>\n@param loggingRole Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or off.*/",
           "setterMethodName" : "setLoggingRole",
           "setterModel" : {
@@ -17634,6 +17853,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -17736,6 +17956,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that the user account is assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that the user account is assigned to.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -17803,6 +18024,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server that the user account is assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server that the user account is assigned to.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -17915,6 +18137,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "HomeDirectory",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the server using their client. An example would be: <code>/home/<i>username</i> </code>.</p>\n@param homeDirectory The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the server using their client. An example would be: <code>/home/<i>username</i> </code>.*/",
         "setterMethodName" : "setHomeDirectory",
         "setterModel" : {
@@ -17980,6 +18203,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management (IAM) role across multiple users. The policy scopes down users access to portions of your Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>\n@param policy Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management (IAM) role across multiple users. The policy scopes down users access to portions of your Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -18045,6 +18269,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Role",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user’s transfer requests.</p>\n@param role The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user’s transfer requests.*/",
         "setterMethodName" : "setRole",
         "setterModel" : {
@@ -18110,6 +18335,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -18175,6 +18401,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the string that will be used by your user when they log in to your SFTP server.</p>\n@param userName A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the string that will be used by your user when they log in to your SFTP server.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -18242,6 +18469,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "HomeDirectory",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the server using their client. An example would be: <code>/home/<i>username</i> </code>.</p>\n@param homeDirectory The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the server using their client. An example would be: <code>/home/<i>username</i> </code>.*/",
           "setterMethodName" : "setHomeDirectory",
           "setterModel" : {
@@ -18308,6 +18536,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management (IAM) role across multiple users. The policy scopes down users access to portions of your Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>\n@param policy Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management (IAM) role across multiple users. The policy scopes down users access to portions of your Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -18374,6 +18603,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Role",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user’s transfer requests.</p>\n@param role The IAM role that controls your user’s access to your Amazon S3 bucket. The policies attached to this role will determine the level of access you want to provide your users when transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user’s transfer requests.*/",
           "setterMethodName" : "setRole",
           "setterModel" : {
@@ -18440,6 +18670,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -18506,6 +18737,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the string that will be used by your user when they log in to your SFTP server.</p>\n@param userName A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the string that will be used by your user when they log in to your SFTP server.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {
@@ -18608,6 +18840,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServerId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.*/",
         "setterMethodName" : "setServerId",
         "setterModel" : {
@@ -18673,6 +18906,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "UserName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for a user that is assigned to the SFTP server instance that was specified in the request.</p>\n@param userName The unique identifier for a user that is assigned to the SFTP server instance that was specified in the request.*/",
         "setterMethodName" : "setUserName",
         "setterModel" : {
@@ -18740,6 +18974,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServerId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.</p>\n@param serverId A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.*/",
           "setterMethodName" : "setServerId",
           "setterModel" : {
@@ -18806,6 +19041,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "UserName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for a user that is assigned to the SFTP server instance that was specified in the request.</p>\n@param userName The unique identifier for a user that is assigned to the SFTP server instance that was specified in the request.*/",
           "setterMethodName" : "setUserName",
           "setterModel" : {

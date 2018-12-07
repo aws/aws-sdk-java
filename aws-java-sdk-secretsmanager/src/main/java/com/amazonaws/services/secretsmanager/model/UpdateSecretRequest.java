@@ -990,7 +990,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1009,9 +1010,9 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getSecretBinary() != null)
-            sb.append("SecretBinary: ").append(getSecretBinary()).append(",");
+            sb.append("SecretBinary: ").append("***Sensitive Data Redacted***").append(",");
         if (getSecretString() != null)
-            sb.append("SecretString: ").append(getSecretString());
+            sb.append("SecretString: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

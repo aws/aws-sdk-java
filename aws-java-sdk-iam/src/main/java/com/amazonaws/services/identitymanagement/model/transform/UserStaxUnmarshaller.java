@@ -75,6 +75,11 @@ public class UserStaxUnmarshaller implements Unmarshaller<User, StaxUnmarshaller
                     continue;
                 }
 
+                if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    user.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Tags", targetDepth)) {
                     user.withTags(new ArrayList<Tag>());
                     continue;
@@ -85,10 +90,6 @@ public class UserStaxUnmarshaller implements Unmarshaller<User, StaxUnmarshaller
                     continue;
                 }
 
-                if (context.testExpression("PermissionsBoundary", targetDepth)) {
-                    user.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return user;

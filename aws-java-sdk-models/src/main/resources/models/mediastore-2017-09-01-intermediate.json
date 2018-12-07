@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -587,6 +587,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Endpoint",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>\n@param endpoint The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.*/",
         "setterMethodName" : "setEndpoint",
         "setterModel" : {
@@ -652,6 +653,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unix timestamp.</p>\n@param creationTime Unix timestamp.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
@@ -717,6 +719,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ARN",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>\n@param aRN The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies*/",
         "setterMethodName" : "setARN",
         "setterModel" : {
@@ -782,6 +785,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container.</p>\n@param name The name of the container.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -847,6 +851,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>\n@param status The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.\n@see ContainerStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -914,6 +919,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ARN",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>\n@param aRN The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies*/",
           "setterMethodName" : "setARN",
           "setterModel" : {
@@ -980,6 +986,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unix timestamp.</p>\n@param creationTime Unix timestamp.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
@@ -1046,6 +1053,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Endpoint",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>\n@param endpoint The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.*/",
           "setterMethodName" : "setEndpoint",
           "setterModel" : {
@@ -1112,6 +1120,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container.</p>\n@param name The name of the container.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1178,6 +1187,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>\n@param status The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.\n@see ContainerStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -1480,6 +1490,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1523,6 +1534,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AllowedOrigins",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
         "setterMethodName" : "setAllowedOrigins",
         "setterModel" : {
@@ -1625,6 +1637,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see MethodName*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1668,6 +1681,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AllowedMethods",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@see MethodName*/",
         "setterMethodName" : "setAllowedMethods",
         "setterModel" : {
@@ -1770,6 +1784,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1813,6 +1828,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AllowedHeaders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).</p>\n@param allowedHeaders Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).*/",
         "setterMethodName" : "setAllowedHeaders",
         "setterModel" : {
@@ -1878,6 +1894,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxAgeSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>\n@param maxAgeSeconds The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.*/",
         "setterMethodName" : "setMaxAgeSeconds",
         "setterModel" : {
@@ -1980,6 +1997,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2023,6 +2041,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExposeHeaders",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.</p>\n@param exposeHeaders One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.*/",
         "setterMethodName" : "setExposeHeaders",
         "setterModel" : {
@@ -2127,6 +2146,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2170,6 +2190,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AllowedHeaders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).</p>\n@param allowedHeaders Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).*/",
           "setterMethodName" : "setAllowedHeaders",
           "setterModel" : {
@@ -2273,6 +2294,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see MethodName*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2316,6 +2338,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AllowedMethods",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@see MethodName*/",
           "setterMethodName" : "setAllowedMethods",
           "setterModel" : {
@@ -2419,6 +2442,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2462,6 +2486,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AllowedOrigins",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
           "setterMethodName" : "setAllowedOrigins",
           "setterModel" : {
@@ -2565,6 +2590,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2608,6 +2634,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExposeHeaders",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.</p>\n@param exposeHeaders One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.*/",
           "setterMethodName" : "setExposeHeaders",
           "setterModel" : {
@@ -2674,6 +2701,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxAgeSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>\n@param maxAgeSeconds The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.*/",
           "setterMethodName" : "setMaxAgeSeconds",
           "setterModel" : {
@@ -2786,6 +2814,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>\n@param containerName The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -2853,6 +2882,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>\n@param containerName The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -2955,6 +2985,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Container",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>\n@param container ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.*/",
         "setterMethodName" : "setContainer",
         "setterModel" : {
@@ -3022,6 +3053,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Container",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>\n@param container ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.*/",
           "setterMethodName" : "setContainer",
           "setterModel" : {
@@ -3134,6 +3166,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container that holds the policy.</p>\n@param containerName The name of the container that holds the policy.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -3201,6 +3234,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container that holds the policy.</p>\n@param containerName The name of the container that holds the policy.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -3350,6 +3384,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container to delete. </p>\n@param containerName The name of the container to delete.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -3417,6 +3452,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container to delete. </p>\n@param containerName The name of the container to delete.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -3566,6 +3602,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container to remove the policy from.</p>\n@param containerName The name of the container to remove the policy from.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -3633,6 +3670,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container to remove the policy from.</p>\n@param containerName The name of the container to remove the policy from.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -3782,6 +3820,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container to query.</p>\n@param containerName The name of the container to query.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -3849,6 +3888,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container to query.</p>\n@param containerName The name of the container to query.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -3951,6 +3991,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Container",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the queried container.</p>\n@param container The name of the queried container.*/",
         "setterMethodName" : "setContainer",
         "setterModel" : {
@@ -4018,6 +4059,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Container",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the queried container.</p>\n@param container The name of the queried container.*/",
           "setterMethodName" : "setContainer",
           "setterModel" : {
@@ -4130,6 +4172,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container. </p>\n@param containerName The name of the container.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -4197,6 +4240,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container. </p>\n@param containerName The name of the container.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -4299,6 +4343,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The contents of the access policy.</p>\n@param policy The contents of the access policy.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -4366,6 +4411,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The contents of the access policy.</p>\n@param policy The contents of the access policy.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -4478,6 +4524,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container that the policy is assigned to.</p>\n@param containerName The name of the container that the policy is assigned to.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -4545,6 +4592,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container that the policy is assigned to.</p>\n@param containerName The name of the container that the policy is assigned to.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -4684,6 +4732,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4727,6 +4776,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CorsPolicy",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param corsPolicy */",
         "setterMethodName" : "setCorsPolicy",
         "setterModel" : {
@@ -4831,6 +4881,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4874,6 +4925,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CorsPolicy",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param corsPolicy */",
           "setterMethodName" : "setCorsPolicy",
           "setterModel" : {
@@ -5060,6 +5112,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>\n@param nextToken Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5125,6 +5178,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>\n@param maxResults Enter the maximum number of containers in the response. Use from 1 to 255 characters.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -5192,6 +5246,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>\n@param maxResults Enter the maximum number of containers in the response. Use from 1 to 255 characters.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -5258,6 +5313,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>\n@param nextToken Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -5397,6 +5453,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5440,6 +5497,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Containers",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The names of the containers.</p>\n@param containers The names of the containers.*/",
         "setterMethodName" : "setContainers",
         "setterModel" : {
@@ -5505,6 +5563,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>\n@param nextToken <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5609,6 +5668,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5652,6 +5712,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Containers",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The names of the containers.</p>\n@param containers The names of the containers.*/",
           "setterMethodName" : "setContainers",
           "setterModel" : {
@@ -5718,6 +5779,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>\n@param nextToken <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -5919,6 +5981,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container.</p>\n@param containerName The name of the container.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -5984,6 +6047,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li> </ul>\n@param policy The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -6051,6 +6115,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container.</p>\n@param containerName The name of the container.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -6117,6 +6182,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li> </ul>\n@param policy The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -6266,6 +6332,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContainerName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the container that you want to assign the CORS policy to.</p>\n@param containerName The name of the container that you want to assign the CORS policy to.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
@@ -6368,6 +6435,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6411,6 +6479,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CorsPolicy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The CORS policy to apply to the container. </p>\n@param corsPolicy The CORS policy to apply to the container.*/",
         "setterMethodName" : "setCorsPolicy",
         "setterModel" : {
@@ -6478,6 +6547,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContainerName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the container that you want to assign the CORS policy to.</p>\n@param containerName The name of the container that you want to assign the CORS policy to.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
@@ -6581,6 +6651,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6624,6 +6695,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CorsPolicy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The CORS policy to apply to the container. </p>\n@param corsPolicy The CORS policy to apply to the container.*/",
           "setterMethodName" : "setCorsPolicy",
           "setterModel" : {

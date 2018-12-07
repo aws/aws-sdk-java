@@ -74,7 +74,8 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -85,7 +86,7 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthCode() != null)
-            sb.append("AuthCode: ").append(getAuthCode());
+            sb.append("AuthCode: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

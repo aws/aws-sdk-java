@@ -262,7 +262,8 @@ public class ShareDirectoryRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -275,7 +276,7 @@ public class ShareDirectoryRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDirectoryId() != null)
             sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getShareNotes() != null)
-            sb.append("ShareNotes: ").append(getShareNotes()).append(",");
+            sb.append("ShareNotes: ").append("***Sensitive Data Redacted***").append(",");
         if (getShareTarget() != null)
             sb.append("ShareTarget: ").append(getShareTarget()).append(",");
         if (getShareMethod() != null)

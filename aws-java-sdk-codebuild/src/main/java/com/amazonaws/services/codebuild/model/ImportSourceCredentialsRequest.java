@@ -268,7 +268,8 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -281,7 +282,7 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getToken() != null)
-            sb.append("Token: ").append(getToken()).append(",");
+            sb.append("Token: ").append("***Sensitive Data Redacted***").append(",");
         if (getServerType() != null)
             sb.append("ServerType: ").append(getServerType()).append(",");
         if (getAuthType() != null)

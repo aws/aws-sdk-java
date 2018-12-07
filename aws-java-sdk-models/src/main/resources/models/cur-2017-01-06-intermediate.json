@@ -432,6 +432,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ReportName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param reportName */",
         "setterMethodName" : "setReportName",
         "setterModel" : {
@@ -499,6 +500,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ReportName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param reportName */",
           "setterMethodName" : "setReportName",
           "setterModel" : {
@@ -601,6 +603,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResponseMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param responseMessage */",
         "setterMethodName" : "setResponseMessage",
         "setterModel" : {
@@ -668,6 +671,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResponseMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param responseMessage */",
           "setterMethodName" : "setResponseMessage",
           "setterModel" : {
@@ -780,6 +784,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param maxResults */",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -845,6 +850,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param nextToken */",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -912,6 +918,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param maxResults */",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -978,6 +985,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param nextToken */",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -1117,6 +1125,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1160,6 +1169,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ReportDefinitions",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param reportDefinitions */",
         "setterMethodName" : "setReportDefinitions",
         "setterModel" : {
@@ -1225,6 +1235,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param nextToken */",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -1292,6 +1303,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param nextToken */",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -1395,6 +1407,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1438,6 +1451,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ReportDefinitions",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param reportDefinitions */",
           "setterMethodName" : "setReportDefinitions",
           "setterModel" : {
@@ -1624,6 +1638,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ReportDefinition",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param reportDefinition */",
         "setterMethodName" : "setReportDefinition",
         "setterModel" : {
@@ -1691,6 +1706,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ReportDefinition",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param reportDefinition */",
           "setterMethodName" : "setReportDefinition",
           "setterModel" : {
@@ -1833,6 +1849,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ReportName",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param reportName */",
         "setterMethodName" : "setReportName",
         "setterModel" : {
@@ -1898,6 +1915,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TimeUnit",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param timeUnit \n@see TimeUnit*/",
         "setterMethodName" : "setTimeUnit",
         "setterModel" : {
@@ -1963,6 +1981,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Format",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param format \n@see ReportFormat*/",
         "setterMethodName" : "setFormat",
         "setterModel" : {
@@ -2028,6 +2047,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Compression",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param compression \n@see CompressionFormat*/",
         "setterMethodName" : "setCompression",
         "setterModel" : {
@@ -2130,6 +2150,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see SchemaElement*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2173,6 +2194,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AdditionalSchemaElements",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param additionalSchemaElements \n@see SchemaElement*/",
         "setterMethodName" : "setAdditionalSchemaElements",
         "setterModel" : {
@@ -2238,6 +2260,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3Bucket",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param s3Bucket */",
         "setterMethodName" : "setS3Bucket",
         "setterModel" : {
@@ -2303,6 +2326,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3Prefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param s3Prefix */",
         "setterMethodName" : "setS3Prefix",
         "setterModel" : {
@@ -2368,6 +2392,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S3Region",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param s3Region \n@see AWSRegion*/",
         "setterMethodName" : "setS3Region",
         "setterModel" : {
@@ -2470,6 +2495,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see AdditionalArtifact*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2513,6 +2539,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AdditionalArtifacts",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param additionalArtifacts \n@see AdditionalArtifact*/",
         "setterMethodName" : "setAdditionalArtifacts",
         "setterModel" : {
@@ -2617,6 +2644,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see AdditionalArtifact*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2660,6 +2688,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AdditionalArtifacts",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param additionalArtifacts \n@see AdditionalArtifact*/",
           "setterMethodName" : "setAdditionalArtifacts",
           "setterModel" : {
@@ -2763,6 +2792,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see SchemaElement*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2806,6 +2836,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AdditionalSchemaElements",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param additionalSchemaElements \n@see SchemaElement*/",
           "setterMethodName" : "setAdditionalSchemaElements",
           "setterModel" : {
@@ -2872,6 +2903,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Compression",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param compression \n@see CompressionFormat*/",
           "setterMethodName" : "setCompression",
           "setterModel" : {
@@ -2938,6 +2970,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Format",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param format \n@see ReportFormat*/",
           "setterMethodName" : "setFormat",
           "setterModel" : {
@@ -3004,6 +3037,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ReportName",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param reportName */",
           "setterMethodName" : "setReportName",
           "setterModel" : {
@@ -3070,6 +3104,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3Bucket",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param s3Bucket */",
           "setterMethodName" : "setS3Bucket",
           "setterModel" : {
@@ -3136,6 +3171,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3Prefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param s3Prefix */",
           "setterMethodName" : "setS3Prefix",
           "setterModel" : {
@@ -3202,6 +3238,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S3Region",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param s3Region \n@see AWSRegion*/",
           "setterMethodName" : "setS3Region",
           "setterModel" : {
@@ -3268,6 +3305,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TimeUnit",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param timeUnit \n@see TimeUnit*/",
           "setterMethodName" : "setTimeUnit",
           "setterModel" : {

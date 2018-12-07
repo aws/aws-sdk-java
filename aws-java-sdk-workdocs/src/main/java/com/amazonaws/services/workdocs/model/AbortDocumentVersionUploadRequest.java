@@ -172,7 +172,8 @@ public class AbortDocumentVersionUploadRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -183,7 +184,7 @@ public class AbortDocumentVersionUploadRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthenticationToken() != null)
-            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
+            sb.append("AuthenticationToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getDocumentId() != null)
             sb.append("DocumentId: ").append(getDocumentId()).append(",");
         if (getVersionId() != null)

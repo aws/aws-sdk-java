@@ -171,8 +171,8 @@ public interface AmazonIdentityManagement {
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -191,14 +191,14 @@ public interface AmazonIdentityManagement {
      * this limit cannot be increased. You can remove the existing role and then add a different role to an instance
      * profile. You must then wait for the change to appear across all of AWS because of <a
      * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual consistency</a>. To force the change, you must
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">
      * disassociate the instance profile</a> and then <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate the
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate the
      * instance profile</a>, or you can stop your instance and then restart it.
      * </p>
      * <note>
      * <p>
-     * The caller of this API must be granted the <code>PassRole</code> permission on the IAM role by a permission
+     * The caller of this API must be granted the <code>PassRole</code> permission on the IAM role by a permissions
      * policy.
      * </p>
      * </note>
@@ -212,8 +212,8 @@ public interface AmazonIdentityManagement {
      * @param addRoleToInstanceProfileRequest
      * @return Result of the AddRoleToInstanceProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
@@ -239,8 +239,8 @@ public interface AmazonIdentityManagement {
      * @param addUserToGroupRequest
      * @return Result of the AddUserToGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -269,8 +269,8 @@ public interface AmazonIdentityManagement {
      * @param attachGroupPolicyRequest
      * @return Result of the AttachGroupPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -308,8 +308,8 @@ public interface AmazonIdentityManagement {
      * @param attachRolePolicyRequest
      * @return Result of the AttachRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -347,8 +347,8 @@ public interface AmazonIdentityManagement {
      * @param attachUserPolicyRequest
      * @return Result of the AttachUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -379,8 +379,8 @@ public interface AmazonIdentityManagement {
      * @param changePasswordRequest
      * @return Result of the ChangePassword operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidUserTypeException
      *         The request was rejected because the type of user for the transaction was incorrect.
      * @throws LimitExceededException
@@ -408,8 +408,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
-     * manage AWS account root user credentials. This is true even if the AWS account has no associated users.
+     * the request. This operation works for access keys under the AWS account. Consequently, you can use this operation
+     * to manage AWS account root user credentials. This is true even if the AWS account has no associated users.
      * </p>
      * <p>
      * For information about limits on the number of keys you can create, see <a
@@ -427,8 +427,8 @@ public interface AmazonIdentityManagement {
      * @param createAccessKeyRequest
      * @return Result of the CreateAccessKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -487,8 +487,8 @@ public interface AmazonIdentityManagement {
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateGroup
@@ -536,8 +536,8 @@ public interface AmazonIdentityManagement {
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws PasswordPolicyViolationException
      *         The request was rejected because the provided password did not meet the requirements imposed by the
      *         account password policy.
@@ -664,8 +664,8 @@ public interface AmazonIdentityManagement {
      * @param createPolicyVersionRequest
      * @return Result of the CreatePolicyVersion operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -783,8 +783,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateServiceLinkedRole
@@ -819,8 +819,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceNotSupportedException
      *         The specified service does not support service-specific credentials.
      * @sample AmazonIdentityManagement.CreateServiceSpecificCredential
@@ -847,8 +847,8 @@ public interface AmazonIdentityManagement {
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ConcurrentModificationException
@@ -904,8 +904,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * For more information about creating and working with virtual MFA devices, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual MFA Device</a> in
-     * the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Enabling a Virtual Multi-factor
+     * Authentication (MFA) Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deactivateMFADeviceRequest
@@ -915,8 +915,8 @@ public interface AmazonIdentityManagement {
      *         name that was deleted and then recreated. The error indicates that the request is likely to succeed if
      *         you try again after waiting several minutes. The error message describes the entity.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -934,15 +934,15 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
-     * manage AWS account root user credentials even if the AWS account has no associated users.
+     * the request. This operation works for access keys under the AWS account. Consequently, you can use this operation
+     * to manage AWS account root user credentials even if the AWS account has no associated users.
      * </p>
      * 
      * @param deleteAccessKeyRequest
      * @return Result of the DeleteAccessKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -964,8 +964,8 @@ public interface AmazonIdentityManagement {
      * @param deleteAccountAliasRequest
      * @return Result of the DeleteAccountAlias operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -985,8 +985,8 @@ public interface AmazonIdentityManagement {
      * @param deleteAccountPasswordPolicyRequest
      * @return Result of the DeleteAccountPasswordPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1013,8 +1013,8 @@ public interface AmazonIdentityManagement {
      * @param deleteGroupRequest
      * @return Result of the DeleteGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -1043,8 +1043,8 @@ public interface AmazonIdentityManagement {
      * @param deleteGroupPolicyRequest
      * @return Result of the DeleteGroupPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1075,8 +1075,8 @@ public interface AmazonIdentityManagement {
      * @param deleteInstanceProfileRequest
      * @return Result of the DeleteInstanceProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -1099,7 +1099,7 @@ public interface AmazonIdentityManagement {
      * <important>
      * <p>
      * Deleting a user's password does not prevent a user from accessing AWS through the command line interface or the
-     * API. To prevent all user access you must also either make any access keys inactive or delete them. For more
+     * API. To prevent all user access, you must also either make any access keys inactive or delete them. For more
      * information about making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
      * </p>
      * </important>
@@ -1111,8 +1111,8 @@ public interface AmazonIdentityManagement {
      *         name that was deleted and then recreated. The error indicates that the request is likely to succeed if
      *         you try again after waiting several minutes. The error message describes the entity.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1142,8 +1142,8 @@ public interface AmazonIdentityManagement {
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteOpenIDConnectProvider
@@ -1158,7 +1158,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * Before you can delete a managed policy, you must first detach the policy from all users, groups, and roles that
-     * it is attached to. In addition you must delete all the policy's versions. The following steps describe the
+     * it is attached to. In addition, you must delete all the policy's versions. The following steps describe the
      * process for deleting a managed policy:
      * </p>
      * <ul>
@@ -1191,8 +1191,8 @@ public interface AmazonIdentityManagement {
      * @param deletePolicyRequest
      * @return Result of the DeletePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1227,8 +1227,8 @@ public interface AmazonIdentityManagement {
      * @param deletePolicyVersionRequest
      * @return Result of the DeletePolicyVersion operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1261,8 +1261,8 @@ public interface AmazonIdentityManagement {
      * @param deleteRoleRequest
      * @return Result of the DeleteRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -1298,8 +1298,8 @@ public interface AmazonIdentityManagement {
      * @param deleteRolePermissionsBoundaryRequest
      * @return Result of the DeleteRolePermissionsBoundary operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -1326,8 +1326,8 @@ public interface AmazonIdentityManagement {
      * @param deleteRolePolicyRequest
      * @return Result of the DeleteRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1367,8 +1367,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteSAMLProvider
@@ -1391,8 +1391,8 @@ public interface AmazonIdentityManagement {
      * @param deleteSSHPublicKeyRequest
      * @return Result of the DeleteSSHPublicKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.DeleteSSHPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -1424,8 +1424,8 @@ public interface AmazonIdentityManagement {
      * @param deleteServerCertificateRequest
      * @return Result of the DeleteServerCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -1465,8 +1465,8 @@ public interface AmazonIdentityManagement {
      * @param deleteServiceLinkedRoleRequest
      * @return Result of the DeleteServiceLinkedRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1486,8 +1486,8 @@ public interface AmazonIdentityManagement {
      * @param deleteServiceSpecificCredentialRequest
      * @return Result of the DeleteServiceSpecificCredential operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.DeleteServiceSpecificCredential
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential"
      *      target="_top">AWS API Documentation</a>
@@ -1500,15 +1500,15 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
-     * manage AWS account root user credentials even if the AWS account has no associated IAM users.
+     * the request. This operation works for access keys under the AWS account. Consequently, you can use this operation
+     * to manage AWS account root user credentials even if the AWS account has no associated IAM users.
      * </p>
      * 
      * @param deleteSigningCertificateRequest
      * @return Result of the DeleteSigningCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1523,7 +1523,7 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Deletes the specified IAM user. The user must not belong to any groups or have any access keys, signing
-     * certificates, or attached policies.
+     * certificates, MFA devices enabled for AWS, or attached policies.
      * </p>
      * 
      * @param deleteUserRequest
@@ -1532,8 +1532,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -1562,8 +1562,8 @@ public interface AmazonIdentityManagement {
      * @param deleteUserPermissionsBoundaryRequest
      * @return Result of the DeleteUserPermissionsBoundary operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteUserPermissionsBoundary
@@ -1586,8 +1586,8 @@ public interface AmazonIdentityManagement {
      * @param deleteUserPolicyRequest
      * @return Result of the DeleteUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1613,8 +1613,8 @@ public interface AmazonIdentityManagement {
      * @param deleteVirtualMFADeviceRequest
      * @return Result of the DeleteVirtualMFADevice operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -1643,8 +1643,8 @@ public interface AmazonIdentityManagement {
      * @param detachGroupPolicyRequest
      * @return Result of the DetachGroupPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1672,8 +1672,8 @@ public interface AmazonIdentityManagement {
      * @param detachRolePolicyRequest
      * @return Result of the DetachRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1705,8 +1705,8 @@ public interface AmazonIdentityManagement {
      * @param detachUserPolicyRequest
      * @return Result of the DetachUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1741,8 +1741,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.EnableMFADevice
@@ -1780,6 +1780,84 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
+     * Generates a request for a report that includes details about when an IAM resource (user, group, role, or policy)
+     * was last used in an attempt to access AWS services. Recent activity usually appears within four hours. IAM
+     * reports activity for the last 365 days, or less if your region began supporting this feature within the last
+     * year. For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     * >Regions Where Data Is Tracked</a>.
+     * </p>
+     * <important>
+     * <p>
+     * The service last accessed data includes all attempts to access an AWS API, not just the successful ones. This
+     * includes all attempts that were made using the AWS Management Console, the AWS API through any of the SDKs, or
+     * any of the command line tools. An unexpected entry in the service last accessed data does not mean that your
+     * account has been compromised, because the request might have been denied. Refer to your CloudTrail logs as the
+     * authoritative source for information about all API calls and whether they were successful or denied access. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging IAM Events with
+     * CloudTrail</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * The <code>GenerateServiceLastAccessedDetails</code> operation returns a <code>JobId</code>. Use this parameter in
+     * the following operations to retrieve the following details from your report:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>GetServiceLastAccessedDetails</a> – Use this operation for users, groups, roles, or policies to list every AWS
+     * service that the resource could access using permissions policies. For each service, the response includes
+     * information about the most recent access attempt.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GetServiceLastAccessedDetailsWithEntities</a> – Use this operation for groups and policies to list information
+     * about the associated entities (users or roles) that attempted to access a specific AWS service.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To check the status of the <code>GenerateServiceLastAccessedDetails</code> request, use the <code>JobId</code>
+     * parameter in the same operations and test the <code>JobStatus</code> response parameter.
+     * </p>
+     * <p>
+     * For additional information about the permissions policies that allow an identity (user, group, or role) to access
+     * specific services, use the <a>ListPoliciesGrantingServiceAccess</a> operation.
+     * </p>
+     * <note>
+     * <p>
+     * Service last accessed data does not use other policy types when determining whether a resource could access a
+     * service. These other policy types include resource-based policies, access control lists, AWS Organizations
+     * policies, IAM permissions boundaries, and AWS STS assume role policies. It only applies permissions policy logic.
+     * For more about the evaluation of policy types, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about service last accessed data, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing Policy Scope
+     * by Viewing User Activity</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param generateServiceLastAccessedDetailsRequest
+     * @return Result of the GenerateServiceLastAccessedDetails operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonIdentityManagement.GenerateServiceLastAccessedDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateServiceLastAccessedDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GenerateServiceLastAccessedDetailsResult generateServiceLastAccessedDetails(
+            GenerateServiceLastAccessedDetailsRequest generateServiceLastAccessedDetailsRequest);
+
+    /**
+     * <p>
      * Retrieves information about when the specified access key was last used. The information includes the date and
      * time of last use, along with the AWS service and region that were specified in the last request made with that
      * key.
@@ -1788,8 +1866,8 @@ public interface AmazonIdentityManagement {
      * @param getAccessKeyLastUsedRequest
      * @return Result of the GetAccessKeyLastUsed operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.GetAccessKeyLastUsed
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed" target="_top">AWS API
      *      Documentation</a>
@@ -1842,8 +1920,8 @@ public interface AmazonIdentityManagement {
      * @param getAccountPasswordPolicyRequest
      * @return Result of the GetAccountPasswordPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetAccountPasswordPolicy
@@ -1935,8 +2013,8 @@ public interface AmazonIdentityManagement {
      * @param getContextKeysForPrincipalPolicyRequest
      * @return Result of the GetContextKeysForPrincipalPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonIdentityManagement.GetContextKeysForPrincipalPolicy
@@ -1988,8 +2066,8 @@ public interface AmazonIdentityManagement {
      * @param getGroupRequest
      * @return Result of the GetGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetGroup
@@ -2024,8 +2102,8 @@ public interface AmazonIdentityManagement {
      * @param getGroupPolicyRequest
      * @return Result of the GetGroupPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetGroupPolicy
@@ -2045,8 +2123,8 @@ public interface AmazonIdentityManagement {
      * @param getInstanceProfileRequest
      * @return Result of the GetInstanceProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetInstanceProfile
@@ -2064,8 +2142,8 @@ public interface AmazonIdentityManagement {
      * @param getLoginProfileRequest
      * @return Result of the GetLoginProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetLoginProfile
@@ -2084,8 +2162,8 @@ public interface AmazonIdentityManagement {
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetOpenIDConnectProvider
@@ -2116,8 +2194,8 @@ public interface AmazonIdentityManagement {
      * @param getPolicyRequest
      * @return Result of the GetPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2162,8 +2240,8 @@ public interface AmazonIdentityManagement {
      * @param getPolicyVersionRequest
      * @return Result of the GetPolicyVersion operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2192,8 +2270,8 @@ public interface AmazonIdentityManagement {
      * @param getRoleRequest
      * @return Result of the GetRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetRole
@@ -2233,8 +2311,8 @@ public interface AmazonIdentityManagement {
      * @param getRolePolicyRequest
      * @return Result of the GetRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetRolePolicy
@@ -2258,8 +2336,8 @@ public interface AmazonIdentityManagement {
      * @param getSAMLProviderRequest
      * @return Result of the GetSAMLProvider operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2284,8 +2362,8 @@ public interface AmazonIdentityManagement {
      * @param getSSHPublicKeyRequest
      * @return Result of the GetSSHPublicKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws UnrecognizedPublicKeyEncodingException
      *         The request was rejected because the public key encoding format is unsupported or unrecognized.
      * @sample AmazonIdentityManagement.GetSSHPublicKey
@@ -2308,8 +2386,8 @@ public interface AmazonIdentityManagement {
      * @param getServerCertificateRequest
      * @return Result of the GetServerCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetServerCertificate
@@ -2317,6 +2395,119 @@ public interface AmazonIdentityManagement {
      *      Documentation</a>
      */
     GetServerCertificateResult getServerCertificate(GetServerCertificateRequest getServerCertificateRequest);
+
+    /**
+     * <p>
+     * After you generate a user, group, role, or policy report using the
+     * <code>GenerateServiceLastAccessedDetails</code> operation, you can use the <code>JobId</code> parameter in
+     * <code>GetServiceLastAccessedDetails</code>. This operation retrieves the status of your report job and a list of
+     * AWS services that the resource (user, group, role, or managed policy) can access.
+     * </p>
+     * <note>
+     * <p>
+     * Service last accessed data does not use other policy types when determining whether a resource could access a
+     * service. These other policy types include resource-based policies, access control lists, AWS Organizations
+     * policies, IAM permissions boundaries, and AWS STS assume role policies. It only applies permissions policy logic.
+     * For more about the evaluation of policy types, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * For each service that the resource could access using permissions policies, the operation returns details about
+     * the most recent access attempt. If there was no attempt, the service is listed without details about the most
+     * recent attempt to access the service. If the operation fails, the <code>GetServiceLastAccessedDetails</code>
+     * operation returns the reason that it failed.
+     * </p>
+     * <p>
+     * The <code>GetServiceLastAccessedDetails</code> operation returns a list of services that includes the number of
+     * entities that have attempted to access the service and the date and time of the last attempt. It also returns the
+     * ARN of the following entity, depending on the resource ARN that you used to generate the report:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>User</b> – Returns the user ARN that you used to generate the report
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Group</b> – Returns the ARN of the group member (user) that last attempted to access the service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Role</b> – Returns the role ARN that you used to generate the report
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Policy</b> – Returns the ARN of the user or role that last used the policy to attempt to access the service
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * By default, the list is sorted by service namespace.
+     * </p>
+     * 
+     * @param getServiceLastAccessedDetailsRequest
+     * @return Result of the GetServiceLastAccessedDetails operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonIdentityManagement.GetServiceLastAccessedDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetServiceLastAccessedDetailsResult getServiceLastAccessedDetails(GetServiceLastAccessedDetailsRequest getServiceLastAccessedDetailsRequest);
+
+    /**
+     * <p>
+     * After you generate a group or policy report using the <code>GenerateServiceLastAccessedDetails</code> operation,
+     * you can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetailsWithEntities</code>. This
+     * operation retrieves the status of your report job and a list of entities that could have used group or policy
+     * permissions to access the specified service.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Group</b> – For a group report, this operation returns a list of users in the group that could have used the
+     * group’s policies in an attempt to access the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Policy</b> – For a policy report, this operation returns a list of entities (users or roles) that could have
+     * used the policy in an attempt to access the service.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also use this operation for user or role reports to retrieve details about those entities.
+     * </p>
+     * <p>
+     * If the operation fails, the <code>GetServiceLastAccessedDetailsWithEntities</code> operation returns the reason
+     * that it failed.
+     * </p>
+     * <p>
+     * By default, the list of associated entities is sorted by date, with the most recent access listed first.
+     * </p>
+     * 
+     * @param getServiceLastAccessedDetailsWithEntitiesRequest
+     * @return Result of the GetServiceLastAccessedDetailsWithEntities operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonIdentityManagement.GetServiceLastAccessedDetailsWithEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetailsWithEntities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetServiceLastAccessedDetailsWithEntitiesResult getServiceLastAccessedDetailsWithEntities(
+            GetServiceLastAccessedDetailsWithEntitiesRequest getServiceLastAccessedDetailsWithEntitiesRequest);
 
     /**
      * <p>
@@ -2329,8 +2520,8 @@ public interface AmazonIdentityManagement {
      * @param getServiceLinkedRoleDeletionStatusRequest
      * @return Result of the GetServiceLinkedRoleDeletionStatus operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2354,8 +2545,8 @@ public interface AmazonIdentityManagement {
      * @param getUserRequest
      * @return Result of the GetUser operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetUser
@@ -2397,8 +2588,8 @@ public interface AmazonIdentityManagement {
      * @param getUserPolicyRequest
      * @return Result of the GetUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetUserPolicy
@@ -2409,7 +2600,7 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Returns information about the access key IDs associated with the specified IAM user. If there are none, the
+     * Returns information about the access key IDs associated with the specified IAM user. If there is none, the
      * operation returns an empty list.
      * </p>
      * <p>
@@ -2418,8 +2609,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
-     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
+     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * <note>
@@ -2432,8 +2623,8 @@ public interface AmazonIdentityManagement {
      * @param listAccessKeysRequest
      * @return Result of the ListAccessKeys operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListAccessKeys
@@ -2493,8 +2684,8 @@ public interface AmazonIdentityManagement {
      * @param listAttachedGroupPoliciesRequest
      * @return Result of the ListAttachedGroupPolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2525,8 +2716,8 @@ public interface AmazonIdentityManagement {
      * @param listAttachedRolePoliciesRequest
      * @return Result of the ListAttachedRolePolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2557,8 +2748,8 @@ public interface AmazonIdentityManagement {
      * @param listAttachedUserPoliciesRequest
      * @return Result of the ListAttachedUserPolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2585,8 +2776,8 @@ public interface AmazonIdentityManagement {
      * @param listEntitiesForPolicyRequest
      * @return Result of the ListEntitiesForPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2615,8 +2806,8 @@ public interface AmazonIdentityManagement {
      * @param listGroupPoliciesRequest
      * @return Result of the ListGroupPolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListGroupPolicies
@@ -2661,8 +2852,8 @@ public interface AmazonIdentityManagement {
      * @param listGroupsForUserRequest
      * @return Result of the ListGroupsForUser operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListGroupsForUser
@@ -2711,8 +2902,8 @@ public interface AmazonIdentityManagement {
      * @param listInstanceProfilesForRoleRequest
      * @return Result of the ListInstanceProfilesForRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListInstanceProfilesForRole
@@ -2734,8 +2925,8 @@ public interface AmazonIdentityManagement {
      * @param listMFADevicesRequest
      * @return Result of the ListMFADevices operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListMFADevices
@@ -2812,6 +3003,70 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
+     * Retrieves a list of policies that the IAM identity (user, group, or role) can use to access each specified
+     * service.
+     * </p>
+     * <note>
+     * <p>
+     * This operation does not use other policy types when determining whether a resource could access a service. These
+     * other policy types include resource-based policies, access control lists, AWS Organizations policies, IAM
+     * permissions boundaries, and AWS STS assume role policies. It only applies permissions policy logic. For more
+     * about the evaluation of policy types, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The list of policies returned by the operation depends on the ARN of the identity that you provide.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>User</b> – The list of policies includes the managed and inline policies that are attached to the user
+     * directly. The list also includes any additional managed and inline policies that are attached to the group to
+     * which the user belongs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Group</b> – The list of policies includes only the managed and inline policies that are attached to the group
+     * directly. Policies that are attached to the group’s user are not included.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Role</b> – The list of policies includes only the managed and inline policies that are attached to the role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For each managed policy, this operation returns the ARN and policy name. For each inline policy, it returns the
+     * policy name and the entity to which it is attached. Inline policies do not have an ARN. For more information
+     * about these policy types, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * and Inline Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * Policies that are attached to users and roles as permissions boundaries are not returned. To view which managed
+     * policy is currently used to set the permissions boundary for a user or role, use the <a>GetUser</a> or
+     * <a>GetRole</a> operations.
+     * </p>
+     * 
+     * @param listPoliciesGrantingServiceAccessRequest
+     * @return Result of the ListPoliciesGrantingServiceAccess operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonIdentityManagement.ListPoliciesGrantingServiceAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesGrantingServiceAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPoliciesGrantingServiceAccessResult listPoliciesGrantingServiceAccess(ListPoliciesGrantingServiceAccessRequest listPoliciesGrantingServiceAccessRequest);
+
+    /**
+     * <p>
      * Lists information about the versions of the specified managed policy, including the version that is currently set
      * as the policy's default version.
      * </p>
@@ -2824,8 +3079,8 @@ public interface AmazonIdentityManagement {
      * @param listPolicyVersionsRequest
      * @return Result of the ListPolicyVersions operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -2854,8 +3109,8 @@ public interface AmazonIdentityManagement {
      * @param listRolePoliciesRequest
      * @return Result of the ListRolePolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListRolePolicies
@@ -2874,8 +3129,8 @@ public interface AmazonIdentityManagement {
      * @param listRoleTagsRequest
      * @return Result of the ListRoleTags operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListRoleTags
@@ -2941,7 +3196,7 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Returns information about the SSH public keys associated with the specified IAM user. If there are none, the
+     * Returns information about the SSH public keys associated with the specified IAM user. If there none exists, the
      * operation returns an empty list.
      * </p>
      * <p>
@@ -2958,8 +3213,8 @@ public interface AmazonIdentityManagement {
      * @param listSSHPublicKeysRequest
      * @return Result of the ListSSHPublicKeys operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.ListSSHPublicKeys
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys" target="_top">AWS API
      *      Documentation</a>
@@ -3007,8 +3262,8 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Returns information about the service-specific credentials associated with the specified IAM user. If there are
-     * none, the operation returns an empty list. The service-specific credentials returned by this operation are used
+     * Returns information about the service-specific credentials associated with the specified IAM user. If none
+     * exists, the operation returns an empty list. The service-specific credentials returned by this operation are used
      * only for authenticating the IAM user to a specific service. For more information about using service-specific
      * credentials to authenticate to an AWS service, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set Up service-specific
@@ -3018,8 +3273,8 @@ public interface AmazonIdentityManagement {
      * @param listServiceSpecificCredentialsRequest
      * @return Result of the ListServiceSpecificCredentials operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceNotSupportedException
      *         The specified service does not support service-specific credentials.
      * @sample AmazonIdentityManagement.ListServiceSpecificCredentials
@@ -3030,8 +3285,8 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Returns information about the signing certificates associated with the specified IAM user. If there are none, the
-     * operation returns an empty list.
+     * Returns information about the signing certificates associated with the specified IAM user. If there none exists,
+     * the operation returns an empty list.
      * </p>
      * <p>
      * Although each user is limited to a small number of signing certificates, you can still paginate the results using
@@ -3039,16 +3294,16 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request for this API. Because this operation works for access keys under the AWS
-     * account, you can use this operation to manage AWS account root user credentials even if the AWS account has no
-     * associated users.
+     * access key ID used to sign the request for this API. This operation works for access keys under the AWS account.
+     * Consequently, you can use this operation to manage AWS account root user credentials even if the AWS account has
+     * no associated users.
      * </p>
      * 
      * @param listSigningCertificatesRequest
      * @return Result of the ListSigningCertificates operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListSigningCertificates
@@ -3082,8 +3337,8 @@ public interface AmazonIdentityManagement {
      * @param listUserPoliciesRequest
      * @return Result of the ListUserPolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListUserPolicies
@@ -3102,8 +3357,8 @@ public interface AmazonIdentityManagement {
      * @param listUserTagsRequest
      * @return Result of the ListUserTags operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListUserTags
@@ -3196,8 +3451,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutGroupPolicy
@@ -3220,7 +3475,7 @@ public interface AmazonIdentityManagement {
      * <p>
      * Policies used as permissions boundaries do not provide permissions. You must also attach a permissions policy to
      * the role. To learn how the effective permissions for a role are evaluated, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
      * Evaluation Logic</a> in the IAM User Guide.
      * </p>
      * </important>
@@ -3228,8 +3483,8 @@ public interface AmazonIdentityManagement {
      * @param putRolePermissionsBoundaryRequest
      * @return Result of the PutRolePermissionsBoundary operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws UnmodifiableEntityException
@@ -3287,8 +3542,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -3312,7 +3567,7 @@ public interface AmazonIdentityManagement {
      * <p>
      * Policies that are used as permissions boundaries do not provide permissions. You must also attach a permissions
      * policy to the user. To learn how the effective permissions for a user are evaluated, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
      * Evaluation Logic</a> in the IAM User Guide.
      * </p>
      * </important>
@@ -3320,8 +3575,8 @@ public interface AmazonIdentityManagement {
      * @param putUserPermissionsBoundaryRequest
      * @return Result of the PutUserPermissionsBoundary operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws PolicyNotAttachableException
@@ -3368,8 +3623,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutUserPolicy
@@ -3393,8 +3648,8 @@ public interface AmazonIdentityManagement {
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.RemoveClientIDFromOpenIDConnectProvider
@@ -3425,8 +3680,8 @@ public interface AmazonIdentityManagement {
      * @param removeRoleFromInstanceProfileRequest
      * @return Result of the RemoveRoleFromInstanceProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3450,8 +3705,8 @@ public interface AmazonIdentityManagement {
      * @param removeUserFromGroupRequest
      * @return Result of the RemoveUserFromGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3473,8 +3728,8 @@ public interface AmazonIdentityManagement {
      * @param resetServiceSpecificCredentialRequest
      * @return Result of the ResetServiceSpecificCredential operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.ResetServiceSpecificCredential
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential"
      *      target="_top">AWS API Documentation</a>
@@ -3497,8 +3752,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because the authentication code was not recognized. The error message describes
      *         the specific error.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3527,8 +3782,8 @@ public interface AmazonIdentityManagement {
      * @param setDefaultPolicyVersionRequest
      * @return Result of the SetDefaultPolicyVersion operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
@@ -3616,8 +3871,8 @@ public interface AmazonIdentityManagement {
      * @param simulatePrincipalPolicyRequest
      * @return Result of the SimulatePrincipalPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws PolicyEvaluationException
@@ -3687,8 +3942,8 @@ public interface AmazonIdentityManagement {
      * @param tagRoleRequest
      * @return Result of the TagRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3764,8 +4019,8 @@ public interface AmazonIdentityManagement {
      * @param tagUserRequest
      * @return Result of the TagUser operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3792,8 +4047,8 @@ public interface AmazonIdentityManagement {
      * @param untagRoleRequest
      * @return Result of the UntagRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ConcurrentModificationException
      *         The request was rejected because multiple requests to change this object were submitted simultaneously.
      *         Wait a few minutes and submit your request again.
@@ -3815,8 +4070,8 @@ public interface AmazonIdentityManagement {
      * @param untagUserRequest
      * @return Result of the UntagUser operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ConcurrentModificationException
      *         The request was rejected because multiple requests to change this object were submitted simultaneously.
      *         Wait a few minutes and submit your request again.
@@ -3835,8 +4090,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
-     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
+     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * <p>
@@ -3848,8 +4103,8 @@ public interface AmazonIdentityManagement {
      * @param updateAccessKeyRequest
      * @return Result of the UpdateAccessKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3887,8 +4142,8 @@ public interface AmazonIdentityManagement {
      * @param updateAccountPasswordPolicyRequest
      * @return Result of the UpdateAccountPasswordPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -3914,8 +4169,8 @@ public interface AmazonIdentityManagement {
      * @param updateAssumeRolePolicyRequest
      * @return Result of the UpdateAssumeRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -3958,8 +4213,8 @@ public interface AmazonIdentityManagement {
      * @param updateGroupRequest
      * @return Result of the UpdateGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
@@ -3990,8 +4245,8 @@ public interface AmazonIdentityManagement {
      *         name that was deleted and then recreated. The error indicates that the request is likely to succeed if
      *         you try again after waiting several minutes. The error message describes the entity.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws PasswordPolicyViolationException
      *         The request was rejected because the provided password did not meet the requirements imposed by the
      *         account password policy.
@@ -4022,8 +4277,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <note>
      * <p>
-     * Because trust for the OIDC provider is derived from the provider's certificate and is validated by the
-     * thumbprint, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> operation to
+     * Trust for the OIDC provider is derived from the provider's certificate and is validated by the thumbprint.
+     * Therefore, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> operation to
      * highly privileged users.
      * </p>
      * </note>
@@ -4033,8 +4288,8 @@ public interface AmazonIdentityManagement {
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateOpenIDConnectProviderThumbprint
@@ -4056,8 +4311,8 @@ public interface AmazonIdentityManagement {
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
      *         service-linked role. You must request the change through that service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateRole
@@ -4068,7 +4323,7 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Use instead.
+     * Use <a>UpdateRole</a> instead.
      * </p>
      * <p>
      * Modifies only the description of a role. This operation performs the same function as the
@@ -4078,8 +4333,8 @@ public interface AmazonIdentityManagement {
      * @param updateRoleDescriptionRequest
      * @return Result of the UpdateRoleDescription operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -4106,8 +4361,8 @@ public interface AmazonIdentityManagement {
      * @param updateSAMLProviderRequest
      * @return Result of the UpdateSAMLProvider operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
@@ -4137,8 +4392,8 @@ public interface AmazonIdentityManagement {
      * @param updateSSHPublicKeyRequest
      * @return Result of the UpdateSSHPublicKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.UpdateSSHPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -4177,8 +4432,8 @@ public interface AmazonIdentityManagement {
      * @param updateServerCertificateRequest
      * @return Result of the UpdateServerCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
@@ -4202,8 +4457,8 @@ public interface AmazonIdentityManagement {
      * @param updateServiceSpecificCredentialRequest
      * @return Result of the UpdateServiceSpecificCredential operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.UpdateServiceSpecificCredential
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential"
      *      target="_top">AWS API Documentation</a>
@@ -4217,16 +4472,16 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
-     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
+     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * 
      * @param updateSigningCertificateRequest
      * @return Result of the UpdateSigningCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -4261,8 +4516,8 @@ public interface AmazonIdentityManagement {
      * @param updateUserRequest
      * @return Result of the UpdateUser operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -4301,8 +4556,8 @@ public interface AmazonIdentityManagement {
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidPublicKeyException
      *         The request was rejected because the public key is malformed or otherwise invalid.
      * @throws DuplicateSSHPublicKeyException
@@ -4321,9 +4576,9 @@ public interface AmazonIdentityManagement {
      * certificate, a private key, and an optional certificate chain, which should all be PEM-encoded.
      * </p>
      * <p>
-     * We recommend that you use <a href="https://aws.amazon.com/certificate-manager/">AWS Certificate Manager</a> to
-     * provision, manage, and deploy your server certificates. With ACM you can request a certificate, deploy it to AWS
-     * resources, and let ACM handle certificate renewals for you. Certificates provided by ACM are free. For more
+     * We recommend that you use <a href="http://docs.aws.amazon.com/certificate-manager/">AWS Certificate Manager</a>
+     * to provision, manage, and deploy your server certificates. With ACM you can request a certificate, deploy it to
+     * AWS resources, and let ACM handle certificate renewals for you. Certificates provided by ACM are free. For more
      * information about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
      * Manager User Guide</a>.
      * </p>
@@ -4378,8 +4633,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the IAM user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
-     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
+     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * <note>
@@ -4408,8 +4663,8 @@ public interface AmazonIdentityManagement {
      * @throws DuplicateCertificateException
      *         The request was rejected because the same certificate is associated with an IAM user in the account.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UploadSigningCertificate

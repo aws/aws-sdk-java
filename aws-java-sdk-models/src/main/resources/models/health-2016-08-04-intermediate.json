@@ -372,6 +372,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>\n@param entityArn The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>*/",
         "setterMethodName" : "setEntityArn",
         "setterModel" : {
@@ -437,6 +438,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>*/",
         "setterMethodName" : "setEventArn",
         "setterModel" : {
@@ -502,6 +504,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the affected entity.</p>\n@param entityValue The ID of the affected entity.*/",
         "setterMethodName" : "setEntityValue",
         "setterModel" : {
@@ -567,6 +570,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntityUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param entityUrl */",
         "setterMethodName" : "setEntityUrl",
         "setterModel" : {
@@ -632,6 +636,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AwsAccountId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The 12-digit AWS account number that contains the affected entity.</p>\n@param awsAccountId The 12-digit AWS account number that contains the affected entity.*/",
         "setterMethodName" : "setAwsAccountId",
         "setterModel" : {
@@ -697,6 +702,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The most recent time that the entity was updated.</p>\n@param lastUpdatedTime The most recent time that the entity was updated.*/",
         "setterMethodName" : "setLastUpdatedTime",
         "setterModel" : {
@@ -762,6 +768,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>\n@param statusCode The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.\n@see EntityStatusCode*/",
         "setterMethodName" : "setStatusCode",
         "setterModel" : {
@@ -870,6 +877,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -907,6 +915,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n@param tags A map of entity tags attached to the affected entity.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -974,6 +983,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AwsAccountId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The 12-digit AWS account number that contains the affected entity.</p>\n@param awsAccountId The 12-digit AWS account number that contains the affected entity.*/",
           "setterMethodName" : "setAwsAccountId",
           "setterModel" : {
@@ -1040,6 +1050,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>\n@param entityArn The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>*/",
           "setterMethodName" : "setEntityArn",
           "setterModel" : {
@@ -1106,6 +1117,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param entityUrl */",
           "setterMethodName" : "setEntityUrl",
           "setterModel" : {
@@ -1172,6 +1184,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntityValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the affected entity.</p>\n@param entityValue The ID of the affected entity.*/",
           "setterMethodName" : "setEntityValue",
           "setterModel" : {
@@ -1238,6 +1251,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>*/",
           "setterMethodName" : "setEventArn",
           "setterModel" : {
@@ -1304,6 +1318,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The most recent time that the entity was updated.</p>\n@param lastUpdatedTime The most recent time that the entity was updated.*/",
           "setterMethodName" : "setLastUpdatedTime",
           "setterModel" : {
@@ -1370,6 +1385,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>\n@param statusCode The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.\n@see EntityStatusCode*/",
           "setterMethodName" : "setStatusCode",
           "setterModel" : {
@@ -1479,6 +1495,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -1516,6 +1533,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n@param tags A map of entity tags attached to the affected entity.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -1621,6 +1639,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "From",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The starting date and time of a time range.</p>\n@param from The starting date and time of a time range.*/",
         "setterMethodName" : "setFrom",
         "setterModel" : {
@@ -1686,6 +1705,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "To",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ending date and time of a time range.</p>\n@param to The ending date and time of a time range.*/",
         "setterMethodName" : "setTo",
         "setterModel" : {
@@ -1753,6 +1773,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "From",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The starting date and time of a time range.</p>\n@param from The starting date and time of a time range.*/",
           "setterMethodName" : "setFrom",
           "setterModel" : {
@@ -1819,6 +1840,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "To",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ending date and time of a time range.</p>\n@param to The ending date and time of a time range.*/",
           "setterMethodName" : "setTo",
           "setterModel" : {
@@ -1931,6 +1953,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Filter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Values to narrow the results returned. At least one event ARN is required. </p>\n@param filter Values to narrow the results returned. At least one event ARN is required.*/",
         "setterMethodName" : "setFilter",
         "setterModel" : {
@@ -1996,6 +2019,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Locale",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "setterMethodName" : "setLocale",
         "setterModel" : {
@@ -2061,6 +2085,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -2126,6 +2151,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -2193,6 +2219,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Filter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Values to narrow the results returned. At least one event ARN is required. </p>\n@param filter Values to narrow the results returned. At least one event ARN is required.*/",
           "setterMethodName" : "setFilter",
           "setterModel" : {
@@ -2259,6 +2286,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Locale",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "setterMethodName" : "setLocale",
           "setterModel" : {
@@ -2325,6 +2353,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -2391,6 +2420,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -2530,6 +2560,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2573,6 +2604,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entities",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The entities that match the filter criteria.</p>\n@param entities The entities that match the filter criteria.*/",
         "setterMethodName" : "setEntities",
         "setterModel" : {
@@ -2638,6 +2670,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -2742,6 +2775,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2785,6 +2819,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entities",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The entities that match the filter criteria.</p>\n@param entities The entities that match the filter criteria.*/",
           "setterMethodName" : "setEntities",
           "setterModel" : {
@@ -2851,6 +2886,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -3000,6 +3036,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3043,6 +3080,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>*/",
         "setterMethodName" : "setEventArns",
         "setterModel" : {
@@ -3147,6 +3185,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3190,6 +3229,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>*/",
           "setterMethodName" : "setEventArns",
           "setterModel" : {
@@ -3329,6 +3369,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3372,6 +3413,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EntityAggregates",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of entities that are affected by each of the specified events.</p>\n@param entityAggregates The number of entities that are affected by each of the specified events.*/",
         "setterMethodName" : "setEntityAggregates",
         "setterModel" : {
@@ -3476,6 +3518,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3519,6 +3562,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EntityAggregates",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of entities that are affected by each of the specified events.</p>\n@param entityAggregates The number of entities that are affected by each of the specified events.*/",
           "setterMethodName" : "setEntityAggregates",
           "setterModel" : {
@@ -3631,6 +3675,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Filter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.*/",
         "setterMethodName" : "setFilter",
         "setterModel" : {
@@ -3696,6 +3741,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AggregateField",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The only currently supported value is <code>eventTypeCategory</code>.</p>\n@param aggregateField The only currently supported value is <code>eventTypeCategory</code>.\n@see EventAggregateField*/",
         "setterMethodName" : "setAggregateField",
         "setterModel" : {
@@ -3761,6 +3807,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -3826,6 +3873,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -3893,6 +3941,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AggregateField",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The only currently supported value is <code>eventTypeCategory</code>.</p>\n@param aggregateField The only currently supported value is <code>eventTypeCategory</code>.\n@see EventAggregateField*/",
           "setterMethodName" : "setAggregateField",
           "setterModel" : {
@@ -3959,6 +4008,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Filter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.*/",
           "setterMethodName" : "setFilter",
           "setterModel" : {
@@ -4025,6 +4075,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -4091,6 +4142,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4230,6 +4282,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4273,6 +4326,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventAggregates",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of events in each category that meet the optional filter criteria.</p>\n@param eventAggregates The number of events in each category that meet the optional filter criteria.*/",
         "setterMethodName" : "setEventAggregates",
         "setterModel" : {
@@ -4338,6 +4392,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4442,6 +4497,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4485,6 +4541,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventAggregates",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of events in each category that meet the optional filter criteria.</p>\n@param eventAggregates The number of events in each category that meet the optional filter criteria.*/",
           "setterMethodName" : "setEventAggregates",
           "setterModel" : {
@@ -4551,6 +4608,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4700,6 +4758,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4743,6 +4802,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>*/",
         "setterMethodName" : "setEventArns",
         "setterModel" : {
@@ -4808,6 +4868,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Locale",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "setterMethodName" : "setLocale",
         "setterModel" : {
@@ -4912,6 +4973,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4955,6 +5017,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>*/",
           "setterMethodName" : "setEventArns",
           "setterModel" : {
@@ -5021,6 +5084,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Locale",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "setterMethodName" : "setLocale",
           "setterModel" : {
@@ -5160,6 +5224,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5203,6 +5268,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SuccessfulSet",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the events that could be retrieved.</p>\n@param successfulSet Information about the events that could be retrieved.*/",
         "setterMethodName" : "setSuccessfulSet",
         "setterModel" : {
@@ -5305,6 +5371,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5348,6 +5415,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "FailedSet",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Error messages for any events that could not be retrieved.</p>\n@param failedSet Error messages for any events that could not be retrieved.*/",
         "setterMethodName" : "setFailedSet",
         "setterModel" : {
@@ -5452,6 +5520,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5495,6 +5564,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "FailedSet",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Error messages for any events that could not be retrieved.</p>\n@param failedSet Error messages for any events that could not be retrieved.*/",
           "setterMethodName" : "setFailedSet",
           "setterModel" : {
@@ -5598,6 +5668,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5641,6 +5712,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SuccessfulSet",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the events that could be retrieved.</p>\n@param successfulSet Information about the events that could be retrieved.*/",
           "setterMethodName" : "setSuccessfulSet",
           "setterModel" : {
@@ -5753,6 +5825,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Filter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.*/",
         "setterMethodName" : "setFilter",
         "setterModel" : {
@@ -5818,6 +5891,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Locale",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "setterMethodName" : "setLocale",
         "setterModel" : {
@@ -5883,6 +5957,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5948,6 +6023,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -6015,6 +6091,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Filter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.*/",
           "setterMethodName" : "setFilter",
           "setterModel" : {
@@ -6081,6 +6158,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Locale",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "setterMethodName" : "setLocale",
           "setterModel" : {
@@ -6147,6 +6225,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -6213,6 +6292,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6352,6 +6432,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6395,6 +6476,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventTypes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).*/",
         "setterMethodName" : "setEventTypes",
         "setterModel" : {
@@ -6460,6 +6542,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6564,6 +6647,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6607,6 +6691,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventTypes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).*/",
           "setterMethodName" : "setEventTypes",
           "setterModel" : {
@@ -6673,6 +6758,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6785,6 +6871,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Filter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.*/",
         "setterMethodName" : "setFilter",
         "setterModel" : {
@@ -6850,6 +6937,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6915,6 +7003,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -6980,6 +7069,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Locale",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
         "setterMethodName" : "setLocale",
         "setterModel" : {
@@ -7047,6 +7137,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Filter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.*/",
           "setterMethodName" : "setFilter",
           "setterModel" : {
@@ -7113,6 +7204,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Locale",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.*/",
           "setterMethodName" : "setLocale",
           "setterModel" : {
@@ -7179,6 +7271,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -7245,6 +7338,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7384,6 +7478,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7427,6 +7522,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Events",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The events that match the specified filter criteria.</p>\n@param events The events that match the specified filter criteria.*/",
         "setterMethodName" : "setEvents",
         "setterModel" : {
@@ -7492,6 +7588,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -7596,6 +7693,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7639,6 +7737,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Events",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The events that match the specified filter criteria.</p>\n@param events The events that match the specified filter criteria.*/",
           "setterMethodName" : "setEvents",
           "setterModel" : {
@@ -7705,6 +7804,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -7810,6 +7910,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>*/",
         "setterMethodName" : "setEventArn",
         "setterModel" : {
@@ -7875,6 +7976,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Count",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number entities that match the criteria for the specified events.</p>\n@param count The number entities that match the criteria for the specified events.*/",
         "setterMethodName" : "setCount",
         "setterModel" : {
@@ -7942,6 +8044,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Count",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number entities that match the criteria for the specified events.</p>\n@param count The number entities that match the criteria for the specified events.*/",
           "setterMethodName" : "setCount",
           "setterModel" : {
@@ -8008,6 +8111,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>*/",
           "setterMethodName" : "setEventArn",
           "setterModel" : {
@@ -8150,6 +8254,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8193,6 +8298,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>*/",
         "setterMethodName" : "setEventArns",
         "setterModel" : {
@@ -8295,6 +8401,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8338,6 +8445,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EntityArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of entity ARNs (unique identifiers).</p>\n@param entityArns A list of entity ARNs (unique identifiers).*/",
         "setterMethodName" : "setEntityArns",
         "setterModel" : {
@@ -8440,6 +8548,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8483,6 +8592,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EntityValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of IDs for affected entities.</p>\n@param entityValues A list of IDs for affected entities.*/",
         "setterMethodName" : "setEntityValues",
         "setterModel" : {
@@ -8585,6 +8695,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8628,6 +8739,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "LastUpdatedTimes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of the most recent dates and times that the entity was updated.</p>\n@param lastUpdatedTimes A list of the most recent dates and times that the entity was updated.*/",
         "setterMethodName" : "setLastUpdatedTimes",
         "setterModel" : {
@@ -8773,6 +8885,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Value",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param value */",
                 "setterMethodName" : "setValue",
                 "setterModel" : {
@@ -8810,6 +8923,7 @@
             "marshallingTargetClass" : "Map",
             "marshallingType" : "MAP",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8853,6 +8967,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n@param tags A map of entity tags attached to the affected entity.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -8955,6 +9070,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see EntityStatusCode*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8998,6 +9114,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "StatusCodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>\n@param statusCodes A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).\n@see EntityStatusCode*/",
         "setterMethodName" : "setStatusCodes",
         "setterModel" : {
@@ -9102,6 +9219,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9145,6 +9263,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EntityArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of entity ARNs (unique identifiers).</p>\n@param entityArns A list of entity ARNs (unique identifiers).*/",
           "setterMethodName" : "setEntityArns",
           "setterModel" : {
@@ -9248,6 +9367,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9291,6 +9411,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EntityValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of IDs for affected entities.</p>\n@param entityValues A list of IDs for affected entities.*/",
           "setterMethodName" : "setEntityValues",
           "setterModel" : {
@@ -9394,6 +9515,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9437,6 +9559,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>*/",
           "setterMethodName" : "setEventArns",
           "setterModel" : {
@@ -9540,6 +9663,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9583,6 +9707,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "LastUpdatedTimes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of the most recent dates and times that the entity was updated.</p>\n@param lastUpdatedTimes A list of the most recent dates and times that the entity was updated.*/",
           "setterMethodName" : "setLastUpdatedTimes",
           "setterModel" : {
@@ -9686,6 +9811,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see EntityStatusCode*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9729,6 +9855,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "StatusCodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>\n@param statusCodes A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).\n@see EntityStatusCode*/",
           "setterMethodName" : "setStatusCodes",
           "setterModel" : {
@@ -9875,6 +10002,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Value",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param value */",
                   "setterMethodName" : "setValue",
                   "setterModel" : {
@@ -9912,6 +10040,7 @@
               "marshallingTargetClass" : "Map",
               "marshallingType" : "MAP",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9955,6 +10084,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n@param tags A map of entity tags attached to the affected entity.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -10109,6 +10239,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>\n@param arn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -10174,6 +10305,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Service",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param service The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.*/",
         "setterMethodName" : "setService",
         "setterModel" : {
@@ -10239,6 +10371,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventTypeCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n@param eventTypeCode The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.*/",
         "setterMethodName" : "setEventTypeCode",
         "setterModel" : {
@@ -10304,6 +10437,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventTypeCategory",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.</p>\n@param eventTypeCategory The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.\n@see EventTypeCategory*/",
         "setterMethodName" : "setEventTypeCategory",
         "setterModel" : {
@@ -10369,6 +10503,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Region",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS region name of the event.</p>\n@param region The AWS region name of the event.*/",
         "setterMethodName" : "setRegion",
         "setterModel" : {
@@ -10434,6 +10569,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AvailabilityZone",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Availability Zone of the event. For example, us-east-1a.</p>\n@param availabilityZone The AWS Availability Zone of the event. For example, us-east-1a.*/",
         "setterMethodName" : "setAvailabilityZone",
         "setterModel" : {
@@ -10499,6 +10635,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the event began.</p>\n@param startTime The date and time that the event began.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -10564,6 +10701,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time that the event ended.</p>\n@param endTime The date and time that the event ended.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -10629,6 +10767,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The most recent date and time that the event was updated.</p>\n@param lastUpdatedTime The most recent date and time that the event was updated.*/",
         "setterMethodName" : "setLastUpdatedTime",
         "setterModel" : {
@@ -10694,6 +10833,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StatusCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>\n@param statusCode The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.\n@see EventStatusCode*/",
         "setterMethodName" : "setStatusCode",
         "setterModel" : {
@@ -10761,6 +10901,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>\n@param arn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -10827,6 +10968,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AvailabilityZone",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Availability Zone of the event. For example, us-east-1a.</p>\n@param availabilityZone The AWS Availability Zone of the event. For example, us-east-1a.*/",
           "setterMethodName" : "setAvailabilityZone",
           "setterModel" : {
@@ -10893,6 +11035,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the event ended.</p>\n@param endTime The date and time that the event ended.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -10959,6 +11102,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventTypeCategory",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.</p>\n@param eventTypeCategory The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.\n@see EventTypeCategory*/",
           "setterMethodName" : "setEventTypeCategory",
           "setterModel" : {
@@ -11025,6 +11169,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventTypeCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n@param eventTypeCode The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.*/",
           "setterMethodName" : "setEventTypeCode",
           "setterModel" : {
@@ -11091,6 +11236,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The most recent date and time that the event was updated.</p>\n@param lastUpdatedTime The most recent date and time that the event was updated.*/",
           "setterMethodName" : "setLastUpdatedTime",
           "setterModel" : {
@@ -11157,6 +11303,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Region",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS region name of the event.</p>\n@param region The AWS region name of the event.*/",
           "setterMethodName" : "setRegion",
           "setterModel" : {
@@ -11223,6 +11370,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Service",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param service The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.*/",
           "setterMethodName" : "setService",
           "setterModel" : {
@@ -11289,6 +11437,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time that the event began.</p>\n@param startTime The date and time that the event began.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -11355,6 +11504,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StatusCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>\n@param statusCode The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.\n@see EventStatusCode*/",
           "setterMethodName" : "setStatusCode",
           "setterModel" : {
@@ -11460,6 +11610,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AggregateValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The issue type for the associated count.</p>\n@param aggregateValue The issue type for the associated count.*/",
         "setterMethodName" : "setAggregateValue",
         "setterModel" : {
@@ -11525,6 +11676,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Count",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of events of the associated issue type.</p>\n@param count The number of events of the associated issue type.*/",
         "setterMethodName" : "setCount",
         "setterModel" : {
@@ -11592,6 +11744,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AggregateValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The issue type for the associated count.</p>\n@param aggregateValue The issue type for the associated count.*/",
           "setterMethodName" : "setAggregateValue",
           "setterModel" : {
@@ -11658,6 +11811,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Count",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of events of the associated issue type.</p>\n@param count The number of events of the associated issue type.*/",
           "setterMethodName" : "setCount",
           "setterModel" : {
@@ -11806,6 +11960,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LatestDescription",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The most recent description of the event.</p>\n@param latestDescription The most recent description of the event.*/",
         "setterMethodName" : "setLatestDescription",
         "setterModel" : {
@@ -11873,6 +12028,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LatestDescription",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The most recent description of the event.</p>\n@param latestDescription The most recent description of the event.*/",
           "setterMethodName" : "setLatestDescription",
           "setterModel" : {
@@ -11978,6 +12134,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Event",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Summary information about the event.</p>\n@param event Summary information about the event.*/",
         "setterMethodName" : "setEvent",
         "setterModel" : {
@@ -12043,6 +12200,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EventDescription",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The most recent description of the event.</p>\n@param eventDescription The most recent description of the event.*/",
         "setterMethodName" : "setEventDescription",
         "setterModel" : {
@@ -12151,6 +12309,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -12188,6 +12347,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EventMetadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Additional metadata about the event.</p>\n@param eventMetadata Additional metadata about the event.*/",
         "setterMethodName" : "setEventMetadata",
         "setterModel" : {
@@ -12255,6 +12415,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Event",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Summary information about the event.</p>\n@param event Summary information about the event.*/",
           "setterMethodName" : "setEvent",
           "setterModel" : {
@@ -12321,6 +12482,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EventDescription",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The most recent description of the event.</p>\n@param eventDescription The most recent description of the event.*/",
           "setterMethodName" : "setEventDescription",
           "setterModel" : {
@@ -12430,6 +12592,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -12467,6 +12630,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EventMetadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Additional metadata about the event.</p>\n@param eventMetadata Additional metadata about the event.*/",
           "setterMethodName" : "setEventMetadata",
           "setterModel" : {
@@ -12572,6 +12736,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>*/",
         "setterMethodName" : "setEventArn",
         "setterModel" : {
@@ -12637,6 +12802,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the error.</p>\n@param errorName The name of the error.*/",
         "setterMethodName" : "setErrorName",
         "setterModel" : {
@@ -12702,6 +12868,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ErrorMessage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A message that describes the error.</p>\n@param errorMessage A message that describes the error.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
@@ -12769,6 +12936,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorMessage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A message that describes the error.</p>\n@param errorMessage A message that describes the error.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
@@ -12835,6 +13003,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ErrorName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the error.</p>\n@param errorName The name of the error.*/",
           "setterMethodName" : "setErrorName",
           "setterModel" : {
@@ -12901,6 +13070,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>*/",
           "setterMethodName" : "setEventArn",
           "setterModel" : {
@@ -13043,6 +13213,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13086,6 +13257,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>*/",
         "setterMethodName" : "setEventArns",
         "setterModel" : {
@@ -13188,6 +13360,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13231,6 +13404,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventTypeCodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code> </p>\n@param eventTypeCodes A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code>*/",
         "setterMethodName" : "setEventTypeCodes",
         "setterModel" : {
@@ -13333,6 +13507,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13376,6 +13551,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Services",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param services The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.*/",
         "setterMethodName" : "setServices",
         "setterModel" : {
@@ -13478,6 +13654,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13521,6 +13698,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Regions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of AWS regions.</p>\n@param regions A list of AWS regions.*/",
         "setterMethodName" : "setRegions",
         "setterModel" : {
@@ -13623,6 +13801,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13666,6 +13845,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AvailabilityZones",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of AWS availability zones.</p>\n@param availabilityZones A list of AWS availability zones.*/",
         "setterMethodName" : "setAvailabilityZones",
         "setterModel" : {
@@ -13768,6 +13948,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13811,6 +13992,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "StartTimes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of dates and times that the event began.</p>\n@param startTimes A list of dates and times that the event began.*/",
         "setterMethodName" : "setStartTimes",
         "setterModel" : {
@@ -13913,6 +14095,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13956,6 +14139,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EndTimes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of dates and times that the event ended.</p>\n@param endTimes A list of dates and times that the event ended.*/",
         "setterMethodName" : "setEndTimes",
         "setterModel" : {
@@ -14058,6 +14242,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14101,6 +14286,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "LastUpdatedTimes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of dates and times that the event was last updated.</p>\n@param lastUpdatedTimes A list of dates and times that the event was last updated.*/",
         "setterMethodName" : "setLastUpdatedTimes",
         "setterModel" : {
@@ -14203,6 +14389,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14246,6 +14433,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EntityArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of entity ARNs (unique identifiers).</p>\n@param entityArns A list of entity ARNs (unique identifiers).*/",
         "setterMethodName" : "setEntityArns",
         "setterModel" : {
@@ -14348,6 +14536,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14391,6 +14580,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EntityValues",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>\n@param entityValues A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).*/",
         "setterMethodName" : "setEntityValues",
         "setterModel" : {
@@ -14493,6 +14683,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see EventTypeCategory*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14536,6 +14727,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventTypeCategories",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n@param eventTypeCategories A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@see EventTypeCategory*/",
         "setterMethodName" : "setEventTypeCategories",
         "setterModel" : {
@@ -14681,6 +14873,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Value",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param value */",
                 "setterMethodName" : "setValue",
                 "setterModel" : {
@@ -14718,6 +14911,7 @@
             "marshallingTargetClass" : "Map",
             "marshallingType" : "MAP",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14761,6 +14955,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n@param tags A map of entity tags attached to the affected entity.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -14863,6 +15058,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see EventStatusCode*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14906,6 +15102,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventStatusCodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event status codes.</p>\n@param eventStatusCodes A list of event status codes.\n@see EventStatusCode*/",
         "setterMethodName" : "setEventStatusCodes",
         "setterModel" : {
@@ -15010,6 +15207,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15053,6 +15251,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AvailabilityZones",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of AWS availability zones.</p>\n@param availabilityZones A list of AWS availability zones.*/",
           "setterMethodName" : "setAvailabilityZones",
           "setterModel" : {
@@ -15156,6 +15355,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15199,6 +15399,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EndTimes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of dates and times that the event ended.</p>\n@param endTimes A list of dates and times that the event ended.*/",
           "setterMethodName" : "setEndTimes",
           "setterModel" : {
@@ -15302,6 +15503,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15345,6 +15547,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EntityArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of entity ARNs (unique identifiers).</p>\n@param entityArns A list of entity ARNs (unique identifiers).*/",
           "setterMethodName" : "setEntityArns",
           "setterModel" : {
@@ -15448,6 +15651,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15491,6 +15695,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EntityValues",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>\n@param entityValues A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).*/",
           "setterMethodName" : "setEntityValues",
           "setterModel" : {
@@ -15594,6 +15799,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15637,6 +15843,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>*/",
           "setterMethodName" : "setEventArns",
           "setterModel" : {
@@ -15740,6 +15947,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see EventStatusCode*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15783,6 +15991,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventStatusCodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event status codes.</p>\n@param eventStatusCodes A list of event status codes.\n@see EventStatusCode*/",
           "setterMethodName" : "setEventStatusCodes",
           "setterModel" : {
@@ -15886,6 +16095,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see EventTypeCategory*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15929,6 +16139,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventTypeCategories",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n@param eventTypeCategories A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@see EventTypeCategory*/",
           "setterMethodName" : "setEventTypeCategories",
           "setterModel" : {
@@ -16032,6 +16243,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16075,6 +16287,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventTypeCodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code> </p>\n@param eventTypeCodes A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code>*/",
           "setterMethodName" : "setEventTypeCodes",
           "setterModel" : {
@@ -16178,6 +16391,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16221,6 +16435,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "LastUpdatedTimes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of dates and times that the event was last updated.</p>\n@param lastUpdatedTimes A list of dates and times that the event was last updated.*/",
           "setterMethodName" : "setLastUpdatedTimes",
           "setterModel" : {
@@ -16324,6 +16539,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16367,6 +16583,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Regions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of AWS regions.</p>\n@param regions A list of AWS regions.*/",
           "setterMethodName" : "setRegions",
           "setterModel" : {
@@ -16470,6 +16687,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16513,6 +16731,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Services",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param services The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.*/",
           "setterMethodName" : "setServices",
           "setterModel" : {
@@ -16616,6 +16835,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16659,6 +16879,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "StartTimes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of dates and times that the event began.</p>\n@param startTimes A list of dates and times that the event began.*/",
           "setterMethodName" : "setStartTimes",
           "setterModel" : {
@@ -16805,6 +17026,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Value",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param value */",
                   "setterMethodName" : "setValue",
                   "setterModel" : {
@@ -16842,6 +17064,7 @@
               "marshallingTargetClass" : "Map",
               "marshallingType" : "MAP",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16885,6 +17108,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n@param tags A map of entity tags attached to the affected entity.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -17039,6 +17263,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Service",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param service The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.*/",
         "setterMethodName" : "setService",
         "setterModel" : {
@@ -17104,6 +17329,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n@param code The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -17169,6 +17395,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Category",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n@param category A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@see EventTypeCategory*/",
         "setterMethodName" : "setCategory",
         "setterModel" : {
@@ -17236,6 +17463,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Category",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n@param category A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@see EventTypeCategory*/",
           "setterMethodName" : "setCategory",
           "setterModel" : {
@@ -17302,6 +17530,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n@param code The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -17368,6 +17597,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Service",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param service The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.*/",
           "setterMethodName" : "setService",
           "setterModel" : {
@@ -17559,6 +17789,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17602,6 +17833,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventTypeCodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event type codes.</p>\n@param eventTypeCodes A list of event type codes.*/",
         "setterMethodName" : "setEventTypeCodes",
         "setterModel" : {
@@ -17704,6 +17936,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17747,6 +17980,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Services",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param services The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.*/",
         "setterMethodName" : "setServices",
         "setterModel" : {
@@ -17849,6 +18083,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see EventTypeCategory*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -17892,6 +18127,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EventTypeCategories",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n@param eventTypeCategories A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@see EventTypeCategory*/",
         "setterMethodName" : "setEventTypeCategories",
         "setterModel" : {
@@ -17996,6 +18232,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see EventTypeCategory*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18039,6 +18276,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventTypeCategories",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n@param eventTypeCategories A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@see EventTypeCategory*/",
           "setterMethodName" : "setEventTypeCategories",
           "setterModel" : {
@@ -18142,6 +18380,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18185,6 +18424,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EventTypeCodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of event type codes.</p>\n@param eventTypeCodes A list of event type codes.*/",
           "setterMethodName" : "setEventTypeCodes",
           "setterModel" : {
@@ -18288,6 +18528,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -18331,6 +18572,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Services",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param services The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.*/",
           "setterMethodName" : "setServices",
           "setterModel" : {

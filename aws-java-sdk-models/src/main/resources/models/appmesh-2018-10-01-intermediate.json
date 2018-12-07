@@ -1360,6 +1360,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -1425,6 +1426,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name to use for the service mesh.</p>\n@param meshName The name to use for the service mesh.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -1492,6 +1494,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -1558,6 +1561,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name to use for the service mesh.</p>\n@param meshName The name to use for the service mesh.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -1660,6 +1664,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Mesh",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your service mesh following the create call.</p>\n@param mesh The full description of your service mesh following the create call.*/",
         "setterMethodName" : "setMesh",
         "setterModel" : {
@@ -1727,6 +1732,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Mesh",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your service mesh following the create call.</p>\n@param mesh The full description of your service mesh following the create call.*/",
           "setterMethodName" : "setMesh",
           "setterModel" : {
@@ -1839,6 +1845,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -1904,6 +1911,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to create the route.</p>\n@param meshName The name of the service mesh in which to create the route.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -1969,6 +1977,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RouteName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name to use for the route.</p>\n@param routeName The name to use for the route.*/",
         "setterMethodName" : "setRouteName",
         "setterModel" : {
@@ -2034,6 +2043,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The route specification to apply.</p>\n@param spec The route specification to apply.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -2099,6 +2109,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router in which to create the route.</p>\n@param virtualRouterName The name of the virtual router in which to create the route.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -2166,6 +2177,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -2232,6 +2244,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to create the route.</p>\n@param meshName The name of the service mesh in which to create the route.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -2298,6 +2311,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RouteName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name to use for the route.</p>\n@param routeName The name to use for the route.*/",
           "setterMethodName" : "setRouteName",
           "setterModel" : {
@@ -2364,6 +2378,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The route specification to apply.</p>\n@param spec The route specification to apply.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -2430,6 +2445,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router in which to create the route.</p>\n@param virtualRouterName The name of the virtual router in which to create the route.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -2532,6 +2548,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Route",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your mesh following the create call.</p>\n@param route The full description of your mesh following the create call.*/",
         "setterMethodName" : "setRoute",
         "setterModel" : {
@@ -2599,6 +2616,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Route",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your mesh following the create call.</p>\n@param route The full description of your mesh following the create call.*/",
           "setterMethodName" : "setRoute",
           "setterModel" : {
@@ -2711,6 +2729,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -2776,6 +2795,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to create the virtual node.</p>\n@param meshName The name of the service mesh in which to create the virtual node.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -2841,6 +2861,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual node specification to apply.</p>\n@param spec The virtual node specification to apply.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -2906,6 +2927,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualNodeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name to use for the virtual node.</p>\n@param virtualNodeName The name to use for the virtual node.*/",
         "setterMethodName" : "setVirtualNodeName",
         "setterModel" : {
@@ -2973,6 +2995,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -3039,6 +3062,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to create the virtual node.</p>\n@param meshName The name of the service mesh in which to create the virtual node.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -3105,6 +3129,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual node specification to apply.</p>\n@param spec The virtual node specification to apply.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -3171,6 +3196,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualNodeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name to use for the virtual node.</p>\n@param virtualNodeName The name to use for the virtual node.*/",
           "setterMethodName" : "setVirtualNodeName",
           "setterModel" : {
@@ -3273,6 +3299,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "VirtualNode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your virtual node following the create call.</p>\n@param virtualNode The full description of your virtual node following the create call.*/",
         "setterMethodName" : "setVirtualNode",
         "setterModel" : {
@@ -3340,6 +3367,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "VirtualNode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your virtual node following the create call.</p>\n@param virtualNode The full description of your virtual node following the create call.*/",
           "setterMethodName" : "setVirtualNode",
           "setterModel" : {
@@ -3452,6 +3480,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -3517,6 +3546,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to create the virtual router.</p>\n@param meshName The name of the service mesh in which to create the virtual router.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -3582,6 +3612,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual router specification to apply.</p>\n@param spec The virtual router specification to apply.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -3647,6 +3678,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name to use for the virtual router.</p>\n@param virtualRouterName The name to use for the virtual router.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -3714,6 +3746,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -3780,6 +3813,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to create the virtual router.</p>\n@param meshName The name of the service mesh in which to create the virtual router.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -3846,6 +3880,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual router specification to apply.</p>\n@param spec The virtual router specification to apply.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -3912,6 +3947,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name to use for the virtual router.</p>\n@param virtualRouterName The name to use for the virtual router.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -4014,6 +4050,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "VirtualRouter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your virtual router following the create call.</p>\n@param virtualRouter The full description of your virtual router following the create call.*/",
         "setterMethodName" : "setVirtualRouter",
         "setterModel" : {
@@ -4081,6 +4118,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "VirtualRouter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your virtual router following the create call.</p>\n@param virtualRouter The full description of your virtual router following the create call.*/",
           "setterMethodName" : "setVirtualRouter",
           "setterModel" : {
@@ -4193,6 +4231,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh to delete.</p>\n@param meshName The name of the service mesh to delete.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -4260,6 +4299,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh to delete.</p>\n@param meshName The name of the service mesh to delete.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -4362,6 +4402,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Mesh",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service mesh that was deleted.</p>\n@param mesh The service mesh that was deleted.*/",
         "setterMethodName" : "setMesh",
         "setterModel" : {
@@ -4429,6 +4470,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Mesh",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service mesh that was deleted.</p>\n@param mesh The service mesh that was deleted.*/",
           "setterMethodName" : "setMesh",
           "setterModel" : {
@@ -4541,6 +4583,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to delete the route.</p>\n@param meshName The name of the service mesh in which to delete the route.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -4606,6 +4649,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RouteName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the route to delete.</p>\n@param routeName The name of the route to delete.*/",
         "setterMethodName" : "setRouteName",
         "setterModel" : {
@@ -4671,6 +4715,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router in which to delete the route.</p>\n@param virtualRouterName The name of the virtual router in which to delete the route.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -4738,6 +4783,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to delete the route.</p>\n@param meshName The name of the service mesh in which to delete the route.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -4804,6 +4850,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RouteName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the route to delete.</p>\n@param routeName The name of the route to delete.*/",
           "setterMethodName" : "setRouteName",
           "setterModel" : {
@@ -4870,6 +4917,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router in which to delete the route.</p>\n@param virtualRouterName The name of the virtual router in which to delete the route.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -4972,6 +5020,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Route",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The route that was deleted.</p>\n@param route The route that was deleted.*/",
         "setterMethodName" : "setRoute",
         "setterModel" : {
@@ -5039,6 +5088,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Route",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The route that was deleted.</p>\n@param route The route that was deleted.*/",
           "setterMethodName" : "setRoute",
           "setterModel" : {
@@ -5151,6 +5201,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to delete the virtual node.</p>\n@param meshName The name of the service mesh in which to delete the virtual node.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -5216,6 +5267,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualNodeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual node to delete.</p>\n@param virtualNodeName The name of the virtual node to delete.*/",
         "setterMethodName" : "setVirtualNodeName",
         "setterModel" : {
@@ -5283,6 +5335,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to delete the virtual node.</p>\n@param meshName The name of the service mesh in which to delete the virtual node.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -5349,6 +5402,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualNodeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual node to delete.</p>\n@param virtualNodeName The name of the virtual node to delete.*/",
           "setterMethodName" : "setVirtualNodeName",
           "setterModel" : {
@@ -5451,6 +5505,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "VirtualNode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual node that was deleted.</p>\n@param virtualNode The virtual node that was deleted.*/",
         "setterMethodName" : "setVirtualNode",
         "setterModel" : {
@@ -5518,6 +5573,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "VirtualNode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual node that was deleted.</p>\n@param virtualNode The virtual node that was deleted.*/",
           "setterMethodName" : "setVirtualNode",
           "setterModel" : {
@@ -5630,6 +5686,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to delete the virtual router.</p>\n@param meshName The name of the service mesh in which to delete the virtual router.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -5695,6 +5752,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router to delete.</p>\n@param virtualRouterName The name of the virtual router to delete.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -5762,6 +5820,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to delete the virtual router.</p>\n@param meshName The name of the service mesh in which to delete the virtual router.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -5828,6 +5887,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router to delete.</p>\n@param virtualRouterName The name of the virtual router to delete.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -5930,6 +5990,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "VirtualRouter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual router that was deleted.</p>\n@param virtualRouter The virtual router that was deleted.*/",
         "setterMethodName" : "setVirtualRouter",
         "setterModel" : {
@@ -5997,6 +6058,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "VirtualRouter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual router that was deleted.</p>\n@param virtualRouter The virtual router that was deleted.*/",
           "setterMethodName" : "setVirtualRouter",
           "setterModel" : {
@@ -6109,6 +6171,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh to describe.</p>\n@param meshName The name of the service mesh to describe.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -6176,6 +6239,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh to describe.</p>\n@param meshName The name of the service mesh to describe.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -6278,6 +6342,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Mesh",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your service mesh.</p>\n@param mesh The full description of your service mesh.*/",
         "setterMethodName" : "setMesh",
         "setterModel" : {
@@ -6345,6 +6410,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Mesh",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your service mesh.</p>\n@param mesh The full description of your service mesh.*/",
           "setterMethodName" : "setMesh",
           "setterModel" : {
@@ -6457,6 +6523,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the route resides.</p>\n@param meshName The name of the service mesh in which the route resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -6522,6 +6589,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RouteName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the route to describe.</p>\n@param routeName The name of the route to describe.*/",
         "setterMethodName" : "setRouteName",
         "setterModel" : {
@@ -6587,6 +6655,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router with which the route is associated.</p>\n@param virtualRouterName The name of the virtual router with which the route is associated.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -6654,6 +6723,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the route resides.</p>\n@param meshName The name of the service mesh in which the route resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -6720,6 +6790,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RouteName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the route to describe.</p>\n@param routeName The name of the route to describe.*/",
           "setterMethodName" : "setRouteName",
           "setterModel" : {
@@ -6786,6 +6857,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router with which the route is associated.</p>\n@param virtualRouterName The name of the virtual router with which the route is associated.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -6888,6 +6960,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Route",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your route.</p>\n@param route The full description of your route.*/",
         "setterMethodName" : "setRoute",
         "setterModel" : {
@@ -6955,6 +7028,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Route",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your route.</p>\n@param route The full description of your route.*/",
           "setterMethodName" : "setRoute",
           "setterModel" : {
@@ -7067,6 +7141,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual node resides.</p>\n@param meshName The name of the service mesh in which the virtual node resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -7132,6 +7207,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualNodeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual node to describe.</p>\n@param virtualNodeName The name of the virtual node to describe.*/",
         "setterMethodName" : "setVirtualNodeName",
         "setterModel" : {
@@ -7199,6 +7275,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual node resides.</p>\n@param meshName The name of the service mesh in which the virtual node resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -7265,6 +7342,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualNodeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual node to describe.</p>\n@param virtualNodeName The name of the virtual node to describe.*/",
           "setterMethodName" : "setVirtualNodeName",
           "setterModel" : {
@@ -7367,6 +7445,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "VirtualNode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your virtual node.</p>\n@param virtualNode The full description of your virtual node.*/",
         "setterMethodName" : "setVirtualNode",
         "setterModel" : {
@@ -7434,6 +7513,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "VirtualNode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your virtual node.</p>\n@param virtualNode The full description of your virtual node.*/",
           "setterMethodName" : "setVirtualNode",
           "setterModel" : {
@@ -7546,6 +7626,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual router resides.</p>\n@param meshName The name of the service mesh in which the virtual router resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -7611,6 +7692,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router to describe.</p>\n@param virtualRouterName The name of the virtual router to describe.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -7678,6 +7760,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual router resides.</p>\n@param meshName The name of the service mesh in which the virtual router resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -7744,6 +7827,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router to describe.</p>\n@param virtualRouterName The name of the virtual router to describe.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -7846,6 +7930,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "VirtualRouter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your virtual router.</p>\n@param virtualRouter The full description of your virtual router.*/",
         "setterMethodName" : "setVirtualRouter",
         "setterModel" : {
@@ -7913,6 +7998,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "VirtualRouter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your virtual router.</p>\n@param virtualRouter The full description of your virtual router.*/",
           "setterMethodName" : "setVirtualRouter",
           "setterModel" : {
@@ -8018,6 +8104,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ServiceName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The DNS service name for your virtual node.</p>\n@param serviceName The DNS service name for your virtual node.*/",
         "setterMethodName" : "setServiceName",
         "setterModel" : {
@@ -8085,6 +8172,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ServiceName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The DNS service name for your virtual node.</p>\n@param serviceName The DNS service name for your virtual node.*/",
           "setterMethodName" : "setServiceName",
           "setterModel" : {
@@ -8227,6 +8315,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "HealthyThreshold",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of consecutive successful health checks that must occur before declaring\n         listener healthy.</p>\n@param healthyThreshold The number of consecutive successful health checks that must occur before declaring\n         listener healthy.*/",
         "setterMethodName" : "setHealthyThreshold",
         "setterModel" : {
@@ -8292,6 +8381,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "IntervalMillis",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time period in milliseconds between each health check execution.</p>\n@param intervalMillis The time period in milliseconds between each health check execution.*/",
         "setterMethodName" : "setIntervalMillis",
         "setterModel" : {
@@ -8357,6 +8447,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Path",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The destination path for the health check request.</p>\n@param path The destination path for the health check request.*/",
         "setterMethodName" : "setPath",
         "setterModel" : {
@@ -8422,6 +8513,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Port",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The destination port for the health check request.</p>\n@param port The destination port for the health check request.*/",
         "setterMethodName" : "setPort",
         "setterModel" : {
@@ -8487,6 +8579,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The protocol for the health check request.</p>\n@param protocol The protocol for the health check request.\n@see PortProtocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -8552,6 +8645,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "TimeoutMillis",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The amount of time to wait when receiving a response from the health check, in\n         milliseconds.</p>\n@param timeoutMillis The amount of time to wait when receiving a response from the health check, in\n         milliseconds.*/",
         "setterMethodName" : "setTimeoutMillis",
         "setterModel" : {
@@ -8617,6 +8711,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UnhealthyThreshold",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of consecutive failed health checks that must occur before declaring a\n         virtual node unhealthy. </p>\n@param unhealthyThreshold The number of consecutive failed health checks that must occur before declaring a\n         virtual node unhealthy.*/",
         "setterMethodName" : "setUnhealthyThreshold",
         "setterModel" : {
@@ -8684,6 +8779,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "HealthyThreshold",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of consecutive successful health checks that must occur before declaring\n         listener healthy.</p>\n@param healthyThreshold The number of consecutive successful health checks that must occur before declaring\n         listener healthy.*/",
           "setterMethodName" : "setHealthyThreshold",
           "setterModel" : {
@@ -8750,6 +8846,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "IntervalMillis",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time period in milliseconds between each health check execution.</p>\n@param intervalMillis The time period in milliseconds between each health check execution.*/",
           "setterMethodName" : "setIntervalMillis",
           "setterModel" : {
@@ -8816,6 +8913,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Path",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The destination path for the health check request.</p>\n@param path The destination path for the health check request.*/",
           "setterMethodName" : "setPath",
           "setterModel" : {
@@ -8882,6 +8980,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Port",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The destination port for the health check request.</p>\n@param port The destination port for the health check request.*/",
           "setterMethodName" : "setPort",
           "setterModel" : {
@@ -8948,6 +9047,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The protocol for the health check request.</p>\n@param protocol The protocol for the health check request.\n@see PortProtocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -9014,6 +9114,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "TimeoutMillis",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The amount of time to wait when receiving a response from the health check, in\n         milliseconds.</p>\n@param timeoutMillis The amount of time to wait when receiving a response from the health check, in\n         milliseconds.*/",
           "setterMethodName" : "setTimeoutMillis",
           "setterModel" : {
@@ -9080,6 +9181,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UnhealthyThreshold",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of consecutive failed health checks that must occur before declaring a\n         virtual node unhealthy. </p>\n@param unhealthyThreshold The number of consecutive failed health checks that must occur before declaring a\n         virtual node unhealthy.*/",
           "setterMethodName" : "setUnhealthyThreshold",
           "setterModel" : {
@@ -9185,6 +9287,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Action",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The action to take if a match is determined.</p>\n@param action The action to take if a match is determined.*/",
         "setterMethodName" : "setAction",
         "setterModel" : {
@@ -9250,6 +9353,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Match",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The criteria for determining an HTTP request match.</p>\n@param match The criteria for determining an HTTP request match.*/",
         "setterMethodName" : "setMatch",
         "setterModel" : {
@@ -9317,6 +9421,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Action",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The action to take if a match is determined.</p>\n@param action The action to take if a match is determined.*/",
           "setterMethodName" : "setAction",
           "setterModel" : {
@@ -9383,6 +9488,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Match",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The criteria for determining an HTTP request match.</p>\n@param match The criteria for determining an HTTP request match.*/",
           "setterMethodName" : "setMatch",
           "setterModel" : {
@@ -9525,6 +9631,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9568,6 +9675,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "WeightedTargets",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The targets that traffic is routed to when a request matches the route. You can specify\n         one or more targets and their relative weights with which to distribute traffic.</p>\n@param weightedTargets The targets that traffic is routed to when a request matches the route. You can specify\n         one or more targets and their relative weights with which to distribute traffic.*/",
         "setterMethodName" : "setWeightedTargets",
         "setterModel" : {
@@ -9672,6 +9780,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9715,6 +9824,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "WeightedTargets",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The targets that traffic is routed to when a request matches the route. You can specify\n         one or more targets and their relative weights with which to distribute traffic.</p>\n@param weightedTargets The targets that traffic is routed to when a request matches the route. You can specify\n         one or more targets and their relative weights with which to distribute traffic.*/",
           "setterMethodName" : "setWeightedTargets",
           "setterModel" : {
@@ -9820,6 +9930,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Prefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the path with which to match requests. This parameter must always start with\n            <code>/</code>, which by itself matches all requests to the virtual router service name.\n         You can also match for path-based routing of requests. For example, if your virtual router\n         service name is <code>my-service.local</code>, and you want the route to match requests to\n            <code>my-service.local/metrics</code>, then your prefix should be\n         <code>/metrics</code>.</p>\n@param prefix Specifies the path with which to match requests. This parameter must always start with\n            <code>/</code>, which by itself matches all requests to the virtual router service name.\n         You can also match for path-based routing of requests. For example, if your virtual router\n         service name is <code>my-service.local</code>, and you want the route to match requests to\n            <code>my-service.local/metrics</code>, then your prefix should be\n         <code>/metrics</code>.*/",
         "setterMethodName" : "setPrefix",
         "setterModel" : {
@@ -9887,6 +9998,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Prefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the path with which to match requests. This parameter must always start with\n            <code>/</code>, which by itself matches all requests to the virtual router service name.\n         You can also match for path-based routing of requests. For example, if your virtual router\n         service name is <code>my-service.local</code>, and you want the route to match requests to\n            <code>my-service.local/metrics</code>, then your prefix should be\n         <code>/metrics</code>.</p>\n@param prefix Specifies the path with which to match requests. This parameter must always start with\n            <code>/</code>, which by itself matches all requests to the virtual router service name.\n         You can also match for path-based routing of requests. For example, if your virtual router\n         service name is <code>my-service.local</code>, and you want the route to match requests to\n            <code>my-service.local/metrics</code>, then your prefix should be\n         <code>/metrics</code>.*/",
           "setterMethodName" : "setPrefix",
           "setterModel" : {
@@ -10073,6 +10185,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of mesh results returned by <code>ListMeshes</code> in paginated\n         output. When this parameter is used, <code>ListMeshes</code> only returns\n            <code>limit</code> results in a single page along with a <code>nextToken</code> response\n         element. The remaining results of the initial request can be seen by sending another\n            <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This\n         value can be between 1 and 100. If this parameter is not\n         used, then <code>ListMeshes</code> returns up to 100 results and a\n            <code>nextToken</code> value if applicable.</p>\n@param limit The maximum number of mesh results returned by <code>ListMeshes</code> in paginated\n         output. When this parameter is used, <code>ListMeshes</code> only returns\n            <code>limit</code> results in a single page along with a <code>nextToken</code> response\n         element. The remaining results of the initial request can be seen by sending another\n            <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This\n         value can be between 1 and 100. If this parameter is not\n         used, then <code>ListMeshes</code> returns up to 100 results and a\n            <code>nextToken</code> value if applicable.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -10138,6 +10251,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated\n         <code>ListMeshes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n         <note>\n            <p>This token should be treated as an opaque identifier that is only used to\n                retrieve the next items in a list and not for other programmatic purposes.</p>\n        </note>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated\n         <code>ListMeshes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n         <note>\n            <p>This token should be treated as an opaque identifier that is only used to\n                retrieve the next items in a list and not for other programmatic purposes.</p>*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10205,6 +10319,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of mesh results returned by <code>ListMeshes</code> in paginated\n         output. When this parameter is used, <code>ListMeshes</code> only returns\n            <code>limit</code> results in a single page along with a <code>nextToken</code> response\n         element. The remaining results of the initial request can be seen by sending another\n            <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This\n         value can be between 1 and 100. If this parameter is not\n         used, then <code>ListMeshes</code> returns up to 100 results and a\n            <code>nextToken</code> value if applicable.</p>\n@param limit The maximum number of mesh results returned by <code>ListMeshes</code> in paginated\n         output. When this parameter is used, <code>ListMeshes</code> only returns\n            <code>limit</code> results in a single page along with a <code>nextToken</code> response\n         element. The remaining results of the initial request can be seen by sending another\n            <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This\n         value can be between 1 and 100. If this parameter is not\n         used, then <code>ListMeshes</code> returns up to 100 results and a\n            <code>nextToken</code> value if applicable.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -10271,6 +10386,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated\n         <code>ListMeshes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n         <note>\n            <p>This token should be treated as an opaque identifier that is only used to\n                retrieve the next items in a list and not for other programmatic purposes.</p>\n        </note>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated\n         <code>ListMeshes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n         <note>\n            <p>This token should be treated as an opaque identifier that is only used to\n                retrieve the next items in a list and not for other programmatic purposes.</p>*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10410,6 +10526,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10453,6 +10570,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Meshes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of existing service meshes.</p>\n@param meshes The list of existing service meshes.*/",
         "setterMethodName" : "setMeshes",
         "setterModel" : {
@@ -10518,6 +10636,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code>\n         request. When the results of a <code>ListMeshes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListMeshes</code>\n         request. When the results of a <code>ListMeshes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10622,6 +10741,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10665,6 +10785,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Meshes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of existing service meshes.</p>\n@param meshes The list of existing service meshes.*/",
           "setterMethodName" : "setMeshes",
           "setterModel" : {
@@ -10731,6 +10852,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code>\n         request. When the results of a <code>ListMeshes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListMeshes</code>\n         request. When the results of a <code>ListMeshes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10843,6 +10965,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of mesh results returned by <code>ListRoutes</code> in paginated\n         output. When this parameter is used, <code>ListRoutes</code> only returns\n            <code>limit</code> results in a single page along with a <code>nextToken</code> response\n         element. The remaining results of the initial request can be seen by sending another\n            <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This\n         value can be between 1 and 100. If this parameter is not\n         used, then <code>ListRoutes</code> returns up to 100 results and a\n            <code>nextToken</code> value if applicable.</p>\n@param limit The maximum number of mesh results returned by <code>ListRoutes</code> in paginated\n         output. When this parameter is used, <code>ListRoutes</code> only returns\n            <code>limit</code> results in a single page along with a <code>nextToken</code> response\n         element. The remaining results of the initial request can be seen by sending another\n            <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This\n         value can be between 1 and 100. If this parameter is not\n         used, then <code>ListRoutes</code> returns up to 100 results and a\n            <code>nextToken</code> value if applicable.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -10908,6 +11031,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to list routes.</p>\n@param meshName The name of the service mesh in which to list routes.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -10973,6 +11097,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated\n         <code>ListRoutes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated\n         <code>ListRoutes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11038,6 +11163,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router in which to list routes.</p>\n@param virtualRouterName The name of the virtual router in which to list routes.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -11105,6 +11231,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of mesh results returned by <code>ListRoutes</code> in paginated\n         output. When this parameter is used, <code>ListRoutes</code> only returns\n            <code>limit</code> results in a single page along with a <code>nextToken</code> response\n         element. The remaining results of the initial request can be seen by sending another\n            <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This\n         value can be between 1 and 100. If this parameter is not\n         used, then <code>ListRoutes</code> returns up to 100 results and a\n            <code>nextToken</code> value if applicable.</p>\n@param limit The maximum number of mesh results returned by <code>ListRoutes</code> in paginated\n         output. When this parameter is used, <code>ListRoutes</code> only returns\n            <code>limit</code> results in a single page along with a <code>nextToken</code> response\n         element. The remaining results of the initial request can be seen by sending another\n            <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This\n         value can be between 1 and 100. If this parameter is not\n         used, then <code>ListRoutes</code> returns up to 100 results and a\n            <code>nextToken</code> value if applicable.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -11171,6 +11298,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to list routes.</p>\n@param meshName The name of the service mesh in which to list routes.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -11237,6 +11365,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated\n         <code>ListRoutes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated\n         <code>ListRoutes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11303,6 +11432,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router in which to list routes.</p>\n@param virtualRouterName The name of the virtual router in which to list routes.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -11405,6 +11535,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code>\n         request. When the results of a <code>ListRoutes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListRoutes</code>\n         request. When the results of a <code>ListRoutes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11507,6 +11638,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11550,6 +11682,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Routes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of existing routes for the specified service mesh and virtual router.</p>\n@param routes The list of existing routes for the specified service mesh and virtual router.*/",
         "setterMethodName" : "setRoutes",
         "setterModel" : {
@@ -11617,6 +11750,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code>\n         request. When the results of a <code>ListRoutes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListRoutes</code>\n         request. When the results of a <code>ListRoutes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11720,6 +11854,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11763,6 +11898,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Routes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of existing routes for the specified service mesh and virtual router.</p>\n@param routes The list of existing routes for the specified service mesh and virtual router.*/",
           "setterMethodName" : "setRoutes",
           "setterModel" : {
@@ -11875,6 +12011,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of mesh results returned by <code>ListVirtualNodes</code> in\n         paginated output. When this parameter is used, <code>ListVirtualNodes</code> only returns\n         <code>limit</code> results in a single page along with a <code>nextToken</code>\n         response element. The remaining results of the initial request can be seen by sending\n         another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code>\n         value. This value can be between 1 and 100. If this\n         parameter is not used, then <code>ListVirtualNodes</code> returns up to\n         100 results and a <code>nextToken</code> value if applicable.</p>\n@param limit The maximum number of mesh results returned by <code>ListVirtualNodes</code> in\n         paginated output. When this parameter is used, <code>ListVirtualNodes</code> only returns\n         <code>limit</code> results in a single page along with a <code>nextToken</code>\n         response element. The remaining results of the initial request can be seen by sending\n         another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code>\n         value. This value can be between 1 and 100. If this\n         parameter is not used, then <code>ListVirtualNodes</code> returns up to\n         100 results and a <code>nextToken</code> value if applicable.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -11940,6 +12077,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to list virtual nodes.</p>\n@param meshName The name of the service mesh in which to list virtual nodes.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -12005,6 +12143,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated\n         <code>ListVirtualNodes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated\n         <code>ListVirtualNodes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12072,6 +12211,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of mesh results returned by <code>ListVirtualNodes</code> in\n         paginated output. When this parameter is used, <code>ListVirtualNodes</code> only returns\n         <code>limit</code> results in a single page along with a <code>nextToken</code>\n         response element. The remaining results of the initial request can be seen by sending\n         another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code>\n         value. This value can be between 1 and 100. If this\n         parameter is not used, then <code>ListVirtualNodes</code> returns up to\n         100 results and a <code>nextToken</code> value if applicable.</p>\n@param limit The maximum number of mesh results returned by <code>ListVirtualNodes</code> in\n         paginated output. When this parameter is used, <code>ListVirtualNodes</code> only returns\n         <code>limit</code> results in a single page along with a <code>nextToken</code>\n         response element. The remaining results of the initial request can be seen by sending\n         another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code>\n         value. This value can be between 1 and 100. If this\n         parameter is not used, then <code>ListVirtualNodes</code> returns up to\n         100 results and a <code>nextToken</code> value if applicable.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -12138,6 +12278,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to list virtual nodes.</p>\n@param meshName The name of the service mesh in which to list virtual nodes.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -12204,6 +12345,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated\n         <code>ListVirtualNodes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated\n         <code>ListVirtualNodes</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12306,6 +12448,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>\n         request. When the results of a <code>ListVirtualNodes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>\n         request. When the results of a <code>ListVirtualNodes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12408,6 +12551,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12451,6 +12595,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "VirtualNodes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of existing virtual nodes for the specified service mesh.</p>\n@param virtualNodes The list of existing virtual nodes for the specified service mesh.*/",
         "setterMethodName" : "setVirtualNodes",
         "setterModel" : {
@@ -12518,6 +12663,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>\n         request. When the results of a <code>ListVirtualNodes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>\n         request. When the results of a <code>ListVirtualNodes</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12621,6 +12767,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12664,6 +12811,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "VirtualNodes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of existing virtual nodes for the specified service mesh.</p>\n@param virtualNodes The list of existing virtual nodes for the specified service mesh.*/",
           "setterMethodName" : "setVirtualNodes",
           "setterModel" : {
@@ -12776,6 +12924,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of mesh results returned by <code>ListVirtualRouters</code> in\n         paginated output. When this parameter is used, <code>ListVirtualRouters</code> only returns\n         <code>limit</code> results in a single page along with a <code>nextToken</code>\n         response element. The remaining results of the initial request can be seen by sending\n         another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code>\n         value. This value can be between 1 and 100. If this\n         parameter is not used, then <code>ListVirtualRouters</code> returns up to\n         100 results and a <code>nextToken</code> value if applicable.</p>\n@param limit The maximum number of mesh results returned by <code>ListVirtualRouters</code> in\n         paginated output. When this parameter is used, <code>ListVirtualRouters</code> only returns\n         <code>limit</code> results in a single page along with a <code>nextToken</code>\n         response element. The remaining results of the initial request can be seen by sending\n         another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code>\n         value. This value can be between 1 and 100. If this\n         parameter is not used, then <code>ListVirtualRouters</code> returns up to\n         100 results and a <code>nextToken</code> value if applicable.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -12841,6 +12990,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which to list virtual routers.</p>\n@param meshName The name of the service mesh in which to list virtual routers.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -12906,6 +13056,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated\n         <code>ListVirtualRouters</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated\n         <code>ListVirtualRouters</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12973,6 +13124,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of mesh results returned by <code>ListVirtualRouters</code> in\n         paginated output. When this parameter is used, <code>ListVirtualRouters</code> only returns\n         <code>limit</code> results in a single page along with a <code>nextToken</code>\n         response element. The remaining results of the initial request can be seen by sending\n         another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code>\n         value. This value can be between 1 and 100. If this\n         parameter is not used, then <code>ListVirtualRouters</code> returns up to\n         100 results and a <code>nextToken</code> value if applicable.</p>\n@param limit The maximum number of mesh results returned by <code>ListVirtualRouters</code> in\n         paginated output. When this parameter is used, <code>ListVirtualRouters</code> only returns\n         <code>limit</code> results in a single page along with a <code>nextToken</code>\n         response element. The remaining results of the initial request can be seen by sending\n         another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code>\n         value. This value can be between 1 and 100. If this\n         parameter is not used, then <code>ListVirtualRouters</code> returns up to\n         100 results and a <code>nextToken</code> value if applicable.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -13039,6 +13191,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which to list virtual routers.</p>\n@param meshName The name of the service mesh in which to list virtual routers.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -13105,6 +13258,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated\n         <code>ListVirtualRouters</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated\n         <code>ListVirtualRouters</code> request where <code>limit</code> was used and the\n         results exceeded the value of that parameter. Pagination continues from the end of the\n         previous results that returned the <code>nextToken</code> value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13207,6 +13361,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>\n         request. When the results of a <code>ListVirtualRouters</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>\n         request. When the results of a <code>ListVirtualRouters</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -13309,6 +13464,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13352,6 +13508,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "VirtualRouters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of existing virtual routers for the specified service mesh.</p>\n@param virtualRouters The list of existing virtual routers for the specified service mesh.*/",
         "setterMethodName" : "setVirtualRouters",
         "setterModel" : {
@@ -13419,6 +13576,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>\n         request. When the results of a <code>ListVirtualRouters</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>\n         request. When the results of a <code>ListVirtualRouters</code> request exceed\n         <code>limit</code>, this value can be used to retrieve the next page of\n         results. This value is <code>null</code> when there are no more results to\n         return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -13522,6 +13680,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13565,6 +13724,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "VirtualRouters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of existing virtual routers for the specified service mesh.</p>\n@param virtualRouters The list of existing virtual routers for the specified service mesh.*/",
           "setterMethodName" : "setVirtualRouters",
           "setterModel" : {
@@ -13670,6 +13830,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HealthCheck",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The health check information for the listener.</p>\n         <note>\n            <p>Listener health checks are not available during the App Mesh preview.</p>\n         </note>\n@param healthCheck The health check information for the listener.</p>\n         <note>\n            <p>Listener health checks are not available during the App Mesh preview.</p>*/",
         "setterMethodName" : "setHealthCheck",
         "setterModel" : {
@@ -13735,6 +13896,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PortMapping",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The port mapping information for the listener.</p>\n@param portMapping The port mapping information for the listener.*/",
         "setterMethodName" : "setPortMapping",
         "setterModel" : {
@@ -13802,6 +13964,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HealthCheck",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The health check information for the listener.</p>\n         <note>\n            <p>Listener health checks are not available during the App Mesh preview.</p>\n         </note>\n@param healthCheck The health check information for the listener.</p>\n         <note>\n            <p>Listener health checks are not available during the App Mesh preview.</p>*/",
           "setterMethodName" : "setHealthCheck",
           "setterModel" : {
@@ -13868,6 +14031,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PortMapping",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The port mapping information for the listener.</p>\n@param portMapping The port mapping information for the listener.*/",
           "setterMethodName" : "setPortMapping",
           "setterModel" : {
@@ -13973,6 +14137,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh.</p>\n@param meshName The name of the service mesh.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -14038,6 +14203,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Metadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The associated metadata for the service mesh.</p>\n@param metadata The associated metadata for the service mesh.*/",
         "setterMethodName" : "setMetadata",
         "setterModel" : {
@@ -14103,6 +14269,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the service mesh.</p>\n@param status The status of the service mesh.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -14170,6 +14337,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh.</p>\n@param meshName The name of the service mesh.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -14236,6 +14404,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Metadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The associated metadata for the service mesh.</p>\n@param metadata The associated metadata for the service mesh.*/",
           "setterMethodName" : "setMetadata",
           "setterModel" : {
@@ -14302,6 +14471,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the service mesh.</p>\n@param status The status of the service mesh.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -14407,6 +14577,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) of the service mesh.</p>\n@param arn The full Amazon Resource Name (ARN) of the service mesh.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -14472,6 +14643,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh.</p>\n@param meshName The name of the service mesh.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -14539,6 +14711,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) of the service mesh.</p>\n@param arn The full Amazon Resource Name (ARN) of the service mesh.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -14605,6 +14778,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh.</p>\n@param meshName The name of the service mesh.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -14710,6 +14884,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current mesh status.</p>\n@param status The current mesh status.\n@see MeshStatusCode*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -14777,6 +14952,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current mesh status.</p>\n@param status The current mesh status.\n@see MeshStatusCode*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -14968,6 +15144,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Port",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The port used for the port mapping.</p>\n@param port The port used for the port mapping.*/",
         "setterMethodName" : "setPort",
         "setterModel" : {
@@ -15033,6 +15210,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The protocol used for the port mapping.</p>\n@param protocol The protocol used for the port mapping.\n@see PortProtocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -15100,6 +15278,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Port",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The port used for the port mapping.</p>\n@param port The port used for the port mapping.*/",
           "setterMethodName" : "setPort",
           "setterModel" : {
@@ -15166,6 +15345,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The protocol used for the port mapping.</p>\n@param protocol The protocol used for the port mapping.\n@see PortProtocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -15354,6 +15534,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) for the resource.</p>\n         <note>\n            <p>After you create a virtual node, set this value (either the full ARN or the\n            truncated resource name, for example, <code>mesh/default/virtualNode/simpleapp</code>,\n            as the <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task group's\n            Envoy proxy container in your task definition or pod spec. This is then mapped to the\n               <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p>\n            <p>If you require your Envoy stats or tracing to use a different name, you can override\n            the <code>node.cluster</code> value that is set by\n               <code>APPMESH_VIRTUAL_NODE_NAME</code> with the\n               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>\n         </note>\n@param arn The full Amazon Resource Name (ARN) for the resource.</p>\n         <note>\n            <p>After you create a virtual node, set this value (either the full ARN or the\n            truncated resource name, for example, <code>mesh/default/virtualNode/simpleapp</code>,\n            as the <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task group's\n            Envoy proxy container in your task definition or pod spec. This is then mapped to the\n               <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p>\n            <p>If you require your Envoy stats or tracing to use a different name, you can override\n            the <code>node.cluster</code> value that is set by\n               <code>APPMESH_VIRTUAL_NODE_NAME</code> with the\n               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -15419,6 +15600,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Unix epoch timestamp in seconds for when the cluster was created.</p>\n@param createdAt The Unix epoch timestamp in seconds for when the cluster was created.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -15484,6 +15666,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Unix epoch timestamp in seconds for when the cluster was last updated.</p>\n@param lastUpdatedAt The Unix epoch timestamp in seconds for when the cluster was last updated.*/",
         "setterMethodName" : "setLastUpdatedAt",
         "setterModel" : {
@@ -15549,6 +15732,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Uid",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier for the resource.</p>\n@param uid The unique identifier for the resource.*/",
         "setterMethodName" : "setUid",
         "setterModel" : {
@@ -15614,6 +15798,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Version",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The version of the resource. Resources are created at version 1, and this version is\n         incremented each time they are updated.</p>\n@param version The version of the resource. Resources are created at version 1, and this version is\n         incremented each time they are updated.*/",
         "setterMethodName" : "setVersion",
         "setterModel" : {
@@ -15681,6 +15866,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) for the resource.</p>\n         <note>\n            <p>After you create a virtual node, set this value (either the full ARN or the\n            truncated resource name, for example, <code>mesh/default/virtualNode/simpleapp</code>,\n            as the <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task group's\n            Envoy proxy container in your task definition or pod spec. This is then mapped to the\n               <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p>\n            <p>If you require your Envoy stats or tracing to use a different name, you can override\n            the <code>node.cluster</code> value that is set by\n               <code>APPMESH_VIRTUAL_NODE_NAME</code> with the\n               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>\n         </note>\n@param arn The full Amazon Resource Name (ARN) for the resource.</p>\n         <note>\n            <p>After you create a virtual node, set this value (either the full ARN or the\n            truncated resource name, for example, <code>mesh/default/virtualNode/simpleapp</code>,\n            as the <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task group's\n            Envoy proxy container in your task definition or pod spec. This is then mapped to the\n               <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p>\n            <p>If you require your Envoy stats or tracing to use a different name, you can override\n            the <code>node.cluster</code> value that is set by\n               <code>APPMESH_VIRTUAL_NODE_NAME</code> with the\n               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -15747,6 +15933,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Unix epoch timestamp in seconds for when the cluster was created.</p>\n@param createdAt The Unix epoch timestamp in seconds for when the cluster was created.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -15813,6 +16000,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Unix epoch timestamp in seconds for when the cluster was last updated.</p>\n@param lastUpdatedAt The Unix epoch timestamp in seconds for when the cluster was last updated.*/",
           "setterMethodName" : "setLastUpdatedAt",
           "setterModel" : {
@@ -15879,6 +16067,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Uid",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier for the resource.</p>\n@param uid The unique identifier for the resource.*/",
           "setterMethodName" : "setUid",
           "setterModel" : {
@@ -15945,6 +16134,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Version",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The version of the resource. Resources are created at version 1, and this version is\n         incremented each time they are updated.</p>\n@param version The version of the resource. Resources are created at version 1, and this version is\n         incremented each time they are updated.*/",
           "setterMethodName" : "setVersion",
           "setterModel" : {
@@ -16050,6 +16240,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the route resides.</p>\n@param meshName The name of the service mesh in which the route resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -16115,6 +16306,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Metadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The associated metadata for the route.</p>\n@param metadata The associated metadata for the route.*/",
         "setterMethodName" : "setMetadata",
         "setterModel" : {
@@ -16180,6 +16372,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RouteName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the route.</p>\n@param routeName The name of the route.*/",
         "setterMethodName" : "setRouteName",
         "setterModel" : {
@@ -16245,6 +16438,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The specifications of the route.</p>\n@param spec The specifications of the route.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -16310,6 +16504,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the route.</p>\n@param status The status of the route.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -16375,6 +16570,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual router with which the route is associated.</p>\n@param virtualRouterName The virtual router with which the route is associated.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -16442,6 +16638,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the route resides.</p>\n@param meshName The name of the service mesh in which the route resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -16508,6 +16705,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Metadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The associated metadata for the route.</p>\n@param metadata The associated metadata for the route.*/",
           "setterMethodName" : "setMetadata",
           "setterModel" : {
@@ -16574,6 +16772,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RouteName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the route.</p>\n@param routeName The name of the route.*/",
           "setterMethodName" : "setRouteName",
           "setterModel" : {
@@ -16640,6 +16839,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The specifications of the route.</p>\n@param spec The specifications of the route.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -16706,6 +16906,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the route.</p>\n@param status The status of the route.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -16772,6 +16973,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual router with which the route is associated.</p>\n@param virtualRouterName The virtual router with which the route is associated.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -16877,6 +17079,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) for the route.</p>\n@param arn The full Amazon Resource Name (ARN) for the route.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -16942,6 +17145,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the route resides.</p>\n@param meshName The name of the service mesh in which the route resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -17007,6 +17211,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RouteName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the route.</p>\n@param routeName The name of the route.*/",
         "setterMethodName" : "setRouteName",
         "setterModel" : {
@@ -17072,6 +17277,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual router with which the route is associated.</p>\n@param virtualRouterName The virtual router with which the route is associated.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -17139,6 +17345,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) for the route.</p>\n@param arn The full Amazon Resource Name (ARN) for the route.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -17205,6 +17412,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the route resides.</p>\n@param meshName The name of the service mesh in which the route resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -17271,6 +17479,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RouteName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the route.</p>\n@param routeName The name of the route.*/",
           "setterMethodName" : "setRouteName",
           "setterModel" : {
@@ -17337,6 +17546,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual router with which the route is associated.</p>\n@param virtualRouterName The virtual router with which the route is associated.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -17442,6 +17652,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HttpRoute",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The HTTP routing information for the route.</p>\n@param httpRoute The HTTP routing information for the route.*/",
         "setterMethodName" : "setHttpRoute",
         "setterModel" : {
@@ -17509,6 +17720,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HttpRoute",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The HTTP routing information for the route.</p>\n@param httpRoute The HTTP routing information for the route.*/",
           "setterMethodName" : "setHttpRoute",
           "setterModel" : {
@@ -17614,6 +17826,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status for the route.</p>\n@param status The current status for the route.\n@see RouteStatusCode*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -17681,6 +17894,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status for the route.</p>\n@param status The current status for the route.\n@see RouteStatusCode*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -17835,6 +18049,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Dns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the DNS service name for the virtual node.</p>\n@param dns Specifies the DNS service name for the virtual node.*/",
         "setterMethodName" : "setDns",
         "setterModel" : {
@@ -17902,6 +18117,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Dns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the DNS service name for the virtual node.</p>\n@param dns Specifies the DNS service name for the virtual node.*/",
           "setterMethodName" : "setDns",
           "setterModel" : {
@@ -18088,6 +18304,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -18153,6 +18370,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the route resides.</p>\n@param meshName The name of the service mesh in which the route resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -18218,6 +18436,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RouteName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the route to update.</p>\n@param routeName The name of the route to update.*/",
         "setterMethodName" : "setRouteName",
         "setterModel" : {
@@ -18283,6 +18502,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The new route specification to apply. This overwrites the existing data.</p>\n@param spec The new route specification to apply. This overwrites the existing data.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -18348,6 +18568,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router with which the route is associated.</p>\n@param virtualRouterName The name of the virtual router with which the route is associated.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -18415,6 +18636,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -18481,6 +18703,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the route resides.</p>\n@param meshName The name of the service mesh in which the route resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -18547,6 +18770,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RouteName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the route to update.</p>\n@param routeName The name of the route to update.*/",
           "setterMethodName" : "setRouteName",
           "setterModel" : {
@@ -18613,6 +18837,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The new route specification to apply. This overwrites the existing data.</p>\n@param spec The new route specification to apply. This overwrites the existing data.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -18679,6 +18904,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router with which the route is associated.</p>\n@param virtualRouterName The name of the virtual router with which the route is associated.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -18781,6 +19007,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Route",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A full description of the route that was updated.</p>\n@param route A full description of the route that was updated.*/",
         "setterMethodName" : "setRoute",
         "setterModel" : {
@@ -18848,6 +19075,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Route",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A full description of the route that was updated.</p>\n@param route A full description of the route that was updated.*/",
           "setterMethodName" : "setRoute",
           "setterModel" : {
@@ -18960,6 +19188,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -19025,6 +19254,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual node resides.</p>\n@param meshName The name of the service mesh in which the virtual node resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -19090,6 +19320,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The new virtual node specification to apply. This overwrites the existing data.</p>\n@param spec The new virtual node specification to apply. This overwrites the existing data.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -19155,6 +19386,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualNodeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual node to update.</p>\n@param virtualNodeName The name of the virtual node to update.*/",
         "setterMethodName" : "setVirtualNodeName",
         "setterModel" : {
@@ -19222,6 +19454,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -19288,6 +19521,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual node resides.</p>\n@param meshName The name of the service mesh in which the virtual node resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -19354,6 +19588,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The new virtual node specification to apply. This overwrites the existing data.</p>\n@param spec The new virtual node specification to apply. This overwrites the existing data.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -19420,6 +19655,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualNodeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual node to update.</p>\n@param virtualNodeName The name of the virtual node to update.*/",
           "setterMethodName" : "setVirtualNodeName",
           "setterModel" : {
@@ -19522,6 +19758,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "VirtualNode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A full description of the virtual node that was updated.</p>\n@param virtualNode A full description of the virtual node that was updated.*/",
         "setterMethodName" : "setVirtualNode",
         "setterModel" : {
@@ -19589,6 +19826,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "VirtualNode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A full description of the virtual node that was updated.</p>\n@param virtualNode A full description of the virtual node that was updated.*/",
           "setterMethodName" : "setVirtualNode",
           "setterModel" : {
@@ -19701,6 +19939,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
         "setterMethodName" : "setClientToken",
         "setterModel" : {
@@ -19766,6 +20005,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual router resides.</p>\n@param meshName The name of the service mesh in which the virtual router resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -19831,6 +20071,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The new virtual router specification to apply. This overwrites the existing data.</p>\n@param spec The new virtual router specification to apply. This overwrites the existing data.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -19896,6 +20137,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router to update.</p>\n@param virtualRouterName The name of the virtual router to update.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -19963,6 +20205,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>\n@param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the\nrequest. Up to 36 letters, numbers, hyphens, and underscores are allowed.*/",
           "setterMethodName" : "setClientToken",
           "setterModel" : {
@@ -20029,6 +20272,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual router resides.</p>\n@param meshName The name of the service mesh in which the virtual router resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -20095,6 +20339,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The new virtual router specification to apply. This overwrites the existing data.</p>\n@param spec The new virtual router specification to apply. This overwrites the existing data.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -20161,6 +20406,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router to update.</p>\n@param virtualRouterName The name of the virtual router to update.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -20263,6 +20509,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "VirtualRouter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A full description of the virtual router that was updated.</p>\n@param virtualRouter A full description of the virtual router that was updated.*/",
         "setterMethodName" : "setVirtualRouter",
         "setterModel" : {
@@ -20330,6 +20577,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "VirtualRouter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A full description of the virtual router that was updated.</p>\n@param virtualRouter A full description of the virtual router that was updated.*/",
           "setterMethodName" : "setVirtualRouter",
           "setterModel" : {
@@ -20435,6 +20683,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual node resides.</p>\n@param meshName The name of the service mesh in which the virtual node resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -20500,6 +20749,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Metadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The associated metadata for the virtual node.</p>\n@param metadata The associated metadata for the virtual node.*/",
         "setterMethodName" : "setMetadata",
         "setterModel" : {
@@ -20565,6 +20815,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The specifications of the virtual node.</p>\n@param spec The specifications of the virtual node.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -20630,6 +20881,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status for the virtual node.</p>\n@param status The current status for the virtual node.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -20695,6 +20947,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualNodeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual node.</p>\n@param virtualNodeName The name of the virtual node.*/",
         "setterMethodName" : "setVirtualNodeName",
         "setterModel" : {
@@ -20762,6 +21015,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual node resides.</p>\n@param meshName The name of the service mesh in which the virtual node resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -20828,6 +21082,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Metadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The associated metadata for the virtual node.</p>\n@param metadata The associated metadata for the virtual node.*/",
           "setterMethodName" : "setMetadata",
           "setterModel" : {
@@ -20894,6 +21149,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The specifications of the virtual node.</p>\n@param spec The specifications of the virtual node.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -20960,6 +21216,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status for the virtual node.</p>\n@param status The current status for the virtual node.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -21026,6 +21283,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualNodeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual node.</p>\n@param virtualNodeName The name of the virtual node.*/",
           "setterMethodName" : "setVirtualNodeName",
           "setterModel" : {
@@ -21131,6 +21389,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) for the virtual node.</p>\n@param arn The full Amazon Resource Name (ARN) for the virtual node.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -21196,6 +21455,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual node resides.</p>\n@param meshName The name of the service mesh in which the virtual node resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -21261,6 +21521,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualNodeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual node.</p>\n@param virtualNodeName The name of the virtual node.*/",
         "setterMethodName" : "setVirtualNodeName",
         "setterModel" : {
@@ -21328,6 +21589,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) for the virtual node.</p>\n@param arn The full Amazon Resource Name (ARN) for the virtual node.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -21394,6 +21656,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual node resides.</p>\n@param meshName The name of the service mesh in which the virtual node resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -21460,6 +21723,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualNodeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual node.</p>\n@param virtualNodeName The name of the virtual node.*/",
           "setterMethodName" : "setVirtualNodeName",
           "setterModel" : {
@@ -21602,6 +21866,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -21645,6 +21910,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Backends",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The backends to which the virtual node is expected to send outbound traffic.</p>\n@param backends The backends to which the virtual node is expected to send outbound traffic.*/",
         "setterMethodName" : "setBackends",
         "setterModel" : {
@@ -21747,6 +22013,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -21790,6 +22057,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Listeners",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The listeners from which the virtual node is expected to receive inbound traffic.</p>\n@param listeners The listeners from which the virtual node is expected to receive inbound traffic.*/",
         "setterMethodName" : "setListeners",
         "setterModel" : {
@@ -21855,6 +22123,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ServiceDiscovery",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service discovery information for the virtual node.</p>\n@param serviceDiscovery The service discovery information for the virtual node.*/",
         "setterMethodName" : "setServiceDiscovery",
         "setterModel" : {
@@ -21959,6 +22228,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22002,6 +22272,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Backends",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The backends to which the virtual node is expected to send outbound traffic.</p>\n@param backends The backends to which the virtual node is expected to send outbound traffic.*/",
           "setterMethodName" : "setBackends",
           "setterModel" : {
@@ -22105,6 +22376,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -22148,6 +22420,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Listeners",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The listeners from which the virtual node is expected to receive inbound traffic.</p>\n@param listeners The listeners from which the virtual node is expected to receive inbound traffic.*/",
           "setterMethodName" : "setListeners",
           "setterModel" : {
@@ -22214,6 +22487,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ServiceDiscovery",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service discovery information for the virtual node.</p>\n@param serviceDiscovery The service discovery information for the virtual node.*/",
           "setterMethodName" : "setServiceDiscovery",
           "setterModel" : {
@@ -22319,6 +22593,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the virtual node.</p>\n@param status The current status of the virtual node.\n@see VirtualNodeStatusCode*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -22386,6 +22661,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the virtual node.</p>\n@param status The current status of the virtual node.\n@see VirtualNodeStatusCode*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -22540,6 +22816,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual router resides.</p>\n@param meshName The name of the service mesh in which the virtual router resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -22605,6 +22882,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Metadata",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The associated metadata for the virtual router.</p>\n@param metadata The associated metadata for the virtual router.*/",
         "setterMethodName" : "setMetadata",
         "setterModel" : {
@@ -22670,6 +22948,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Spec",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The specifications of the virtual router.</p>\n@param spec The specifications of the virtual router.*/",
         "setterMethodName" : "setSpec",
         "setterModel" : {
@@ -22735,6 +23014,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the virtual router.</p>\n@param status The current status of the virtual router.*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -22800,6 +23080,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router.</p>\n@param virtualRouterName The name of the virtual router.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -22867,6 +23148,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual router resides.</p>\n@param meshName The name of the service mesh in which the virtual router resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -22933,6 +23215,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Metadata",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The associated metadata for the virtual router.</p>\n@param metadata The associated metadata for the virtual router.*/",
           "setterMethodName" : "setMetadata",
           "setterModel" : {
@@ -22999,6 +23282,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Spec",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The specifications of the virtual router.</p>\n@param spec The specifications of the virtual router.*/",
           "setterMethodName" : "setSpec",
           "setterModel" : {
@@ -23065,6 +23349,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the virtual router.</p>\n@param status The current status of the virtual router.*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -23131,6 +23416,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router.</p>\n@param virtualRouterName The name of the virtual router.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -23236,6 +23522,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) for the virtual router.</p>\n@param arn The full Amazon Resource Name (ARN) for the virtual router.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -23301,6 +23588,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MeshName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual router resides.</p>\n@param meshName The name of the service mesh in which the virtual router resides.*/",
         "setterMethodName" : "setMeshName",
         "setterModel" : {
@@ -23366,6 +23654,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualRouterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the virtual router.</p>\n@param virtualRouterName The name of the virtual router.*/",
         "setterMethodName" : "setVirtualRouterName",
         "setterModel" : {
@@ -23433,6 +23722,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full Amazon Resource Name (ARN) for the virtual router.</p>\n@param arn The full Amazon Resource Name (ARN) for the virtual router.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -23499,6 +23789,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MeshName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the service mesh in which the virtual router resides.</p>\n@param meshName The name of the service mesh in which the virtual router resides.*/",
           "setterMethodName" : "setMeshName",
           "setterModel" : {
@@ -23565,6 +23856,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualRouterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the virtual router.</p>\n@param virtualRouterName The name of the virtual router.*/",
           "setterMethodName" : "setVirtualRouterName",
           "setterModel" : {
@@ -23707,6 +23999,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -23750,6 +24043,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ServiceNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service mesh service names to associate with the virtual router.</p>\n@param serviceNames The service mesh service names to associate with the virtual router.*/",
         "setterMethodName" : "setServiceNames",
         "setterModel" : {
@@ -23854,6 +24148,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -23897,6 +24192,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ServiceNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service mesh service names to associate with the virtual router.</p>\n@param serviceNames The service mesh service names to associate with the virtual router.*/",
           "setterMethodName" : "setServiceNames",
           "setterModel" : {
@@ -24002,6 +24298,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the virtual router.</p>\n@param status The current status of the virtual router.\n@see VirtualRouterStatusCode*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -24069,6 +24366,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the virtual router.</p>\n@param status The current status of the virtual router.\n@see VirtualRouterStatusCode*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -24223,6 +24521,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VirtualNode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The virtual node to associate with the weighted target.</p>\n@param virtualNode The virtual node to associate with the weighted target.*/",
         "setterMethodName" : "setVirtualNode",
         "setterModel" : {
@@ -24288,6 +24587,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Weight",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The relative weight of the weighted target.</p>\n@param weight The relative weight of the weighted target.*/",
         "setterMethodName" : "setWeight",
         "setterModel" : {
@@ -24355,6 +24655,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VirtualNode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The virtual node to associate with the weighted target.</p>\n@param virtualNode The virtual node to associate with the weighted target.*/",
           "setterMethodName" : "setVirtualNode",
           "setterModel" : {
@@ -24421,6 +24722,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Weight",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The relative weight of the weighted target.</p>\n@param weight The relative weight of the weighted target.*/",
           "setterMethodName" : "setWeight",
           "setterModel" : {

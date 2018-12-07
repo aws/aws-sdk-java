@@ -238,7 +238,8 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -251,7 +252,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
         if (getCiphertextBlob() != null)
             sb.append("CiphertextBlob: ").append(getCiphertextBlob()).append(",");
         if (getPlaintext() != null)
-            sb.append("Plaintext: ").append(getPlaintext()).append(",");
+            sb.append("Plaintext: ").append("***Sensitive Data Redacted***").append(",");
         if (getKeyId() != null)
             sb.append("KeyId: ").append(getKeyId());
         sb.append("}");

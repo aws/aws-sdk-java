@@ -1062,6 +1062,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LogBucket",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon S3 bucket that contains your flow logs.</p>\n@param logBucket The Amazon S3 bucket that contains your flow logs.*/",
         "setterMethodName" : "setLogBucket",
         "setterModel" : {
@@ -1129,6 +1130,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LogBucket",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon S3 bucket that contains your flow logs.</p>\n@param logBucket The Amazon S3 bucket that contains your flow logs.*/",
           "setterMethodName" : "setLogBucket",
           "setterModel" : {
@@ -1278,6 +1280,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role the DRT will use to access your AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href=\"https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy\">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=\" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html\">Attaching and Detaching IAM Policies</a>.</p>\n@param roleArn The Amazon Resource Name (ARN) of the role the DRT will use to access your AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href=\"https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy\">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=\" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html\">Attaching and Detaching IAM Policies</a>.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -1345,6 +1348,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role the DRT will use to access your AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href=\"https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy\">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=\" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html\">Attaching and Detaching IAM Policies</a>.</p>\n@param roleArn The Amazon Resource Name (ARN) of the role the DRT will use to access your AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href=\"https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy\">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=\" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html\">Attaching and Detaching IAM Policies</a>.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -1487,6 +1491,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttackId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier (ID) of the attack.</p>\n@param attackId The unique identifier (ID) of the attack.*/",
         "setterMethodName" : "setAttackId",
         "setterModel" : {
@@ -1552,6 +1557,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource that was attacked.*/",
         "setterMethodName" : "setResourceArn",
         "setterModel" : {
@@ -1654,6 +1660,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1697,6 +1704,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubResources",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>\n@param subResources If applicable, additional detail about the resource being attacked, for example, IP address or URL.*/",
         "setterMethodName" : "setSubResources",
         "setterModel" : {
@@ -1762,6 +1770,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time the attack started, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param startTime The time the attack started, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -1827,6 +1836,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time the attack ended, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param endTime The time the attack ended, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -1929,6 +1939,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1972,6 +1983,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttackCounters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of counters that describe the attack for the specified time period.</p>\n@param attackCounters List of counters that describe the attack for the specified time period.*/",
         "setterMethodName" : "setAttackCounters",
         "setterModel" : {
@@ -2074,6 +2086,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2117,6 +2130,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttackProperties",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The array of <a>AttackProperty</a> objects.</p>\n@param attackProperties The array of <a>AttackProperty</a> objects.*/",
         "setterMethodName" : "setAttackProperties",
         "setterModel" : {
@@ -2219,6 +2233,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2262,6 +2277,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Mitigations",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of mitigation actions taken for the attack.</p>\n@param mitigations List of mitigation actions taken for the attack.*/",
         "setterMethodName" : "setMitigations",
         "setterModel" : {
@@ -2366,6 +2382,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2409,6 +2426,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttackCounters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of counters that describe the attack for the specified time period.</p>\n@param attackCounters List of counters that describe the attack for the specified time period.*/",
           "setterMethodName" : "setAttackCounters",
           "setterModel" : {
@@ -2475,6 +2493,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttackId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier (ID) of the attack.</p>\n@param attackId The unique identifier (ID) of the attack.*/",
           "setterMethodName" : "setAttackId",
           "setterModel" : {
@@ -2578,6 +2597,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2621,6 +2641,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttackProperties",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The array of <a>AttackProperty</a> objects.</p>\n@param attackProperties The array of <a>AttackProperty</a> objects.*/",
           "setterMethodName" : "setAttackProperties",
           "setterModel" : {
@@ -2687,6 +2708,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time the attack ended, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param endTime The time the attack ended, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -2790,6 +2812,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2833,6 +2856,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Mitigations",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of mitigation actions taken for the attack.</p>\n@param mitigations List of mitigation actions taken for the attack.*/",
           "setterMethodName" : "setMitigations",
           "setterModel" : {
@@ -2899,6 +2923,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource that was attacked.*/",
           "setterMethodName" : "setResourceArn",
           "setterModel" : {
@@ -2965,6 +2990,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time the attack started, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param startTime The time the attack started, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -3068,6 +3094,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3111,6 +3138,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubResources",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>\n@param subResources If applicable, additional detail about the resource being attacked, for example, IP address or URL.*/",
           "setterMethodName" : "setSubResources",
           "setterModel" : {
@@ -3262,6 +3290,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttackLayer",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of DDoS event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>\n@param attackLayer The type of DDoS event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.\n@see AttackLayer*/",
         "setterMethodName" : "setAttackLayer",
         "setterModel" : {
@@ -3327,6 +3356,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttackPropertyIdentifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Defines the DDoS attack property information that is provided.</p>\n@param attackPropertyIdentifier Defines the DDoS attack property information that is provided.\n@see AttackPropertyIdentifier*/",
         "setterMethodName" : "setAttackPropertyIdentifier",
         "setterModel" : {
@@ -3429,6 +3459,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3472,6 +3503,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TopContributors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The array of <a>Contributor</a> objects that includes the top five contributors to an attack. </p>\n@param topContributors The array of <a>Contributor</a> objects that includes the top five contributors to an attack.*/",
         "setterMethodName" : "setTopContributors",
         "setterModel" : {
@@ -3537,6 +3569,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Unit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unit of the <code>Value</code> of the contributions.</p>\n@param unit The unit of the <code>Value</code> of the contributions.\n@see Unit*/",
         "setterMethodName" : "setUnit",
         "setterModel" : {
@@ -3602,6 +3635,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Total",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The total contributions made to this attack by all contributors, not just the five listed in the <code>TopContributors</code> list.</p>\n@param total The total contributions made to this attack by all contributors, not just the five listed in the <code>TopContributors</code> list.*/",
         "setterMethodName" : "setTotal",
         "setterModel" : {
@@ -3669,6 +3703,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttackLayer",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of DDoS event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>\n@param attackLayer The type of DDoS event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.\n@see AttackLayer*/",
           "setterMethodName" : "setAttackLayer",
           "setterModel" : {
@@ -3735,6 +3770,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttackPropertyIdentifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Defines the DDoS attack property information that is provided.</p>\n@param attackPropertyIdentifier Defines the DDoS attack property information that is provided.\n@see AttackPropertyIdentifier*/",
           "setterMethodName" : "setAttackPropertyIdentifier",
           "setterModel" : {
@@ -3838,6 +3874,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3881,6 +3918,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TopContributors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The array of <a>Contributor</a> objects that includes the top five contributors to an attack. </p>\n@param topContributors The array of <a>Contributor</a> objects that includes the top five contributors to an attack.*/",
           "setterMethodName" : "setTopContributors",
           "setterModel" : {
@@ -3947,6 +3985,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Total",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The total contributions made to this attack by all contributors, not just the five listed in the <code>TopContributors</code> list.</p>\n@param total The total contributions made to this attack by all contributors, not just the five listed in the <code>TopContributors</code> list.*/",
           "setterMethodName" : "setTotal",
           "setterModel" : {
@@ -4013,6 +4052,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Unit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unit of the <code>Value</code> of the contributions.</p>\n@param unit The unit of the <code>Value</code> of the contributions.\n@see Unit*/",
           "setterMethodName" : "setUnit",
           "setterModel" : {
@@ -4176,6 +4216,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttackId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier (ID) of the attack.</p>\n@param attackId The unique identifier (ID) of the attack.*/",
         "setterMethodName" : "setAttackId",
         "setterModel" : {
@@ -4241,6 +4282,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource that was attacked.*/",
         "setterMethodName" : "setResourceArn",
         "setterModel" : {
@@ -4306,6 +4348,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start time of the attack, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param startTime The start time of the attack, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -4371,6 +4414,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The end time of the attack, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param endTime The end time of the attack, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -4473,6 +4517,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4516,6 +4561,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttackVectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of attacks for a specified time period.</p>\n@param attackVectors The list of attacks for a specified time period.*/",
         "setterMethodName" : "setAttackVectors",
         "setterModel" : {
@@ -4583,6 +4629,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttackId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier (ID) of the attack.</p>\n@param attackId The unique identifier (ID) of the attack.*/",
           "setterMethodName" : "setAttackId",
           "setterModel" : {
@@ -4686,6 +4733,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4729,6 +4777,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttackVectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of attacks for a specified time period.</p>\n@param attackVectors The list of attacks for a specified time period.*/",
           "setterMethodName" : "setAttackVectors",
           "setterModel" : {
@@ -4795,6 +4844,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The end time of the attack, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param endTime The end time of the attack, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -4861,6 +4911,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource that was attacked.*/",
           "setterMethodName" : "setResourceArn",
           "setterModel" : {
@@ -4927,6 +4978,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start time of the attack, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param startTime The start time of the attack, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -5032,6 +5084,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VectorType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attack type. Valid values:</p> <ul> <li> <p>UDP_TRAFFIC</p> </li> <li> <p>UDP_FRAGMENT</p> </li> <li> <p>GENERIC_UDP_REFLECTION</p> </li> <li> <p>DNS_REFLECTION</p> </li> <li> <p>NTP_REFLECTION</p> </li> <li> <p>CHARGEN_REFLECTION</p> </li> <li> <p>SSDP_REFLECTION</p> </li> <li> <p>PORT_MAPPER</p> </li> <li> <p>RIP_REFLECTION</p> </li> <li> <p>SNMP_REFLECTION</p> </li> <li> <p>MSSQL_REFLECTION</p> </li> <li> <p>NET_BIOS_REFLECTION</p> </li> <li> <p>SYN_FLOOD</p> </li> <li> <p>ACK_FLOOD</p> </li> <li> <p>REQUEST_FLOOD</p> </li> </ul>\n@param vectorType The attack type. Valid values:</p> <ul> <li> <p>UDP_TRAFFIC</p> </li> <li> <p>UDP_FRAGMENT</p> </li> <li> <p>GENERIC_UDP_REFLECTION</p> </li> <li> <p>DNS_REFLECTION</p> </li> <li> <p>NTP_REFLECTION</p> </li> <li> <p>CHARGEN_REFLECTION</p> </li> <li> <p>SSDP_REFLECTION</p> </li> <li> <p>PORT_MAPPER</p> </li> <li> <p>RIP_REFLECTION</p> </li> <li> <p>SNMP_REFLECTION</p> </li> <li> <p>MSSQL_REFLECTION</p> </li> <li> <p>NET_BIOS_REFLECTION</p> </li> <li> <p>SYN_FLOOD</p> </li> <li> <p>ACK_FLOOD</p> </li> <li> <p>REQUEST_FLOOD</p> </li>*/",
         "setterMethodName" : "setVectorType",
         "setterModel" : {
@@ -5099,6 +5152,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VectorType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attack type. Valid values:</p> <ul> <li> <p>UDP_TRAFFIC</p> </li> <li> <p>UDP_FRAGMENT</p> </li> <li> <p>GENERIC_UDP_REFLECTION</p> </li> <li> <p>DNS_REFLECTION</p> </li> <li> <p>NTP_REFLECTION</p> </li> <li> <p>CHARGEN_REFLECTION</p> </li> <li> <p>SSDP_REFLECTION</p> </li> <li> <p>PORT_MAPPER</p> </li> <li> <p>RIP_REFLECTION</p> </li> <li> <p>SNMP_REFLECTION</p> </li> <li> <p>MSSQL_REFLECTION</p> </li> <li> <p>NET_BIOS_REFLECTION</p> </li> <li> <p>SYN_FLOOD</p> </li> <li> <p>ACK_FLOOD</p> </li> <li> <p>REQUEST_FLOOD</p> </li> </ul>\n@param vectorType The attack type. Valid values:</p> <ul> <li> <p>UDP_TRAFFIC</p> </li> <li> <p>UDP_FRAGMENT</p> </li> <li> <p>GENERIC_UDP_REFLECTION</p> </li> <li> <p>DNS_REFLECTION</p> </li> <li> <p>NTP_REFLECTION</p> </li> <li> <p>CHARGEN_REFLECTION</p> </li> <li> <p>SSDP_REFLECTION</p> </li> <li> <p>PORT_MAPPER</p> </li> <li> <p>RIP_REFLECTION</p> </li> <li> <p>SNMP_REFLECTION</p> </li> <li> <p>MSSQL_REFLECTION</p> </li> <li> <p>NET_BIOS_REFLECTION</p> </li> <li> <p>SYN_FLOOD</p> </li> <li> <p>ACK_FLOOD</p> </li> <li> <p>REQUEST_FLOOD</p> </li>*/",
           "setterMethodName" : "setVectorType",
           "setterModel" : {
@@ -5250,6 +5304,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>\n@param name The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5315,6 +5370,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>\n@param value The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -5382,6 +5438,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>\n@param name The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5448,6 +5505,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>\n@param value The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -5560,6 +5618,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Friendly name for the <code>Protection</code> you are creating.</p>\n@param name Friendly name for the <code>Protection</code> you are creating.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5625,6 +5684,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The ARN should be in one of the following formats:</p> <ul> <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li> <li> <p>For AWS CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li> <li> <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li> </ul>\n@param resourceArn The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The ARN should be in one of the following formats:</p> <ul> <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li> <li> <p>For AWS CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li> <li> <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>*/",
         "setterMethodName" : "setResourceArn",
         "setterModel" : {
@@ -5692,6 +5752,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Friendly name for the <code>Protection</code> you are creating.</p>\n@param name Friendly name for the <code>Protection</code> you are creating.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5758,6 +5819,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The ARN should be in one of the following formats:</p> <ul> <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li> <li> <p>For AWS CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li> <li> <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li> </ul>\n@param resourceArn The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The ARN should be in one of the following formats:</p> <ul> <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li> <li> <p>For AWS CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li> <li> <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>*/",
           "setterMethodName" : "setResourceArn",
           "setterModel" : {
@@ -5860,6 +5922,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProtectionId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object that is created.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object that is created.*/",
         "setterMethodName" : "setProtectionId",
         "setterModel" : {
@@ -5927,6 +5990,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProtectionId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object that is created.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object that is created.*/",
           "setterMethodName" : "setProtectionId",
           "setterModel" : {
@@ -6123,6 +6187,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProtectionId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object to be deleted.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object to be deleted.*/",
         "setterMethodName" : "setProtectionId",
         "setterModel" : {
@@ -6190,6 +6255,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProtectionId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object to be deleted.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object to be deleted.*/",
           "setterMethodName" : "setProtectionId",
           "setterModel" : {
@@ -6423,6 +6489,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttackId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier (ID) for the attack that to be described.</p>\n@param attackId The unique identifier (ID) for the attack that to be described.*/",
         "setterMethodName" : "setAttackId",
         "setterModel" : {
@@ -6490,6 +6557,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttackId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier (ID) for the attack that to be described.</p>\n@param attackId The unique identifier (ID) for the attack that to be described.*/",
           "setterMethodName" : "setAttackId",
           "setterModel" : {
@@ -6592,6 +6660,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Attack",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attack that is described.</p>\n@param attack The attack that is described.*/",
         "setterMethodName" : "setAttack",
         "setterModel" : {
@@ -6659,6 +6728,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Attack",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attack that is described.</p>\n@param attack The attack that is described.*/",
           "setterMethodName" : "setAttack",
           "setterModel" : {
@@ -6808,6 +6878,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role the DRT used to access your AWS account.</p>\n@param roleArn The Amazon Resource Name (ARN) of the role the DRT used to access your AWS account.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -6910,6 +6981,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6953,6 +7025,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "LogBucketList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of Amazon S3 buckets accessed by the DRT.</p>\n@param logBucketList The list of Amazon S3 buckets accessed by the DRT.*/",
         "setterMethodName" : "setLogBucketList",
         "setterModel" : {
@@ -7057,6 +7130,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7100,6 +7174,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "LogBucketList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of Amazon S3 buckets accessed by the DRT.</p>\n@param logBucketList The list of Amazon S3 buckets accessed by the DRT.*/",
           "setterMethodName" : "setLogBucketList",
           "setterModel" : {
@@ -7166,6 +7241,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role the DRT used to access your AWS account.</p>\n@param roleArn The Amazon Resource Name (ARN) of the role the DRT used to access your AWS account.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -7352,6 +7428,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7395,6 +7472,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EmergencyContactList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
         "setterMethodName" : "setEmergencyContactList",
         "setterModel" : {
@@ -7499,6 +7577,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7542,6 +7621,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EmergencyContactList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
           "setterMethodName" : "setEmergencyContactList",
           "setterModel" : {
@@ -7654,6 +7734,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProtectionId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object that is described.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object that is described.*/",
         "setterMethodName" : "setProtectionId",
         "setterModel" : {
@@ -7721,6 +7802,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProtectionId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object that is described.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object that is described.*/",
           "setterMethodName" : "setProtectionId",
           "setterModel" : {
@@ -7823,6 +7905,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Protection",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <a>Protection</a> object that is described.</p>\n@param protection The <a>Protection</a> object that is described.*/",
         "setterMethodName" : "setProtection",
         "setterModel" : {
@@ -7890,6 +7973,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Protection",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <a>Protection</a> object that is described.</p>\n@param protection The <a>Protection</a> object that is described.*/",
           "setterMethodName" : "setProtection",
           "setterModel" : {
@@ -8039,6 +8123,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Subscription",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS Shield Advanced subscription details for an account.</p>\n@param subscription The AWS Shield Advanced subscription details for an account.*/",
         "setterMethodName" : "setSubscription",
         "setterModel" : {
@@ -8106,6 +8191,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Subscription",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS Shield Advanced subscription details for an account.</p>\n@param subscription The AWS Shield Advanced subscription details for an account.*/",
           "setterMethodName" : "setSubscription",
           "setterModel" : {
@@ -8218,6 +8304,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LogBucket",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon S3 bucket that contains your flow logs.</p>\n@param logBucket The Amazon S3 bucket that contains your flow logs.*/",
         "setterMethodName" : "setLogBucket",
         "setterModel" : {
@@ -8285,6 +8372,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LogBucket",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon S3 bucket that contains your flow logs.</p>\n@param logBucket The Amazon S3 bucket that contains your flow logs.*/",
           "setterMethodName" : "setLogBucket",
           "setterModel" : {
@@ -8511,6 +8599,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@param emailAddress An email address that the DRT can use to contact you during a suspected attack.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -8578,6 +8667,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An email address that the DRT can use to contact you during a suspected attack.</p>\n@param emailAddress An email address that the DRT can use to contact you during a suspected attack.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -8727,6 +8817,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SubscriptionState",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the subscription.</p>\n@param subscriptionState The status of the subscription.\n@see SubscriptionState*/",
         "setterMethodName" : "setSubscriptionState",
         "setterModel" : {
@@ -8794,6 +8885,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SubscriptionState",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the subscription.</p>\n@param subscriptionState The status of the subscription.\n@see SubscriptionState*/",
           "setterMethodName" : "setSubscriptionState",
           "setterModel" : {
@@ -9084,6 +9176,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of protection.</p>\n@param type The type of protection.*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -9149,6 +9242,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Max",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>\n@param max The maximum number of protections that can be created for the specified <code>Type</code>.*/",
         "setterMethodName" : "setMax",
         "setterModel" : {
@@ -9216,6 +9310,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Max",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>\n@param max The maximum number of protections that can be created for the specified <code>Type</code>.*/",
           "setterMethodName" : "setMax",
           "setterModel" : {
@@ -9282,6 +9377,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of protection.</p>\n@param type The type of protection.*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -9387,6 +9483,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param type */",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -9452,6 +9549,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param limit */",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -9519,6 +9617,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param limit */",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -9585,6 +9684,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param type */",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -9731,6 +9831,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9774,6 +9875,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceArns",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.</p>\n@param resourceArns The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.*/",
         "setterMethodName" : "setResourceArns",
         "setterModel" : {
@@ -9839,6 +9941,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp format</a> is allowed. </p>\n@param startTime The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp format</a> is allowed.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -9904,6 +10007,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp format</a> is allowed. </p>\n@param endTime The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp format</a> is allowed.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -9969,6 +10073,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10034,6 +10139,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.</p> <p>This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if there are still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.</p>\n@param maxResults The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.</p> <p>This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if there are still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10101,6 +10207,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp format</a> is allowed. </p>\n@param endTime The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp format</a> is allowed.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -10167,6 +10274,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.</p> <p>This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if there are still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.</p>\n@param maxResults The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.</p> <p>This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if there are still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10233,6 +10341,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10336,6 +10445,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10379,6 +10489,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceArns",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.</p>\n@param resourceArns The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.*/",
           "setterMethodName" : "setResourceArns",
           "setterModel" : {
@@ -10445,6 +10556,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp format</a> is allowed. </p>\n@param startTime The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp format</a> is allowed.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -10584,6 +10696,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10627,6 +10740,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttackSummaries",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attack information for the specified time range.</p>\n@param attackSummaries The attack information for the specified time range.*/",
         "setterMethodName" : "setAttackSummaries",
         "setterModel" : {
@@ -10692,6 +10806,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>AttackSummary</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.</p>\n@param nextToken The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>AttackSummary</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10796,6 +10911,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10839,6 +10955,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttackSummaries",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attack information for the specified time range.</p>\n@param attackSummaries The attack information for the specified time range.*/",
           "setterMethodName" : "setAttackSummaries",
           "setterModel" : {
@@ -10905,6 +11022,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>AttackSummary</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.</p>\n@param nextToken The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>AttackSummary</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11017,6 +11135,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11082,6 +11201,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.</p> <p>This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there are still more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.</p>\n@param maxResults The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.</p> <p>This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there are still more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -11149,6 +11269,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.</p> <p>This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there are still more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.</p>\n@param maxResults The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.</p> <p>This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there are still more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11215,6 +11336,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11354,6 +11476,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11397,6 +11520,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Protections",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The array of enabled <a>Protection</a> objects.</p>\n@param protections The array of enabled <a>Protection</a> objects.*/",
         "setterMethodName" : "setProtections",
         "setterModel" : {
@@ -11462,6 +11586,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11529,6 +11654,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p> <p>AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a <code>NextToken</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11632,6 +11758,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11675,6 +11802,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Protections",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The array of enabled <a>Protection</a> objects.</p>\n@param protections The array of enabled <a>Protection</a> objects.*/",
           "setterMethodName" : "setProtections",
           "setterModel" : {
@@ -11817,6 +11945,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MitigationName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the mitigation taken for this attack.</p>\n@param mitigationName The name of the mitigation taken for this attack.*/",
         "setterMethodName" : "setMitigationName",
         "setterModel" : {
@@ -11884,6 +12013,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MitigationName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the mitigation taken for this attack.</p>\n@param mitigationName The name of the mitigation taken for this attack.*/",
           "setterMethodName" : "setMitigationName",
           "setterModel" : {
@@ -12063,6 +12193,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier (ID) of the protection.</p>\n@param id The unique identifier (ID) of the protection.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -12128,6 +12259,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The friendly name of the protection. For example, <code>My CloudFront distributions</code>.</p>\n@param name The friendly name of the protection. For example, <code>My CloudFront distributions</code>.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -12193,6 +12325,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the AWS resource that is protected.*/",
         "setterMethodName" : "setResourceArn",
         "setterModel" : {
@@ -12260,6 +12393,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier (ID) of the protection.</p>\n@param id The unique identifier (ID) of the protection.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -12326,6 +12460,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The friendly name of the protection. For example, <code>My CloudFront distributions</code>.</p>\n@param name The friendly name of the protection. For example, <code>My CloudFront distributions</code>.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -12392,6 +12527,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the AWS resource that is protected.*/",
           "setterMethodName" : "setResourceArn",
           "setterModel" : {
@@ -12571,6 +12707,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>SubResource</code> type.</p>\n@param type The <code>SubResource</code> type.\n@see SubResourceType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -12636,6 +12773,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Id",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique identifier (ID) of the <code>SubResource</code>.</p>\n@param id The unique identifier (ID) of the <code>SubResource</code>.*/",
         "setterMethodName" : "setId",
         "setterModel" : {
@@ -12738,6 +12876,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12781,6 +12920,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "AttackVectors",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of attack types and associated counters.</p>\n@param attackVectors The list of attack types and associated counters.*/",
         "setterMethodName" : "setAttackVectors",
         "setterModel" : {
@@ -12883,6 +13023,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12926,6 +13067,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Counters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The counters that describe the details of the attack.</p>\n@param counters The counters that describe the details of the attack.*/",
         "setterMethodName" : "setCounters",
         "setterModel" : {
@@ -13030,6 +13172,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13073,6 +13216,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "AttackVectors",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of attack types and associated counters.</p>\n@param attackVectors The list of attack types and associated counters.*/",
           "setterMethodName" : "setAttackVectors",
           "setterModel" : {
@@ -13176,6 +13320,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13219,6 +13364,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Counters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The counters that describe the details of the attack.</p>\n@param counters The counters that describe the details of the attack.*/",
           "setterMethodName" : "setCounters",
           "setterModel" : {
@@ -13285,6 +13431,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Id",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique identifier (ID) of the <code>SubResource</code>.</p>\n@param id The unique identifier (ID) of the <code>SubResource</code>.*/",
           "setterMethodName" : "setId",
           "setterModel" : {
@@ -13351,6 +13498,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>SubResource</code> type.</p>\n@param type The <code>SubResource</code> type.\n@see SubResourceType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -13502,6 +13650,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "StartTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start time of the subscription, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param startTime The start time of the subscription, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
         "setterMethodName" : "setStartTime",
         "setterModel" : {
@@ -13567,6 +13716,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "EndTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time your subscription will end.</p>\n@param endTime The date and time your subscription will end.*/",
         "setterMethodName" : "setEndTime",
         "setterModel" : {
@@ -13632,6 +13782,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "TimeCommitmentInSeconds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The length, in seconds, of the AWS Shield Advanced subscription for the account.</p>\n@param timeCommitmentInSeconds The length, in seconds, of the AWS Shield Advanced subscription for the account.*/",
         "setterMethodName" : "setTimeCommitmentInSeconds",
         "setterModel" : {
@@ -13697,6 +13848,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AutoRenew",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p> <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>\n@param autoRenew If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p> <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.\n@see AutoRenew*/",
         "setterMethodName" : "setAutoRenew",
         "setterModel" : {
@@ -13799,6 +13951,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13842,6 +13995,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Limits",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies how many protections of a given type you can create.</p>\n@param limits Specifies how many protections of a given type you can create.*/",
         "setterMethodName" : "setLimits",
         "setterModel" : {
@@ -13909,6 +14063,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AutoRenew",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p> <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>\n@param autoRenew If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p> <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.\n@see AutoRenew*/",
           "setterMethodName" : "setAutoRenew",
           "setterModel" : {
@@ -13975,6 +14130,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "EndTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time your subscription will end.</p>\n@param endTime The date and time your subscription will end.*/",
           "setterMethodName" : "setEndTime",
           "setterModel" : {
@@ -14078,6 +14234,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14121,6 +14278,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Limits",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies how many protections of a given type you can create.</p>\n@param limits Specifies how many protections of a given type you can create.*/",
           "setterMethodName" : "setLimits",
           "setterModel" : {
@@ -14187,6 +14345,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "StartTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start time of the subscription, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param startTime The start time of the subscription, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
           "setterMethodName" : "setStartTime",
           "setterModel" : {
@@ -14253,6 +14412,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "TimeCommitmentInSeconds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The length, in seconds, of the AWS Shield Advanced subscription for the account.</p>\n@param timeCommitmentInSeconds The length, in seconds, of the AWS Shield Advanced subscription for the account.*/",
           "setterMethodName" : "setTimeCommitmentInSeconds",
           "setterModel" : {
@@ -14404,6 +14564,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VectorType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attack type, for example, SNMP reflection or SYN flood.</p>\n@param vectorType The attack type, for example, SNMP reflection or SYN flood.*/",
         "setterMethodName" : "setVectorType",
         "setterModel" : {
@@ -14506,6 +14667,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14549,6 +14711,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "VectorCounters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The list of counters that describe the details of the attack.</p>\n@param vectorCounters The list of counters that describe the details of the attack.*/",
         "setterMethodName" : "setVectorCounters",
         "setterModel" : {
@@ -14653,6 +14816,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14696,6 +14860,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "VectorCounters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The list of counters that describe the details of the attack.</p>\n@param vectorCounters The list of counters that describe the details of the attack.*/",
           "setterMethodName" : "setVectorCounters",
           "setterModel" : {
@@ -14762,6 +14927,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VectorType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attack type, for example, SNMP reflection or SYN flood.</p>\n@param vectorType The attack type, for example, SNMP reflection or SYN flood.*/",
           "setterMethodName" : "setVectorType",
           "setterModel" : {
@@ -14867,6 +15033,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The counter name.</p>\n@param name The counter name.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -14932,6 +15099,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "Max",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum value of the counter for a specified time period.</p>\n@param max The maximum value of the counter for a specified time period.*/",
         "setterMethodName" : "setMax",
         "setterModel" : {
@@ -14997,6 +15165,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "Average",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The average value of the counter for a specified time period.</p>\n@param average The average value of the counter for a specified time period.*/",
         "setterMethodName" : "setAverage",
         "setterModel" : {
@@ -15062,6 +15231,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "Sum",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The total of counter values for a specified time period.</p>\n@param sum The total of counter values for a specified time period.*/",
         "setterMethodName" : "setSum",
         "setterModel" : {
@@ -15127,6 +15297,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "N",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of counters for a specified time period.</p>\n@param n The number of counters for a specified time period.*/",
         "setterMethodName" : "setN",
         "setterModel" : {
@@ -15192,6 +15363,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Unit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unit of the counters.</p>\n@param unit The unit of the counters.*/",
         "setterMethodName" : "setUnit",
         "setterModel" : {
@@ -15259,6 +15431,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "Average",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The average value of the counter for a specified time period.</p>\n@param average The average value of the counter for a specified time period.*/",
           "setterMethodName" : "setAverage",
           "setterModel" : {
@@ -15325,6 +15498,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "Max",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum value of the counter for a specified time period.</p>\n@param max The maximum value of the counter for a specified time period.*/",
           "setterMethodName" : "setMax",
           "setterModel" : {
@@ -15391,6 +15565,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "N",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of counters for a specified time period.</p>\n@param n The number of counters for a specified time period.*/",
           "setterMethodName" : "setN",
           "setterModel" : {
@@ -15457,6 +15632,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The counter name.</p>\n@param name The counter name.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -15523,6 +15699,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "Sum",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The total of counter values for a specified time period.</p>\n@param sum The total of counter values for a specified time period.*/",
           "setterMethodName" : "setSum",
           "setterModel" : {
@@ -15589,6 +15766,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Unit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unit of the counters.</p>\n@param unit The unit of the counters.*/",
           "setterMethodName" : "setUnit",
           "setterModel" : {
@@ -15694,6 +15872,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "FromInclusive",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The start time, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param fromInclusive The start time, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
         "setterMethodName" : "setFromInclusive",
         "setterModel" : {
@@ -15759,6 +15938,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "ToExclusive",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The end time, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param toExclusive The end time, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
         "setterMethodName" : "setToExclusive",
         "setterModel" : {
@@ -15826,6 +16006,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "FromInclusive",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The start time, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param fromInclusive The start time, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
           "setterMethodName" : "setFromInclusive",
           "setterModel" : {
@@ -15892,6 +16073,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "ToExclusive",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The end time, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.</p>\n@param toExclusive The end time, in Unix time in seconds. For more information see <a href=\"http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types\">timestamp</a>.*/",
           "setterMethodName" : "setToExclusive",
           "setterModel" : {
@@ -16093,6 +16275,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -16136,6 +16319,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EmergencyContactList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
         "setterMethodName" : "setEmergencyContactList",
         "setterModel" : {
@@ -16240,6 +16424,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -16283,6 +16468,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EmergencyContactList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of email addresses that the DRT can use to contact you during a suspected attack.</p>\n@param emergencyContactList A list of email addresses that the DRT can use to contact you during a suspected attack.*/",
           "setterMethodName" : "setEmergencyContactList",
           "setterModel" : {
@@ -16432,6 +16618,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AutoRenew",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>\n@param autoRenew When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.\n@see AutoRenew*/",
         "setterMethodName" : "setAutoRenew",
         "setterModel" : {
@@ -16499,6 +16686,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AutoRenew",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>\n@param autoRenew When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.\n@see AutoRenew*/",
           "setterMethodName" : "setAutoRenew",
           "setterModel" : {

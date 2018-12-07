@@ -41,7 +41,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The policy version to delete.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a
      * period '.' and a string of letters and digits.
      * </p>
@@ -125,7 +125,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The policy version to delete.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a
      * period '.' and a string of letters and digits.
      * </p>
@@ -138,8 +138,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param versionId
      *        The policy version to delete.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
      *        followed by a period '.' and a string of letters and digits.
      *        </p>
      *        <p>
@@ -157,7 +157,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The policy version to delete.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a
      * period '.' and a string of letters and digits.
      * </p>
@@ -169,8 +169,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return The policy version to delete.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
      *         followed by a period '.' and a string of letters and digits.
      *         </p>
      *         <p>
@@ -188,7 +188,7 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The policy version to delete.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a
      * period '.' and a string of letters and digits.
      * </p>
@@ -201,8 +201,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param versionId
      *        The policy version to delete.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
      *        followed by a period '.' and a string of letters and digits.
      *        </p>
      *        <p>
@@ -218,7 +218,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

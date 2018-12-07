@@ -154,6 +154,7 @@ public enum InstanceType {
     P32xlarge("p3.2xlarge"),
     P38xlarge("p3.8xlarge"),
     P316xlarge("p3.16xlarge"),
+    P3dn24xlarge("p3dn.24xlarge"),
     D2Xlarge("d2.xlarge"),
     D22xlarge("d2.2xlarge"),
     D24xlarge("d2.4xlarge"),

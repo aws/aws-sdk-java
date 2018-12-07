@@ -243,7 +243,8 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -260,7 +261,7 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
         if (getS3ObjectVersion() != null)
             sb.append("S3ObjectVersion: ").append(getS3ObjectVersion()).append(",");
         if (getZipFile() != null)
-            sb.append("ZipFile: ").append(getZipFile());
+            sb.append("ZipFile: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -283,7 +283,8 @@ public class DescribeUserStackAssociationsRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -296,7 +297,7 @@ public class DescribeUserStackAssociationsRequest extends com.amazonaws.AmazonWe
         if (getStackName() != null)
             sb.append("StackName: ").append(getStackName()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: ").append(getUserName()).append(",");
+            sb.append("UserName: ").append("***Sensitive Data Redacted***").append(",");
         if (getAuthenticationType() != null)
             sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
         if (getMaxResults() != null)

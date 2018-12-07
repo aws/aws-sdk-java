@@ -244,6 +244,43 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or
+     * weekly interval.
+     * </p>
+     * 
+     * @param createBusinessReportScheduleRequest
+     * @return A Java Future containing the result of the CreateBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.CreateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(
+            CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest);
+
+    /**
+     * <p>
+     * Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or
+     * weekly interval.
+     * </p>
+     * 
+     * @param createBusinessReportScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.CreateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(
+            CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBusinessReportScheduleRequest, CreateBusinessReportScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a new conference provider under the user's AWS account.
      * </p>
      * 
@@ -458,6 +495,41 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<DeleteAddressBookResult> deleteAddressBookAsync(DeleteAddressBookRequest deleteAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAddressBookRequest, DeleteAddressBookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the recurring report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param deleteBusinessReportScheduleRequest
+     * @return A Java Future containing the result of the DeleteBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.DeleteBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(
+            DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest);
+
+    /**
+     * <p>
+     * Deletes the recurring report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param deleteBusinessReportScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DeleteBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(
+            DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBusinessReportScheduleRequest, DeleteBusinessReportScheduleResult> asyncHandler);
 
     /**
      * <p>
@@ -1193,6 +1265,39 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<GetSkillGroupResult> getSkillGroupAsync(GetSkillGroupRequest getSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetSkillGroupRequest, GetSkillGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the details of the schedules that a user configured.
+     * </p>
+     * 
+     * @param listBusinessReportSchedulesRequest
+     * @return A Java Future containing the result of the ListBusinessReportSchedules operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ListBusinessReportSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(
+            ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists the details of the schedules that a user configured.
+     * </p>
+     * 
+     * @param listBusinessReportSchedulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBusinessReportSchedules operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListBusinessReportSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(
+            ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBusinessReportSchedulesRequest, ListBusinessReportSchedulesResult> asyncHandler);
 
     /**
      * <p>
@@ -2060,6 +2165,41 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(UpdateAddressBookRequest updateAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAddressBookRequest, UpdateAddressBookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration of the report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param updateBusinessReportScheduleRequest
+     * @return A Java Future containing the result of the UpdateBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.UpdateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(
+            UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of the report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param updateBusinessReportScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.UpdateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(
+            UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBusinessReportScheduleRequest, UpdateBusinessReportScheduleResult> asyncHandler);
 
     /**
      * <p>

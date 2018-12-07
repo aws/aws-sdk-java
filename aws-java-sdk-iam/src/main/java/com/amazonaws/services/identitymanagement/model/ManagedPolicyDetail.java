@@ -88,8 +88,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for
+     * IAM Identities </a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private Integer permissionsBoundaryUsageCount;
@@ -444,15 +444,15 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for
+     * IAM Identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundaryUsageCount
      *        The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
      *        <p>
      *        For more information about permissions boundaries, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
      */
 
@@ -466,14 +466,14 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for
+     * IAM Identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
      *         <p>
      *         For more information about permissions boundaries, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
      */
 
@@ -487,15 +487,15 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for
+     * IAM Identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundaryUsageCount
      *        The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
      *        <p>
      *        For more information about permissions boundaries, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -790,7 +790,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

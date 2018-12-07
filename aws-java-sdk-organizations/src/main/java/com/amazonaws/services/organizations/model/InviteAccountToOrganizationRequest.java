@@ -242,7 +242,8 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -255,7 +256,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
         if (getTarget() != null)
             sb.append("Target: ").append(getTarget()).append(",");
         if (getNotes() != null)
-            sb.append("Notes: ").append(getNotes());
+            sb.append("Notes: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

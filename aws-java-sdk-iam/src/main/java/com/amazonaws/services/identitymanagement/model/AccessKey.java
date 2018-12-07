@@ -361,7 +361,8 @@ public class AccessKey implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -378,7 +379,7 @@ public class AccessKey implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getSecretAccessKey() != null)
-            sb.append("SecretAccessKey: ").append(getSecretAccessKey()).append(",");
+            sb.append("SecretAccessKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreateDate() != null)
             sb.append("CreateDate: ").append(getCreateDate());
         sb.append("}");

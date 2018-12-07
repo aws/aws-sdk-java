@@ -96,6 +96,19 @@
       ],
       "documentation":"<p>Creates an address book with the specified details.</p>"
     },
+    "CreateBusinessReportSchedule":{
+      "name":"CreateBusinessReportSchedule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateBusinessReportScheduleRequest"},
+      "output":{"shape":"CreateBusinessReportScheduleResponse"},
+      "errors":[
+        {"shape":"AlreadyExistsException"}
+      ],
+      "documentation":"<p>Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval.</p>"
+    },
     "CreateConferenceProvider":{
       "name":"CreateConferenceProvider",
       "http":{
@@ -195,6 +208,20 @@
         {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Deletes an address book by the address book ARN.</p>"
+    },
+    "DeleteBusinessReportSchedule":{
+      "name":"DeleteBusinessReportSchedule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteBusinessReportScheduleRequest"},
+      "output":{"shape":"DeleteBusinessReportScheduleResponse"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
+      ],
+      "documentation":"<p>Deletes the recurring report delivery schedule with the specified schedule ARN.</p>"
     },
     "DeleteConferenceProvider":{
       "name":"DeleteConferenceProvider",
@@ -501,6 +528,16 @@
         {"shape":"NotFoundException"}
       ],
       "documentation":"<p>Gets skill group details by skill group ARN.</p>"
+    },
+    "ListBusinessReportSchedules":{
+      "name":"ListBusinessReportSchedules",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListBusinessReportSchedulesRequest"},
+      "output":{"shape":"ListBusinessReportSchedulesResponse"},
+      "documentation":"<p>Lists the details of the schedules that a user configured.</p>"
     },
     "ListConferenceProviders":{
       "name":"ListConferenceProviders",
@@ -829,6 +866,20 @@
       ],
       "documentation":"<p>Updates address book details by the address book ARN.</p>"
     },
+    "UpdateBusinessReportSchedule":{
+      "name":"UpdateBusinessReportSchedule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateBusinessReportScheduleRequest"},
+      "output":{"shape":"UpdateBusinessReportScheduleResponse"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
+      ],
+      "documentation":"<p>Updates the configuration of the report delivery schedule with the specified schedule ARN.</p>"
+    },
     "UpdateConferenceProvider":{
       "name":"UpdateConferenceProvider",
       "http":{
@@ -1097,6 +1148,146 @@
       "type":"list",
       "member":{"shape":"BulletPoint"}
     },
+    "BusinessReport":{
+      "type":"structure",
+      "members":{
+        "Status":{
+          "shape":"BusinessReportStatus",
+          "documentation":"<p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>"
+        },
+        "FailureCode":{
+          "shape":"BusinessReportFailureCode",
+          "documentation":"<p>The failure code.</p>"
+        },
+        "S3Location":{
+          "shape":"BusinessReportS3Location",
+          "documentation":"<p>The S3 location of the output reports.</p>"
+        },
+        "DeliveryTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time of report delivery.</p>"
+        },
+        "DownloadUrl":{
+          "shape":"BusinessReportDownloadUrl",
+          "documentation":"<p>The download link where a user can download the report.</p>"
+        }
+      },
+      "documentation":"<p>Usage report with specified parameters.</p>"
+    },
+    "BusinessReportContentRange":{
+      "type":"structure",
+      "members":{
+        "Interval":{
+          "shape":"BusinessReportInterval",
+          "documentation":"<p>The interval of the content range.</p>"
+        }
+      },
+      "documentation":"<p>The content range of the report.</p>"
+    },
+    "BusinessReportDownloadUrl":{"type":"string"},
+    "BusinessReportFailureCode":{
+      "type":"string",
+      "enum":[
+        "ACCESS_DENIED",
+        "NO_SUCH_BUCKET",
+        "INTERNAL_FAILURE"
+      ]
+    },
+    "BusinessReportFormat":{
+      "type":"string",
+      "enum":[
+        "CSV",
+        "CSV_ZIP"
+      ]
+    },
+    "BusinessReportInterval":{
+      "type":"string",
+      "enum":[
+        "ONE_DAY",
+        "ONE_WEEK"
+      ]
+    },
+    "BusinessReportRecurrence":{
+      "type":"structure",
+      "members":{
+        "StartDate":{
+          "shape":"Date",
+          "documentation":"<p>The start date.</p>"
+        }
+      },
+      "documentation":"<p>The recurrence of the reports.</p>"
+    },
+    "BusinessReportS3Location":{
+      "type":"structure",
+      "members":{
+        "Path":{
+          "shape":"BusinessReportS3Path",
+          "documentation":"<p>The path of the business report.</p>"
+        },
+        "BucketName":{
+          "shape":"CustomerS3BucketName",
+          "documentation":"<p>The S3 bucket name of the output reports.</p>"
+        }
+      },
+      "documentation":"<p>The S3 location of the output reports.</p>"
+    },
+    "BusinessReportS3Path":{"type":"string"},
+    "BusinessReportSchedule":{
+      "type":"structure",
+      "members":{
+        "ScheduleArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the business report schedule.</p>"
+        },
+        "ScheduleName":{
+          "shape":"BusinessReportScheduleName",
+          "documentation":"<p>The name identifier of the schedule.</p>"
+        },
+        "S3BucketName":{
+          "shape":"CustomerS3BucketName",
+          "documentation":"<p>The S3 bucket name of the output reports.</p>"
+        },
+        "S3KeyPrefix":{
+          "shape":"S3KeyPrefix",
+          "documentation":"<p>The S3 key where the report is delivered.</p>"
+        },
+        "Format":{
+          "shape":"BusinessReportFormat",
+          "documentation":"<p>The format of the generated report (individual CSV files or zipped files of individual files).</p>"
+        },
+        "ContentRange":{
+          "shape":"BusinessReportContentRange",
+          "documentation":"<p>The content range of the reports.</p>"
+        },
+        "Recurrence":{
+          "shape":"BusinessReportRecurrence",
+          "documentation":"<p>The recurrence of the reports.</p>"
+        },
+        "LastBusinessReport":{
+          "shape":"BusinessReport",
+          "documentation":"<p>The details of the last business report delivery for a specified time interval.</p>"
+        }
+      },
+      "documentation":"<p>The schedule of the usage report.</p>"
+    },
+    "BusinessReportScheduleList":{
+      "type":"list",
+      "member":{"shape":"BusinessReportSchedule"}
+    },
+    "BusinessReportScheduleName":{
+      "type":"string",
+      "max":64,
+      "min":0,
+      "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u0085\\u00A0-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]*"
+    },
+    "BusinessReportStatus":{
+      "type":"string",
+      "enum":[
+        "RUNNING",
+        "SUCCEEDED",
+        "FAILED"
+      ]
+    },
     "Category":{
       "type":"structure",
       "members":{
@@ -1313,6 +1504,53 @@
         }
       }
     },
+    "CreateBusinessReportScheduleRequest":{
+      "type":"structure",
+      "required":[
+        "Format",
+        "ContentRange"
+      ],
+      "members":{
+        "ScheduleName":{
+          "shape":"BusinessReportScheduleName",
+          "documentation":"<p>The name identifier of the schedule.</p>"
+        },
+        "S3BucketName":{
+          "shape":"CustomerS3BucketName",
+          "documentation":"<p>The S3 bucket name of the output reports.</p>"
+        },
+        "S3KeyPrefix":{
+          "shape":"S3KeyPrefix",
+          "documentation":"<p>The S3 key where the report is delivered.</p>"
+        },
+        "Format":{
+          "shape":"BusinessReportFormat",
+          "documentation":"<p>The format of the generated report (individual CSV files or zipped files of individual files).</p>"
+        },
+        "ContentRange":{
+          "shape":"BusinessReportContentRange",
+          "documentation":"<p>The content range of the reports.</p>"
+        },
+        "Recurrence":{
+          "shape":"BusinessReportRecurrence",
+          "documentation":"<p>The recurrence of the reports.</p>"
+        },
+        "ClientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>The client request token.</p>",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreateBusinessReportScheduleResponse":{
+      "type":"structure",
+      "members":{
+        "ScheduleArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the business report schedule.</p>"
+        }
+      }
+    },
     "CreateConferenceProviderRequest":{
       "type":"structure",
       "required":[
@@ -1359,10 +1597,7 @@
     },
     "CreateContactRequest":{
       "type":"structure",
-      "required":[
-        "FirstName",
-        "PhoneNumber"
-      ],
+      "required":["FirstName"],
       "members":{
         "DisplayName":{
           "shape":"ContactName",
@@ -1567,6 +1802,14 @@
         }
       }
     },
+    "CustomerS3BucketName":{
+      "type":"string",
+      "pattern":"[a-z0-9-\\.]{3,63}"
+    },
+    "Date":{
+      "type":"string",
+      "pattern":"^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$"
+    },
     "DeleteAddressBookRequest":{
       "type":"structure",
       "required":["AddressBookArn"],
@@ -1578,6 +1821,21 @@
       }
     },
     "DeleteAddressBookResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteBusinessReportScheduleRequest":{
+      "type":"structure",
+      "required":["ScheduleArn"],
+      "members":{
+        "ScheduleArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the business report schedule.</p>"
+        }
+      }
+    },
+    "DeleteBusinessReportScheduleResponse":{
       "type":"structure",
       "members":{
       }
@@ -2030,7 +2288,8 @@
     },
     "E164PhoneNumber":{
       "type":"string",
-      "pattern":"^\\+\\d{8,}$"
+      "pattern":"^\\+\\d{8,}$",
+      "sensitive":true
     },
     "Email":{
       "type":"string",
@@ -2376,6 +2635,32 @@
       "documentation":"<p>You are performing an action that would put you beyond your account's limits.</p>",
       "exception":true
     },
+    "ListBusinessReportSchedulesRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token used to list the remaining schedules from the previous API call.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of schedules listed in the call.</p>"
+        }
+      }
+    },
+    "ListBusinessReportSchedulesResponse":{
+      "type":"structure",
+      "members":{
+        "BusinessReportSchedules":{
+          "shape":"BusinessReportScheduleList",
+          "documentation":"<p>The schedule of the reports.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token used to list the remaining schedules from the previous API call.</p>"
+        }
+      }
+    },
     "ListConferenceProvidersRequest":{
       "type":"structure",
       "members":{
@@ -2647,6 +2932,10 @@
       "max":2,
       "min":1
     },
+    "OutboundPhoneNumber":{
+      "type":"string",
+      "pattern":"\\d{10}"
+    },
     "PSTNDialIn":{
       "type":"structure",
       "required":[
@@ -2661,7 +2950,7 @@
           "documentation":"<p>The zip code.</p>"
         },
         "PhoneNumber":{
-          "shape":"PhoneNumber",
+          "shape":"OutboundPhoneNumber",
           "documentation":"<p>The phone number to call to join the conference.</p>"
         },
         "OneClickIdDelay":{
@@ -2674,10 +2963,6 @@
         }
       },
       "documentation":"<p>The information for public switched telephone network (PSTN) conferencing.</p>"
-    },
-    "PhoneNumber":{
-      "type":"string",
-      "pattern":"\\d{10}"
     },
     "PrivacyPolicy":{"type":"string"},
     "ProductDescription":{"type":"string"},
@@ -3095,6 +3380,12 @@
     "RoomSkillParameters":{
       "type":"list",
       "member":{"shape":"RoomSkillParameter"}
+    },
+    "S3KeyPrefix":{
+      "type":"string",
+      "max":100,
+      "min":0,
+      "pattern":"[A-Za-z0-9!_\\-\\.\\*'()/]*"
     },
     "SampleUtterances":{
       "type":"list",
@@ -3804,6 +4095,41 @@
       }
     },
     "UpdateAddressBookResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "UpdateBusinessReportScheduleRequest":{
+      "type":"structure",
+      "required":["ScheduleArn"],
+      "members":{
+        "ScheduleArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the business report schedule.</p>"
+        },
+        "S3BucketName":{
+          "shape":"CustomerS3BucketName",
+          "documentation":"<p>The S3 location of the output reports.</p>"
+        },
+        "S3KeyPrefix":{
+          "shape":"S3KeyPrefix",
+          "documentation":"<p>The S3 key where the report is delivered.</p>"
+        },
+        "Format":{
+          "shape":"BusinessReportFormat",
+          "documentation":"<p>The format of the generated report (individual CSV files or zipped files of individual files).</p>"
+        },
+        "ScheduleName":{
+          "shape":"BusinessReportScheduleName",
+          "documentation":"<p>The name identifier of the schedule.</p>"
+        },
+        "Recurrence":{
+          "shape":"BusinessReportRecurrence",
+          "documentation":"<p>The recurrence of the reports.</p>"
+        }
+      }
+    },
+    "UpdateBusinessReportScheduleResponse":{
       "type":"structure",
       "members":{
       }

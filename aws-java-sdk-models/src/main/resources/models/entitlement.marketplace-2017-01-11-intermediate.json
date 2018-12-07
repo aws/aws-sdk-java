@@ -187,6 +187,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProductCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>\n@param productCode The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.*/",
         "setterMethodName" : "setProductCode",
         "setterModel" : {
@@ -252,6 +253,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Dimension",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>\n@param dimension The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.*/",
         "setterMethodName" : "setDimension",
         "setterModel" : {
@@ -317,6 +319,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CustomerIdentifier",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>\n@param customerIdentifier The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.*/",
         "setterMethodName" : "setCustomerIdentifier",
         "setterModel" : {
@@ -382,6 +385,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>\n@param value The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -447,6 +451,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "ExpirationDate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>\n@param expirationDate The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.*/",
         "setterMethodName" : "setExpirationDate",
         "setterModel" : {
@@ -514,6 +519,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CustomerIdentifier",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>\n@param customerIdentifier The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.*/",
           "setterMethodName" : "setCustomerIdentifier",
           "setterModel" : {
@@ -580,6 +586,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Dimension",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>\n@param dimension The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.*/",
           "setterMethodName" : "setDimension",
           "setterModel" : {
@@ -646,6 +653,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "ExpirationDate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>\n@param expirationDate The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.*/",
           "setterMethodName" : "setExpirationDate",
           "setterModel" : {
@@ -712,6 +720,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProductCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>\n@param productCode The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.*/",
           "setterMethodName" : "setProductCode",
           "setterModel" : {
@@ -778,6 +787,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>\n@param value The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -883,6 +893,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "IntegerValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>\n@param integerValue The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.*/",
         "setterMethodName" : "setIntegerValue",
         "setterModel" : {
@@ -948,6 +959,7 @@
         "marshallingTargetClass" : "Double",
         "marshallingType" : "DOUBLE",
         "name" : "DoubleValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>\n@param doubleValue The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.*/",
         "setterMethodName" : "setDoubleValue",
         "setterModel" : {
@@ -1013,6 +1025,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "BooleanValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>\n@param booleanValue The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.*/",
         "setterMethodName" : "setBooleanValue",
         "setterModel" : {
@@ -1078,6 +1091,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StringValue",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>\n@param stringValue The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.*/",
         "setterMethodName" : "setStringValue",
         "setterModel" : {
@@ -1145,6 +1159,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "BooleanValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>\n@param booleanValue The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.*/",
           "setterMethodName" : "setBooleanValue",
           "setterModel" : {
@@ -1211,6 +1226,7 @@
           "marshallingTargetClass" : "Double",
           "marshallingType" : "DOUBLE",
           "name" : "DoubleValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>\n@param doubleValue The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.*/",
           "setterMethodName" : "setDoubleValue",
           "setterModel" : {
@@ -1277,6 +1293,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "IntegerValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>\n@param integerValue The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.*/",
           "setterMethodName" : "setIntegerValue",
           "setterModel" : {
@@ -1343,6 +1360,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StringValue",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>\n@param stringValue The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.*/",
           "setterMethodName" : "setStringValue",
           "setterModel" : {
@@ -1501,6 +1519,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ProductCode",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.*/",
         "setterMethodName" : "setProductCode",
         "setterModel" : {
@@ -1606,6 +1625,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Key",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param key \n@see GetEntitlementFilterName*/",
             "setterMethodName" : "setKey",
             "setterModel" : {
@@ -1711,6 +1731,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Member",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param member */",
                 "setterMethodName" : "setMember",
                 "setterModel" : {
@@ -1754,6 +1775,7 @@
             "marshallingTargetClass" : "List",
             "marshallingType" : "LIST",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1791,6 +1813,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Filter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>\n@param filter Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.*/",
         "setterMethodName" : "setFilter",
         "setterModel" : {
@@ -1856,6 +1879,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>\n@param nextToken For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -1921,6 +1945,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>\n@param maxResults The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -2028,6 +2053,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Key",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param key \n@see GetEntitlementFilterName*/",
               "setterMethodName" : "setKey",
               "setterModel" : {
@@ -2133,6 +2159,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Member",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param member */",
                   "setterMethodName" : "setMember",
                   "setterModel" : {
@@ -2176,6 +2203,7 @@
               "marshallingTargetClass" : "List",
               "marshallingType" : "LIST",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -2213,6 +2241,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Filter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>\n@param filter Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.*/",
           "setterMethodName" : "setFilter",
           "setterModel" : {
@@ -2279,6 +2308,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>\n@param maxResults The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -2345,6 +2375,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>\n@param nextToken For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -2411,6 +2442,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ProductCode",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.*/",
           "setterMethodName" : "setProductCode",
           "setterModel" : {
@@ -2550,6 +2582,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2593,6 +2626,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entitlements",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param entitlements The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.*/",
         "setterMethodName" : "setEntitlements",
         "setterModel" : {
@@ -2658,6 +2692,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param nextToken For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -2762,6 +2797,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2805,6 +2841,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entitlements",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param entitlements The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.*/",
           "setterMethodName" : "setEntitlements",
           "setterModel" : {
@@ -2871,6 +2908,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param nextToken For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {

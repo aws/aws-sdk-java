@@ -48,6 +48,10 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
             request.addParameter("UserName", StringUtils.fromString(createUserRequest.getUserName()));
         }
 
+        if (createUserRequest.getPermissionsBoundary() != null) {
+            request.addParameter("PermissionsBoundary", StringUtils.fromString(createUserRequest.getPermissionsBoundary()));
+        }
+
         if (!createUserRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createUserRequest.getTags()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createUserRequest.getTags();
             int tagsListIndex = 1;
@@ -63,10 +67,6 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
                 }
                 tagsListIndex++;
             }
-        }
-
-        if (createUserRequest.getPermissionsBoundary() != null) {
-            request.addParameter("PermissionsBoundary", StringUtils.fromString(createUserRequest.getPermissionsBoundary()));
         }
 
         return request;

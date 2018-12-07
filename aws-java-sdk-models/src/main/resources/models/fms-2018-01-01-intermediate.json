@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -789,6 +789,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdminAccount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.</p>\n@param adminAccount The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.*/",
         "setterMethodName" : "setAdminAccount",
         "setterModel" : {
@@ -856,6 +857,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdminAccount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.</p>\n@param adminAccount The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.*/",
           "setterMethodName" : "setAdminAccount",
           "setterModel" : {
@@ -998,6 +1000,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource ID.</p>\n@param resourceId The resource ID.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
@@ -1063,6 +1066,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ViolationReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The reason that the resource is not protected by the policy.</p>\n@param violationReason The reason that the resource is not protected by the policy.\n@see ViolationReason*/",
         "setterMethodName" : "setViolationReason",
         "setterModel" : {
@@ -1128,6 +1132,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -1195,6 +1200,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource ID.</p>\n@param resourceId The resource ID.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
@@ -1261,6 +1267,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -1327,6 +1334,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ViolationReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The reason that the resource is not protected by the policy.</p>\n@param violationReason The reason that the resource is not protected by the policy.\n@see ViolationReason*/",
           "setterMethodName" : "setViolationReason",
           "setterModel" : {
@@ -1566,6 +1574,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -1633,6 +1642,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -1905,6 +1915,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ComplianceStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Describes an AWS account's compliance with the AWS Firewall Manager policy.</p>\n@param complianceStatus Describes an AWS account's compliance with the AWS Firewall Manager policy.\n@see PolicyComplianceStatusType*/",
         "setterMethodName" : "setComplianceStatus",
         "setterModel" : {
@@ -1970,6 +1981,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "ViolatorCount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.</p>\n@param violatorCount Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.*/",
         "setterMethodName" : "setViolatorCount",
         "setterModel" : {
@@ -2035,6 +2047,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EvaluationLimitExceeded",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setEvaluationLimitExceeded",
         "setterModel" : {
@@ -2102,6 +2115,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ComplianceStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Describes an AWS account's compliance with the AWS Firewall Manager policy.</p>\n@param complianceStatus Describes an AWS account's compliance with the AWS Firewall Manager policy.\n@see PolicyComplianceStatusType*/",
           "setterMethodName" : "setComplianceStatus",
           "setterModel" : {
@@ -2168,6 +2182,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EvaluationLimitExceeded",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setEvaluationLimitExceeded",
           "setterModel" : {
@@ -2234,6 +2249,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "ViolatorCount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.</p>\n@param violatorCount Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.*/",
           "setterMethodName" : "setViolatorCount",
           "setterModel" : {
@@ -2383,6 +2399,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdminAccount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS account that is set as the AWS Firewall Manager administrator.</p>\n@param adminAccount The AWS account that is set as the AWS Firewall Manager administrator.*/",
         "setterMethodName" : "setAdminAccount",
         "setterModel" : {
@@ -2448,6 +2465,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the AWS account that you set as the AWS Firewall Manager administrator.</p>\n@param roleStatus The status of the AWS account that you set as the AWS Firewall Manager administrator.\n@see AccountRoleStatus*/",
         "setterMethodName" : "setRoleStatus",
         "setterModel" : {
@@ -2515,6 +2533,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdminAccount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS account that is set as the AWS Firewall Manager administrator.</p>\n@param adminAccount The AWS account that is set as the AWS Firewall Manager administrator.*/",
           "setterMethodName" : "setAdminAccount",
           "setterModel" : {
@@ -2581,6 +2600,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the AWS account that you set as the AWS Firewall Manager administrator.</p>\n@param roleStatus The status of the AWS account that you set as the AWS Firewall Manager administrator.\n@see AccountRoleStatus*/",
           "setterMethodName" : "setRoleStatus",
           "setterModel" : {
@@ -2693,6 +2713,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -2758,6 +2779,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MemberAccount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS account that owns the resources that you want to get the details for.</p>\n@param memberAccount The AWS account that owns the resources that you want to get the details for.*/",
         "setterMethodName" : "setMemberAccount",
         "setterModel" : {
@@ -2825,6 +2847,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MemberAccount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS account that owns the resources that you want to get the details for.</p>\n@param memberAccount The AWS account that owns the resources that you want to get the details for.*/",
           "setterMethodName" : "setMemberAccount",
           "setterModel" : {
@@ -2891,6 +2914,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -2993,6 +3017,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PolicyComplianceDetail",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>\n@param policyComplianceDetail Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.*/",
         "setterMethodName" : "setPolicyComplianceDetail",
         "setterModel" : {
@@ -3060,6 +3085,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PolicyComplianceDetail",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>\n@param policyComplianceDetail Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.*/",
           "setterMethodName" : "setPolicyComplianceDetail",
           "setterModel" : {
@@ -3209,6 +3235,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SnsTopicArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The SNS topic that records AWS Firewall Manager activity. </p>\n@param snsTopicArn The SNS topic that records AWS Firewall Manager activity.*/",
         "setterMethodName" : "setSnsTopicArn",
         "setterModel" : {
@@ -3274,6 +3301,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SnsRoleName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>\n@param snsRoleName The IAM role that is used by AWS Firewall Manager to record activity to SNS.*/",
         "setterMethodName" : "setSnsRoleName",
         "setterModel" : {
@@ -3341,6 +3369,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SnsRoleName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>\n@param snsRoleName The IAM role that is used by AWS Firewall Manager to record activity to SNS.*/",
           "setterMethodName" : "setSnsRoleName",
           "setterModel" : {
@@ -3407,6 +3436,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SnsTopicArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The SNS topic that records AWS Firewall Manager activity. </p>\n@param snsTopicArn The SNS topic that records AWS Firewall Manager activity.*/",
           "setterMethodName" : "setSnsTopicArn",
           "setterModel" : {
@@ -3519,6 +3549,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -3586,6 +3617,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -3688,6 +3720,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Information about the specified AWS Firewall Manager policy.</p>\n@param policy Information about the specified AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -3753,6 +3786,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.*/",
         "setterMethodName" : "setPolicyArn",
         "setterModel" : {
@@ -3820,6 +3854,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Information about the specified AWS Firewall Manager policy.</p>\n@param policy Information about the specified AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -3886,6 +3921,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.*/",
           "setterMethodName" : "setPolicyArn",
           "setterModel" : {
@@ -4183,6 +4219,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -4248,6 +4285,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4313,6 +4351,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -4380,6 +4419,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -4446,6 +4486,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4512,6 +4553,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -4651,6 +4693,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4694,6 +4737,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PolicyComplianceStatusList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of <code>PolicyComplianceStatus</code> objects.</p>\n@param policyComplianceStatusList An array of <code>PolicyComplianceStatus</code> objects.*/",
         "setterMethodName" : "setPolicyComplianceStatusList",
         "setterModel" : {
@@ -4759,6 +4803,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4826,6 +4871,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4929,6 +4975,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4972,6 +5019,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PolicyComplianceStatusList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of <code>PolicyComplianceStatus</code> objects.</p>\n@param policyComplianceStatusList An array of <code>PolicyComplianceStatus</code> objects.*/",
           "setterMethodName" : "setPolicyComplianceStatusList",
           "setterModel" : {
@@ -5084,6 +5132,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5149,6 +5198,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for <code>MaxResults</code> is 100.</p>\n@param maxResults Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for <code>MaxResults</code> is 100.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -5216,6 +5266,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for <code>MaxResults</code> is 100.</p>\n@param maxResults Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for <code>MaxResults</code> is 100.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -5282,6 +5333,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -5421,6 +5473,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5464,6 +5517,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "MemberAccounts",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of account IDs.</p>\n@param memberAccounts An array of account IDs.*/",
         "setterMethodName" : "setMemberAccounts",
         "setterModel" : {
@@ -5529,6 +5583,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5633,6 +5688,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5676,6 +5732,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "MemberAccounts",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of account IDs.</p>\n@param memberAccounts An array of account IDs.*/",
           "setterMethodName" : "setMemberAccounts",
           "setterModel" : {
@@ -5742,6 +5799,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -5854,6 +5912,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -5919,6 +5978,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -5986,6 +6046,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -6052,6 +6113,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6191,6 +6253,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6234,6 +6297,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PolicyList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of <code>PolicySummary</code> objects.</p>\n@param policyList An array of <code>PolicySummary</code> objects.*/",
         "setterMethodName" : "setPolicyList",
         "setterModel" : {
@@ -6299,6 +6363,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -6366,6 +6431,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -6469,6 +6535,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6512,6 +6579,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PolicyList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of <code>PolicySummary</code> objects.</p>\n@param policyList An array of <code>PolicySummary</code> objects.*/",
           "setterMethodName" : "setPolicyList",
           "setterModel" : {
@@ -6617,6 +6685,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -6682,6 +6751,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyName",
         "setterModel" : {
@@ -6747,6 +6817,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyUpdateToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n@param policyUpdateToken A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.*/",
         "setterMethodName" : "setPolicyUpdateToken",
         "setterModel" : {
@@ -6812,6 +6883,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SecurityServicePolicyData",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details about the security service that is being used to protect the resources.</p>\n@param securityServicePolicyData Details about the security service that is being used to protect the resources.*/",
         "setterMethodName" : "setSecurityServicePolicyData",
         "setterModel" : {
@@ -6877,6 +6949,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -6979,6 +7052,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7022,6 +7096,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceTags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of <code>ResourceTag</code> objects.</p>\n@param resourceTags An array of <code>ResourceTag</code> objects.*/",
         "setterMethodName" : "setResourceTags",
         "setterModel" : {
@@ -7087,6 +7162,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "ExcludeResourceTags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.</p>\n@param excludeResourceTags If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.*/",
         "setterMethodName" : "setExcludeResourceTags",
         "setterModel" : {
@@ -7152,6 +7228,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RemediationEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.*/",
         "setterMethodName" : "setRemediationEnabled",
         "setterModel" : {
@@ -7257,6 +7334,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Key",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param key \n@see CustomerPolicyScopeIdType*/",
             "setterMethodName" : "setKey",
             "setterModel" : {
@@ -7362,6 +7440,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Member",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param member */",
                 "setterMethodName" : "setMember",
                 "setterModel" : {
@@ -7405,6 +7484,7 @@
             "marshallingTargetClass" : "List",
             "marshallingType" : "LIST",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -7442,6 +7522,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "IncludeMap",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n@param includeMap Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.*/",
         "setterMethodName" : "setIncludeMap",
         "setterModel" : {
@@ -7547,6 +7628,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Key",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param key \n@see CustomerPolicyScopeIdType*/",
             "setterMethodName" : "setKey",
             "setterModel" : {
@@ -7652,6 +7734,7 @@
                 "marshallingTargetClass" : "String",
                 "marshallingType" : "STRING",
                 "name" : "Member",
+                "sensitive" : false,
                 "setterDocumentation" : "/**\n@param member */",
                 "setterMethodName" : "setMember",
                 "setterModel" : {
@@ -7695,6 +7778,7 @@
             "marshallingTargetClass" : "List",
             "marshallingType" : "LIST",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -7732,6 +7816,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "ExcludeMap",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n@param excludeMap Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.*/",
         "setterMethodName" : "setExcludeMap",
         "setterModel" : {
@@ -7839,6 +7924,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Key",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param key \n@see CustomerPolicyScopeIdType*/",
               "setterMethodName" : "setKey",
               "setterModel" : {
@@ -7944,6 +8030,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Member",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param member */",
                   "setterMethodName" : "setMember",
                   "setterModel" : {
@@ -7987,6 +8074,7 @@
               "marshallingTargetClass" : "List",
               "marshallingType" : "LIST",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -8024,6 +8112,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "ExcludeMap",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n@param excludeMap Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.*/",
           "setterMethodName" : "setExcludeMap",
           "setterModel" : {
@@ -8090,6 +8179,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "ExcludeResourceTags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.</p>\n@param excludeResourceTags If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.*/",
           "setterMethodName" : "setExcludeResourceTags",
           "setterModel" : {
@@ -8196,6 +8286,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Key",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param key \n@see CustomerPolicyScopeIdType*/",
               "setterMethodName" : "setKey",
               "setterModel" : {
@@ -8301,6 +8392,7 @@
                   "marshallingTargetClass" : "String",
                   "marshallingType" : "STRING",
                   "name" : "Member",
+                  "sensitive" : false,
                   "setterDocumentation" : "/**\n@param member */",
                   "setterMethodName" : "setMember",
                   "setterModel" : {
@@ -8344,6 +8436,7 @@
               "marshallingTargetClass" : "List",
               "marshallingType" : "LIST",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -8381,6 +8474,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "IncludeMap",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n@param includeMap Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.*/",
           "setterMethodName" : "setIncludeMap",
           "setterModel" : {
@@ -8447,6 +8541,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -8513,6 +8608,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyName",
           "setterModel" : {
@@ -8579,6 +8675,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyUpdateToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n@param policyUpdateToken A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.*/",
           "setterMethodName" : "setPolicyUpdateToken",
           "setterModel" : {
@@ -8645,6 +8742,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RemediationEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.*/",
           "setterMethodName" : "setRemediationEnabled",
           "setterModel" : {
@@ -8748,6 +8846,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8791,6 +8890,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceTags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of <code>ResourceTag</code> objects.</p>\n@param resourceTags An array of <code>ResourceTag</code> objects.*/",
           "setterMethodName" : "setResourceTags",
           "setterModel" : {
@@ -8857,6 +8957,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -8923,6 +9024,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SecurityServicePolicyData",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details about the security service that is being used to protect the resources.</p>\n@param securityServicePolicyData Details about the security service that is being used to protect the resources.*/",
           "setterMethodName" : "setSecurityServicePolicyData",
           "setterModel" : {
@@ -9028,6 +9130,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyOwner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyOwner",
         "setterModel" : {
@@ -9093,6 +9196,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -9158,6 +9262,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MemberAccount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS account ID.</p>\n@param memberAccount The AWS account ID.*/",
         "setterMethodName" : "setMemberAccount",
         "setterModel" : {
@@ -9260,6 +9365,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9303,6 +9409,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Violators",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of resources that are not protected by the policy.</p>\n@param violators An array of resources that are not protected by the policy.*/",
         "setterMethodName" : "setViolators",
         "setterModel" : {
@@ -9368,6 +9475,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "EvaluationLimitExceeded",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setEvaluationLimitExceeded",
         "setterModel" : {
@@ -9433,6 +9541,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "ExpiredAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A time stamp that indicates when the returned information should be considered out-of-date.</p>\n@param expiredAt A time stamp that indicates when the returned information should be considered out-of-date.*/",
         "setterMethodName" : "setExpiredAt",
         "setterModel" : {
@@ -9538,6 +9647,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Key",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param key \n@see DependentServiceName*/",
             "setterMethodName" : "setKey",
             "setterModel" : {
@@ -9606,6 +9716,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -9643,6 +9754,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "IssueInfoMap",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</p>\n@param issueInfoMap Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.*/",
         "setterMethodName" : "setIssueInfoMap",
         "setterModel" : {
@@ -9710,6 +9822,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "EvaluationLimitExceeded",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setEvaluationLimitExceeded",
           "setterModel" : {
@@ -9776,6 +9889,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "ExpiredAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A time stamp that indicates when the returned information should be considered out-of-date.</p>\n@param expiredAt A time stamp that indicates when the returned information should be considered out-of-date.*/",
           "setterMethodName" : "setExpiredAt",
           "setterModel" : {
@@ -9882,6 +9996,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Key",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param key \n@see DependentServiceName*/",
               "setterMethodName" : "setKey",
               "setterModel" : {
@@ -9950,6 +10065,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -9987,6 +10103,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "IssueInfoMap",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</p>\n@param issueInfoMap Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.*/",
           "setterMethodName" : "setIssueInfoMap",
           "setterModel" : {
@@ -10053,6 +10170,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MemberAccount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS account ID.</p>\n@param memberAccount The AWS account ID.*/",
           "setterMethodName" : "setMemberAccount",
           "setterModel" : {
@@ -10119,6 +10237,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -10185,6 +10304,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyOwner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyOwner",
           "setterModel" : {
@@ -10288,6 +10408,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10331,6 +10452,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Violators",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of resources that are not protected by the policy.</p>\n@param violators An array of resources that are not protected by the policy.*/",
           "setterMethodName" : "setViolators",
           "setterModel" : {
@@ -10436,6 +10558,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyOwner",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyOwner",
         "setterModel" : {
@@ -10501,6 +10624,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -10566,6 +10690,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyName",
         "setterModel" : {
@@ -10631,6 +10756,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MemberAccount",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The member account ID.</p>\n@param memberAccount The member account ID.*/",
         "setterMethodName" : "setMemberAccount",
         "setterModel" : {
@@ -10733,6 +10859,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10776,6 +10903,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EvaluationResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An array of <code>EvaluationResult</code> objects.</p>\n@param evaluationResults An array of <code>EvaluationResult</code> objects.*/",
         "setterMethodName" : "setEvaluationResults",
         "setterModel" : {
@@ -10841,6 +10969,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "LastUpdated",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Time stamp of the last update to the <code>EvaluationResult</code> objects.</p>\n@param lastUpdated Time stamp of the last update to the <code>EvaluationResult</code> objects.*/",
         "setterMethodName" : "setLastUpdated",
         "setterModel" : {
@@ -10946,6 +11075,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Key",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param key \n@see DependentServiceName*/",
             "setterMethodName" : "setKey",
             "setterModel" : {
@@ -11014,6 +11144,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -11051,6 +11182,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "IssueInfoMap",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</p>\n@param issueInfoMap Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.*/",
         "setterMethodName" : "setIssueInfoMap",
         "setterModel" : {
@@ -11155,6 +11287,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11198,6 +11331,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EvaluationResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An array of <code>EvaluationResult</code> objects.</p>\n@param evaluationResults An array of <code>EvaluationResult</code> objects.*/",
           "setterMethodName" : "setEvaluationResults",
           "setterModel" : {
@@ -11304,6 +11438,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Key",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param key \n@see DependentServiceName*/",
               "setterMethodName" : "setKey",
               "setterModel" : {
@@ -11372,6 +11507,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11409,6 +11545,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "IssueInfoMap",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</p>\n@param issueInfoMap Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.*/",
           "setterMethodName" : "setIssueInfoMap",
           "setterModel" : {
@@ -11475,6 +11612,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "LastUpdated",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Time stamp of the last update to the <code>EvaluationResult</code> objects.</p>\n@param lastUpdated Time stamp of the last update to the <code>EvaluationResult</code> objects.*/",
           "setterMethodName" : "setLastUpdated",
           "setterModel" : {
@@ -11541,6 +11679,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MemberAccount",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The member account ID.</p>\n@param memberAccount The member account ID.*/",
           "setterMethodName" : "setMemberAccount",
           "setterModel" : {
@@ -11607,6 +11746,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -11673,6 +11813,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyName",
           "setterModel" : {
@@ -11739,6 +11880,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyOwner",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyOwner",
           "setterModel" : {
@@ -11890,6 +12032,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.*/",
         "setterMethodName" : "setPolicyArn",
         "setterModel" : {
@@ -11955,6 +12098,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ID of the specified policy.</p>\n@param policyId The ID of the specified policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -12020,6 +12164,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The friendly name of the specified policy.</p>\n@param policyName The friendly name of the specified policy.*/",
         "setterMethodName" : "setPolicyName",
         "setterModel" : {
@@ -12085,6 +12230,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -12150,6 +12296,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SecurityServiceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param securityServiceType The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@see SecurityServiceType*/",
         "setterMethodName" : "setSecurityServiceType",
         "setterModel" : {
@@ -12215,6 +12362,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "RemediationEnabled",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.*/",
         "setterMethodName" : "setRemediationEnabled",
         "setterModel" : {
@@ -12282,6 +12430,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.*/",
           "setterMethodName" : "setPolicyArn",
           "setterModel" : {
@@ -12348,6 +12497,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ID of the specified policy.</p>\n@param policyId The ID of the specified policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -12414,6 +12564,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The friendly name of the specified policy.</p>\n@param policyName The friendly name of the specified policy.*/",
           "setterMethodName" : "setPolicyName",
           "setterModel" : {
@@ -12480,6 +12631,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "RemediationEnabled",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.*/",
           "setterMethodName" : "setRemediationEnabled",
           "setterModel" : {
@@ -12546,6 +12698,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -12612,6 +12765,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SecurityServiceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param securityServiceType The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@see SecurityServiceType*/",
           "setterMethodName" : "setSecurityServiceType",
           "setterModel" : {
@@ -12724,6 +12878,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SnsTopicArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.</p>\n@param snsTopicArn The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.*/",
         "setterMethodName" : "setSnsTopicArn",
         "setterModel" : {
@@ -12789,6 +12944,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SnsRoleName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity. </p>\n@param snsRoleName The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.*/",
         "setterMethodName" : "setSnsRoleName",
         "setterModel" : {
@@ -12856,6 +13012,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SnsRoleName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity. </p>\n@param snsRoleName The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.*/",
           "setterMethodName" : "setSnsRoleName",
           "setterModel" : {
@@ -12922,6 +13079,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SnsTopicArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.</p>\n@param snsTopicArn The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.*/",
           "setterMethodName" : "setSnsTopicArn",
           "setterModel" : {
@@ -13071,6 +13229,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy to be created.</p>\n@param policy The details of the AWS Firewall Manager policy to be created.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -13138,6 +13297,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy to be created.</p>\n@param policy The details of the AWS Firewall Manager policy to be created.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -13240,6 +13400,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy that was created.</p>\n@param policy The details of the AWS Firewall Manager policy that was created.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -13305,6 +13466,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the policy that was created.</p>\n@param policyArn The Amazon Resource Name (ARN) of the policy that was created.*/",
         "setterMethodName" : "setPolicyArn",
         "setterModel" : {
@@ -13372,6 +13534,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy that was created.</p>\n@param policy The details of the AWS Firewall Manager policy that was created.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -13438,6 +13601,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the policy that was created.</p>\n@param policyArn The Amazon Resource Name (ARN) of the policy that was created.*/",
           "setterMethodName" : "setPolicyArn",
           "setterModel" : {
@@ -13580,6 +13744,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource tag key.</p>\n@param key The resource tag key.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -13645,6 +13810,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource tag value.</p>\n@param value The resource tag value.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -13712,6 +13878,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource tag key.</p>\n@param key The resource tag key.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -13778,6 +13945,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource tag value.</p>\n@param value The resource tag value.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -13883,6 +14051,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param type The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@see SecurityServiceType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -13948,6 +14117,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManagedServiceData",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code> </p>\n@param managedServiceData Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>*/",
         "setterMethodName" : "setManagedServiceData",
         "setterModel" : {
@@ -14015,6 +14185,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManagedServiceData",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code> </p>\n@param managedServiceData Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>*/",
           "setterMethodName" : "setManagedServiceData",
           "setterModel" : {
@@ -14081,6 +14252,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param type The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@see SecurityServiceType*/",
           "setterMethodName" : "setType",
           "setterModel" : {

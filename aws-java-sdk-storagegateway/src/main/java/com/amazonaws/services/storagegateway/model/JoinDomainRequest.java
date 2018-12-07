@@ -214,7 +214,8 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -231,7 +232,7 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getUserName() != null)
             sb.append("UserName: ").append(getUserName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword());
+            sb.append("Password: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

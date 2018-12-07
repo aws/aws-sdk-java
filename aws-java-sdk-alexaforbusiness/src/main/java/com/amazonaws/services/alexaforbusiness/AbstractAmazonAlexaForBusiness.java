@@ -58,6 +58,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public CreateBusinessReportScheduleResult createBusinessReportSchedule(CreateBusinessReportScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateConferenceProviderResult createConferenceProvider(CreateConferenceProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +94,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public DeleteAddressBookResult deleteAddressBook(DeleteAddressBookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBusinessReportScheduleResult deleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,6 +214,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public GetSkillGroupResult getSkillGroup(GetSkillGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBusinessReportSchedulesResult listBusinessReportSchedules(ListBusinessReportSchedulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -339,6 +354,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public UpdateAddressBookResult updateAddressBook(UpdateAddressBookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBusinessReportScheduleResult updateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

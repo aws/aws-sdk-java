@@ -294,7 +294,8 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -313,7 +314,7 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
         if (getOperatingSystem() != null)
             sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getCredentials() != null)
-            sb.append("Credentials: ").append(getCredentials());
+            sb.append("Credentials: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -46,15 +46,15 @@ public class ListPolicyVersionsRequest extends com.amazonaws.AmazonWebServiceReq
     private String marker;
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      */
     private Integer maxItems;
@@ -180,26 +180,26 @@ public class ListPolicyVersionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *        element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -208,25 +208,25 @@ public class ListPolicyVersionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
-     * @return (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *         response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.</p>
+     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
+     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>.</p>
      *         <p>
-     *         If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *         when there are more results available. In that case, the <code>IsTruncated</code> response element
-     *         returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that
-     *         tells the service where to continue from.
+     *         If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *         response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *         subsequent call that tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -235,26 +235,26 @@ public class ListPolicyVersionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *        element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,7 +264,8 @@ public class ListPolicyVersionsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

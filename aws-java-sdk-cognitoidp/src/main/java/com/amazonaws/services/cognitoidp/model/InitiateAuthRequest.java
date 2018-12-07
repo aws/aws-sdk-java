@@ -1096,7 +1096,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1113,7 +1114,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getClientMetadata() != null)
             sb.append("ClientMetadata: ").append(getClientMetadata()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: ").append(getClientId()).append(",");
+            sb.append("ClientId: ").append("***Sensitive Data Redacted***").append(",");
         if (getAnalyticsMetadata() != null)
             sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
         if (getUserContextData() != null)

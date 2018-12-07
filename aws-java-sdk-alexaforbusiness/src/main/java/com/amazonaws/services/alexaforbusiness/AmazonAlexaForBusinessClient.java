@@ -515,6 +515,63 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or
+     * weekly interval.
+     * </p>
+     * 
+     * @param createBusinessReportScheduleRequest
+     * @return Result of the CreateBusinessReportSchedule operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @sample AmazonAlexaForBusiness.CreateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateBusinessReportScheduleResult createBusinessReportSchedule(CreateBusinessReportScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBusinessReportSchedule(request);
+    }
+
+    @SdkInternalApi
+    final CreateBusinessReportScheduleResult executeCreateBusinessReportSchedule(CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBusinessReportScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBusinessReportScheduleRequest> request = null;
+        Response<CreateBusinessReportScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBusinessReportScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createBusinessReportScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBusinessReportSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBusinessReportScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateBusinessReportScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds a new conference provider under the user's AWS account.
      * </p>
      * 
@@ -901,6 +958,64 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the recurring report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param deleteBusinessReportScheduleRequest
+     * @return Result of the DeleteBusinessReportSchedule operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.DeleteBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteBusinessReportScheduleResult deleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBusinessReportSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBusinessReportScheduleResult executeDeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBusinessReportScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBusinessReportScheduleRequest> request = null;
+        Response<DeleteBusinessReportScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBusinessReportScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteBusinessReportScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBusinessReportSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBusinessReportScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteBusinessReportScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2187,6 +2302,60 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSkillGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the details of the schedules that a user configured.
+     * </p>
+     * 
+     * @param listBusinessReportSchedulesRequest
+     * @return Result of the ListBusinessReportSchedules operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListBusinessReportSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListBusinessReportSchedulesResult listBusinessReportSchedules(ListBusinessReportSchedulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBusinessReportSchedules(request);
+    }
+
+    @SdkInternalApi
+    final ListBusinessReportSchedulesResult executeListBusinessReportSchedules(ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBusinessReportSchedulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBusinessReportSchedulesRequest> request = null;
+        Response<ListBusinessReportSchedulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBusinessReportSchedulesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listBusinessReportSchedulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBusinessReportSchedules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBusinessReportSchedulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListBusinessReportSchedulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3668,6 +3837,64 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration of the report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param updateBusinessReportScheduleRequest
+     * @return Result of the UpdateBusinessReportSchedule operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.UpdateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateBusinessReportScheduleResult updateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBusinessReportSchedule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBusinessReportScheduleResult executeUpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateBusinessReportScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateBusinessReportScheduleRequest> request = null;
+        Response<UpdateBusinessReportScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateBusinessReportScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateBusinessReportScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBusinessReportSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateBusinessReportScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateBusinessReportScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -35,7 +35,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -47,7 +47,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -64,7 +64,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -78,8 +78,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
@@ -98,7 +98,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -111,8 +111,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *         forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *         character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
@@ -131,7 +131,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -145,8 +145,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -162,7 +162,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -170,9 +170,9 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * @param virtualMFADeviceName
      *        The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setVirtualMFADeviceName(String virtualMFADeviceName) {
@@ -184,16 +184,16 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: _+=,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getVirtualMFADeviceName() {
@@ -205,7 +205,7 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -213,9 +213,9 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * @param virtualMFADeviceName
      *        The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,7 +225,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

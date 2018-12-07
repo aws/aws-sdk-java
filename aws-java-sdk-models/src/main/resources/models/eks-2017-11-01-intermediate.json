@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -351,6 +351,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Data",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>\n@param data The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.*/",
         "setterMethodName" : "setData",
         "setterModel" : {
@@ -418,6 +419,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Data",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>\n@param data The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.*/",
           "setterMethodName" : "setData",
           "setterModel" : {
@@ -523,6 +525,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -590,6 +593,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -692,6 +696,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the cluster.</p>\n@param name The name of the cluster.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -757,6 +762,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Arn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param arn The Amazon Resource Name (ARN) of the cluster.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
@@ -822,6 +828,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Unix epoch time stamp in seconds for when the cluster was created.</p>\n@param createdAt The Unix epoch time stamp in seconds for when the cluster was created.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -887,6 +894,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Version",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Kubernetes server version for the cluster.</p>\n@param version The Kubernetes server version for the cluster.*/",
         "setterMethodName" : "setVersion",
         "setterModel" : {
@@ -952,6 +960,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Endpoint",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The endpoint for your Kubernetes API server.</p>\n@param endpoint The endpoint for your Kubernetes API server.*/",
         "setterMethodName" : "setEndpoint",
         "setterModel" : {
@@ -1017,6 +1026,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -1082,6 +1092,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourcesVpcConfig",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.*/",
         "setterMethodName" : "setResourcesVpcConfig",
         "setterModel" : {
@@ -1147,6 +1158,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The current status of the cluster.</p>\n@param status The current status of the cluster.\n@see ClusterStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -1212,6 +1224,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CertificateAuthority",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>certificate-authority-data</code> for your cluster.</p>\n@param certificateAuthority The <code>certificate-authority-data</code> for your cluster.*/",
         "setterMethodName" : "setCertificateAuthority",
         "setterModel" : {
@@ -1277,6 +1290,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -1342,6 +1356,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlatformVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The platform version of your Amazon EKS cluster. For more information, see <a href=\"eks/latest/userguide/platform-versions.html\">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>\n@param platformVersion The platform version of your Amazon EKS cluster. For more information, see <a href=\"eks/latest/userguide/platform-versions.html\">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.*/",
         "setterMethodName" : "setPlatformVersion",
         "setterModel" : {
@@ -1409,6 +1424,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Arn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param arn The Amazon Resource Name (ARN) of the cluster.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
@@ -1475,6 +1491,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CertificateAuthority",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>certificate-authority-data</code> for your cluster.</p>\n@param certificateAuthority The <code>certificate-authority-data</code> for your cluster.*/",
           "setterMethodName" : "setCertificateAuthority",
           "setterModel" : {
@@ -1541,6 +1558,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -1607,6 +1625,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Unix epoch time stamp in seconds for when the cluster was created.</p>\n@param createdAt The Unix epoch time stamp in seconds for when the cluster was created.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -1673,6 +1692,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Endpoint",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The endpoint for your Kubernetes API server.</p>\n@param endpoint The endpoint for your Kubernetes API server.*/",
           "setterMethodName" : "setEndpoint",
           "setterModel" : {
@@ -1739,6 +1759,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the cluster.</p>\n@param name The name of the cluster.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1805,6 +1826,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlatformVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The platform version of your Amazon EKS cluster. For more information, see <a href=\"eks/latest/userguide/platform-versions.html\">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>\n@param platformVersion The platform version of your Amazon EKS cluster. For more information, see <a href=\"eks/latest/userguide/platform-versions.html\">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.*/",
           "setterMethodName" : "setPlatformVersion",
           "setterModel" : {
@@ -1871,6 +1893,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourcesVpcConfig",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.*/",
           "setterMethodName" : "setResourcesVpcConfig",
           "setterModel" : {
@@ -1937,6 +1960,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -2003,6 +2027,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The current status of the cluster.</p>\n@param status The current status of the cluster.\n@see ClusterStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -2069,6 +2094,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Version",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Kubernetes server version for the cluster.</p>\n@param version The Kubernetes server version for the cluster.*/",
           "setterMethodName" : "setVersion",
           "setterModel" : {
@@ -2233,6 +2259,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The unique name to give to your cluster.</p>\n@param name The unique name to give to your cluster.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2298,6 +2325,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Version",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.</p>\n@param version The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.*/",
         "setterMethodName" : "setVersion",
         "setterModel" : {
@@ -2363,6 +2391,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -2428,6 +2457,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourcesVpcConfig",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.*/",
         "setterMethodName" : "setResourcesVpcConfig",
         "setterModel" : {
@@ -2493,6 +2523,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClientRequestToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
@@ -2560,6 +2591,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClientRequestToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
@@ -2626,6 +2658,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The unique name to give to your cluster.</p>\n@param name The unique name to give to your cluster.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -2692,6 +2725,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourcesVpcConfig",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.*/",
           "setterMethodName" : "setResourcesVpcConfig",
           "setterModel" : {
@@ -2758,6 +2792,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -2824,6 +2859,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Version",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.</p>\n@param version The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.*/",
           "setterMethodName" : "setVersion",
           "setterModel" : {
@@ -2926,6 +2962,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your new cluster.</p>\n@param cluster The full description of your new cluster.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -2993,6 +3030,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your new cluster.</p>\n@param cluster The full description of your new cluster.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -3105,6 +3143,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the cluster to delete.</p>\n@param name The name of the cluster to delete.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3172,6 +3211,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the cluster to delete.</p>\n@param name The name of the cluster to delete.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3274,6 +3314,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of the cluster to delete.</p>\n@param cluster The full description of the cluster to delete.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -3341,6 +3382,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of the cluster to delete.</p>\n@param cluster The full description of the cluster to delete.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -3453,6 +3495,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the cluster to describe.</p>\n@param name The name of the cluster to describe.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3520,6 +3563,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the cluster to describe.</p>\n@param name The name of the cluster to describe.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3622,6 +3666,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Cluster",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The full description of your specified cluster.</p>\n@param cluster The full description of your specified cluster.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
@@ -3689,6 +3734,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Cluster",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The full description of your specified cluster.</p>\n@param cluster The full description of your specified cluster.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
@@ -3794,6 +3840,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -3861,6 +3908,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -3970,6 +4018,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>\n@param maxResults The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -4035,6 +4084,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4102,6 +4152,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>\n@param maxResults The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -4168,6 +4219,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4307,6 +4359,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4350,6 +4403,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Clusters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of all of the clusters for your account in the specified Region.</p>\n@param clusters A list of all of the clusters for your account in the specified Region.*/",
         "setterMethodName" : "setClusters",
         "setterModel" : {
@@ -4415,6 +4469,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -4519,6 +4574,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4562,6 +4618,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Clusters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of all of the clusters for your account in the specified Region.</p>\n@param clusters A list of all of the clusters for your account in the specified Region.*/",
           "setterMethodName" : "setClusters",
           "setterModel" : {
@@ -4628,6 +4685,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -4733,6 +4791,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -4800,6 +4859,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -4902,6 +4962,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -4969,6 +5030,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -5071,6 +5133,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -5138,6 +5201,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -5240,6 +5304,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -5307,6 +5372,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -5446,6 +5512,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ClusterName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
@@ -5548,6 +5615,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5591,6 +5659,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ValidZones",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>\n@param validZones The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.*/",
         "setterMethodName" : "setValidZones",
         "setterModel" : {
@@ -5658,6 +5727,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ClusterName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
@@ -5761,6 +5831,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5804,6 +5875,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ValidZones",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>\n@param validZones The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.*/",
           "setterMethodName" : "setValidZones",
           "setterModel" : {
@@ -5943,6 +6015,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5986,6 +6059,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param subnetIds Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -6088,6 +6162,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6131,6 +6206,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param securityGroupIds Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -6235,6 +6311,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6278,6 +6355,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param securityGroupIds Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -6381,6 +6459,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6424,6 +6503,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param subnetIds Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -6566,6 +6646,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6609,6 +6690,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubnetIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The subnets associated with your cluster.</p>\n@param subnetIds The subnets associated with your cluster.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
@@ -6711,6 +6793,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6754,6 +6837,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SecurityGroupIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param securityGroupIds The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
@@ -6819,6 +6903,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VpcId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The VPC associated with your cluster.</p>\n@param vpcId The VPC associated with your cluster.*/",
         "setterMethodName" : "setVpcId",
         "setterModel" : {
@@ -6923,6 +7008,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6966,6 +7052,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SecurityGroupIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param securityGroupIds The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
@@ -7069,6 +7156,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7112,6 +7200,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubnetIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The subnets associated with your cluster.</p>\n@param subnetIds The subnets associated with your cluster.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
@@ -7178,6 +7267,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VpcId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The VPC associated with your cluster.</p>\n@param vpcId The VPC associated with your cluster.*/",
           "setterMethodName" : "setVpcId",
           "setterModel" : {

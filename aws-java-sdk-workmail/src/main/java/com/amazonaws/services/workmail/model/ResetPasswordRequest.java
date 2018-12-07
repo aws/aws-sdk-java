@@ -165,7 +165,8 @@ public class ResetPasswordRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -180,7 +181,7 @@ public class ResetPasswordRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getUserId() != null)
             sb.append("UserId: ").append(getUserId()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword());
+            sb.append("Password: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

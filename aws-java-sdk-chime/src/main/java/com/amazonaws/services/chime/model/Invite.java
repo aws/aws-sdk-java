@@ -251,7 +251,8 @@ public class Invite implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -266,7 +267,7 @@ public class Invite implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: ").append(getEmailAddress()).append(",");
+            sb.append("EmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getEmailStatus() != null)
             sb.append("EmailStatus: ").append(getEmailStatus());
         sb.append("}");

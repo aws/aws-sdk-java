@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because it referenced an entity that does not exist. The error message describes the entity.
+ * The request was rejected because it referenced a resource entity that does not exist. The error message describes the
+ * resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

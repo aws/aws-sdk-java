@@ -156,6 +156,22 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or
+     * weekly interval.
+     * </p>
+     * 
+     * @param createBusinessReportScheduleRequest
+     * @return Result of the CreateBusinessReportSchedule operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @sample AmazonAlexaForBusiness.CreateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateBusinessReportScheduleResult createBusinessReportSchedule(CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest);
+
+    /**
+     * <p>
      * Adds a new conference provider under the user's AWS account.
      * </p>
      * 
@@ -276,6 +292,23 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteAddressBookResult deleteAddressBook(DeleteAddressBookRequest deleteAddressBookRequest);
+
+    /**
+     * <p>
+     * Deletes the recurring report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param deleteBusinessReportScheduleRequest
+     * @return Result of the DeleteBusinessReportSchedule operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.DeleteBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteBusinessReportScheduleResult deleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest);
 
     /**
      * <p>
@@ -644,6 +677,19 @@ public interface AmazonAlexaForBusiness {
      *      API Documentation</a>
      */
     GetSkillGroupResult getSkillGroup(GetSkillGroupRequest getSkillGroupRequest);
+
+    /**
+     * <p>
+     * Lists the details of the schedules that a user configured.
+     * </p>
+     * 
+     * @param listBusinessReportSchedulesRequest
+     * @return Result of the ListBusinessReportSchedules operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListBusinessReportSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBusinessReportSchedulesResult listBusinessReportSchedules(ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest);
 
     /**
      * <p>
@@ -1056,6 +1102,23 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateAddressBookResult updateAddressBook(UpdateAddressBookRequest updateAddressBookRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of the report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param updateBusinessReportScheduleRequest
+     * @return Result of the UpdateBusinessReportSchedule operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.UpdateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateBusinessReportScheduleResult updateBusinessReportSchedule(UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest);
 
     /**
      * <p>

@@ -375,6 +375,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "S",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A String data type.</p>\n@param s A String data type.*/",
         "setterMethodName" : "setS",
         "setterModel" : {
@@ -440,6 +441,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "N",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A Number data type.</p>\n@param n A Number data type.*/",
         "setterMethodName" : "setN",
         "setterModel" : {
@@ -505,6 +507,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "B",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A Binary data type.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param b A Binary data type.*/",
         "setterMethodName" : "setB",
         "setterModel" : {
@@ -607,6 +610,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -650,6 +654,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SS",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A String Set data type.</p>\n@param sS A String Set data type.*/",
         "setterMethodName" : "setSS",
         "setterModel" : {
@@ -752,6 +757,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -795,6 +801,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "NS",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A Number Set data type.</p>\n@param nS A Number Set data type.*/",
         "setterMethodName" : "setNS",
         "setterModel" : {
@@ -897,6 +904,7 @@
             "marshallingTargetClass" : "java.nio.ByteBuffer",
             "marshallingType" : "BYTE_BUFFER",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**<p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -940,6 +948,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "BS",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A Binary Set data type.</p>\n@param bS A Binary Set data type.*/",
         "setterMethodName" : "setBS",
         "setterModel" : {
@@ -1048,6 +1057,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -1085,6 +1095,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "M",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A Map data type.</p>\n@param m A Map data type.*/",
         "setterMethodName" : "setM",
         "setterModel" : {
@@ -1187,6 +1198,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1230,6 +1242,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "L",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A List data type.</p>\n@param l A List data type.*/",
         "setterMethodName" : "setL",
         "setterModel" : {
@@ -1295,6 +1308,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "NULL",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A Null data type.</p>\n@param nULLValue A Null data type.*/",
         "setterMethodName" : "setNULL",
         "setterModel" : {
@@ -1360,6 +1374,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "BOOL",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A Boolean data type.</p>\n@param bOOL A Boolean data type.*/",
         "setterMethodName" : "setBOOL",
         "setterModel" : {
@@ -1427,6 +1442,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "B",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A Binary data type.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param b A Binary data type.*/",
           "setterMethodName" : "setB",
           "setterModel" : {
@@ -1493,6 +1509,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "BOOL",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A Boolean data type.</p>\n@param bOOL A Boolean data type.*/",
           "setterMethodName" : "setBOOL",
           "setterModel" : {
@@ -1596,6 +1613,7 @@
               "marshallingTargetClass" : "java.nio.ByteBuffer",
               "marshallingType" : "BYTE_BUFFER",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**<p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1639,6 +1657,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "BS",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A Binary Set data type.</p>\n@param bS A Binary Set data type.*/",
           "setterMethodName" : "setBS",
           "setterModel" : {
@@ -1742,6 +1761,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1785,6 +1805,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "L",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A List data type.</p>\n@param l A List data type.*/",
           "setterMethodName" : "setL",
           "setterModel" : {
@@ -1894,6 +1915,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -1931,6 +1953,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "M",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A Map data type.</p>\n@param m A Map data type.*/",
           "setterMethodName" : "setM",
           "setterModel" : {
@@ -1997,6 +2020,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "N",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A Number data type.</p>\n@param n A Number data type.*/",
           "setterMethodName" : "setN",
           "setterModel" : {
@@ -2100,6 +2124,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2143,6 +2168,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "NS",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A Number Set data type.</p>\n@param nS A Number Set data type.*/",
           "setterMethodName" : "setNS",
           "setterModel" : {
@@ -2209,6 +2235,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "NULL",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A Null data type.</p>\n@param nULLValue A Null data type.*/",
           "setterMethodName" : "setNULL",
           "setterModel" : {
@@ -2275,6 +2302,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "S",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A String data type.</p>\n@param s A String data type.*/",
           "setterMethodName" : "setS",
           "setterModel" : {
@@ -2378,6 +2406,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2421,6 +2450,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SS",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A String Set data type.</p>\n@param sS A String Set data type.*/",
           "setterMethodName" : "setSS",
           "setterModel" : {
@@ -2533,6 +2563,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.*/",
         "setterMethodName" : "setStreamArn",
         "setterModel" : {
@@ -2598,6 +2629,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of shard objects to return. The upper limit is 100.</p>\n@param limit The maximum number of shard objects to return. The upper limit is 100.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -2663,6 +2695,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExclusiveStartShardId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>\n@param exclusiveStartShardId The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.*/",
         "setterMethodName" : "setExclusiveStartShardId",
         "setterModel" : {
@@ -2730,6 +2763,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExclusiveStartShardId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>\n@param exclusiveStartShardId The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.*/",
           "setterMethodName" : "setExclusiveStartShardId",
           "setterModel" : {
@@ -2796,6 +2830,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of shard objects to return. The upper limit is 100.</p>\n@param limit The maximum number of shard objects to return. The upper limit is 100.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -2862,6 +2897,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.*/",
           "setterMethodName" : "setStreamArn",
           "setterModel" : {
@@ -2964,6 +3000,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "StreamDescription",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>\n@param streamDescription A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.*/",
         "setterMethodName" : "setStreamDescription",
         "setterModel" : {
@@ -3031,6 +3068,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "StreamDescription",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>\n@param streamDescription A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.*/",
           "setterMethodName" : "setStreamDescription",
           "setterModel" : {
@@ -3180,6 +3218,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ShardIterator",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>\n@param shardIterator A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.*/",
         "setterMethodName" : "setShardIterator",
         "setterModel" : {
@@ -3245,6 +3284,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of records to return from the shard. The upper limit is 1000.</p>\n@param limit The maximum number of records to return from the shard. The upper limit is 1000.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -3312,6 +3352,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of records to return from the shard. The upper limit is 1000.</p>\n@param limit The maximum number of records to return from the shard. The upper limit is 1000.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -3378,6 +3419,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ShardIterator",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>\n@param shardIterator A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.*/",
           "setterMethodName" : "setShardIterator",
           "setterModel" : {
@@ -3517,6 +3559,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3560,6 +3603,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Records",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The stream records from the shard, which were retrieved using the shard iterator.</p>\n@param records The stream records from the shard, which were retrieved using the shard iterator.*/",
         "setterMethodName" : "setRecords",
         "setterModel" : {
@@ -3625,6 +3669,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextShardIterator",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>\n@param nextShardIterator The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.*/",
         "setterMethodName" : "setNextShardIterator",
         "setterModel" : {
@@ -3692,6 +3737,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextShardIterator",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>\n@param nextShardIterator The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.*/",
           "setterMethodName" : "setNextShardIterator",
           "setterModel" : {
@@ -3795,6 +3841,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3838,6 +3885,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Records",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The stream records from the shard, which were retrieved using the shard iterator.</p>\n@param records The stream records from the shard, which were retrieved using the shard iterator.*/",
           "setterMethodName" : "setRecords",
           "setterModel" : {
@@ -3950,6 +3998,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.*/",
         "setterMethodName" : "setStreamArn",
         "setterModel" : {
@@ -4015,6 +4064,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ShardId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the shard. The iterator will be returned for this shard ID.</p>\n@param shardId The identifier of the shard. The iterator will be returned for this shard ID.*/",
         "setterMethodName" : "setShardId",
         "setterModel" : {
@@ -4080,6 +4130,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ShardIteratorType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>\n@param shardIteratorType Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>\n@see ShardIteratorType*/",
         "setterMethodName" : "setShardIteratorType",
         "setterModel" : {
@@ -4145,6 +4196,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SequenceNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The sequence number of a stream record in the shard from which to start reading.</p>\n@param sequenceNumber The sequence number of a stream record in the shard from which to start reading.*/",
         "setterMethodName" : "setSequenceNumber",
         "setterModel" : {
@@ -4212,6 +4264,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SequenceNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The sequence number of a stream record in the shard from which to start reading.</p>\n@param sequenceNumber The sequence number of a stream record in the shard from which to start reading.*/",
           "setterMethodName" : "setSequenceNumber",
           "setterModel" : {
@@ -4278,6 +4331,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ShardId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the shard. The iterator will be returned for this shard ID.</p>\n@param shardId The identifier of the shard. The iterator will be returned for this shard ID.*/",
           "setterMethodName" : "setShardId",
           "setterModel" : {
@@ -4344,6 +4398,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ShardIteratorType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>\n@param shardIteratorType Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>\n@see ShardIteratorType*/",
           "setterMethodName" : "setShardIteratorType",
           "setterModel" : {
@@ -4410,6 +4465,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.*/",
           "setterMethodName" : "setStreamArn",
           "setterModel" : {
@@ -4512,6 +4568,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ShardIterator",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>\n@param shardIterator The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.*/",
         "setterMethodName" : "setShardIterator",
         "setterModel" : {
@@ -4579,6 +4636,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ShardIterator",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>\n@param shardIterator The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.*/",
           "setterMethodName" : "setShardIterator",
           "setterModel" : {
@@ -4684,6 +4742,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PrincipalId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A unique identifier for the entity that made the call. For Time To Live, the principalId is \"dynamodb.amazonaws.com\".</p>\n@param principalId A unique identifier for the entity that made the call. For Time To Live, the principalId is \"dynamodb.amazonaws.com\".*/",
         "setterMethodName" : "setPrincipalId",
         "setterModel" : {
@@ -4749,6 +4808,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of the identity. For Time To Live, the type is \"Service\".</p>\n@param type The type of the identity. For Time To Live, the type is \"Service\".*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -4816,6 +4876,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PrincipalId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A unique identifier for the entity that made the call. For Time To Live, the principalId is \"dynamodb.amazonaws.com\".</p>\n@param principalId A unique identifier for the entity that made the call. For Time To Live, the principalId is \"dynamodb.amazonaws.com\".*/",
           "setterMethodName" : "setPrincipalId",
           "setterModel" : {
@@ -4882,6 +4943,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of the identity. For Time To Live, the type is \"Service\".</p>\n@param type The type of the identity. For Time To Live, the type is \"Service\".*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -5024,6 +5086,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AttributeName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of a key attribute.</p>\n@param attributeName The name of a key attribute.*/",
         "setterMethodName" : "setAttributeName",
         "setterModel" : {
@@ -5089,6 +5152,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The attribute data, consisting of the data type and the attribute value itself.</p>\n@param keyType The attribute data, consisting of the data type and the attribute value itself.\n@see KeyType*/",
         "setterMethodName" : "setKeyType",
         "setterModel" : {
@@ -5156,6 +5220,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AttributeName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of a key attribute.</p>\n@param attributeName The name of a key attribute.*/",
           "setterMethodName" : "setAttributeName",
           "setterModel" : {
@@ -5222,6 +5287,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The attribute data, consisting of the data type and the attribute value itself.</p>\n@param keyType The attribute data, consisting of the data type and the attribute value itself.\n@see KeyType*/",
           "setterMethodName" : "setKeyType",
           "setterModel" : {
@@ -5417,6 +5483,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TableName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>If this parameter is provided, then only the streams associated with this table name are returned.</p>\n@param tableName If this parameter is provided, then only the streams associated with this table name are returned.*/",
         "setterMethodName" : "setTableName",
         "setterModel" : {
@@ -5482,6 +5549,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Limit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The maximum number of streams to return. The upper limit is 100.</p>\n@param limit The maximum number of streams to return. The upper limit is 100.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
@@ -5547,6 +5615,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExclusiveStartStreamArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>\n@param exclusiveStartStreamArn The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.*/",
         "setterMethodName" : "setExclusiveStartStreamArn",
         "setterModel" : {
@@ -5614,6 +5683,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExclusiveStartStreamArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>\n@param exclusiveStartStreamArn The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.*/",
           "setterMethodName" : "setExclusiveStartStreamArn",
           "setterModel" : {
@@ -5680,6 +5750,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Limit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The maximum number of streams to return. The upper limit is 100.</p>\n@param limit The maximum number of streams to return. The upper limit is 100.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
@@ -5746,6 +5817,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TableName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>If this parameter is provided, then only the streams associated with this table name are returned.</p>\n@param tableName If this parameter is provided, then only the streams associated with this table name are returned.*/",
           "setterMethodName" : "setTableName",
           "setterModel" : {
@@ -5885,6 +5957,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -5928,6 +6001,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Streams",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of stream descriptors associated with the current account and endpoint.</p>\n@param streams A list of stream descriptors associated with the current account and endpoint.*/",
         "setterMethodName" : "setStreams",
         "setterModel" : {
@@ -5993,6 +6067,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LastEvaluatedStreamArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>\n@param lastEvaluatedStreamArn The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.*/",
         "setterMethodName" : "setLastEvaluatedStreamArn",
         "setterModel" : {
@@ -6060,6 +6135,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LastEvaluatedStreamArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>\n@param lastEvaluatedStreamArn The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.*/",
           "setterMethodName" : "setLastEvaluatedStreamArn",
           "setterModel" : {
@@ -6163,6 +6239,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6206,6 +6283,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Streams",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of stream descriptors associated with the current account and endpoint.</p>\n@param streams A list of stream descriptors associated with the current account and endpoint.*/",
           "setterMethodName" : "setStreams",
           "setterModel" : {
@@ -6360,6 +6438,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventID",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A globally unique identifier for the event that was recorded in this stream record.</p>\n@param eventID A globally unique identifier for the event that was recorded in this stream record.*/",
         "setterMethodName" : "setEventID",
         "setterModel" : {
@@ -6425,6 +6504,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li> </ul>\n@param eventName The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>\n@see OperationType*/",
         "setterMethodName" : "setEventName",
         "setterModel" : {
@@ -6490,6 +6570,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventVersion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p> <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>\n@param eventVersion The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p> <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.*/",
         "setterMethodName" : "setEventVersion",
         "setterModel" : {
@@ -6555,6 +6636,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EventSource",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>\n@param eventSource The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.*/",
         "setterMethodName" : "setEventSource",
         "setterModel" : {
@@ -6620,6 +6702,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AwsRegion",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The region in which the <code>GetRecords</code> request was received.</p>\n@param awsRegion The region in which the <code>GetRecords</code> request was received.*/",
         "setterMethodName" : "setAwsRegion",
         "setterModel" : {
@@ -6685,6 +6768,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Dynamodb",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>\n@param dynamodb The main body of the stream record, containing all of the DynamoDB-specific fields.*/",
         "setterMethodName" : "setDynamodb",
         "setterModel" : {
@@ -6750,6 +6834,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "UserIdentity",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Items that are deleted by the Time to Live process after expiration have the following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p> <p>\"Service\"</p> </li> <li> <p>Records[].userIdentity.principalId</p> <p>\"dynamodb.amazonaws.com\"</p> </li> </ul>\n@param userIdentity Items that are deleted by the Time to Live process after expiration have the following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p> <p>\"Service\"</p> </li> <li> <p>Records[].userIdentity.principalId</p> <p>\"dynamodb.amazonaws.com\"</p> </li>*/",
         "setterMethodName" : "setUserIdentity",
         "setterModel" : {
@@ -6817,6 +6902,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AwsRegion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The region in which the <code>GetRecords</code> request was received.</p>\n@param awsRegion The region in which the <code>GetRecords</code> request was received.*/",
           "setterMethodName" : "setAwsRegion",
           "setterModel" : {
@@ -6883,6 +6969,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Dynamodb",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>\n@param dynamodb The main body of the stream record, containing all of the DynamoDB-specific fields.*/",
           "setterMethodName" : "setDynamodb",
           "setterModel" : {
@@ -6949,6 +7036,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventID",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A globally unique identifier for the event that was recorded in this stream record.</p>\n@param eventID A globally unique identifier for the event that was recorded in this stream record.*/",
           "setterMethodName" : "setEventID",
           "setterModel" : {
@@ -7015,6 +7103,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li> </ul>\n@param eventName The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>\n@see OperationType*/",
           "setterMethodName" : "setEventName",
           "setterModel" : {
@@ -7081,6 +7170,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventSource",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>\n@param eventSource The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.*/",
           "setterMethodName" : "setEventSource",
           "setterModel" : {
@@ -7147,6 +7237,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EventVersion",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p> <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>\n@param eventVersion The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p> <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.*/",
           "setterMethodName" : "setEventVersion",
           "setterModel" : {
@@ -7213,6 +7304,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "UserIdentity",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Items that are deleted by the Time to Live process after expiration have the following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p> <p>\"Service\"</p> </li> <li> <p>Records[].userIdentity.principalId</p> <p>\"dynamodb.amazonaws.com\"</p> </li> </ul>\n@param userIdentity Items that are deleted by the Time to Live process after expiration have the following fields: </p> <ul> <li> <p>Records[].userIdentity.type</p> <p>\"Service\"</p> </li> <li> <p>Records[].userIdentity.principalId</p> <p>\"dynamodb.amazonaws.com\"</p> </li>*/",
           "setterMethodName" : "setUserIdentity",
           "setterModel" : {
@@ -7355,6 +7447,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StartingSequenceNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The first sequence number.</p>\n@param startingSequenceNumber The first sequence number.*/",
         "setterMethodName" : "setStartingSequenceNumber",
         "setterModel" : {
@@ -7420,6 +7513,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EndingSequenceNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The last sequence number.</p>\n@param endingSequenceNumber The last sequence number.*/",
         "setterMethodName" : "setEndingSequenceNumber",
         "setterModel" : {
@@ -7487,6 +7581,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EndingSequenceNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The last sequence number.</p>\n@param endingSequenceNumber The last sequence number.*/",
           "setterMethodName" : "setEndingSequenceNumber",
           "setterModel" : {
@@ -7553,6 +7648,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StartingSequenceNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The first sequence number.</p>\n@param startingSequenceNumber The first sequence number.*/",
           "setterMethodName" : "setStartingSequenceNumber",
           "setterModel" : {
@@ -7658,6 +7754,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ShardId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The system-generated identifier for this shard.</p>\n@param shardId The system-generated identifier for this shard.*/",
         "setterMethodName" : "setShardId",
         "setterModel" : {
@@ -7723,6 +7820,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "SequenceNumberRange",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The range of possible sequence numbers for the shard.</p>\n@param sequenceNumberRange The range of possible sequence numbers for the shard.*/",
         "setterMethodName" : "setSequenceNumberRange",
         "setterModel" : {
@@ -7788,6 +7886,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ParentShardId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The shard ID of the current shard's parent.</p>\n@param parentShardId The shard ID of the current shard's parent.*/",
         "setterMethodName" : "setParentShardId",
         "setterModel" : {
@@ -7855,6 +7954,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ParentShardId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The shard ID of the current shard's parent.</p>\n@param parentShardId The shard ID of the current shard's parent.*/",
           "setterMethodName" : "setParentShardId",
           "setterModel" : {
@@ -7921,6 +8021,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "SequenceNumberRange",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The range of possible sequence numbers for the shard.</p>\n@param sequenceNumberRange The range of possible sequence numbers for the shard.*/",
           "setterMethodName" : "setSequenceNumberRange",
           "setterModel" : {
@@ -7987,6 +8088,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ShardId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The system-generated identifier for this shard.</p>\n@param shardId The system-generated identifier for this shard.*/",
           "setterMethodName" : "setShardId",
           "setterModel" : {
@@ -8144,6 +8246,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.*/",
         "setterMethodName" : "setStreamArn",
         "setterModel" : {
@@ -8209,6 +8312,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TableName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The DynamoDB table with which the stream is associated.</p>\n@param tableName The DynamoDB table with which the stream is associated.*/",
         "setterMethodName" : "setTableName",
         "setterModel" : {
@@ -8274,6 +8378,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamLabel",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li> </ul>\n@param streamLabel A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>*/",
         "setterMethodName" : "setStreamLabel",
         "setterModel" : {
@@ -8341,6 +8446,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.*/",
           "setterMethodName" : "setStreamArn",
           "setterModel" : {
@@ -8407,6 +8513,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamLabel",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li> </ul>\n@param streamLabel A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>*/",
           "setterMethodName" : "setStreamLabel",
           "setterModel" : {
@@ -8473,6 +8580,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TableName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The DynamoDB table with which the stream is associated.</p>\n@param tableName The DynamoDB table with which the stream is associated.*/",
           "setterMethodName" : "setTableName",
           "setterModel" : {
@@ -8578,6 +8686,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.*/",
         "setterMethodName" : "setStreamArn",
         "setterModel" : {
@@ -8643,6 +8752,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamLabel",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li> </ul>\n@param streamLabel A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>*/",
         "setterMethodName" : "setStreamLabel",
         "setterModel" : {
@@ -8708,6 +8818,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li> </ul>\n@param streamStatus Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>\n@see StreamStatus*/",
         "setterMethodName" : "setStreamStatus",
         "setterModel" : {
@@ -8773,6 +8884,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamViewType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li> </ul>\n@param streamViewType Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>\n@see StreamViewType*/",
         "setterMethodName" : "setStreamViewType",
         "setterModel" : {
@@ -8838,6 +8950,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationRequestDateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time when the request to create this stream was issued.</p>\n@param creationRequestDateTime The date and time when the request to create this stream was issued.*/",
         "setterMethodName" : "setCreationRequestDateTime",
         "setterModel" : {
@@ -8903,6 +9016,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TableName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The DynamoDB table with which the stream is associated.</p>\n@param tableName The DynamoDB table with which the stream is associated.*/",
         "setterMethodName" : "setTableName",
         "setterModel" : {
@@ -9005,6 +9119,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9048,6 +9163,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "KeySchema",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key attribute(s) of the stream's DynamoDB table.</p>\n@param keySchema The key attribute(s) of the stream's DynamoDB table.*/",
         "setterMethodName" : "setKeySchema",
         "setterModel" : {
@@ -9150,6 +9266,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9193,6 +9310,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Shards",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The shards that comprise the stream.</p>\n@param shards The shards that comprise the stream.*/",
         "setterMethodName" : "setShards",
         "setterModel" : {
@@ -9258,6 +9376,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "LastEvaluatedShardId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>\n@param lastEvaluatedShardId The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.*/",
         "setterMethodName" : "setLastEvaluatedShardId",
         "setterModel" : {
@@ -9325,6 +9444,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationRequestDateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time when the request to create this stream was issued.</p>\n@param creationRequestDateTime The date and time when the request to create this stream was issued.*/",
           "setterMethodName" : "setCreationRequestDateTime",
           "setterModel" : {
@@ -9428,6 +9548,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9471,6 +9592,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "KeySchema",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key attribute(s) of the stream's DynamoDB table.</p>\n@param keySchema The key attribute(s) of the stream's DynamoDB table.*/",
           "setterMethodName" : "setKeySchema",
           "setterModel" : {
@@ -9537,6 +9659,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "LastEvaluatedShardId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>\n@param lastEvaluatedShardId The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.*/",
           "setterMethodName" : "setLastEvaluatedShardId",
           "setterModel" : {
@@ -9640,6 +9763,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9683,6 +9807,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Shards",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The shards that comprise the stream.</p>\n@param shards The shards that comprise the stream.*/",
           "setterMethodName" : "setShards",
           "setterModel" : {
@@ -9749,6 +9874,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream.</p>\n@param streamArn The Amazon Resource Name (ARN) for the stream.*/",
           "setterMethodName" : "setStreamArn",
           "setterModel" : {
@@ -9815,6 +9941,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamLabel",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li> </ul>\n@param streamLabel A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>*/",
           "setterMethodName" : "setStreamLabel",
           "setterModel" : {
@@ -9881,6 +10008,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li> </ul>\n@param streamStatus Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>\n@see StreamStatus*/",
           "setterMethodName" : "setStreamStatus",
           "setterModel" : {
@@ -9947,6 +10075,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamViewType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li> </ul>\n@param streamViewType Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>\n@see StreamViewType*/",
           "setterMethodName" : "setStreamViewType",
           "setterModel" : {
@@ -10013,6 +10142,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TableName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The DynamoDB table with which the stream is associated.</p>\n@param tableName The DynamoDB table with which the stream is associated.*/",
           "setterMethodName" : "setTableName",
           "setterModel" : {
@@ -10118,6 +10248,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "ApproximateCreationDateTime",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.</p>\n@param approximateCreationDateTime The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.*/",
         "setterMethodName" : "setApproximateCreationDateTime",
         "setterModel" : {
@@ -10226,6 +10357,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -10263,6 +10395,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Keys",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>\n@param keys The primary key attribute(s) for the DynamoDB item that was modified.*/",
         "setterMethodName" : "setKeys",
         "setterModel" : {
@@ -10371,6 +10504,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -10408,6 +10542,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "NewImage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The item in the DynamoDB table as it appeared after it was modified.</p>\n@param newImage The item in the DynamoDB table as it appeared after it was modified.*/",
         "setterMethodName" : "setNewImage",
         "setterModel" : {
@@ -10516,6 +10651,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Value",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
@@ -10553,6 +10689,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "OldImage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The item in the DynamoDB table as it appeared before it was modified.</p>\n@param oldImage The item in the DynamoDB table as it appeared before it was modified.*/",
         "setterMethodName" : "setOldImage",
         "setterModel" : {
@@ -10618,6 +10755,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SequenceNumber",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The sequence number of the stream record.</p>\n@param sequenceNumber The sequence number of the stream record.*/",
         "setterMethodName" : "setSequenceNumber",
         "setterModel" : {
@@ -10683,6 +10821,7 @@
         "marshallingTargetClass" : "Long",
         "marshallingType" : "LONG",
         "name" : "SizeBytes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The size of the stream record, in bytes.</p>\n@param sizeBytes The size of the stream record, in bytes.*/",
         "setterMethodName" : "setSizeBytes",
         "setterModel" : {
@@ -10748,6 +10887,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamViewType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li> </ul>\n@param streamViewType The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>\n@see StreamViewType*/",
         "setterMethodName" : "setStreamViewType",
         "setterModel" : {
@@ -10815,6 +10955,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "ApproximateCreationDateTime",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.</p>\n@param approximateCreationDateTime The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.*/",
           "setterMethodName" : "setApproximateCreationDateTime",
           "setterModel" : {
@@ -10924,6 +11065,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -10961,6 +11103,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Keys",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>\n@param keys The primary key attribute(s) for the DynamoDB item that was modified.*/",
           "setterMethodName" : "setKeys",
           "setterModel" : {
@@ -11070,6 +11213,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11107,6 +11251,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "NewImage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The item in the DynamoDB table as it appeared after it was modified.</p>\n@param newImage The item in the DynamoDB table as it appeared after it was modified.*/",
           "setterMethodName" : "setNewImage",
           "setterModel" : {
@@ -11216,6 +11361,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Value",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
@@ -11253,6 +11399,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "OldImage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The item in the DynamoDB table as it appeared before it was modified.</p>\n@param oldImage The item in the DynamoDB table as it appeared before it was modified.*/",
           "setterMethodName" : "setOldImage",
           "setterModel" : {
@@ -11319,6 +11466,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SequenceNumber",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The sequence number of the stream record.</p>\n@param sequenceNumber The sequence number of the stream record.*/",
           "setterMethodName" : "setSequenceNumber",
           "setterModel" : {
@@ -11385,6 +11533,7 @@
           "marshallingTargetClass" : "Long",
           "marshallingType" : "LONG",
           "name" : "SizeBytes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The size of the stream record, in bytes.</p>\n@param sizeBytes The size of the stream record, in bytes.*/",
           "setterMethodName" : "setSizeBytes",
           "setterModel" : {
@@ -11451,6 +11600,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamViewType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li> </ul>\n@param streamViewType The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>\n@see StreamViewType*/",
           "setterMethodName" : "setStreamViewType",
           "setterModel" : {

@@ -963,6 +963,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The flow that you want to add outputs to.\n@param flowArn The flow that you want to add outputs to.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -1065,6 +1066,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1108,6 +1110,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Outputs",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of outputs that you want to add.\n@param outputs A list of outputs that you want to add.*/",
         "setterMethodName" : "setOutputs",
         "setterModel" : {
@@ -1175,6 +1178,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The flow that you want to add outputs to.\n@param flowArn The flow that you want to add outputs to.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -1278,6 +1282,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1321,6 +1326,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Outputs",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of outputs that you want to add.\n@param outputs A list of outputs that you want to add.*/",
           "setterMethodName" : "setOutputs",
           "setterModel" : {
@@ -1423,6 +1429,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that these outputs were added to.\n@param flowArn The ARN of the flow that these outputs were added to.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -1525,6 +1532,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1568,6 +1576,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Outputs",
+        "sensitive" : false,
         "setterDocumentation" : "/**The details of the newly added outputs.\n@param outputs The details of the newly added outputs.*/",
         "setterMethodName" : "setOutputs",
         "setterModel" : {
@@ -1635,6 +1644,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that these outputs were added to.\n@param flowArn The ARN of the flow that these outputs were added to.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -1738,6 +1748,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1781,6 +1792,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Outputs",
+          "sensitive" : false,
           "setterDocumentation" : "/**The details of the newly added outputs.\n@param outputs The details of the newly added outputs.*/",
           "setterMethodName" : "setOutputs",
           "setterModel" : {
@@ -1886,6 +1898,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.\n@param description A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -1951,6 +1964,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Destination",
+        "sensitive" : false,
         "setterDocumentation" : "/**The IP address from which video will be sent to output destinations.\n@param destination The IP address from which video will be sent to output destinations.*/",
         "setterMethodName" : "setDestination",
         "setterModel" : {
@@ -2016,6 +2030,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param encryption The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).*/",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -2081,6 +2096,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxLatency",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
         "setterMethodName" : "setMaxLatency",
         "setterModel" : {
@@ -2146,6 +2162,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the output. This value must be unique within the current flow.\n@param name The name of the output. This value must be unique within the current flow.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2211,6 +2228,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Port",
+        "sensitive" : false,
         "setterDocumentation" : "/**The port to use when content is distributed to this output.\n@param port The port to use when content is distributed to this output.*/",
         "setterMethodName" : "setPort",
         "setterModel" : {
@@ -2276,6 +2294,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**The protocol to use for the output.\n@param protocol The protocol to use for the output.\n@see Protocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -2341,6 +2360,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SmoothingLatency",
+        "sensitive" : false,
         "setterDocumentation" : "/**The smoothing latency in milliseconds for RTP and RTP-FEC streams.\n@param smoothingLatency The smoothing latency in milliseconds for RTP and RTP-FEC streams.*/",
         "setterMethodName" : "setSmoothingLatency",
         "setterModel" : {
@@ -2406,6 +2426,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
         "setterMethodName" : "setStreamId",
         "setterModel" : {
@@ -2473,6 +2494,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.\n@param description A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -2539,6 +2561,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Destination",
+          "sensitive" : false,
           "setterDocumentation" : "/**The IP address from which video will be sent to output destinations.\n@param destination The IP address from which video will be sent to output destinations.*/",
           "setterMethodName" : "setDestination",
           "setterModel" : {
@@ -2605,6 +2628,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param encryption The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).*/",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -2671,6 +2695,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxLatency",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
           "setterMethodName" : "setMaxLatency",
           "setterModel" : {
@@ -2737,6 +2762,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the output. This value must be unique within the current flow.\n@param name The name of the output. This value must be unique within the current flow.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -2803,6 +2829,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Port",
+          "sensitive" : false,
           "setterDocumentation" : "/**The port to use when content is distributed to this output.\n@param port The port to use when content is distributed to this output.*/",
           "setterMethodName" : "setPort",
           "setterModel" : {
@@ -2869,6 +2896,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**The protocol to use for the output.\n@param protocol The protocol to use for the output.\n@see Protocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -2935,6 +2963,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SmoothingLatency",
+          "sensitive" : false,
           "setterDocumentation" : "/**The smoothing latency in milliseconds for RTP and RTP-FEC streams.\n@param smoothingLatency The smoothing latency in milliseconds for RTP and RTP-FEC streams.*/",
           "setterMethodName" : "setSmoothingLatency",
           "setterModel" : {
@@ -3001,6 +3030,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
           "setterMethodName" : "setStreamId",
           "setterModel" : {
@@ -3236,6 +3266,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AvailabilityZone",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.\n@param availabilityZone The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.*/",
         "setterMethodName" : "setAvailabilityZone",
         "setterModel" : {
@@ -3338,6 +3369,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3381,6 +3413,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entitlements",
+        "sensitive" : false,
         "setterDocumentation" : "/**The entitlements that you want to grant on a flow.\n@param entitlements The entitlements that you want to grant on a flow.*/",
         "setterMethodName" : "setEntitlements",
         "setterModel" : {
@@ -3446,6 +3479,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the flow.\n@param name The name of the flow.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3548,6 +3582,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3591,6 +3626,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Outputs",
+        "sensitive" : false,
         "setterDocumentation" : "/**The outputs that you want to add to this flow.\n@param outputs The outputs that you want to add to this flow.*/",
         "setterMethodName" : "setOutputs",
         "setterModel" : {
@@ -3656,6 +3692,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param source */",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -3723,6 +3760,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AvailabilityZone",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.\n@param availabilityZone The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.*/",
           "setterMethodName" : "setAvailabilityZone",
           "setterModel" : {
@@ -3826,6 +3864,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3869,6 +3908,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entitlements",
+          "sensitive" : false,
           "setterDocumentation" : "/**The entitlements that you want to grant on a flow.\n@param entitlements The entitlements that you want to grant on a flow.*/",
           "setterMethodName" : "setEntitlements",
           "setterModel" : {
@@ -3935,6 +3975,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the flow.\n@param name The name of the flow.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -4038,6 +4079,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4081,6 +4123,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Outputs",
+          "sensitive" : false,
           "setterDocumentation" : "/**The outputs that you want to add to this flow.\n@param outputs The outputs that you want to add to this flow.*/",
           "setterMethodName" : "setOutputs",
           "setterModel" : {
@@ -4147,6 +4190,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param source */",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -4249,6 +4293,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Flow",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param flow */",
         "setterMethodName" : "setFlow",
         "setterModel" : {
@@ -4316,6 +4361,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Flow",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param flow */",
           "setterMethodName" : "setFlow",
           "setterModel" : {
@@ -4428,6 +4474,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that you want to delete.\n@param flowArn The ARN of the flow that you want to delete.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -4495,6 +4542,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that you want to delete.\n@param flowArn The ARN of the flow that you want to delete.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -4597,6 +4645,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that was deleted.\n@param flowArn The ARN of the flow that was deleted.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -4662,6 +4711,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**The status of the flow when the DeleteFlow process begins.\n@param status The status of the flow when the DeleteFlow process begins.\n@see Status*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -4729,6 +4779,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that was deleted.\n@param flowArn The ARN of the flow that was deleted.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -4795,6 +4846,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**The status of the flow when the DeleteFlow process begins.\n@param status The status of the flow when the DeleteFlow process begins.\n@see Status*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -4907,6 +4959,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that you want to describe.\n@param flowArn The ARN of the flow that you want to describe.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -4974,6 +5027,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that you want to describe.\n@param flowArn The ARN of the flow that you want to describe.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -5076,6 +5130,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Flow",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param flow */",
         "setterMethodName" : "setFlow",
         "setterModel" : {
@@ -5141,6 +5196,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Messages",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param messages */",
         "setterMethodName" : "setMessages",
         "setterModel" : {
@@ -5208,6 +5264,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Flow",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param flow */",
           "setterMethodName" : "setFlow",
           "setterModel" : {
@@ -5274,6 +5331,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Messages",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param messages */",
           "setterMethodName" : "setMessages",
           "setterModel" : {
@@ -5379,6 +5437,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Algorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).\n@param algorithm The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).\n@see Algorithm*/",
         "setterMethodName" : "setAlgorithm",
         "setterModel" : {
@@ -5444,6 +5503,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyType",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param keyType The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@see KeyType*/",
         "setterMethodName" : "setKeyType",
         "setterModel" : {
@@ -5509,6 +5569,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).\n@param roleArn The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -5574,6 +5635,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SecretArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN that was assigned to the secret that you created in AWS Secrets Manager to store the encryption key.\n@param secretArn The ARN that was assigned to the secret that you created in AWS Secrets Manager to store the encryption key.*/",
         "setterMethodName" : "setSecretArn",
         "setterModel" : {
@@ -5641,6 +5703,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Algorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).\n@param algorithm The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).\n@see Algorithm*/",
           "setterMethodName" : "setAlgorithm",
           "setterModel" : {
@@ -5707,6 +5770,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyType",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param keyType The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@see KeyType*/",
           "setterMethodName" : "setKeyType",
           "setterModel" : {
@@ -5773,6 +5837,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).\n@param roleArn The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -5839,6 +5904,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SecretArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN that was assigned to the secret that you created in AWS Secrets Manager to store the encryption key.\n@param secretArn The ARN that was assigned to the secret that you created in AWS Secrets Manager to store the encryption key.*/",
           "setterMethodName" : "setSecretArn",
           "setterModel" : {
@@ -5944,6 +6010,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description of the entitlement.\n@param description A description of the entitlement.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -6009,6 +6076,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of encryption that will be used on the output that is associated with this entitlement.\n@param encryption The type of encryption that will be used on the output that is associated with this entitlement.*/",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -6074,6 +6142,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement.\n@param entitlementArn The ARN of the entitlement.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -6139,6 +6208,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the entitlement.\n@param name The name of the entitlement.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -6241,6 +6311,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6284,6 +6355,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Subscribers",
+        "sensitive" : false,
         "setterDocumentation" : "/**The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.\n@param subscribers The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.*/",
         "setterMethodName" : "setSubscribers",
         "setterModel" : {
@@ -6351,6 +6423,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description of the entitlement.\n@param description A description of the entitlement.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -6417,6 +6490,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of encryption that will be used on the output that is associated with this entitlement.\n@param encryption The type of encryption that will be used on the output that is associated with this entitlement.*/",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -6483,6 +6557,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement.\n@param entitlementArn The ARN of the entitlement.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -6549,6 +6624,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the entitlement.\n@param name The name of the entitlement.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -6652,6 +6728,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -6695,6 +6772,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Subscribers",
+          "sensitive" : false,
           "setterDocumentation" : "/**The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.\n@param subscribers The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.*/",
           "setterMethodName" : "setSubscribers",
           "setterModel" : {
@@ -6800,6 +6878,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AvailabilityZone",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.\n@param availabilityZone The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.*/",
         "setterMethodName" : "setAvailabilityZone",
         "setterModel" : {
@@ -6865,6 +6944,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.\n@param description A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -6930,6 +7010,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EgressIp",
+        "sensitive" : false,
         "setterDocumentation" : "/**The IP address from which video will be sent to output destinations.\n@param egressIp The IP address from which video will be sent to output destinations.*/",
         "setterMethodName" : "setEgressIp",
         "setterModel" : {
@@ -7032,6 +7113,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7075,6 +7157,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entitlements",
+        "sensitive" : false,
         "setterDocumentation" : "/**The entitlements in this flow.\n@param entitlements The entitlements in this flow.*/",
         "setterMethodName" : "setEntitlements",
         "setterModel" : {
@@ -7140,6 +7223,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.\n@param flowArn The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -7205,6 +7289,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the flow.\n@param name The name of the flow.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -7307,6 +7392,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7350,6 +7436,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Outputs",
+        "sensitive" : false,
         "setterDocumentation" : "/**The outputs in this flow.\n@param outputs The outputs in this flow.*/",
         "setterMethodName" : "setOutputs",
         "setterModel" : {
@@ -7415,6 +7502,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param source */",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -7480,6 +7568,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**The current status of the flow.\n@param status The current status of the flow.\n@see Status*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -7547,6 +7636,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AvailabilityZone",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.\n@param availabilityZone The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.*/",
           "setterMethodName" : "setAvailabilityZone",
           "setterModel" : {
@@ -7613,6 +7703,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.\n@param description A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -7679,6 +7770,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EgressIp",
+          "sensitive" : false,
           "setterDocumentation" : "/**The IP address from which video will be sent to output destinations.\n@param egressIp The IP address from which video will be sent to output destinations.*/",
           "setterMethodName" : "setEgressIp",
           "setterModel" : {
@@ -7782,6 +7874,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7825,6 +7918,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entitlements",
+          "sensitive" : false,
           "setterDocumentation" : "/**The entitlements in this flow.\n@param entitlements The entitlements in this flow.*/",
           "setterMethodName" : "setEntitlements",
           "setterModel" : {
@@ -7891,6 +7985,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.\n@param flowArn The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -7957,6 +8052,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the flow.\n@param name The name of the flow.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -8060,6 +8156,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8103,6 +8200,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Outputs",
+          "sensitive" : false,
           "setterDocumentation" : "/**The outputs in this flow.\n@param outputs The outputs in this flow.*/",
           "setterMethodName" : "setOutputs",
           "setterModel" : {
@@ -8169,6 +8267,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param source */",
           "setterMethodName" : "setSource",
           "setterModel" : {
@@ -8235,6 +8334,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**The current status of the flow.\n@param status The current status of the flow.\n@see Status*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -8377,6 +8477,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.\n@param description A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -8442,6 +8543,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of encryption that will be used on the output that is associated with this entitlement.\n@param encryption The type of encryption that will be used on the output that is associated with this entitlement.*/",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -8507,6 +8609,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the entitlement. This value must be unique within the current flow.\n@param name The name of the entitlement. This value must be unique within the current flow.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -8609,6 +8712,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8652,6 +8756,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Subscribers",
+        "sensitive" : false,
         "setterDocumentation" : "/**The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.\n@param subscribers The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.*/",
         "setterMethodName" : "setSubscribers",
         "setterModel" : {
@@ -8719,6 +8824,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.\n@param description A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -8785,6 +8891,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of encryption that will be used on the output that is associated with this entitlement.\n@param encryption The type of encryption that will be used on the output that is associated with this entitlement.*/",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -8851,6 +8958,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the entitlement. This value must be unique within the current flow.\n@param name The name of the entitlement. This value must be unique within the current flow.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -8954,6 +9062,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8997,6 +9106,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Subscribers",
+          "sensitive" : false,
           "setterDocumentation" : "/**The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.\n@param subscribers The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.*/",
           "setterMethodName" : "setSubscribers",
           "setterModel" : {
@@ -9183,6 +9293,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9226,6 +9337,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entitlements",
+        "sensitive" : false,
         "setterDocumentation" : "/**The list of entitlements that you want to grant.\n@param entitlements The list of entitlements that you want to grant.*/",
         "setterMethodName" : "setEntitlements",
         "setterModel" : {
@@ -9291,6 +9403,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The flow that you want to grant entitlements on.\n@param flowArn The flow that you want to grant entitlements on.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -9395,6 +9508,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9438,6 +9552,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entitlements",
+          "sensitive" : false,
           "setterDocumentation" : "/**The list of entitlements that you want to grant.\n@param entitlements The list of entitlements that you want to grant.*/",
           "setterMethodName" : "setEntitlements",
           "setterModel" : {
@@ -9504,6 +9619,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The flow that you want to grant entitlements on.\n@param flowArn The flow that you want to grant entitlements on.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -9643,6 +9759,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9686,6 +9803,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entitlements",
+        "sensitive" : false,
         "setterDocumentation" : "/**The entitlements that were just granted.\n@param entitlements The entitlements that were just granted.*/",
         "setterMethodName" : "setEntitlements",
         "setterModel" : {
@@ -9751,6 +9869,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that these entitlements were granted to.\n@param flowArn The ARN of the flow that these entitlements were granted to.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -9855,6 +9974,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9898,6 +10018,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entitlements",
+          "sensitive" : false,
           "setterDocumentation" : "/**The entitlements that were just granted.\n@param entitlements The entitlements that were just granted.*/",
           "setterMethodName" : "setEntitlements",
           "setterModel" : {
@@ -9964,6 +10085,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that these entitlements were granted to.\n@param flowArn The ARN of the flow that these entitlements were granted to.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -10156,6 +10278,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.\n@param maxResults The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10221,6 +10344,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.\n@param nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10288,6 +10412,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.\n@param maxResults The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -10354,6 +10479,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.\n@param nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10493,6 +10619,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10536,6 +10663,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Entitlements",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of entitlements that have been granted to you from other AWS accounts.\n@param entitlements A list of entitlements that have been granted to you from other AWS accounts.*/",
         "setterMethodName" : "setEntitlements",
         "setterModel" : {
@@ -10601,6 +10729,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.\n@param nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -10705,6 +10834,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10748,6 +10878,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Entitlements",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of entitlements that have been granted to you from other AWS accounts.\n@param entitlements A list of entitlements that have been granted to you from other AWS accounts.*/",
           "setterMethodName" : "setEntitlements",
           "setterModel" : {
@@ -10814,6 +10945,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.\n@param nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -10926,6 +11058,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.\n@param maxResults The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -10991,6 +11124,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.\n@param nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11058,6 +11192,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.\n@param maxResults The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -11124,6 +11259,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.\n@param nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11263,6 +11399,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11306,6 +11443,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Flows",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of flow summaries.\n@param flows A list of flow summaries.*/",
         "setterMethodName" : "setFlows",
         "setterModel" : {
@@ -11371,6 +11509,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.\n@param nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -11475,6 +11614,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11518,6 +11658,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Flows",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of flow summaries.\n@param flows A list of flow summaries.*/",
           "setterMethodName" : "setFlows",
           "setterModel" : {
@@ -11584,6 +11725,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.\n@param nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -11689,6 +11831,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement.\n@param entitlementArn The ARN of the entitlement.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -11754,6 +11897,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementName",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the entitlement.\n@param entitlementName The name of the entitlement.*/",
         "setterMethodName" : "setEntitlementName",
         "setterModel" : {
@@ -11821,6 +11965,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement.\n@param entitlementArn The ARN of the entitlement.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -11887,6 +12032,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementName",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the entitlement.\n@param entitlementName The name of the entitlement.*/",
           "setterMethodName" : "setEntitlementName",
           "setterModel" : {
@@ -11992,6 +12138,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AvailabilityZone",
+        "sensitive" : false,
         "setterDocumentation" : "/**The Availability Zone that the flow was created in.\n@param availabilityZone The Availability Zone that the flow was created in.*/",
         "setterMethodName" : "setAvailabilityZone",
         "setterModel" : {
@@ -12057,6 +12204,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description of the flow.\n@param description A description of the flow.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -12122,6 +12270,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow.\n@param flowArn The ARN of the flow.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -12187,6 +12336,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the flow.\n@param name The name of the flow.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -12252,6 +12402,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).\n@param sourceType The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).\n@see SourceType*/",
         "setterMethodName" : "setSourceType",
         "setterModel" : {
@@ -12317,6 +12468,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**The current status of the flow.\n@param status The current status of the flow.\n@see Status*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -12384,6 +12536,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AvailabilityZone",
+          "sensitive" : false,
           "setterDocumentation" : "/**The Availability Zone that the flow was created in.\n@param availabilityZone The Availability Zone that the flow was created in.*/",
           "setterMethodName" : "setAvailabilityZone",
           "setterModel" : {
@@ -12450,6 +12603,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description of the flow.\n@param description A description of the flow.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -12516,6 +12670,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow.\n@param flowArn The ARN of the flow.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -12582,6 +12737,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the flow.\n@param name The name of the flow.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -12648,6 +12804,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).\n@param sourceType The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).\n@see SourceType*/",
           "setterMethodName" : "setSourceType",
           "setterModel" : {
@@ -12714,6 +12871,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**The current status of the flow.\n@param status The current status of the flow.\n@see Status*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -12856,6 +13014,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12899,6 +13058,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Errors",
+        "sensitive" : false,
         "setterDocumentation" : "/**A list of errors that might have been generated from processes on this flow.\n@param errors A list of errors that might have been generated from processes on this flow.*/",
         "setterMethodName" : "setErrors",
         "setterModel" : {
@@ -13003,6 +13163,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13046,6 +13207,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Errors",
+          "sensitive" : false,
           "setterDocumentation" : "/**A list of errors that might have been generated from processes on this flow.\n@param errors A list of errors that might have been generated from processes on this flow.*/",
           "setterMethodName" : "setErrors",
           "setterModel" : {
@@ -13188,6 +13350,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description of the output.\n@param description A description of the output.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -13253,6 +13416,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Destination",
+        "sensitive" : false,
         "setterDocumentation" : "/**The address where you want to send the output.\n@param destination The address where you want to send the output.*/",
         "setterMethodName" : "setDestination",
         "setterModel" : {
@@ -13318,6 +13482,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param encryption The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).*/",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -13383,6 +13548,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.\n@param entitlementArn The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -13448,6 +13614,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MediaLiveInputArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.\n@param mediaLiveInputArn The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.*/",
         "setterMethodName" : "setMediaLiveInputArn",
         "setterModel" : {
@@ -13513,6 +13680,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the output. This value must be unique within the current flow.\n@param name The name of the output. This value must be unique within the current flow.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -13578,6 +13746,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OutputArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the output.\n@param outputArn The ARN of the output.*/",
         "setterMethodName" : "setOutputArn",
         "setterModel" : {
@@ -13643,6 +13812,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Port",
+        "sensitive" : false,
         "setterDocumentation" : "/**The port to use when content is distributed to this output.\n@param port The port to use when content is distributed to this output.*/",
         "setterMethodName" : "setPort",
         "setterModel" : {
@@ -13708,6 +13878,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Transport",
+        "sensitive" : false,
         "setterDocumentation" : "/**Attributes related to the transport stream that are used in the output.\n@param transport Attributes related to the transport stream that are used in the output.*/",
         "setterMethodName" : "setTransport",
         "setterModel" : {
@@ -13775,6 +13946,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description of the output.\n@param description A description of the output.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -13841,6 +14013,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Destination",
+          "sensitive" : false,
           "setterDocumentation" : "/**The address where you want to send the output.\n@param destination The address where you want to send the output.*/",
           "setterMethodName" : "setDestination",
           "setterModel" : {
@@ -13907,6 +14080,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param encryption The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).*/",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -13973,6 +14147,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.\n@param entitlementArn The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -14039,6 +14214,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MediaLiveInputArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.\n@param mediaLiveInputArn The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.*/",
           "setterMethodName" : "setMediaLiveInputArn",
           "setterModel" : {
@@ -14105,6 +14281,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the output. This value must be unique within the current flow.\n@param name The name of the output. This value must be unique within the current flow.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -14171,6 +14348,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OutputArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the output.\n@param outputArn The ARN of the output.*/",
           "setterMethodName" : "setOutputArn",
           "setterModel" : {
@@ -14237,6 +14415,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Port",
+          "sensitive" : false,
           "setterDocumentation" : "/**The port to use when content is distributed to this output.\n@param port The port to use when content is distributed to this output.*/",
           "setterMethodName" : "setPort",
           "setterModel" : {
@@ -14303,6 +14482,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Transport",
+          "sensitive" : false,
           "setterDocumentation" : "/**Attributes related to the transport stream that are used in the output.\n@param transport Attributes related to the transport stream that are used in the output.*/",
           "setterMethodName" : "setTransport",
           "setterModel" : {
@@ -14464,6 +14644,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The flow that you want to remove an output from.\n@param flowArn The flow that you want to remove an output from.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -14529,6 +14710,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OutputArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the output that you want to remove.\n@param outputArn The ARN of the output that you want to remove.*/",
         "setterMethodName" : "setOutputArn",
         "setterModel" : {
@@ -14596,6 +14778,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The flow that you want to remove an output from.\n@param flowArn The flow that you want to remove an output from.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -14662,6 +14845,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OutputArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the output that you want to remove.\n@param outputArn The ARN of the output that you want to remove.*/",
           "setterMethodName" : "setOutputArn",
           "setterModel" : {
@@ -14764,6 +14948,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that is associated with the output you removed.\n@param flowArn The ARN of the flow that is associated with the output you removed.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -14829,6 +15014,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OutputArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the output that was removed.\n@param outputArn The ARN of the output that was removed.*/",
         "setterMethodName" : "setOutputArn",
         "setterModel" : {
@@ -14896,6 +15082,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that is associated with the output you removed.\n@param flowArn The ARN of the flow that is associated with the output you removed.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -14962,6 +15149,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OutputArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the output that was removed.\n@param outputArn The ARN of the output that was removed.*/",
           "setterMethodName" : "setOutputArn",
           "setterModel" : {
@@ -15074,6 +15262,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement that you want to revoke.\n@param entitlementArn The ARN of the entitlement that you want to revoke.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -15139,6 +15328,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The flow that you want to revoke an entitlement from.\n@param flowArn The flow that you want to revoke an entitlement from.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -15206,6 +15396,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement that you want to revoke.\n@param entitlementArn The ARN of the entitlement that you want to revoke.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -15272,6 +15463,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The flow that you want to revoke an entitlement from.\n@param flowArn The flow that you want to revoke an entitlement from.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -15374,6 +15566,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement that was revoked.\n@param entitlementArn The ARN of the entitlement that was revoked.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -15439,6 +15632,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that the entitlement was revoked from.\n@param flowArn The ARN of the flow that the entitlement was revoked from.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -15506,6 +15700,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement that was revoked.\n@param entitlementArn The ARN of the entitlement that was revoked.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -15572,6 +15767,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that the entitlement was revoked from.\n@param flowArn The ARN of the flow that the entitlement was revoked from.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -15714,6 +15910,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Decryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of encryption that is used on the content ingested from this source.\n@param decryption The type of encryption that is used on the content ingested from this source.*/",
         "setterMethodName" : "setDecryption",
         "setterModel" : {
@@ -15779,6 +15976,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.\n@param description A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -15844,6 +16042,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.\n@param entitlementArn The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -15909,6 +16108,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "IngestPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**The port that the flow will be listening on for incoming content.\n@param ingestPort The port that the flow will be listening on for incoming content.*/",
         "setterMethodName" : "setIngestPort",
         "setterModel" : {
@@ -15974,6 +16174,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxBitrate",
+        "sensitive" : false,
         "setterDocumentation" : "/**The smoothing max bitrate for RTP and RTP-FEC streams.\n@param maxBitrate The smoothing max bitrate for RTP and RTP-FEC streams.*/",
         "setterMethodName" : "setMaxBitrate",
         "setterModel" : {
@@ -16039,6 +16240,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxLatency",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
         "setterMethodName" : "setMaxLatency",
         "setterModel" : {
@@ -16104,6 +16306,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the source.\n@param name The name of the source.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -16169,6 +16372,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**The protocol that is used by the source.\n@param protocol The protocol that is used by the source.\n@see Protocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -16234,6 +16438,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
         "setterMethodName" : "setStreamId",
         "setterModel" : {
@@ -16299,6 +16504,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WhitelistCidr",
+        "sensitive" : false,
         "setterDocumentation" : "/**The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.\n@param whitelistCidr The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.*/",
         "setterMethodName" : "setWhitelistCidr",
         "setterModel" : {
@@ -16366,6 +16572,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Decryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of encryption that is used on the content ingested from this source.\n@param decryption The type of encryption that is used on the content ingested from this source.*/",
           "setterMethodName" : "setDecryption",
           "setterModel" : {
@@ -16432,6 +16639,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.\n@param description A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -16498,6 +16706,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.\n@param entitlementArn The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -16564,6 +16773,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "IngestPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**The port that the flow will be listening on for incoming content.\n@param ingestPort The port that the flow will be listening on for incoming content.*/",
           "setterMethodName" : "setIngestPort",
           "setterModel" : {
@@ -16630,6 +16840,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxBitrate",
+          "sensitive" : false,
           "setterDocumentation" : "/**The smoothing max bitrate for RTP and RTP-FEC streams.\n@param maxBitrate The smoothing max bitrate for RTP and RTP-FEC streams.*/",
           "setterMethodName" : "setMaxBitrate",
           "setterModel" : {
@@ -16696,6 +16907,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxLatency",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
           "setterMethodName" : "setMaxLatency",
           "setterModel" : {
@@ -16762,6 +16974,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the source.\n@param name The name of the source.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -16828,6 +17041,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**The protocol that is used by the source.\n@param protocol The protocol that is used by the source.\n@see Protocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -16894,6 +17108,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
           "setterMethodName" : "setStreamId",
           "setterModel" : {
@@ -16960,6 +17175,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WhitelistCidr",
+          "sensitive" : false,
           "setterDocumentation" : "/**The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.\n@param whitelistCidr The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.*/",
           "setterMethodName" : "setWhitelistCidr",
           "setterModel" : {
@@ -17065,6 +17281,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Decryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of encryption that is used on the content ingested from this source.\n@param decryption The type of encryption that is used on the content ingested from this source.*/",
         "setterMethodName" : "setDecryption",
         "setterModel" : {
@@ -17130,6 +17347,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.\n@param description A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -17195,6 +17413,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.\n@param entitlementArn The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -17260,6 +17479,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IngestIp",
+        "sensitive" : false,
         "setterDocumentation" : "/**The IP address that the flow will be listening on for incoming content.\n@param ingestIp The IP address that the flow will be listening on for incoming content.*/",
         "setterMethodName" : "setIngestIp",
         "setterModel" : {
@@ -17325,6 +17545,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "IngestPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**The port that the flow will be listening on for incoming content.\n@param ingestPort The port that the flow will be listening on for incoming content.*/",
         "setterMethodName" : "setIngestPort",
         "setterModel" : {
@@ -17390,6 +17611,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**The name of the source.\n@param name The name of the source.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -17455,6 +17677,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the source.\n@param sourceArn The ARN of the source.*/",
         "setterMethodName" : "setSourceArn",
         "setterModel" : {
@@ -17520,6 +17743,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Transport",
+        "sensitive" : false,
         "setterDocumentation" : "/**Attributes related to the transport stream that are used in the source.\n@param transport Attributes related to the transport stream that are used in the source.*/",
         "setterMethodName" : "setTransport",
         "setterModel" : {
@@ -17585,6 +17809,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WhitelistCidr",
+        "sensitive" : false,
         "setterDocumentation" : "/**The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.\n@param whitelistCidr The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.*/",
         "setterMethodName" : "setWhitelistCidr",
         "setterModel" : {
@@ -17652,6 +17877,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Decryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of encryption that is used on the content ingested from this source.\n@param decryption The type of encryption that is used on the content ingested from this source.*/",
           "setterMethodName" : "setDecryption",
           "setterModel" : {
@@ -17718,6 +17944,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.\n@param description A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -17784,6 +18011,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.\n@param entitlementArn The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -17850,6 +18078,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IngestIp",
+          "sensitive" : false,
           "setterDocumentation" : "/**The IP address that the flow will be listening on for incoming content.\n@param ingestIp The IP address that the flow will be listening on for incoming content.*/",
           "setterMethodName" : "setIngestIp",
           "setterModel" : {
@@ -17916,6 +18145,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "IngestPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**The port that the flow will be listening on for incoming content.\n@param ingestPort The port that the flow will be listening on for incoming content.*/",
           "setterMethodName" : "setIngestPort",
           "setterModel" : {
@@ -17982,6 +18212,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**The name of the source.\n@param name The name of the source.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -18048,6 +18279,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the source.\n@param sourceArn The ARN of the source.*/",
           "setterMethodName" : "setSourceArn",
           "setterModel" : {
@@ -18114,6 +18346,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Transport",
+          "sensitive" : false,
           "setterDocumentation" : "/**Attributes related to the transport stream that are used in the source.\n@param transport Attributes related to the transport stream that are used in the source.*/",
           "setterMethodName" : "setTransport",
           "setterModel" : {
@@ -18180,6 +18413,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WhitelistCidr",
+          "sensitive" : false,
           "setterDocumentation" : "/**The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.\n@param whitelistCidr The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.*/",
           "setterMethodName" : "setWhitelistCidr",
           "setterModel" : {
@@ -18338,6 +18572,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that you want to start.\n@param flowArn The ARN of the flow that you want to start.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -18405,6 +18640,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that you want to start.\n@param flowArn The ARN of the flow that you want to start.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -18507,6 +18743,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that you started.\n@param flowArn The ARN of the flow that you started.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -18572,6 +18809,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**The status of the flow when the StartFlow process begins.\n@param status The status of the flow when the StartFlow process begins.\n@see Status*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -18639,6 +18877,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that you started.\n@param flowArn The ARN of the flow that you started.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -18705,6 +18944,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**The status of the flow when the StartFlow process begins.\n@param status The status of the flow when the StartFlow process begins.\n@see Status*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -18878,6 +19118,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that you want to stop.\n@param flowArn The ARN of the flow that you want to stop.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -18945,6 +19186,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that you want to stop.\n@param flowArn The ARN of the flow that you want to stop.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -19047,6 +19289,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that you stopped.\n@param flowArn The ARN of the flow that you stopped.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -19112,6 +19355,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**The status of the flow when the StopFlow process begins.\n@param status The status of the flow when the StopFlow process begins.\n@see Status*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -19179,6 +19423,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that you stopped.\n@param flowArn The ARN of the flow that you stopped.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -19245,6 +19490,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**The status of the flow when the StopFlow process begins.\n@param status The status of the flow when the StopFlow process begins.\n@see Status*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -19387,6 +19633,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxBitrate",
+        "sensitive" : false,
         "setterDocumentation" : "/**The smoothing max bitrate for RTP and RTP-FEC streams.\n@param maxBitrate The smoothing max bitrate for RTP and RTP-FEC streams.*/",
         "setterMethodName" : "setMaxBitrate",
         "setterModel" : {
@@ -19452,6 +19699,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxLatency",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
         "setterMethodName" : "setMaxLatency",
         "setterModel" : {
@@ -19517,6 +19765,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**The protocol that is used by the source or output.\n@param protocol The protocol that is used by the source or output.\n@see Protocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -19582,6 +19831,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SmoothingLatency",
+        "sensitive" : false,
         "setterDocumentation" : "/**The smoothing latency in milliseconds for RTP and RTP-FEC streams.\n@param smoothingLatency The smoothing latency in milliseconds for RTP and RTP-FEC streams.*/",
         "setterMethodName" : "setSmoothingLatency",
         "setterModel" : {
@@ -19647,6 +19897,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
         "setterMethodName" : "setStreamId",
         "setterModel" : {
@@ -19714,6 +19965,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxBitrate",
+          "sensitive" : false,
           "setterDocumentation" : "/**The smoothing max bitrate for RTP and RTP-FEC streams.\n@param maxBitrate The smoothing max bitrate for RTP and RTP-FEC streams.*/",
           "setterMethodName" : "setMaxBitrate",
           "setterModel" : {
@@ -19780,6 +20032,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxLatency",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
           "setterMethodName" : "setMaxLatency",
           "setterModel" : {
@@ -19846,6 +20099,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**The protocol that is used by the source or output.\n@param protocol The protocol that is used by the source or output.\n@see Protocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -19912,6 +20166,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SmoothingLatency",
+          "sensitive" : false,
           "setterDocumentation" : "/**The smoothing latency in milliseconds for RTP and RTP-FEC streams.\n@param smoothingLatency The smoothing latency in milliseconds for RTP and RTP-FEC streams.*/",
           "setterMethodName" : "setSmoothingLatency",
           "setterModel" : {
@@ -19978,6 +20233,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
           "setterMethodName" : "setStreamId",
           "setterModel" : {
@@ -20083,6 +20339,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Algorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).\n@param algorithm The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).\n@see Algorithm*/",
         "setterMethodName" : "setAlgorithm",
         "setterModel" : {
@@ -20148,6 +20405,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyType",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param keyType The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@see KeyType*/",
         "setterMethodName" : "setKeyType",
         "setterModel" : {
@@ -20213,6 +20471,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).\n@param roleArn The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
@@ -20278,6 +20537,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SecretArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN that was assigned to the secret that you created in AWS Secrets Manager to store the encryption key.\n@param secretArn The ARN that was assigned to the secret that you created in AWS Secrets Manager to store the encryption key.*/",
         "setterMethodName" : "setSecretArn",
         "setterModel" : {
@@ -20345,6 +20605,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Algorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).\n@param algorithm The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).\n@see Algorithm*/",
           "setterMethodName" : "setAlgorithm",
           "setterModel" : {
@@ -20411,6 +20672,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyType",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param keyType The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@see KeyType*/",
           "setterMethodName" : "setKeyType",
           "setterModel" : {
@@ -20477,6 +20739,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).\n@param roleArn The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
@@ -20543,6 +20806,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SecretArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN that was assigned to the secret that you created in AWS Secrets Manager to store the encryption key.\n@param secretArn The ARN that was assigned to the secret that you created in AWS Secrets Manager to store the encryption key.*/",
           "setterMethodName" : "setSecretArn",
           "setterModel" : {
@@ -20655,6 +20919,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.\n@param description A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -20720,6 +20985,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of encryption that will be used on the output associated with this entitlement.\n@param encryption The type of encryption that will be used on the output associated with this entitlement.*/",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -20785,6 +21051,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement that you want to update.\n@param entitlementArn The ARN of the entitlement that you want to update.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -20850,6 +21117,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The flow that is associated with the entitlement that you want to update.\n@param flowArn The flow that is associated with the entitlement that you want to update.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -20952,6 +21220,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -20995,6 +21264,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Subscribers",
+        "sensitive" : false,
         "setterDocumentation" : "/**The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.\n@param subscribers The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.*/",
         "setterMethodName" : "setSubscribers",
         "setterModel" : {
@@ -21062,6 +21332,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.\n@param description A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -21128,6 +21399,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of encryption that will be used on the output associated with this entitlement.\n@param encryption The type of encryption that will be used on the output associated with this entitlement.*/",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -21194,6 +21466,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement that you want to update.\n@param entitlementArn The ARN of the entitlement that you want to update.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -21260,6 +21533,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The flow that is associated with the entitlement that you want to update.\n@param flowArn The flow that is associated with the entitlement that you want to update.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -21363,6 +21637,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -21406,6 +21681,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Subscribers",
+          "sensitive" : false,
           "setterDocumentation" : "/**The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.\n@param subscribers The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.*/",
           "setterMethodName" : "setSubscribers",
           "setterModel" : {
@@ -21508,6 +21784,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Entitlement",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param entitlement */",
         "setterMethodName" : "setEntitlement",
         "setterModel" : {
@@ -21573,6 +21850,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that this entitlement was granted on.\n@param flowArn The ARN of the flow that this entitlement was granted on.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -21640,6 +21918,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Entitlement",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param entitlement */",
           "setterMethodName" : "setEntitlement",
           "setterModel" : {
@@ -21706,6 +21985,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that this entitlement was granted on.\n@param flowArn The ARN of the flow that this entitlement was granted on.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -21818,6 +22098,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.\n@param description A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -21883,6 +22164,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Destination",
+        "sensitive" : false,
         "setterDocumentation" : "/**The IP address where you want to send the output.\n@param destination The IP address where you want to send the output.*/",
         "setterMethodName" : "setDestination",
         "setterModel" : {
@@ -21948,6 +22230,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Encryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param encryption The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).*/",
         "setterMethodName" : "setEncryption",
         "setterModel" : {
@@ -22013,6 +22296,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The flow that is associated with the output that you want to update.\n@param flowArn The flow that is associated with the output that you want to update.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -22078,6 +22362,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxLatency",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
         "setterMethodName" : "setMaxLatency",
         "setterModel" : {
@@ -22143,6 +22428,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OutputArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the output that you want to update.\n@param outputArn The ARN of the output that you want to update.*/",
         "setterMethodName" : "setOutputArn",
         "setterModel" : {
@@ -22208,6 +22494,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Port",
+        "sensitive" : false,
         "setterDocumentation" : "/**The port to use when content is distributed to this output.\n@param port The port to use when content is distributed to this output.*/",
         "setterMethodName" : "setPort",
         "setterModel" : {
@@ -22273,6 +22560,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**The protocol to use for the output.\n@param protocol The protocol to use for the output.\n@see Protocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -22338,6 +22626,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "SmoothingLatency",
+        "sensitive" : false,
         "setterDocumentation" : "/**The smoothing latency in milliseconds for RTP and RTP-FEC streams.\n@param smoothingLatency The smoothing latency in milliseconds for RTP and RTP-FEC streams.*/",
         "setterMethodName" : "setSmoothingLatency",
         "setterModel" : {
@@ -22403,6 +22692,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
         "setterMethodName" : "setStreamId",
         "setterModel" : {
@@ -22470,6 +22760,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.\n@param description A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -22536,6 +22827,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Destination",
+          "sensitive" : false,
           "setterDocumentation" : "/**The IP address where you want to send the output.\n@param destination The IP address where you want to send the output.*/",
           "setterMethodName" : "setDestination",
           "setterModel" : {
@@ -22602,6 +22894,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Encryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).\n@param encryption The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).*/",
           "setterMethodName" : "setEncryption",
           "setterModel" : {
@@ -22668,6 +22961,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The flow that is associated with the output that you want to update.\n@param flowArn The flow that is associated with the output that you want to update.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -22734,6 +23028,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxLatency",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
           "setterMethodName" : "setMaxLatency",
           "setterModel" : {
@@ -22800,6 +23095,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OutputArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the output that you want to update.\n@param outputArn The ARN of the output that you want to update.*/",
           "setterMethodName" : "setOutputArn",
           "setterModel" : {
@@ -22866,6 +23162,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Port",
+          "sensitive" : false,
           "setterDocumentation" : "/**The port to use when content is distributed to this output.\n@param port The port to use when content is distributed to this output.*/",
           "setterMethodName" : "setPort",
           "setterModel" : {
@@ -22932,6 +23229,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**The protocol to use for the output.\n@param protocol The protocol to use for the output.\n@see Protocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -22998,6 +23296,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "SmoothingLatency",
+          "sensitive" : false,
           "setterDocumentation" : "/**The smoothing latency in milliseconds for RTP and RTP-FEC streams.\n@param smoothingLatency The smoothing latency in milliseconds for RTP and RTP-FEC streams.*/",
           "setterMethodName" : "setSmoothingLatency",
           "setterModel" : {
@@ -23064,6 +23363,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
           "setterMethodName" : "setStreamId",
           "setterModel" : {
@@ -23166,6 +23466,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that is associated with the updated output.\n@param flowArn The ARN of the flow that is associated with the updated output.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -23231,6 +23532,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Output",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param output */",
         "setterMethodName" : "setOutput",
         "setterModel" : {
@@ -23298,6 +23600,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that is associated with the updated output.\n@param flowArn The ARN of the flow that is associated with the updated output.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -23364,6 +23667,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Output",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param output */",
           "setterMethodName" : "setOutput",
           "setterModel" : {
@@ -23476,6 +23780,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Decryption",
+        "sensitive" : false,
         "setterDocumentation" : "/**The type of encryption used on the content ingested from this source.\n@param decryption The type of encryption used on the content ingested from this source.*/",
         "setterMethodName" : "setDecryption",
         "setterModel" : {
@@ -23541,6 +23846,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.\n@param description A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -23606,6 +23912,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EntitlementArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.\n@param entitlementArn The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.*/",
         "setterMethodName" : "setEntitlementArn",
         "setterModel" : {
@@ -23671,6 +23978,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The flow that is associated with the source that you want to update.\n@param flowArn The flow that is associated with the source that you want to update.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -23736,6 +24044,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "IngestPort",
+        "sensitive" : false,
         "setterDocumentation" : "/**The port that the flow will be listening on for incoming content.\n@param ingestPort The port that the flow will be listening on for incoming content.*/",
         "setterMethodName" : "setIngestPort",
         "setterModel" : {
@@ -23801,6 +24110,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxBitrate",
+        "sensitive" : false,
         "setterDocumentation" : "/**The smoothing max bitrate for RTP and RTP-FEC streams.\n@param maxBitrate The smoothing max bitrate for RTP and RTP-FEC streams.*/",
         "setterMethodName" : "setMaxBitrate",
         "setterModel" : {
@@ -23866,6 +24176,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxLatency",
+        "sensitive" : false,
         "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
         "setterMethodName" : "setMaxLatency",
         "setterModel" : {
@@ -23931,6 +24242,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Protocol",
+        "sensitive" : false,
         "setterDocumentation" : "/**The protocol that is used by the source.\n@param protocol The protocol that is used by the source.\n@see Protocol*/",
         "setterMethodName" : "setProtocol",
         "setterModel" : {
@@ -23996,6 +24308,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SourceArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the source that you want to update.\n@param sourceArn The ARN of the source that you want to update.*/",
         "setterMethodName" : "setSourceArn",
         "setterModel" : {
@@ -24061,6 +24374,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "StreamId",
+        "sensitive" : false,
         "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
         "setterMethodName" : "setStreamId",
         "setterModel" : {
@@ -24126,6 +24440,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WhitelistCidr",
+        "sensitive" : false,
         "setterDocumentation" : "/**The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.\n@param whitelistCidr The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.*/",
         "setterMethodName" : "setWhitelistCidr",
         "setterModel" : {
@@ -24193,6 +24508,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Decryption",
+          "sensitive" : false,
           "setterDocumentation" : "/**The type of encryption used on the content ingested from this source.\n@param decryption The type of encryption used on the content ingested from this source.*/",
           "setterMethodName" : "setDecryption",
           "setterModel" : {
@@ -24259,6 +24575,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.\n@param description A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -24325,6 +24642,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EntitlementArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.\n@param entitlementArn The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.*/",
           "setterMethodName" : "setEntitlementArn",
           "setterModel" : {
@@ -24391,6 +24709,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The flow that is associated with the source that you want to update.\n@param flowArn The flow that is associated with the source that you want to update.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -24457,6 +24776,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "IngestPort",
+          "sensitive" : false,
           "setterDocumentation" : "/**The port that the flow will be listening on for incoming content.\n@param ingestPort The port that the flow will be listening on for incoming content.*/",
           "setterMethodName" : "setIngestPort",
           "setterModel" : {
@@ -24523,6 +24843,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxBitrate",
+          "sensitive" : false,
           "setterDocumentation" : "/**The smoothing max bitrate for RTP and RTP-FEC streams.\n@param maxBitrate The smoothing max bitrate for RTP and RTP-FEC streams.*/",
           "setterMethodName" : "setMaxBitrate",
           "setterModel" : {
@@ -24589,6 +24910,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxLatency",
+          "sensitive" : false,
           "setterDocumentation" : "/**The maximum latency in milliseconds for Zixi-based streams.\n@param maxLatency The maximum latency in milliseconds for Zixi-based streams.*/",
           "setterMethodName" : "setMaxLatency",
           "setterModel" : {
@@ -24655,6 +24977,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Protocol",
+          "sensitive" : false,
           "setterDocumentation" : "/**The protocol that is used by the source.\n@param protocol The protocol that is used by the source.\n@see Protocol*/",
           "setterMethodName" : "setProtocol",
           "setterModel" : {
@@ -24721,6 +25044,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SourceArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the source that you want to update.\n@param sourceArn The ARN of the source that you want to update.*/",
           "setterMethodName" : "setSourceArn",
           "setterModel" : {
@@ -24787,6 +25111,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "StreamId",
+          "sensitive" : false,
           "setterDocumentation" : "/**The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.\n@param streamId The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.*/",
           "setterMethodName" : "setStreamId",
           "setterModel" : {
@@ -24853,6 +25178,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WhitelistCidr",
+          "sensitive" : false,
           "setterDocumentation" : "/**The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.\n@param whitelistCidr The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.*/",
           "setterMethodName" : "setWhitelistCidr",
           "setterModel" : {
@@ -24955,6 +25281,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FlowArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**The ARN of the flow that you want to update.\n@param flowArn The ARN of the flow that you want to update.*/",
         "setterMethodName" : "setFlowArn",
         "setterModel" : {
@@ -25020,6 +25347,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Source",
+        "sensitive" : false,
         "setterDocumentation" : "/**The settings for the source of the flow.\n@param source The settings for the source of the flow.*/",
         "setterMethodName" : "setSource",
         "setterModel" : {
@@ -25087,6 +25415,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FlowArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**The ARN of the flow that you want to update.\n@param flowArn The ARN of the flow that you want to update.*/",
           "setterMethodName" : "setFlowArn",
           "setterModel" : {
@@ -25153,6 +25482,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Source",
+          "sensitive" : false,
           "setterDocumentation" : "/**The settings for the source of the flow.\n@param source The settings for the source of the flow.*/",
           "setterMethodName" : "setSource",
           "setterModel" : {

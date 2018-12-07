@@ -670,6 +670,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>\n@param certificateArn String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -772,6 +773,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -815,6 +817,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key-value pair that defines the tag. The tag value is optional.</p>\n@param tags The key-value pair that defines the tag. The tag value is optional.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -882,6 +885,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>\n@param certificateArn String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -985,6 +989,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1028,6 +1033,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key-value pair that defines the tag. The tag value is optional.</p>\n@param tags The key-value pair that defines the tag. The tag value is optional.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -1170,6 +1176,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -1235,6 +1242,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The fully qualified domain name for the certificate, such as www.example.com or example.com.</p>\n@param domainName The fully qualified domain name for the certificate, such as www.example.com or example.com.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -1337,6 +1345,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1380,6 +1389,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubjectAlternativeNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>\n@param subjectAlternativeNames One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.*/",
         "setterMethodName" : "setSubjectAlternativeNames",
         "setterModel" : {
@@ -1482,6 +1492,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1525,6 +1536,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DomainValidationOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains information about the initial validation of each domain name that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>\n@param domainValidationOptions Contains information about the initial validation of each domain name that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
         "setterMethodName" : "setDomainValidationOptions",
         "setterModel" : {
@@ -1590,6 +1602,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Serial",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The serial number of the certificate.</p>\n@param serial The serial number of the certificate.*/",
         "setterMethodName" : "setSerial",
         "setterModel" : {
@@ -1655,6 +1668,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Subject",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the entity that is associated with the public key contained in the certificate.</p>\n@param subject The name of the entity that is associated with the public key contained in the certificate.*/",
         "setterMethodName" : "setSubject",
         "setterModel" : {
@@ -1720,6 +1734,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Issuer",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the certificate authority that issued and signed the certificate.</p>\n@param issuer The name of the certificate authority that issued and signed the certificate.*/",
         "setterMethodName" : "setIssuer",
         "setterModel" : {
@@ -1785,6 +1800,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreatedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time at which the certificate was requested. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>\n@param createdAt The time at which the certificate was requested. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
@@ -1850,6 +1866,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "IssuedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>\n@param issuedAt The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
         "setterMethodName" : "setIssuedAt",
         "setterModel" : {
@@ -1915,6 +1932,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "ImportedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>. </p>\n@param importedAt The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>.*/",
         "setterMethodName" : "setImportedAt",
         "setterModel" : {
@@ -1980,6 +1998,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@see CertificateStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
@@ -2045,6 +2064,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "RevokedAt",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>\n@param revokedAt The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.*/",
         "setterMethodName" : "setRevokedAt",
         "setterModel" : {
@@ -2110,6 +2130,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RevocationReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>\n@param revocationReason The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.\n@see RevocationReason*/",
         "setterMethodName" : "setRevocationReason",
         "setterModel" : {
@@ -2175,6 +2196,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "NotBefore",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time before which the certificate is not valid.</p>\n@param notBefore The time before which the certificate is not valid.*/",
         "setterMethodName" : "setNotBefore",
         "setterModel" : {
@@ -2240,6 +2262,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "NotAfter",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time after which the certificate is not valid.</p>\n@param notAfter The time after which the certificate is not valid.*/",
         "setterMethodName" : "setNotAfter",
         "setterModel" : {
@@ -2305,6 +2328,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "KeyAlgorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The algorithm that was used to generate the public-private key pair.</p>\n@param keyAlgorithm The algorithm that was used to generate the public-private key pair.\n@see KeyAlgorithm*/",
         "setterMethodName" : "setKeyAlgorithm",
         "setterModel" : {
@@ -2370,6 +2394,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SignatureAlgorithm",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The algorithm that was used to sign the certificate.</p>\n@param signatureAlgorithm The algorithm that was used to sign the certificate.*/",
         "setterMethodName" : "setSignatureAlgorithm",
         "setterModel" : {
@@ -2472,6 +2497,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2515,6 +2541,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "InUseBy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS resources. </p>\n@param inUseBy A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS resources.*/",
         "setterMethodName" : "setInUseBy",
         "setterModel" : {
@@ -2580,6 +2607,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FailureReason",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>\n@param failureReason The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@see FailureReason*/",
         "setterMethodName" : "setFailureReason",
         "setterModel" : {
@@ -2645,6 +2673,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html\">Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>\n@param type The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html\">Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.\n@see CertificateType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -2710,6 +2739,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RenewalSummary",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains information about the status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param renewalSummary Contains information about the status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
         "setterMethodName" : "setRenewalSummary",
         "setterModel" : {
@@ -2812,6 +2842,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2855,6 +2886,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "KeyUsages",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>\n@param keyUsages A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.*/",
         "setterMethodName" : "setKeyUsages",
         "setterModel" : {
@@ -2957,6 +2989,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3000,6 +3033,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExtendedKeyUsages",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>\n@param extendedKeyUsages Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).*/",
         "setterMethodName" : "setExtendedKeyUsages",
         "setterModel" : {
@@ -3065,6 +3099,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that issued the certificate. This has the following format: </p> <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that issued the certificate. This has the following format: </p> <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -3130,6 +3165,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RenewalEligibility",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies whether the certificate is eligible for renewal.</p>\n@param renewalEligibility Specifies whether the certificate is eligible for renewal.\n@see RenewalEligibility*/",
         "setterMethodName" : "setRenewalEligibility",
         "setterModel" : {
@@ -3195,6 +3231,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to certificate that has not been logged by showing an error message. The logs are cryptographically secure. </p>\n@param options Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to certificate that has not been logged by showing an error message. The logs are cryptographically secure.*/",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -3262,6 +3299,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -3328,6 +3366,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that issued the certificate. This has the following format: </p> <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that issued the certificate. This has the following format: </p> <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -3394,6 +3433,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreatedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time at which the certificate was requested. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>\n@param createdAt The time at which the certificate was requested. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
@@ -3460,6 +3500,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The fully qualified domain name for the certificate, such as www.example.com or example.com.</p>\n@param domainName The fully qualified domain name for the certificate, such as www.example.com or example.com.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -3563,6 +3604,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3606,6 +3648,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DomainValidationOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains information about the initial validation of each domain name that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>\n@param domainValidationOptions Contains information about the initial validation of each domain name that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
           "setterMethodName" : "setDomainValidationOptions",
           "setterModel" : {
@@ -3709,6 +3752,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3752,6 +3796,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExtendedKeyUsages",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>\n@param extendedKeyUsages Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).*/",
           "setterMethodName" : "setExtendedKeyUsages",
           "setterModel" : {
@@ -3818,6 +3863,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FailureReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>\n@param failureReason The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@see FailureReason*/",
           "setterMethodName" : "setFailureReason",
           "setterModel" : {
@@ -3884,6 +3930,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "ImportedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>. </p>\n@param importedAt The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>.*/",
           "setterMethodName" : "setImportedAt",
           "setterModel" : {
@@ -3987,6 +4034,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4030,6 +4078,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "InUseBy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS resources. </p>\n@param inUseBy A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS resources.*/",
           "setterMethodName" : "setInUseBy",
           "setterModel" : {
@@ -4096,6 +4145,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "IssuedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>\n@param issuedAt The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
           "setterMethodName" : "setIssuedAt",
           "setterModel" : {
@@ -4162,6 +4212,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Issuer",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the certificate authority that issued and signed the certificate.</p>\n@param issuer The name of the certificate authority that issued and signed the certificate.*/",
           "setterMethodName" : "setIssuer",
           "setterModel" : {
@@ -4228,6 +4279,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "KeyAlgorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The algorithm that was used to generate the public-private key pair.</p>\n@param keyAlgorithm The algorithm that was used to generate the public-private key pair.\n@see KeyAlgorithm*/",
           "setterMethodName" : "setKeyAlgorithm",
           "setterModel" : {
@@ -4331,6 +4383,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4374,6 +4427,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "KeyUsages",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>\n@param keyUsages A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.*/",
           "setterMethodName" : "setKeyUsages",
           "setterModel" : {
@@ -4440,6 +4494,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "NotAfter",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time after which the certificate is not valid.</p>\n@param notAfter The time after which the certificate is not valid.*/",
           "setterMethodName" : "setNotAfter",
           "setterModel" : {
@@ -4506,6 +4561,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "NotBefore",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time before which the certificate is not valid.</p>\n@param notBefore The time before which the certificate is not valid.*/",
           "setterMethodName" : "setNotBefore",
           "setterModel" : {
@@ -4572,6 +4628,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to certificate that has not been logged by showing an error message. The logs are cryptographically secure. </p>\n@param options Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to certificate that has not been logged by showing an error message. The logs are cryptographically secure.*/",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -4638,6 +4695,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RenewalEligibility",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies whether the certificate is eligible for renewal.</p>\n@param renewalEligibility Specifies whether the certificate is eligible for renewal.\n@see RenewalEligibility*/",
           "setterMethodName" : "setRenewalEligibility",
           "setterModel" : {
@@ -4704,6 +4762,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RenewalSummary",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains information about the status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param renewalSummary Contains information about the status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
           "setterMethodName" : "setRenewalSummary",
           "setterModel" : {
@@ -4770,6 +4829,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RevocationReason",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>\n@param revocationReason The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.\n@see RevocationReason*/",
           "setterMethodName" : "setRevocationReason",
           "setterModel" : {
@@ -4836,6 +4896,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "RevokedAt",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>\n@param revokedAt The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.*/",
           "setterMethodName" : "setRevokedAt",
           "setterModel" : {
@@ -4902,6 +4963,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Serial",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The serial number of the certificate.</p>\n@param serial The serial number of the certificate.*/",
           "setterMethodName" : "setSerial",
           "setterModel" : {
@@ -4968,6 +5030,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SignatureAlgorithm",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The algorithm that was used to sign the certificate.</p>\n@param signatureAlgorithm The algorithm that was used to sign the certificate.*/",
           "setterMethodName" : "setSignatureAlgorithm",
           "setterModel" : {
@@ -5034,6 +5097,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@see CertificateStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
@@ -5100,6 +5164,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Subject",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the entity that is associated with the public key contained in the certificate.</p>\n@param subject The name of the entity that is associated with the public key contained in the certificate.*/",
           "setterMethodName" : "setSubject",
           "setterModel" : {
@@ -5203,6 +5268,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -5246,6 +5312,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubjectAlternativeNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>\n@param subjectAlternativeNames One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.*/",
           "setterMethodName" : "setSubjectAlternativeNames",
           "setterModel" : {
@@ -5312,6 +5379,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html\">Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>\n@param type The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html\">Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.\n@see CertificateType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -5417,6 +5485,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateTransparencyLoggingPreference",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>\n@param certificateTransparencyLoggingPreference You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>.\n@see CertificateTransparencyLoggingPreference*/",
         "setterMethodName" : "setCertificateTransparencyLoggingPreference",
         "setterModel" : {
@@ -5484,6 +5553,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateTransparencyLoggingPreference",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>\n@param certificateTransparencyLoggingPreference You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>.\n@see CertificateTransparencyLoggingPreference*/",
           "setterMethodName" : "setCertificateTransparencyLoggingPreference",
           "setterModel" : {
@@ -5650,6 +5720,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>\n@param certificateArn Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -5715,6 +5786,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>\n@param domainName Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -5782,6 +5854,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>\n@param certificateArn Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -5848,6 +5921,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>\n@param domainName Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -6055,6 +6129,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -6122,6 +6197,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -6271,6 +6347,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -6338,6 +6415,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -6440,6 +6518,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Certificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Metadata about an ACM certificate.</p>\n@param certificate Metadata about an ACM certificate.*/",
         "setterMethodName" : "setCertificate",
         "setterModel" : {
@@ -6507,6 +6586,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Certificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Metadata about an ACM certificate.</p>\n@param certificate Metadata about an ACM certificate.*/",
           "setterMethodName" : "setCertificate",
           "setterModel" : {
@@ -6661,6 +6741,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>\n@param domainName A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -6763,6 +6844,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6806,6 +6888,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ValidationEmails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of email addresses that ACM used to send domain validation emails.</p>\n@param validationEmails A list of email addresses that ACM used to send domain validation emails.*/",
         "setterMethodName" : "setValidationEmails",
         "setterModel" : {
@@ -6871,6 +6954,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ValidationDomain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The domain name that ACM used to send domain validation emails.</p>\n@param validationDomain The domain name that ACM used to send domain validation emails.*/",
         "setterMethodName" : "setValidationDomain",
         "setterModel" : {
@@ -6936,6 +7020,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ValidationStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The validation status of the domain name. This can be one of the following values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p> <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>\n@param validationStatus The validation status of the domain name. This can be one of the following values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p> <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li>\n@see DomainStatus*/",
         "setterMethodName" : "setValidationStatus",
         "setterModel" : {
@@ -7001,6 +7086,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ResourceRecord",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html\">Use DNS to Validate Domain Ownership</a>.</p>\n@param resourceRecord Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html\">Use DNS to Validate Domain Ownership</a>.*/",
         "setterMethodName" : "setResourceRecord",
         "setterModel" : {
@@ -7066,6 +7152,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ValidationMethod",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specifies the domain validation method.</p>\n@param validationMethod Specifies the domain validation method.\n@see ValidationMethod*/",
         "setterMethodName" : "setValidationMethod",
         "setterModel" : {
@@ -7133,6 +7220,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>\n@param domainName A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -7199,6 +7287,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ResourceRecord",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html\">Use DNS to Validate Domain Ownership</a>.</p>\n@param resourceRecord Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html\">Use DNS to Validate Domain Ownership</a>.*/",
           "setterMethodName" : "setResourceRecord",
           "setterModel" : {
@@ -7265,6 +7354,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ValidationDomain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The domain name that ACM used to send domain validation emails.</p>\n@param validationDomain The domain name that ACM used to send domain validation emails.*/",
           "setterMethodName" : "setValidationDomain",
           "setterModel" : {
@@ -7368,6 +7458,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7411,6 +7502,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ValidationEmails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of email addresses that ACM used to send domain validation emails.</p>\n@param validationEmails A list of email addresses that ACM used to send domain validation emails.*/",
           "setterMethodName" : "setValidationEmails",
           "setterModel" : {
@@ -7477,6 +7569,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ValidationMethod",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specifies the domain validation method.</p>\n@param validationMethod Specifies the domain validation method.\n@see ValidationMethod*/",
           "setterMethodName" : "setValidationMethod",
           "setterModel" : {
@@ -7543,6 +7636,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ValidationStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The validation status of the domain name. This can be one of the following values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p> <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>\n@param validationStatus The validation status of the domain name. This can be one of the following values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p> <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li>\n@see DomainStatus*/",
           "setterMethodName" : "setValidationStatus",
           "setterModel" : {
@@ -7648,6 +7742,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A fully qualified domain name (FQDN) in the certificate request.</p>\n@param domainName A fully qualified domain name (FQDN) in the certificate request.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -7713,6 +7808,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ValidationDomain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li> </ul>\n@param validationDomain The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li>*/",
         "setterMethodName" : "setValidationDomain",
         "setterModel" : {
@@ -7780,6 +7876,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A fully qualified domain name (FQDN) in the certificate request.</p>\n@param domainName A fully qualified domain name (FQDN) in the certificate request.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -7846,6 +7943,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ValidationDomain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li> </ul>\n@param validationDomain The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li>*/",
           "setterMethodName" : "setValidationDomain",
           "setterModel" : {
@@ -7958,6 +8056,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -8023,6 +8122,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Passphrase",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param passphrase Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>*/",
         "setterMethodName" : "setPassphrase",
         "setterModel" : {
@@ -8090,6 +8190,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -8156,6 +8257,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Passphrase",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param passphrase Passphrase to associate with the encrypted exported private key. If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>*/",
           "setterMethodName" : "setPassphrase",
           "setterModel" : {
@@ -8258,6 +8360,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Certificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate.</p>\n@param certificate The base64 PEM-encoded certificate.*/",
         "setterMethodName" : "setCertificate",
         "setterModel" : {
@@ -8323,6 +8426,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateChain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>\n@param certificateChain The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.*/",
         "setterMethodName" : "setCertificateChain",
         "setterModel" : {
@@ -8388,6 +8492,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PrivateKey",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The PEM-encoded private key associated with the public key in the certificate.</p>\n@param privateKey The PEM-encoded private key associated with the public key in the certificate.*/",
         "setterMethodName" : "setPrivateKey",
         "setterModel" : {
@@ -8455,6 +8560,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Certificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate.</p>\n@param certificate The base64 PEM-encoded certificate.*/",
           "setterMethodName" : "setCertificate",
           "setterModel" : {
@@ -8521,6 +8627,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateChain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>\n@param certificateChain The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.*/",
           "setterMethodName" : "setCertificateChain",
           "setterModel" : {
@@ -8587,6 +8694,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PrivateKey",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The PEM-encoded private key associated with the public key in the certificate.</p>\n@param privateKey The PEM-encoded private key associated with the public key in the certificate.*/",
           "setterMethodName" : "setPrivateKey",
           "setterModel" : {
@@ -8692,6 +8800,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of an Extended Key Usage value.</p>\n@param name The name of an Extended Key Usage value.\n@see ExtendedKeyUsageName*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -8757,6 +8866,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OID",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p> <ul> <li> <p> <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li> </ul>\n@param oID An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p> <ul> <li> <p> <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>*/",
         "setterMethodName" : "setOID",
         "setterModel" : {
@@ -8824,6 +8934,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of an Extended Key Usage value.</p>\n@param name The name of an Extended Key Usage value.\n@see ExtendedKeyUsageName*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -8890,6 +9001,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OID",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p> <ul> <li> <p> <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li> </ul>\n@param oID An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p> <ul> <li> <p> <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li> <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>*/",
           "setterMethodName" : "setOID",
           "setterModel" : {
@@ -9184,6 +9296,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see ExtendedKeyUsageName*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9227,6 +9340,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ExtendedKeyUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>\n@param extendedKeyUsage Specify one or more <a>ExtendedKeyUsage</a> extension values.\n@see ExtendedKeyUsageName*/",
         "setterMethodName" : "setExtendedKeyUsage",
         "setterModel" : {
@@ -9329,6 +9443,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see KeyUsageName*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9372,6 +9487,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "KeyUsage",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specify one or more <a>KeyUsage</a> extension values.</p>\n@param keyUsage Specify one or more <a>KeyUsage</a> extension values.\n@see KeyUsageName*/",
         "setterMethodName" : "setKeyUsage",
         "setterModel" : {
@@ -9474,6 +9590,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see KeyAlgorithm*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -9517,6 +9634,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "KeyTypes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Specify one or more algorithms that can be used to generate key pairs.</p>\n@param keyTypes Specify one or more algorithms that can be used to generate key pairs.\n@see KeyAlgorithm*/",
         "setterMethodName" : "setKeyTypes",
         "setterModel" : {
@@ -9621,6 +9739,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see ExtendedKeyUsageName*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9664,6 +9783,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ExtendedKeyUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>\n@param extendedKeyUsage Specify one or more <a>ExtendedKeyUsage</a> extension values.\n@see ExtendedKeyUsageName*/",
           "setterMethodName" : "setExtendedKeyUsage",
           "setterModel" : {
@@ -9767,6 +9887,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see KeyAlgorithm*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9810,6 +9931,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "KeyTypes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specify one or more algorithms that can be used to generate key pairs.</p>\n@param keyTypes Specify one or more algorithms that can be used to generate key pairs.\n@see KeyAlgorithm*/",
           "setterMethodName" : "setKeyTypes",
           "setterModel" : {
@@ -9913,6 +10035,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see KeyUsageName*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9956,6 +10079,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "KeyUsage",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Specify one or more <a>KeyUsage</a> extension values.</p>\n@param keyUsage Specify one or more <a>KeyUsage</a> extension values.\n@see KeyUsageName*/",
           "setterMethodName" : "setKeyUsage",
           "setterModel" : {
@@ -10068,6 +10192,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -10135,6 +10260,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -10237,6 +10363,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Certificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that contains the ACM certificate represented by the ARN specified at input.</p>\n@param certificate String that contains the ACM certificate represented by the ARN specified at input.*/",
         "setterMethodName" : "setCertificate",
         "setterModel" : {
@@ -10302,6 +10429,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateChain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The certificate chain that contains the root certificate issued by the certificate authority (CA).</p>\n@param certificateChain The certificate chain that contains the root certificate issued by the certificate authority (CA).*/",
         "setterMethodName" : "setCertificateChain",
         "setterModel" : {
@@ -10369,6 +10497,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Certificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that contains the ACM certificate represented by the ARN specified at input.</p>\n@param certificate String that contains the ACM certificate represented by the ARN specified at input.*/",
           "setterMethodName" : "setCertificate",
           "setterModel" : {
@@ -10435,6 +10564,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateChain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The certificate chain that contains the root certificate issued by the certificate authority (CA).</p>\n@param certificateChain The certificate chain that contains the root certificate issued by the certificate authority (CA).*/",
           "setterMethodName" : "setCertificateChain",
           "setterModel" : {
@@ -10547,6 +10677,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>\n@param certificateArn The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -10612,6 +10743,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Certificate",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The certificate to import.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificate The certificate to import.*/",
         "setterMethodName" : "setCertificate",
         "setterModel" : {
@@ -10677,6 +10809,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "PrivateKey",
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The private key that matches the public key in the certificate.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param privateKey The private key that matches the public key in the certificate.*/",
         "setterMethodName" : "setPrivateKey",
         "setterModel" : {
@@ -10742,6 +10875,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "CertificateChain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The PEM encoded certificate chain.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificateChain The PEM encoded certificate chain.*/",
         "setterMethodName" : "setCertificateChain",
         "setterModel" : {
@@ -10809,6 +10943,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Certificate",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The certificate to import.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificate The certificate to import.*/",
           "setterMethodName" : "setCertificate",
           "setterModel" : {
@@ -10875,6 +11010,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>\n@param certificateArn The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -10941,6 +11077,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "CertificateChain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The PEM encoded certificate chain.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificateChain The PEM encoded certificate chain.*/",
           "setterMethodName" : "setCertificateChain",
           "setterModel" : {
@@ -11007,6 +11144,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "PrivateKey",
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The private key that matches the public key in the certificate.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param privateKey The private key that matches the public key in the certificate.*/",
           "setterMethodName" : "setPrivateKey",
           "setterModel" : {
@@ -11109,6 +11247,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of the imported certificate.</p>\n@param certificateArn The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of the imported certificate.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -11176,6 +11315,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of the imported certificate.</p>\n@param certificateArn The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of the imported certificate.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -11487,6 +11627,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A string value that contains a Key Usage extension name.</p>\n@param name A string value that contains a Key Usage extension name.\n@see KeyUsageName*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -11554,6 +11695,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A string value that contains a Key Usage extension name.</p>\n@param name A string value that contains a Key Usage extension name.\n@see KeyUsageName*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -11813,6 +11955,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see CertificateStatus*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11856,6 +11999,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CertificateStatuses",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Filter the certificate list by status value.</p>\n@param certificateStatuses Filter the certificate list by status value.\n@see CertificateStatus*/",
         "setterMethodName" : "setCertificateStatuses",
         "setterModel" : {
@@ -11921,6 +12065,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Includes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Filter the certificate list. For more information, see the <a>Filters</a> structure.</p>\n@param includes Filter the certificate list. For more information, see the <a>Filters</a> structure.*/",
         "setterMethodName" : "setIncludes",
         "setterModel" : {
@@ -11986,6 +12131,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>\n@param nextToken Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12051,6 +12197,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxItems",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>\n@param maxItems Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.*/",
         "setterMethodName" : "setMaxItems",
         "setterModel" : {
@@ -12155,6 +12302,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see CertificateStatus*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12198,6 +12346,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CertificateStatuses",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Filter the certificate list by status value.</p>\n@param certificateStatuses Filter the certificate list by status value.\n@see CertificateStatus*/",
           "setterMethodName" : "setCertificateStatuses",
           "setterModel" : {
@@ -12264,6 +12413,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Includes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Filter the certificate list. For more information, see the <a>Filters</a> structure.</p>\n@param includes Filter the certificate list. For more information, see the <a>Filters</a> structure.*/",
           "setterMethodName" : "setIncludes",
           "setterModel" : {
@@ -12330,6 +12480,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxItems",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>\n@param maxItems Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.*/",
           "setterMethodName" : "setMaxItems",
           "setterModel" : {
@@ -12396,6 +12547,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>\n@param nextToken Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12498,6 +12650,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>\n@param nextToken When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -12600,6 +12753,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12643,6 +12797,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "CertificateSummaryList",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A list of ACM certificates.</p>\n@param certificateSummaryList A list of ACM certificates.*/",
         "setterMethodName" : "setCertificateSummaryList",
         "setterModel" : {
@@ -12747,6 +12902,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12790,6 +12946,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "CertificateSummaryList",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A list of ACM certificates.</p>\n@param certificateSummaryList A list of ACM certificates.*/",
           "setterMethodName" : "setCertificateSummaryList",
           "setterModel" : {
@@ -12856,6 +13013,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>\n@param nextToken When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -12968,6 +13126,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>\n@param certificateArn String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -13035,6 +13194,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>\n@param certificateArn String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -13174,6 +13334,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13217,6 +13378,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key-value pairs that define the applied tags.</p>\n@param tags The key-value pairs that define the applied tags.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -13321,6 +13483,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13364,6 +13527,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key-value pairs that define the applied tags.</p>\n@param tags The key-value pairs that define the applied tags.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -13519,6 +13683,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>\n@param certificateArn String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -13621,6 +13786,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -13664,6 +13830,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key-value pair that defines the tag to remove.</p>\n@param tags The key-value pair that defines the tag to remove.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -13731,6 +13898,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>\n@param certificateArn String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -13834,6 +14002,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -13877,6 +14046,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key-value pair that defines the tag to remove.</p>\n@param tags The key-value pair that defines the tag to remove.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -14117,6 +14287,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RenewalStatus",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> of the certificate.</p>\n@param renewalStatus The status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> of the certificate.\n@see RenewalStatus*/",
         "setterMethodName" : "setRenewalStatus",
         "setterModel" : {
@@ -14219,6 +14390,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14262,6 +14434,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DomainValidationOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a>. This is different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param domainValidationOptions Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a>. This is different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
         "setterMethodName" : "setDomainValidationOptions",
         "setterModel" : {
@@ -14366,6 +14539,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -14409,6 +14583,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DomainValidationOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a>. This is different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param domainValidationOptions Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a>. This is different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.*/",
           "setterMethodName" : "setDomainValidationOptions",
           "setterModel" : {
@@ -14475,6 +14650,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RenewalStatus",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> of the certificate.</p>\n@param renewalStatus The status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> of the certificate.\n@see RenewalStatus*/",
           "setterMethodName" : "setRenewalStatus",
           "setterModel" : {
@@ -14587,6 +14763,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DomainName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p> <p> The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>\n@param domainName Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p> <p> The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
@@ -14652,6 +14829,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ValidationMethod",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html\">validate with DNS</a> or <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html\">validate with email</a>. We recommend that you use DNS validation. </p>\n@param validationMethod The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html\">validate with DNS</a> or <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html\">validate with email</a>. We recommend that you use DNS validation.\n@see ValidationMethod*/",
         "setterMethodName" : "setValidationMethod",
         "setterModel" : {
@@ -14754,6 +14932,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -14797,6 +14976,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "SubjectAlternativeNames",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html\">Limits</a>.</p> <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p> </li> <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li> <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li> </ul>\n@param subjectAlternativeNames Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html\">Limits</a>.</p> <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p> </li> <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li> <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li>*/",
         "setterMethodName" : "setSubjectAlternativeNames",
         "setterModel" : {
@@ -14862,6 +15042,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IdempotencyToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>\n@param idempotencyToken Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.*/",
         "setterMethodName" : "setIdempotencyToken",
         "setterModel" : {
@@ -14964,6 +15145,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -15007,6 +15189,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "DomainValidationOptions",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>\n@param domainValidationOptions The domain name that you want ACM to use to send you emails so that you can validate domain ownership.*/",
         "setterMethodName" : "setDomainValidationOptions",
         "setterModel" : {
@@ -15072,6 +15255,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency\">Opting Out of Certificate Transparency Logging</a>.</p>\n@param options Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency\">Opting Out of Certificate Transparency Logging</a>.*/",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -15137,6 +15321,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateAuthorityArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href=\"http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html\">AWS Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p> <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href=\"http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html\">AWS Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p> <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>*/",
         "setterMethodName" : "setCertificateAuthorityArn",
         "setterModel" : {
@@ -15204,6 +15389,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateAuthorityArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href=\"http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html\">AWS Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p> <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateAuthorityArn The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href=\"http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html\">AWS Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p> <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>*/",
           "setterMethodName" : "setCertificateAuthorityArn",
           "setterModel" : {
@@ -15270,6 +15456,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DomainName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p> <p> The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>\n@param domainName Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p> <p> The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
@@ -15373,6 +15560,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15416,6 +15604,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "DomainValidationOptions",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>\n@param domainValidationOptions The domain name that you want ACM to use to send you emails so that you can validate domain ownership.*/",
           "setterMethodName" : "setDomainValidationOptions",
           "setterModel" : {
@@ -15482,6 +15671,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IdempotencyToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>\n@param idempotencyToken Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.*/",
           "setterMethodName" : "setIdempotencyToken",
           "setterModel" : {
@@ -15548,6 +15738,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency\">Opting Out of Certificate Transparency Logging</a>.</p>\n@param options Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency\">Opting Out of Certificate Transparency Logging</a>.*/",
           "setterMethodName" : "setOptions",
           "setterModel" : {
@@ -15651,6 +15842,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -15694,6 +15886,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "SubjectAlternativeNames",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html\">Limits</a>.</p> <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p> </li> <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li> <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li> </ul>\n@param subjectAlternativeNames Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html\">Limits</a>.</p> <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p> </li> <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li> <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li>*/",
           "setterMethodName" : "setSubjectAlternativeNames",
           "setterModel" : {
@@ -15760,6 +15953,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ValidationMethod",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html\">validate with DNS</a> or <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html\">validate with email</a>. We recommend that you use DNS validation. </p>\n@param validationMethod The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html\">validate with DNS</a> or <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html\">validate with email</a>. We recommend that you use DNS validation.\n@see ValidationMethod*/",
           "setterMethodName" : "setValidationMethod",
           "setterModel" : {
@@ -15862,6 +16056,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -15929,6 +16124,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -16078,6 +16274,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -16143,6 +16340,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Domain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>\n@param domain The fully qualified domain name (FQDN) of the certificate that needs to be validated.*/",
         "setterMethodName" : "setDomain",
         "setterModel" : {
@@ -16208,6 +16406,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ValidationDomain",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li> </ul>\n@param validationDomain The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li>*/",
         "setterMethodName" : "setValidationDomain",
         "setterModel" : {
@@ -16275,6 +16474,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -16341,6 +16541,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Domain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>\n@param domain The fully qualified domain name (FQDN) of the certificate that needs to be validated.*/",
           "setterMethodName" : "setDomain",
           "setterModel" : {
@@ -16407,6 +16608,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ValidationDomain",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li> </ul>\n@param validationDomain The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li>*/",
           "setterMethodName" : "setValidationDomain",
           "setterModel" : {
@@ -16623,6 +16825,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>\n@param name The name of the DNS record to create in your domain. This is supplied by ACM.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -16688,6 +16891,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>\n@param type The type of DNS record. Currently this can be <code>CNAME</code>.\n@see RecordType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
@@ -16753,6 +16957,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>\n@param value The value of the CNAME record to add to your DNS database. This is supplied by ACM.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -16820,6 +17025,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>\n@param name The name of the DNS record to create in your domain. This is supplied by ACM.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -16886,6 +17092,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>\n@param type The type of DNS record. Currently this can be <code>CNAME</code>.\n@see RecordType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
@@ -16952,6 +17159,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>\n@param value The value of the CNAME record to add to your DNS database. This is supplied by ACM.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -17127,6 +17335,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -17192,6 +17401,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -17259,6 +17469,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -17325,6 +17536,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -17474,6 +17686,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CertificateArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>ARN of the requested certificate to update. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateArn ARN of the requested certificate to update. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
         "setterMethodName" : "setCertificateArn",
         "setterModel" : {
@@ -17539,6 +17752,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Options",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>\n@param options Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.*/",
         "setterMethodName" : "setOptions",
         "setterModel" : {
@@ -17606,6 +17820,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CertificateArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>ARN of the requested certificate to update. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>\n@param certificateArn ARN of the requested certificate to update. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code>*/",
           "setterMethodName" : "setCertificateArn",
           "setterModel" : {
@@ -17672,6 +17887,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Options",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>\n@param options Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.*/",
           "setterMethodName" : "setOptions",
           "setterModel" : {

@@ -271,6 +271,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdSegmentUrlPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>\n@param adSegmentUrlPrefix A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.*/",
         "setterMethodName" : "setAdSegmentUrlPrefix",
         "setterModel" : {
@@ -336,6 +337,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ContentSegmentUrlPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>\n@param contentSegmentUrlPrefix A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.*/",
         "setterMethodName" : "setContentSegmentUrlPrefix",
         "setterModel" : {
@@ -403,6 +405,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdSegmentUrlPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>\n@param adSegmentUrlPrefix A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.*/",
           "setterMethodName" : "setAdSegmentUrlPrefix",
           "setterModel" : {
@@ -469,6 +472,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ContentSegmentUrlPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>\n@param contentSegmentUrlPrefix A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.*/",
           "setterMethodName" : "setContentSegmentUrlPrefix",
           "setterModel" : {
@@ -574,6 +578,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestEndpointPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL that is used to initiate a playback session for devices that support DASH. </p>\n@param manifestEndpointPrefix The URL that is used to initiate a playback session for devices that support DASH.*/",
         "setterMethodName" : "setManifestEndpointPrefix",
         "setterModel" : {
@@ -639,6 +644,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MpdLocation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>\n@param mpdLocation The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.*/",
         "setterMethodName" : "setMpdLocation",
         "setterModel" : {
@@ -706,6 +712,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestEndpointPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL that is used to initiate a playback session for devices that support DASH. </p>\n@param manifestEndpointPrefix The URL that is used to initiate a playback session for devices that support DASH.*/",
           "setterMethodName" : "setManifestEndpointPrefix",
           "setterModel" : {
@@ -772,6 +779,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MpdLocation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>\n@param mpdLocation The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.*/",
           "setterMethodName" : "setMpdLocation",
           "setterModel" : {
@@ -877,6 +885,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MpdLocation",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>\n@param mpdLocation The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.*/",
         "setterMethodName" : "setMpdLocation",
         "setterModel" : {
@@ -944,6 +953,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MpdLocation",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>\n@param mpdLocation The setting that controls whether MediaTailor includes the Location tag in DASH Manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.*/",
           "setterMethodName" : "setMpdLocation",
           "setterModel" : {
@@ -1056,6 +1066,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -1123,6 +1134,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1272,6 +1284,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -1339,6 +1352,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -1441,6 +1455,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdDecisionServerUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
         "setterMethodName" : "setAdDecisionServerUrl",
         "setterModel" : {
@@ -1506,6 +1521,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CdnConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
         "setterMethodName" : "setCdnConfiguration",
         "setterModel" : {
@@ -1571,6 +1587,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration object for DASH content. </p>\n@param dashConfiguration The configuration object for DASH content.*/",
         "setterMethodName" : "setDashConfiguration",
         "setterModel" : {
@@ -1636,6 +1653,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.*/",
         "setterMethodName" : "setHlsConfiguration",
         "setterModel" : {
@@ -1701,6 +1719,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -1766,6 +1785,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlaybackEndpointPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.*/",
         "setterMethodName" : "setPlaybackEndpointPrefix",
         "setterModel" : {
@@ -1831,6 +1851,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SessionInitializationEndpointPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.*/",
         "setterMethodName" : "setSessionInitializationEndpointPrefix",
         "setterModel" : {
@@ -1896,6 +1917,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SlateAdUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
         "setterMethodName" : "setSlateAdUrl",
         "setterModel" : {
@@ -1961,6 +1983,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscodeProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>\n@param transcodeProfileName Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team.*/",
         "setterMethodName" : "setTranscodeProfileName",
         "setterModel" : {
@@ -2026,6 +2049,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VideoContentSourceUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
         "setterMethodName" : "setVideoContentSourceUrl",
         "setterModel" : {
@@ -2093,6 +2117,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdDecisionServerUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
           "setterMethodName" : "setAdDecisionServerUrl",
           "setterModel" : {
@@ -2159,6 +2184,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CdnConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
           "setterMethodName" : "setCdnConfiguration",
           "setterModel" : {
@@ -2225,6 +2251,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration object for DASH content. </p>\n@param dashConfiguration The configuration object for DASH content.*/",
           "setterMethodName" : "setDashConfiguration",
           "setterModel" : {
@@ -2291,6 +2318,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.*/",
           "setterMethodName" : "setHlsConfiguration",
           "setterModel" : {
@@ -2357,6 +2385,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -2423,6 +2452,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlaybackEndpointPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.*/",
           "setterMethodName" : "setPlaybackEndpointPrefix",
           "setterModel" : {
@@ -2489,6 +2519,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SessionInitializationEndpointPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.*/",
           "setterMethodName" : "setSessionInitializationEndpointPrefix",
           "setterModel" : {
@@ -2555,6 +2586,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SlateAdUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
           "setterMethodName" : "setSlateAdUrl",
           "setterModel" : {
@@ -2621,6 +2653,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscodeProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>\n@param transcodeProfileName Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team.*/",
           "setterMethodName" : "setTranscodeProfileName",
           "setterModel" : {
@@ -2687,6 +2720,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VideoContentSourceUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
           "setterMethodName" : "setVideoContentSourceUrl",
           "setterModel" : {
@@ -2792,6 +2826,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ManifestEndpointPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>\n@param manifestEndpointPrefix The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.*/",
         "setterMethodName" : "setManifestEndpointPrefix",
         "setterModel" : {
@@ -2859,6 +2894,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ManifestEndpointPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>\n@param manifestEndpointPrefix The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.*/",
           "setterMethodName" : "setManifestEndpointPrefix",
           "setterModel" : {
@@ -2971,6 +3007,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Maximum number of records to return. </p>\n@param maxResults Maximum number of records to return.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
@@ -3036,6 +3073,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -3103,6 +3141,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Maximum number of records to return. </p>\n@param maxResults Maximum number of records to return.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
@@ -3169,6 +3208,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -3308,6 +3348,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3351,6 +3392,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Items",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored. </p>\n@param items Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
@@ -3416,6 +3458,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
@@ -3520,6 +3563,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3563,6 +3607,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Items",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored. </p>\n@param items Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
@@ -3629,6 +3674,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
@@ -3734,6 +3780,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdDecisionServerUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
         "setterMethodName" : "setAdDecisionServerUrl",
         "setterModel" : {
@@ -3799,6 +3846,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CdnConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
         "setterMethodName" : "setCdnConfiguration",
         "setterModel" : {
@@ -3864,6 +3912,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3929,6 +3978,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SlateAdUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
         "setterMethodName" : "setSlateAdUrl",
         "setterModel" : {
@@ -3994,6 +4044,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VideoContentSourceUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
         "setterMethodName" : "setVideoContentSourceUrl",
         "setterModel" : {
@@ -4061,6 +4112,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdDecisionServerUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
           "setterMethodName" : "setAdDecisionServerUrl",
           "setterModel" : {
@@ -4127,6 +4179,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CdnConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
           "setterMethodName" : "setCdnConfiguration",
           "setterModel" : {
@@ -4193,6 +4246,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -4259,6 +4313,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SlateAdUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
           "setterMethodName" : "setSlateAdUrl",
           "setterModel" : {
@@ -4325,6 +4380,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VideoContentSourceUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
           "setterMethodName" : "setVideoContentSourceUrl",
           "setterModel" : {
@@ -4437,6 +4493,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdDecisionServerUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.*/",
         "setterMethodName" : "setAdDecisionServerUrl",
         "setterModel" : {
@@ -4502,6 +4559,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CdnConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
         "setterMethodName" : "setCdnConfiguration",
         "setterModel" : {
@@ -4567,6 +4625,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration object for DASH content. </p>\n@param dashConfiguration The configuration object for DASH content.*/",
         "setterMethodName" : "setDashConfiguration",
         "setterModel" : {
@@ -4632,6 +4691,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -4697,6 +4757,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SlateAdUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
         "setterMethodName" : "setSlateAdUrl",
         "setterModel" : {
@@ -4762,6 +4823,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscodeProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>\n@param transcodeProfileName Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team.*/",
         "setterMethodName" : "setTranscodeProfileName",
         "setterModel" : {
@@ -4827,6 +4889,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VideoContentSourceUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
         "setterMethodName" : "setVideoContentSourceUrl",
         "setterModel" : {
@@ -4894,6 +4957,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdDecisionServerUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.*/",
           "setterMethodName" : "setAdDecisionServerUrl",
           "setterModel" : {
@@ -4960,6 +5024,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CdnConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
           "setterMethodName" : "setCdnConfiguration",
           "setterModel" : {
@@ -5026,6 +5091,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration object for DASH content. </p>\n@param dashConfiguration The configuration object for DASH content.*/",
           "setterMethodName" : "setDashConfiguration",
           "setterModel" : {
@@ -5092,6 +5158,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -5158,6 +5225,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SlateAdUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
           "setterMethodName" : "setSlateAdUrl",
           "setterModel" : {
@@ -5224,6 +5292,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscodeProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>\n@param transcodeProfileName Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team.*/",
           "setterMethodName" : "setTranscodeProfileName",
           "setterModel" : {
@@ -5290,6 +5359,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VideoContentSourceUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
           "setterMethodName" : "setVideoContentSourceUrl",
           "setterModel" : {
@@ -5392,6 +5462,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "AdDecisionServerUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
         "setterMethodName" : "setAdDecisionServerUrl",
         "setterModel" : {
@@ -5457,6 +5528,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CdnConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
         "setterMethodName" : "setCdnConfiguration",
         "setterModel" : {
@@ -5522,6 +5594,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "DashConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration object for DASH content. </p>\n@param dashConfiguration The configuration object for DASH content.*/",
         "setterMethodName" : "setDashConfiguration",
         "setterModel" : {
@@ -5587,6 +5660,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "HlsConfiguration",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.*/",
         "setterMethodName" : "setHlsConfiguration",
         "setterModel" : {
@@ -5652,6 +5726,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -5717,6 +5792,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PlaybackEndpointPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.*/",
         "setterMethodName" : "setPlaybackEndpointPrefix",
         "setterModel" : {
@@ -5782,6 +5858,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SessionInitializationEndpointPrefix",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.*/",
         "setterMethodName" : "setSessionInitializationEndpointPrefix",
         "setterModel" : {
@@ -5847,6 +5924,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SlateAdUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
         "setterMethodName" : "setSlateAdUrl",
         "setterModel" : {
@@ -5912,6 +5990,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscodeProfileName",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>\n@param transcodeProfileName Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team.*/",
         "setterMethodName" : "setTranscodeProfileName",
         "setterModel" : {
@@ -5977,6 +6056,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VideoContentSourceUrl",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
         "setterMethodName" : "setVideoContentSourceUrl",
         "setterModel" : {
@@ -6044,6 +6124,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "AdDecisionServerUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
           "setterMethodName" : "setAdDecisionServerUrl",
           "setterModel" : {
@@ -6110,6 +6191,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CdnConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
           "setterMethodName" : "setCdnConfiguration",
           "setterModel" : {
@@ -6176,6 +6258,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "DashConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration object for DASH content. </p>\n@param dashConfiguration The configuration object for DASH content.*/",
           "setterMethodName" : "setDashConfiguration",
           "setterModel" : {
@@ -6242,6 +6325,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "HlsConfiguration",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.*/",
           "setterMethodName" : "setHlsConfiguration",
           "setterModel" : {
@@ -6308,6 +6392,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -6374,6 +6459,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PlaybackEndpointPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.*/",
           "setterMethodName" : "setPlaybackEndpointPrefix",
           "setterModel" : {
@@ -6440,6 +6526,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SessionInitializationEndpointPrefix",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.*/",
           "setterMethodName" : "setSessionInitializationEndpointPrefix",
           "setterModel" : {
@@ -6506,6 +6593,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SlateAdUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
           "setterMethodName" : "setSlateAdUrl",
           "setterModel" : {
@@ -6572,6 +6660,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscodeProfileName",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>\n@param transcodeProfileName Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team.*/",
           "setterMethodName" : "setTranscodeProfileName",
           "setterModel" : {
@@ -6638,6 +6727,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VideoContentSourceUrl",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
           "setterMethodName" : "setVideoContentSourceUrl",
           "setterModel" : {

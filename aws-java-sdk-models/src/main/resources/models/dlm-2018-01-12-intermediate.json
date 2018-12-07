@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -378,6 +378,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
         "setterMethodName" : "setExecutionRoleArn",
         "setterModel" : {
@@ -443,6 +444,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>\n@param description A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -508,6 +510,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@see SettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -573,6 +576,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PolicyDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.</p>\n@param policyDetails The configuration details of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.*/",
         "setterMethodName" : "setPolicyDetails",
         "setterModel" : {
@@ -640,6 +644,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>\n@param description A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -706,6 +711,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
           "setterMethodName" : "setExecutionRoleArn",
           "setterModel" : {
@@ -772,6 +778,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PolicyDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.</p>\n@param policyDetails The configuration details of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.*/",
           "setterMethodName" : "setPolicyDetails",
           "setterModel" : {
@@ -838,6 +845,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@see SettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -940,6 +948,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -1007,6 +1016,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -1112,6 +1122,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Interval",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.*/",
         "setterMethodName" : "setInterval",
         "setterModel" : {
@@ -1177,6 +1188,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "IntervalUnit",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The interval unit.</p>\n@param intervalUnit The interval unit.\n@see IntervalUnitValues*/",
         "setterMethodName" : "setIntervalUnit",
         "setterModel" : {
@@ -1279,6 +1291,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1322,6 +1335,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Times",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
         "setterMethodName" : "setTimes",
         "setterModel" : {
@@ -1389,6 +1403,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Interval",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.*/",
           "setterMethodName" : "setInterval",
           "setterModel" : {
@@ -1455,6 +1470,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "IntervalUnit",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The interval unit.</p>\n@param intervalUnit The interval unit.\n@see IntervalUnitValues*/",
           "setterMethodName" : "setIntervalUnit",
           "setterModel" : {
@@ -1558,6 +1574,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -1601,6 +1618,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Times",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
           "setterMethodName" : "setTimes",
           "setterModel" : {
@@ -1713,6 +1731,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -1780,6 +1799,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -1966,6 +1986,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2009,6 +2030,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "PolicyIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifiers of the data lifecycle policies.</p>\n@param policyIds The identifiers of the data lifecycle policies.*/",
         "setterMethodName" : "setPolicyIds",
         "setterModel" : {
@@ -2074,6 +2096,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The activation state.</p>\n@param state The activation state.\n@see GettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -2176,6 +2199,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see ResourceTypeValues*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2219,6 +2243,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceTypes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceTypes The resource type.\n@see ResourceTypeValues*/",
         "setterMethodName" : "setResourceTypes",
         "setterModel" : {
@@ -2321,6 +2346,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2364,6 +2390,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TargetTags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p>\n@param targetTags The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.*/",
         "setterMethodName" : "setTargetTags",
         "setterModel" : {
@@ -2466,6 +2493,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -2509,6 +2537,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagsToAdd",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.</p>\n@param tagsToAdd The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.*/",
         "setterMethodName" : "setTagsToAdd",
         "setterModel" : {
@@ -2613,6 +2642,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2656,6 +2686,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "PolicyIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifiers of the data lifecycle policies.</p>\n@param policyIds The identifiers of the data lifecycle policies.*/",
           "setterMethodName" : "setPolicyIds",
           "setterModel" : {
@@ -2759,6 +2790,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see ResourceTypeValues*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2802,6 +2834,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceTypes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceTypes The resource type.\n@see ResourceTypeValues*/",
           "setterMethodName" : "setResourceTypes",
           "setterModel" : {
@@ -2868,6 +2901,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The activation state.</p>\n@param state The activation state.\n@see GettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -2971,6 +3005,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3014,6 +3049,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagsToAdd",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.</p>\n@param tagsToAdd The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.*/",
           "setterMethodName" : "setTagsToAdd",
           "setterModel" : {
@@ -3117,6 +3153,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3160,6 +3197,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TargetTags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p>\n@param targetTags The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.*/",
           "setterMethodName" : "setTargetTags",
           "setterModel" : {
@@ -3299,6 +3337,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -3342,6 +3381,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Policies",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Summary information about the lifecycle policies.</p>\n@param policies Summary information about the lifecycle policies.*/",
         "setterMethodName" : "setPolicies",
         "setterModel" : {
@@ -3446,6 +3486,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -3489,6 +3530,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Policies",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Summary information about the lifecycle policies.</p>\n@param policies Summary information about the lifecycle policies.*/",
           "setterMethodName" : "setPolicies",
           "setterModel" : {
@@ -3601,6 +3643,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -3668,6 +3711,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -3770,6 +3814,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Policy",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Detailed information about the lifecycle policy.</p>\n@param policy Detailed information about the lifecycle policy.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
@@ -3837,6 +3882,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Policy",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Detailed information about the lifecycle policy.</p>\n@param policy Detailed information about the lifecycle policy.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
@@ -3991,6 +4037,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -4058,6 +4105,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -4203,6 +4251,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -4305,6 +4354,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4348,6 +4398,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "RequiredParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The request omitted one or more required parameters.</p>\n@param requiredParameters The request omitted one or more required parameters.*/",
         "setterMethodName" : "setRequiredParameters",
         "setterModel" : {
@@ -4450,6 +4501,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -4493,6 +4545,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "MutuallyExclusiveParameters",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The request included parameters that cannot be provided together.</p>\n@param mutuallyExclusiveParameters The request included parameters that cannot be provided together.*/",
         "setterMethodName" : "setMutuallyExclusiveParameters",
         "setterModel" : {
@@ -4560,6 +4613,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -4663,6 +4717,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4706,6 +4761,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "MutuallyExclusiveParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The request included parameters that cannot be provided together.</p>\n@param mutuallyExclusiveParameters The request included parameters that cannot be provided together.*/",
           "setterMethodName" : "setMutuallyExclusiveParameters",
           "setterModel" : {
@@ -4809,6 +4865,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -4852,6 +4909,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "RequiredParameters",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The request omitted one or more required parameters.</p>\n@param requiredParameters The request omitted one or more required parameters.*/",
           "setterMethodName" : "setRequiredParameters",
           "setterModel" : {
@@ -4954,6 +5012,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -5019,6 +5078,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -5084,6 +5144,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@see GettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -5149,6 +5210,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
         "setterMethodName" : "setExecutionRoleArn",
         "setterModel" : {
@@ -5214,6 +5276,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DateCreated",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.*/",
         "setterMethodName" : "setDateCreated",
         "setterModel" : {
@@ -5279,6 +5342,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "DateModified",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.*/",
         "setterMethodName" : "setDateModified",
         "setterModel" : {
@@ -5344,6 +5408,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PolicyDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration of the lifecycle policy</p>\n@param policyDetails The configuration of the lifecycle policy*/",
         "setterMethodName" : "setPolicyDetails",
         "setterModel" : {
@@ -5411,6 +5476,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DateCreated",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.*/",
           "setterMethodName" : "setDateCreated",
           "setterModel" : {
@@ -5477,6 +5543,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "DateModified",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.*/",
           "setterMethodName" : "setDateModified",
           "setterModel" : {
@@ -5543,6 +5610,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -5609,6 +5677,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
           "setterMethodName" : "setExecutionRoleArn",
           "setterModel" : {
@@ -5675,6 +5744,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PolicyDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration of the lifecycle policy</p>\n@param policyDetails The configuration of the lifecycle policy*/",
           "setterMethodName" : "setPolicyDetails",
           "setterModel" : {
@@ -5741,6 +5811,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -5807,6 +5878,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@see GettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -5912,6 +5984,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -5977,6 +6050,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -6042,6 +6116,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@see GettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -6109,6 +6184,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -6175,6 +6251,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -6241,6 +6318,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@see GettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
@@ -6346,6 +6424,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -6411,6 +6490,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value is the type of resource for which a limit was exceeded.</p>\n@param resourceType Value is the type of resource for which a limit was exceeded.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -6478,6 +6558,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -6544,6 +6625,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value is the type of resource for which a limit was exceeded.</p>\n@param resourceType Value is the type of resource for which a limit was exceeded.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -6683,6 +6765,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member \n@see ResourceTypeValues*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6726,6 +6809,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceTypes",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceTypes The resource type.\n@see ResourceTypeValues*/",
         "setterMethodName" : "setResourceTypes",
         "setterModel" : {
@@ -6828,6 +6912,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -6871,6 +6956,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TargetTags",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The single tag that identifies targeted resources for this policy.</p>\n@param targetTags The single tag that identifies targeted resources for this policy.*/",
         "setterMethodName" : "setTargetTags",
         "setterModel" : {
@@ -6973,6 +7059,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7016,6 +7103,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Schedules",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The schedule of policy-defined actions.</p>\n@param schedules The schedule of policy-defined actions.*/",
         "setterMethodName" : "setSchedules",
         "setterModel" : {
@@ -7120,6 +7208,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member \n@see ResourceTypeValues*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7163,6 +7252,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceTypes",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceTypes The resource type.\n@see ResourceTypeValues*/",
           "setterMethodName" : "setResourceTypes",
           "setterModel" : {
@@ -7266,6 +7356,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7309,6 +7400,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Schedules",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The schedule of policy-defined actions.</p>\n@param schedules The schedule of policy-defined actions.*/",
           "setterMethodName" : "setSchedules",
           "setterModel" : {
@@ -7412,6 +7504,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7455,6 +7548,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TargetTags",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The single tag that identifies targeted resources for this policy.</p>\n@param targetTags The single tag that identifies targeted resources for this policy.*/",
           "setterMethodName" : "setTargetTags",
           "setterModel" : {
@@ -7560,6 +7654,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Code",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
@@ -7625,6 +7720,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceType",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value is the type of resource that was not found.</p>\n@param resourceType Value is the type of resource that was not found.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
@@ -7727,6 +7823,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7770,6 +7867,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceIds",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Value is a list of resource IDs that were not found.</p>\n@param resourceIds Value is a list of resource IDs that were not found.*/",
         "setterMethodName" : "setResourceIds",
         "setterModel" : {
@@ -7837,6 +7935,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Code",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
@@ -7940,6 +8039,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -7983,6 +8083,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceIds",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value is a list of resource IDs that were not found.</p>\n@param resourceIds Value is a list of resource IDs that were not found.*/",
           "setterMethodName" : "setResourceIds",
           "setterModel" : {
@@ -8049,6 +8150,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceType",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Value is the type of resource that was not found.</p>\n@param resourceType Value is the type of resource that was not found.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
@@ -8194,6 +8296,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "Count",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The number of snapshots to keep for each volume, up to a maximum of 1000.</p>\n@param count The number of snapshots to keep for each volume, up to a maximum of 1000.*/",
         "setterMethodName" : "setCount",
         "setterModel" : {
@@ -8261,6 +8364,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "Count",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The number of snapshots to keep for each volume, up to a maximum of 1000.</p>\n@param count The number of snapshots to keep for each volume, up to a maximum of 1000.*/",
           "setterMethodName" : "setCount",
           "setterModel" : {
@@ -8366,6 +8470,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the schedule.</p>\n@param name The name of the schedule.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -8431,6 +8536,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "CopyTags",
+        "sensitive" : false,
         "setterDocumentation" : "/**\n@param copyTags */",
         "setterMethodName" : "setCopyTags",
         "setterModel" : {
@@ -8533,6 +8639,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -8576,6 +8683,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagsToAdd",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.</p>\n@param tagsToAdd The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.*/",
         "setterMethodName" : "setTagsToAdd",
         "setterModel" : {
@@ -8641,6 +8749,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "CreateRule",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The create rule.</p>\n@param createRule The create rule.*/",
         "setterMethodName" : "setCreateRule",
         "setterModel" : {
@@ -8706,6 +8815,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "RetainRule",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The retain rule.</p>\n@param retainRule The retain rule.*/",
         "setterMethodName" : "setRetainRule",
         "setterModel" : {
@@ -8773,6 +8883,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "CopyTags",
+          "sensitive" : false,
           "setterDocumentation" : "/**\n@param copyTags */",
           "setterMethodName" : "setCopyTags",
           "setterModel" : {
@@ -8839,6 +8950,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "CreateRule",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The create rule.</p>\n@param createRule The create rule.*/",
           "setterMethodName" : "setCreateRule",
           "setterModel" : {
@@ -8905,6 +9017,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the schedule.</p>\n@param name The name of the schedule.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -8971,6 +9084,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "RetainRule",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The retain rule.</p>\n@param retainRule The retain rule.*/",
           "setterMethodName" : "setRetainRule",
           "setterModel" : {
@@ -9074,6 +9188,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -9117,6 +9232,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagsToAdd",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.</p>\n@param tagsToAdd The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.*/",
           "setterMethodName" : "setTagsToAdd",
           "setterModel" : {
@@ -9268,6 +9384,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tag key.</p>\n@param key The tag key.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -9333,6 +9450,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The tag value.</p>\n@param value The tag value.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -9400,6 +9518,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tag key.</p>\n@param key The tag key.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -9466,6 +9585,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The tag value.</p>\n@param value The tag value.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -9578,6 +9698,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PolicyId",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
@@ -9643,6 +9764,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutionRoleArn",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
         "setterMethodName" : "setExecutionRoleArn",
         "setterModel" : {
@@ -9708,6 +9830,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "State",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@see SettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
@@ -9773,6 +9896,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Description",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>A description of the lifecycle policy.</p>\n@param description A description of the lifecycle policy.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
@@ -9838,6 +9962,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "PolicyDetails",
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.*/",
         "setterMethodName" : "setPolicyDetails",
         "setterModel" : {
@@ -9905,6 +10030,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Description",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>A description of the lifecycle policy.</p>\n@param description A description of the lifecycle policy.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
@@ -9971,6 +10097,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutionRoleArn",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
           "setterMethodName" : "setExecutionRoleArn",
           "setterModel" : {
@@ -10037,6 +10164,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "PolicyDetails",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.*/",
           "setterMethodName" : "setPolicyDetails",
           "setterModel" : {
@@ -10103,6 +10231,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PolicyId",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
@@ -10169,6 +10298,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "State",
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@see SettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {

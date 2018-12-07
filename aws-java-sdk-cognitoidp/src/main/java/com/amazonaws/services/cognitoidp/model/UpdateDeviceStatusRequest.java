@@ -201,7 +201,8 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -212,7 +213,7 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: ").append(getAccessToken()).append(",");
+            sb.append("AccessToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getDeviceKey() != null)
             sb.append("DeviceKey: ").append(getDeviceKey()).append(",");
         if (getDeviceRememberedStatus() != null)

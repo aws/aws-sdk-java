@@ -1073,7 +1073,8 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1094,7 +1095,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         if (getTaskType() != null)
             sb.append("TaskType: ").append(getTaskType()).append(",");
         if (getTaskParameters() != null)
-            sb.append("TaskParameters: ").append(getTaskParameters()).append(",");
+            sb.append("TaskParameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getTaskInvocationParameters() != null)
             sb.append("TaskInvocationParameters: ").append(getTaskInvocationParameters()).append(",");
         if (getPriority() != null)
@@ -1108,7 +1109,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");

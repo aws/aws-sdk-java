@@ -1566,7 +1566,8 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1579,11 +1580,11 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         if (getIntentName() != null)
             sb.append("IntentName: ").append(getIntentName()).append(",");
         if (getSlots() != null)
-            sb.append("Slots: ").append(getSlots()).append(",");
+            sb.append("Slots: ").append("***Sensitive Data Redacted***").append(",");
         if (getSessionAttributes() != null)
-            sb.append("SessionAttributes: ").append(getSessionAttributes()).append(",");
+            sb.append("SessionAttributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage()).append(",");
+            sb.append("Message: ").append("***Sensitive Data Redacted***").append(",");
         if (getMessageFormat() != null)
             sb.append("MessageFormat: ").append(getMessageFormat()).append(",");
         if (getDialogState() != null)

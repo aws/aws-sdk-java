@@ -119,7 +119,8 @@ public class KeyPair implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -132,7 +133,7 @@ public class KeyPair implements Serializable, Cloneable, StructuredPojo {
         if (getPublicKey() != null)
             sb.append("PublicKey: ").append(getPublicKey()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: ").append(getPrivateKey());
+            sb.append("PrivateKey: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
