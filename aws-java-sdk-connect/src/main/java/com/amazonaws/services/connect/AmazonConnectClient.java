@@ -56,8 +56,19 @@ import com.amazonaws.services.connect.model.transform.*;
  * easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
  * </p>
  * <p>
- * There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per
- * second, and a BurstLimit of 5 per second.
+ * Throttling limits for the Amazon Connect API operations:
+ * </p>
+ * <p>
+ * For the <code>GetMetricData</code> and <code>GetCurrentMetricData</code> operations, a RateLimit of 5 per second, and
+ * a BurstLimit of 8 per second.
+ * </p>
+ * <p>
+ * For all other operations, a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+ * </p>
+ * <p>
+ * You can request an increase to the throttling limits by submitting a <a
+ * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon Connect
+ * service limits increase form</a>. You must be signed in to your AWS account to access the form.
  * </p>
  */
 @ThreadSafe
@@ -474,6 +485,64 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<DescribeUserHierarchyStructureResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeUserHierarchyStructureResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the contact attributes associated with a contact.
+     * </p>
+     * 
+     * @param getContactAttributesRequest
+     * @return Result of the GetContactAttributes operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.GetContactAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetContactAttributesResult getContactAttributes(GetContactAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContactAttributes(request);
+    }
+
+    @SdkInternalApi
+    final GetContactAttributesResult executeGetContactAttributes(GetContactAttributesRequest getContactAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContactAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContactAttributesRequest> request = null;
+        Response<GetContactAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContactAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContactAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContactAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContactAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContactAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -939,6 +1008,10 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
      * action.
+     * </p>
+     * <p>
+     * There is a 60 second dialing timeout for this operation. If the call is not connected after 60 seconds, the call
+     * fails.
      * </p>
      * 
      * @param startOutboundVoiceContactRequest

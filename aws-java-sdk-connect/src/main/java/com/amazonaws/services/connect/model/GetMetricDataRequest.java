@@ -96,8 +96,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>Threshold</code>, and <code>Unit</code>.
      * </p>
      * <p>
-     * For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>.
+     * You must list each metric to retrieve data for in the request. For each historical metric you include in the
+     * request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      * </p>
      * <p>
      * The following historical metrics are available:
@@ -843,8 +843,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>Threshold</code>, and <code>Unit</code>.
      * </p>
      * <p>
-     * For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>.
+     * You must list each metric to retrieve data for in the request. For each historical metric you include in the
+     * request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      * </p>
      * <p>
      * The following historical metrics are available:
@@ -1097,8 +1097,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>Statistic</code>, <code>Threshold</code>, and <code>Unit</code>.
      *         </p>
      *         <p>
-     *         For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     *         <code>Statistic</code>.
+     *         You must list each metric to retrieve data for in the request. For each historical metric you include in
+     *         the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      *         </p>
      *         <p>
      *         The following historical metrics are available:
@@ -1357,8 +1357,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>Threshold</code>, and <code>Unit</code>.
      * </p>
      * <p>
-     * For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>.
+     * You must list each metric to retrieve data for in the request. For each historical metric you include in the
+     * request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      * </p>
      * <p>
      * The following historical metrics are available:
@@ -1610,8 +1610,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        A <code>HistoricalMetric</code> object contains: <code>HistoricalMetricName</code>, <code>Statistic</code>, <code>Threshold</code>, and <code>Unit</code>.
      *        </p>
      *        <p>
-     *        For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     *        <code>Statistic</code>.
+     *        You must list each metric to retrieve data for in the request. For each historical metric you include in
+     *        the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      *        </p>
      *        <p>
      *        The following historical metrics are available:
@@ -1875,8 +1875,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>Threshold</code>, and <code>Unit</code>.
      * </p>
      * <p>
-     * For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>.
+     * You must list each metric to retrieve data for in the request. For each historical metric you include in the
+     * request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      * </p>
      * <p>
      * The following historical metrics are available:
@@ -2133,8 +2133,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        A <code>HistoricalMetric</code> object contains: <code>HistoricalMetricName</code>, <code>Statistic</code>, <code>Threshold</code>, and <code>Unit</code>.
      *        </p>
      *        <p>
-     *        For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     *        <code>Statistic</code>.
+     *        You must list each metric to retrieve data for in the request. For each historical metric you include in
+     *        the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      *        </p>
      *        <p>
      *        The following historical metrics are available:
@@ -2400,8 +2400,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>Threshold</code>, and <code>Unit</code>.
      * </p>
      * <p>
-     * For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>.
+     * You must list each metric to retrieve data for in the request. For each historical metric you include in the
+     * request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      * </p>
      * <p>
      * The following historical metrics are available:
@@ -2653,8 +2653,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        A <code>HistoricalMetric</code> object contains: <code>HistoricalMetricName</code>, <code>Statistic</code>, <code>Threshold</code>, and <code>Unit</code>.
      *        </p>
      *        <p>
-     *        For each historical metric you include in the request, you must include a <code>Unit</code> and a
-     *        <code>Statistic</code>.
+     *        You must list each metric to retrieve data for in the request. For each historical metric you include in
+     *        the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
      *        </p>
      *        <p>
      *        The following historical metrics are available:

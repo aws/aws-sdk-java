@@ -151,7 +151,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param createContainerRequest
      * @return Result of the CreateContainer operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws LimitExceededException
      *         A service limit has been exceeded.
      * @throws InternalServerErrorException
@@ -210,9 +210,9 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param deleteContainerRequest
      * @return Result of the DeleteContainer operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.DeleteContainer
@@ -268,11 +268,11 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param deleteContainerPolicyRequest
      * @return Result of the DeleteContainerPolicy operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws PolicyNotFoundException
-     *         Could not perform an operation on a policy that does not exist.
+     *         The policy that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.DeleteContainerPolicy
@@ -333,11 +333,11 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param deleteCorsPolicyRequest
      * @return Result of the DeleteCorsPolicy operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws CorsPolicyNotFoundException
-     *         Could not perform an operation on a policy that does not exist.
+     *         The CORS policy that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.DeleteCorsPolicy
@@ -387,6 +387,67 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
     /**
      * <p>
+     * Removes an object lifecycle policy from a container.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws PolicyNotFoundException
+     *         The policy that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLifecyclePolicyResult executeDeleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLifecyclePolicyRequest> request = null;
+        Response<DeleteLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLifecyclePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a
      * container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint
      * does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single
@@ -397,7 +458,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param describeContainerRequest
      * @return Result of the DescribeContainer operation returned by the service.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.DescribeContainer
@@ -455,11 +516,11 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param getContainerPolicyRequest
      * @return Result of the GetContainerPolicy operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws PolicyNotFoundException
-     *         Could not perform an operation on a policy that does not exist.
+     *         The policy that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.GetContainerPolicy
@@ -519,11 +580,11 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param getCorsPolicyRequest
      * @return Result of the GetCorsPolicy operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws CorsPolicyNotFoundException
-     *         Could not perform an operation on a policy that does not exist.
+     *         The CORS policy that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.GetCorsPolicy
@@ -561,6 +622,66 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCorsPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCorsPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the object lifecycle policy that is assigned to a container.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return Result of the GetLifecyclePolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws PolicyNotFoundException
+     *         The policy that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetLifecyclePolicyResult executeGetLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLifecyclePolicyRequest> request = null;
+        Response<GetLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLifecyclePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -649,9 +770,9 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param putContainerPolicyRequest
      * @return Result of the PutContainerPolicy operation returned by the service.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.PutContainerPolicy
@@ -716,9 +837,9 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * @param putCorsPolicyRequest
      * @return Result of the PutCorsPolicy operation returned by the service.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.PutCorsPolicy
@@ -756,6 +877,65 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
             HttpResponseHandler<AmazonWebServiceResponse<PutCorsPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutCorsPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the
+     * service replaces the existing policy with the new policy.
+     * </p>
+     * 
+     * @param putLifecyclePolicyRequest
+     * @return Result of the PutLifecyclePolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.PutLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutLifecyclePolicyResult executePutLifecyclePolicy(PutLifecyclePolicyRequest putLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutLifecyclePolicyRequest> request = null;
+        Response<PutLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutLifecyclePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -31,8 +31,19 @@ import com.amazonaws.services.connect.model.*;
  * easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
  * </p>
  * <p>
- * There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per
- * second, and a BurstLimit of 5 per second.
+ * Throttling limits for the Amazon Connect API operations:
+ * </p>
+ * <p>
+ * For the <code>GetMetricData</code> and <code>GetCurrentMetricData</code> operations, a RateLimit of 5 per second, and
+ * a BurstLimit of 8 per second.
+ * </p>
+ * <p>
+ * For all other operations, a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+ * </p>
+ * <p>
+ * You can request an increase to the throttling limits by submitting a <a
+ * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon Connect
+ * service limits increase form</a>. You must be signed in to your AWS account to access the form.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -202,6 +213,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DescribeUserHierarchyStructureResult> describeUserHierarchyStructureAsync(
             DescribeUserHierarchyStructureRequest describeUserHierarchyStructureRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeUserHierarchyStructureRequest, DescribeUserHierarchyStructureResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the contact attributes associated with a contact.
+     * </p>
+     * 
+     * @param getContactAttributesRequest
+     * @return A Java Future containing the result of the GetContactAttributes operation returned by the service.
+     * @sample AmazonConnectAsync.GetContactAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactAttributesResult> getContactAttributesAsync(GetContactAttributesRequest getContactAttributesRequest);
+
+    /**
+     * <p>
+     * Retrieves the contact attributes associated with a contact.
+     * </p>
+     * 
+     * @param getContactAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContactAttributes operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.GetContactAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactAttributesResult> getContactAttributesAsync(GetContactAttributesRequest getContactAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContactAttributesRequest, GetContactAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -447,6 +489,10 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
      * action.
      * </p>
+     * <p>
+     * There is a 60 second dialing timeout for this operation. If the call is not connected after 60 seconds, the call
+     * fails.
+     * </p>
      * 
      * @param startOutboundVoiceContactRequest
      * @return A Java Future containing the result of the StartOutboundVoiceContact operation returned by the service.
@@ -465,6 +511,10 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
      * action.
+     * </p>
+     * <p>
+     * There is a 60 second dialing timeout for this operation. If the call is not connected after 60 seconds, the call
+     * fails.
      * </p>
      * 
      * @param startOutboundVoiceContactRequest

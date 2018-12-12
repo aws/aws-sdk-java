@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Could not perform an operation on a container that does not exist.
+ * The container that you specified in the request does not exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -169,6 +169,37 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
 
     /**
      * <p>
+     * Removes an object lifecycle policy from a container.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
+     * @sample AWSMediaStoreAsync.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Removes an object lifecycle policy from a container.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a
      * container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint
      * does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single
@@ -279,6 +310,37 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
      */
     java.util.concurrent.Future<GetCorsPolicyResult> getCorsPolicyAsync(GetCorsPolicyRequest getCorsPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetCorsPolicyRequest, GetCorsPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the object lifecycle policy that is assigned to a container.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return A Java Future containing the result of the GetLifecyclePolicy operation returned by the service.
+     * @sample AWSMediaStoreAsync.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the object lifecycle policy that is assigned to a container.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLifecyclePolicy operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest getLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -422,5 +484,38 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
      */
     java.util.concurrent.Future<PutCorsPolicyResult> putCorsPolicyAsync(PutCorsPolicyRequest putCorsPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutCorsPolicyRequest, PutCorsPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the
+     * service replaces the existing policy with the new policy.
+     * </p>
+     * 
+     * @param putLifecyclePolicyRequest
+     * @return A Java Future containing the result of the PutLifecyclePolicy operation returned by the service.
+     * @sample AWSMediaStoreAsync.PutLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest putLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the
+     * service replaces the existing policy with the new policy.
+     * </p>
+     * 
+     * @param putLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutLifecyclePolicy operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.PutLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest putLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult> asyncHandler);
 
 }

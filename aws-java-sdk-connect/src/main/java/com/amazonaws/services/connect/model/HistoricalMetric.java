@@ -42,13 +42,13 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
     private Threshold threshold;
     /**
      * <p>
-     * The statistic for the metric: SUM, MAX, or SUM.
+     * The statistic for the metric.
      * </p>
      */
     private String statistic;
     /**
      * <p>
-     * The unit for the metric: COUNT, PERCENT, or SECONDS.
+     * The unit for the metric.
      * </p>
      */
     private String unit;
@@ -154,11 +154,11 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The statistic for the metric: SUM, MAX, or SUM.
+     * The statistic for the metric.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric: SUM, MAX, or SUM.
+     *        The statistic for the metric.
      * @see Statistic
      */
 
@@ -168,10 +168,10 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The statistic for the metric: SUM, MAX, or SUM.
+     * The statistic for the metric.
      * </p>
      * 
-     * @return The statistic for the metric: SUM, MAX, or SUM.
+     * @return The statistic for the metric.
      * @see Statistic
      */
 
@@ -181,11 +181,11 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The statistic for the metric: SUM, MAX, or SUM.
+     * The statistic for the metric.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric: SUM, MAX, or SUM.
+     *        The statistic for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
@@ -197,11 +197,11 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The statistic for the metric: SUM, MAX, or SUM.
+     * The statistic for the metric.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric: SUM, MAX, or SUM.
+     *        The statistic for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
@@ -213,11 +213,11 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unit for the metric: COUNT, PERCENT, or SECONDS.
+     * The unit for the metric.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric: COUNT, PERCENT, or SECONDS.
+     *        The unit for the metric.
      * @see Unit
      */
 
@@ -227,10 +227,10 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unit for the metric: COUNT, PERCENT, or SECONDS.
+     * The unit for the metric.
      * </p>
      * 
-     * @return The unit for the metric: COUNT, PERCENT, or SECONDS.
+     * @return The unit for the metric.
      * @see Unit
      */
 
@@ -240,11 +240,11 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unit for the metric: COUNT, PERCENT, or SECONDS.
+     * The unit for the metric.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric: COUNT, PERCENT, or SECONDS.
+     *        The unit for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Unit
      */
@@ -256,11 +256,11 @@ public class HistoricalMetric implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unit for the metric: COUNT, PERCENT, or SECONDS.
+     * The unit for the metric.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric: COUNT, PERCENT, or SECONDS.
+     *        The unit for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Unit
      */

@@ -1,3 +1,16 @@
+# __1.11.467__ __2018-12-11__
+## __AWS Elemental MediaStore__
+  - ### Features
+    - This release adds Delete Object Lifecycling to AWS MediaStore Containers.
+
+## __Amazon Connect Service__
+  - ### Features
+    - This update adds the GetContactAttributes operation to retrieve the attributes associated with a contact.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Documentation updates for Amazon ECS.
+
 # __1.11.466__ __2018-12-07__
 ## __AWS Identity and Access Management__
   - ### Features

@@ -43,7 +43,12 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
     private String instanceId;
     /**
      * <p>
-     * The key-value pairs for the attribute to update.
+     * Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
+     * and can be accessed in contact flows just like any other contact attributes.
+     * </p>
+     * <p>
+     * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -155,10 +160,19 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The key-value pairs for the attribute to update.
+     * Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
+     * and can be accessed in contact flows just like any other contact attributes.
+     * </p>
+     * <p>
+     * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.
      * </p>
      * 
-     * @return The key-value pairs for the attribute to update.
+     * @return Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
+     *         attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+     *         <p>
+     *         There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
+     *         only alphanumeric, dash, and underscore characters.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -167,11 +181,20 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The key-value pairs for the attribute to update.
+     * Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
+     * and can be accessed in contact flows just like any other contact attributes.
+     * </p>
+     * <p>
+     * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.
      * </p>
      * 
      * @param attributes
-     *        The key-value pairs for the attribute to update.
+     *        Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
+     *        attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+     *        <p>
+     *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
+     *        only alphanumeric, dash, and underscore characters.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -180,11 +203,20 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The key-value pairs for the attribute to update.
+     * Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
+     * and can be accessed in contact flows just like any other contact attributes.
+     * </p>
+     * <p>
+     * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.
      * </p>
      * 
      * @param attributes
-     *        The key-value pairs for the attribute to update.
+     *        Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
+     *        attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+     *        <p>
+     *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
+     *        only alphanumeric, dash, and underscore characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

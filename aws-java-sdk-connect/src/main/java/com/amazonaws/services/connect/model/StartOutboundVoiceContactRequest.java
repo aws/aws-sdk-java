@@ -85,8 +85,8 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
      * and can be accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
-     * There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.
+     * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.
      * </p>
      * <p>
      * For example, if you want play a greeting when the customer answers the call, you can pass the customer name in
@@ -450,8 +450,8 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
      * and can be accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
-     * There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.
+     * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.
      * </p>
      * <p>
      * For example, if you want play a greeting when the customer answers the call, you can pass the customer name in
@@ -461,8 +461,8 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
      * @return Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
      *         attributes, and can be accessed in contact flows just like any other contact attributes.</p>
      *         <p>
-     *         There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include only
-     *         alphanumeric, dash, and underscore characters.
+     *         There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
+     *         only alphanumeric, dash, and underscore characters.
      *         </p>
      *         <p>
      *         For example, if you want play a greeting when the customer answers the call, you can pass the customer
@@ -479,8 +479,8 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
      * and can be accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
-     * There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.
+     * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.
      * </p>
      * <p>
      * For example, if you want play a greeting when the customer answers the call, you can pass the customer name in
@@ -491,8 +491,8 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
      *        Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
      *        attributes, and can be accessed in contact flows just like any other contact attributes.</p>
      *        <p>
-     *        There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include only
-     *        alphanumeric, dash, and underscore characters.
+     *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
+     *        only alphanumeric, dash, and underscore characters.
      *        </p>
      *        <p>
      *        For example, if you want play a greeting when the customer answers the call, you can pass the customer
@@ -509,8 +509,8 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
      * and can be accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
-     * There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.
+     * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.
      * </p>
      * <p>
      * For example, if you want play a greeting when the customer answers the call, you can pass the customer name in
@@ -521,8 +521,8 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
      *        Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
      *        attributes, and can be accessed in contact flows just like any other contact attributes.</p>
      *        <p>
-     *        There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include only
-     *        alphanumeric, dash, and underscore characters.
+     *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
+     *        only alphanumeric, dash, and underscore characters.
      *        </p>
      *        <p>
      *        For example, if you want play a greeting when the customer answers the call, you can pass the customer

@@ -48,6 +48,11 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
     }
 
     @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeContainerResult describeContainer(DescribeContainerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,6 +68,11 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
     }
 
     @Override
+    public GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListContainersResult listContainers(ListContainersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +84,11 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
 
     @Override
     public PutCorsPolicyResult putCorsPolicy(PutCorsPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

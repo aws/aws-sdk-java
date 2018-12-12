@@ -97,7 +97,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerInUseException",
-        "documentation" : "<p>Resource already exists or is being updated.</p>",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -141,11 +141,11 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerInUseException",
-        "documentation" : "<p>Resource already exists or is being updated.</p>",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ContainerNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -185,15 +185,15 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerInUseException",
-        "documentation" : "<p>Resource already exists or is being updated.</p>",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ContainerNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "PolicyNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a policy that does not exist.</p>",
+        "documentation" : "<p>The policy that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -233,15 +233,15 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerInUseException",
-        "documentation" : "<p>Resource already exists or is being updated.</p>",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ContainerNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CorsPolicyNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a policy that does not exist.</p>",
+        "documentation" : "<p>The CORS policy that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -268,6 +268,54 @@
       },
       "syncReturnType" : "DeleteCorsPolicyResult"
     },
+    "DeleteLifecyclePolicy" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteLifecyclePolicyResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteLifecyclePolicyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult>",
+      "asyncReturnType" : "DeleteLifecyclePolicyResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Removes an object lifecycle policy from a container.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ContainerInUseException",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ContainerNotFoundException",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "PolicyNotFoundException",
+        "documentation" : "<p>The policy that you specified in the request does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalServerErrorException",
+        "documentation" : "<p>The service is temporarily unavailable.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteLifecyclePolicyRequest",
+        "variableName" : "deleteLifecyclePolicyRequest",
+        "variableType" : "DeleteLifecyclePolicyRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteLifecyclePolicyRequest",
+        "variableSetterType" : "DeleteLifecyclePolicyRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteLifecyclePolicy",
+      "operationName" : "DeleteLifecyclePolicy",
+      "returnType" : {
+        "returnType" : "DeleteLifecyclePolicyResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteLifecyclePolicyResult"
+    },
     "DescribeContainer" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeContainerResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeContainerResult>",
@@ -281,7 +329,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -321,15 +369,15 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerInUseException",
-        "documentation" : "<p>Resource already exists or is being updated.</p>",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ContainerNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "PolicyNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a policy that does not exist.</p>",
+        "documentation" : "<p>The policy that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -369,15 +417,15 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerInUseException",
-        "documentation" : "<p>Resource already exists or is being updated.</p>",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ContainerNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CorsPolicyNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a policy that does not exist.</p>",
+        "documentation" : "<p>The CORS policy that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -403,6 +451,54 @@
         "documentation" : null
       },
       "syncReturnType" : "GetCorsPolicyResult"
+    },
+    "GetLifecyclePolicy" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<GetLifecyclePolicyResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<GetLifecyclePolicyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult>",
+      "asyncReturnType" : "GetLifecyclePolicyResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Retrieves the object lifecycle policy that is assigned to a container.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ContainerInUseException",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ContainerNotFoundException",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "PolicyNotFoundException",
+        "documentation" : "<p>The policy that you specified in the request does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalServerErrorException",
+        "documentation" : "<p>The service is temporarily unavailable.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetLifecyclePolicyRequest",
+        "variableName" : "getLifecyclePolicyRequest",
+        "variableType" : "GetLifecyclePolicyRequest",
+        "documentation" : "",
+        "simpleType" : "GetLifecyclePolicyRequest",
+        "variableSetterType" : "GetLifecyclePolicyRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "getLifecyclePolicy",
+      "operationName" : "GetLifecyclePolicy",
+      "returnType" : {
+        "returnType" : "GetLifecyclePolicyResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "GetLifecyclePolicyResult"
     },
     "ListContainers" : {
       "asyncCallableType" : "java.util.concurrent.Callable<ListContainersResult>",
@@ -453,11 +549,11 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ContainerInUseException",
-        "documentation" : "<p>Resource already exists or is being updated.</p>",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -497,11 +593,11 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ContainerNotFoundException",
-        "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ContainerInUseException",
-        "documentation" : "<p>Resource already exists or is being updated.</p>",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -527,6 +623,50 @@
         "documentation" : null
       },
       "syncReturnType" : "PutCorsPolicyResult"
+    },
+    "PutLifecyclePolicy" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<PutLifecyclePolicyResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<PutLifecyclePolicyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult>",
+      "asyncReturnType" : "PutLifecyclePolicyResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the service replaces the existing policy with the new policy. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ContainerInUseException",
+        "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ContainerNotFoundException",
+        "documentation" : "<p>The container that you specified in the request does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalServerErrorException",
+        "documentation" : "<p>The service is temporarily unavailable.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "PutLifecyclePolicyRequest",
+        "variableName" : "putLifecyclePolicyRequest",
+        "variableType" : "PutLifecyclePolicyRequest",
+        "documentation" : "",
+        "simpleType" : "PutLifecyclePolicyRequest",
+        "variableSetterType" : "PutLifecyclePolicyRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "putLifecyclePolicy",
+      "operationName" : "PutLifecyclePolicy",
+      "returnType" : {
+        "returnType" : "PutLifecyclePolicyResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "PutLifecyclePolicyResult"
     }
   },
   "shapes" : {
@@ -1245,7 +1385,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Resource already exists or is being updated.</p>",
+      "documentation" : "<p>The container that you specified in the request already exists or is being updated.</p>",
       "enums" : null,
       "errorCode" : "ContainerInUseException",
       "hasHeaderMember" : false,
@@ -1282,7 +1422,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Could not perform an operation on a container that does not exist.</p>",
+      "documentation" : "<p>The container that you specified in the request does not exist.</p>",
       "enums" : null,
       "errorCode" : "ContainerNotFoundException",
       "hasHeaderMember" : false,
@@ -1368,7 +1508,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Could not perform an operation on a policy that does not exist.</p>",
+      "documentation" : "<p>The CORS policy that you specified in the request does not exist.</p>",
       "enums" : null,
       "errorCode" : "CorsPolicyNotFoundException",
       "hasHeaderMember" : false,
@@ -1417,11 +1557,11 @@
         "c2jName" : "AllowedOrigins",
         "c2jShape" : "AllowedOrigins",
         "deprecated" : false,
-        "documentation" : "<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>",
+        "documentation" : "<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withAllowedOrigins",
-        "getterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@return One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
+        "getterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@return One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
         "getterMethodName" : "getAllowedOrigins",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -1535,7 +1675,7 @@
         "marshallingType" : "LIST",
         "name" : "AllowedOrigins",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
+        "setterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
         "setterMethodName" : "setAllowedOrigins",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1549,13 +1689,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedOrigins(java.util.Collection)} or {@link #withAllowedOrigins(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedOrigins(java.util.Collection)} or {@link #withAllowedOrigins(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "allowedOrigins",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>",
+          "documentation" : "<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -1564,11 +1704,11 @@
         "c2jName" : "AllowedMethods",
         "c2jShape" : "AllowedMethods",
         "deprecated" : false,
-        "documentation" : "<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>",
+        "documentation" : "<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>",
         "enumType" : "MethodName",
-        "fluentSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
+        "fluentSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
         "fluentSetterMethodName" : "withAllowedMethods",
-        "getterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@return Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@see MethodName*/",
+        "getterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>\n@return Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.\n@see MethodName*/",
         "getterMethodName" : "getAllowedMethods",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -1682,7 +1822,7 @@
         "marshallingType" : "LIST",
         "name" : "AllowedMethods",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@see MethodName*/",
+        "setterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.\n@see MethodName*/",
         "setterMethodName" : "setAllowedMethods",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1696,13 +1836,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedMethods(java.util.Collection)} or {@link #withAllowedMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
+        "varargSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedMethods(java.util.Collection)} or {@link #withAllowedMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "allowedMethods",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>",
+          "documentation" : "<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -2221,11 +2361,11 @@
           "c2jName" : "AllowedMethods",
           "c2jShape" : "AllowedMethods",
           "deprecated" : false,
-          "documentation" : "<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>",
+          "documentation" : "<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>",
           "enumType" : "MethodName",
-          "fluentSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
+          "fluentSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
           "fluentSetterMethodName" : "withAllowedMethods",
-          "getterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@return Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@see MethodName*/",
+          "getterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>\n@return Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.\n@see MethodName*/",
           "getterMethodName" : "getAllowedMethods",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2339,7 +2479,7 @@
           "marshallingType" : "LIST",
           "name" : "AllowedMethods",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@see MethodName*/",
+          "setterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.\n@see MethodName*/",
           "setterMethodName" : "setAllowedMethods",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2353,13 +2493,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedMethods(java.util.Collection)} or {@link #withAllowedMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
+          "varargSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedMethods(java.util.Collection)} or {@link #withAllowedMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "allowedMethods",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>",
+            "documentation" : "<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2369,11 +2509,11 @@
           "c2jName" : "AllowedOrigins",
           "c2jShape" : "AllowedOrigins",
           "deprecated" : false,
-          "documentation" : "<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>",
+          "documentation" : "<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withAllowedOrigins",
-          "getterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@return One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
+          "getterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@return One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
           "getterMethodName" : "getAllowedOrigins",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2487,7 +2627,7 @@
           "marshallingType" : "LIST",
           "name" : "AllowedOrigins",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
+          "setterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
           "setterMethodName" : "setAllowedOrigins",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2501,13 +2641,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedOrigins(java.util.Collection)} or {@link #withAllowedOrigins(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedOrigins(java.util.Collection)} or {@link #withAllowedOrigins(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "allowedOrigins",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>",
+            "documentation" : "<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2731,7 +2871,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "AllowedOrigins", "AllowedHeaders" ],
       "shapeName" : "CorsRule",
       "signerAware" : false,
       "signerType" : null,
@@ -3756,6 +3896,224 @@
       },
       "wrapper" : false
     },
+    "DeleteLifecyclePolicyRequest" : {
+      "c2jName" : "DeleteLifecyclePolicyInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteLifecyclePolicy",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "MediaStore_20170901.DeleteLifecyclePolicy",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "ContainerName",
+        "c2jShape" : "ContainerName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the container that holds the object lifecycle policy.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the container that holds the object lifecycle policy.</p>\n@param containerName The name of the container that holds the object lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withContainerName",
+        "getterDocumentation" : "/**<p>The name of the container that holds the object lifecycle policy.</p>\n@return The name of the container that holds the object lifecycle policy.*/",
+        "getterMethodName" : "getContainerName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ContainerName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ContainerName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ContainerName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The name of the container that holds the object lifecycle policy.</p>\n@param containerName The name of the container that holds the object lifecycle policy.*/",
+        "setterMethodName" : "setContainerName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "containerName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the container that holds the object lifecycle policy.</p>\n@param containerName The name of the container that holds the object lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "containerName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the container that holds the object lifecycle policy.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ContainerName" : {
+          "c2jName" : "ContainerName",
+          "c2jShape" : "ContainerName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the container that holds the object lifecycle policy.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the container that holds the object lifecycle policy.</p>\n@param containerName The name of the container that holds the object lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withContainerName",
+          "getterDocumentation" : "/**<p>The name of the container that holds the object lifecycle policy.</p>\n@return The name of the container that holds the object lifecycle policy.*/",
+          "getterMethodName" : "getContainerName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ContainerName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ContainerName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ContainerName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The name of the container that holds the object lifecycle policy.</p>\n@param containerName The name of the container that holds the object lifecycle policy.*/",
+          "setterMethodName" : "setContainerName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "containerName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the container that holds the object lifecycle policy.</p>\n@param containerName The name of the container that holds the object lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "containerName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the container that holds the object lifecycle policy.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "ContainerName" ],
+      "shapeName" : "DeleteLifecyclePolicyRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteLifecyclePolicyRequest",
+        "variableName" : "deleteLifecyclePolicyRequest",
+        "variableType" : "DeleteLifecyclePolicyRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteLifecyclePolicyRequest",
+        "variableSetterType" : "DeleteLifecyclePolicyRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteLifecyclePolicyResult" : {
+      "c2jName" : "DeleteLifecyclePolicyOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteLifecyclePolicyResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteLifecyclePolicyResult",
+        "variableName" : "deleteLifecyclePolicyResult",
+        "variableType" : "DeleteLifecyclePolicyResult",
+        "documentation" : null,
+        "simpleType" : "DeleteLifecyclePolicyResult",
+        "variableSetterType" : "DeleteLifecyclePolicyResult"
+      },
+      "wrapper" : false
+    },
     "DescribeContainerRequest" : {
       "c2jName" : "DescribeContainerInput",
       "customization" : {
@@ -4659,11 +5017,11 @@
         "c2jName" : "CorsPolicy",
         "c2jShape" : "CorsPolicy",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The CORS policy assigned to the container.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param corsPolicy \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The CORS policy assigned to the container.</p>\n@param corsPolicy The CORS policy assigned to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCorsPolicy",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The CORS policy assigned to the container.</p>\n@return The CORS policy assigned to the container.*/",
         "getterMethodName" : "getCorsPolicy",
         "getterModel" : {
           "returnType" : "java.util.List<CorsRule>",
@@ -4777,7 +5135,7 @@
         "marshallingType" : "LIST",
         "name" : "CorsPolicy",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param corsPolicy */",
+        "setterDocumentation" : "/**<p>The CORS policy assigned to the container.</p>\n@param corsPolicy The CORS policy assigned to the container.*/",
         "setterMethodName" : "setCorsPolicy",
         "setterModel" : {
           "timestampFormat" : null,
@@ -4791,13 +5149,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCorsPolicy(java.util.Collection)} or {@link #withCorsPolicy(java.util.Collection)} if you want to override the existing values.</p>\n@param corsPolicy \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The CORS policy assigned to the container.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCorsPolicy(java.util.Collection)} or {@link #withCorsPolicy(java.util.Collection)} if you want to override the existing values.</p>\n@param corsPolicy The CORS policy assigned to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<CorsRule>",
           "variableName" : "corsPolicy",
           "variableType" : "java.util.List<CorsRule>",
-          "documentation" : "",
+          "documentation" : "<p>The CORS policy assigned to the container.</p>",
           "simpleType" : "List<CorsRule>",
           "variableSetterType" : "java.util.Collection<CorsRule>"
         },
@@ -4808,11 +5166,11 @@
           "c2jName" : "CorsPolicy",
           "c2jShape" : "CorsPolicy",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The CORS policy assigned to the container.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param corsPolicy \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The CORS policy assigned to the container.</p>\n@param corsPolicy The CORS policy assigned to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCorsPolicy",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The CORS policy assigned to the container.</p>\n@return The CORS policy assigned to the container.*/",
           "getterMethodName" : "getCorsPolicy",
           "getterModel" : {
             "returnType" : "java.util.List<CorsRule>",
@@ -4926,7 +5284,7 @@
           "marshallingType" : "LIST",
           "name" : "CorsPolicy",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param corsPolicy */",
+          "setterDocumentation" : "/**<p>The CORS policy assigned to the container.</p>\n@param corsPolicy The CORS policy assigned to the container.*/",
           "setterMethodName" : "setCorsPolicy",
           "setterModel" : {
             "timestampFormat" : null,
@@ -4940,13 +5298,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCorsPolicy(java.util.Collection)} or {@link #withCorsPolicy(java.util.Collection)} if you want to override the existing values.</p>\n@param corsPolicy \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The CORS policy assigned to the container.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCorsPolicy(java.util.Collection)} or {@link #withCorsPolicy(java.util.Collection)} if you want to override the existing values.</p>\n@param corsPolicy The CORS policy assigned to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<CorsRule>",
             "variableName" : "corsPolicy",
             "variableType" : "java.util.List<CorsRule>",
-            "documentation" : "",
+            "documentation" : "<p>The CORS policy assigned to the container.</p>",
             "simpleType" : "List<CorsRule>",
             "variableSetterType" : "java.util.Collection<CorsRule>"
           },
@@ -4971,6 +5329,358 @@
         "documentation" : null,
         "simpleType" : "GetCorsPolicyResult",
         "variableSetterType" : "GetCorsPolicyResult"
+      },
+      "wrapper" : false
+    },
+    "GetLifecyclePolicyRequest" : {
+      "c2jName" : "GetLifecyclePolicyInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "GetLifecyclePolicy",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "MediaStore_20170901.GetLifecyclePolicy",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "ContainerName",
+        "c2jShape" : "ContainerName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the container that the object lifecycle policy is assigned to.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the container that the object lifecycle policy is assigned to.</p>\n@param containerName The name of the container that the object lifecycle policy is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withContainerName",
+        "getterDocumentation" : "/**<p>The name of the container that the object lifecycle policy is assigned to.</p>\n@return The name of the container that the object lifecycle policy is assigned to.*/",
+        "getterMethodName" : "getContainerName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ContainerName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ContainerName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ContainerName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The name of the container that the object lifecycle policy is assigned to.</p>\n@param containerName The name of the container that the object lifecycle policy is assigned to.*/",
+        "setterMethodName" : "setContainerName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "containerName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the container that the object lifecycle policy is assigned to.</p>\n@param containerName The name of the container that the object lifecycle policy is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "containerName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the container that the object lifecycle policy is assigned to.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ContainerName" : {
+          "c2jName" : "ContainerName",
+          "c2jShape" : "ContainerName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the container that the object lifecycle policy is assigned to.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the container that the object lifecycle policy is assigned to.</p>\n@param containerName The name of the container that the object lifecycle policy is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withContainerName",
+          "getterDocumentation" : "/**<p>The name of the container that the object lifecycle policy is assigned to.</p>\n@return The name of the container that the object lifecycle policy is assigned to.*/",
+          "getterMethodName" : "getContainerName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ContainerName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ContainerName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ContainerName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The name of the container that the object lifecycle policy is assigned to.</p>\n@param containerName The name of the container that the object lifecycle policy is assigned to.*/",
+          "setterMethodName" : "setContainerName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "containerName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the container that the object lifecycle policy is assigned to.</p>\n@param containerName The name of the container that the object lifecycle policy is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "containerName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the container that the object lifecycle policy is assigned to.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "ContainerName" ],
+      "shapeName" : "GetLifecyclePolicyRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetLifecyclePolicyRequest",
+        "variableName" : "getLifecyclePolicyRequest",
+        "variableType" : "GetLifecyclePolicyRequest",
+        "documentation" : null,
+        "simpleType" : "GetLifecyclePolicyRequest",
+        "variableSetterType" : "GetLifecyclePolicyRequest"
+      },
+      "wrapper" : false
+    },
+    "GetLifecyclePolicyResult" : {
+      "c2jName" : "GetLifecyclePolicyOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "LifecyclePolicy",
+        "c2jShape" : "LifecyclePolicy",
+        "deprecated" : false,
+        "documentation" : "<p>The object lifecycle policy that is assigned to the container.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The object lifecycle policy that is assigned to the container.</p>\n@param lifecyclePolicy The object lifecycle policy that is assigned to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLifecyclePolicy",
+        "getterDocumentation" : "/**<p>The object lifecycle policy that is assigned to the container.</p>\n@return The object lifecycle policy that is assigned to the container.*/",
+        "getterMethodName" : "getLifecyclePolicy",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "LifecyclePolicy",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "LifecyclePolicy",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "LifecyclePolicy",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The object lifecycle policy that is assigned to the container.</p>\n@param lifecyclePolicy The object lifecycle policy that is assigned to the container.*/",
+        "setterMethodName" : "setLifecyclePolicy",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "lifecyclePolicy",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The object lifecycle policy that is assigned to the container.</p>\n@param lifecyclePolicy The object lifecycle policy that is assigned to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "lifecyclePolicy",
+          "variableType" : "String",
+          "documentation" : "<p>The object lifecycle policy that is assigned to the container.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "LifecyclePolicy" : {
+          "c2jName" : "LifecyclePolicy",
+          "c2jShape" : "LifecyclePolicy",
+          "deprecated" : false,
+          "documentation" : "<p>The object lifecycle policy that is assigned to the container.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The object lifecycle policy that is assigned to the container.</p>\n@param lifecyclePolicy The object lifecycle policy that is assigned to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLifecyclePolicy",
+          "getterDocumentation" : "/**<p>The object lifecycle policy that is assigned to the container.</p>\n@return The object lifecycle policy that is assigned to the container.*/",
+          "getterMethodName" : "getLifecyclePolicy",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "LifecyclePolicy",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "LifecyclePolicy",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "LifecyclePolicy",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The object lifecycle policy that is assigned to the container.</p>\n@param lifecyclePolicy The object lifecycle policy that is assigned to the container.*/",
+          "setterMethodName" : "setLifecyclePolicy",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "lifecyclePolicy",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The object lifecycle policy that is assigned to the container.</p>\n@param lifecyclePolicy The object lifecycle policy that is assigned to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "lifecyclePolicy",
+            "variableType" : "String",
+            "documentation" : "<p>The object lifecycle policy that is assigned to the container.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "LifecyclePolicy" ],
+      "shapeName" : "GetLifecyclePolicyResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetLifecyclePolicyResult",
+        "variableName" : "getLifecyclePolicyResult",
+        "variableType" : "GetLifecyclePolicyResult",
+        "documentation" : null,
+        "simpleType" : "GetLifecyclePolicyResult",
+        "variableSetterType" : "GetLifecyclePolicyResult"
       },
       "wrapper" : false
     },
@@ -5889,7 +6599,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Could not perform an operation on a policy that does not exist.</p>",
+      "documentation" : "<p>The policy that you specified in the request does not exist.</p>",
       "enums" : null,
       "errorCode" : "PolicyNotFoundException",
       "hasHeaderMember" : false,
@@ -6778,6 +7488,357 @@
         "documentation" : null,
         "simpleType" : "PutCorsPolicyResult",
         "variableSetterType" : "PutCorsPolicyResult"
+      },
+      "wrapper" : false
+    },
+    "PutLifecyclePolicyRequest" : {
+      "c2jName" : "PutLifecyclePolicyInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "PutLifecyclePolicy",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "MediaStore_20170901.PutLifecyclePolicy",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "ContainerName",
+        "c2jShape" : "ContainerName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the container that you want to assign the object lifecycle policy to.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the container that you want to assign the object lifecycle policy to.</p>\n@param containerName The name of the container that you want to assign the object lifecycle policy to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withContainerName",
+        "getterDocumentation" : "/**<p>The name of the container that you want to assign the object lifecycle policy to.</p>\n@return The name of the container that you want to assign the object lifecycle policy to.*/",
+        "getterMethodName" : "getContainerName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ContainerName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ContainerName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ContainerName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The name of the container that you want to assign the object lifecycle policy to.</p>\n@param containerName The name of the container that you want to assign the object lifecycle policy to.*/",
+        "setterMethodName" : "setContainerName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "containerName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the container that you want to assign the object lifecycle policy to.</p>\n@param containerName The name of the container that you want to assign the object lifecycle policy to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "containerName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the container that you want to assign the object lifecycle policy to.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "LifecyclePolicy",
+        "c2jShape" : "LifecyclePolicy",
+        "deprecated" : false,
+        "documentation" : "<p>The object lifecycle policy to apply to the container.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The object lifecycle policy to apply to the container.</p>\n@param lifecyclePolicy The object lifecycle policy to apply to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLifecyclePolicy",
+        "getterDocumentation" : "/**<p>The object lifecycle policy to apply to the container.</p>\n@return The object lifecycle policy to apply to the container.*/",
+        "getterMethodName" : "getLifecyclePolicy",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "LifecyclePolicy",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "LifecyclePolicy",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "LifecyclePolicy",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The object lifecycle policy to apply to the container.</p>\n@param lifecyclePolicy The object lifecycle policy to apply to the container.*/",
+        "setterMethodName" : "setLifecyclePolicy",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "lifecyclePolicy",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The object lifecycle policy to apply to the container.</p>\n@param lifecyclePolicy The object lifecycle policy to apply to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "lifecyclePolicy",
+          "variableType" : "String",
+          "documentation" : "<p>The object lifecycle policy to apply to the container.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ContainerName" : {
+          "c2jName" : "ContainerName",
+          "c2jShape" : "ContainerName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the container that you want to assign the object lifecycle policy to.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the container that you want to assign the object lifecycle policy to.</p>\n@param containerName The name of the container that you want to assign the object lifecycle policy to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withContainerName",
+          "getterDocumentation" : "/**<p>The name of the container that you want to assign the object lifecycle policy to.</p>\n@return The name of the container that you want to assign the object lifecycle policy to.*/",
+          "getterMethodName" : "getContainerName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ContainerName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ContainerName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ContainerName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The name of the container that you want to assign the object lifecycle policy to.</p>\n@param containerName The name of the container that you want to assign the object lifecycle policy to.*/",
+          "setterMethodName" : "setContainerName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "containerName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the container that you want to assign the object lifecycle policy to.</p>\n@param containerName The name of the container that you want to assign the object lifecycle policy to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "containerName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the container that you want to assign the object lifecycle policy to.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "LifecyclePolicy" : {
+          "c2jName" : "LifecyclePolicy",
+          "c2jShape" : "LifecyclePolicy",
+          "deprecated" : false,
+          "documentation" : "<p>The object lifecycle policy to apply to the container.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The object lifecycle policy to apply to the container.</p>\n@param lifecyclePolicy The object lifecycle policy to apply to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLifecyclePolicy",
+          "getterDocumentation" : "/**<p>The object lifecycle policy to apply to the container.</p>\n@return The object lifecycle policy to apply to the container.*/",
+          "getterMethodName" : "getLifecyclePolicy",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "LifecyclePolicy",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "LifecyclePolicy",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "LifecyclePolicy",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The object lifecycle policy to apply to the container.</p>\n@param lifecyclePolicy The object lifecycle policy to apply to the container.*/",
+          "setterMethodName" : "setLifecyclePolicy",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "lifecyclePolicy",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The object lifecycle policy to apply to the container.</p>\n@param lifecyclePolicy The object lifecycle policy to apply to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "lifecyclePolicy",
+            "variableType" : "String",
+            "documentation" : "<p>The object lifecycle policy to apply to the container.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "ContainerName", "LifecyclePolicy" ],
+      "shapeName" : "PutLifecyclePolicyRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "PutLifecyclePolicyRequest",
+        "variableName" : "putLifecyclePolicyRequest",
+        "variableType" : "PutLifecyclePolicyRequest",
+        "documentation" : null,
+        "simpleType" : "PutLifecyclePolicyRequest",
+        "variableSetterType" : "PutLifecyclePolicyRequest"
+      },
+      "wrapper" : false
+    },
+    "PutLifecyclePolicyResult" : {
+      "c2jName" : "PutLifecyclePolicyOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "PutLifecyclePolicyResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "PutLifecyclePolicyResult",
+        "variableName" : "putLifecyclePolicyResult",
+        "variableType" : "PutLifecyclePolicyResult",
+        "documentation" : null,
+        "simpleType" : "PutLifecyclePolicyResult",
+        "variableSetterType" : "PutLifecyclePolicyResult"
       },
       "wrapper" : false
     }

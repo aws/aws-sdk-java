@@ -53,6 +53,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public GetContactAttributesResult getContactAttributes(GetContactAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCurrentMetricDataResult getCurrentMetricData(GetCurrentMetricDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

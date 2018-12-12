@@ -31,8 +31,19 @@ import java.util.concurrent.ExecutorService;
  * easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
  * </p>
  * <p>
- * There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per
- * second, and a BurstLimit of 5 per second.
+ * Throttling limits for the Amazon Connect API operations:
+ * </p>
+ * <p>
+ * For the <code>GetMetricData</code> and <code>GetCurrentMetricData</code> operations, a RateLimit of 5 per second, and
+ * a BurstLimit of 8 per second.
+ * </p>
+ * <p>
+ * For all other operations, a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+ * </p>
+ * <p>
+ * You can request an increase to the throttling limits by submitting a <a
+ * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon Connect
+ * service limits increase form</a>. You must be signed in to your AWS account to access the form.
  * </p>
  */
 @ThreadSafe
@@ -218,6 +229,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeDescribeUserHierarchyStructure(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactAttributesResult> getContactAttributesAsync(GetContactAttributesRequest request) {
+
+        return getContactAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactAttributesResult> getContactAttributesAsync(final GetContactAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactAttributesRequest, GetContactAttributesResult> asyncHandler) {
+        final GetContactAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContactAttributesResult>() {
+            @Override
+            public GetContactAttributesResult call() throws Exception {
+                GetContactAttributesResult result = null;
+
+                try {
+                    result = executeGetContactAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
