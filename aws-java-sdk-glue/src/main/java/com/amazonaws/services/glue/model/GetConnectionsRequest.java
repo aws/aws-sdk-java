@@ -40,6 +40,15 @@ public class GetConnectionsRequest extends com.amazonaws.AmazonWebServiceRequest
     private GetConnectionsFilter filter;
     /**
      * <p>
+     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
+     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
+     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
+     * the rest of the connection metadata (that is, the other connection properties).
+     * </p>
+     */
+    private Boolean hidePassword;
+    /**
+     * <p>
      * A continuation token, if this is a continuation call.
      * </p>
      */
@@ -139,6 +148,82 @@ public class GetConnectionsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
+     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
+     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
+     * the rest of the connection metadata (that is, the other connection properties).
+     * </p>
+     * 
+     * @param hidePassword
+     *        Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue
+     *        console uses this flag to retrieve connections, since the console does not display passwords. Set this
+     *        parameter where the caller may not have permission to use the KMS key to decrypt the password, but does
+     *        have permission to access the rest of the connection metadata (that is, the other connection properties).
+     */
+
+    public void setHidePassword(Boolean hidePassword) {
+        this.hidePassword = hidePassword;
+    }
+
+    /**
+     * <p>
+     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
+     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
+     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
+     * the rest of the connection metadata (that is, the other connection properties).
+     * </p>
+     * 
+     * @return Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue
+     *         console uses this flag to retrieve connections, since the console does not display passwords. Set this
+     *         parameter where the caller may not have permission to use the KMS key to decrypt the password, but does
+     *         have permission to access the rest of the connection metadata (that is, the other connection properties).
+     */
+
+    public Boolean getHidePassword() {
+        return this.hidePassword;
+    }
+
+    /**
+     * <p>
+     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
+     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
+     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
+     * the rest of the connection metadata (that is, the other connection properties).
+     * </p>
+     * 
+     * @param hidePassword
+     *        Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue
+     *        console uses this flag to retrieve connections, since the console does not display passwords. Set this
+     *        parameter where the caller may not have permission to use the KMS key to decrypt the password, but does
+     *        have permission to access the rest of the connection metadata (that is, the other connection properties).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetConnectionsRequest withHidePassword(Boolean hidePassword) {
+        setHidePassword(hidePassword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
+     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
+     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
+     * the rest of the connection metadata (that is, the other connection properties).
+     * </p>
+     * 
+     * @return Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue
+     *         console uses this flag to retrieve connections, since the console does not display passwords. Set this
+     *         parameter where the caller may not have permission to use the KMS key to decrypt the password, but does
+     *         have permission to access the rest of the connection metadata (that is, the other connection properties).
+     */
+
+    public Boolean isHidePassword() {
+        return this.hidePassword;
+    }
+
+    /**
+     * <p>
      * A continuation token, if this is a continuation call.
      * </p>
      * 
@@ -233,6 +318,8 @@ public class GetConnectionsRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("CatalogId: ").append(getCatalogId()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
+        if (getHidePassword() != null)
+            sb.append("HidePassword: ").append(getHidePassword()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -259,6 +346,10 @@ public class GetConnectionsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
+        if (other.getHidePassword() == null ^ this.getHidePassword() == null)
+            return false;
+        if (other.getHidePassword() != null && other.getHidePassword().equals(this.getHidePassword()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -277,6 +368,7 @@ public class GetConnectionsRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getHidePassword() == null) ? 0 : getHidePassword().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

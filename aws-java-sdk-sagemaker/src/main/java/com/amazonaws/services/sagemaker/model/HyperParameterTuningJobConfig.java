@@ -53,6 +53,28 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * </p>
      */
     private ParameterRanges parameterRanges;
+    /**
+     * <p>
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One of the
+     * following values:
+     * </p>
+     * <dl>
+     * <dt>OFF</dt>
+     * <dd>
+     * <p>
+     * Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     * </p>
+     * </dd>
+     * <dt>AUTO</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer improving
+     * as measured by the objective metric of the tuning job.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String trainingJobEarlyStoppingType;
 
     /**
      * <p>
@@ -250,6 +272,189 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One of the
+     * following values:
+     * </p>
+     * <dl>
+     * <dt>OFF</dt>
+     * <dd>
+     * <p>
+     * Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     * </p>
+     * </dd>
+     * <dt>AUTO</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer improving
+     * as measured by the objective metric of the tuning job.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param trainingJobEarlyStoppingType
+     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One
+     *        of the following values:</p>
+     *        <dl>
+     *        <dt>OFF</dt>
+     *        <dd>
+     *        <p>
+     *        Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     *        </p>
+     *        </dd>
+     *        <dt>AUTO</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer
+     *        improving as measured by the objective metric of the tuning job.
+     *        </p>
+     *        </dd>
+     * @see TrainingJobEarlyStoppingType
+     */
+
+    public void setTrainingJobEarlyStoppingType(String trainingJobEarlyStoppingType) {
+        this.trainingJobEarlyStoppingType = trainingJobEarlyStoppingType;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One of the
+     * following values:
+     * </p>
+     * <dl>
+     * <dt>OFF</dt>
+     * <dd>
+     * <p>
+     * Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     * </p>
+     * </dd>
+     * <dt>AUTO</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer improving
+     * as measured by the objective metric of the tuning job.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One
+     *         of the following values:</p>
+     *         <dl>
+     *         <dt>OFF</dt>
+     *         <dd>
+     *         <p>
+     *         Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     *         </p>
+     *         </dd>
+     *         <dt>AUTO</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer
+     *         improving as measured by the objective metric of the tuning job.
+     *         </p>
+     *         </dd>
+     * @see TrainingJobEarlyStoppingType
+     */
+
+    public String getTrainingJobEarlyStoppingType() {
+        return this.trainingJobEarlyStoppingType;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One of the
+     * following values:
+     * </p>
+     * <dl>
+     * <dt>OFF</dt>
+     * <dd>
+     * <p>
+     * Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     * </p>
+     * </dd>
+     * <dt>AUTO</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer improving
+     * as measured by the objective metric of the tuning job.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param trainingJobEarlyStoppingType
+     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One
+     *        of the following values:</p>
+     *        <dl>
+     *        <dt>OFF</dt>
+     *        <dd>
+     *        <p>
+     *        Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     *        </p>
+     *        </dd>
+     *        <dt>AUTO</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer
+     *        improving as measured by the objective metric of the tuning job.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingJobEarlyStoppingType
+     */
+
+    public HyperParameterTuningJobConfig withTrainingJobEarlyStoppingType(String trainingJobEarlyStoppingType) {
+        setTrainingJobEarlyStoppingType(trainingJobEarlyStoppingType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One of the
+     * following values:
+     * </p>
+     * <dl>
+     * <dt>OFF</dt>
+     * <dd>
+     * <p>
+     * Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     * </p>
+     * </dd>
+     * <dt>AUTO</dt>
+     * <dd>
+     * <p>
+     * Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer improving
+     * as measured by the objective metric of the tuning job.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param trainingJobEarlyStoppingType
+     *        Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. One
+     *        of the following values:</p>
+     *        <dl>
+     *        <dt>OFF</dt>
+     *        <dd>
+     *        <p>
+     *        Training jobs launched by the hyperparameter tuning job do not use early stopping.
+     *        </p>
+     *        </dd>
+     *        <dt>AUTO</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when they are no longer
+     *        improving as measured by the objective metric of the tuning job.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingJobEarlyStoppingType
+     */
+
+    public HyperParameterTuningJobConfig withTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType trainingJobEarlyStoppingType) {
+        this.trainingJobEarlyStoppingType = trainingJobEarlyStoppingType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -268,7 +473,9 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
         if (getResourceLimits() != null)
             sb.append("ResourceLimits: ").append(getResourceLimits()).append(",");
         if (getParameterRanges() != null)
-            sb.append("ParameterRanges: ").append(getParameterRanges());
+            sb.append("ParameterRanges: ").append(getParameterRanges()).append(",");
+        if (getTrainingJobEarlyStoppingType() != null)
+            sb.append("TrainingJobEarlyStoppingType: ").append(getTrainingJobEarlyStoppingType());
         sb.append("}");
         return sb.toString();
     }
@@ -300,6 +507,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
             return false;
         if (other.getParameterRanges() != null && other.getParameterRanges().equals(this.getParameterRanges()) == false)
             return false;
+        if (other.getTrainingJobEarlyStoppingType() == null ^ this.getTrainingJobEarlyStoppingType() == null)
+            return false;
+        if (other.getTrainingJobEarlyStoppingType() != null && other.getTrainingJobEarlyStoppingType().equals(this.getTrainingJobEarlyStoppingType()) == false)
+            return false;
         return true;
     }
 
@@ -312,6 +523,7 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getHyperParameterTuningJobObjective() == null) ? 0 : getHyperParameterTuningJobObjective().hashCode());
         hashCode = prime * hashCode + ((getResourceLimits() == null) ? 0 : getResourceLimits().hashCode());
         hashCode = prime * hashCode + ((getParameterRanges() == null) ? 0 : getParameterRanges().hashCode());
+        hashCode = prime * hashCode + ((getTrainingJobEarlyStoppingType() == null) ? 0 : getTrainingJobEarlyStoppingType().hashCode());
         return hashCode;
     }
 

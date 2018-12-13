@@ -222,6 +222,45 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Returns descriptive information about an update against your Amazon EKS cluster.
+     * </p>
+     * <p>
+     * When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status
+     * is <code>Failed</code>, and an error detail explains the reason for the failure.
+     * </p>
+     * 
+     * @param describeUpdateRequest
+     * @return A Java Future containing the result of the DescribeUpdate operation returned by the service.
+     * @sample AmazonEKSAsync.DescribeUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUpdateResult> describeUpdateAsync(DescribeUpdateRequest describeUpdateRequest);
+
+    /**
+     * <p>
+     * Returns descriptive information about an update against your Amazon EKS cluster.
+     * </p>
+     * <p>
+     * When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status
+     * is <code>Failed</code>, and an error detail explains the reason for the failure.
+     * </p>
+     * 
+     * @param describeUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeUpdate operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DescribeUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUpdateResult> describeUpdateAsync(DescribeUpdateRequest describeUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeUpdateRequest, DescribeUpdateResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the Amazon EKS clusters in your AWS account in the specified Region.
      * </p>
      * 
@@ -250,5 +289,83 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest,
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the updates associated with an Amazon EKS cluster in your AWS account, in the specified Region.
+     * </p>
+     * 
+     * @param listUpdatesRequest
+     * @return A Java Future containing the result of the ListUpdates operation returned by the service.
+     * @sample AmazonEKSAsync.ListUpdates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListUpdatesResult> listUpdatesAsync(ListUpdatesRequest listUpdatesRequest);
+
+    /**
+     * <p>
+     * Lists the updates associated with an Amazon EKS cluster in your AWS account, in the specified Region.
+     * </p>
+     * 
+     * @param listUpdatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListUpdates operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.ListUpdates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListUpdatesResult> listUpdatesAsync(ListUpdatesRequest listUpdatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListUpdatesRequest, ListUpdatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues to function during the
+     * update. The response output includes an update ID that you can use to track the status of your cluster update
+     * with the <a>DescribeUpdate</a> API operation.
+     * </p>
+     * <p>
+     * Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster
+     * status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is
+     * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
+     * .
+     * </p>
+     * 
+     * @param updateClusterVersionRequest
+     * @return A Java Future containing the result of the UpdateClusterVersion operation returned by the service.
+     * @sample AmazonEKSAsync.UpdateClusterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterVersionResult> updateClusterVersionAsync(UpdateClusterVersionRequest updateClusterVersionRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues to function during the
+     * update. The response output includes an update ID that you can use to track the status of your cluster update
+     * with the <a>DescribeUpdate</a> API operation.
+     * </p>
+     * <p>
+     * Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster
+     * status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is
+     * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
+     * .
+     * </p>
+     * 
+     * @param updateClusterVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateClusterVersion operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.UpdateClusterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterVersionResult> updateClusterVersionAsync(UpdateClusterVersionRequest updateClusterVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterVersionRequest, UpdateClusterVersionResult> asyncHandler);
 
 }

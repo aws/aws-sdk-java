@@ -31,6 +31,8 @@ public class GetConnectionsRequestMarshaller {
             .marshallLocationName("CatalogId").build();
     private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
+    private static final MarshallingInfo<Boolean> HIDEPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HidePassword").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -54,6 +56,7 @@ public class GetConnectionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(getConnectionsRequest.getCatalogId(), CATALOGID_BINDING);
             protocolMarshaller.marshall(getConnectionsRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(getConnectionsRequest.getHidePassword(), HIDEPASSWORD_BINDING);
             protocolMarshaller.marshall(getConnectionsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getConnectionsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

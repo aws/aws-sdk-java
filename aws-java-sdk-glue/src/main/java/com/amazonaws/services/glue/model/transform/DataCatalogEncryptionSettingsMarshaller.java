@@ -29,6 +29,8 @@ public class DataCatalogEncryptionSettingsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONATREST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAtRest").build();
+    private static final MarshallingInfo<StructuredPojo> CONNECTIONPASSWORDENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionPasswordEncryption").build();
 
     private static final DataCatalogEncryptionSettingsMarshaller instance = new DataCatalogEncryptionSettingsMarshaller();
 
@@ -47,6 +49,7 @@ public class DataCatalogEncryptionSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(dataCatalogEncryptionSettings.getEncryptionAtRest(), ENCRYPTIONATREST_BINDING);
+            protocolMarshaller.marshall(dataCatalogEncryptionSettings.getConnectionPasswordEncryption(), CONNECTIONPASSWORDENCRYPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

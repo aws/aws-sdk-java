@@ -82,6 +82,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting
+     * <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the key you
+     * designate to encrypt the password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
      * </p>
      * </li>
@@ -389,6 +396,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting
+     * <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the key you
+     * designate to encrypt the password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
      * </p>
      * </li>
@@ -453,6 +467,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>PASSWORD</code> - A password, if one is used, for the user name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting
+     *         <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the
+     *         key you designate to encrypt the password.
      *         </p>
      *         </li>
      *         <li>
@@ -532,6 +553,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting
+     * <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the key you
+     * designate to encrypt the password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
      * </p>
      * </li>
@@ -597,6 +625,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>PASSWORD</code> - A password, if one is used, for the user name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting
+     *        <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the
+     *        key you designate to encrypt the password.
      *        </p>
      *        </li>
      *        <li>
@@ -676,6 +711,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting
+     * <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the key you
+     * designate to encrypt the password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
      * </p>
      * </li>
@@ -741,6 +783,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>PASSWORD</code> - A password, if one is used, for the user name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting
+     *        <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the
+     *        key you designate to encrypt the password.
      *        </p>
      *        </li>
      *        <li>

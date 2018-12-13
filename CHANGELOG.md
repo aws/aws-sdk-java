@@ -1,3 +1,20 @@
+# __1.11.468__ __2018-12-12__
+## __AWS Glue__
+  - ### Features
+    - API Update for Glue: this update enables encryption of password inside connection objects stored in AWS Glue Data Catalog using DataCatalogEncryptionSettings.  In addition, a new "HidePassword" flag is added to GetConnection and GetConnections to return connections without passwords.
+
+## __Amazon Elastic Container Service for Kubernetes__
+  - ### Features
+    - Added support for updating kubernetes version of Amazon EKS clusters.
+
+## __Amazon Route 53__
+  - ### Features
+    - You can now specify a new region, eu-north-1 (in Stockholm, Sweden), as a region for latency-based or geoproximity routing.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker Automatic Model Tuning now supports early stopping of training jobs. With early stopping, training jobs that are unlikely to generate good models will be automatically stopped during a Hyperparameter Tuning Job.
+
 # __1.11.467__ __2018-12-11__
 ## __AWS Elemental MediaStore__
   - ### Features

@@ -41,7 +41,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The Unix epoch time stamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp in seconds for when the cluster was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -88,15 +88,15 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Certificate certificateAuthority;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
      * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
+     * <i>Amazon EKS User Guide</i> </i>.
      * </p>
      */
     private String platformVersion;
@@ -183,11 +183,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch time stamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp in seconds for when the cluster was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch time stamp in seconds for when the cluster was created.
+     *        The Unix epoch timestamp in seconds for when the cluster was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -196,10 +196,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch time stamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp in seconds for when the cluster was created.
      * </p>
      * 
-     * @return The Unix epoch time stamp in seconds for when the cluster was created.
+     * @return The Unix epoch timestamp in seconds for when the cluster was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -208,11 +208,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch time stamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp in seconds for when the cluster was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch time stamp in seconds for when the cluster was created.
+     *        The Unix epoch timestamp in seconds for when the cluster was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,11 +512,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -525,10 +525,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -537,11 +537,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -553,14 +553,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
+     * <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param platformVersion
      *        The platform version of your Amazon EKS cluster. For more information, see <a
-     *        href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User
-     *        Guide</i> </i>.
+     *        href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     *        <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -570,13 +570,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
+     * <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return The platform version of your Amazon EKS cluster. For more information, see <a
-     *         href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User
-     *         Guide</i> </i>.
+     *         href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in
+     *         the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public String getPlatformVersion() {
@@ -586,14 +586,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
+     * <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param platformVersion
      *        The platform version of your Amazon EKS cluster. For more information, see <a
-     *        href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User
-     *        Guide</i> </i>.
+     *        href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
+     *        <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

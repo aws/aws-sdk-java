@@ -34,6 +34,15 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
      * </p>
      */
     private EncryptionAtRest encryptionAtRest;
+    /**
+     * <p>
+     * When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as
+     * part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     * <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only
+     * password encryption.
+     * </p>
+     */
+    private ConnectionPasswordEncryption connectionPasswordEncryption;
 
     /**
      * <p>
@@ -76,6 +85,64 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as
+     * part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     * <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only
+     * password encryption.
+     * </p>
+     * 
+     * @param connectionPasswordEncryption
+     *        When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password
+     *        as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     *        <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or
+     *        only password encryption.
+     */
+
+    public void setConnectionPasswordEncryption(ConnectionPasswordEncryption connectionPasswordEncryption) {
+        this.connectionPasswordEncryption = connectionPasswordEncryption;
+    }
+
+    /**
+     * <p>
+     * When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as
+     * part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     * <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only
+     * password encryption.
+     * </p>
+     * 
+     * @return When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the
+     *         password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     *         <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or
+     *         only password encryption.
+     */
+
+    public ConnectionPasswordEncryption getConnectionPasswordEncryption() {
+        return this.connectionPasswordEncryption;
+    }
+
+    /**
+     * <p>
+     * When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as
+     * part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     * <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only
+     * password encryption.
+     * </p>
+     * 
+     * @param connectionPasswordEncryption
+     *        When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password
+     *        as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     *        <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or
+     *        only password encryption.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataCatalogEncryptionSettings withConnectionPasswordEncryption(ConnectionPasswordEncryption connectionPasswordEncryption) {
+        setConnectionPasswordEncryption(connectionPasswordEncryption);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +155,9 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEncryptionAtRest() != null)
-            sb.append("EncryptionAtRest: ").append(getEncryptionAtRest());
+            sb.append("EncryptionAtRest: ").append(getEncryptionAtRest()).append(",");
+        if (getConnectionPasswordEncryption() != null)
+            sb.append("ConnectionPasswordEncryption: ").append(getConnectionPasswordEncryption());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +176,10 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
             return false;
         if (other.getEncryptionAtRest() != null && other.getEncryptionAtRest().equals(this.getEncryptionAtRest()) == false)
             return false;
+        if (other.getConnectionPasswordEncryption() == null ^ this.getConnectionPasswordEncryption() == null)
+            return false;
+        if (other.getConnectionPasswordEncryption() != null && other.getConnectionPasswordEncryption().equals(this.getConnectionPasswordEncryption()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +189,7 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEncryptionAtRest() == null) ? 0 : getEncryptionAtRest().hashCode());
+        hashCode = prime * hashCode + ((getConnectionPasswordEncryption() == null) ? 0 : getConnectionPasswordEncryption().hashCode());
         return hashCode;
     }
 

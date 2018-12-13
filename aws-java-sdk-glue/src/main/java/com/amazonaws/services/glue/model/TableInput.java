@@ -74,6 +74,13 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.
      * </p>
+     * <p>
+     * When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:
+     * </p>
+     * <p>
+     * <code>"PartitionKeys": []</code>
+     * </p>
      */
     private java.util.List<Column> partitionKeys;
     /**
@@ -385,9 +392,22 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.
      * </p>
+     * <p>
+     * When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:
+     * </p>
+     * <p>
+     * <code>"PartitionKeys": []</code>
+     * </p>
      * 
      * @return A list of columns by which the table is partitioned. Only primitive types are supported as partition
-     *         keys.
+     *         keys.</p>
+     *         <p>
+     *         When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at
+     *         least set the value of <code>partitionKeys</code> to an empty list. For example:
+     *         </p>
+     *         <p>
+     *         <code>"PartitionKeys": []</code>
      */
 
     public java.util.List<Column> getPartitionKeys() {
@@ -398,9 +418,23 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.
      * </p>
+     * <p>
+     * When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:
+     * </p>
+     * <p>
+     * <code>"PartitionKeys": []</code>
+     * </p>
      * 
      * @param partitionKeys
-     *        A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.
+     *        A list of columns by which the table is partitioned. Only primitive types are supported as partition
+     *        keys.</p>
+     *        <p>
+     *        When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at
+     *        least set the value of <code>partitionKeys</code> to an empty list. For example:
+     *        </p>
+     *        <p>
+     *        <code>"PartitionKeys": []</code>
      */
 
     public void setPartitionKeys(java.util.Collection<Column> partitionKeys) {
@@ -417,13 +451,27 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
      * A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.
      * </p>
      * <p>
+     * When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:
+     * </p>
+     * <p>
+     * <code>"PartitionKeys": []</code>
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPartitionKeys(java.util.Collection)} or {@link #withPartitionKeys(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param partitionKeys
-     *        A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.
+     *        A list of columns by which the table is partitioned. Only primitive types are supported as partition
+     *        keys.</p>
+     *        <p>
+     *        When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at
+     *        least set the value of <code>partitionKeys</code> to an empty list. For example:
+     *        </p>
+     *        <p>
+     *        <code>"PartitionKeys": []</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,9 +489,23 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.
      * </p>
+     * <p>
+     * When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:
+     * </p>
+     * <p>
+     * <code>"PartitionKeys": []</code>
+     * </p>
      * 
      * @param partitionKeys
-     *        A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.
+     *        A list of columns by which the table is partitioned. Only primitive types are supported as partition
+     *        keys.</p>
+     *        <p>
+     *        When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>, you must at
+     *        least set the value of <code>partitionKeys</code> to an empty list. For example:
+     *        </p>
+     *        <p>
+     *        <code>"PartitionKeys": []</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

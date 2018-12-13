@@ -87,9 +87,9 @@ public interface AmazonEKS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
-     *         valid.
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws ServiceUnavailableException
@@ -126,9 +126,9 @@ public interface AmazonEKS {
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon EKS clusters are Region-specific.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
-     *         valid.
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws ServiceUnavailableException
@@ -162,9 +162,9 @@ public interface AmazonEKS {
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
      *         Amazon EKS clusters are Region-specific.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
-     *         valid.
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws ServiceUnavailableException
@@ -177,6 +177,34 @@ public interface AmazonEKS {
 
     /**
      * <p>
+     * Returns descriptive information about an update against your Amazon EKS cluster.
+     * </p>
+     * <p>
+     * When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status
+     * is <code>Failed</code>, and an error detail explains the reason for the failure.
+     * </p>
+     * 
+     * @param describeUpdateRequest
+     * @return Result of the DescribeUpdate operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon EKS clusters are Region-specific.
+     * @sample AmazonEKS.DescribeUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeUpdateResult describeUpdate(DescribeUpdateRequest describeUpdateRequest);
+
+    /**
+     * <p>
      * Lists the Amazon EKS clusters in your AWS account in the specified Region.
      * </p>
      * 
@@ -185,9 +213,9 @@ public interface AmazonEKS {
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
-     *         valid.
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws ServiceUnavailableException
@@ -197,6 +225,67 @@ public interface AmazonEKS {
      *      Documentation</a>
      */
     ListClustersResult listClusters(ListClustersRequest listClustersRequest);
+
+    /**
+     * <p>
+     * Lists the updates associated with an Amazon EKS cluster in your AWS account, in the specified Region.
+     * </p>
+     * 
+     * @param listUpdatesRequest
+     * @return Result of the ListUpdates operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon EKS clusters are Region-specific.
+     * @sample AmazonEKS.ListUpdates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListUpdatesResult listUpdates(ListUpdatesRequest listUpdatesRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues to function during the
+     * update. The response output includes an update ID that you can use to track the status of your cluster update
+     * with the <a>DescribeUpdate</a> API operation.
+     * </p>
+     * <p>
+     * Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster
+     * status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is
+     * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
+     * .
+     * </p>
+     * 
+     * @param updateClusterVersionRequest
+     * @return Result of the UpdateClusterVersion operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon EKS clusters are Region-specific.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @sample AmazonEKS.UpdateClusterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateClusterVersionResult updateClusterVersion(UpdateClusterVersionRequest updateClusterVersionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

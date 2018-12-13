@@ -38,7 +38,8 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * security group, the default security group for your VPC is used.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
@@ -128,11 +129,13 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * security group, the default security group for your VPC is used.
      * </p>
      * 
      * @return Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
-     *         creates to use to allow communication between your worker nodes and the Kubernetes control plane.
+     *         creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
+     *         do not specify a security group, the default security group for your VPC is used.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -142,12 +145,14 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * security group, the default security group for your VPC is used.
      * </p>
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
-     *        creates to use to allow communication between your worker nodes and the Kubernetes control plane.
+     *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
+     *        do not specify a security group, the default security group for your VPC is used.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -162,7 +167,8 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * security group, the default security group for your VPC is used.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -172,7 +178,8 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
-     *        creates to use to allow communication between your worker nodes and the Kubernetes control plane.
+     *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
+     *        do not specify a security group, the default security group for your VPC is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,12 +196,14 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * security group, the default security group for your VPC is used.
      * </p>
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
-     *        creates to use to allow communication between your worker nodes and the Kubernetes control plane.
+     *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
+     *        do not specify a security group, the default security group for your VPC is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

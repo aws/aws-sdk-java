@@ -242,8 +242,11 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
-     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. (If you're
-     * routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.)
+     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
+     * </p>
+     * <p>
+     * If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're
+     * routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.
      * </p>
      * </li>
      * <li>
@@ -296,7 +299,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dd>
      * <p>
      * Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
      * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
      * buckets for websites, see <a
@@ -622,8 +625,12 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
      *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
-     *        field. (If you're routing traffic to a Classic Load Balancer, get the value that begins with
-     *        <b>dualstack</b>.)
+     *        field.
+     *        </p>
+     *        <p>
+     *        If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     *        you're routing traffic to another type of load balancer, get the value that applies to the record type, A
+     *        or AAAA.
      *        </p>
      *        </li>
      *        <li>
@@ -676,7 +683,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dd>
      *        <p>
      *        Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
-     *        <code>s3-website-us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
+     *        <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
      *        using S3 buckets for websites, see <a
@@ -1451,8 +1458,11 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
-     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. (If you're
-     * routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.)
+     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
+     * </p>
+     * <p>
+     * If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're
+     * routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.
      * </p>
      * </li>
      * <li>
@@ -1505,7 +1515,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dd>
      * <p>
      * Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
      * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
      * buckets for websites, see <a
@@ -1611,8 +1621,12 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
      *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
-     *        field. (If you're routing traffic to a Classic Load Balancer, get the value that begins with
-     *        <b>dualstack</b>.)
+     *        field.
+     *        </p>
+     *        <p>
+     *        If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     *        you're routing traffic to another type of load balancer, get the value that applies to the record type, A
+     *        or AAAA.
      *        </p>
      *        </li>
      *        <li>
@@ -1665,7 +1679,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dd>
      *        <p>
      *        Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
-     *        <code>s3-website-us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
+     *        <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
      *        using S3 buckets for websites, see <a
@@ -1773,8 +1787,11 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
-     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. (If you're
-     * routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.)
+     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
+     * </p>
+     * <p>
+     * If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're
+     * routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.
      * </p>
      * </li>
      * <li>
@@ -1827,7 +1844,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dd>
      * <p>
      * Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
      * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
      * buckets for websites, see <a
@@ -1933,8 +1950,12 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <p>
      *         <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
      *         choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
-     *         field. (If you're routing traffic to a Classic Load Balancer, get the value that begins with
-     *         <b>dualstack</b>.)
+     *         field.
+     *         </p>
+     *         <p>
+     *         If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     *         you're routing traffic to another type of load balancer, get the value that applies to the record type, A
+     *         or AAAA.
      *         </p>
      *         </li>
      *         <li>
@@ -1987,7 +2008,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dd>
      *         <p>
      *         Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
-     *         <code>s3-website-us-east-2.amazonaws.com</code>. For more information about valid values, see the table
+     *         <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table
      *         <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *         (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information
      *         about using S3 buckets for websites, see <a
@@ -2096,8 +2117,11 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose
-     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. (If you're
-     * routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.)
+     * the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.
+     * </p>
+     * <p>
+     * If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're
+     * routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.
      * </p>
      * </li>
      * <li>
@@ -2150,7 +2174,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dd>
      * <p>
      * Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
      * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
      * buckets for websites, see <a
@@ -2256,8 +2280,12 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane,
      *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
-     *        field. (If you're routing traffic to a Classic Load Balancer, get the value that begins with
-     *        <b>dualstack</b>.)
+     *        field.
+     *        </p>
+     *        <p>
+     *        If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     *        you're routing traffic to another type of load balancer, get the value that applies to the record type, A
+     *        or AAAA.
      *        </p>
      *        </li>
      *        <li>
@@ -2310,7 +2338,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dd>
      *        <p>
      *        Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
-     *        <code>s3-website-us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
+     *        <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
      *        using S3 buckets for websites, see <a

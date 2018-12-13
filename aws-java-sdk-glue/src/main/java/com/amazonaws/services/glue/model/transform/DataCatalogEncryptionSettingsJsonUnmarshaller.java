@@ -52,6 +52,11 @@ public class DataCatalogEncryptionSettingsJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     dataCatalogEncryptionSettings.setEncryptionAtRest(EncryptionAtRestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ConnectionPasswordEncryption", targetDepth)) {
+                    context.nextToken();
+                    dataCatalogEncryptionSettings.setConnectionPasswordEncryption(ConnectionPasswordEncryptionJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
